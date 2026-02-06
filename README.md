@@ -3,7 +3,7 @@
 **Measure LLM "temperament" by probing hidden states across 8 personality axes.**
 
 <p align="center">
-  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 8 Models × 8 Axes" width="450">
+  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 9 Models × 8 Axes" width="450">
 </p>
 
 *Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is warm and verbose. Llama is eerily neutral. Yi cannot show irritation — its hidden states don't change regardless of instruction.*
@@ -35,6 +35,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 - **Llama 3.1 8B**: Balanced, neutral — the "careful generalist"
 - **Yi 1.5 9B**: Highly proactive but analytical — the "eager helper"
 - **Qwen 2.5 7B**: Slightly cautious, balanced — the "measured responder"
+- **Gemma 2 9B**: Neutral warmth, slightly cautious, fairly direct — the "balanced professional"
 - **Mistral 7B**: Neutral baseline — the "blank slate"
 
 ### 2. Models drift differently under adversarial pressure
@@ -54,7 +55,9 @@ Yi 1.5 9B (Chinese model with strong safety training) shows near-random performa
 - `direct_evasive` axis (38.9% accuracy) — can't be "direct" on controversial topics
 - `patient_irritated` axis (47.2% accuracy) — suppresses negative emotions
 
-This suggests that post-training alignment may limit behavioral steering.
+**Gemma 2 9B independently confirms this pattern**: 100% accuracy on 7 axes, but `direct_evasive` = 50% (chance level). Two models from different training pipelines (Yi/01.AI, Gemma/Google) show the same dead zone on directness — suggesting this is a systematic effect of alignment training, not a model-specific quirk.
+
+This suggests that post-training alignment may impose hard limits on behavioral steering.
 
 ## Quick Start
 
@@ -238,6 +241,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 | DeepSeek 7B | 7B | 3 axes 100%, others 66-94% |
 | Llama 3.1 8B | 8B | **All 8 axes 100%** |
 | Yi 1.5 9B | 9B | 3 axes 100%, 2 axes with RLHF dead zones |
+| Gemma 2 9B | 9B | 7 axes 100%, 1 axis dead zone (`direct_evasive` 50%) |
 
 ### 1-2B Models (calibration + baseline)
 
