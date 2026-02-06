@@ -29,10 +29,17 @@ from config.models import MODELS
 from config.prompts import BASELINE_QUESTIONS
 from src.model.loader import load_model
 from src.model.inference import get_hidden_state_for_prompt
-from src.mood.projector import MoodProjector
+from src.calibration.axis_computer import load_axis_vectors
 
 
 OUTPUT_DIR = PROJECT_ROOT / "data" / "article" / "baselines"
+
+
+def get_all_axes_from_npz(axes_file: Path) -> list:
+    """Get all axis names available in the npz file."""
+    data = np.load(axes_file)
+    axes = [k for k in data.keys() if not k.startswith('_') and not k.endswith('_scale')]
+    return axes
 
 
 def collect_baseline(model_key: str) -> dict:
@@ -45,28 +52,46 @@ def collect_baseline(model_key: str) -> dict:
 
     print(f"Collecting baseline for {model_key} ({model_id})")
 
-    # Load model
-    print("Loading model...")
-    model, tokenizer = load_model(model_id)
-
-    # Load calibrated axes
+    # Load calibrated axes (all axes from npz, not just MOOD_AXES)
     axes_file = AXES_DIR / f"{model_key}_axes.npz"
     if not axes_file.exists():
         raise FileNotFoundError(f"Calibration not found: {axes_file}")
 
-    projector = MoodProjector(axes_file=axes_file)
+    all_axes = get_all_axes_from_npz(axes_file)
+    axis_vectors = load_axis_vectors(axes_file)
+
+    # Load normalization scales
+    npz_data = np.load(axes_file)
+    scales = {}
+    for axis in all_axes:
+        scale_key = f"{axis}_scale"
+        if scale_key in npz_data:
+            scales[axis] = float(npz_data[scale_key])
+        else:
+            scales[axis] = 2.0
+
+    print(f"Using {len(all_axes)} axes: {all_axes}")
+
+    # Load model
+    print("Loading model...")
+    model, tokenizer = load_model(model_id)
 
     # Collect measurements
-    measurements = {axis: [] for axis in MOOD_AXES}
+    measurements = {axis: [] for axis in all_axes}
 
     for question in tqdm(BASELINE_QUESTIONS, desc="Measuring"):
         messages = [{"role": "user", "content": question}]
 
         text, hidden_state = get_hidden_state_for_prompt(model, tokenizer, messages)
-        reading = projector.project(hidden_state)
 
-        for axis in MOOD_AXES:
-            measurements[axis].append(reading.values.get(axis, 0))
+        # Project onto each axis manually
+        for axis in all_axes:
+            if axis not in axis_vectors:
+                continue
+            raw_value = float(np.dot(hidden_state, axis_vectors[axis]))
+            raw_value = raw_value / scales.get(axis, 2.0)
+            raw_value = np.clip(raw_value, -1.0, 1.0)
+            measurements[axis].append(float(raw_value))
 
     # Compute statistics
     results = {
@@ -77,7 +102,7 @@ def collect_baseline(model_key: str) -> dict:
         "axes": {},
     }
 
-    for axis in MOOD_AXES:
+    for axis in all_axes:
         values = measurements[axis]
         results["axes"][axis] = {
             "mean": float(np.mean(values)),

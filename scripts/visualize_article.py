@@ -65,6 +65,9 @@ def load_baseline_data(data_dir: Path) -> Dict[str, dict]:
     for file in baseline_dir.glob("*_baseline.json"):
         with open(file) as f:
             data = json.load(f)
+            # Normalize: some files use "axes", some use "baseline"
+            if "axes" in data and "baseline" not in data:
+                data["baseline"] = data["axes"]
             model_short = data.get("model_short", file.stem.replace("_baseline", ""))
             baselines[model_short] = data
 
@@ -197,6 +200,7 @@ def create_spider_overlay(
         'llama_8b': 'Llama 3.1 8B',
         'mistral_7b': 'Mistral 7B',
         'yi_9b': 'Yi 1.5 9B',
+        'gemma_9b': 'Gemma 2 9B',
         'qwen_1.5b': 'Qwen 1.5B',
         'smollm_1.7b': 'SmolLM 1.7B',
         'llama_1b': 'Llama 1B',
@@ -208,6 +212,7 @@ def create_spider_overlay(
         'llama_8b': '#10B981',
         'mistral_7b': '#8B5CF6',
         'yi_9b': '#EC4899',
+        'gemma_9b': '#06B6D4',
         'qwen_1.5b': '#F59E0B',
         'smollm_1.7b': '#14B8A6',
         'llama_1b': '#6366F1',
@@ -218,7 +223,7 @@ def create_spider_overlay(
         ("patient_irritated", "Patient"),
         ("confident_cautious", "Confident"),
         ("proactive_reluctant", "Proactive"),
-        ("empathetic_analytical", "Empathetic"),
+        ("empathetic_analytical", "Empathy"),
         ("formal_casual", "Formal"),
         ("verbose_concise", "Verbose"),
         ("direct_evasive", "Direct"),
@@ -356,6 +361,7 @@ def create_spider_small_multiples(
         'llama_8b': 'Llama 3.1 8B',
         'mistral_7b': 'Mistral 7B',
         'yi_9b': 'Yi 1.5 9B',
+        'gemma_9b': 'Gemma 2 9B',
         'qwen_1.5b': 'Qwen 1.5B',
         'smollm_1.7b': 'SmolLM 1.7B',
         'llama_1b': 'Llama 1B',
@@ -367,6 +373,7 @@ def create_spider_small_multiples(
         'llama_8b': '#00D9A5',
         'mistral_7b': '#A855F7',
         'yi_9b': '#EC4899',
+        'gemma_9b': '#06B6D4',
         'qwen_1.5b': '#F59E0B',
         'smollm_1.7b': '#14B8A6',
         'llama_1b': '#6366F1',
@@ -378,7 +385,7 @@ def create_spider_small_multiples(
         ("patient_irritated", "Patient"),
         ("confident_cautious", "Confident"),
         ("proactive_reluctant", "Proactive"),
-        ("empathetic_analytical", "Empathetic"),
+        ("empathetic_analytical", "Empathy"),
         ("formal_casual", "Formal"),
         ("verbose_concise", "Verbose"),
         ("direct_evasive", "Direct"),
@@ -416,8 +423,8 @@ def create_spider_small_multiples(
     def to_r(val):
         return 1.0 + val / scale_limit
 
-    # Layout: up to 5 per row
-    n_cols = min(n_models, 5)
+    # Layout: up to 3 per row (2×3 grid for 6 models)
+    n_cols = min(n_models, 3)
     n_rows = (n_models + n_cols - 1) // n_cols
 
     specs = [[{'type': 'polar'} for _ in range(n_cols)] for _ in range(n_rows)]
@@ -427,8 +434,8 @@ def create_spider_small_multiples(
         rows=n_rows, cols=n_cols,
         specs=specs,
         subplot_titles=subplot_titles,
-        horizontal_spacing=0.08,
-        vertical_spacing=0.12,
+        horizontal_spacing=0.10,
+        vertical_spacing=0.15,
     )
 
     for i, model in enumerate(models):
@@ -493,13 +500,11 @@ def create_spider_small_multiples(
                 radialaxis=dict(
                     visible=True,
                     range=[0, 2],
-                    tickvals=tick_r,
-                    ticktext=tick_text,
-                    tickfont=dict(size=7, color='gray'),
+                    showticklabels=False,
                     gridcolor='rgba(200,200,200,0.3)',
                 ),
                 angularaxis=dict(
-                    tickfont=dict(size=9),
+                    tickfont=dict(size=8),
                     gridcolor='rgba(200,200,200,0.3)',
                     categoryorder='array',
                     categoryarray=theta,
@@ -519,10 +524,10 @@ def create_spider_small_multiples(
             x=0.5,
             font=dict(size=16),
         ),
-        height=450 if n_rows == 1 else 800,
-        width=320 * n_cols,
+        height=500 if n_rows == 1 else 950,
+        width=380 * n_cols,
         paper_bgcolor='white',
-        margin=dict(t=80, b=40, l=60, r=60),
+        margin=dict(t=100, b=40, l=70, r=70),
     )
 
     if output_path:
@@ -1245,22 +1250,28 @@ def generate_all_figures(
     if verbose:
         print("\n[1b/6] Generating spider small multiples...")
     if baselines:
-        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b']
+        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b']
         create_spider_small_multiples(
             baselines,
             output_dir / "fig1_baseline_profiles.png",
             models_order=big_models,
         )
         # All 8 models version
-        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b',
+        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b',
                       'qwen_1.5b', 'smollm_1.7b', 'llama_1b']
         create_spider_small_multiples(
             baselines,
             output_dir / "fig1_baseline_profiles_all.png",
             models_order=all_models,
         )
+        # Spider overlay (all models on one chart)
+        create_spider_overlay(
+            baselines,
+            output_dir / "fig2_spider_comparison.png",
+            models_order=big_models,
+        )
         if verbose:
-            print("  - Spider small multiples: done")
+            print("  - Spider small multiples + overlay: done")
     else:
         print("  - Skipped (no baseline data)")
 
