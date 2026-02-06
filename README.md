@@ -28,7 +28,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 ### 1. Models have distinct "personality fingerprints"
 
 <p align="center">
-  <img src="data/article/visualizations/fig2_spider_4axes.png" alt="Baseline Temperament Profiles — 6 models × 4 key axes" width="900">
+  <img src="data/article/visualizations/fig1_baseline_profiles.png" alt="Baseline Temperament Profiles — 6 models × 8 axes" width="900">
 </p>
 
 - **DeepSeek 7B**: Warm, verbose, direct — the "enthusiastic explainer"
