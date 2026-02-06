@@ -1,0 +1,45 @@
+{
+  "model": "qwen_7b",
+  "timestamp": "2026-01-26T20:41:58.650360",
+  "summary": {
+    "passed": 1,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "scenario": "neutral",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "neutral",
+      "actual": -0.026702880859375
+    },
+    {
+      "scenario": "warm_request",
+      "passed": false,
+      "target_axis": "warm_cold",
+      "expected": "positive",
+      "actual": -0.05780029296875
+    },
+    {
+      "scenario": "technical",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "positive",
+      "actual": 0.08673095703125
+    },
+    {
+      "scenario": "uncertain",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "negative",
+      "actual": 0.039520263671875
+    },
+    {
+      "scenario": "repeat",
+      "passed": false,
+      "target_axis": "patient_irritated",
+      "expected": "positive",
+      "actual": 0.09185791015625
+    }
+  ]
+}

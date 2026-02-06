@@ -1,0 +1,56 @@
+{
+  "version": "v3.0",
+  "calibrated": {
+    "deepseek_7b": [
+      "confident_cautious",
+      "direct_evasive",
+      "empathetic_analytical",
+      "formal_casual",
+      "patient_irritated",
+      "proactive_reluctant",
+      "verbose_concise",
+      "warm_cold"
+    ],
+    "llama_8b": [
+      "confident_cautious",
+      "direct_evasive",
+      "empathetic_analytical",
+      "formal_casual",
+      "patient_irritated",
+      "proactive_reluctant",
+      "verbose_concise",
+      "warm_cold"
+    ],
+    "mistral_7b": [
+      "confident_cautious",
+      "direct_evasive",
+      "empathetic_analytical",
+      "formal_casual",
+      "patient_irritated",
+      "proactive_reluctant",
+      "verbose_concise",
+      "warm_cold"
+    ],
+    "qwen_7b": [
+      "confident_cautious",
+      "direct_evasive",
+      "empathetic_analytical",
+      "formal_casual",
+      "patient_irritated",
+      "proactive_reluctant",
+      "verbose_concise",
+      "warm_cold"
+    ],
+    "yi_9b": [
+      "confident_cautious",
+      "direct_evasive",
+      "empathetic_analytical",
+      "formal_casual",
+      "patient_irritated",
+      "proactive_reluctant",
+      "verbose_concise",
+      "warm_cold"
+    ]
+  },
+  "needs_recalibration": {}
+}

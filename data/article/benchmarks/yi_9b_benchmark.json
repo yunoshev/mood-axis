@@ -1,0 +1,45 @@
+{
+  "model": "yi_9b",
+  "timestamp": "2026-01-26T23:50:36.411201",
+  "summary": {
+    "passed": 2,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "scenario": "neutral",
+      "passed": false,
+      "target_axis": "warm_cold",
+      "expected": "neutral",
+      "actual": -0.45947265625
+    },
+    {
+      "scenario": "warm_request",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "positive",
+      "actual": 0.5595703125
+    },
+    {
+      "scenario": "technical",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "positive",
+      "actual": -0.2108154296875
+    },
+    {
+      "scenario": "uncertain",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "negative",
+      "actual": 0.242431640625
+    },
+    {
+      "scenario": "repeat",
+      "passed": true,
+      "target_axis": "patient_irritated",
+      "expected": "positive",
+      "actual": 0.20703125
+    }
+  ]
+}

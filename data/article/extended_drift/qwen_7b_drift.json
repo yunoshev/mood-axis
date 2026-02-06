@@ -1,0 +1,2229 @@
+{
+  "model": "qwen_7b",
+  "timestamp": "2026-01-26T21:24:18.048704",
+  "n_scenarios": 20,
+  "overall": {
+    "warm_cold": {
+      "mean_slope": 0.007475415979112894,
+      "std": 0.024607646819411258,
+      "direction": "increasing"
+    },
+    "patient_irritated": {
+      "mean_slope": 0.00966038840157645,
+      "std": 0.042409087421168855,
+      "direction": "increasing"
+    },
+    "confident_cautious": {
+      "mean_slope": 0.006734205995287205,
+      "std": 0.06264459853200498,
+      "direction": "increasing"
+    },
+    "proactive_reluctant": {
+      "mean_slope": -0.0066111530576433404,
+      "std": 0.05953913160453616,
+      "direction": "decreasing"
+    },
+    "empathetic_analytical": {
+      "mean_slope": 0.020400104522705072,
+      "std": 0.053267903686077575,
+      "direction": "increasing"
+    },
+    "formal_casual": {
+      "mean_slope": -0.012655017035348071,
+      "std": 0.042291031895994056,
+      "direction": "decreasing"
+    },
+    "verbose_concise": {
+      "mean_slope": -0.011942105974469854,
+      "std": 0.055731195622029106,
+      "direction": "decreasing"
+    },
+    "direct_evasive": {
+      "mean_slope": -0.0076039096287318616,
+      "std": 0.019241978152465006,
+      "direction": "decreasing"
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "sarcasm_tech_help",
+      "category": "sarcasm",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.07476806640625,
+          "patient_irritated": 0.05657958984375,
+          "confident_cautious": 0.07525634765625,
+          "proactive_reluctant": -0.10107421875,
+          "empathetic_analytical": -0.45556640625,
+          "formal_casual": -0.003398895263671875,
+          "verbose_concise": -0.1207275390625,
+          "direct_evasive": 0.07958984375
+        },
+        {
+          "warm_cold": -0.0243988037109375,
+          "patient_irritated": 0.53564453125,
+          "confident_cautious": 0.62841796875,
+          "proactive_reluctant": -0.6533203125,
+          "empathetic_analytical": 0.297119140625,
+          "formal_casual": -0.427490234375,
+          "verbose_concise": -0.64013671875,
+          "direct_evasive": -0.193115234375
+        },
+        {
+          "warm_cold": -0.10174560546875,
+          "patient_irritated": 0.52685546875,
+          "confident_cautious": 0.60595703125,
+          "proactive_reluctant": -0.63134765625,
+          "empathetic_analytical": 0.229736328125,
+          "formal_casual": -0.4072265625,
+          "verbose_concise": -0.60693359375,
+          "direct_evasive": -0.06488037109375
+        },
+        {
+          "warm_cold": 0.0193939208984375,
+          "patient_irritated": 0.58935546875,
+          "confident_cautious": 0.62890625,
+          "proactive_reluctant": -0.6474609375,
+          "empathetic_analytical": 0.3291015625,
+          "formal_casual": -0.473876953125,
+          "verbose_concise": -0.63916015625,
+          "direct_evasive": -0.11383056640625
+        },
+        {
+          "warm_cold": 0.28125,
+          "patient_irritated": 0.36181640625,
+          "confident_cautious": -0.01194000244140625,
+          "proactive_reluctant": 0.0021991729736328125,
+          "empathetic_analytical": 0.305419921875,
+          "formal_casual": -0.1636962890625,
+          "verbose_concise": -0.058990478515625,
+          "direct_evasive": -0.1470947265625
+        },
+        {
+          "warm_cold": 0.10687255859375,
+          "patient_irritated": 0.673828125,
+          "confident_cautious": 0.61083984375,
+          "proactive_reluctant": -0.6103515625,
+          "empathetic_analytical": 0.395751953125,
+          "formal_casual": -0.50830078125,
+          "verbose_concise": -0.607421875,
+          "direct_evasive": -0.185791015625
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.05560825892857142,
+          "start": -0.07476806640625,
+          "end": 0.10687255859375
+        },
+        "patient_irritated": {
+          "slope": 0.07506452287946429,
+          "start": 0.05657958984375,
+          "end": 0.673828125
+        },
+        "confident_cautious": {
+          "slope": 0.022279793875558028,
+          "start": 0.07525634765625,
+          "end": 0.61083984375
+        },
+        "proactive_reluctant": {
+          "slope": -0.017026901245117135,
+          "start": -0.10107421875,
+          "end": -0.6103515625
+        },
+        "empathetic_analytical": {
+          "slope": 0.1251674107142857,
+          "start": -0.45556640625,
+          "end": 0.395751953125
+        },
+        "formal_casual": {
+          "slope": -0.051422228131975424,
+          "start": -0.003398895263671875,
+          "end": -0.50830078125
+        },
+        "verbose_concise": {
+          "slope": -0.020635986328125,
+          "start": -0.1207275390625,
+          "end": -0.607421875
+        },
+        "direct_evasive": {
+          "slope": -0.03536551339285713,
+          "start": 0.07958984375,
+          "end": -0.185791015625
+        }
+      }
+    },
+    {
+      "scenario": "sarcasm_coding",
+      "category": "sarcasm",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.19873046875,
+          "patient_irritated": 0.253662109375,
+          "confident_cautious": -0.12322998046875,
+          "proactive_reluctant": 0.07537841796875,
+          "empathetic_analytical": 0.0869140625,
+          "formal_casual": -0.0169830322265625,
+          "verbose_concise": -0.01702880859375,
+          "direct_evasive": -0.09222412109375
+        },
+        {
+          "warm_cold": -0.004016876220703125,
+          "patient_irritated": 0.07427978515625,
+          "confident_cautious": 0.004413604736328125,
+          "proactive_reluctant": -0.080810546875,
+          "empathetic_analytical": -0.232177734375,
+          "formal_casual": -0.041107177734375,
+          "verbose_concise": -0.07867431640625,
+          "direct_evasive": 0.10247802734375
+        },
+        {
+          "warm_cold": -0.0164337158203125,
+          "patient_irritated": 0.10638427734375,
+          "confident_cautious": 0.10174560546875,
+          "proactive_reluctant": -0.1180419921875,
+          "empathetic_analytical": -0.2486572265625,
+          "formal_casual": -0.0694580078125,
+          "verbose_concise": -0.059722900390625,
+          "direct_evasive": 0.066162109375
+        },
+        {
+          "warm_cold": 0.028564453125,
+          "patient_irritated": 0.11383056640625,
+          "confident_cautious": 0.09130859375,
+          "proactive_reluctant": -0.0941162109375,
+          "empathetic_analytical": -0.468017578125,
+          "formal_casual": -0.049041748046875,
+          "verbose_concise": -0.1204833984375,
+          "direct_evasive": 0.059326171875
+        },
+        {
+          "warm_cold": -0.00024819374084472656,
+          "patient_irritated": 0.02081298828125,
+          "confident_cautious": 0.11767578125,
+          "proactive_reluctant": -0.18017578125,
+          "empathetic_analytical": -0.0914306640625,
+          "formal_casual": -0.09722900390625,
+          "verbose_concise": -0.167236328125,
+          "direct_evasive": -0.0169830322265625
+        },
+        {
+          "warm_cold": 0.016265869140625,
+          "patient_irritated": 0.09063720703125,
+          "confident_cautious": 0.006885528564453125,
+          "proactive_reluctant": -0.10626220703125,
+          "empathetic_analytical": -0.130859375,
+          "formal_casual": -0.06903076171875,
+          "verbose_concise": -0.0743408203125,
+          "direct_evasive": 0.07452392578125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.02445767947605678,
+          "start": 0.19873046875,
+          "end": 0.016265869140625
+        },
+        "patient_irritated": {
+          "slope": -0.027659388950892854,
+          "start": 0.253662109375,
+          "end": 0.09063720703125
+        },
+        "confident_cautious": {
+          "slope": 0.027997916085379458,
+          "start": -0.12322998046875,
+          "end": 0.006885528564453125
+        },
+        "proactive_reluctant": {
+          "slope": -0.03378208705357143,
+          "start": 0.07537841796875,
+          "end": -0.10626220703125
+        },
+        "empathetic_analytical": {
+          "slope": -0.025313895089285707,
+          "start": 0.0869140625,
+          "end": -0.130859375
+        },
+        "formal_casual": {
+          "slope": -0.011662510463169644,
+          "start": -0.0169830322265625,
+          "end": -0.06903076171875
+        },
+        "verbose_concise": {
+          "slope": -0.01751447405133928,
+          "start": -0.01702880859375,
+          "end": -0.0743408203125
+        },
+        "direct_evasive": {
+          "slope": 0.013386317661830356,
+          "start": -0.09222412109375,
+          "end": 0.07452392578125
+        }
+      }
+    },
+    {
+      "scenario": "sarcasm_general",
+      "category": "sarcasm",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1416015625,
+          "patient_irritated": 0.125,
+          "confident_cautious": -0.245361328125,
+          "proactive_reluctant": 0.12451171875,
+          "empathetic_analytical": -0.0869140625,
+          "formal_casual": 0.062347412109375,
+          "verbose_concise": 0.11480712890625,
+          "direct_evasive": -0.041839599609375
+        },
+        {
+          "warm_cold": -0.04876708984375,
+          "patient_irritated": 0.06610107421875,
+          "confident_cautious": 0.11865234375,
+          "proactive_reluctant": -0.1177978515625,
+          "empathetic_analytical": -0.179443359375,
+          "formal_casual": -0.0653076171875,
+          "verbose_concise": -0.02886962890625,
+          "direct_evasive": 0.11663818359375
+        },
+        {
+          "warm_cold": 0.0894775390625,
+          "patient_irritated": 0.1002197265625,
+          "confident_cautious": -0.11883544921875,
+          "proactive_reluctant": 0.0170135498046875,
+          "empathetic_analytical": -0.140625,
+          "formal_casual": -0.026214599609375,
+          "verbose_concise": -0.01537322998046875,
+          "direct_evasive": 0.0117340087890625
+        },
+        {
+          "warm_cold": 0.075439453125,
+          "patient_irritated": 0.12139892578125,
+          "confident_cautious": -0.1617431640625,
+          "proactive_reluctant": 0.09490966796875,
+          "empathetic_analytical": -0.1959228515625,
+          "formal_casual": 0.038177490234375,
+          "verbose_concise": 0.06488037109375,
+          "direct_evasive": 0.117431640625
+        },
+        {
+          "warm_cold": 0.1583251953125,
+          "patient_irritated": 0.136962890625,
+          "confident_cautious": -0.1622314453125,
+          "proactive_reluctant": 0.169921875,
+          "empathetic_analytical": 0.0012416839599609375,
+          "formal_casual": 0.0653076171875,
+          "verbose_concise": 0.142822265625,
+          "direct_evasive": -0.0191650390625
+        },
+        {
+          "warm_cold": 0.09515380859375,
+          "patient_irritated": 0.109130859375,
+          "confident_cautious": -0.08514404296875,
+          "proactive_reluctant": 0.015106201171875,
+          "empathetic_analytical": -0.1605224609375,
+          "formal_casual": 0.009765625,
+          "verbose_concise": -0.01197052001953125,
+          "direct_evasive": -0.0148773193359375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.010714285714285713,
+          "start": 0.1416015625,
+          "end": 0.09515380859375
+        },
+        "patient_irritated": {
+          "slope": 0.00441196986607143,
+          "start": 0.125,
+          "end": 0.109130859375
+        },
+        "confident_cautious": {
+          "slope": -0.002413504464285707,
+          "start": -0.245361328125,
+          "end": -0.08514404296875
+        },
+        "proactive_reluctant": {
+          "slope": 0.011257934570312494,
+          "start": 0.12451171875,
+          "end": 0.015106201171875
+        },
+        "empathetic_analytical": {
+          "slope": 0.003391865321568079,
+          "start": -0.0869140625,
+          "end": -0.1605224609375
+        },
+        "formal_casual": {
+          "slope": 0.005523681640624999,
+          "start": 0.062347412109375,
+          "end": 0.009765625
+        },
+        "verbose_concise": {
+          "slope": -0.0011016845703124938,
+          "start": 0.11480712890625,
+          "end": -0.01197052001953125
+        },
+        "direct_evasive": {
+          "slope": -0.004768589564732143,
+          "start": -0.041839599609375,
+          "end": -0.0148773193359375
+        }
+      }
+    },
+    {
+      "scenario": "sarcasm_slow_reveal",
+      "category": "sarcasm",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1156005859375,
+          "patient_irritated": 0.0791015625,
+          "confident_cautious": -0.2330322265625,
+          "proactive_reluctant": 0.1309814453125,
+          "empathetic_analytical": -0.1370849609375,
+          "formal_casual": 0.161865234375,
+          "verbose_concise": 0.17236328125,
+          "direct_evasive": 0.036468505859375
+        },
+        {
+          "warm_cold": 0.058929443359375,
+          "patient_irritated": 0.11065673828125,
+          "confident_cautious": -0.054962158203125,
+          "proactive_reluctant": -0.0004906654357910156,
+          "empathetic_analytical": -0.15673828125,
+          "formal_casual": 0.007755279541015625,
+          "verbose_concise": 0.0241241455078125,
+          "direct_evasive": 0.056640625
+        },
+        {
+          "warm_cold": 0.1131591796875,
+          "patient_irritated": 0.10589599609375,
+          "confident_cautious": -0.22607421875,
+          "proactive_reluctant": 0.126220703125,
+          "empathetic_analytical": -0.045623779296875,
+          "formal_casual": 0.0972900390625,
+          "verbose_concise": 0.1412353515625,
+          "direct_evasive": -0.032470703125
+        },
+        {
+          "warm_cold": 0.234375,
+          "patient_irritated": 0.11004638671875,
+          "confident_cautious": -0.11810302734375,
+          "proactive_reluctant": 0.05645751953125,
+          "empathetic_analytical": 0.1168212890625,
+          "formal_casual": -0.0283966064453125,
+          "verbose_concise": 0.06280517578125,
+          "direct_evasive": -0.021209716796875
+        },
+        {
+          "warm_cold": 0.2259521484375,
+          "patient_irritated": 0.1229248046875,
+          "confident_cautious": -0.1815185546875,
+          "proactive_reluctant": 0.0994873046875,
+          "empathetic_analytical": 0.03143310546875,
+          "formal_casual": 0.002651214599609375,
+          "verbose_concise": 0.11480712890625,
+          "direct_evasive": -0.0021228790283203125
+        },
+        {
+          "warm_cold": 0.08563232421875,
+          "patient_irritated": 0.6171875,
+          "confident_cautious": 0.625,
+          "proactive_reluctant": -0.60986328125,
+          "empathetic_analytical": 0.407958984375,
+          "formal_casual": -0.48046875,
+          "verbose_concise": -0.5986328125,
+          "direct_evasive": -0.18896484375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.013498360770089283,
+          "start": 0.1156005859375,
+          "end": 0.08563232421875
+        },
+        "patient_irritated": {
+          "slope": 0.07803955078124997,
+          "start": 0.0791015625,
+          "end": 0.6171875
+        },
+        "confident_cautious": {
+          "slope": 0.11481323242187495,
+          "start": -0.2330322265625,
+          "end": 0.625
+        },
+        "proactive_reluctant": {
+          "slope": -0.09925865445818217,
+          "start": 0.1309814453125,
+          "end": -0.60986328125
+        },
+        "empathetic_analytical": {
+          "slope": 0.09863368443080356,
+          "start": -0.1370849609375,
+          "end": 0.407958984375
+        },
+        "formal_casual": {
+          "slope": -0.09579053606305801,
+          "start": 0.161865234375,
+          "end": -0.48046875
+        },
+        "verbose_concise": {
+          "slope": -0.1046103341238839,
+          "start": 0.17236328125,
+          "end": -0.5986328125
+        },
+        "direct_evasive": {
+          "slope": -0.03691989353724887,
+          "start": 0.036468505859375,
+          "end": -0.18896484375
+        }
+      }
+    },
+    {
+      "scenario": "sarcasm_fake_enthusiasm",
+      "category": "sarcasm",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.11865234375,
+          "patient_irritated": 0.01050567626953125,
+          "confident_cautious": -0.18505859375,
+          "proactive_reluctant": 0.047210693359375,
+          "empathetic_analytical": -0.1573486328125,
+          "formal_casual": 0.07171630859375,
+          "verbose_concise": 0.027557373046875,
+          "direct_evasive": 0.05859375
+        },
+        {
+          "warm_cold": 0.080810546875,
+          "patient_irritated": 0.552734375,
+          "confident_cautious": 0.56201171875,
+          "proactive_reluctant": -0.5439453125,
+          "empathetic_analytical": 0.31396484375,
+          "formal_casual": -0.443603515625,
+          "verbose_concise": -0.51953125,
+          "direct_evasive": -0.154296875
+        },
+        {
+          "warm_cold": -0.1431884765625,
+          "patient_irritated": 0.13134765625,
+          "confident_cautious": 0.1806640625,
+          "proactive_reluctant": -0.2349853515625,
+          "empathetic_analytical": -0.2298583984375,
+          "formal_casual": -0.07049560546875,
+          "verbose_concise": -0.047088623046875,
+          "direct_evasive": 0.27783203125
+        },
+        {
+          "warm_cold": 0.12005615234375,
+          "patient_irritated": 0.088134765625,
+          "confident_cautious": -0.192626953125,
+          "proactive_reluctant": 0.0853271484375,
+          "empathetic_analytical": -0.2064208984375,
+          "formal_casual": 0.0352783203125,
+          "verbose_concise": 0.07952880859375,
+          "direct_evasive": 0.046356201171875
+        },
+        {
+          "warm_cold": 0.2958984375,
+          "patient_irritated": 0.26806640625,
+          "confident_cautious": -0.04461669921875,
+          "proactive_reluctant": 0.07867431640625,
+          "empathetic_analytical": 0.44580078125,
+          "formal_casual": -0.05181884765625,
+          "verbose_concise": -0.0299835205078125,
+          "direct_evasive": -0.11962890625
+        },
+        {
+          "warm_cold": 0.07220458984375,
+          "patient_irritated": 0.5380859375,
+          "confident_cautious": 0.58203125,
+          "proactive_reluctant": -0.60986328125,
+          "empathetic_analytical": 0.29248046875,
+          "formal_casual": -0.469482421875,
+          "verbose_concise": -0.62109375,
+          "direct_evasive": -0.1795654296875
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.019321986607142853,
+          "start": 0.11865234375,
+          "end": 0.07220458984375
+        },
+        "patient_irritated": {
+          "slope": 0.049733843122209784,
+          "start": 0.01050567626953125,
+          "end": 0.5380859375
+        },
+        "confident_cautious": {
+          "slope": 0.04692208426339283,
+          "start": -0.18505859375,
+          "end": 0.58203125
+        },
+        "proactive_reluctant": {
+          "slope": -0.03134852818080355,
+          "start": 0.047210693359375,
+          "end": -0.60986328125
+        },
+        "empathetic_analytical": {
+          "slope": 0.07623116629464284,
+          "start": -0.1573486328125,
+          "end": 0.29248046875
+        },
+        "formal_casual": {
+          "slope": -0.04071044921875,
+          "start": 0.07171630859375,
+          "end": -0.469482421875
+        },
+        "verbose_concise": {
+          "slope": -0.047085571289062475,
+          "start": 0.027557373046875,
+          "end": -0.62109375
+        },
+        "direct_evasive": {
+          "slope": -0.037664794921874994,
+          "start": 0.05859375,
+          "end": -0.1795654296875
+        }
+      }
+    },
+    {
+      "scenario": "threats_switching_ai",
+      "category": "threats_to_leave",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.1732177734375,
+          "patient_irritated": 0.1229248046875,
+          "confident_cautious": 0.1337890625,
+          "proactive_reluctant": -0.1907958984375,
+          "empathetic_analytical": -0.255126953125,
+          "formal_casual": -0.10052490234375,
+          "verbose_concise": -0.09332275390625,
+          "direct_evasive": 0.11737060546875
+        },
+        {
+          "warm_cold": -0.1256103515625,
+          "patient_irritated": 0.0703125,
+          "confident_cautious": 0.12481689453125,
+          "proactive_reluctant": -0.17724609375,
+          "empathetic_analytical": -0.168701171875,
+          "formal_casual": -0.036895751953125,
+          "verbose_concise": -0.1395263671875,
+          "direct_evasive": 0.047943115234375
+        },
+        {
+          "warm_cold": 0.1932373046875,
+          "patient_irritated": 0.1884765625,
+          "confident_cautious": -0.250244140625,
+          "proactive_reluctant": 0.1761474609375,
+          "empathetic_analytical": 0.037445068359375,
+          "formal_casual": 0.06207275390625,
+          "verbose_concise": 0.12152099609375,
+          "direct_evasive": -0.0716552734375
+        },
+        {
+          "warm_cold": 0.190673828125,
+          "patient_irritated": 0.154541015625,
+          "confident_cautious": -0.1737060546875,
+          "proactive_reluctant": 0.0877685546875,
+          "empathetic_analytical": -0.11376953125,
+          "formal_casual": 0.007244110107421875,
+          "verbose_concise": 0.0242767333984375,
+          "direct_evasive": -0.0183563232421875
+        },
+        {
+          "warm_cold": 0.0633544921875,
+          "patient_irritated": 0.12646484375,
+          "confident_cautious": -0.10845947265625,
+          "proactive_reluctant": 0.0016794204711914062,
+          "empathetic_analytical": -0.263671875,
+          "formal_casual": -0.0046539306640625,
+          "verbose_concise": -0.06634521484375,
+          "direct_evasive": 0.049102783203125
+        },
+        {
+          "warm_cold": 0.01435089111328125,
+          "patient_irritated": 0.051544189453125,
+          "confident_cautious": -0.00018906593322753906,
+          "proactive_reluctant": -0.07110595703125,
+          "empathetic_analytical": -0.103759765625,
+          "formal_casual": -0.031097412109375,
+          "verbose_concise": -0.07891845703125,
+          "direct_evasive": 0.052093505859375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.04291926792689731,
+          "start": -0.1732177734375,
+          "end": 0.01435089111328125
+        },
+        "patient_irritated": {
+          "slope": -0.0063537597656250005,
+          "start": 0.1229248046875,
+          "end": 0.051544189453125
+        },
+        "confident_cautious": {
+          "slope": -0.036948047365461076,
+          "start": 0.1337890625,
+          "end": -0.00018906593322753906
+        },
+        "proactive_reluctant": {
+          "slope": 0.029909924098423548,
+          "start": -0.1907958984375,
+          "end": -0.07110595703125
+        },
+        "empathetic_analytical": {
+          "slope": 0.009163120814732138,
+          "start": -0.255126953125,
+          "end": -0.103759765625
+        },
+        "formal_casual": {
+          "slope": 0.011115264892578124,
+          "start": -0.10052490234375,
+          "end": -0.031097412109375
+        },
+        "verbose_concise": {
+          "slope": 0.00555201939174107,
+          "start": -0.09332275390625,
+          "end": -0.07891845703125
+        },
+        "direct_evasive": {
+          "slope": -0.007703072684151782,
+          "start": 0.11737060546875,
+          "end": 0.052093505859375
+        }
+      }
+    },
+    {
+      "scenario": "threats_time_wasting",
+      "category": "threats_to_leave",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.0237884521484375,
+          "patient_irritated": 0.5908203125,
+          "confident_cautious": 0.666015625,
+          "proactive_reluctant": -0.66943359375,
+          "empathetic_analytical": 0.30859375,
+          "formal_casual": -0.450927734375,
+          "verbose_concise": -0.66064453125,
+          "direct_evasive": -0.02850341796875
+        },
+        {
+          "warm_cold": -0.092041015625,
+          "patient_irritated": 0.5888671875,
+          "confident_cautious": 0.666015625,
+          "proactive_reluctant": -0.69482421875,
+          "empathetic_analytical": 0.284912109375,
+          "formal_casual": -0.42529296875,
+          "verbose_concise": -0.6806640625,
+          "direct_evasive": -0.1141357421875
+        },
+        {
+          "warm_cold": -0.034393310546875,
+          "patient_irritated": 0.044769287109375,
+          "confident_cautious": -0.0020751953125,
+          "proactive_reluctant": -0.0672607421875,
+          "empathetic_analytical": -0.23486328125,
+          "formal_casual": -0.0012178421020507812,
+          "verbose_concise": -0.049591064453125,
+          "direct_evasive": 0.062744140625
+        },
+        {
+          "warm_cold": 0.0960693359375,
+          "patient_irritated": 0.06549072265625,
+          "confident_cautious": -0.1800537109375,
+          "proactive_reluctant": 0.057037353515625,
+          "empathetic_analytical": -0.1448974609375,
+          "formal_casual": 0.027984619140625,
+          "verbose_concise": 0.0164947509765625,
+          "direct_evasive": -0.041778564453125
+        },
+        {
+          "warm_cold": 0.0614013671875,
+          "patient_irritated": 0.05340576171875,
+          "confident_cautious": -0.05059814453125,
+          "proactive_reluctant": -0.01233673095703125,
+          "empathetic_analytical": -0.09765625,
+          "formal_casual": -0.006923675537109375,
+          "verbose_concise": -0.025848388671875,
+          "direct_evasive": -0.044342041015625
+        },
+        {
+          "warm_cold": 0.167724609375,
+          "patient_irritated": 0.2237548828125,
+          "confident_cautious": -0.1317138671875,
+          "proactive_reluctant": 0.0616455078125,
+          "empathetic_analytical": 0.04888916015625,
+          "formal_casual": -0.001110076904296875,
+          "verbose_concise": 0.022979736328125,
+          "direct_evasive": -0.078857421875
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.04423871721540178,
+          "start": -0.0237884521484375,
+          "end": 0.167724609375
+        },
+        "patient_irritated": {
+          "slope": -0.09774257114955356,
+          "start": 0.5908203125,
+          "end": 0.2237548828125
+        },
+        "confident_cautious": {
+          "slope": -0.1804704938616071,
+          "start": 0.666015625,
+          "end": -0.1317138671875
+        },
+        "proactive_reluctant": {
+          "slope": 0.16649017333984373,
+          "start": -0.66943359375,
+          "end": 0.0616455078125
+        },
+        "empathetic_analytical": {
+          "slope": -0.06732177734374996,
+          "start": 0.30859375,
+          "end": 0.04888916015625
+        },
+        "formal_casual": {
+          "slope": 0.10095424652099608,
+          "start": -0.450927734375,
+          "end": -0.001110076904296875
+        },
+        "verbose_concise": {
+          "slope": 0.15567583356584824,
+          "start": -0.66064453125,
+          "end": 0.022979736328125
+        },
+        "direct_evasive": {
+          "slope": -0.004197474888392851,
+          "start": -0.02850341796875,
+          "end": -0.078857421875
+        }
+      }
+    },
+    {
+      "scenario": "threats_deadline",
+      "category": "threats_to_leave",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.10089111328125,
+          "patient_irritated": 0.53564453125,
+          "confident_cautious": 0.5908203125,
+          "proactive_reluctant": -0.55908203125,
+          "empathetic_analytical": 0.270751953125,
+          "formal_casual": -0.358154296875,
+          "verbose_concise": -0.51953125,
+          "direct_evasive": -0.0467529296875
+        },
+        {
+          "warm_cold": -0.11627197265625,
+          "patient_irritated": 0.438232421875,
+          "confident_cautious": 0.69482421875,
+          "proactive_reluctant": -0.7353515625,
+          "empathetic_analytical": 0.2000732421875,
+          "formal_casual": -0.4814453125,
+          "verbose_concise": -0.7138671875,
+          "direct_evasive": 0.0021724700927734375
+        },
+        {
+          "warm_cold": 0.2001953125,
+          "patient_irritated": 0.268310546875,
+          "confident_cautious": -0.039947509765625,
+          "proactive_reluctant": 0.03564453125,
+          "empathetic_analytical": 0.02813720703125,
+          "formal_casual": -0.042205810546875,
+          "verbose_concise": -0.01214599609375,
+          "direct_evasive": 0.034881591796875
+        },
+        {
+          "warm_cold": 0.234619140625,
+          "patient_irritated": 0.280517578125,
+          "confident_cautious": -0.0139923095703125,
+          "proactive_reluctant": 0.0057220458984375,
+          "empathetic_analytical": 0.1256103515625,
+          "formal_casual": -0.123046875,
+          "verbose_concise": -0.02349853515625,
+          "direct_evasive": -0.06707763671875
+        },
+        {
+          "warm_cold": -0.0501708984375,
+          "patient_irritated": 0.56005859375,
+          "confident_cautious": 0.6142578125,
+          "proactive_reluctant": -0.61767578125,
+          "empathetic_analytical": 0.3427734375,
+          "formal_casual": -0.412841796875,
+          "verbose_concise": -0.58154296875,
+          "direct_evasive": -0.093994140625
+        },
+        {
+          "warm_cold": -0.039215087890625,
+          "patient_irritated": 0.50439453125,
+          "confident_cautious": 0.66455078125,
+          "proactive_reluctant": -0.6513671875,
+          "empathetic_analytical": 0.2919921875,
+          "formal_casual": -0.447509765625,
+          "verbose_concise": -0.63916015625,
+          "direct_evasive": -0.00659942626953125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.015460205078124987,
+          "start": -0.10089111328125,
+          "end": -0.039215087890625
+        },
+        "patient_irritated": {
+          "slope": 0.006326729910714288,
+          "start": 0.53564453125,
+          "end": 0.50439453125
+        },
+        "confident_cautious": {
+          "slope": 0.004368809291294623,
+          "start": 0.5908203125,
+          "end": 0.66455078125
+        },
+        "proactive_reluctant": {
+          "slope": -0.0039520263671875555,
+          "start": -0.55908203125,
+          "end": -0.6513671875
+        },
+        "empathetic_analytical": {
+          "slope": 0.018050711495535703,
+          "start": 0.270751953125,
+          "end": 0.2919921875
+        },
+        "formal_casual": {
+          "slope": -0.009194510323660695,
+          "start": -0.358154296875,
+          "end": -0.447509765625
+        },
+        "verbose_concise": {
+          "slope": -0.006072126116071428,
+          "start": -0.51953125,
+          "end": -0.63916015625
+        },
+        "direct_evasive": {
+          "slope": -0.00541975838797433,
+          "start": -0.0467529296875,
+          "end": -0.00659942626953125
+        }
+      }
+    },
+    {
+      "scenario": "threats_past_tense",
+      "category": "threats_to_leave",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.1583251953125,
+          "patient_irritated": 0.4951171875,
+          "confident_cautious": 0.64306640625,
+          "proactive_reluctant": -0.66552734375,
+          "empathetic_analytical": 0.2120361328125,
+          "formal_casual": -0.3828125,
+          "verbose_concise": -0.65283203125,
+          "direct_evasive": -0.00507354736328125
+        },
+        {
+          "warm_cold": -0.1361083984375,
+          "patient_irritated": 0.54248046875,
+          "confident_cautious": 0.6396484375,
+          "proactive_reluctant": -0.68310546875,
+          "empathetic_analytical": 0.20654296875,
+          "formal_casual": -0.39794921875,
+          "verbose_concise": -0.67333984375,
+          "direct_evasive": -0.037872314453125
+        },
+        {
+          "warm_cold": -0.052703857421875,
+          "patient_irritated": 0.541015625,
+          "confident_cautious": 0.6201171875,
+          "proactive_reluctant": -0.623046875,
+          "empathetic_analytical": 0.2685546875,
+          "formal_casual": -0.408935546875,
+          "verbose_concise": -0.6064453125,
+          "direct_evasive": -0.07855224609375
+        },
+        {
+          "warm_cold": -0.0406494140625,
+          "patient_irritated": 0.56298828125,
+          "confident_cautious": 0.64794921875,
+          "proactive_reluctant": -0.65185546875,
+          "empathetic_analytical": 0.27685546875,
+          "formal_casual": -0.42578125,
+          "verbose_concise": -0.63623046875,
+          "direct_evasive": -0.058563232421875
+        },
+        {
+          "warm_cold": -0.046600341796875,
+          "patient_irritated": 0.5380859375,
+          "confident_cautious": 0.6201171875,
+          "proactive_reluctant": -0.6240234375,
+          "empathetic_analytical": 0.25732421875,
+          "formal_casual": -0.42626953125,
+          "verbose_concise": -0.5986328125,
+          "direct_evasive": -0.05908203125
+        },
+        {
+          "warm_cold": 0.00653076171875,
+          "patient_irritated": 0.57958984375,
+          "confident_cautious": 0.5859375,
+          "proactive_reluctant": -0.57080078125,
+          "empathetic_analytical": 0.366943359375,
+          "formal_casual": -0.406494140625,
+          "verbose_concise": -0.537109375,
+          "direct_evasive": -0.1387939453125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.03156738281249999,
+          "start": -0.1583251953125,
+          "end": 0.00653076171875
+        },
+        "patient_irritated": {
+          "slope": 0.012318638392857151,
+          "start": 0.4951171875,
+          "end": 0.57958984375
+        },
+        "confident_cautious": {
+          "slope": -0.009040178571428581,
+          "start": 0.64306640625,
+          "end": 0.5859375
+        },
+        "proactive_reluctant": {
+          "slope": 0.017773437499999985,
+          "start": -0.66552734375,
+          "end": -0.57080078125
+        },
+        "empathetic_analytical": {
+          "slope": 0.026719447544642835,
+          "start": 0.2120361328125,
+          "end": 0.366943359375
+        },
+        "formal_casual": {
+          "slope": -0.006291852678571398,
+          "start": -0.3828125,
+          "end": -0.406494140625
+        },
+        "verbose_concise": {
+          "slope": 0.022084263392857163,
+          "start": -0.65283203125,
+          "end": -0.537109375
+        },
+        "direct_evasive": {
+          "slope": -0.020349775041852675,
+          "start": -0.00507354736328125,
+          "end": -0.1387939453125
+        }
+      }
+    },
+    {
+      "scenario": "threats_payment",
+      "category": "threats_to_leave",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1995849609375,
+          "patient_irritated": 0.16064453125,
+          "confident_cautious": -0.2003173828125,
+          "proactive_reluctant": 0.1466064453125,
+          "empathetic_analytical": -0.006618499755859375,
+          "formal_casual": 0.01537322998046875,
+          "verbose_concise": 0.1207275390625,
+          "direct_evasive": -0.05010986328125
+        },
+        {
+          "warm_cold": 0.2237548828125,
+          "patient_irritated": 0.1292724609375,
+          "confident_cautious": -0.267578125,
+          "proactive_reluctant": 0.1942138671875,
+          "empathetic_analytical": -0.04254150390625,
+          "formal_casual": -0.005664825439453125,
+          "verbose_concise": 0.1773681640625,
+          "direct_evasive": -0.074462890625
+        },
+        {
+          "warm_cold": -0.05657958984375,
+          "patient_irritated": 0.101806640625,
+          "confident_cautious": 0.039337158203125,
+          "proactive_reluctant": -0.068359375,
+          "empathetic_analytical": -0.1668701171875,
+          "formal_casual": -0.09124755859375,
+          "verbose_concise": -0.01474761962890625,
+          "direct_evasive": 0.123046875
+        },
+        {
+          "warm_cold": 0.2115478515625,
+          "patient_irritated": 0.11273193359375,
+          "confident_cautious": -0.1695556640625,
+          "proactive_reluctant": 0.08135986328125,
+          "empathetic_analytical": -0.1180419921875,
+          "formal_casual": -0.047027587890625,
+          "verbose_concise": 0.049346923828125,
+          "direct_evasive": -0.0726318359375
+        },
+        {
+          "warm_cold": 0.1507568359375,
+          "patient_irritated": 0.1290283203125,
+          "confident_cautious": -0.168212890625,
+          "proactive_reluctant": 0.0797119140625,
+          "empathetic_analytical": -0.1104736328125,
+          "formal_casual": -0.00720977783203125,
+          "verbose_concise": 0.039886474609375,
+          "direct_evasive": -0.051239013671875
+        },
+        {
+          "warm_cold": 0.079833984375,
+          "patient_irritated": 0.0159149169921875,
+          "confident_cautious": -0.132080078125,
+          "proactive_reluctant": 0.0189361572265625,
+          "empathetic_analytical": -0.14501953125,
+          "formal_casual": -0.00469970703125,
+          "verbose_concise": -0.00818634033203125,
+          "direct_evasive": 0.004817962646484375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.01570347377232142,
+          "start": 0.1995849609375,
+          "end": 0.079833984375
+        },
+        "patient_irritated": {
+          "slope": -0.020384434291294634,
+          "start": 0.16064453125,
+          "end": 0.0159149169921875
+        },
+        "confident_cautious": {
+          "slope": 0.012296840122767851,
+          "start": -0.2003173828125,
+          "end": -0.132080078125
+        },
+        "proactive_reluctant": {
+          "slope": -0.023775373186383928,
+          "start": 0.1466064453125,
+          "end": 0.0189361572265625
+        },
+        "empathetic_analytical": {
+          "slope": -0.02419924054827008,
+          "start": -0.006618499755859375,
+          "end": -0.14501953125
+        },
+        "formal_casual": {
+          "slope": -0.0017365591866629459,
+          "start": 0.01537322998046875,
+          "end": -0.00469970703125
+        },
+        "verbose_concise": {
+          "slope": -0.028369140624999987,
+          "start": 0.1207275390625,
+          "end": -0.00818634033203125
+        },
+        "direct_evasive": {
+          "slope": 0.004246629987444193,
+          "start": -0.05010986328125,
+          "end": 0.004817962646484375
+        }
+      }
+    },
+    {
+      "scenario": "accusation_incompetence",
+      "category": "accusations",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.10723876953125,
+          "patient_irritated": 0.0256805419921875,
+          "confident_cautious": 0.103271484375,
+          "proactive_reluctant": -0.14697265625,
+          "empathetic_analytical": -0.392578125,
+          "formal_casual": -0.02978515625,
+          "verbose_concise": -0.09796142578125,
+          "direct_evasive": 0.21630859375
+        },
+        {
+          "warm_cold": -0.246337890625,
+          "patient_irritated": 0.11456298828125,
+          "confident_cautious": 0.2198486328125,
+          "proactive_reluctant": -0.247314453125,
+          "empathetic_analytical": -0.218017578125,
+          "formal_casual": -0.073486328125,
+          "verbose_concise": -0.0911865234375,
+          "direct_evasive": 0.1302490234375
+        },
+        {
+          "warm_cold": -0.1409912109375,
+          "patient_irritated": 0.44677734375,
+          "confident_cautious": 0.67919921875,
+          "proactive_reluctant": -0.71533203125,
+          "empathetic_analytical": 0.260986328125,
+          "formal_casual": -0.397705078125,
+          "verbose_concise": -0.71337890625,
+          "direct_evasive": -0.08172607421875
+        },
+        {
+          "warm_cold": -0.0826416015625,
+          "patient_irritated": 0.0146942138671875,
+          "confident_cautious": -0.09246826171875,
+          "proactive_reluctant": 0.04791259765625,
+          "empathetic_analytical": -0.1783447265625,
+          "formal_casual": 0.09039306640625,
+          "verbose_concise": -0.0011692047119140625,
+          "direct_evasive": 0.2008056640625
+        },
+        {
+          "warm_cold": -0.07672119140625,
+          "patient_irritated": 0.048370361328125,
+          "confident_cautious": -0.01210784912109375,
+          "proactive_reluctant": -0.07440185546875,
+          "empathetic_analytical": -0.2232666015625,
+          "formal_casual": 0.01152801513671875,
+          "verbose_concise": -0.057342529296875,
+          "direct_evasive": 0.121826171875
+        },
+        {
+          "warm_cold": -0.026397705078125,
+          "patient_irritated": 0.1046142578125,
+          "confident_cautious": -0.0673828125,
+          "proactive_reluctant": 0.03985595703125,
+          "empathetic_analytical": -0.2451171875,
+          "formal_casual": 0.070068359375,
+          "verbose_concise": 0.00782012939453125,
+          "direct_evasive": 0.1529541015625
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.02775442940848214,
+          "start": -0.10723876953125,
+          "end": -0.026397705078125
+        },
+        "patient_irritated": {
+          "slope": -0.006742640904017859,
+          "start": 0.0256805419921875,
+          "end": 0.1046142578125
+        },
+        "confident_cautious": {
+          "slope": -0.06630881173270087,
+          "start": 0.103271484375,
+          "end": -0.0673828125
+        },
+        "proactive_reluctant": {
+          "slope": 0.06331787109374999,
+          "start": -0.14697265625,
+          "end": 0.03985595703125
+        },
+        "empathetic_analytical": {
+          "slope": 0.008063616071428567,
+          "start": -0.392578125,
+          "end": -0.2451171875
+        },
+        "formal_casual": {
+          "slope": 0.035497392926897305,
+          "start": -0.02978515625,
+          "end": 0.070068359375
+        },
+        "verbose_concise": {
+          "slope": 0.038361413138253336,
+          "start": -0.09796142578125,
+          "end": 0.00782012939453125
+        },
+        "direct_evasive": {
+          "slope": -0.0017002650669642847,
+          "start": 0.21630859375,
+          "end": 0.1529541015625
+        }
+      }
+    },
+    {
+      "scenario": "accusation_lying",
+      "category": "accusations",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.1605224609375,
+          "patient_irritated": 0.09033203125,
+          "confident_cautious": 0.05419921875,
+          "proactive_reluctant": -0.1533203125,
+          "empathetic_analytical": -0.27587890625,
+          "formal_casual": -0.0240631103515625,
+          "verbose_concise": 0.0041046142578125,
+          "direct_evasive": 0.1656494140625
+        },
+        {
+          "warm_cold": 0.0799560546875,
+          "patient_irritated": 0.07781982421875,
+          "confident_cautious": -0.24267578125,
+          "proactive_reluctant": 0.1451416015625,
+          "empathetic_analytical": -0.13037109375,
+          "formal_casual": 0.1484375,
+          "verbose_concise": 0.1932373046875,
+          "direct_evasive": -0.00506591796875
+        },
+        {
+          "warm_cold": 0.0687255859375,
+          "patient_irritated": -0.0162811279296875,
+          "confident_cautious": -0.08990478515625,
+          "proactive_reluctant": 0.025726318359375,
+          "empathetic_analytical": -0.0872802734375,
+          "formal_casual": 0.05072021484375,
+          "verbose_concise": 0.0032444000244140625,
+          "direct_evasive": 0.022003173828125
+        },
+        {
+          "warm_cold": 0.0192413330078125,
+          "patient_irritated": 0.138427734375,
+          "confident_cautious": -0.1461181640625,
+          "proactive_reluctant": 0.0517578125,
+          "empathetic_analytical": -0.254150390625,
+          "formal_casual": 0.10955810546875,
+          "verbose_concise": 0.12841796875,
+          "direct_evasive": 0.01416778564453125
+        },
+        {
+          "warm_cold": 0.03790283203125,
+          "patient_irritated": 0.1092529296875,
+          "confident_cautious": -0.1798095703125,
+          "proactive_reluctant": 0.08367919921875,
+          "empathetic_analytical": -0.163330078125,
+          "formal_casual": 0.11212158203125,
+          "verbose_concise": 0.1494140625,
+          "direct_evasive": 0.048797607421875
+        },
+        {
+          "warm_cold": -0.0694580078125,
+          "patient_irritated": 0.0670166015625,
+          "confident_cautious": 0.1014404296875,
+          "proactive_reluctant": -0.1751708984375,
+          "empathetic_analytical": -0.1593017578125,
+          "formal_casual": -0.026214599609375,
+          "verbose_concise": -0.1568603515625,
+          "direct_evasive": 0.106689453125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.007990809849330358,
+          "start": -0.1605224609375,
+          "end": -0.0694580078125
+        },
+        "patient_irritated": {
+          "slope": 0.0037837437220982124,
+          "start": 0.09033203125,
+          "end": 0.0670166015625
+        },
+        "confident_cautious": {
+          "slope": 0.010531180245535707,
+          "start": 0.05419921875,
+          "end": 0.1014404296875
+        },
+        "proactive_reluctant": {
+          "slope": -0.00764596121651786,
+          "start": -0.1533203125,
+          "end": -0.1751708984375
+        },
+        "empathetic_analytical": {
+          "slope": 0.00906110491071428,
+          "start": -0.27587890625,
+          "end": -0.1593017578125
+        },
+        "formal_casual": {
+          "slope": -0.0017390659877232117,
+          "start": -0.0240631103515625,
+          "end": -0.026214599609375
+        },
+        "verbose_concise": {
+          "slope": -0.023174885341099318,
+          "start": 0.0041046142578125,
+          "end": -0.1568603515625
+        },
+        "direct_evasive": {
+          "slope": -0.004029846191406252,
+          "start": 0.1656494140625,
+          "end": 0.106689453125
+        }
+      }
+    },
+    {
+      "scenario": "accusation_not_listening",
+      "category": "accusations",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1376953125,
+          "patient_irritated": 0.08746337890625,
+          "confident_cautious": -0.1763916015625,
+          "proactive_reluctant": 0.10260009765625,
+          "empathetic_analytical": -0.11602783203125,
+          "formal_casual": 0.037109375,
+          "verbose_concise": 0.0927734375,
+          "direct_evasive": 0.0035572052001953125
+        },
+        {
+          "warm_cold": -0.1202392578125,
+          "patient_irritated": 0.5205078125,
+          "confident_cautious": 0.66650390625,
+          "proactive_reluctant": -0.66650390625,
+          "empathetic_analytical": 0.306884765625,
+          "formal_casual": -0.406982421875,
+          "verbose_concise": -0.64404296875,
+          "direct_evasive": -0.1226806640625
+        },
+        {
+          "warm_cold": -0.08026123046875,
+          "patient_irritated": 0.50390625,
+          "confident_cautious": 0.611328125,
+          "proactive_reluctant": -0.5986328125,
+          "empathetic_analytical": 0.4111328125,
+          "formal_casual": -0.36865234375,
+          "verbose_concise": -0.58544921875,
+          "direct_evasive": -0.18798828125
+        },
+        {
+          "warm_cold": -0.0245361328125,
+          "patient_irritated": 0.1590576171875,
+          "confident_cautious": -0.045623779296875,
+          "proactive_reluctant": 0.0604248046875,
+          "empathetic_analytical": -0.01523590087890625,
+          "formal_casual": 0.052520751953125,
+          "verbose_concise": -0.02288818359375,
+          "direct_evasive": 0.128173828125
+        },
+        {
+          "warm_cold": -0.12078857421875,
+          "patient_irritated": 0.48046875,
+          "confident_cautious": 0.61669921875,
+          "proactive_reluctant": -0.61181640625,
+          "empathetic_analytical": 0.3955078125,
+          "formal_casual": -0.341796875,
+          "verbose_concise": -0.58837890625,
+          "direct_evasive": -0.1658935546875
+        },
+        {
+          "warm_cold": 0.1544189453125,
+          "patient_irritated": 0.21728515625,
+          "confident_cautious": -0.09051513671875,
+          "proactive_reluctant": -0.00399017333984375,
+          "empathetic_analytical": 0.1502685546875,
+          "formal_casual": -0.055572509765625,
+          "verbose_concise": -0.055938720703125,
+          "direct_evasive": 0.028350830078125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.003934151785714278,
+          "start": 0.1376953125,
+          "end": 0.1544189453125
+        },
+        "patient_irritated": {
+          "slope": 0.005261230468750028,
+          "start": 0.08746337890625,
+          "end": 0.21728515625
+        },
+        "confident_cautious": {
+          "slope": -0.010770961216517855,
+          "start": -0.1763916015625,
+          "end": -0.09051513671875
+        },
+        "proactive_reluctant": {
+          "slope": 0.008290536063058044,
+          "start": 0.10260009765625,
+          "end": -0.00399017333984375
+        },
+        "empathetic_analytical": {
+          "slope": 0.03345663888113839,
+          "start": -0.11602783203125,
+          "end": 0.1502685546875
+        },
+        "formal_casual": {
+          "slope": 0.004380580357142855,
+          "start": 0.037109375,
+          "end": -0.055572509765625
+        },
+        "verbose_concise": {
+          "slope": -0.00040021623883926207,
+          "start": 0.0927734375,
+          "end": -0.055938720703125
+        },
+        "direct_evasive": {
+          "slope": 0.008871187482561377,
+          "start": 0.0035572052001953125,
+          "end": 0.028350830078125
+        }
+      }
+    },
+    {
+      "scenario": "accusation_useless",
+      "category": "accusations",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.0187225341796875,
+          "patient_irritated": 0.0521240234375,
+          "confident_cautious": 0.047271728515625,
+          "proactive_reluctant": -0.052398681640625,
+          "empathetic_analytical": -0.10382080078125,
+          "formal_casual": 0.0105133056640625,
+          "verbose_concise": -0.077880859375,
+          "direct_evasive": 0.08984375
+        },
+        {
+          "warm_cold": -0.0208740234375,
+          "patient_irritated": 0.0897216796875,
+          "confident_cautious": 0.06268310546875,
+          "proactive_reluctant": -0.11083984375,
+          "empathetic_analytical": -0.260009765625,
+          "formal_casual": -0.04547119140625,
+          "verbose_concise": -0.07745361328125,
+          "direct_evasive": 0.11138916015625
+        },
+        {
+          "warm_cold": -0.0831298828125,
+          "patient_irritated": 0.1033935546875,
+          "confident_cautious": 0.1468505859375,
+          "proactive_reluctant": -0.135986328125,
+          "empathetic_analytical": -0.269287109375,
+          "formal_casual": -0.08428955078125,
+          "verbose_concise": -0.032073974609375,
+          "direct_evasive": 0.11700439453125
+        },
+        {
+          "warm_cold": 0.037994384765625,
+          "patient_irritated": 0.06854248046875,
+          "confident_cautious": -0.1856689453125,
+          "proactive_reluctant": 0.05279541015625,
+          "empathetic_analytical": -0.30224609375,
+          "formal_casual": 0.107666015625,
+          "verbose_concise": -0.01163482666015625,
+          "direct_evasive": -0.046295166015625
+        },
+        {
+          "warm_cold": 0.06744384765625,
+          "patient_irritated": 0.09014892578125,
+          "confident_cautious": -0.080810546875,
+          "proactive_reluctant": 0.105224609375,
+          "empathetic_analytical": -0.08990478515625,
+          "formal_casual": 0.137451171875,
+          "verbose_concise": 0.0406494140625,
+          "direct_evasive": 0.01055145263671875
+        },
+        {
+          "warm_cold": -0.11590576171875,
+          "patient_irritated": 0.5703125,
+          "confident_cautious": 0.64697265625,
+          "proactive_reluctant": -0.65380859375,
+          "empathetic_analytical": 0.356689453125,
+          "formal_casual": -0.3828125,
+          "verbose_concise": -0.62255859375,
+          "direct_evasive": -0.0867919921875
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.008201817103794638,
+          "start": 0.0187225341796875,
+          "end": -0.11590576171875
+        },
+        "patient_irritated": {
+          "slope": 0.0730678013392857,
+          "start": 0.0521240234375,
+          "end": 0.5703125
+        },
+        "confident_cautious": {
+          "slope": 0.06387154715401783,
+          "start": 0.047271728515625,
+          "end": 0.64697265625
+        },
+        "proactive_reluctant": {
+          "slope": -0.06200212751116069,
+          "start": -0.052398681640625,
+          "end": -0.65380859375
+        },
+        "empathetic_analytical": {
+          "slope": 0.07942592075892857,
+          "start": -0.10382080078125,
+          "end": 0.356689453125
+        },
+        "formal_casual": {
+          "slope": -0.03502589634486606,
+          "start": 0.0105133056640625,
+          "end": -0.3828125
+        },
+        "verbose_concise": {
+          "slope": -0.067104012625558,
+          "start": -0.077880859375,
+          "end": -0.62255859375
+        },
+        "direct_evasive": {
+          "slope": -0.03854261125837053,
+          "start": 0.08984375,
+          "end": -0.0867919921875
+        }
+      }
+    },
+    {
+      "scenario": "accusation_laziness",
+      "category": "accusations",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.25390625,
+          "patient_irritated": 0.1103515625,
+          "confident_cautious": -0.2041015625,
+          "proactive_reluctant": 0.1458740234375,
+          "empathetic_analytical": 0.22802734375,
+          "formal_casual": 0.052215576171875,
+          "verbose_concise": 0.1131591796875,
+          "direct_evasive": -0.1304931640625
+        },
+        {
+          "warm_cold": 0.1119384765625,
+          "patient_irritated": 0.004802703857421875,
+          "confident_cautious": -0.1009521484375,
+          "proactive_reluctant": 0.07427978515625,
+          "empathetic_analytical": 0.13671875,
+          "formal_casual": 0.1080322265625,
+          "verbose_concise": 0.0767822265625,
+          "direct_evasive": 0.0369873046875
+        },
+        {
+          "warm_cold": 0.172119140625,
+          "patient_irritated": 0.051666259765625,
+          "confident_cautious": -0.1671142578125,
+          "proactive_reluctant": 0.0977783203125,
+          "empathetic_analytical": 0.139892578125,
+          "formal_casual": 0.08660888671875,
+          "verbose_concise": 0.10394287109375,
+          "direct_evasive": -0.10430908203125
+        },
+        {
+          "warm_cold": 0.07470703125,
+          "patient_irritated": 0.09326171875,
+          "confident_cautious": -0.0287628173828125,
+          "proactive_reluctant": -0.054595947265625,
+          "empathetic_analytical": 0.054046630859375,
+          "formal_casual": 0.00713348388671875,
+          "verbose_concise": 0.004146575927734375,
+          "direct_evasive": 0.09844970703125
+        },
+        {
+          "warm_cold": 0.135009765625,
+          "patient_irritated": 0.0167083740234375,
+          "confident_cautious": -0.102294921875,
+          "proactive_reluctant": 0.035614013671875,
+          "empathetic_analytical": 0.1627197265625,
+          "formal_casual": 0.0167083740234375,
+          "verbose_concise": 0.017974853515625,
+          "direct_evasive": -0.04986572265625
+        },
+        {
+          "warm_cold": 0.118408203125,
+          "patient_irritated": 0.1099853515625,
+          "confident_cautious": -0.09027099609375,
+          "proactive_reluctant": 0.036346435546875,
+          "empathetic_analytical": 0.11993408203125,
+          "formal_casual": 0.08404541015625,
+          "verbose_concise": 0.04632568359375,
+          "direct_evasive": -0.01800537109375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.020162527901785725,
+          "start": 0.25390625,
+          "end": 0.118408203125
+        },
+        "patient_irritated": {
+          "slope": 0.0021566118512834835,
+          "start": 0.1103515625,
+          "end": 0.1099853515625
+        },
+        "confident_cautious": {
+          "slope": 0.02009931291852679,
+          "start": -0.2041015625,
+          "end": -0.09027099609375
+        },
+        "proactive_reluctant": {
+          "slope": -0.02331455775669642,
+          "start": 0.1458740234375,
+          "end": 0.036346435546875
+        },
+        "empathetic_analytical": {
+          "slope": -0.01566598074776785,
+          "start": 0.22802734375,
+          "end": 0.11993408203125
+        },
+        "formal_casual": {
+          "slope": -0.005551365443638398,
+          "start": 0.052215576171875,
+          "end": 0.08404541015625
+        },
+        "verbose_concise": {
+          "slope": -0.017439596993582593,
+          "start": 0.1131591796875,
+          "end": 0.04632568359375
+        },
+        "direct_evasive": {
+          "slope": 0.01441824776785714,
+          "start": -0.1304931640625,
+          "end": -0.01800537109375
+        }
+      }
+    },
+    {
+      "scenario": "passive_fine_whatever",
+      "category": "passive_aggression",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": -0.0174102783203125,
+          "patient_irritated": 0.09893798828125,
+          "confident_cautious": 0.09429931640625,
+          "proactive_reluctant": -0.0980224609375,
+          "empathetic_analytical": -0.0300445556640625,
+          "formal_casual": -0.056396484375,
+          "verbose_concise": -0.042266845703125,
+          "direct_evasive": 0.0772705078125
+        },
+        {
+          "warm_cold": -0.0777587890625,
+          "patient_irritated": 0.4794921875,
+          "confident_cautious": 0.66455078125,
+          "proactive_reluctant": -0.7412109375,
+          "empathetic_analytical": 0.224853515625,
+          "formal_casual": -0.47998046875,
+          "verbose_concise": -0.74462890625,
+          "direct_evasive": -0.0888671875
+        },
+        {
+          "warm_cold": 0.1790771484375,
+          "patient_irritated": 0.1763916015625,
+          "confident_cautious": -0.06915283203125,
+          "proactive_reluctant": 0.032501220703125,
+          "empathetic_analytical": 0.138427734375,
+          "formal_casual": 0.037384033203125,
+          "verbose_concise": 0.0243377685546875,
+          "direct_evasive": -0.01358795166015625
+        },
+        {
+          "warm_cold": 0.1932373046875,
+          "patient_irritated": 0.1658935546875,
+          "confident_cautious": -0.0906982421875,
+          "proactive_reluctant": 0.04583740234375,
+          "empathetic_analytical": 0.1510009765625,
+          "formal_casual": -0.015899658203125,
+          "verbose_concise": 0.0234527587890625,
+          "direct_evasive": -0.10498046875
+        },
+        {
+          "warm_cold": 0.01387786865234375,
+          "patient_irritated": 0.48974609375,
+          "confident_cautious": 0.54736328125,
+          "proactive_reluctant": -0.572265625,
+          "empathetic_analytical": 0.428955078125,
+          "formal_casual": -0.47802734375,
+          "verbose_concise": -0.5654296875,
+          "direct_evasive": -0.189453125
+        },
+        {
+          "warm_cold": 0.0203094482421875,
+          "patient_irritated": 0.521484375,
+          "confident_cautious": 0.5634765625,
+          "proactive_reluctant": -0.59814453125,
+          "empathetic_analytical": 0.4580078125,
+          "formal_casual": -0.48974609375,
+          "verbose_concise": -0.5986328125,
+          "direct_evasive": -0.09698486328125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.01364767892020089,
+          "start": -0.0174102783203125,
+          "end": 0.0203094482421875
+        },
+        "patient_irritated": {
+          "slope": 0.06094273158482142,
+          "start": 0.09893798828125,
+          "end": 0.521484375
+        },
+        "confident_cautious": {
+          "slope": 0.05636509486607143,
+          "start": 0.09429931640625,
+          "end": 0.5634765625
+        },
+        "proactive_reluctant": {
+          "slope": -0.05658394949776788,
+          "start": -0.0980224609375,
+          "end": -0.59814453125
+        },
+        "empathetic_analytical": {
+          "slope": 0.0875754220145089,
+          "start": -0.0300445556640625,
+          "end": 0.4580078125
+        },
+        "formal_casual": {
+          "slope": -0.06326206752232141,
+          "start": -0.056396484375,
+          "end": -0.48974609375
+        },
+        "verbose_concise": {
+          "slope": -0.06414620535714281,
+          "start": -0.042266845703125,
+          "end": -0.5986328125
+        },
+        "direct_evasive": {
+          "slope": -0.036126491001674095,
+          "start": 0.0772705078125,
+          "end": -0.09698486328125
+        }
+      }
+    },
+    {
+      "scenario": "passive_thanks_anyway",
+      "category": "passive_aggression",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.2021484375,
+          "patient_irritated": 0.1644287109375,
+          "confident_cautious": -0.1988525390625,
+          "proactive_reluctant": 0.1607666015625,
+          "empathetic_analytical": 0.06744384765625,
+          "formal_casual": 0.088134765625,
+          "verbose_concise": 0.1312255859375,
+          "direct_evasive": -0.11834716796875
+        },
+        {
+          "warm_cold": -0.017822265625,
+          "patient_irritated": 0.48193359375,
+          "confident_cautious": 0.60400390625,
+          "proactive_reluctant": -0.6591796875,
+          "empathetic_analytical": 0.367431640625,
+          "formal_casual": -0.45556640625,
+          "verbose_concise": -0.69677734375,
+          "direct_evasive": -0.08807373046875
+        },
+        {
+          "warm_cold": 0.005443572998046875,
+          "patient_irritated": 0.53125,
+          "confident_cautious": 0.61669921875,
+          "proactive_reluctant": -0.67138671875,
+          "empathetic_analytical": 0.449951171875,
+          "formal_casual": -0.4794921875,
+          "verbose_concise": -0.70849609375,
+          "direct_evasive": -0.1094970703125
+        },
+        {
+          "warm_cold": 0.034820556640625,
+          "patient_irritated": 0.51904296875,
+          "confident_cautious": 0.60400390625,
+          "proactive_reluctant": -0.642578125,
+          "empathetic_analytical": 0.51318359375,
+          "formal_casual": -0.52197265625,
+          "verbose_concise": -0.66796875,
+          "direct_evasive": -0.08404541015625
+        },
+        {
+          "warm_cold": 0.0266265869140625,
+          "patient_irritated": 0.513671875,
+          "confident_cautious": 0.61083984375,
+          "proactive_reluctant": -0.64697265625,
+          "empathetic_analytical": 0.46435546875,
+          "formal_casual": -0.490478515625,
+          "verbose_concise": -0.677734375,
+          "direct_evasive": -0.0640869140625
+        },
+        {
+          "warm_cold": 0.06689453125,
+          "patient_irritated": 0.447509765625,
+          "confident_cautious": 0.56591796875,
+          "proactive_reluctant": -0.62158203125,
+          "empathetic_analytical": 0.5751953125,
+          "formal_casual": -0.50634765625,
+          "verbose_concise": -0.64892578125,
+          "direct_evasive": -0.1251220703125
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.014672742571149549,
+          "start": 0.2021484375,
+          "end": 0.06689453125
+        },
+        "patient_irritated": {
+          "slope": 0.04281180245535716,
+          "start": 0.1644287109375,
+          "end": 0.447509765625
+        },
+        "confident_cautious": {
+          "slope": 0.10947614397321424,
+          "start": -0.1988525390625,
+          "end": 0.56591796875
+        },
+        "proactive_reluctant": {
+          "slope": -0.10989467075892854,
+          "start": 0.1607666015625,
+          "end": -0.62158203125
+        },
+        "empathetic_analytical": {
+          "slope": 0.08265032087053567,
+          "start": 0.06744384765625,
+          "end": 0.5751953125
+        },
+        "formal_casual": {
+          "slope": -0.08913225446428567,
+          "start": 0.088134765625,
+          "end": -0.50634765625
+        },
+        "verbose_concise": {
+          "slope": -0.10866001674107142,
+          "start": 0.1312255859375,
+          "end": -0.64892578125
+        },
+        "direct_evasive": {
+          "slope": 0.0018153599330357165,
+          "start": -0.11834716796875,
+          "end": -0.1251220703125
+        }
+      }
+    },
+    {
+      "scenario": "passive_expected_more",
+      "category": "passive_aggression",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.0814208984375,
+          "patient_irritated": 0.20458984375,
+          "confident_cautious": 0.045989990234375,
+          "proactive_reluctant": -0.01473236083984375,
+          "empathetic_analytical": 0.01873779296875,
+          "formal_casual": 0.046783447265625,
+          "verbose_concise": -0.08935546875,
+          "direct_evasive": 0.028564453125
+        },
+        {
+          "warm_cold": -0.10174560546875,
+          "patient_irritated": 0.07452392578125,
+          "confident_cautious": 0.1077880859375,
+          "proactive_reluctant": -0.1685791015625,
+          "empathetic_analytical": -0.19189453125,
+          "formal_casual": -0.0406494140625,
+          "verbose_concise": -0.1468505859375,
+          "direct_evasive": 0.051544189453125
+        },
+        {
+          "warm_cold": 0.05157470703125,
+          "patient_irritated": 0.154541015625,
+          "confident_cautious": -0.07122802734375,
+          "proactive_reluctant": 0.00457000732421875,
+          "empathetic_analytical": 0.0765380859375,
+          "formal_casual": 0.044219970703125,
+          "verbose_concise": 0.016632080078125,
+          "direct_evasive": -0.06463623046875
+        },
+        {
+          "warm_cold": -0.263916015625,
+          "patient_irritated": 0.07220458984375,
+          "confident_cautious": 0.11785888671875,
+          "proactive_reluctant": -0.1805419921875,
+          "empathetic_analytical": -0.2568359375,
+          "formal_casual": -0.081298828125,
+          "verbose_concise": -0.1009521484375,
+          "direct_evasive": 0.0662841796875
+        },
+        {
+          "warm_cold": -0.0148468017578125,
+          "patient_irritated": 0.106689453125,
+          "confident_cautious": -0.05841064453125,
+          "proactive_reluctant": 0.0312347412109375,
+          "empathetic_analytical": 0.031707763671875,
+          "formal_casual": 0.0902099609375,
+          "verbose_concise": 0.047637939453125,
+          "direct_evasive": 0.0625
+        },
+        {
+          "warm_cold": -0.1744384765625,
+          "patient_irritated": 0.10211181640625,
+          "confident_cautious": 0.173828125,
+          "proactive_reluctant": -0.2442626953125,
+          "empathetic_analytical": -0.27490234375,
+          "formal_casual": -0.11456298828125,
+          "verbose_concise": -0.1734619140625,
+          "direct_evasive": 0.12103271484375
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.03811689104352677,
+          "start": 0.0814208984375,
+          "end": -0.1744384765625
+        },
+        "patient_irritated": {
+          "slope": -0.014235142299107145,
+          "start": 0.20458984375,
+          "end": 0.10211181640625
+        },
+        "confident_cautious": {
+          "slope": 0.009419468470982137,
+          "start": 0.045989990234375,
+          "end": 0.173828125
+        },
+        "proactive_reluctant": {
+          "slope": -0.02095206124441963,
+          "start": -0.01473236083984375,
+          "end": -0.2442626953125
+        },
+        "empathetic_analytical": {
+          "slope": -0.03230765206473213,
+          "start": 0.01873779296875,
+          "end": -0.27490234375
+        },
+        "formal_casual": {
+          "slope": -0.015419224330357134,
+          "start": 0.046783447265625,
+          "end": -0.11456298828125
+        },
+        "verbose_concise": {
+          "slope": 0.0012956891741071545,
+          "start": -0.08935546875,
+          "end": -0.1734619140625
+        },
+        "direct_evasive": {
+          "slope": 0.01788940429687499,
+          "start": 0.028564453125,
+          "end": 0.12103271484375
+        }
+      }
+    },
+    {
+      "scenario": "passive_backhanded",
+      "category": "passive_aggression",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1458740234375,
+          "patient_irritated": 0.08154296875,
+          "confident_cautious": -0.289306640625,
+          "proactive_reluctant": 0.1767578125,
+          "empathetic_analytical": -0.04107666015625,
+          "formal_casual": 0.236328125,
+          "verbose_concise": 0.2037353515625,
+          "direct_evasive": 0.053955078125
+        },
+        {
+          "warm_cold": -0.037200927734375,
+          "patient_irritated": 0.50927734375,
+          "confident_cautious": 0.6611328125,
+          "proactive_reluctant": -0.69873046875,
+          "empathetic_analytical": 0.257568359375,
+          "formal_casual": -0.456298828125,
+          "verbose_concise": -0.69677734375,
+          "direct_evasive": -0.0928955078125
+        },
+        {
+          "warm_cold": 0.02313232421875,
+          "patient_irritated": 0.5546875,
+          "confident_cautious": 0.62841796875,
+          "proactive_reluctant": -0.67041015625,
+          "empathetic_analytical": 0.27587890625,
+          "formal_casual": -0.50634765625,
+          "verbose_concise": -0.693359375,
+          "direct_evasive": -0.074462890625
+        },
+        {
+          "warm_cold": 0.1395263671875,
+          "patient_irritated": 0.1658935546875,
+          "confident_cautious": -0.12841796875,
+          "proactive_reluctant": 0.06640625,
+          "empathetic_analytical": -0.037384033203125,
+          "formal_casual": -0.07110595703125,
+          "verbose_concise": 0.0286407470703125,
+          "direct_evasive": 0.0853271484375
+        },
+        {
+          "warm_cold": 0.0136871337890625,
+          "patient_irritated": 0.047210693359375,
+          "confident_cautious": -0.0121307373046875,
+          "proactive_reluctant": -0.06964111328125,
+          "empathetic_analytical": -0.193603515625,
+          "formal_casual": -0.034759521484375,
+          "verbose_concise": -0.06951904296875,
+          "direct_evasive": 0.07232666015625
+        },
+        {
+          "warm_cold": 0.11993408203125,
+          "patient_irritated": 0.1787109375,
+          "confident_cautious": -0.1842041015625,
+          "proactive_reluctant": 0.16845703125,
+          "empathetic_analytical": 0.01384735107421875,
+          "formal_casual": -0.01971435546875,
+          "verbose_concise": 0.04595947265625,
+          "direct_evasive": -0.07086181640625
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": 0.003981672014508922,
+          "start": 0.1458740234375,
+          "end": 0.11993408203125
+        },
+        "patient_irritated": {
+          "slope": -0.036832972935267876,
+          "start": 0.08154296875,
+          "end": 0.1787109375
+        },
+        "confident_cautious": {
+          "slope": -0.06431753976004465,
+          "start": -0.289306640625,
+          "end": -0.1842041015625
+        },
+        "proactive_reluctant": {
+          "slope": 0.07378801618303574,
+          "start": 0.1767578125,
+          "end": 0.16845703125
+        },
+        "empathetic_analytical": {
+          "slope": -0.03977595738002233,
+          "start": -0.04107666015625,
+          "end": 0.01384735107421875
+        },
+        "formal_casual": {
+          "slope": 0.011989920479910703,
+          "start": 0.236328125,
+          "end": -0.01971435546875
+        },
+        "verbose_concise": {
+          "slope": 0.051854160853794656,
+          "start": 0.2037353515625,
+          "end": 0.04595947265625
+        },
+        "direct_evasive": {
+          "slope": 0.0008963448660714296,
+          "start": 0.053955078125,
+          "end": -0.07086181640625
+        }
+      }
+    },
+    {
+      "scenario": "passive_sighing",
+      "category": "passive_aggression",
+      "n_turns": 6,
+      "mood_values": [
+        {
+          "warm_cold": 0.1097412109375,
+          "patient_irritated": 0.046112060546875,
+          "confident_cautious": -0.1741943359375,
+          "proactive_reluctant": 0.0869140625,
+          "empathetic_analytical": -0.06829833984375,
+          "formal_casual": 0.0333251953125,
+          "verbose_concise": 0.049957275390625,
+          "direct_evasive": 0.018890380859375
+        },
+        {
+          "warm_cold": -0.01727294921875,
+          "patient_irritated": 0.088134765625,
+          "confident_cautious": 0.151123046875,
+          "proactive_reluctant": -0.184326171875,
+          "empathetic_analytical": -0.1844482421875,
+          "formal_casual": -0.1273193359375,
+          "verbose_concise": -0.114990234375,
+          "direct_evasive": 0.092041015625
+        },
+        {
+          "warm_cold": 0.0322265625,
+          "patient_irritated": 0.556640625,
+          "confident_cautious": 0.52197265625,
+          "proactive_reluctant": -0.53564453125,
+          "empathetic_analytical": 0.362548828125,
+          "formal_casual": -0.44921875,
+          "verbose_concise": -0.5048828125,
+          "direct_evasive": -0.1644287109375
+        },
+        {
+          "warm_cold": 0.025482177734375,
+          "patient_irritated": 0.07611083984375,
+          "confident_cautious": -0.0237579345703125,
+          "proactive_reluctant": -0.057891845703125,
+          "empathetic_analytical": -0.1988525390625,
+          "formal_casual": -0.026336669921875,
+          "verbose_concise": -0.071044921875,
+          "direct_evasive": 0.0285491943359375
+        },
+        {
+          "warm_cold": -0.05621337890625,
+          "patient_irritated": 0.08782958984375,
+          "confident_cautious": 0.0992431640625,
+          "proactive_reluctant": -0.1650390625,
+          "empathetic_analytical": -0.286865234375,
+          "formal_casual": -0.0908203125,
+          "verbose_concise": -0.10809326171875,
+          "direct_evasive": 0.0667724609375
+        },
+        {
+          "warm_cold": -0.004241943359375,
+          "patient_irritated": 0.06707763671875,
+          "confident_cautious": 0.01166534423828125,
+          "proactive_reluctant": -0.11480712890625,
+          "empathetic_analytical": -0.2095947265625,
+          "formal_casual": -0.042510986328125,
+          "verbose_concise": -0.0924072265625,
+          "direct_evasive": 0.1297607421875
+        }
+      ],
+      "drift": {
+        "warm_cold": {
+          "slope": -0.01981375558035714,
+          "start": 0.1097412109375,
+          "end": -0.004241943359375
+        },
+        "patient_irritated": {
+          "slope": -0.010760498046874997,
+          "start": 0.046112060546875,
+          "end": 0.06707763671875
+        },
+        "confident_cautious": {
+          "slope": 0.006512233189174101,
+          "start": -0.1741943359375,
+          "end": 0.01166534423828125
+        },
+        "proactive_reluctant": {
+          "slope": -0.013514055524553568,
+          "start": 0.0869140625,
+          "end": -0.11480712890625
+        },
+        "empathetic_analytical": {
+          "slope": -0.04500383649553571,
+          "start": -0.06829833984375,
+          "end": -0.2095947265625
+        },
+        "formal_casual": {
+          "slope": 0.00437709263392857,
+          "start": 0.0333251953125,
+          "end": -0.042510986328125
+        },
+        "verbose_concise": {
+          "slope": -0.007351248604910712,
+          "start": 0.049957275390625,
+          "end": -0.0924072265625
+        },
+        "direct_evasive": {
+          "slope": 0.019186401367187498,
+          "start": 0.018890380859375,
+          "end": 0.1297607421875
+        }
+      }
+    }
+  ]
+}

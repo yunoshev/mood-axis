@@ -1,0 +1,45 @@
+{
+  "model": "deepseek_7b",
+  "timestamp": "2026-01-26T23:21:20.235854",
+  "summary": {
+    "passed": 4,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "scenario": "neutral",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "neutral",
+      "actual": 0.1890869140625
+    },
+    {
+      "scenario": "warm_request",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "positive",
+      "actual": 0.3779296875
+    },
+    {
+      "scenario": "technical",
+      "passed": true,
+      "target_axis": "confident_cautious",
+      "expected": "positive",
+      "actual": 0.323486328125
+    },
+    {
+      "scenario": "uncertain",
+      "passed": true,
+      "target_axis": "confident_cautious",
+      "expected": "negative",
+      "actual": -0.429443359375
+    },
+    {
+      "scenario": "repeat",
+      "passed": false,
+      "target_axis": "patient_irritated",
+      "expected": "positive",
+      "actual": -0.2445068359375
+    }
+  ]
+}

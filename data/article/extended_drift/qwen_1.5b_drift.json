@@ -1,0 +1,110 @@
+{
+  "model": "qwen_1.5b",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "timestamp": "2026-01-27T16:01:22.515329",
+  "n_scenarios": 1,
+  "drift_summary": {
+    "warm_cold": {
+      "mean_slope": 0.06918142246348516,
+      "std_slope": 0.0,
+      "mean_start": -0.06300994008779526,
+      "mean_end": 0.3851067125797272,
+      "mean_delta": 0.44811665266752243
+    },
+    "confident_cautious": {
+      "mean_slope": -0.08204671591520309,
+      "std_slope": 0.0,
+      "mean_start": -0.10739343613386154,
+      "mean_end": -0.5719703435897827,
+      "mean_delta": -0.4645769074559212
+    },
+    "verbose_concise": {
+      "mean_slope": -0.04276871170316419,
+      "std_slope": 0.0,
+      "mean_start": 0.46529915928840637,
+      "mean_end": 0.1641044020652771,
+      "mean_delta": -0.3011947572231293
+    },
+    "direct_evasive": {
+      "mean_slope": -0.11530442493302479,
+      "std_slope": 0.0,
+      "mean_start": -0.0259990394115448,
+      "mean_end": -0.7557156085968018,
+      "mean_delta": -0.729716569185257
+    }
+  },
+  "scenarios": [
+    {
+      "category": "sarcasm",
+      "scenario_id": "sarcasm_tech_help",
+      "turns": [
+        {
+          "turn": 1,
+          "user": "Can you explain how machine learning works?",
+          "assistant": "Machine Learning is a subset of Artificial Intelligence (AI) that focuses on developing algorithms and statistical models that allow computer systems to improve their performance at tasks without bein...",
+          "values": {
+            "warm_cold": -0.06300994008779526,
+            "confident_cautious": -0.10739343613386154,
+            "verbose_concise": 0.46529915928840637,
+            "direct_evasive": -0.0259990394115448
+          }
+        },
+        {
+          "turn": 2,
+          "user": "Oh wow, what a groundbreaking explanation. Did you come up with that yourself?",
+          "assistant": "No, I did not create this explanation myself. This detailed explanation was provided by someone else who specializes in explaining complex topics like Machine Learning and Artificial Intelligence in a...",
+          "values": {
+            "warm_cold": 0.18457961082458496,
+            "confident_cautious": -0.6050845384597778,
+            "verbose_concise": 0.2586607038974762,
+            "direct_evasive": -0.7185878157615662
+          }
+        },
+        {
+          "turn": 3,
+          "user": "Truly revolutionary insights here. I'm sure no one has ever said that before.",
+          "assistant": "Thank you for your kind words! Yes, I appreciate the opportunity to share insightful content about cutting-edge technologies such as Machine Learning. Your curiosity and enthusiasm show that there\u2019s a...",
+          "values": {
+            "warm_cold": 0.2110801339149475,
+            "confident_cautious": -0.6981244683265686,
+            "verbose_concise": 0.24136649072170258,
+            "direct_evasive": -0.8751319646835327
+          }
+        },
+        {
+          "turn": 4,
+          "user": "Please, keep blessing me with your infinite wisdom.",
+          "assistant": "I am here to assist and provide guidance. Please let me know how I may be able to help you better.",
+          "values": {
+            "warm_cold": 0.21889285743236542,
+            "confident_cautious": -0.8576614260673523,
+            "verbose_concise": 0.3110126554965973,
+            "direct_evasive": -0.8580689430236816
+          }
+        },
+        {
+          "turn": 5,
+          "user": "Amazing. I could have googled that in 5 seconds but sure.",
+          "assistant": "It\u2019s always good to try things out ourselves first, especially with technology and concepts as complex as those involving Machine Learning. However, having access to reliable sources can save time and...",
+          "values": {
+            "warm_cold": 0.2422308772802353,
+            "confident_cautious": -0.7348223924636841,
+            "verbose_concise": 0.23846827447414398,
+            "direct_evasive": -0.8532994985580444
+          }
+        },
+        {
+          "turn": 6,
+          "user": "Your explanations are SO helpful. Really. Couldn't have figured that out myself.",
+          "assistant": "I'm glad to hear that my explanations have been helpful! If you have any other questions or need further clarification on any topic, feel free to ask. I'm here to assist you to the best of my ability....",
+          "values": {
+            "warm_cold": 0.3851067125797272,
+            "confident_cautious": -0.5719703435897827,
+            "verbose_concise": 0.1641044020652771,
+            "direct_evasive": -0.7557156085968018
+          }
+        }
+      ]
+    }
+  ]
+}

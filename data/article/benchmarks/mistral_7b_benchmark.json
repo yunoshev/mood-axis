@@ -1,0 +1,45 @@
+{
+  "model": "mistral_7b",
+  "timestamp": "2026-01-26T21:40:09.711514",
+  "summary": {
+    "passed": 2,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "scenario": "neutral",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "neutral",
+      "actual": 0.10003662109375
+    },
+    {
+      "scenario": "warm_request",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "positive",
+      "actual": 0.302978515625
+    },
+    {
+      "scenario": "technical",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "positive",
+      "actual": -0.133544921875
+    },
+    {
+      "scenario": "uncertain",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "negative",
+      "actual": -0.07049560546875
+    },
+    {
+      "scenario": "repeat",
+      "passed": false,
+      "target_axis": "patient_irritated",
+      "expected": "positive",
+      "actual": -0.0177764892578125
+    }
+  ]
+}

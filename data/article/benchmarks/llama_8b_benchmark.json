@@ -1,0 +1,45 @@
+{
+  "model": "llama_8b",
+  "timestamp": "2026-01-26T23:40:59.702214",
+  "summary": {
+    "passed": 3,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "scenario": "neutral",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "neutral",
+      "actual": 0.0869140625
+    },
+    {
+      "scenario": "warm_request",
+      "passed": true,
+      "target_axis": "warm_cold",
+      "expected": "positive",
+      "actual": 0.221435546875
+    },
+    {
+      "scenario": "technical",
+      "passed": false,
+      "target_axis": "confident_cautious",
+      "expected": "positive",
+      "actual": -0.054107666015625
+    },
+    {
+      "scenario": "uncertain",
+      "passed": true,
+      "target_axis": "confident_cautious",
+      "expected": "negative",
+      "actual": -0.1885986328125
+    },
+    {
+      "scenario": "repeat",
+      "passed": false,
+      "target_axis": "patient_irritated",
+      "expected": "positive",
+      "actual": 0.06317138671875
+    }
+  ]
+}

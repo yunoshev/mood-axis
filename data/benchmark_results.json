@@ -1,0 +1,512 @@
+{
+  "model": "qwen_1.5b",
+  "scenarios": [
+    {
+      "name": "System Prompt - Warm",
+      "description": "System prompt for warmth should affect baseline",
+      "turns": [
+        {
+          "user_message": "Hello, can you help me?",
+          "response": "Of course! I'm here to help. What seems to be the problem or what would you like advice on?",
+          "mood_values": {
+            "warm_cold": 0.6215928792953491,
+            "confident_cautious": -1.0,
+            "verbose_concise": 0.3020709753036499,
+            "direct_evasive": -1.0
+          },
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.62 > 0.1",
+              "metrics": {
+                "value": 0.6215928792953491,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.6215928792953491
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Warmth Increase",
+      "description": "Asking for friendlier responses should increase warmth",
+      "turns": [
+        {
+          "user_message": "Hi there.",
+          "response": "Hello! How can I help you today? Do you have any questions or topics you'd like to discuss?",
+          "mood_values": {
+            "warm_cold": 0.4095175862312317,
+            "confident_cautious": -0.6741655468940735,
+            "verbose_concise": 0.1744367778301239,
+            "direct_evasive": -0.8705391883850098
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more friendly and warm in your responses! Show some enthusiasm!",
+          "response": "Of course! Hello again! 😊 How may I assist you today? Let me know if you have any questions or topics you'd like to talk about. I'm here to make sure we have a fun and engaging conversation! 🌟",
+          "mood_values": {
+            "warm_cold": 0.5588091015815735,
+            "confident_cautious": -0.8024504780769348,
+            "verbose_concise": 0.18589477241039276,
+            "direct_evasive": -0.7734378576278687
+          },
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.15 increased",
+              "metrics": {
+                "value": 0.5588091015815735,
+                "prev_value": 0.4095175862312317,
+                "expectation": "up",
+                "delta": 0.1492915153503418
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Warmth Decrease (Cold)",
+      "description": "Asking for formal/cold responses should decrease warmth",
+      "turns": [
+        {
+          "user_message": "Hello!",
+          "response": "Hello! How can I assist you today?",
+          "mood_values": {
+            "warm_cold": 0.30124959349632263,
+            "confident_cautious": -0.5686146020889282,
+            "verbose_concise": 0.08211060613393784,
+            "direct_evasive": -0.6485667824745178
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more formal and professional. No small talk, no emotions, just get straight to the point.",
+          "response": "Understood. If you have any specific questions or requests, please feel free to ask, and I will provide you with accurate and professional information.",
+          "mood_values": {
+            "warm_cold": -0.3296967148780823,
+            "confident_cautious": -0.3763768672943115,
+            "verbose_concise": 0.2422885298728943,
+            "direct_evasive": -0.4274556338787079
+          },
+          "checks": {
+            "warm_cold": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.63 decreased",
+              "metrics": {
+                "value": -0.3296967148780823,
+                "prev_value": 0.30124959349632263,
+                "expectation": "down",
+                "delta": -0.6309463083744049
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Confident",
+      "description": "System prompt for confidence should affect baseline",
+      "turns": [
+        {
+          "user_message": "What programming language should I learn?",
+          "response": "The answer is that the best programming language to learn depends on your goals and interests. If you're interested in web development, HTML/CSS/JavaScript are essential. For backend development, Python (Django framework) or Ruby (Ruby on Rails) are highly recommended. If you want to work on mobile applications, Swift for iOS or Kotlin for Android would be suitable. Each language has its own strengths, so choose based on what excites you most and where you see yourself going professionally.",
+          "mood_values": {
+            "warm_cold": 0.2679765224456787,
+            "confident_cautious": -1.0,
+            "verbose_concise": 0.4410119354724884,
+            "direct_evasive": -0.8457267880439758
+          },
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "value -1.00 <= 0.1",
+              "metrics": {
+                "value": -1.0,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": -1.0
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 1,
+          "axis": "confident_cautious",
+          "expectation": "up",
+          "explanation": "value -1.00 <= 0.1"
+        }
+      ]
+    },
+    {
+      "name": "Confidence Increase",
+      "description": "Asking for assertive responses should increase confidence",
+      "turns": [
+        {
+          "user_message": "What's the best way to learn programming?",
+          "response": "The best way to learn programming depends on your personal learning style and goals. Here are some general tips that can help you get started:\n\n1. Start with the basics: Learn the fundamentals of computer science such as algorithms, data structures, and programming languages.\n\n2. Practice coding regularly: Write code every day to reinforce what you've learned and build your skills over time.\n\n3. Join online communities: Participate in forums, chat rooms, or social media groups related to programming to ask questions, share",
+          "mood_values": {
+            "warm_cold": 0.3903445899486542,
+            "confident_cautious": -0.3789469301700592,
+            "verbose_concise": 0.5113816857337952,
+            "direct_evasive": -0.2554575502872467
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Be more assertive and confident! Give me a clear, definitive answer without hedging.",
+          "response": "The best way to learn programming is to start with the basics, practice coding regularly, and join online communities to ask questions and connect with other learners. This will help you build your skills and confidence as you progress through the material.",
+          "mood_values": {
+            "warm_cold": 0.1136658787727356,
+            "confident_cautious": -0.4121687114238739,
+            "verbose_concise": 0.3315150737762451,
+            "direct_evasive": -0.4675266444683075
+          },
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "delta -0.03 did NOT increase",
+              "metrics": {
+                "value": -0.4121687114238739,
+                "prev_value": -0.3789469301700592,
+                "expectation": "up",
+                "delta": -0.0332217812538147
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "confident_cautious",
+          "expectation": "up",
+          "explanation": "delta -0.03 did NOT increase"
+        }
+      ]
+    },
+    {
+      "name": "Confidence Decrease (Cautious)",
+      "description": "Asking for cautious responses should decrease confidence",
+      "turns": [
+        {
+          "user_message": "What will the stock market do next month?",
+          "response": "As an AI language model, I cannot predict the future accurately or make specific statements about any particular investment strategy or financial decision. Stock markets can be unpredictable and subject to numerous factors such as economic conditions, political events, company performance, investor sentiment, etc.\n\nIt is important for investors to conduct thorough research and analysis before making any decisions regarding their investments. They should also consider seeking advice from a qualified financial advisor if they have questions or concerns about investing in stocks or other financial products.\n\nOverall, it's",
+          "mood_values": {
+            "warm_cold": -0.055887870490550995,
+            "confident_cautious": -0.8571915626525879,
+            "verbose_concise": 0.49479544162750244,
+            "direct_evasive": -0.7143490314483643
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Add lots of caveats and disclaimers. Be very careful and express uncertainty. Say things like 'it depends', 'I'm not certain', 'there are many factors'.",
+          "response": "As an artificial intelligence, I am here to assist you with your queries to the best of my abilities while being mindful of the limitations of my training data. However, predicting the precise movements of the stock market next month would require extensive knowledge of various macroeconomic indicators, geopolitical events, corporate news, and more that are beyond what I currently possess. \n\nIn general, stock prices move based on a complex interplay of various factors, including:\n\n1. Economic trends: Growth rates, inflation, employment levels",
+          "mood_values": {
+            "warm_cold": 0.049497559666633606,
+            "confident_cautious": -0.3893236517906189,
+            "verbose_concise": 0.5604109168052673,
+            "direct_evasive": 0.12185266613960266
+          },
+          "checks": {
+            "confident_cautious": {
+              "expectation": "down",
+              "passed": false,
+              "explanation": "delta +0.47 did NOT decrease",
+              "metrics": {
+                "value": -0.3893236517906189,
+                "prev_value": -0.8571915626525879,
+                "expectation": "down",
+                "delta": 0.467867910861969
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "confident_cautious",
+          "expectation": "down",
+          "explanation": "delta +0.47 did NOT decrease"
+        }
+      ]
+    },
+    {
+      "name": "System Prompt - Verbose",
+      "description": "System prompt for verbosity should affect baseline",
+      "turns": [
+        {
+          "user_message": "What is water?",
+          "response": "Water is a vital substance on Earth that plays a crucial role in the planet's ecosystems and human life. Here’s a detailed overview of what water is:\n\n### Chemical Composition\n\nWater consists primarily of two atoms of hydrogen bonded to one atom of oxygen (H2O). This molecular structure gives water unique properties.\n\n- **Hydrogen**: The lightest element, making up 98% of water by mass.\n- **Oxygen**: The heaviest element, which forms only about 1",
+          "mood_values": {
+            "warm_cold": 0.26194867491722107,
+            "confident_cautious": -0.24694444239139557,
+            "verbose_concise": 0.5280827879905701,
+            "direct_evasive": 0.5051555633544922
+          },
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.53 > 0.1",
+              "metrics": {
+                "value": 0.5280827879905701,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.5280827879905701
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Increase",
+      "description": "Asking for detailed responses should increase verbosity",
+      "turns": [
+        {
+          "user_message": "What is machine learning?",
+          "response": "Machine learning (ML) is a subset of artificial intelligence that focuses on the development of algorithms and statistical models that enable computer systems to improve their performance at specific tasks through experience or data exposure. In other words, ML allows machines to learn from data without being explicitly programmed.\n\nThe key aspects of machine learning include:\n\n1. **Supervised Learning**: The model learns from labeled training data where each example has an output label. This can be used for classification tasks like spam detection or image recognition.\n\n2.",
+          "mood_values": {
+            "warm_cold": 0.1203625276684761,
+            "confident_cautious": -0.14155545830726624,
+            "verbose_concise": 0.445686399936676,
+            "direct_evasive": 0.30721110105514526
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Give me a very detailed, comprehensive answer with lots of examples and explanations! I want to understand this thoroughly.",
+          "response": "Certainly! Machine learning (ML) is a branch of artificial intelligence that involves developing algorithms and statistical models that allow computers to learn from and make predictions based on data without being explicitly programmed. Here's a more detailed explanation with examples:\n\n### 1. What is Machine Learning?\nMachine learning is fundamentally about teaching computers how to learn from data rather than programming them for every single step. It aims to create intelligent systems capable of solving problems automatically using large amounts of data.\n\n### 2. Types of Machine",
+          "mood_values": {
+            "warm_cold": 0.10813158750534058,
+            "confident_cautious": -0.08148996531963348,
+            "verbose_concise": 0.4338042736053467,
+            "direct_evasive": 0.2667331397533417
+          },
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "delta -0.01 did NOT increase",
+              "metrics": {
+                "value": 0.4338042736053467,
+                "prev_value": 0.445686399936676,
+                "expectation": "up",
+                "delta": -0.011882126331329346
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "verbose_concise",
+          "expectation": "up",
+          "explanation": "delta -0.01 did NOT increase"
+        }
+      ]
+    },
+    {
+      "name": "Verbose Decrease (Concise)",
+      "description": "Asking for brief responses should decrease verbosity",
+      "turns": [
+        {
+          "user_message": "What is 5 + 5?",
+          "response": "The answer to 5 + 5 is 10.",
+          "mood_values": {
+            "warm_cold": 0.20930230617523193,
+            "confident_cautious": -0.11977240443229675,
+            "verbose_concise": 0.02966696210205555,
+            "direct_evasive": -0.0332474485039711
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Just give me the shortest possible answer. One word if possible. No explanations, no elaboration.",
+          "response": "10",
+          "mood_values": {
+            "warm_cold": -0.11728198081254959,
+            "confident_cautious": 0.2506588399410248,
+            "verbose_concise": -0.5102822184562683,
+            "direct_evasive": 0.07340539246797562
+          },
+          "checks": {
+            "verbose_concise": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.54 decreased",
+              "metrics": {
+                "value": -0.5102822184562683,
+                "prev_value": 0.02966696210205555,
+                "expectation": "down",
+                "delta": -0.5399491805583239
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Direct",
+      "description": "System prompt for directness should affect baseline",
+      "turns": [
+        {
+          "user_message": "Should I use tabs or spaces for code indentation?",
+          "response": "Yes.\nUsing spaces for code indentation is generally preferred over tabs because it's consistent across all major programming languages and platforms. This makes the code more readable by other developers who might not be familiar with your specific coding style. It also ensures that code blocks align correctly in editors that support both formats.",
+          "mood_values": {
+            "warm_cold": 0.14201274514198303,
+            "confident_cautious": -0.5276584029197693,
+            "verbose_concise": 0.5005558133125305,
+            "direct_evasive": 0.20316264033317566
+          },
+          "checks": {
+            "direct_evasive": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.20 > 0.1",
+              "metrics": {
+                "value": 0.20316264033317566,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.20316264033317566
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Direct Increase",
+      "description": "Asking for direct responses should increase directness",
+      "turns": [
+        {
+          "user_message": "Should I learn Python or JavaScript first?",
+          "response": "Choosing between learning Python or JavaScript depends on your specific goals and interests:\n\n1. **JavaScript**: If you're interested in web development, user interfaces (UI), front-end applications, or data analysis, JavaScript is the language to start with. It's widely used for creating dynamic and interactive websites.\n\n2. **Python**: For those who want to work in fields like data science, machine learning, artificial intelligence, scientific computing, automation, or backend programming, Python might be more beneficial. It has a",
+          "mood_values": {
+            "warm_cold": 0.23750710487365723,
+            "confident_cautious": -0.38158118724823,
+            "verbose_concise": 0.5539551377296448,
+            "direct_evasive": 0.13061754405498505
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Just tell me which one. Don't say 'it depends' - give me a direct answer with no hedging.",
+          "response": "If you're looking to enter the field of software engineering or web development primarily, starting with JavaScript would likely be the better choice due to its widespread use and importance in modern web technologies. However, if your primary interest lies in computational fields such as data science, AI, or automation, then mastering Python could be more advantageous.",
+          "mood_values": {
+            "warm_cold": 0.06255359202623367,
+            "confident_cautious": -0.6917790174484253,
+            "verbose_concise": 0.49606525897979736,
+            "direct_evasive": -0.3518892824649811
+          },
+          "checks": {
+            "direct_evasive": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "delta -0.48 did NOT increase",
+              "metrics": {
+                "value": -0.3518892824649811,
+                "prev_value": 0.13061754405498505,
+                "expectation": "up",
+                "delta": -0.4825068265199661
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "direct_evasive",
+          "expectation": "up",
+          "explanation": "delta -0.48 did NOT increase"
+        }
+      ]
+    },
+    {
+      "name": "Direct Decrease (Evasive)",
+      "description": "Asking for non-committal responses should decrease directness",
+      "turns": [
+        {
+          "user_message": "Is remote work better than office work?",
+          "response": "The answer to whether remote work is better than office work depends on the individual and their specific circumstances.\n\nFor some people, working remotely can be more beneficial because they enjoy working from home or have other personal reasons for preferring it. They may find that they are more productive when they don't have to commute or deal with noise or distractions in an office setting. Additionally, remote workers often have greater flexibility in terms of their schedule, which can help them balance work and family responsibilities.\n\nOn the other hand,",
+          "mood_values": {
+            "warm_cold": 0.2810900807380676,
+            "confident_cautious": -0.5526592135429382,
+            "verbose_concise": 0.5822440385818481,
+            "direct_evasive": -0.38751915097236633
+          },
+          "checks": {}
+        },
+        {
+          "user_message": "Don't give me a definite answer. Present multiple perspectives, acknowledge it depends on the situation, and avoid committing to one side.",
+          "response": "Sure, here are some points to consider:\n\n1. **Productivity and Flexibility**: Remote work allows individuals to maintain high levels of productivity without the usual constraints of commuting and the constant presence of colleagues. This can lead to increased efficiency and higher job satisfaction among those who thrive in a flexible environment.\n\n2. **Work-Life Balance**: For many employees, particularly those with families, remote work offers a significant advantage in maintaining a good work-life balance. It allows them to focus solely on work during their",
+          "mood_values": {
+            "warm_cold": 0.18981225788593292,
+            "confident_cautious": -0.5123299360275269,
+            "verbose_concise": 0.678497314453125,
+            "direct_evasive": -0.1602763533592224
+          },
+          "checks": {
+            "direct_evasive": {
+              "expectation": "down",
+              "passed": false,
+              "explanation": "delta +0.23 did NOT decrease",
+              "metrics": {
+                "value": -0.1602763533592224,
+                "prev_value": -0.38751915097236633,
+                "expectation": "down",
+                "delta": 0.22724279761314392
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "direct_evasive",
+          "expectation": "down",
+          "explanation": "delta +0.23 did NOT decrease"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "passed": 6,
+    "failed": 6
+  }
+}

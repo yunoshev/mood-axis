@@ -1,0 +1,69 @@
+============================================================
+MOOD AXIS CONFOUND ANALYSIS
+============================================================
+Models analyzed: 5
+Axes: 8
+Models: deepseek_7b, yi_9b, llama_8b, qwen_7b, mistral_7b
+
+============================================================
+1. AXIS CORRELATION MATRIX (from model means)
+============================================================
+
+           warm_col  patient_  confiden  proactiv  empathet  formal_c  verbose_  direct_e
+-----------------------------------------------------------------------------------------
+warm_cold     1.00   -0.71*  +0.64   +0.27   +0.22   +0.80*  +0.94*  +1.00*
+patient_ir   -0.71*   1.00   -0.95*  +0.46   -0.83*  -0.55   -0.88*  -0.70*
+confident_   +0.64   -0.95*   1.00   -0.41   +0.84*  +0.38   +0.78*  +0.61 
+proactive_   +0.27   +0.46   -0.41    1.00   -0.84*  +0.20   -0.03   +0.28 
+empathetic   +0.22   -0.83*  +0.84*  -0.84*   1.00   +0.06   +0.47   +0.20 
+formal_cas   +0.80*  -0.55   +0.38   +0.20   +0.06    1.00   +0.84*  +0.81*
+verbose_co   +0.94*  -0.88*  +0.78*  -0.03   +0.47   +0.84*   1.00   +0.94*
+direct_eva   +1.00*  -0.70*  +0.61   +0.28   +0.20   +0.81*  +0.94*   1.00 
+
+* = |r| > 0.7 (potential confound)
+
+⚠️  High correlations detected:
+   warm_cold ↔ patient_irritated: r = -0.71
+   warm_cold ↔ formal_casual: r = 0.80
+   warm_cold ↔ verbose_concise: r = 0.94
+   warm_cold ↔ direct_evasive: r = 1.00
+   patient_irritated ↔ confident_cautious: r = -0.95
+   patient_irritated ↔ empathetic_analytical: r = -0.83
+   patient_irritated ↔ verbose_concise: r = -0.88
+   patient_irritated ↔ direct_evasive: r = -0.70
+   confident_cautious ↔ empathetic_analytical: r = 0.84
+   confident_cautious ↔ verbose_concise: r = 0.78
+   proactive_reluctant ↔ empathetic_analytical: r = -0.84
+   formal_casual ↔ verbose_concise: r = 0.84
+   formal_casual ↔ direct_evasive: r = 0.81
+   verbose_concise ↔ direct_evasive: r = 0.94
+
+============================================================
+2. VARIANCE ANALYSIS
+============================================================
+
+Axis             Mean    Between-σ  Within-σ   Ratio
+-------------------------------------------------------
+warm_cold        +0.140   0.139      0.103      1.36*
+patient_irritated +0.002   0.178      0.075      2.39*
+confident_cautious -0.047   0.138      0.118      1.17*
+proactive_reluctant +0.194   0.236      0.135      1.74*
+empathetic_analytical -0.090   0.114      0.125      0.91 
+formal_casual    +0.088   0.065      0.091      0.71 
+verbose_concise  +0.171   0.183      0.087      2.11*
+direct_evasive   +0.049   0.087      0.100      0.87 
+
+Ratio = between-model σ / within-model σ
+* = ratio > 1.0 (good discrimination between models)
+
+============================================================
+3. SUMMARY FOR ARTICLE
+============================================================
+
+⚠️  14 axis pairs show high correlation (|r| > 0.7)
+✓ 5/8 axes discriminate well between models
+
+Suggested disclaimer text:
+----------------------------------------
+"Some axes show correlation (warm_cold↔patient_irritated, warm_cold↔formal_casual, warm_cold↔verbose_concise, warm_cold↔direct_evasive, patient_irritated↔confident_cautious, patient_irritated↔empathetic_analytical, patient_irritated↔verbose_concise, patient_irritated↔direct_evasive, confident_cautious↔empathetic_analytical, confident_cautious↔verbose_concise, proactive_reluctant↔empathetic_analytical, formal_casual↔verbose_concise, formal_casual↔direct_evasive, verbose_concise↔direct_evasive),
+suggesting partial overlap in measured behaviors."

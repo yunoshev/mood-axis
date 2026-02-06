@@ -1,0 +1,7386 @@
+[
+  {
+    "config_name": "L0/last_token",
+    "strategy": "last_token",
+    "layers": [
+      0
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.215057611465454,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 0.6031271815299988,
+        "accuracy": 0.6
+      },
+      "confident_cautious": {
+        "dprime": 0.5786673426628113,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.44275254011154175,
+        "accuracy": 0.44
+      },
+      "empathetic_analytical": {
+        "dprime": 0.6891770362854004,
+        "accuracy": 0.68
+      },
+      "formal_casual": {
+        "dprime": -0.2665252983570099,
+        "accuracy": 0.4
+      },
+      "verbose_concise": {
+        "dprime": 1.8413441181182861,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 0.875802218914032,
+        "accuracy": 0.68
+      }
+    },
+    "mean_dprime": 0.8724253438413143,
+    "mean_accuracy": 0.67
+  },
+  {
+    "config_name": "L1/last_token",
+    "strategy": "last_token",
+    "layers": [
+      1
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.4444580078125,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 0.7582531571388245,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.31134381890296936,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.3251216411590576,
+        "accuracy": 0.44
+      },
+      "empathetic_analytical": {
+        "dprime": 0.7899169921875,
+        "accuracy": 0.72
+      },
+      "formal_casual": {
+        "dprime": 0.12293151766061783,
+        "accuracy": 0.56
+      },
+      "verbose_concise": {
+        "dprime": 2.368018865585327,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.0755445957183838,
+        "accuracy": 0.84
+      }
+    },
+    "mean_dprime": 1.0244485745206475,
+    "mean_accuracy": 0.74
+  },
+  {
+    "config_name": "L2/last_token",
+    "strategy": "last_token",
+    "layers": [
+      2
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.4576218128204346,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.7258719205856323,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.5377886891365051,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 0.1258707046508789,
+        "accuracy": 0.4
+      },
+      "empathetic_analytical": {
+        "dprime": 1.1084495782852173,
+        "accuracy": 0.64
+      },
+      "formal_casual": {
+        "dprime": -0.17258989810943604,
+        "accuracy": 0.4
+      },
+      "verbose_concise": {
+        "dprime": 2.7856597900390625,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 0.9553477168083191,
+        "accuracy": 0.8
+      }
+    },
+    "mean_dprime": 1.0655025392770767,
+    "mean_accuracy": 0.7050000000000001
+  },
+  {
+    "config_name": "L3/last_token",
+    "strategy": "last_token",
+    "layers": [
+      3
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.5008327960968018,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.49982303380966187,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.5944845676422119,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.529374897480011,
+        "accuracy": 0.64
+      },
+      "empathetic_analytical": {
+        "dprime": 1.5909050703048706,
+        "accuracy": 0.84
+      },
+      "formal_casual": {
+        "dprime": -0.3589819371700287,
+        "accuracy": 0.36
+      },
+      "verbose_concise": {
+        "dprime": 2.383917808532715,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 1.0298627614974976,
+        "accuracy": 0.8
+      }
+    },
+    "mean_dprime": 1.0962773747742176,
+    "mean_accuracy": 0.745
+  },
+  {
+    "config_name": "L4/last_token",
+    "strategy": "last_token",
+    "layers": [
+      4
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.285264492034912,
+        "accuracy": 0.88
+      },
+      "patient_irritated": {
+        "dprime": 0.709538996219635,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.6523321866989136,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.48101556301116943,
+        "accuracy": 0.68
+      },
+      "empathetic_analytical": {
+        "dprime": 1.2466500997543335,
+        "accuracy": 0.76
+      },
+      "formal_casual": {
+        "dprime": -0.40771427750587463,
+        "accuracy": 0.36
+      },
+      "verbose_concise": {
+        "dprime": 2.236374855041504,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 1.184744954109192,
+        "accuracy": 0.84
+      }
+    },
+    "mean_dprime": 1.048525858670473,
+    "mean_accuracy": 0.74
+  },
+  {
+    "config_name": "L5/last_token",
+    "strategy": "last_token",
+    "layers": [
+      5
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.3867316246032715,
+        "accuracy": 0.88
+      },
+      "patient_irritated": {
+        "dprime": 0.7045512795448303,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.8263828158378601,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7338343262672424,
+        "accuracy": 0.72
+      },
+      "empathetic_analytical": {
+        "dprime": 1.4007796049118042,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.4631572663784027,
+        "accuracy": 0.32
+      },
+      "verbose_concise": {
+        "dprime": 1.9163724184036255,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 1.2091861963272095,
+        "accuracy": 0.88
+      }
+    },
+    "mean_dprime": 1.08933512493968,
+    "mean_accuracy": 0.75
+  },
+  {
+    "config_name": "L6/last_token",
+    "strategy": "last_token",
+    "layers": [
+      6
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.2735650539398193,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.8920305967330933,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.6368911862373352,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7200995087623596,
+        "accuracy": 0.72
+      },
+      "empathetic_analytical": {
+        "dprime": 1.3714646100997925,
+        "accuracy": 0.84
+      },
+      "formal_casual": {
+        "dprime": -0.40126994252204895,
+        "accuracy": 0.4
+      },
+      "verbose_concise": {
+        "dprime": 2.0483481884002686,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 1.318681001663208,
+        "accuracy": 0.88
+      }
+    },
+    "mean_dprime": 1.1074762754142284,
+    "mean_accuracy": 0.775
+  },
+  {
+    "config_name": "L7/last_token",
+    "strategy": "last_token",
+    "layers": [
+      7
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.068458318710327,
+        "accuracy": 0.88
+      },
+      "patient_irritated": {
+        "dprime": 1.2026287317276,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 0.46438753604888916,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.545095682144165,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 1.484533667564392,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.23998787999153137,
+        "accuracy": 0.4
+      },
+      "verbose_concise": {
+        "dprime": 2.1828153133392334,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.451674222946167,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.1449506990611553,
+    "mean_accuracy": 0.765
+  },
+  {
+    "config_name": "L8/last_token",
+    "strategy": "last_token",
+    "layers": [
+      8
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.016218662261963,
+        "accuracy": 0.88
+      },
+      "patient_irritated": {
+        "dprime": 1.426220178604126,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 0.39001306891441345,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.39984405040740967,
+        "accuracy": 0.52
+      },
+      "empathetic_analytical": {
+        "dprime": 1.5104148387908936,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.17681443691253662,
+        "accuracy": 0.44
+      },
+      "verbose_concise": {
+        "dprime": 2.3477160930633545,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4772833585739136,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.1738619767129421,
+    "mean_accuracy": 0.75
+  },
+  {
+    "config_name": "L9/last_token",
+    "strategy": "last_token",
+    "layers": [
+      9
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.024205207824707,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.7142671346664429,
+        "accuracy": 0.92
+      },
+      "confident_cautious": {
+        "dprime": 0.40646347403526306,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.44151559472084045,
+        "accuracy": 0.48
+      },
+      "empathetic_analytical": {
+        "dprime": 1.5123100280761719,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.18080931901931763,
+        "accuracy": 0.48
+      },
+      "verbose_concise": {
+        "dprime": 2.6420798301696777,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4729435443878174,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.2541219368577003,
+    "mean_accuracy": 0.765
+  },
+  {
+    "config_name": "L10/last_token",
+    "strategy": "last_token",
+    "layers": [
+      10
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.3659236431121826,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.5368995666503906,
+        "accuracy": 0.88
+      },
+      "confident_cautious": {
+        "dprime": 0.27310338616371155,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5696436762809753,
+        "accuracy": 0.52
+      },
+      "empathetic_analytical": {
+        "dprime": 1.431831955909729,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.1796494573354721,
+        "accuracy": 0.44
+      },
+      "verbose_concise": {
+        "dprime": 2.7665679454803467,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.430418848991394,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.2743424456566572,
+    "mean_accuracy": 0.76
+  },
+  {
+    "config_name": "L11/last_token",
+    "strategy": "last_token",
+    "layers": [
+      11
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.228975534439087,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.201372742652893,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.43647199869155884,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7113584876060486,
+        "accuracy": 0.56
+      },
+      "empathetic_analytical": {
+        "dprime": 1.454118013381958,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.1127481460571289,
+        "accuracy": 0.52
+      },
+      "verbose_concise": {
+        "dprime": 3.0130348205566406,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4364571571350098,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.2961300760507584,
+    "mean_accuracy": 0.7650000000000001
+  },
+  {
+    "config_name": "L12/last_token",
+    "strategy": "last_token",
+    "layers": [
+      12
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.2664825916290283,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.1005301475524902,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.4208761155605316,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7731943726539612,
+        "accuracy": 0.64
+      },
+      "empathetic_analytical": {
+        "dprime": 1.4526184797286987,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.20028802752494812,
+        "accuracy": 0.48
+      },
+      "verbose_concise": {
+        "dprime": 3.2159743309020996,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4097583293914795,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.3048932924866676,
+    "mean_accuracy": 0.765
+  },
+  {
+    "config_name": "L13/last_token",
+    "strategy": "last_token",
+    "layers": [
+      13
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.181938886642456,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.856847882270813,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.4015153646469116,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.799479067325592,
+        "accuracy": 0.68
+      },
+      "empathetic_analytical": {
+        "dprime": 1.4863065481185913,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.31534436345100403,
+        "accuracy": 0.48
+      },
+      "verbose_concise": {
+        "dprime": 3.480851173400879,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.3271366357803345,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.2773413993418217,
+    "mean_accuracy": 0.775
+  },
+  {
+    "config_name": "L14/last_token",
+    "strategy": "last_token",
+    "layers": [
+      14
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.2855703830718994,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.8483729958534241,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.514926016330719,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7925029397010803,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 1.4645525217056274,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.05188030004501343,
+        "accuracy": 0.52
+      },
+      "verbose_concise": {
+        "dprime": 4.513556003570557,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4722429513931274,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.4799804389476776,
+    "mean_accuracy": 0.785
+  },
+  {
+    "config_name": "L15/last_token",
+    "strategy": "last_token",
+    "layers": [
+      15
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.6552515029907227,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 0.8353649377822876,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 0.8245663642883301,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9110141396522522,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 1.6599937677383423,
+        "accuracy": 0.8
+      },
+      "formal_casual": {
+        "dprime": -0.042533792555332184,
+        "accuracy": 0.52
+      },
+      "verbose_concise": {
+        "dprime": 4.48167085647583,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.504717230796814,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.6037556258961558,
+    "mean_accuracy": 0.81
+  },
+  {
+    "config_name": "L16/last_token",
+    "strategy": "last_token",
+    "layers": [
+      16
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.5733323097229004,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.051166296005249,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.319459080696106,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9652491211891174,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 1.7226886749267578,
+        "accuracy": 0.84
+      },
+      "formal_casual": {
+        "dprime": 0.39623144268989563,
+        "accuracy": 0.52
+      },
+      "verbose_concise": {
+        "dprime": 5.279393672943115,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.616525650024414,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.8655057810246944,
+    "mean_accuracy": 0.8300000000000001
+  },
+  {
+    "config_name": "L17/last_token",
+    "strategy": "last_token",
+    "layers": [
+      17
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.7822887897491455,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.5005007982254028,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 2.020521640777588,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 1.0302033424377441,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 2.088864803314209,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.8992325663566589,
+        "accuracy": 0.72
+      },
+      "verbose_concise": {
+        "dprime": 5.522525310516357,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.079155445098877,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 2.240411587059498,
+    "mean_accuracy": 0.9249999999999999
+  },
+  {
+    "config_name": "L18/last_token",
+    "strategy": "last_token",
+    "layers": [
+      18
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.689894914627075,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.285469651222229,
+        "accuracy": 0.8
+      },
+      "confident_cautious": {
+        "dprime": 2.008908987045288,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 1.046039342880249,
+        "accuracy": 0.84
+      },
+      "empathetic_analytical": {
+        "dprime": 2.081191301345825,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 1.0768059492111206,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 5.462606430053711,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.156141519546509,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.225882261991501,
+    "mean_accuracy": 0.905
+  },
+  {
+    "config_name": "L19/last_token",
+    "strategy": "last_token",
+    "layers": [
+      19
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.9519057273864746,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.4277637004852295,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 2.0248656272888184,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 1.0225961208343506,
+        "accuracy": 0.88
+      },
+      "empathetic_analytical": {
+        "dprime": 2.0617380142211914,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 1.8385281562805176,
+        "accuracy": 0.96
+      },
+      "verbose_concise": {
+        "dprime": 5.429849147796631,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.4972972869873047,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.4068179726600647,
+    "mean_accuracy": 0.94
+  },
+  {
+    "config_name": "L20/last_token",
+    "strategy": "last_token",
+    "layers": [
+      20
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.9504776000976562,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.2843520641326904,
+        "accuracy": 0.8
+      },
+      "confident_cautious": {
+        "dprime": 1.8516101837158203,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9390029311180115,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.310210704803467,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.867018222808838,
+        "accuracy": 0.92
+      },
+      "verbose_concise": {
+        "dprime": 6.088404655456543,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.774991512298584,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.5082584843039513,
+    "mean_accuracy": 0.92
+  },
+  {
+    "config_name": "L21/last_token",
+    "strategy": "last_token",
+    "layers": [
+      21
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.9429304599761963,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.353515386581421,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 1.6525382995605469,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9557821154594421,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 2.13499116897583,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.2572619915008545,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 5.88346529006958,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.8784830570220947,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.5073709711432457,
+    "mean_accuracy": 0.94
+  },
+  {
+    "config_name": "L22/last_token",
+    "strategy": "last_token",
+    "layers": [
+      22
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.8170413970947266,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.2425543069839478,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 1.374599814414978,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8352967500686646,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.083712339401245,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 2.146569013595581,
+        "accuracy": 0.96
+      },
+      "verbose_concise": {
+        "dprime": 6.437717437744141,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.5682759284973145,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.4382208734750748,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "L23/last_token",
+    "strategy": "last_token",
+    "layers": [
+      23
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.922699213027954,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.1841367483139038,
+        "accuracy": 0.8
+      },
+      "confident_cautious": {
+        "dprime": 1.563661813735962,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8298085331916809,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 1.9914276599884033,
+        "accuracy": 0.92
+      },
+      "formal_casual": {
+        "dprime": 2.414886236190796,
+        "accuracy": 0.96
+      },
+      "verbose_concise": {
+        "dprime": 6.8421525955200195,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.6150152683258057,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.5454735085368156,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "L24/last_token",
+    "strategy": "last_token",
+    "layers": [
+      24
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.939898729324341,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.1088054180145264,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.8056293725967407,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8741905093193054,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.109889268875122,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 2.7874045372009277,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 7.883819103240967,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.509772777557373,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 2.752426214516163,
+    "mean_accuracy": 0.92
+  },
+  {
+    "config_name": "L25/last_token",
+    "strategy": "last_token",
+    "layers": [
+      25
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.900599718093872,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.0737241506576538,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.7338448762893677,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9056897163391113,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 2.0296502113342285,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 2.8429617881774902,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 7.8691182136535645,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.342524528503418,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.7122641503810883,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "L26/last_token",
+    "strategy": "last_token",
+    "layers": [
+      26
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.874636650085449,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.9739341139793396,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.7198318243026733,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.868797779083252,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.0123438835144043,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 2.6007823944091797,
+        "accuracy": 0.96
+      },
+      "verbose_concise": {
+        "dprime": 8.478189468383789,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.0899007320404053,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.7023021057248116,
+    "mean_accuracy": 0.905
+  },
+  {
+    "config_name": "L27/last_token",
+    "strategy": "last_token",
+    "layers": [
+      27
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.719586133956909,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8463665843009949,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.602416753768921,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8782984018325806,
+        "accuracy": 0.84
+      },
+      "empathetic_analytical": {
+        "dprime": 2.044443130493164,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 2.624262571334839,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 9.711268424987793,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.8619650602340698,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.786075882613659,
+    "mean_accuracy": 0.9199999999999999
+  },
+  {
+    "config_name": "L28/last_token",
+    "strategy": "last_token",
+    "layers": [
+      28
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.892383098602295,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8928273320198059,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.6529719829559326,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8643747568130493,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 2.150275468826294,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.736645221710205,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.858848571777344,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.9360638856887817,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.7480487897992134,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "L29/last_token",
+    "strategy": "last_token",
+    "layers": [
+      29
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.905212640762329,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8874924778938293,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.9756938219070435,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9455260038375854,
+        "accuracy": 0.88
+      },
+      "empathetic_analytical": {
+        "dprime": 2.15179443359375,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.5506081581115723,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 9.6952486038208,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.8489562273025513,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8700665459036827,
+    "mean_accuracy": 0.935
+  },
+  {
+    "config_name": "L30/last_token",
+    "strategy": "last_token",
+    "layers": [
+      30
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.952277898788452,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.88345867395401,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.082852363586426,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8780599236488342,
+        "accuracy": 0.84
+      },
+      "empathetic_analytical": {
+        "dprime": 2.1365878582000732,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.0758070945739746,
+        "accuracy": 0.92
+      },
+      "verbose_concise": {
+        "dprime": 7.951791763305664,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.6892169713974,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.5812565684318542,
+    "mean_accuracy": 0.9199999999999999
+  },
+  {
+    "config_name": "L31/last_token",
+    "strategy": "last_token",
+    "layers": [
+      31
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.949014186859131,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.9104375839233398,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 1.9095275402069092,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8814700245857239,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.099759578704834,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 1.8157854080200195,
+        "accuracy": 0.92
+      },
+      "verbose_concise": {
+        "dprime": 7.976924896240234,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.6950124502182007,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.529741458594799,
+    "mean_accuracy": 0.9
+  },
+  {
+    "config_name": "L32/last_token",
+    "strategy": "last_token",
+    "layers": [
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0875797271728516,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.7989105582237244,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.004530429840088,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5146300792694092,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.3557605743408203,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.5795485973358154,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.546076774597168,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5114823579788208,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.799814887344837,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "last2_equal/last_token",
+    "strategy": "last_token",
+    "layers": [
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.084111452102661,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8119627833366394,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.0521814823150635,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5259574055671692,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.35502028465271,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6240897178649902,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.54585075378418,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5252479314804077,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8155527263879776,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "last3_equal/last_token",
+    "strategy": "last_token",
+    "layers": [
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0822527408599854,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8222859501838684,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.109893798828125,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5386258959770203,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.3494627475738525,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6576781272888184,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.578150749206543,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5357996225357056,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.83426870405674,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "last4_equal/last_token",
+    "strategy": "last_token",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0807127952575684,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8339087963104248,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.1613259315490723,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5521273016929626,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.343806743621826,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6872200965881348,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.676033973693848,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.55174720287323,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8608603551983833,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "last6_equal/last_token",
+    "strategy": "last_token",
+    "layers": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.06388783454895,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8486322164535522,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.2424893379211426,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5724846720695496,
+        "accuracy": 0.64
+      },
+      "empathetic_analytical": {
+        "dprime": 2.327237844467163,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.720863103866577,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.832416534423828,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5772721767425537,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8981604650616646,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "last8_equal/last_token",
+    "strategy": "last_token",
+    "layers": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0552849769592285,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8691405653953552,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.3132355213165283,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5870468616485596,
+        "accuracy": 0.68
+      },
+      "empathetic_analytical": {
+        "dprime": 2.3036584854125977,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.7318856716156006,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.8865966796875,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.6103339195251465,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.9196478351950645,
+    "mean_accuracy": 0.92
+  },
+  {
+    "config_name": "last4_prod/last_token",
+    "strategy": "last_token",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0838396549224854,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8177238702774048,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.084937810897827,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5330003499984741,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.351358652114868,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.646475315093994,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.589441299438477,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5317450761795044,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8298152536153793,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "last4_inverse/last_token",
+    "strategy": "last_token",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0635547637939453,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8757444024085999,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.371260404586792,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.6188294887542725,
+        "accuracy": 0.68
+      },
+      "empathetic_analytical": {
+        "dprime": 2.3177483081817627,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6618683338165283,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.914597511291504,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.6129802465438843,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.929572932422161,
+    "mean_accuracy": 0.92
+  },
+  {
+    "config_name": "last4_quad/last_token",
+    "strategy": "last_token",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      1,
+      4,
+      9,
+      16
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0851495265960693,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 0.8102656602859497,
+        "accuracy": 0.76
+      },
+      "confident_cautious": {
+        "dprime": 2.050825834274292,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5251529216766357,
+        "accuracy": 0.6
+      },
+      "empathetic_analytical": {
+        "dprime": 2.3540537357330322,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6224701404571533,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 8.562362670898438,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5233867168426514,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.8167084008455276,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "L0/mean",
+    "strategy": "mean",
+    "layers": [
+      0
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.5799574851989746,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 3.0552830696105957,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.1615233421325684,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 3.3572018146514893,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.585859775543213,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 7.261147499084473,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.4860097169876099,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 10.346860885620117,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.72923044860363,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L1/mean",
+    "strategy": "mean",
+    "layers": [
+      1
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.956529140472412,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.9347771406173706,
+        "accuracy": 0.92
+      },
+      "confident_cautious": {
+        "dprime": 2.433443546295166,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.7827779054641724,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 8.530400276184082,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.610424518585205,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3280129432678223,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.829861879348755,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.925778418779373,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L2/mean",
+    "strategy": "mean",
+    "layers": [
+      2
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.2687445878982544,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": -0.43014997243881226,
+        "accuracy": 0.52
+      },
+      "confident_cautious": {
+        "dprime": 2.0871996879577637,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.6448872089385986,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.376064300537109,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.540157318115234,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3260376453399658,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.0136502981185913,
+        "accuracy": 0.88
+      }
+    },
+    "mean_dprime": 2.353323884308338,
+    "mean_accuracy": 0.8999999999999999
+  },
+  {
+    "config_name": "L3/mean",
+    "strategy": "mean",
+    "layers": [
+      3
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.3187081813812256,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": -0.4149318337440491,
+        "accuracy": 0.6
+      },
+      "confident_cautious": {
+        "dprime": 2.539003610610962,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 0.6717925667762756,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.572352409362793,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.606533050537109,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3262544870376587,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.0185467004776,
+        "accuracy": 0.84
+      }
+    },
+    "mean_dprime": 2.329782396554947,
+    "mean_accuracy": 0.915
+  },
+  {
+    "config_name": "L4/mean",
+    "strategy": "mean",
+    "layers": [
+      4
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.3407714366912842,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": -0.40998557209968567,
+        "accuracy": 0.56
+      },
+      "confident_cautious": {
+        "dprime": 2.1941885948181152,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.6844146251678467,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.424309730529785,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.172067642211914,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3269485235214233,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.0758097171783447,
+        "accuracy": 0.88
+      }
+    },
+    "mean_dprime": 2.2260655872523785,
+    "mean_accuracy": 0.9099999999999999
+  },
+  {
+    "config_name": "L5/mean",
+    "strategy": "mean",
+    "layers": [
+      5
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.4067280292510986,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": -0.36653807759284973,
+        "accuracy": 0.64
+      },
+      "confident_cautious": {
+        "dprime": 2.1517579555511475,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7371748089790344,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.945655345916748,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 7.6158623695373535,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3269696235656738,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.10812509059906,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.3657168932259083,
+    "mean_accuracy": 0.925
+  },
+  {
+    "config_name": "L6/mean",
+    "strategy": "mean",
+    "layers": [
+      6
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.5248796939849854,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": -0.25986039638519287,
+        "accuracy": 0.64
+      },
+      "confident_cautious": {
+        "dprime": 1.9800318479537964,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.7711834907531738,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.337660312652588,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 7.253958702087402,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3268280029296875,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.1719145774841309,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.2633245289325714,
+    "mean_accuracy": 0.9199999999999999
+  },
+  {
+    "config_name": "L7/mean",
+    "strategy": "mean",
+    "layers": [
+      7
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.6606591939926147,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": -0.13390441238880157,
+        "accuracy": 0.64
+      },
+      "confident_cautious": {
+        "dprime": 2.011972188949585,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8022288084030151,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.38138484954834,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.882068157196045,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.328324317932129,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.2774518728256226,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.2762731220573187,
+    "mean_accuracy": 0.9299999999999999
+  },
+  {
+    "config_name": "L8/mean",
+    "strategy": "mean",
+    "layers": [
+      8
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.8400051593780518,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 0.07847912609577179,
+        "accuracy": 0.68
+      },
+      "confident_cautious": {
+        "dprime": 1.988332986831665,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8249501585960388,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.274816513061523,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.749876976013184,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.330259919166565,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.4303573369979858,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 2.189634772017598,
+    "mean_accuracy": 0.94
+  },
+  {
+    "config_name": "L9/mean",
+    "strategy": "mean",
+    "layers": [
+      9
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.1487722396850586,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 0.5519585609436035,
+        "accuracy": 0.68
+      },
+      "confident_cautious": {
+        "dprime": 1.9246551990509033,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 0.8599031567573547,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.340682506561279,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.389982223510742,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3321406841278076,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.6453750133514404,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 2.3991836979985237,
+    "mean_accuracy": 0.935
+  },
+  {
+    "config_name": "L10/mean",
+    "strategy": "mean",
+    "layers": [
+      10
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.627232789993286,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.4316415786743164,
+        "accuracy": 0.88
+      },
+      "confident_cautious": {
+        "dprime": 2.097562551498413,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9560511708259583,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.57412576675415,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.290376663208008,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3309345245361328,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.8625304698944092,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.6463069394230843,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L11/mean",
+    "strategy": "mean",
+    "layers": [
+      11
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.851881980895996,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.6600555181503296,
+        "accuracy": 0.88
+      },
+      "confident_cautious": {
+        "dprime": 2.0998549461364746,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.1409986019134521,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.361043930053711,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.234474182128906,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.329744815826416,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.9585802555084229,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.8295792788267136,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L12/mean",
+    "strategy": "mean",
+    "layers": [
+      12
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0766305923461914,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.9209939241409302,
+        "accuracy": 0.88
+      },
+      "confident_cautious": {
+        "dprime": 2.170140266418457,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.2663036584854126,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.669655799865723,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.266533851623535,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3291096687316895,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.2123680114746094,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.9889669716358185,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L13/mean",
+    "strategy": "mean",
+    "layers": [
+      13
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.3301899433135986,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 2.2902071475982666,
+        "accuracy": 0.92
+      },
+      "confident_cautious": {
+        "dprime": 2.197049379348755,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.44391667842865,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.497578144073486,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.735883712768555,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3293178081512451,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.5176172256469727,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.042720004916191,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L14/mean",
+    "strategy": "mean",
+    "layers": [
+      14
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.074404239654541,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 3.285409688949585,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.213334560394287,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.6066572666168213,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.238560676574707,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.6471967697143555,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3303263187408447,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.357304096221924,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.469149202108383,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L15/mean",
+    "strategy": "mean",
+    "layers": [
+      15
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.813968658447266,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 4.515279293060303,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.114105701446533,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 1.7880420684814453,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.638618469238281,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.4830498695373535,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.328506350517273,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.4618053436279297,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.767921969294548,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L16/mean",
+    "strategy": "mean",
+    "layers": [
+      16
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.2696003913879395,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.777977466583252,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.707059621810913,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 2.499176502227783,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.970575332641602,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 9.072062492370605,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.329942226409912,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.012849807739258,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 5.079905480146408,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L17/mean",
+    "strategy": "mean",
+    "layers": [
+      17
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 8.162435531616211,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.872254371643066,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.137777328491211,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 3.6351311206817627,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.453089714050293,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 9.793445587158203,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3318055868148804,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.674881935119629,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.132602646946907,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L18/mean",
+    "strategy": "mean",
+    "layers": [
+      18
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 8.607476234436035,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.960734367370605,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.962594747543335,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.124594688415527,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.4068217277526855,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 8.491714477539062,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3254536390304565,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.26312780380249,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.017814710736275,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L19/mean",
+    "strategy": "mean",
+    "layers": [
+      19
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 9.300301551818848,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 9.375839233398438,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.371448516845703,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.664182186126709,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.694863796234131,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 12.158255577087402,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3244198560714722,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 8.326969146728516,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.027034983038902,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L20/mean",
+    "strategy": "mean",
+    "layers": [
+      20
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 8.968892097473145,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.118558883666992,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.4975671768188477,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 5.256295204162598,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.310959339141846,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 12.268986701965332,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3222209215164185,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 10.196893692016602,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.1175467520952225,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L21/mean",
+    "strategy": "mean",
+    "layers": [
+      21
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 8.007583618164062,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.031647682189941,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.5177035331726074,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.026490211486816,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.214348316192627,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 13.015954971313477,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3302099704742432,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 11.681497573852539,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.228179484605789,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L22/mean",
+    "strategy": "mean",
+    "layers": [
+      22
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.69025993347168,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.980119228363037,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.5923614501953125,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.626794815063477,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.996861457824707,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 13.789388656616211,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3396737575531006,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 11.575927734375,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.3239233791828156,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L23/mean",
+    "strategy": "mean",
+    "layers": [
+      23
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.596148490905762,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.000544548034668,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.801480770111084,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.520724296569824,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.086722373962402,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 15.514825820922852,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3409616947174072,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 11.336488723754883,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.52473708987236,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L24/mean",
+    "strategy": "mean",
+    "layers": [
+      24
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.896916389465332,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.877166271209717,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.8974690437316895,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.549070835113525,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.288647651672363,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.891653060913086,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.348210096359253,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 10.967412948608398,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.7145682871341705,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L25/mean",
+    "strategy": "mean",
+    "layers": [
+      25
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.749423027038574,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.506148338317871,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.832334041595459,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.627358913421631,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.096431732177734,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.50508689880371,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3507322072982788,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 10.351753234863281,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.502408549189568,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L26/mean",
+    "strategy": "mean",
+    "layers": [
+      26
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.723429203033447,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.398375034332275,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.8368852138519287,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.844419956207275,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.189615726470947,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 17.124027252197266,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3585422039031982,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 10.055667877197266,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.5663703083992,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L27/mean",
+    "strategy": "mean",
+    "layers": [
+      27
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.595887184143066,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.2358269691467285,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.9143476486206055,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 7.251508712768555,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.185164928436279,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.95683479309082,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.358717679977417,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 9.501940727233887,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 7.50002858042717,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L28/mean",
+    "strategy": "mean",
+    "layers": [
+      28
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.955085277557373,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.34447717666626,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.196806907653809,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 7.775313854217529,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.711721420288086,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 19.061359405517578,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3678343296051025,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 9.690093040466309,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 8.012836426496506,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L29/mean",
+    "strategy": "mean",
+    "layers": [
+      29
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.908720016479492,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.321256160736084,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.236825942993164,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 8.668360710144043,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.098564624786377,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 18.487367630004883,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3535739183425903,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 9.354665756225586,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 8.053666844964027,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L30/mean",
+    "strategy": "mean",
+    "layers": [
+      30
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.714423656463623,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.4882307052612305,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.617801189422607,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 9.004557609558105,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.308428764343262,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 19.847017288208008,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.354544758796692,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 9.749746322631836,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 8.38559378683567,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L31/mean",
+    "strategy": "mean",
+    "layers": [
+      31
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 7.598903656005859,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.364318370819092,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.844849109649658,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 9.312845230102539,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.185676574707031,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 20.399301528930664,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3473697900772095,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 8.852325439453125,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 8.363198712468147,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L32/mean",
+    "strategy": "mean",
+    "layers": [
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.504377365112305,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.366147518157959,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.9502124786376953,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.4426164627075195,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.921208381652832,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.767221450805664,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.4789748191833496,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.9044551849365234,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.666901707649231,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last2_equal/mean",
+    "strategy": "mean",
+    "layers": [
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.554440021514893,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.415056228637695,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.9812424182891846,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.587398052215576,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.948201656341553,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.85679817199707,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.3720896244049072,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.030609607696533,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.7182294726371765,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last3_equal/mean",
+    "strategy": "mean",
+    "layers": [
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.596992492675781,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.462593078613281,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.000060558319092,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.697866916656494,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.983211040496826,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.90230941772461,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.147311210632324,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.143622398376465,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.741745889186859,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last4_equal/mean",
+    "strategy": "mean",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.635578155517578,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.50073766708374,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.022996425628662,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.789575099945068,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.012897968292236,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.895788192749023,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.9356622695922852,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.257472038269043,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.756338477134705,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last6_equal/mean",
+    "strategy": "mean",
+    "layers": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.684415817260742,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.561851978302002,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.03648567199707,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.847029685974121,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.02269172668457,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.88778305053711,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.6722848415374756,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.435029029846191,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.76844647526741,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last8_equal/mean",
+    "strategy": "mean",
+    "layers": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.722445011138916,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.62045955657959,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.026039123535156,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.856851577758789,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.013932228088379,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.807445526123047,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.5464361906051636,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.588569164276123,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.7727722972631454,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last4_prod/mean",
+    "strategy": "mean",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.574272155761719,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.438022613525391,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.9889683723449707,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.631254196166992,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.968865871429443,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.852819442749023,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.260690927505493,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.084125518798828,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.7248773872852325,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last4_inverse/mean",
+    "strategy": "mean",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.840164661407471,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.695319175720215,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 4.1302032470703125,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 7.337982177734375,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 7.122687339782715,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 17.123538970947266,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.504141092300415,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.90999174118042,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.958003550767899,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "last4_quad/mean",
+    "strategy": "mean",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      1,
+      4,
+      9,
+      16
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 6.5466814041137695,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.409307479858398,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 3.973876953125,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 6.5587005615234375,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 6.948779106140137,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 16.827335357666016,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.3927972316741943,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.010840892791748,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 6.7085398733615875,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L0/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      0
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.180030107498169,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 1.517860770225525,
+        "accuracy": 0.84
+      },
+      "confident_cautious": {
+        "dprime": 0.21098512411117554,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.5642203688621521,
+        "accuracy": 0.64
+      },
+      "empathetic_analytical": {
+        "dprime": 2.002307891845703,
+        "accuracy": 0.92
+      },
+      "formal_casual": {
+        "dprime": 1.3744750022888184,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.3032631874084473,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.1628508567810059,
+        "accuracy": 0.84
+      }
+    },
+    "mean_dprime": 1.2894991636276245,
+    "mean_accuracy": 0.845
+  },
+  {
+    "config_name": "L1/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      1
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.579106569290161,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 2.6668074131011963,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6611040830612183,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9624724984169006,
+        "accuracy": 0.72
+      },
+      "empathetic_analytical": {
+        "dprime": 2.967320203781128,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.951839566230774,
+        "accuracy": 0.92
+      },
+      "verbose_concise": {
+        "dprime": 1.1002651453018188,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.2642908096313477,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 1.894150786101818,
+    "mean_accuracy": 0.9099999999999999
+  },
+  {
+    "config_name": "L2/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      2
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.491813898086548,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 2.435312509536743,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.5407726168632507,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.4858980178833008,
+        "accuracy": 0.56
+      },
+      "empathetic_analytical": {
+        "dprime": 3.2517638206481934,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.750624656677246,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.096940040588379,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.0919878482818604,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 1.7681391760706902,
+    "mean_accuracy": 0.89
+  },
+  {
+    "config_name": "L3/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      3
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.274256706237793,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 2.8928334712982178,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6648233532905579,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 2.06548810005188,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.1982719898223877,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.7585824728012085,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.097344160079956,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.070225477218628,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.2527282163500786,
+    "mean_accuracy": 0.9450000000000001
+  },
+  {
+    "config_name": "L4/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      4
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.5240509510040283,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 2.252516508102417,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.5830415487289429,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1744272708892822,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.7329046726226807,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.4282740354537964,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.0976871252059937,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.4208054542541504,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.2767134457826614,
+    "mean_accuracy": 0.94
+  },
+  {
+    "config_name": "L5/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      5
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.6373631954193115,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 2.422119140625,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6475321650505066,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 2.556251287460327,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.221887588500977,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.5827749967575073,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.0980738401412964,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.0216503143310547,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.3984565660357475,
+    "mean_accuracy": 0.94
+  },
+  {
+    "config_name": "L6/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      6
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.7297284603118896,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 3.3030004501342773,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6855732798576355,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 2.039597749710083,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.682999849319458,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.302245020866394,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.0973351001739502,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.9294819831848145,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.3462452366948128,
+    "mean_accuracy": 0.9299999999999999
+  },
+  {
+    "config_name": "L7/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      7
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.515394687652588,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 3.8518149852752686,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6053336262702942,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 1.3710304498672485,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5613107681274414,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.2483503818511963,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.0989429950714111,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.2758524417877197,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.316003791987896,
+    "mean_accuracy": 0.905
+  },
+  {
+    "config_name": "L8/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      8
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.3846724033355713,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 3.8618712425231934,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6837466955184937,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.6879668235778809,
+        "accuracy": 0.96
+      },
+      "empathetic_analytical": {
+        "dprime": 3.3929336071014404,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.9555190205574036,
+        "accuracy": 0.72
+      },
+      "verbose_concise": {
+        "dprime": 1.1002552509307861,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.8469464778900146,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.239238940179348,
+    "mean_accuracy": 0.9249999999999999
+  },
+  {
+    "config_name": "L9/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      9
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.4735522270202637,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 4.91933012008667,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.7419073581695557,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.6048372983932495,
+        "accuracy": 0.88
+      },
+      "empathetic_analytical": {
+        "dprime": 3.3448383808135986,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.9032326936721802,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1028106212615967,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.075878620147705,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.3957984149456024,
+    "mean_accuracy": 0.9199999999999999
+  },
+  {
+    "config_name": "L10/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      10
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.9382848739624023,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.223455905914307,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.850435733795166,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 2.0508179664611816,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.2417960166931152,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.8665000796318054,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1012316942214966,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.6772639751434326,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.4937232807278633,
+    "mean_accuracy": 0.945
+  },
+  {
+    "config_name": "L11/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      11
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.9917099475860596,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.56789493560791,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.8471526503562927,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 2.694528341293335,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.8175206184387207,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.048751950263977,
+        "accuracy": 0.8
+      },
+      "verbose_concise": {
+        "dprime": 1.1020939350128174,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.227198839187622,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.787106402218342,
+    "mean_accuracy": 0.95
+  },
+  {
+    "config_name": "L12/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      12
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.9323465824127197,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.237087249755859,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.7744362950325012,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 3.5100955963134766,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.230299472808838,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.9765161275863647,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1023516654968262,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.4970273971557617,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.0325200483202934,
+    "mean_accuracy": 0.945
+  },
+  {
+    "config_name": "L13/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      13
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.99190354347229,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.724287986755371,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.8276988863945007,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 3.2124276161193848,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.2017669677734375,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.9028485417366028,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1028120517730713,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.43398118019104,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.9247158467769623,
+    "mean_accuracy": 0.945
+  },
+  {
+    "config_name": "L14/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      14
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.970848560333252,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.893038749694824,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.023792028427124,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 3.2645275592803955,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.369056224822998,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.8973323702812195,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1059454679489136,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.010808944702148,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.0669187381863594,
+    "mean_accuracy": 0.945
+  },
+  {
+    "config_name": "L15/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      15
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.51474666595459,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.491151332855225,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.0810301303863525,
+        "accuracy": 0.8
+      },
+      "proactive_reluctant": {
+        "dprime": 3.9087209701538086,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.430786609649658,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.9944348931312561,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.1084728240966797,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.532951831817627,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.3827869072556496,
+    "mean_accuracy": 0.945
+  },
+  {
+    "config_name": "L16/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      16
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.73807430267334,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.068208694458008,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.3819727897644043,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 3.9955224990844727,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.402497291564941,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.7078689336776733,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.109547734260559,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.791093349456787,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.899348199367523,
+    "mean_accuracy": 0.97
+  },
+  {
+    "config_name": "L17/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      17
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.948627471923828,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 9.15693187713623,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.1005263328552246,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.773841381072998,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.19154167175293,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.1439943313598633,
+        "accuracy": 0.92
+      },
+      "verbose_concise": {
+        "dprime": 1.1121987104415894,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.909564971923828,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.2921533435583115,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L18/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      18
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.62330961227417,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.809710502624512,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.8087213039398193,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 3.663559913635254,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.436868667602539,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.006446123123169,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 1.1075021028518677,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.019335746765137,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.184431746602058,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L19/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      19
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.958387851715088,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.941315650939941,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.2215685844421387,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.5204885005950928,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.233841419219971,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.328645944595337,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1061114072799683,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.910855293273926,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.527651831507683,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L20/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      20
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.584759712219238,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.023446083068848,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.135685443878174,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 2.842805862426758,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 5.154498100280762,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.520449161529541,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1007310152053833,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.233307361602783,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.324460342526436,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L21/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      21
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.256411552429199,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.421174049377441,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.0799787044525146,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.637059450149536,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.540254592895508,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.6512949466705322,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1057054996490479,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.546136856079102,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.27975195646286,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L22/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      22
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.052163124084473,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.797297954559326,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.1800031661987305,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.5561907291412354,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.485298156738281,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.7824881076812744,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1101254224777222,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.768050193786621,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.216452106833458,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L23/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      23
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.02907133102417,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.798277854919434,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.1792795658111572,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 4.08862829208374,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.503867149353027,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.307751178741455,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1101658344268799,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.958002090454102,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.371880412101746,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L24/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      24
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.050950527191162,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.00416374206543,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.2499053478240967,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.9115865230560303,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.705446243286133,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.971465587615967,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.117050290107727,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.9203877449035645,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.491369500756264,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L25/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      25
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.930288314819336,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.613216876983643,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.1656925678253174,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 4.05517578125,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.449506759643555,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.751529216766357,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1183875799179077,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.265898704528809,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.4187119752168655,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L26/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      26
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.866993427276611,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.994924068450928,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.225665807723999,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.8641233444213867,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.48953914642334,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.499083518981934,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1255342960357666,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.978150367736816,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.380501747131348,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L27/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      27
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.848670482635498,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.921688556671143,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.287564516067505,
+        "accuracy": 0.96
+      },
+      "proactive_reluctant": {
+        "dprime": 3.9777989387512207,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.385712146759033,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.536681175231934,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1254149675369263,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.116983413696289,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.4000642746686935,
+    "mean_accuracy": 0.995
+  },
+  {
+    "config_name": "L28/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      28
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.163375377655029,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.079322814941406,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.4831290245056152,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.261837959289551,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.672110080718994,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.376806735992432,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1387885808944702,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.013611316680908,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.648622736334801,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L29/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      29
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.192978858947754,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.188214302062988,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.5372586250305176,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.180447578430176,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.815797805786133,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.612549781799316,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.127668023109436,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.121143817901611,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.7220073491334915,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L30/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      30
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.067320823669434,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.211141586303711,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.560363531112671,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.3075947761535645,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.869291305541992,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.739004135131836,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1319609880447388,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.866403579711914,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.719135090708733,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L31/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      31
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.100608825683594,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.996026039123535,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.526691436767578,
+        "accuracy": 1.0
+      },
+      "proactive_reluctant": {
+        "dprime": 4.280374050140381,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.691965103149414,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.87880802154541,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.1432969570159912,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 6.0219645500183105,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.704966872930527,
+    "mean_accuracy": 1.0
+  },
+  {
+    "config_name": "L32/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.104490756988525,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.383520126342773,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.8904401063919067,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.409531354904175,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.544437885284424,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.02167272567749,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.6442770957946777,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.149599552154541,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.393496200442314,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last2_equal/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.123598575592041,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.465829372406006,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9164129495620728,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.4673218727111816,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.562929630279541,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.0509419441223145,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.511861801147461,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.193997859954834,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.4116117507219315,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last3_equal/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.1362528800964355,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.568241596221924,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9393099546432495,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.533895254135132,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.587287425994873,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.066728591918945,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.22346568107605,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.225905418395996,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.410135850310326,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last4_equal/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.146359443664551,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.658824920654297,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.962998867034912,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.5890183448791504,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.610796928405762,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.06168794631958,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.9406784772872925,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.249082565307617,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.402430936694145,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last6_equal/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.146638870239258,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.815609455108643,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9891881942749023,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.670841693878174,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.633275508880615,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.024966239929199,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.5740504264831543,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.270048141479492,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.39057731628418,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last8_equal/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.139692306518555,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.951616287231445,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.00353741645813,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.7355778217315674,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.658721446990967,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 5.965190410614014,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3957006931304932,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.274285793304443,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.390540271997452,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last4_prod/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.129142761230469,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.526548862457275,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9276751279830933,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.498568534851074,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.578000545501709,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.051789283752441,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.3691530227661133,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.202905178070068,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.4104729145765305,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last4_inverse/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.188186168670654,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.001321792602539,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 2.079361915588379,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.941596746444702,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.701004505157471,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.072920799255371,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.342447280883789,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.435088157653809,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.470240920782089,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "last4_quad/decay_0.9",
+    "strategy": "decay_0.9",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      1,
+      4,
+      9,
+      16
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.120214939117432,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.466515064239502,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9124974012374878,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.4608590602874756,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 4.563626289367676,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 6.0430216789245605,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.5358753204345703,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 5.182801246643066,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 4.410676375031471,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "L0/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      0
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.7789603471755981,
+        "accuracy": 0.84
+      },
+      "patient_irritated": {
+        "dprime": 1.1691447496414185,
+        "accuracy": 0.8
+      },
+      "confident_cautious": {
+        "dprime": 0.15149317681789398,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": 0.0507291704416275,
+        "accuracy": 0.4
+      },
+      "empathetic_analytical": {
+        "dprime": 1.0939098596572876,
+        "accuracy": 0.68
+      },
+      "formal_casual": {
+        "dprime": 0.5811047554016113,
+        "accuracy": 0.76
+      },
+      "verbose_concise": {
+        "dprime": 1.279515266418457,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 0.6691550016403198,
+        "accuracy": 0.68
+      }
+    },
+    "mean_dprime": 0.8467515408992767,
+    "mean_accuracy": 0.72
+  },
+  {
+    "config_name": "L1/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      1
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.818873643875122,
+        "accuracy": 0.88
+      },
+      "patient_irritated": {
+        "dprime": 1.9177439212799072,
+        "accuracy": 0.96
+      },
+      "confident_cautious": {
+        "dprime": 0.46596142649650574,
+        "accuracy": 0.6
+      },
+      "proactive_reluctant": {
+        "dprime": 0.31374391913414,
+        "accuracy": 0.48
+      },
+      "empathetic_analytical": {
+        "dprime": 1.584194540977478,
+        "accuracy": 0.92
+      },
+      "formal_casual": {
+        "dprime": 1.281549334526062,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 0.9180673956871033,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.2634027004241943,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.195442110300064,
+    "mean_accuracy": 0.83
+  },
+  {
+    "config_name": "L2/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      2
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 1.8711321353912354,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.5414329767227173,
+        "accuracy": 0.92
+      },
+      "confident_cautious": {
+        "dprime": 0.43852153420448303,
+        "accuracy": 0.64
+      },
+      "proactive_reluctant": {
+        "dprime": -0.02530476823449135,
+        "accuracy": 0.48
+      },
+      "empathetic_analytical": {
+        "dprime": 1.757788896560669,
+        "accuracy": 0.92
+      },
+      "formal_casual": {
+        "dprime": 1.1791603565216064,
+        "accuracy": 0.8
+      },
+      "verbose_concise": {
+        "dprime": 0.9144158959388733,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.0840108394622803,
+        "accuracy": 0.84
+      }
+    },
+    "mean_dprime": 1.0951447333209217,
+    "mean_accuracy": 0.815
+  },
+  {
+    "config_name": "L3/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      3
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.398778200149536,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 2.2636115550994873,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.4773206114768982,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 1.0461174249649048,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 1.7971537113189697,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 1.0199824571609497,
+        "accuracy": 0.72
+      },
+      "verbose_concise": {
+        "dprime": 0.9147099852561951,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5557128190994263,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 1.434173345565796,
+    "mean_accuracy": 0.885
+  },
+  {
+    "config_name": "L4/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      4
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.4098830223083496,
+        "accuracy": 0.92
+      },
+      "patient_irritated": {
+        "dprime": 1.913098692893982,
+        "accuracy": 0.96
+      },
+      "confident_cautious": {
+        "dprime": 0.41996169090270996,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 1.2535163164138794,
+        "accuracy": 0.84
+      },
+      "empathetic_analytical": {
+        "dprime": 2.0207862854003906,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.7862356901168823,
+        "accuracy": 0.68
+      },
+      "verbose_concise": {
+        "dprime": 0.9147810339927673,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.7180391550064087,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.4295377358794212,
+    "mean_accuracy": 0.875
+  },
+  {
+    "config_name": "L5/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      5
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.666795492172241,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 2.158071517944336,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.48291411995887756,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.5027825832366943,
+        "accuracy": 0.88
+      },
+      "empathetic_analytical": {
+        "dprime": 2.695526361465454,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.8564811944961548,
+        "accuracy": 0.72
+      },
+      "verbose_concise": {
+        "dprime": 0.9152370095252991,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5893203020095825,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.60839107260108,
+    "mean_accuracy": 0.8999999999999999
+  },
+  {
+    "config_name": "L6/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      6
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.6904985904693604,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 2.6331958770751953,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.4718230962753296,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 1.2355937957763672,
+        "accuracy": 0.76
+      },
+      "empathetic_analytical": {
+        "dprime": 2.5587127208709717,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 0.6689194440841675,
+        "accuracy": 0.64
+      },
+      "verbose_concise": {
+        "dprime": 0.9143556356430054,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.5752149820327759,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.5935392677783966,
+    "mean_accuracy": 0.865
+  },
+  {
+    "config_name": "L7/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      7
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.5164709091186523,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 3.2378768920898438,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.37897130846977234,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 0.9818921089172363,
+        "accuracy": 0.72
+      },
+      "empathetic_analytical": {
+        "dprime": 2.578559160232544,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.6430814266204834,
+        "accuracy": 0.64
+      },
+      "verbose_concise": {
+        "dprime": 0.9155983924865723,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.953858733177185,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 1.6507886163890362,
+    "mean_accuracy": 0.875
+  },
+  {
+    "config_name": "L8/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      8
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.3593857288360596,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 3.663454532623291,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.4051564931869507,
+        "accuracy": 0.68
+      },
+      "proactive_reluctant": {
+        "dprime": 1.0623509883880615,
+        "accuracy": 0.68
+      },
+      "empathetic_analytical": {
+        "dprime": 2.5854859352111816,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.4537264406681061,
+        "accuracy": 0.6
+      },
+      "verbose_concise": {
+        "dprime": 0.9167473912239075,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.8000836372375488,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 1.6557988934218884,
+    "mean_accuracy": 0.8600000000000001
+  },
+  {
+    "config_name": "L9/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      9
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 2.530743360519409,
+        "accuracy": 0.96
+      },
+      "patient_irritated": {
+        "dprime": 4.9247965812683105,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.4822855591773987,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.1469212770462036,
+        "accuracy": 0.8
+      },
+      "empathetic_analytical": {
+        "dprime": 2.5504183769226074,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.40121471881866455,
+        "accuracy": 0.6
+      },
+      "verbose_concise": {
+        "dprime": 0.9194599986076355,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.014486312866211,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 1.871290773153305,
+    "mean_accuracy": 0.88
+  },
+  {
+    "config_name": "L10/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      10
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.0221829414367676,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.264039039611816,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.515073835849762,
+        "accuracy": 0.76
+      },
+      "proactive_reluctant": {
+        "dprime": 1.3513431549072266,
+        "accuracy": 0.88
+      },
+      "empathetic_analytical": {
+        "dprime": 2.4488229751586914,
+        "accuracy": 0.96
+      },
+      "formal_casual": {
+        "dprime": 0.37234264612197876,
+        "accuracy": 0.56
+      },
+      "verbose_concise": {
+        "dprime": 0.9172295928001404,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 1.8080384731292725,
+        "accuracy": 0.92
+      }
+    },
+    "mean_dprime": 1.962384082376957,
+    "mean_accuracy": 0.885
+  },
+  {
+    "config_name": "L11/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      11
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.052025318145752,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.7231903076171875,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.5466978549957275,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.8974167108535767,
+        "accuracy": 0.92
+      },
+      "empathetic_analytical": {
+        "dprime": 2.7434895038604736,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.5672231316566467,
+        "accuracy": 0.68
+      },
+      "verbose_concise": {
+        "dprime": 0.9190858602523804,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.0212364196777344,
+        "accuracy": 0.96
+      }
+    },
+    "mean_dprime": 2.183795638382435,
+    "mean_accuracy": 0.91
+  },
+  {
+    "config_name": "L12/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      12
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.074523448944092,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.654394626617432,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.47873809933662415,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1552834510803223,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 2.8274714946746826,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.5230109691619873,
+        "accuracy": 0.56
+      },
+      "verbose_concise": {
+        "dprime": 0.9198552370071411,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.1775853633880615,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.351357836276293,
+    "mean_accuracy": 0.9099999999999999
+  },
+  {
+    "config_name": "L13/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      13
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.025212049484253,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.040864944458008,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.5081096887588501,
+        "accuracy": 0.72
+      },
+      "proactive_reluctant": {
+        "dprime": 1.8971542119979858,
+        "accuracy": 0.96
+      },
+      "empathetic_analytical": {
+        "dprime": 2.864990711212158,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.44686728715896606,
+        "accuracy": 0.56
+      },
+      "verbose_concise": {
+        "dprime": 0.9202365875244141,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.179701805114746,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.2353921607136726,
+    "mean_accuracy": 0.905
+  },
+  {
+    "config_name": "L14/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      14
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.240590810775757,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.742309093475342,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.6646261215209961,
+        "accuracy": 0.76
+      },
+      "proactive_reluctant": {
+        "dprime": 1.966650366783142,
+        "accuracy": 0.96
+      },
+      "empathetic_analytical": {
+        "dprime": 2.8105757236480713,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.48313063383102417,
+        "accuracy": 0.64
+      },
+      "verbose_concise": {
+        "dprime": 0.924317479133606,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.5510339736938477,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.4229042753577232,
+    "mean_accuracy": 0.9199999999999999
+  },
+  {
+    "config_name": "L15/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      15
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 3.787081241607666,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.369110584259033,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.7398538589477539,
+        "accuracy": 0.76
+      },
+      "proactive_reluctant": {
+        "dprime": 2.446941614151001,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.1237804889678955,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 0.5304269194602966,
+        "accuracy": 0.64
+      },
+      "verbose_concise": {
+        "dprime": 0.9282271862030029,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.781416654586792,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 2.71335481852293,
+    "mean_accuracy": 0.925
+  },
+  {
+    "config_name": "L16/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      16
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.621092796325684,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 9.413141250610352,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 0.9967610836029053,
+        "accuracy": 0.76
+      },
+      "proactive_reluctant": {
+        "dprime": 2.5559799671173096,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.1696231365203857,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.0595577955245972,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 0.9297904372215271,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 2.9000556468963623,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.2057502642273903,
+    "mean_accuracy": 0.955
+  },
+  {
+    "config_name": "L17/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      17
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.777338027954102,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 9.92222785949707,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.7116659879684448,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.7339301109313965,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.837392568588257,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.4745378494262695,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 0.931024968624115,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.0222206115722656,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.55129224807024,
+    "mean_accuracy": 0.97
+  },
+  {
+    "config_name": "L18/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      18
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.640877723693848,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 10.011167526245117,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.5262410640716553,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.6431005001068115,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.9102578163146973,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 1.4406741857528687,
+        "accuracy": 0.88
+      },
+      "verbose_concise": {
+        "dprime": 0.9264346957206726,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.1530070304870605,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.5314700677990913,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L19/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      19
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 5.0507049560546875,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 10.06704330444336,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.7660224437713623,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.6113359928131104,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.7880430221557617,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.499047040939331,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9261004328727722,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.755772829055786,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.8080087527632713,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "L20/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      20
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.745361328125,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.528707504272461,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.667924165725708,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1790411472320557,
+        "accuracy": 0.96
+      },
+      "empathetic_analytical": {
+        "dprime": 3.8793222904205322,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.6270036697387695,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9215062856674194,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.877814531326294,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.55333511531353,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L21/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      21
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.607439041137695,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 8.634710311889648,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.5836750268936157,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.672208070755005,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.599696397781372,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.8644278049468994,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9257936477661133,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 3.6934072971343994,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.5726696997880936,
+    "mean_accuracy": 0.99
+  },
+  {
+    "config_name": "L22/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      22
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.402321815490723,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.950284004211426,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.600733995437622,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.3741071224212646,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.591548442840576,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 2.9597973823547363,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9283536076545715,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 3.8552162647247314,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.4577953293919563,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L23/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      23
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.458426475524902,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.630152225494385,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.6013245582580566,
+        "accuracy": 0.92
+      },
+      "proactive_reluctant": {
+        "dprime": 2.5903782844543457,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.6157281398773193,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.3938567638397217,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9291854500770569,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 4.130970001220703,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.5437527373433113,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L24/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      24
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.4227070808410645,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.6004958152771,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.659530520439148,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.690882444381714,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.7751152515411377,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.005805492401123,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9380426406860352,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 4.128482818603516,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.6526327580213547,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L25/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      25
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.3475823402404785,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.213813781738281,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.606160283088684,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.8430120944976807,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.471022367477417,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.944190263748169,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9380521774291992,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 4.494908809661865,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.607342764735222,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L26/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      26
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.297006130218506,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 7.276968479156494,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.6689428091049194,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.751380443572998,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.4612135887145996,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.808420419692993,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9460519552230835,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 4.451015949249268,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.5826249718666077,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L27/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      27
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.25947380065918,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.712862968444824,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.6449984312057495,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 2.8045010566711426,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.404238224029541,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 3.8826355934143066,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9469344615936279,
+        "accuracy": 0.92
+      },
+      "direct_evasive": {
+        "dprime": 4.420193195343018,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.5094797164201736,
+    "mean_accuracy": 0.975
+  },
+  {
+    "config_name": "L28/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      28
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.533087253570557,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.830677509307861,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.785483717918396,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 3.146637439727783,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.6504039764404297,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.619836330413818,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9627379179000854,
+        "accuracy": 0.96
+      },
+      "direct_evasive": {
+        "dprime": 4.316340446472168,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7306505739688873,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "L29/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      29
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.576075553894043,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.460603713989258,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9019639492034912,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 3.1596362590789795,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.706002712249756,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.738462448120117,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9568179249763489,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.149693012237549,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.706156946718693,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L30/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      30
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.586586952209473,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.476914405822754,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.9074848890304565,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 3.4196009635925293,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.6903984546661377,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.651481628417969,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.965080976486206,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.212901592254639,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7388062328100204,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L31/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      31
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.619146823883057,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.422441482543945,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.8479423522949219,
+        "accuracy": 0.88
+      },
+      "proactive_reluctant": {
+        "dprime": 3.6066739559173584,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5233678817749023,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.706015586853027,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 0.9943041801452637,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.427369594573975,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7684077322483063,
+    "mean_accuracy": 0.985
+  },
+  {
+    "config_name": "L32/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.719841480255127,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 5.946234703063965,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4016867876052856,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 1.9655499458312988,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5512642860412598,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.8663763999938965,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 3.296307325363159,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.796156883239746,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.8179272264242172,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last2_equal/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.733052730560303,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.026966571807861,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4190797805786133,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.011472225189209,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5569169521331787,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.898664474487305,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 3.1083641052246094,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.806034564971924,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.8200689256191254,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last3_equal/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.741732120513916,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.116401195526123,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4359924793243408,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.062544107437134,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5689170360565186,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.921130657196045,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.692765474319458,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.803654670715332,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7928922176361084,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last4_equal/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.746107578277588,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.201735496520996,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4538378715515137,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1031222343444824,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.579491138458252,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.929309844970703,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.2637712955474854,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.787775993347168,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7581439316272736,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last6_equal/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.7356743812561035,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.369019508361816,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4725412130355835,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1583774089813232,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.582408905029297,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.925804138183594,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.6796095371246338,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.7685866355896,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.711502715945244,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last8_equal/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": null,
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.721846580505371,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.557273864746094,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4861809015274048,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.1987903118133545,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5870320796966553,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.885050296783447,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.389721393585205,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.760959625244141,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.698356881737709,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last4_prod/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.736400604248047,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.080291271209717,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.427965521812439,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.035325288772583,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.5651004314422607,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.905828475952148,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 2.9056053161621094,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.7993292808532715,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.806980773806572,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last4_inverse/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.761967182159424,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.500432968139648,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.5387780666351318,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.3444876670837402,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.619128704071045,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.986488342285156,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 1.3072282075881958,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.728654384613037,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.7233956903219223,
+    "mean_accuracy": 0.98
+  },
+  {
+    "config_name": "last4_quad/decay_0.8",
+    "strategy": "decay_0.8",
+    "layers": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "layer_weights": [
+      1,
+      4,
+      9,
+      16
+    ],
+    "per_axis": {
+      "warm_cold": {
+        "dprime": 4.730637550354004,
+        "accuracy": 1.0
+      },
+      "patient_irritated": {
+        "dprime": 6.024717330932617,
+        "accuracy": 1.0
+      },
+      "confident_cautious": {
+        "dprime": 1.4170522689819336,
+        "accuracy": 0.84
+      },
+      "proactive_reluctant": {
+        "dprime": 2.006178855895996,
+        "accuracy": 1.0
+      },
+      "empathetic_analytical": {
+        "dprime": 3.558788299560547,
+        "accuracy": 1.0
+      },
+      "formal_casual": {
+        "dprime": 4.892139434814453,
+        "accuracy": 1.0
+      },
+      "verbose_concise": {
+        "dprime": 3.142317771911621,
+        "accuracy": 1.0
+      },
+      "direct_evasive": {
+        "dprime": 4.801036357879639,
+        "accuracy": 1.0
+      }
+    },
+    "mean_dprime": 3.8216084837913513,
+    "mean_accuracy": 0.98
+  }
+]

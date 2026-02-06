@@ -1,0 +1,112 @@
+{
+  "deepseek_7b": {
+    "confident_cautious": {
+      "status": "success",
+      "val_accuracy": 0.8333333333333334,
+      "val_separation": 40.1875
+    },
+    "direct_evasive": {
+      "status": "success",
+      "val_accuracy": 0.75,
+      "val_separation": 26.75
+    },
+    "verbose_concise": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 105.3125
+    },
+    "warm_cold": {
+      "status": "success",
+      "val_accuracy": 0.8055555555555556,
+      "val_separation": 31.5
+    }
+  },
+  "llama_8b": {
+    "confident_cautious": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 15.421875
+    },
+    "direct_evasive": {
+      "status": "success",
+      "val_accuracy": 0.9444444444444444,
+      "val_separation": 33.65625
+    },
+    "verbose_concise": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 67.6875
+    },
+    "warm_cold": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 25.53125
+    }
+  },
+  "mistral_7b": {
+    "confident_cautious": {
+      "status": "success",
+      "val_accuracy": 0.7777777777777778,
+      "val_separation": 13.7578125
+    },
+    "direct_evasive": {
+      "status": "success",
+      "val_accuracy": 0.9166666666666666,
+      "val_separation": 48.8125
+    },
+    "verbose_concise": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 127.875
+    },
+    "warm_cold": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 59.9375
+    }
+  },
+  "qwen_7b": {
+    "confident_cautious": {
+      "status": "success",
+      "val_accuracy": 0.7777777777777778,
+      "val_separation": 40.21875
+    },
+    "direct_evasive": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 96.8125
+    },
+    "verbose_concise": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 209.125
+    },
+    "warm_cold": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 163.75
+    }
+  },
+  "yi_9b": {
+    "confident_cautious": {
+      "status": "success",
+      "val_accuracy": 0.8333333333333334,
+      "val_separation": 13.765625
+    },
+    "direct_evasive": {
+      "status": "success",
+      "val_accuracy": 0.75,
+      "val_separation": 42.125
+    },
+    "verbose_concise": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 153.5
+    },
+    "warm_cold": {
+      "status": "success",
+      "val_accuracy": 1.0,
+      "val_separation": 77.4375
+    }
+  }
+}
