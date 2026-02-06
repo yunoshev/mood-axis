@@ -3,7 +3,7 @@
 **Measure LLM "temperament" by probing hidden states across 8 personality axes.**
 
 <p align="center">
-  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Temperament Profiles" width="600">
+  <img src="data/article/visualizations/fig1_baseline_profiles.png" alt="Temperament Profiles" width="900">
 </p>
 
 ## What is this?
