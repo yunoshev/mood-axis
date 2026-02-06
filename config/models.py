@@ -116,7 +116,7 @@ MODELS = {
 # =============================================================================
 
 MODEL_SETS = {
-    "article": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b"],
+    "article": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "gemma_9b"],
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),

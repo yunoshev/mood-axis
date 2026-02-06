@@ -215,7 +215,7 @@ mood-axis/
 3. Compute axis vector: `normalize(trimmed_mean(H_pos) - trimmed_mean(H_neg))`
 4. Normalize using IQR-based scaling
 
-**Why last 4 layers with decay weighting?** We ran a full ablation study (150-228 configurations per model across all 8 models), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all 8 models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. See [`scripts/ablation_study.py`](scripts/ablation_study.py) for full reproduction.
+**Why last 4 layers with decay weighting?** We ran a full ablation study (150-228 configurations per model across all 9 models), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all 9 models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. See [`scripts/ablation_study.py`](scripts/ablation_study.py) for full reproduction.
 
 ### Measurement
 
@@ -261,7 +261,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 - **No fixed seed, 1 sample per prompt** — adds measurement noise, though reproducibility test shows deltas < 0.05
 - **Correlated axes** — behavioral correlations exist (e.g., warm ↔ direct r=0.88), though axis vectors are nearly orthogonal (mean |cos| = 0.252)
 - **No length deconfounding** — response length is not controlled; some axes may partially capture verbosity
-- **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 8 models)
+- **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 9 models)
 
 ---
 
