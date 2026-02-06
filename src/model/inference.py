@@ -28,6 +28,35 @@ class GenerationResult:
     raw_hidden_states: Optional[List[torch.Tensor]] = None  # Per-token states if needed
 
 
+def _apply_chat_template(tokenizer, messages):
+    """Apply chat template with fallback for models that don't support system role.
+
+    Some models (e.g., Gemma) don't support system messages in their chat template.
+    For these, we merge the system message into the first user message.
+    """
+    try:
+        return tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True,
+        )
+    except Exception as e:
+        if "System role not supported" not in str(e):
+            raise
+        # Merge system message into first user message
+        merged = []
+        system_content = ""
+        for msg in messages:
+            if msg["role"] == "system":
+                system_content = msg["content"]
+            elif msg["role"] == "user" and system_content:
+                merged.append({"role": "user", "content": f"{system_content}\n\n{msg['content']}"})
+                system_content = ""
+            else:
+                merged.append(msg)
+        return tokenizer.apply_chat_template(
+            merged, tokenize=False, add_generation_prompt=True,
+        )
+
+
 def format_chat_messages(
     user_message: str,
     system_message: Optional[str] = None,
@@ -148,11 +177,7 @@ def generate_with_hidden_states(
         GenerationResult with generated text and aggregated hidden state
     """
     # Apply chat template
-    input_text = tokenizer.apply_chat_template(
-        messages,
-        tokenize=False,
-        add_generation_prompt=True,
-    )
+    input_text = _apply_chat_template(tokenizer, messages)
 
     # Tokenize
     inputs = tokenizer(input_text, return_tensors="pt")
@@ -275,11 +300,7 @@ def generate_response(
         Generated text response
     """
     # Apply chat template
-    input_text = tokenizer.apply_chat_template(
-        messages,
-        tokenize=False,
-        add_generation_prompt=True,
-    )
+    input_text = _apply_chat_template(tokenizer, messages)
 
     # Tokenize
     inputs = tokenizer(input_text, return_tensors="pt")
