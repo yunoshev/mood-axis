@@ -51,7 +51,7 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
     logger.info(f"Calibrating axis: {axis}")
 
     # Generate calibration samples for this axis
-    dataset = generate_calibration_dataset(num_samples_per_style=samples_per_pole)
+    dataset = generate_calibration_dataset(num_samples_per_style=samples_per_pole, axes=[axis])
     axis_samples = [s for s in dataset if s.axis == axis]
 
     positive_states = []
