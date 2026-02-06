@@ -3,8 +3,10 @@
 **Measure LLM "temperament" by probing hidden states across 8 personality axes.**
 
 <p align="center">
-  <img src="data/article/visualizations/fig1_baseline_profiles.png" alt="Temperament Profiles" width="900">
+  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 8 Models × 8 Axes" width="900">
 </p>
+
+*Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is warm and verbose. Llama is eerily neutral. Yi cannot show irritation — its hidden states don't change regardless of instruction.*
 
 ## What is this?
 
@@ -26,7 +28,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 ### 1. Models have distinct "personality fingerprints"
 
 <p align="center">
-  <img src="data/article/visualizations/fig1_baseline_profiles.png" alt="Baseline Temperament Profiles" width="900">
+  <img src="data/article/visualizations/fig2_heatmap_baselines.png" alt="Baseline Heatmap — mean ± std across 30 questions" width="900">
 </p>
 
 - **DeepSeek 7B**: Warm, verbose, direct — the "enthusiastic explainer"
