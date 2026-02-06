@@ -41,7 +41,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 ### 2. Models drift differently under adversarial pressure
 
 <p align="center">
-  <img src="data/article/visualizations/fig4_drift_conflict.png" alt="Drift Under Conflict" width="600">
+  <img src="data/article/visualizations/fig3b_drift_ci_warm_cold.png" alt="Drift Under Conflict — Warm/Cold axis with 95% CI" width="600">
 </p>
 
 When users become hostile, models show characteristic "stress responses":
@@ -147,7 +147,7 @@ All visualizations include uncertainty measures:
 |--------|---------------------|
 | **Heatmap** (`fig2_heatmap_baselines`) | Cell annotations show `mean±std` across 30 baseline questions |
 | **Drift with CI** (`fig3b_drift_ci_*`) | Shaded 95% confidence bands aggregated across 20 conflict scenarios |
-| **Drift** (`fig4_drift_conflict`) | Individual scenario lines (variation is visible) |
+| **Drift with CI** (`fig3b_drift_ci_warm_cold`) | Mean lines with 95% CI shaded bands across 20 scenarios |
 
 The drift CI bands are computed per-turn by aggregating values across all scenarios, then computing mean ± 1.96×SE for 95% confidence intervals.
 
