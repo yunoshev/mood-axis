@@ -778,7 +778,7 @@ def create_drift_graph_with_ci(
         ),
         xaxis_title="Turn Number",
         yaxis_title=f"{pos_label} ←→ {neg_label}",
-        yaxis=dict(range=[-1, 1]),
+        yaxis=dict(autorange=True),
         legend=dict(
             orientation="h",
             yanchor="bottom",
@@ -786,7 +786,7 @@ def create_drift_graph_with_ci(
             xanchor="right",
             x=1,
         ),
-        height=450,
+        height=550,
         width=850,
     )
 
