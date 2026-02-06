@@ -74,6 +74,16 @@ MODELS = {
         style_overrides="yi",  # Use YI_STYLE_OVERRIDES from prompts.py
     ),
 
+    # --- Additional models ---
+    "gemma_9b": ModelConfig(
+        model_id="google/gemma-2-9b-it",
+        model_short="gemma_9b",
+        display_name="Gemma 2 9B",
+        color="#4285F4",
+        requires_auth=True,
+        hidden_dim=3584,
+    ),
+
     # --- Small models (1-2B) for quick testing ---
     "qwen_1.5b": ModelConfig(
         model_id="Qwen/Qwen2.5-1.5B-Instruct",
