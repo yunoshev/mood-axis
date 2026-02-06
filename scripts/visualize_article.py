@@ -180,6 +180,165 @@ def create_spider_chart_for_model(
     return fig
 
 
+def create_spider_overlay(
+    baselines: Dict[str, dict],
+    output_path: Optional[Path] = None,
+    models_order: Optional[List[str]] = None,
+) -> go.Figure:
+    """Create a single large spider chart with all models overlaid.
+
+    Best used as hero/catch image for articles. All models shown on one chart
+    with distinct colors and a shared legend.
+    """
+
+    MODEL_DISPLAY = {
+        'deepseek_7b': 'DeepSeek 7B',
+        'qwen_7b': 'Qwen 2.5 7B',
+        'llama_8b': 'Llama 3.1 8B',
+        'mistral_7b': 'Mistral 7B',
+        'yi_9b': 'Yi 1.5 9B',
+        'qwen_1.5b': 'Qwen 1.5B',
+        'smollm_1.7b': 'SmolLM 1.7B',
+        'llama_1b': 'Llama 1B',
+    }
+
+    SPIDER_COLORS = {
+        'deepseek_7b': '#FF6B35',
+        'qwen_7b': '#3B82F6',
+        'llama_8b': '#10B981',
+        'mistral_7b': '#8B5CF6',
+        'yi_9b': '#EC4899',
+        'qwen_1.5b': '#F59E0B',
+        'smollm_1.7b': '#14B8A6',
+        'llama_1b': '#6366F1',
+    }
+
+    ALL_AXES = [
+        ("warm_cold", "Warm"),
+        ("patient_irritated", "Patient"),
+        ("confident_cautious", "Confident"),
+        ("proactive_reluctant", "Proactive"),
+        ("empathetic_analytical", "Empathetic"),
+        ("formal_casual", "Formal"),
+        ("verbose_concise", "Verbose"),
+        ("direct_evasive", "Direct"),
+    ]
+
+    if models_order:
+        models = [m for m in models_order if m in baselines]
+    else:
+        models = list(baselines.keys())
+
+    axes = [a[0] for a in ALL_AXES]
+    theta = [a[1] for a in ALL_AXES]
+    theta_closed = theta + [theta[0]]
+
+    # Auto-scale based on data range
+    all_values = []
+    for model in models:
+        baseline = baselines[model].get("baseline", {})
+        for axis in axes:
+            val = baseline.get(axis, {})
+            mean_val = val.get("mean", 0) if isinstance(val, dict) else val
+            all_values.append(mean_val)
+
+    data_max = max(abs(v) for v in all_values) if all_values else 0.5
+    scale_limit = data_max * 1.3
+    scale_limit = max(scale_limit, 0.3)
+
+    def to_r(val):
+        return 1.0 + val / scale_limit
+
+    fig = go.Figure()
+
+    # Neutral reference ring
+    fig.add_trace(go.Scatterpolar(
+        r=[1.0] * (len(axes) + 1),
+        theta=theta_closed,
+        mode='lines',
+        line=dict(color='rgba(150,150,150,0.4)', width=1, dash='dot'),
+        showlegend=False,
+        hoverinfo='skip',
+    ))
+
+    for model in models:
+        baseline = baselines[model].get("baseline", {})
+
+        r_values = []
+        original_values = []
+        for axis in axes:
+            val = baseline.get(axis, {})
+            mean_val = val.get("mean", 0) if isinstance(val, dict) else val
+            original_values.append(mean_val)
+            r_values.append(to_r(mean_val))
+
+        r_closed = r_values + [r_values[0]]
+        orig_closed = original_values + [original_values[0]]
+        color = SPIDER_COLORS.get(model, '#888888')
+        display_name = MODEL_DISPLAY.get(model, model)
+
+        fig.add_trace(go.Scatterpolar(
+            r=r_closed,
+            theta=theta_closed,
+            fill='toself',
+            fillcolor=hex_to_rgba(color, 0.08),
+            line=dict(color=color, width=2.5),
+            marker=dict(size=5, color=color),
+            name=display_name,
+            customdata=[[f"{v:+.2f}"] for v in orig_closed],
+            hovertemplate='%{theta}: %{customdata[0]}<extra>' + display_name + '</extra>',
+        ))
+
+    tick_step = round(scale_limit / 2, 2)
+    tick_originals = [-tick_step, 0, tick_step]
+    tick_r = [to_r(v) for v in tick_originals]
+    tick_text = [f"{v:+.1f}" if v != 0 else "0" for v in tick_originals]
+
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 2],
+                tickvals=tick_r,
+                ticktext=tick_text,
+                tickfont=dict(size=11, color='gray'),
+                gridcolor='rgba(200,200,200,0.3)',
+            ),
+            angularaxis=dict(
+                tickfont=dict(size=14, weight='bold'),
+                gridcolor='rgba(200,200,200,0.3)',
+                categoryorder='array',
+                categoryarray=theta,
+            ),
+            bgcolor='rgba(248,250,252,1)',
+        ),
+        title=dict(
+            text='Temperament Profiles Comparison',
+            x=0.5,
+            font=dict(size=20),
+        ),
+        showlegend=True,
+        legend=dict(
+            orientation='h',
+            yanchor='top',
+            y=-0.08,
+            xanchor='center',
+            x=0.5,
+            font=dict(size=12),
+        ),
+        height=700,
+        width=750,
+        paper_bgcolor='white',
+        margin=dict(t=60, b=80, l=60, r=60),
+    )
+
+    if output_path:
+        fig.write_image(str(output_path), scale=2)
+        fig.write_html(str(output_path.with_suffix('.html')))
+
+    return fig
+
+
 def create_spider_small_multiples(
     baselines: Dict[str, dict],
     output_path: Optional[Path] = None,
