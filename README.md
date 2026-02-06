@@ -3,7 +3,7 @@
 **Measure LLM "temperament" by probing hidden states across 8 personality axes.**
 
 <p align="center">
-  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 8 Models × 8 Axes" width="900">
+  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 8 Models × 8 Axes" width="450">
 </p>
 
 *Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is warm and verbose. Llama is eerily neutral. Yi cannot show irritation — its hidden states don't change regardless of instruction.*
