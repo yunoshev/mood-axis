@@ -24,6 +24,8 @@ class ModelConfig:
     requires_auth: bool     # Whether HF token is needed
     hidden_dim: int         # Hidden state dimension (for validation)
     style_overrides: Optional[str] = None  # Key in STYLE_OVERRIDES dict if model needs custom prompts
+    is_base_model: bool = False             # True for pretrain-only (no instruct tuning)
+    instruct_counterpart: Optional[str] = None  # Short name of the instruct version (for base models)
 
 
 # =============================================================================
@@ -119,6 +121,48 @@ MODELS = {
         requires_auth=True,
         hidden_dim=2048,
     ),
+
+    # --- Base (pretrain-only) models for alignment effect study ---
+    "llama_8b_base": ModelConfig(
+        model_id="meta-llama/Llama-3.1-8B",
+        model_short="llama_8b_base",
+        display_name="Llama 3.1 8B (base)",
+        color="#3B82F6",
+        requires_auth=True,
+        hidden_dim=4096,
+        is_base_model=True,
+        instruct_counterpart="llama_8b",
+    ),
+    "yi_9b_base": ModelConfig(
+        model_id="01-ai/Yi-1.5-9B",
+        model_short="yi_9b_base",
+        display_name="Yi 1.5 9B (base)",
+        color="#EC4899",
+        requires_auth=True,
+        hidden_dim=4096,
+        is_base_model=True,
+        instruct_counterpart="yi_9b",
+    ),
+    "qwen_7b_base": ModelConfig(
+        model_id="Qwen/Qwen2.5-7B",
+        model_short="qwen_7b_base",
+        display_name="Qwen 2.5 7B (base)",
+        color="#FF6B35",
+        requires_auth=False,
+        hidden_dim=3584,
+        is_base_model=True,
+        instruct_counterpart="qwen_7b",
+    ),
+    "mistral_7b_base": ModelConfig(
+        model_id="mistralai/Mistral-7B-v0.3",
+        model_short="mistral_7b_base",
+        display_name="Mistral 7B (base)",
+        color="#A855F7",
+        requires_auth=False,
+        hidden_dim=4096,
+        is_base_model=True,
+        instruct_counterpart="mistral_7b",
+    ),
 }
 
 # =============================================================================
@@ -128,6 +172,7 @@ MODELS = {
 MODEL_SETS = {
     "article": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "gemma_9b"],
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
+    "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),
 }

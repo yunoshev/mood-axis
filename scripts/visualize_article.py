@@ -22,7 +22,19 @@ from plotly.subplots import make_subplots
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from config.settings import MOOD_AXES, AXIS_LABELS
+from config.settings import MOOD_AXES
+
+# Full 8-axis labels (settings.py may have only 4, but drift data uses all 8)
+AXIS_LABELS = {
+    "warm_cold": ("Warm", "Cold"),
+    "patient_irritated": ("Patient", "Irritated"),
+    "confident_cautious": ("Confident", "Cautious"),
+    "proactive_reluctant": ("Proactive", "Reluctant"),
+    "empathetic_analytical": ("Empathetic", "Analytical"),
+    "formal_casual": ("Formal", "Casual"),
+    "verbose_concise": ("Verbose", "Concise"),
+    "direct_evasive": ("Direct", "Evasive"),
+}
 
 
 # Color scheme
@@ -44,6 +56,7 @@ MODEL_COLORS = {
     "gemma_9b": "#3B82F6",
     "yi_9b": "#EC4899",
     "deepseek_7b": "#F97316",
+    "gpt_oss_20b": "#10A37F",
 }
 
 
@@ -201,6 +214,7 @@ def create_spider_overlay(
         'mistral_7b': 'Mistral 7B',
         'yi_9b': 'Yi 1.5 9B',
         'gemma_9b': 'Gemma 2 9B',
+        'gpt_oss_20b': 'GPT-OSS 20B',
         'qwen_1.5b': 'Qwen 1.5B',
         'smollm_1.7b': 'SmolLM 1.7B',
         'llama_1b': 'Llama 1B',
@@ -213,6 +227,7 @@ def create_spider_overlay(
         'mistral_7b': '#8B5CF6',
         'yi_9b': '#EC4899',
         'gemma_9b': '#06B6D4',
+        'gpt_oss_20b': '#10A37F',
         'qwen_1.5b': '#F59E0B',
         'smollm_1.7b': '#14B8A6',
         'llama_1b': '#6366F1',
@@ -362,6 +377,7 @@ def create_spider_small_multiples(
         'mistral_7b': 'Mistral 7B',
         'yi_9b': 'Yi 1.5 9B',
         'gemma_9b': 'Gemma 2 9B',
+        'gpt_oss_20b': 'GPT-OSS 20B',
         'qwen_1.5b': 'Qwen 1.5B',
         'smollm_1.7b': 'SmolLM 1.7B',
         'llama_1b': 'Llama 1B',
@@ -374,6 +390,7 @@ def create_spider_small_multiples(
         'mistral_7b': '#A855F7',
         'yi_9b': '#EC4899',
         'gemma_9b': '#06B6D4',
+        'gpt_oss_20b': '#10A37F',
         'qwen_1.5b': '#F59E0B',
         'smollm_1.7b': '#14B8A6',
         'llama_1b': '#6366F1',
@@ -710,13 +727,20 @@ def create_drift_graph_with_ci(
         total_scenarios = max(total_scenarios, len(scenarios))
 
         # Collect per-turn values across all scenarios
-        # Find max turn count
-        max_turns = max(len(s.get("mood_values", [])) for s in scenarios)
+        # Handle both formats: old (mood_values list) and new (turns with values)
+        def get_mood_values(scenario):
+            if "mood_values" in scenario:
+                return scenario["mood_values"]
+            elif "turns" in scenario:
+                return [t.get("values", {}) for t in scenario["turns"]]
+            return []
+
+        max_turns = max(len(get_mood_values(s)) for s in scenarios)
 
         # Aggregate values per turn
         per_turn_values = [[] for _ in range(max_turns)]
         for scenario in scenarios:
-            mood_values = scenario.get("mood_values", [])
+            mood_values = get_mood_values(scenario)
             for i, mv in enumerate(mood_values):
                 if axis in mv:
                     per_turn_values[i].append(mv[axis])
@@ -1250,14 +1274,14 @@ def generate_all_figures(
     if verbose:
         print("\n[1b/6] Generating spider small multiples...")
     if baselines:
-        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b']
+        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b', 'gpt_oss_20b']
         create_spider_small_multiples(
             baselines,
             output_dir / "fig1_baseline_profiles.png",
             models_order=big_models,
         )
-        # All 8 models version
-        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b',
+        # All models version
+        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b', 'gpt_oss_20b',
                       'qwen_1.5b', 'smollm_1.7b', 'llama_1b']
         create_spider_small_multiples(
             baselines,

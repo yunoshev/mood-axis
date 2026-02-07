@@ -33,7 +33,21 @@ def _apply_chat_template(tokenizer, messages):
 
     Some models (e.g., Gemma) don't support system messages in their chat template.
     For these, we merge the system message into the first user message.
+
+    Base models (no chat template) get plain text formatting.
     """
+    # Base models: no chat template — format as plain text
+    if tokenizer.chat_template is None:
+        parts = []
+        for msg in messages:
+            if msg["role"] == "system":
+                parts.append(msg["content"])
+            elif msg["role"] == "user":
+                parts.append(msg["content"])
+            elif msg["role"] == "assistant":
+                parts.append(msg["content"])
+        return "\n\n".join(parts) + "\n\n"
+
     try:
         return tokenizer.apply_chat_template(
             messages, tokenize=False, add_generation_prompt=True,

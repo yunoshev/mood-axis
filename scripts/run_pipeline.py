@@ -38,7 +38,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.models import MODELS, MODEL_SETS, get_active_models, set_model_set
+from config.models import MODELS, MODEL_SETS, get_active_models, set_model_set, get_model_config
 from config.settings import AXES_DIR, MOOD_AXES
 
 import numpy as np
@@ -107,7 +107,10 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
         print(f"[WARNING] Benchmark failed for {model_key}")
 
     # Step 4: Drift analysis
-    if skip_drift:
+    model_config = get_model_config(model_key)
+    if model_config.is_base_model:
+        print("\n[SKIP] Drift analysis (base model — no multi-turn support)")
+    elif skip_drift:
         print("\n[SKIP] Drift analysis (--skip-drift)")
     else:
         success = run_command(

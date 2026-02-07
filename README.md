@@ -3,7 +3,7 @@
 **Measure LLM "temperament" by probing hidden states across 8 personality axes.**
 
 <p align="center">
-  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — 9 Models × 8 Axes" width="450">
+  <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — Spider Overlay × 8 Axes" width="450">
 </p>
 
 *Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is warm and verbose. Llama is eerily neutral. Yi cannot show irritation — its hidden states don't change regardless of instruction.*
@@ -47,6 +47,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 When users become hostile, models show characteristic "stress responses":
 - **DeepSeek** cools down (professional detachment)
 - **Qwen** warms up (empathetic de-escalation)
+- **Gemma** stays warm & patient — most resilient, with strong empathy drift (+0.24 over 6 turns)
 - **Mistral** loses patience (counter-escalation tendency)
 
 ### 3. RLHF creates "dead zones"
@@ -95,7 +96,7 @@ This will:
 1. Calibrate axis vectors (or skip if already exists)
 2. Collect baseline temperament measurements
 3. Run validation benchmarks
-4. Run drift analysis (50 conflict scenarios)
+4. Run drift analysis (20 conflict scenarios sampled from 50)
 5. Generate visualizations
 
 ### Individual Steps
@@ -215,7 +216,7 @@ mood-axis/
 3. Compute axis vector: `normalize(trimmed_mean(H_pos) - trimmed_mean(H_neg))`
 4. Normalize using IQR-based scaling
 
-**Why last 4 layers with decay weighting?** We ran a full ablation study (150-228 configurations per model across all 9 models), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all 9 models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. See [`scripts/ablation_study.py`](scripts/ablation_study.py) for full reproduction.
+**Why last 4 layers with decay weighting?** We ran a full ablation study (150-228 configurations per model across 8 models — all except Gemma 2 9B, which was added later), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all ablated models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. See [`scripts/ablation_study.py`](scripts/ablation_study.py) for full reproduction.
 
 ### Measurement
 
@@ -261,7 +262,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 - **No fixed seed, 1 sample per prompt** — adds measurement noise, though reproducibility test shows deltas < 0.05
 - **Correlated axes** — behavioral correlations exist (e.g., warm ↔ direct r=0.88), though axis vectors are nearly orthogonal (mean |cos| = 0.252)
 - **No length deconfounding** — response length is not controlled; some axes may partially capture verbosity
-- **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 9 models)
+- **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 8 ablated models; Gemma 2 9B evaluated separately)
 
 ---
 
