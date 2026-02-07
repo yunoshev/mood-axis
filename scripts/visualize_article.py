@@ -59,6 +59,18 @@ MODEL_COLORS = {
     "gpt_oss_20b": "#10A37F",
 }
 
+MODEL_DISPLAY = {
+    'deepseek_7b': 'DeepSeek 7B',
+    'qwen_7b': 'Qwen 2.5 7B',
+    'llama_8b': 'Llama 3.1 8B',
+    'mistral_7b': 'Mistral 7B',
+    'yi_9b': 'Yi 1.5 9B',
+    'gemma_9b': 'Gemma 2 9B',
+    'qwen_1.5b': 'Qwen 1.5B',
+    'smollm_1.7b': 'SmolLM 1.7B',
+    'llama_1b': 'Llama 1B',
+}
+
 
 def hex_to_rgba(hex_color: str, alpha: float = 1.0) -> str:
     """Convert hex color to rgba string."""
@@ -782,11 +794,12 @@ def create_drift_graph_with_ci(
         ))
 
         # Add mean line
+        display_name = MODEL_DISPLAY.get(model, model)
         fig.add_trace(go.Scatter(
             x=turns_with_data,
             y=means,
             mode='lines+markers',
-            name=model,
+            name=display_name,
             line=dict(color=color, width=2),
             marker=dict(size=4),
         ))
@@ -796,10 +809,17 @@ def create_drift_graph_with_ci(
 
     fig.update_layout(
         title=dict(
-            text=f"Drift Analysis: {pos_label}/{neg_label}{category_str}<br><sup>Shaded bands: 95% CI across {total_scenarios} conflict scenarios</sup>",
+            text=f"Drift Analysis: {pos_label}/{neg_label}{category_str}",
             x=0.5,
             font=dict(size=16),
         ),
+        annotations=[dict(
+            text=f"Shaded bands: 95% CI across {total_scenarios} conflict scenarios",
+            xref="paper", yref="paper",
+            x=0.5, y=-0.15,
+            showarrow=False,
+            font=dict(size=11, color="#888"),
+        )],
         xaxis_title="Turn Number",
         yaxis_title=f"{pos_label} ←→ {neg_label}",
         yaxis=dict(autorange=True),
@@ -807,9 +827,11 @@ def create_drift_graph_with_ci(
             orientation="h",
             yanchor="bottom",
             y=1.02,
-            xanchor="right",
-            x=1,
+            xanchor="center",
+            x=0.5,
+            font=dict(size=11),
         ),
+        margin=dict(b=80),
         height=550,
         width=850,
     )
@@ -1249,9 +1271,10 @@ def generate_all_figures(
         print("="*60)
 
     # Load data
-    baselines = load_baseline_data(data_dir)
-    drift_data = load_drift_data(data_dir)
-    extended_drift = load_extended_drift_data(data_dir)
+    EXCLUDE_MODELS = {'gpt_oss_20b'}
+    baselines = {k: v for k, v in load_baseline_data(data_dir).items() if k not in EXCLUDE_MODELS}
+    drift_data = {k: v for k, v in load_drift_data(data_dir).items() if k not in EXCLUDE_MODELS}
+    extended_drift = {k: v for k, v in load_extended_drift_data(data_dir).items() if k not in EXCLUDE_MODELS}
 
     if verbose:
         print(f"\nLoaded {len(baselines)} baseline profiles")
@@ -1274,14 +1297,14 @@ def generate_all_figures(
     if verbose:
         print("\n[1b/6] Generating spider small multiples...")
     if baselines:
-        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b', 'gpt_oss_20b']
+        big_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b']
         create_spider_small_multiples(
             baselines,
             output_dir / "fig1_baseline_profiles.png",
             models_order=big_models,
         )
         # All models version
-        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b', 'gpt_oss_20b',
+        all_models = ['deepseek_7b', 'qwen_7b', 'llama_8b', 'mistral_7b', 'yi_9b', 'gemma_9b',
                       'qwen_1.5b', 'smollm_1.7b', 'llama_1b']
         create_spider_small_multiples(
             baselines,
