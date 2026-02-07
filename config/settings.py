@@ -32,20 +32,24 @@ CALIBRATION_TRAIN_SAMPLES = 24  # 80% for training
 CALIBRATION_VAL_SAMPLES = 6    # 20% for validation
 CALIBRATION_MAX_NEW_TOKENS = 100
 
-# Mood axes (4 bipolar axes - reduced from 8)
-# Kept: warm_cold (emotional tone), confident_cautious (epistemic certainty),
-#       verbose_concise (detail level), direct_evasive (directness vs hedging)
-# Removed: patient_irritated (failed benchmarks), proactive_reluctant (overlaps verbose),
-#          empathetic_analytical (overlaps warm), formal_casual (too vague)
+# Mood axes (8 bipolar axes)
 MOOD_AXES = [
     "warm_cold",
+    "patient_irritated",
     "confident_cautious",
+    "proactive_reluctant",
+    "empathetic_analytical",
+    "formal_casual",
     "verbose_concise",
     "direct_evasive",
 ]
 AXIS_LABELS = {
     "warm_cold": ("Warm", "Cold"),
+    "patient_irritated": ("Patient", "Irritated"),
     "confident_cautious": ("Confident", "Cautious"),
+    "proactive_reluctant": ("Proactive", "Reluctant"),
+    "empathetic_analytical": ("Empathetic", "Analytical"),
+    "formal_casual": ("Formal", "Casual"),
     "verbose_concise": ("Verbose", "Concise"),
     "direct_evasive": ("Direct", "Evasive"),
 }
@@ -53,10 +57,14 @@ AXIS_LABELS = {
 # Model baseline bias (from benchmark neutral questions)
 # These are typical values when the model answers neutral factual questions
 MODEL_BASELINE = {
-    "warm_cold": -0.06,           # Slightly cold by default
-    "confident_cautious": 0.06,   # Near neutral
-    "verbose_concise": 0.0,       # TBD after calibration
-    "direct_evasive": 0.0,        # TBD after calibration
+    "warm_cold": -0.06,
+    "patient_irritated": 0.0,
+    "confident_cautious": 0.06,
+    "proactive_reluctant": 0.0,
+    "empathetic_analytical": 0.0,
+    "formal_casual": 0.0,
+    "verbose_concise": 0.0,
+    "direct_evasive": 0.0,
 }
 
 # Device configuration

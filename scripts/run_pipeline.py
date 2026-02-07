@@ -39,7 +39,9 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from config.models import MODELS, MODEL_SETS, get_active_models, set_model_set
-from config.settings import AXES_DIR
+from config.settings import AXES_DIR, MOOD_AXES
+
+import numpy as np
 
 
 def run_command(cmd: list, description: str) -> bool:
@@ -53,10 +55,19 @@ def run_command(cmd: list, description: str) -> bool:
     return result.returncode == 0
 
 
-def check_calibration_exists(model_key: str) -> bool:
-    """Check if calibration files exist for a model."""
+def check_calibration_complete(model_key: str) -> bool:
+    """Check if ALL required axes are calibrated for a model."""
     axes_file = AXES_DIR / f"{model_key}_axes.npz"
-    return axes_file.exists()
+    if not axes_file.exists():
+        return False
+    data = np.load(axes_file)
+    existing = set(data["_axes"].tolist())
+    required = set(MOOD_AXES)
+    missing = required - existing
+    if missing:
+        print(f"  Missing axes: {sorted(missing)}")
+        return False
+    return True
 
 
 def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: bool = False):
@@ -68,8 +79,8 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
     # Step 1: Calibration
     if skip_calibration:
         print("\n[SKIP] Calibration (--skip-calibration)")
-    elif check_calibration_exists(model_key):
-        print(f"\n[SKIP] Calibration (already exists: {AXES_DIR / f'{model_key}_axes.npz'})")
+    elif check_calibration_complete(model_key):
+        print(f"\n[SKIP] Calibration (all {len(MOOD_AXES)} axes present: {AXES_DIR / f'{model_key}_axes.npz'})")
     else:
         success = run_command(
             [sys.executable, "scripts/calibrate_local.py", "--model", model_key],

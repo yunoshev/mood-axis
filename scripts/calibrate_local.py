@@ -111,13 +111,35 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
 
 
 def calibrate_model(model_key: str, axes: list = None):
-    """Calibrate all axes for a model."""
+    """Calibrate axes for a model, merging with existing calibration data."""
     if model_key not in MODELS:
         raise ValueError(f"Unknown model: {model_key}. Available: {list(MODELS.keys())}")
 
     model_config = MODELS[model_key]
     model_id = model_config.model_id
     axes = axes or MOOD_AXES
+
+    # Load existing calibration if present — merge new axes with old
+    output_file = AXES_DIR / f"{model_key}_axes.npz"
+    existing_vectors = {}
+    existing_scales = {}
+    if output_file.exists():
+        data = np.load(output_file)
+        existing_axes = data["_axes"].tolist()
+        for a in existing_axes:
+            existing_vectors[a] = data[a]
+            scale_key = f"{a}_scale"
+            if scale_key in data:
+                existing_scales[a] = float(data[scale_key])
+        logger.info(f"Loaded existing axes: {existing_axes}")
+
+        # Only calibrate axes not already present
+        missing = [a for a in axes if a not in existing_axes]
+        if not missing:
+            logger.info("All requested axes already calibrated, nothing to do")
+            return {}
+        logger.info(f"Will calibrate missing axes: {missing}")
+        axes = missing
 
     logger.info(f"Calibrating model: {model_id}")
     logger.info(f"Axes: {axes}")
@@ -128,8 +150,8 @@ def calibrate_model(model_key: str, axes: list = None):
 
     # Calibrate each axis
     results = {}
-    axis_vectors = {}
-    scales = {}
+    axis_vectors = dict(existing_vectors)
+    scales = dict(existing_scales)
 
     for axis in axes:
         result = calibrate_axis(model, tokenizer, axis)
@@ -145,11 +167,10 @@ def calibrate_model(model_key: str, axes: list = None):
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    # Save results
+    # Save merged results
     AXES_DIR.mkdir(parents=True, exist_ok=True)
-    output_file = AXES_DIR / f"{model_key}_axes.npz"
     save_axis_vectors(axis_vectors, scales, output_file)
-    logger.info(f"Saved to {output_file}")
+    logger.info(f"Saved to {output_file} ({len(axis_vectors)} axes)")
 
     # Cleanup
     del model, tokenizer
