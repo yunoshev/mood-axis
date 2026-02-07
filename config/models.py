@@ -84,6 +84,16 @@ MODELS = {
         hidden_dim=3584,
     ),
 
+    # --- MoE models ---
+    "gpt_oss_20b": ModelConfig(
+        model_id="openai/gpt-oss-20b",
+        model_short="gpt_oss_20b",
+        display_name="GPT-OSS 20B",
+        color="#10A37F",
+        requires_auth=False,
+        hidden_dim=2880,
+    ),
+
     # --- Small models (1-2B) for quick testing ---
     "qwen_1.5b": ModelConfig(
         model_id="Qwen/Qwen2.5-1.5B-Instruct",

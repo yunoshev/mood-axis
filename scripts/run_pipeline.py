@@ -100,7 +100,7 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
         print("\n[SKIP] Drift analysis (--skip-drift)")
     else:
         success = run_command(
-            [sys.executable, "scripts/extended_drift.py", "--model", model_key, "--scenarios", "10"],
+            [sys.executable, "scripts/extended_drift.py", "--model", model_key, "--scenarios", "20"],
             f"Step 4: Running drift analysis for {model_key}"
         )
         if not success:

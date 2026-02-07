@@ -30,15 +30,28 @@ def load_model(
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=dtype,
-        device_map=None,  # Manual device placement
-        output_hidden_states=True,
-        trust_remote_code=True,
-    )
+    if device.type == "cuda":
+        # Use device_map="auto" and native dtype on CUDA.
+        # This lets MoE/MXFP4 models (e.g. gpt-oss-20b) load in their
+        # native precision instead of upcasting to fp16 and OOM-ing.
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype="auto",
+            device_map="auto",
+            output_hidden_states=True,
+            trust_remote_code=True,
+        )
+    else:
+        # MPS/CPU: keep manual placement
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=dtype,
+            device_map=None,
+            output_hidden_states=True,
+            trust_remote_code=True,
+        )
+        model = model.to(device)
 
-    model = model.to(device)
     model.eval()
 
     print(f"Model loaded successfully. Parameters: {model.num_parameters() / 1e9:.2f}B")
