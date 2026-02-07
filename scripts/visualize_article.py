@@ -180,6 +180,7 @@ def create_spider_chart_for_model(
         name=model_name,
     ))
 
+    display_name = MODEL_DISPLAY.get(model_name, model_name)
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
@@ -187,16 +188,16 @@ def create_spider_chart_for_model(
                 range=[0, 1],
                 tickvals=[0.25, 0.5, 0.75, 1.0],
             ),
-            bgcolor='rgba(15, 15, 25, 0.95)',
+            bgcolor='white',
         ),
         showlegend=False,
         title=dict(
-            text=f"Temperament Profile: {model_name}",
+            text=f"Temperament Profile: {display_name}",
             x=0.5,
             font=dict(size=16),
         ),
-        paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='white'),
+        paper_bgcolor='white',
+        plot_bgcolor='white',
         height=500,
         width=500,
     )
@@ -361,6 +362,7 @@ def create_spider_overlay(
         height=700,
         width=750,
         paper_bgcolor='white',
+        plot_bgcolor='white',
         margin=dict(t=60, b=80, l=60, r=60),
     )
 
@@ -556,6 +558,7 @@ def create_spider_small_multiples(
         height=500 if n_rows == 1 else 950,
         width=380 * n_cols,
         paper_bgcolor='white',
+        plot_bgcolor='white',
         margin=dict(t=100, b=40, l=70, r=70),
     )
 
@@ -831,6 +834,8 @@ def create_drift_graph_with_ci(
             x=0.5,
             font=dict(size=11),
         ),
+        paper_bgcolor='white',
+        plot_bgcolor='white',
         margin=dict(b=80),
         height=550,
         width=850,
