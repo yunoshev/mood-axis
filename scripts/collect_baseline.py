@@ -35,12 +35,6 @@ from src.calibration.axis_computer import load_axis_vectors
 OUTPUT_DIR = PROJECT_ROOT / "data" / "article" / "baselines"
 
 
-def get_all_axes_from_npz(axes_file: Path) -> list:
-    """Get all axis names available in the npz file."""
-    data = np.load(axes_file)
-    axes = [k for k in data.keys() if not k.startswith('_') and not k.endswith('_scale')]
-    return axes
-
 
 def collect_baseline(model_key: str) -> dict:
     """Collect baseline measurements for a model."""
@@ -52,12 +46,12 @@ def collect_baseline(model_key: str) -> dict:
 
     print(f"Collecting baseline for {model_key} ({model_id})")
 
-    # Load calibrated axes (all axes from npz, not just MOOD_AXES)
+    # Load calibrated axes — use MOOD_AXES as single source of truth
     axes_file = AXES_DIR / f"{model_key}_axes.npz"
     if not axes_file.exists():
         raise FileNotFoundError(f"Calibration not found: {axes_file}")
 
-    all_axes = get_all_axes_from_npz(axes_file)
+    all_axes = MOOD_AXES
     axis_vectors = load_axis_vectors(axes_file)
 
     # Load normalization scales

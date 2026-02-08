@@ -160,21 +160,26 @@ def calibrate_model(model_key: str, axes: list = None):
     axes = axes or MOOD_AXES
 
     # Load existing calibration if present — merge new axes with old
+    # IMPORTANT: only keep existing axes that are in MOOD_AXES (single source of truth)
     output_file = AXES_DIR / f"{model_key}_axes.npz"
     existing_vectors = {}
     existing_scales = {}
     if output_file.exists():
         data = np.load(output_file)
         existing_axes = data["_axes"].tolist()
+        # Filter to only MOOD_AXES — drop stale axes like direct_evasive
         for a in existing_axes:
+            if a not in MOOD_AXES:
+                logger.info(f"Dropping stale axis from existing NPZ: {a}")
+                continue
             existing_vectors[a] = data[a]
             scale_key = f"{a}_scale"
             if scale_key in data:
                 existing_scales[a] = float(data[scale_key])
-        logger.info(f"Loaded existing axes: {existing_axes}")
+        logger.info(f"Loaded existing axes (filtered to MOOD_AXES): {list(existing_vectors.keys())}")
 
         # Only calibrate axes not already present
-        missing = [a for a in axes if a not in existing_axes]
+        missing = [a for a in axes if a not in existing_vectors]
         if not missing:
             logger.info("All requested axes already calibrated, nothing to do")
             return {}
