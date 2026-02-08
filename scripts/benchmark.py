@@ -282,8 +282,12 @@ def run_scenario(
     tokenizer,
     projector: MoodProjector,
     verbose: bool = True,
+    seed: Optional[int] = None,
 ) -> dict:
     """Run a single test scenario.
+
+    Args:
+        seed: Random seed for reproducible sampling
 
     Returns:
         Dict with results
@@ -328,6 +332,7 @@ def run_scenario(
             tokenizer=tokenizer,
             messages=messages,
             max_new_tokens=100,
+            seed=seed,
         )
 
         # Project mood
@@ -400,8 +405,12 @@ def run_benchmark(
     scenarios: Optional[List[TestScenario]] = None,
     verbose: bool = True,
     axes_file: Optional[Path] = None,
+    seed: Optional[int] = None,
 ) -> dict:
     """Run the full benchmark.
+
+    Args:
+        seed: Random seed for reproducible sampling
 
     Returns:
         Dict with all results
@@ -451,7 +460,7 @@ def run_benchmark(
     }
 
     for scenario in scenarios:
-        result = run_scenario(scenario, model, tokenizer, projector, verbose)
+        result = run_scenario(scenario, model, tokenizer, projector, verbose, seed=seed)
         all_results["scenarios"].append(result)
 
         if result["passed"]:
@@ -505,12 +514,19 @@ if __name__ == "__main__":
         action="store_true",
         help="Less verbose output",
     )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Random seed for reproducible sampling",
+    )
     args = parser.parse_args()
 
     results = run_benchmark(
         model_name=args.model,
         verbose=not args.quiet,
         axes_file=Path(args.axes) if args.axes else None,
+        seed=args.seed,
     )
 
     # Exit with error code if any failures

@@ -1,0 +1,286 @@
+{
+  "qwen_7b": {
+    "warm_cold": {
+      "has_raw_values": false,
+      "mean": 0.08596420288085938
+    },
+    "patient_irritated": {
+      "has_raw_values": false,
+      "mean": 0.07241668701171874
+    },
+    "confident_cautious": {
+      "has_raw_values": false,
+      "mean": -0.17799173990885417
+    },
+    "proactive_reluctant": {
+      "has_raw_values": false,
+      "mean": 0.096099853515625
+    },
+    "empathetic_analytical": {
+      "has_raw_values": false,
+      "mean": -0.12465267181396485
+    },
+    "formal_casual": {
+      "has_raw_values": false,
+      "mean": 0.09536641438802083
+    },
+    "verbose_concise": {
+      "has_raw_values": false,
+      "mean": 0.11800613403320312
+    },
+    "direct_evasive": {
+      "has_raw_values": false,
+      "mean": 0.024857330322265624
+    }
+  },
+  "mistral_7b": {
+    "warm_cold": {
+      "has_raw_values": false,
+      "mean": 0.014908091227213541
+    },
+    "patient_irritated": {
+      "has_raw_values": false,
+      "mean": 0.04936014811197917
+    },
+    "confident_cautious": {
+      "has_raw_values": false,
+      "mean": -0.06230354309082031
+    },
+    "proactive_reluctant": {
+      "has_raw_values": false,
+      "mean": 0.04827168782552083
+    },
+    "empathetic_analytical": {
+      "has_raw_values": false,
+      "mean": -0.0697845458984375
+    },
+    "formal_casual": {
+      "has_raw_values": false,
+      "mean": 0.08687096436818441
+    },
+    "verbose_concise": {
+      "has_raw_values": false,
+      "mean": 0.08154678344726562
+    },
+    "direct_evasive": {
+      "has_raw_values": false,
+      "mean": -0.03397976557413737
+    }
+  },
+  "deepseek_7b": {
+    "warm_cold": {
+      "has_raw_values": false,
+      "mean": 0.3965199788411458
+    },
+    "patient_irritated": {
+      "has_raw_values": false,
+      "mean": -0.3287663777669271
+    },
+    "confident_cautious": {
+      "has_raw_values": false,
+      "mean": 0.19212443033854168
+    },
+    "proactive_reluctant": {
+      "has_raw_values": false,
+      "mean": 0.14528757731119793
+    },
+    "empathetic_analytical": {
+      "has_raw_values": false,
+      "mean": 0.04069468180338542
+    },
+    "formal_casual": {
+      "has_raw_values": false,
+      "mean": 0.184661865234375
+    },
+    "verbose_concise": {
+      "has_raw_values": false,
+      "mean": 0.530864969889323
+    },
+    "direct_evasive": {
+      "has_raw_values": false,
+      "mean": 0.20679677327473958
+    }
+  },
+  "llama_8b": {
+    "warm_cold": {
+      "has_raw_values": false,
+      "mean": 0.03141231536865234
+    },
+    "patient_irritated": {
+      "has_raw_values": false,
+      "mean": 0.011574411392211914
+    },
+    "confident_cautious": {
+      "has_raw_values": false,
+      "mean": -0.003659820556640625
+    },
+    "proactive_reluctant": {
+      "has_raw_values": false,
+      "mean": 0.021641318003336588
+    },
+    "empathetic_analytical": {
+      "has_raw_values": false,
+      "mean": -0.006148687998453776
+    },
+    "formal_casual": {
+      "has_raw_values": false,
+      "mean": -0.019800440470377604
+    },
+    "verbose_concise": {
+      "has_raw_values": false,
+      "mean": 0.02374919255574544
+    },
+    "direct_evasive": {
+      "has_raw_values": false,
+      "mean": -0.020607121785481772
+    }
+  },
+  "yi_9b": {
+    "warm_cold": {
+      "has_raw_values": false,
+      "mean": 0.17319412231445314
+    },
+    "patient_irritated": {
+      "has_raw_values": false,
+      "mean": 0.2073760986328125
+    },
+    "confident_cautious": {
+      "has_raw_values": false,
+      "mean": -0.182867431640625
+    },
+    "proactive_reluctant": {
+      "has_raw_values": false,
+      "mean": 0.6571492513020833
+    },
+    "empathetic_analytical": {
+      "has_raw_values": false,
+      "mean": -0.28910064697265625
+    },
+    "formal_casual": {
+      "has_raw_values": false,
+      "mean": 0.09255539576212565
+    },
+    "verbose_concise": {
+      "has_raw_values": false,
+      "mean": 0.09922993977864583
+    },
+    "direct_evasive": {
+      "has_raw_values": false,
+      "mean": 0.07006785074869791
+    }
+  },
+  "gemma_9b": {
+    "warm_cold": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.044978645789517685,
+      "std": 0.04590229029903486,
+      "ci_lower": 0.028859826006417896,
+      "ci_upper": 0.061726192143739866,
+      "ci_width": 0.03286636613732197,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 0.9634083186816823,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "patient_irritated": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.29906603363113843,
+      "std": 0.047899354442319166,
+      "ci_lower": 0.2826931055954879,
+      "ci_upper": 0.31697959467715564,
+      "ci_width": 0.03428648908166776,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 6.138691411635885,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "confident_cautious": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": -0.11594309710462047,
+      "std": 0.03882222440723218,
+      "ci_lower": -0.12966269704114666,
+      "ci_upper": -0.10225917395653127,
+      "ci_width": 0.027403523084615397,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": -2.936316416008967,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "proactive_reluctant": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.22414883712067812,
+      "std": 0.043071113855319865,
+      "ci_lower": 0.2088507680212287,
+      "ci_upper": 0.23914020681169557,
+      "ci_width": 0.03028943879046686,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 5.116685911458432,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "empathetic_analytical": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": -0.13238405428931516,
+      "std": 0.0381004975496886,
+      "ci_lower": -0.14629419169032964,
+      "ci_upper": -0.11890127695435153,
+      "ci_width": 0.027392914735978116,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": -3.4162008923615144,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "formal_casual": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.11062445428539212,
+      "std": 0.03613446225708297,
+      "ci_lower": 0.09779553637331305,
+      "ci_upper": 0.12336248353971922,
+      "ci_width": 0.025566947166406173,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 3.0100098504738435,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "verbose_concise": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.1495447022453634,
+      "std": 0.051163329793732004,
+      "ci_lower": 0.1303885360699148,
+      "ci_upper": 0.16711084332245385,
+      "ci_width": 0.036722307252539055,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 2.8737607087688923,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    },
+    "direct_evasive": {
+      "has_raw_values": true,
+      "n_samples": 30,
+      "mean": 0.3241347872380908,
+      "std": 0.05557481929635278,
+      "ci_lower": 0.3048310126597228,
+      "ci_upper": 0.3445529038505885,
+      "ci_width": 0.03972189119086572,
+      "ci_crosses_zero": false,
+      "p_value": 0.0,
+      "effect_size": 5.734373224799328,
+      "p_value_adjusted": 0.0,
+      "significant_corrected": true
+    }
+  }
+}

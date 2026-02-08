@@ -47,12 +47,21 @@ for key, cfg in MODELS.items():
 
 
 def load_baseline(model_key: str) -> dict | None:
-    """Load baseline JSON for a model. Returns None if not found."""
+    """Load baseline JSON for a model. Returns None if not found.
+
+    Handles two formats:
+    - Old: {"baseline": {"axis": {"mean": ..., "std": ...}}}
+    - New: {"axes": {"axis": {"mean": ..., "std": ..., "values": [...]}}}
+    """
     path = BASELINE_DIR / f"{model_key}_baseline.json"
     if not path.exists():
         return None
     with open(path) as f:
-        return json.load(f)
+        data = json.load(f)
+    # Normalize: ensure "axes" key exists
+    if "axes" not in data and "baseline" in data:
+        data["axes"] = data["baseline"]
+    return data
 
 
 def load_benchmark(model_key: str) -> dict | None:

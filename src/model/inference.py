@@ -174,6 +174,7 @@ def generate_with_hidden_states(
     top_p: float = TOP_P,
     do_sample: bool = DO_SAMPLE,
     return_raw_states: bool = False,
+    seed: Optional[int] = None,
 ) -> GenerationResult:
     """Generate text and extract hidden states.
 
@@ -186,10 +187,16 @@ def generate_with_hidden_states(
         top_p: Top-p sampling parameter
         do_sample: Whether to sample or use greedy decoding
         return_raw_states: Whether to return raw per-token hidden states
+        seed: Random seed for reproducible sampling (only relevant when do_sample=True)
 
     Returns:
         GenerationResult with generated text and aggregated hidden state
     """
+    if seed is not None:
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed(seed)
+
     # Apply chat template
     input_text = _apply_chat_template(tokenizer, messages)
 

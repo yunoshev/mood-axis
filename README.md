@@ -60,6 +60,21 @@ Yi 1.5 9B (Chinese model with strong safety training) shows near-random performa
 
 This suggests that post-training alignment may impose hard limits on behavioral steering.
 
+### 4. Direct proof: base vs instruct comparison
+
+<p align="center">
+  <img src="data/article/visualizations/fig_base_vs_instruct.png" alt="Base vs Instruct Temperament Profiles" width="900">
+</p>
+
+To test whether dead zones are caused by alignment training (not architecture), we ran the same pipeline on **pretrain-only (base) versions** of 4 models:
+
+- **Llama 3.1 8B base**: Cold, reluctant, verbose, direct — a strong personality that alignment neutralizes
+- **Mistral 7B base**: Warm and patient — clear temperament that collapses post-training
+- **Qwen 2.5 7B base**: Highly confident (+0.39), formal (+0.83) — alignment flips confidence to caution
+- **Yi 1.5 9B base**: High formal/casual variability (std 0.40) — instruct training compresses it to 0.10
+
+**Key result**: Llama's `verbose_concise` axis loses **87% of behavioral variability** after instruct training (std ratio 0.13). All 4 models from 4 different organizations show the same pattern — alignment systematically suppresses behavioral range.
+
 ## Quick Start
 
 ### Installation
@@ -252,13 +267,22 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 | SmolLM2 1.7B | 1.7B | Calibrated, baseline measured |
 | Llama 3.2 1B | 1B | Calibrated, baseline measured |
 
+### Base Models (alignment effect study)
+
+| Model | Base | Instruct | Key Finding |
+|-------|------|----------|-------------|
+| Llama 3.1 8B | `meta-llama/Llama-3.1-8B` | `Llama-3.1-8B-Instruct` | 87% variability loss on verbose/concise |
+| Yi 1.5 9B | `01-ai/Yi-1.5-9B` | `Yi-1.5-9B-Chat` | Formal/casual std collapses 0.40→0.10 |
+| Qwen 2.5 7B | `Qwen/Qwen2.5-7B` | `Qwen2.5-7B-Instruct` | Confident→cautious direction flip |
+| Mistral 7B | `mistralai/Mistral-7B-v0.3` | `Mistral-7B-Instruct-v0.3` | Warm/patient personality erased |
+
 **Reproducibility tested**: Two independent runs (RunPod RTX 4090, Vast.ai RTX 3090) showed max delta < 0.05 across all axes.
 
 ## Limitations
 
 - **macOS + Cloud GPUs** — tested on macOS (Apple Silicon / MPS) and cloud GPUs (RTX 3090/4090)
 - **English only** — axis directions may not transfer to other languages
-- **1B-9B models tested** — larger models (14B+) not yet tested
+- **1B-9B models tested** — larger models (14B+) not yet tested; base vs instruct comparison limited to 4 pairs
 - **No fixed seed, 1 sample per prompt** — adds measurement noise, though reproducibility test shows deltas < 0.05
 - **Correlated axes** — behavioral correlations exist (e.g., warm ↔ direct r=0.88), though axis vectors are nearly orthogonal (mean |cos| = 0.252)
 - **No length deconfounding** — response length is not controlled; some axes may partially capture verbosity
