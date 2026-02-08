@@ -68,6 +68,14 @@ Yi 1.5 9B has 6 of 7 axes in dead zone territory. Three types identified:
 
 Test-retest ICC > 0.9 for all 42 model-axis pairs, but Yi's benchmark pass rate is 31.1% — models stably reproduce incorrect behavior. Dead zones are learned constraints, not noise.
 
+Per-axis projection distributions show the contrast — Qwen (d' = 5–12) vs Yi (d' = 0.7–3.3):
+
+<p align="center">
+  <img src="data/article/visualizations/fig_projection_histograms_contrast.png" alt="Projection distributions: Qwen (healthy) vs Yi (collapsed)" width="900">
+</p>
+
+*Top: Qwen 2.5 7B — clear separation on all 7 axes. Bottom: Yi 1.5 9B — overlapping distributions = dead zones. Full visualizations for all 6 models: [cloud_results/visualizations/](cloud_results/visualizations/)*
+
 ### 4. Yi's behavioral space collapsed to one dimension
 
 All of Yi's axes correlate: mean |r| = 0.86 (warm↔verbose r = 0.995). This isn't length confounding — all responses are 200 tokens. All 7 axes project onto a single compliant↔non-compliant direction. Less constrained models maintain 5-7 effective dimensions.
@@ -246,6 +254,14 @@ mood-axis/
 4. Normalize using IQR-based scaling
 
 **Why last 4 layers with decay weighting?** We ran a full ablation study (150+ configurations per model across 5 models), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all ablated models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. We also compared 4 axis extraction methods on V3 data: mean-diff with decay (production, best at cosine 0.678), mean-diff with last-token, logistic regression with decay, and logreg with last-token.
+
+**Calibration geometry** — healthy model (Qwen) vs collapsed model (Yi):
+
+<p align="center">
+  <img src="data/article/visualizations/fig_pca_healthy_vs_collapsed.png" alt="PCA of calibration hidden states: Qwen (healthy) vs Yi (collapsed)" width="900">
+</p>
+
+*420 points per model (7 axes × 2 poles × 30 questions). Arrows: negative → positive pole centroids. Qwen shows independent axes; Yi's axes collapsed to one direction.*
 
 ### Measurement
 
