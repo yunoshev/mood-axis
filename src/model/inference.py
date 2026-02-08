@@ -15,6 +15,7 @@ from config.settings import (
     TEMPERATURE,
     TOP_P,
     DO_SAMPLE,
+    CALIBRATION_MAX_NEW_TOKENS,
     HIDDEN_LAYERS_TO_USE,
     TOKEN_WEIGHT_DECAY,
     LAYER_WEIGHTS,
@@ -371,18 +372,21 @@ def get_full_result_for_prompt(
     model: AutoModelForCausalLM,
     tokenizer: AutoTokenizer,
     messages: List[Dict[str, str]],
-    max_new_tokens: int = 100,
+    max_new_tokens: int = CALIBRATION_MAX_NEW_TOKENS,
+    seed: int = 42,
 ) -> GenerationResult:
     """Convenience function to get full GenerationResult for a prompt.
 
     Returns the complete result with both hidden state aggregations,
-    token count, and word count.
+    token count, and word count. Uses sampling with fixed seed for
+    reproducibility while matching inference-time distribution.
 
     Args:
         model: The language model
         tokenizer: The tokenizer
         messages: Chat messages
         max_new_tokens: Max tokens for generation
+        seed: Random seed for reproducible sampling
 
     Returns:
         Full GenerationResult
@@ -392,7 +396,8 @@ def get_full_result_for_prompt(
         tokenizer=tokenizer,
         messages=messages,
         max_new_tokens=max_new_tokens,
-        do_sample=False,  # Deterministic for calibration
+        do_sample=True,
+        seed=seed,
     )
 
 
@@ -401,7 +406,8 @@ def get_hidden_state_for_prompt(
     model: AutoModelForCausalLM,
     tokenizer: AutoTokenizer,
     messages: List[Dict[str, str]],
-    max_new_tokens: int = 100,
+    max_new_tokens: int = CALIBRATION_MAX_NEW_TOKENS,
+    seed: int = 42,
 ) -> Tuple[str, np.ndarray]:
     """Convenience function to get hidden state for a calibration prompt.
 
@@ -410,6 +416,7 @@ def get_hidden_state_for_prompt(
         tokenizer: The tokenizer
         messages: Chat messages
         max_new_tokens: Max tokens for generation
+        seed: Random seed for reproducible sampling
 
     Returns:
         Tuple of (generated_text, hidden_state)
@@ -419,7 +426,8 @@ def get_hidden_state_for_prompt(
         tokenizer=tokenizer,
         messages=messages,
         max_new_tokens=max_new_tokens,
-        do_sample=False,  # Deterministic for calibration
+        do_sample=True,
+        seed=seed,
     )
     return result.text, result.hidden_state
 

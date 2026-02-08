@@ -44,7 +44,7 @@ from src.calibration.axis_computer import (
 )
 
 
-def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> dict:
+def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30) -> dict:
     """Calibrate a single axis.
 
     Returns dict with axis_vector, scale, and validation metrics.

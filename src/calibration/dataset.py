@@ -36,7 +36,7 @@ def generate_calibration_dataset(
 
     Args:
         num_samples_per_style: Number of samples per (axis, pole) combination
-                               Max 20 for calibration set
+                               Max 30 for calibration set
         use_axis_specific_questions: Whether to use axis-specific questions
         axes: List of axes to generate samples for (default: MOOD_AXES from settings)
 
@@ -48,7 +48,7 @@ def generate_calibration_dataset(
     samples = []
 
     for axis in axes:
-        # Get calibration-specific questions (max 20 per axis)
+        # Get calibration-specific questions (max 30 per axis)
         # These are SEPARATE from eval questions to prevent data leakage
         if use_axis_specific_questions:
             questions = get_calibration_questions(axis, num_samples_per_style)

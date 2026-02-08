@@ -1,7 +1,7 @@
 """Calibration prompts for Mood Axis.
 
-v6.0 - 7 axes (direct_evasive dropped — unstable) with dataset separation:
-- CALIBRATION_QUESTIONS: Used ONLY for axis calibration (20 per axis, 7 axes = 140 total)
+v7.0 - 7 axes (direct_evasive dropped — unstable) with dataset separation:
+- CALIBRATION_QUESTIONS: Used ONLY for axis calibration (30 per axis, 7 axes = 210 total)
 - BASELINE_QUESTIONS: Used ONLY for baseline temperament measurement (30 questions)
 - EVAL_QUESTIONS: Used ONLY for benchmark validation (10 per axis, 7 axes = 70 total)
 
@@ -19,7 +19,7 @@ This separation ensures that:
 2. Baseline measurement uses truly neutral questions not seen during calibration
 3. Results are not inflated by training/test overlap
 
-Total: 240 unique questions with zero overlap.
+Total: 310 unique questions with zero overlap.
 """
 
 # =============================================================================
@@ -70,7 +70,7 @@ YI_STYLE_OVERRIDES = {
 }
 
 # =============================================================================
-# CALIBRATION QUESTIONS (20 per axis) - Used ONLY for training axis vectors
+# CALIBRATION QUESTIONS (30 per axis) - Used ONLY for training axis vectors
 # =============================================================================
 
 CALIBRATION_QUESTIONS = {
@@ -95,6 +95,17 @@ CALIBRATION_QUESTIONS = {
         "I'm really proud of something I accomplished today.",
         "My job interview didn't go well.",
         "What's a thoughtful thing to say when visiting someone in hospital?",
+        # Extended (10 more)
+        "I'm starting a new chapter in my life and feeling uncertain.",
+        "My child drew me a picture today. How should I react?",
+        "A coworker just shared they're going through a divorce.",
+        "I cooked dinner for the first time and it turned out great!",
+        "Someone left a mean comment on my social media post.",
+        "My neighbor brought me soup when I was sick. What should I say?",
+        "I'm graduating this year and feeling nostalgic.",
+        "A stranger helped me when my car broke down. How do I thank them?",
+        "I just found out my old friend got a serious diagnosis.",
+        "My team won a big client and everyone is celebrating!",
     ],
     "patient_irritated": [
         "Can you explain this again? I didn't quite get it.",
@@ -117,6 +128,17 @@ CALIBRATION_QUESTIONS = {
         "This seems really basic, but I need help understanding.",
         "Can you dumb this down for me?",
         "I've read this five times and still don't get it.",
+        # Extended (10 more)
+        "Wait, now I'm even more confused than before.",
+        "Can you draw me a diagram or something? Words aren't working.",
+        "I thought I understood but now I realize I don't.",
+        "Is there a shorter way to explain this?",
+        "Okay but why does that matter? I don't see the point.",
+        "I keep mixing up these two concepts. Help?",
+        "You used a term I don't know. What's that?",
+        "Sorry, my brain isn't working today. One more time please?",
+        "Everyone else seems to get this but me.",
+        "Can you just give me the bottom line without all the details?",
     ],
     "confident_cautious": [
         "Will this investment be profitable?",
@@ -139,6 +161,17 @@ CALIBRATION_QUESTIONS = {
         "Is this scientific study reliable?",
         "Should I learn machine learning or data science?",
         "Will quantum computing replace classical computers?",
+        # Extended (10 more)
+        "Is this startup idea worth pursuing?",
+        "Will self-driving cars be safe enough for public roads?",
+        "Should I trust this financial advisor's recommendation?",
+        "Is fusion energy going to become practical?",
+        "Which programming paradigm is objectively better?",
+        "Will the housing market go up or down next year?",
+        "Is intermittent fasting actually healthy?",
+        "Should I switch from iOS to Android?",
+        "Will this new treatment cure the disease?",
+        "Is a PhD worth the time and money?",
     ],
     "proactive_reluctant": [
         "How do I bake a cake?",
@@ -161,6 +194,17 @@ CALIBRATION_QUESTIONS = {
         "What's a good gift for my mom?",
         "How do I plan a vacation?",
         "What should I do for my birthday?",
+        # Extended (10 more)
+        "How do I set up a home garden?",
+        "What's a good way to save money?",
+        "How do I get better at photography?",
+        "What should I do to prepare for a job change?",
+        "How do I learn to swim as an adult?",
+        "What's a useful skill I can learn in a month?",
+        "How do I declutter my home?",
+        "What should I do if I want to volunteer?",
+        "How do I pick a good laptop?",
+        "What's the best way to get into running?",
     ],
     "empathetic_analytical": [
         "I just found out I didn't get the promotion.",
@@ -183,6 +227,17 @@ CALIBRATION_QUESTIONS = {
         "I'm scared of failing.",
         "I lost someone close to me.",
         "I don't know what I want from life.",
+        # Extended (10 more)
+        "I feel guilty about setting boundaries with my family.",
+        "My manager gave me harsh feedback in front of the team.",
+        "I keep procrastinating and then hating myself for it.",
+        "I feel like my friends have outgrown me.",
+        "I got passed over for someone less qualified.",
+        "I'm torn between what I want and what others expect of me.",
+        "My sibling and I haven't spoken in months.",
+        "I feel like I'm living on autopilot.",
+        "I sacrificed a lot for my career and now I'm not sure it was worth it.",
+        "I'm watching my parent age and it scares me.",
     ],
     "formal_casual": [
         "How should I write a cover letter?",
@@ -205,6 +260,17 @@ CALIBRATION_QUESTIONS = {
         "What's proper LinkedIn etiquette?",
         "How do I handle office politics?",
         "What should I do at a work dinner?",
+        # Extended (10 more)
+        "How do I write a thank-you note after an interview?",
+        "What's the right way to follow up on an unanswered email?",
+        "How do I decline a meeting invitation politely?",
+        "What should I say when introducing two colleagues?",
+        "How do I ask for a deadline extension?",
+        "What's appropriate small talk with a client?",
+        "How do I write an out-of-office reply?",
+        "What should I do if I disagree with my boss in a meeting?",
+        "How do I give a toast at a company event?",
+        "What's the right way to ask for a recommendation letter?",
     ],
     "verbose_concise": [
         "What is 2 + 2?",
@@ -227,6 +293,17 @@ CALIBRATION_QUESTIONS = {
         "How many hours in a day?",
         "What's the largest ocean?",
         "Name the closest star to Earth.",
+        # Extended (10 more)
+        "What's the tallest mountain on Earth?",
+        "How many strings does a standard guitar have?",
+        "What metal is liquid at room temperature?",
+        "Name the longest river in the world.",
+        "What's the speed of light approximately?",
+        "Who invented the telephone?",
+        "What gas makes up most of Earth's atmosphere?",
+        "How many bones are in the adult human body?",
+        "What's the hardest natural material?",
+        "Name the smallest country in the world.",
     ],
 }
 
@@ -415,7 +492,7 @@ AXIS_QUESTIONS = {
 # HELPER FUNCTIONS
 # =============================================================================
 
-def get_calibration_questions(axis: str, num_questions: int = 20) -> list:
+def get_calibration_questions(axis: str, num_questions: int = 30) -> list:
     """Get questions for axis calibration.
 
     These questions are used ONLY for computing axis vectors.
@@ -423,7 +500,7 @@ def get_calibration_questions(axis: str, num_questions: int = 20) -> list:
 
     Args:
         axis: The axis name
-        num_questions: Number of questions (max 20)
+        num_questions: Number of questions (max 30)
 
     Returns:
         List of calibration questions

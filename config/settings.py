@@ -22,16 +22,16 @@ LAYER_WEIGHTS = [0.1, 0.2, 0.3, 0.4]  # Sum to 1.0, applied to last 4 layers
 TOP_K_LOGITS = 50  # Number of top logits to save per generated token
 
 # Generation settings
-MAX_NEW_TOKENS = 256
+MAX_NEW_TOKENS = 384
 TEMPERATURE = 0.7
 TOP_P = 0.9
 DO_SAMPLE = True
 
 # Calibration settings
-CALIBRATION_SAMPLES_PER_STYLE = 30
+CALIBRATION_SAMPLES_PER_STYLE = 30  # Questions per axis (30 per pole = 60 samples per axis)
 CALIBRATION_TRAIN_SAMPLES = 24  # 80% for training
 CALIBRATION_VAL_SAMPLES = 6    # 20% for validation
-CALIBRATION_MAX_NEW_TOKENS = 100
+CALIBRATION_MAX_NEW_TOKENS = 200
 
 # Mood axes (7 bipolar axes — direct_evasive dropped due to instability)
 MOOD_AXES = [
