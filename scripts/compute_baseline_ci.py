@@ -34,7 +34,7 @@ ARTICLE_MODELS = ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "
 
 ALL_AXES = [
     "warm_cold", "patient_irritated", "confident_cautious", "proactive_reluctant",
-    "empathetic_analytical", "formal_casual", "verbose_concise", "direct_evasive",
+    "empathetic_analytical", "formal_casual", "verbose_concise",
 ]
 
 

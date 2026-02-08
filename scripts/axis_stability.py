@@ -46,7 +46,7 @@ from src.calibration.axis_computer import (
     save_axis_vectors,
     load_axis_vectors,
 )
-from src.model.inference import get_hidden_state_for_prompt
+from src.model.inference import get_full_result_for_prompt
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -117,6 +117,13 @@ def calibrate_set(
 
         positive_states = []
         negative_states = []
+        positive_last_token = []
+        negative_last_token = []
+        per_layer_states = []
+        token_states_list = []
+        top_k_ids_list = []
+        top_k_logprobs_list = []
+        gen_times = []
 
         for question in axis_questions:
             # Positive pole
@@ -124,17 +131,31 @@ def calibrate_set(
                 {"role": "system", "content": style_pos},
                 {"role": "user", "content": question},
             ]
-            text_pos, hs_pos = get_hidden_state_for_prompt(
+            result_pos = get_full_result_for_prompt(
                 model, tokenizer, messages_pos,
                 max_new_tokens=CALIBRATION_MAX_NEW_TOKENS,
             )
-            positive_states.append(hs_pos)
+            positive_states.append(result_pos.hidden_state)
+            if result_pos.hidden_state_last_token is not None:
+                positive_last_token.append(result_pos.hidden_state_last_token)
+            if result_pos.per_layer_states is not None:
+                per_layer_states.append(result_pos.per_layer_states)
+            if result_pos.token_states is not None:
+                token_states_list.append(result_pos.token_states)
+            if result_pos.top_k_ids is not None:
+                top_k_ids_list.append(result_pos.top_k_ids)
+            if result_pos.top_k_logprobs is not None:
+                top_k_logprobs_list.append(result_pos.top_k_logprobs)
+            gen_times.append(result_pos.generation_time_s)
             all_responses.append({
                 "axis": axis,
                 "pole": "positive",
                 "question": question,
                 "system_prompt": style_pos,
-                "response": text_pos,
+                "response": result_pos.text,
+                "n_tokens": result_pos.n_generated_tokens,
+                "n_words": result_pos.n_words,
+                "generation_time_s": result_pos.generation_time_s,
             })
 
             # Negative pole
@@ -142,17 +163,31 @@ def calibrate_set(
                 {"role": "system", "content": style_neg},
                 {"role": "user", "content": question},
             ]
-            text_neg, hs_neg = get_hidden_state_for_prompt(
+            result_neg = get_full_result_for_prompt(
                 model, tokenizer, messages_neg,
                 max_new_tokens=CALIBRATION_MAX_NEW_TOKENS,
             )
-            negative_states.append(hs_neg)
+            negative_states.append(result_neg.hidden_state)
+            if result_neg.hidden_state_last_token is not None:
+                negative_last_token.append(result_neg.hidden_state_last_token)
+            if result_neg.per_layer_states is not None:
+                per_layer_states.append(result_neg.per_layer_states)
+            if result_neg.token_states is not None:
+                token_states_list.append(result_neg.token_states)
+            if result_neg.top_k_ids is not None:
+                top_k_ids_list.append(result_neg.top_k_ids)
+            if result_neg.top_k_logprobs is not None:
+                top_k_logprobs_list.append(result_neg.top_k_logprobs)
+            gen_times.append(result_neg.generation_time_s)
             all_responses.append({
                 "axis": axis,
                 "pole": "negative",
                 "question": question,
                 "system_prompt": style_neg,
-                "response": text_neg,
+                "response": result_neg.text,
+                "n_tokens": result_neg.n_generated_tokens,
+                "n_words": result_neg.n_words,
+                "generation_time_s": result_neg.generation_time_s,
             })
 
         # Compute axis vector (trimmed mean of positive - negative)
@@ -204,6 +239,28 @@ def calibrate_set(
                 f.write(json.dumps(entry, ensure_ascii=False) + "\n")
         logger.info(f"Saved {len(all_responses)} responses to {responses_path}")
 
+    # Save hidden states NPZ (all axes combined)
+    all_decay = np.array(positive_states + negative_states) if positive_states else np.array([])
+    hs_save = {
+        "decay_states": all_decay,
+        "generation_times": np.array(gen_times),
+    }
+    if positive_last_token:
+        all_lt = np.array(positive_last_token + negative_last_token)
+        hs_save["last_token_states"] = all_lt
+    if per_layer_states:
+        hs_save["per_layer_states"] = np.stack(per_layer_states)
+    if token_states_list:
+        token_offsets = np.cumsum([0] + [t.shape[0] for t in token_states_list])
+        hs_save["token_states"] = np.concatenate(token_states_list)
+        hs_save["token_offsets"] = token_offsets
+    if top_k_ids_list:
+        hs_save["top_k_ids"] = np.concatenate(top_k_ids_list)
+        hs_save["top_k_logprobs"] = np.concatenate(top_k_logprobs_list)
+    hs_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_hidden_states.npz"
+    np.savez(hs_path, **hs_save)
+    logger.info(f"Saved hidden states to {hs_path}")
+
     return results
 
 
@@ -239,13 +296,13 @@ def collect_baseline_projections(
 
         for question in BASELINE_QUESTIONS:
             messages = [{"role": "user", "content": question}]
-            _, hidden_state = get_hidden_state_for_prompt(
+            result = get_full_result_for_prompt(
                 model, tokenizer, messages,
                 max_new_tokens=CALIBRATION_MAX_NEW_TOKENS,
             )
 
             for axis in axis_names:
-                raw = float(np.dot(hidden_state, axis_vectors[axis]))
+                raw = float(np.dot(result.hidden_state, axis_vectors[axis]))
                 normalized = np.clip(raw / axis_scales[axis], -1.0, 1.0)
                 set_projections.setdefault(axis, []).append(float(normalized))
 

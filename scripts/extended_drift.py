@@ -29,37 +29,71 @@ from config.settings import MOOD_AXES, AXES_DIR
 from config.models import MODELS
 from config.conflict_scenarios import ALL_CONFLICT_SCENARIOS as CONFLICT_SCENARIOS
 from src.model.loader import load_model
-from src.model.inference import generate_response, get_hidden_state_for_prompt
+from src.model.inference import generate_with_hidden_states, format_chat_messages
 from src.mood.projector import MoodProjector
 
 
 OUTPUT_DIR = PROJECT_ROOT / "data" / "article" / "extended_drift"
 
 
-def run_conversation(model, tokenizer, projector, scenario) -> List[Dict]:
-    """Run a single conflict conversation and track drift."""
+def run_conversation(model, tokenizer, projector, scenario) -> dict:
+    """Run a single conflict conversation and track drift.
+
+    Uses a single generate_with_hidden_states() call per turn instead of
+    separate generate_response + get_hidden_state_for_prompt (saves ~50% compute).
+
+    Returns dict with turns list and collected hidden state arrays.
+    """
     turns = []
     messages = []
+    per_layer_states = []
+    token_states_list = []
+    top_k_ids_list = []
+    top_k_logprobs_list = []
+    decay_states = []
+    gen_times = []
 
     for i, user_message in enumerate(scenario.turns):
         messages.append({"role": "user", "content": user_message})
 
-        # Generate response
-        response = generate_response(model, tokenizer, messages)
-        messages.append({"role": "assistant", "content": response})
+        # Single call: generate response AND extract hidden states
+        result = generate_with_hidden_states(model, tokenizer, messages)
+        messages.append({"role": "assistant", "content": result.text})
 
-        # Measure temperament
-        _, hidden_state = get_hidden_state_for_prompt(model, tokenizer, messages)
-        reading = projector.project(hidden_state)
+        # Measure temperament from hidden state
+        reading = projector.project(result.hidden_state)
 
         turns.append({
             "turn": i + 1,
             "user": user_message,
-            "assistant": response,
+            "assistant": result.text,
             "values": reading.values,
+            "n_tokens": result.n_generated_tokens,
+            "n_words": result.n_words,
+            "generation_time_s": result.generation_time_s,
         })
 
-    return turns
+        # Collect hidden states for NPZ
+        decay_states.append(result.hidden_state)
+        gen_times.append(result.generation_time_s)
+        if result.per_layer_states is not None:
+            per_layer_states.append(result.per_layer_states)
+        if result.token_states is not None:
+            token_states_list.append(result.token_states)
+        if result.top_k_ids is not None:
+            top_k_ids_list.append(result.top_k_ids)
+        if result.top_k_logprobs is not None:
+            top_k_logprobs_list.append(result.top_k_logprobs)
+
+    return {
+        "turns": turns,
+        "decay_states": decay_states,
+        "per_layer_states": per_layer_states,
+        "token_states": token_states_list,
+        "top_k_ids": top_k_ids_list,
+        "top_k_logprobs": top_k_logprobs_list,
+        "gen_times": gen_times,
+    }
 
 
 def analyze_drift(model_key: str, max_scenarios: int = None) -> dict:
@@ -86,15 +120,27 @@ def analyze_drift(model_key: str, max_scenarios: int = None) -> dict:
     # Run scenarios
     scenarios = CONFLICT_SCENARIOS[:max_scenarios] if max_scenarios else CONFLICT_SCENARIOS
     all_results = []
+    all_decay_states = []
+    all_per_layer = []
+    all_token_states = []
+    all_top_k_ids = []
+    all_top_k_logprobs = []
+    all_gen_times = []
 
     for scenario in tqdm(scenarios, desc="Scenarios"):
         try:
-            turns = run_conversation(model, tokenizer, projector, scenario)
+            conv = run_conversation(model, tokenizer, projector, scenario)
             all_results.append({
                 "category": scenario.category,
                 "scenario_id": scenario.name,
-                "turns": turns,
+                "turns": conv["turns"],
             })
+            all_decay_states.extend(conv["decay_states"])
+            all_per_layer.extend(conv["per_layer_states"])
+            all_token_states.extend(conv["token_states"])
+            all_top_k_ids.extend(conv["top_k_ids"])
+            all_top_k_logprobs.extend(conv["top_k_logprobs"])
+            all_gen_times.extend(conv["gen_times"])
         except Exception as e:
             print(f"Error in scenario: {e}")
             continue
@@ -137,6 +183,26 @@ def analyze_drift(model_key: str, max_scenarios: int = None) -> dict:
                 "mean_end": float(np.mean(stats["end_values"])),
                 "mean_delta": float(np.mean(stats["end_values"]) - np.mean(stats["start_values"])),
             }
+
+    # Save hidden states NPZ
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if all_decay_states:
+        hs_save = {
+            "decay_states": np.array(all_decay_states),
+            "generation_times": np.array(all_gen_times),
+        }
+        if all_per_layer:
+            hs_save["per_layer_states"] = np.stack(all_per_layer)
+        if all_token_states:
+            token_offsets = np.cumsum([0] + [t.shape[0] for t in all_token_states])
+            hs_save["token_states"] = np.concatenate(all_token_states)
+            hs_save["token_offsets"] = token_offsets
+        if all_top_k_ids:
+            hs_save["top_k_ids"] = np.concatenate(all_top_k_ids)
+            hs_save["top_k_logprobs"] = np.concatenate(all_top_k_logprobs)
+        hs_file = OUTPUT_DIR / f"{model_key}_drift_hidden_states.npz"
+        np.savez(hs_file, **hs_save)
+        print(f"Saved drift hidden states to {hs_file}")
 
     # Cleanup
     del model, tokenizer

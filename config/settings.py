@@ -19,6 +19,7 @@ TOKEN_WEIGHT_DECAY = 0.9  # Weight decay for token aggregation (more recent toke
 # Layer weights for aggregation: deeper layers (closer to output) get higher weight
 # Research shows deeper layers capture more task-specific features
 LAYER_WEIGHTS = [0.1, 0.2, 0.3, 0.4]  # Sum to 1.0, applied to last 4 layers
+TOP_K_LOGITS = 50  # Number of top logits to save per generated token
 
 # Generation settings
 MAX_NEW_TOKENS = 256
@@ -32,7 +33,7 @@ CALIBRATION_TRAIN_SAMPLES = 24  # 80% for training
 CALIBRATION_VAL_SAMPLES = 6    # 20% for validation
 CALIBRATION_MAX_NEW_TOKENS = 100
 
-# Mood axes (8 bipolar axes)
+# Mood axes (7 bipolar axes — direct_evasive dropped due to instability)
 MOOD_AXES = [
     "warm_cold",
     "patient_irritated",
@@ -41,7 +42,6 @@ MOOD_AXES = [
     "empathetic_analytical",
     "formal_casual",
     "verbose_concise",
-    "direct_evasive",
 ]
 AXIS_LABELS = {
     "warm_cold": ("Warm", "Cold"),
@@ -51,7 +51,6 @@ AXIS_LABELS = {
     "empathetic_analytical": ("Empathetic", "Analytical"),
     "formal_casual": ("Formal", "Casual"),
     "verbose_concise": ("Verbose", "Concise"),
-    "direct_evasive": ("Direct", "Evasive"),
 }
 
 # Model baseline bias (from benchmark neutral questions)
@@ -64,7 +63,6 @@ MODEL_BASELINE = {
     "empathetic_analytical": 0.0,
     "formal_casual": 0.0,
     "verbose_concise": 0.0,
-    "direct_evasive": 0.0,
 }
 
 # Device configuration

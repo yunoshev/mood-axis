@@ -35,7 +35,7 @@ from config.settings import MOOD_AXES, AXES_DIR
 from config.models import MODELS
 from config.prompts import STYLE_INSTRUCTIONS
 from src.model.loader import load_model
-from src.model.inference import get_hidden_state_for_prompt
+from src.model.inference import get_full_result_for_prompt
 from src.calibration.dataset import generate_calibration_dataset, iterate_by_axis
 from src.calibration.axis_computer import (
     compute_axis_vector,
@@ -57,6 +57,13 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
 
     positive_states = []
     negative_states = []
+    positive_last_token_states = []
+    negative_last_token_states = []
+    per_layer_states = []
+    token_states = []
+    top_k_ids = []
+    top_k_logprobs = []
+    gen_times = []
     responses = []
 
     for sample in axis_samples:
@@ -65,19 +72,34 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
             {"role": "user", "content": sample.user_prompt},
         ]
 
-        text, hidden_state = get_hidden_state_for_prompt(model, tokenizer, messages)
+        result = get_full_result_for_prompt(model, tokenizer, messages)
 
         if sample.pole == "positive":
-            positive_states.append(hidden_state)
+            positive_states.append(result.hidden_state)
+            positive_last_token_states.append(result.hidden_state_last_token)
         else:
-            negative_states.append(hidden_state)
+            negative_states.append(result.hidden_state)
+            negative_last_token_states.append(result.hidden_state_last_token)
+
+        if result.per_layer_states is not None:
+            per_layer_states.append(result.per_layer_states)
+        if result.token_states is not None:
+            token_states.append(result.token_states)
+        if result.top_k_ids is not None:
+            top_k_ids.append(result.top_k_ids)
+        if result.top_k_logprobs is not None:
+            top_k_logprobs.append(result.top_k_logprobs)
+        gen_times.append(result.generation_time_s)
 
         responses.append({
             "axis": axis,
             "pole": sample.pole,
             "question": sample.user_prompt,
             "system_prompt": sample.system_prompt,
-            "response": text,
+            "response": result.text,
+            "n_tokens": result.n_generated_tokens,
+            "n_words": result.n_words,
+            "generation_time_s": result.generation_time_s,
         })
 
     # Compute axis vector
@@ -118,6 +140,13 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
         "accuracy": accuracy,
         "n_samples": len(axis_samples),
         "responses": responses,
+        "decay_states": np.array(positive_states + negative_states),
+        "last_token_states": np.array(positive_last_token_states + negative_last_token_states),
+        "per_layer_states": per_layer_states,
+        "token_states": token_states,
+        "top_k_ids": top_k_ids,
+        "top_k_logprobs": top_k_logprobs,
+        "gen_times": gen_times,
     }
 
 
@@ -193,6 +222,41 @@ def calibrate_model(model_key: str, axes: list = None):
             for entry in all_responses:
                 f.write(json.dumps(entry, ensure_ascii=False) + "\n")
         logger.info(f"Saved {len(all_responses)} responses to {responses_file}")
+
+    # Save hidden states NPZ (decay + last_token + per_layer + token_level + top_k + timing)
+    all_decay = []
+    all_last_token = []
+    all_per_layer = []
+    all_token_states = []
+    all_top_k_ids = []
+    all_top_k_logprobs = []
+    all_gen_times = []
+    for axis in axes:
+        all_decay.append(results[axis]["decay_states"])
+        all_last_token.append(results[axis]["last_token_states"])
+        all_per_layer.extend(results[axis]["per_layer_states"])
+        all_token_states.extend(results[axis]["token_states"])
+        all_top_k_ids.extend(results[axis]["top_k_ids"])
+        all_top_k_logprobs.extend(results[axis]["top_k_logprobs"])
+        all_gen_times.extend(results[axis]["gen_times"])
+    if all_decay:
+        hs_file = AXES_DIR / f"{model_key}_calibration_hidden_states.npz"
+        hs_save = {
+            "decay_states": np.concatenate(all_decay, axis=0),
+            "last_token_states": np.concatenate(all_last_token, axis=0),
+            "generation_times": np.array(all_gen_times),
+        }
+        if all_per_layer:
+            hs_save["per_layer_states"] = np.stack(all_per_layer)
+        if all_token_states:
+            token_offsets = np.cumsum([0] + [t.shape[0] for t in all_token_states])
+            hs_save["token_states"] = np.concatenate(all_token_states)
+            hs_save["token_offsets"] = token_offsets
+        if all_top_k_ids:
+            hs_save["top_k_ids"] = np.concatenate(all_top_k_ids)
+            hs_save["top_k_logprobs"] = np.concatenate(all_top_k_logprobs)
+        np.savez(hs_file, **hs_save)
+        logger.info(f"Saved hidden states to {hs_file}")
 
     # Cleanup
     del model, tokenizer

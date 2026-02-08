@@ -127,7 +127,7 @@ def aggregate_results(replication_data: dict) -> dict:
     for name in scenario_names:
         icc_results[name] = {}
         # Get the last turn's mood values from each run
-        for axis in ["warm_cold", "confident_cautious", "verbose_concise", "direct_evasive",
+        for axis in ["warm_cold", "confident_cautious", "verbose_concise",
                       "patient_irritated", "proactive_reluctant", "empathetic_analytical", "formal_casual"]:
             measurements = []
             for run in runs:

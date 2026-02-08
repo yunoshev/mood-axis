@@ -1,5 +1,7 @@
 """Inference utilities with hidden states extraction for Mood Axis."""
 
+import time
+
 import torch
 import numpy as np
 from typing import Tuple, List, Optional, Dict, Any
@@ -16,6 +18,7 @@ from config.settings import (
     HIDDEN_LAYERS_TO_USE,
     TOKEN_WEIGHT_DECAY,
     LAYER_WEIGHTS,
+    TOP_K_LOGITS,
     DEVICE,
 )
 
@@ -24,8 +27,16 @@ from config.settings import (
 class GenerationResult:
     """Result of a generation with hidden states."""
     text: str
-    hidden_state: np.ndarray  # Aggregated hidden state
+    hidden_state: np.ndarray  # Aggregated hidden state (decay aggregation)
     raw_hidden_states: Optional[List[torch.Tensor]] = None  # Per-token states if needed
+    hidden_state_last_token: Optional[np.ndarray] = None  # Last-token aggregation
+    n_generated_tokens: int = 0  # Number of tokens generated
+    n_words: int = 0  # Word count of generated text
+    per_layer_states: Optional[np.ndarray] = None  # (num_all_layers, hidden_dim) fp16, last token all layers
+    token_states: Optional[np.ndarray] = None  # (n_generated_tokens, hidden_dim) fp16, per-token layer-aggregated
+    top_k_ids: Optional[np.ndarray] = None  # (n_generated_tokens, TOP_K_LOGITS) int32
+    top_k_logprobs: Optional[np.ndarray] = None  # (n_generated_tokens, TOP_K_LOGITS) float32
+    generation_time_s: float = 0.0  # Wall time in seconds
 
 
 def _apply_chat_template(tokenizer, messages):
@@ -164,6 +175,42 @@ def aggregate_hidden_states(
     return final_state.cpu().float().numpy()
 
 
+def aggregate_last_token(
+    hidden_states: Tuple[torch.Tensor, ...],
+    num_generated_tokens: int,
+    num_layers: int = HIDDEN_LAYERS_TO_USE,
+    layer_weights: Optional[List[float]] = None,
+) -> np.ndarray:
+    """Aggregate hidden states using only the last generated token.
+
+    Takes the final generated token from each of the last N layers
+    and computes a weighted average across layers.
+
+    Args:
+        hidden_states: Tuple of hidden states from all layers
+        num_generated_tokens: Number of tokens that were generated
+        num_layers: Number of last layers to use
+        layer_weights: Weights for layer aggregation
+
+    Returns:
+        Aggregated hidden state as numpy array (hidden_dim,)
+    """
+    if layer_weights is None:
+        layer_weights = LAYER_WEIGHTS
+
+    layers_to_use = hidden_states[-num_layers:]
+    aggregated = [layer[0, -1, :] for layer in layers_to_use]
+
+    stacked = torch.stack(aggregated, dim=0)
+    lw = torch.tensor(
+        layer_weights[:len(aggregated)],
+        device=stacked.device,
+        dtype=stacked.dtype,
+    )
+    lw = lw / lw.sum()
+    return (stacked * lw.view(-1, 1)).sum(dim=0).cpu().float().numpy()
+
+
 @torch.no_grad()
 def generate_with_hidden_states(
     model: AutoModelForCausalLM,
@@ -206,7 +253,8 @@ def generate_with_hidden_states(
     attention_mask = inputs["attention_mask"].to(model.device)
     prompt_length = input_ids.shape[1]
 
-    # Generate with hidden states
+    # Generate with hidden states and scores
+    t0 = time.time()
     outputs = model.generate(
         input_ids=input_ids,
         attention_mask=attention_mask,
@@ -215,9 +263,11 @@ def generate_with_hidden_states(
         top_p=top_p if do_sample else 1.0,
         do_sample=do_sample,
         output_hidden_states=True,
+        output_scores=True,
         return_dict_in_generate=True,
         pad_token_id=tokenizer.pad_token_id,
     )
+    generation_time_s = time.time() - t0
 
     # Decode generated text
     generated_ids = outputs.sequences[0, prompt_length:]
@@ -253,11 +303,51 @@ def generate_with_hidden_states(
     # Convert to tuple for aggregate_hidden_states
     hidden_states_tuple = tuple(all_layer_states)
 
-    # Aggregate
+    # Aggregate: decay (production method)
     aggregated_state = aggregate_hidden_states(
         hidden_states_tuple,
         num_generated_tokens=num_generated,
     )
+
+    # Aggregate: last token only (negligible overhead)
+    last_token_state = aggregate_last_token(
+        hidden_states_tuple,
+        num_generated_tokens=num_generated,
+    )
+
+    # Per-layer: last generated token from ALL layers → (num_layers, hidden_dim) fp16
+    per_layer = torch.stack(
+        [layer[0, -1, :] for layer in all_layer_states], dim=0
+    ).cpu().half().numpy()
+
+    # Token-level: per-token weighted across last N layers → (n_tokens, hidden_dim) fp16
+    layers_for_tokens = all_layer_states[-HIDDEN_LAYERS_TO_USE:]
+    stacked_for_tokens = torch.stack(
+        [l[0] for l in layers_for_tokens], dim=0
+    )  # (N_layers, n_tokens, hidden_dim)
+    lw = torch.tensor(
+        LAYER_WEIGHTS[:len(layers_for_tokens)],
+        device=stacked_for_tokens.device,
+        dtype=stacked_for_tokens.dtype,
+    )
+    lw = lw / lw.sum()
+    token_states_arr = (
+        stacked_for_tokens * lw.view(-1, 1, 1)
+    ).sum(dim=0).cpu().half().numpy()  # (n_tokens, hidden_dim)
+
+    # Top-k logits from scores
+    top_k_ids_arr = None
+    top_k_logprobs_arr = None
+    if hasattr(outputs, "scores") and outputs.scores:
+        tk_ids_list = []
+        tk_lp_list = []
+        for score in outputs.scores:  # score: (batch=1, vocab_size)
+            logprobs = torch.log_softmax(score[0], dim=-1)
+            topk_vals, topk_ids = torch.topk(logprobs, TOP_K_LOGITS)
+            tk_ids_list.append(topk_ids.cpu().numpy())
+            tk_lp_list.append(topk_vals.cpu().float().numpy())
+        top_k_ids_arr = np.stack(tk_ids_list)  # (n_tokens, TOP_K)
+        top_k_logprobs_arr = np.stack(tk_lp_list)  # (n_tokens, TOP_K)
 
     raw_states = hidden_states_tuple if return_raw_states else None
 
@@ -265,6 +355,44 @@ def generate_with_hidden_states(
         text=generated_text,
         hidden_state=aggregated_state,
         raw_hidden_states=raw_states,
+        hidden_state_last_token=last_token_state,
+        n_generated_tokens=num_generated,
+        n_words=len(generated_text.split()),
+        per_layer_states=per_layer,
+        token_states=token_states_arr,
+        top_k_ids=top_k_ids_arr,
+        top_k_logprobs=top_k_logprobs_arr,
+        generation_time_s=generation_time_s,
+    )
+
+
+@torch.no_grad()
+def get_full_result_for_prompt(
+    model: AutoModelForCausalLM,
+    tokenizer: AutoTokenizer,
+    messages: List[Dict[str, str]],
+    max_new_tokens: int = 100,
+) -> GenerationResult:
+    """Convenience function to get full GenerationResult for a prompt.
+
+    Returns the complete result with both hidden state aggregations,
+    token count, and word count.
+
+    Args:
+        model: The language model
+        tokenizer: The tokenizer
+        messages: Chat messages
+        max_new_tokens: Max tokens for generation
+
+    Returns:
+        Full GenerationResult
+    """
+    return generate_with_hidden_states(
+        model=model,
+        tokenizer=tokenizer,
+        messages=messages,
+        max_new_tokens=max_new_tokens,
+        do_sample=False,  # Deterministic for calibration
     )
 
 

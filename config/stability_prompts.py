@@ -116,18 +116,6 @@ SET_B_COMPLEMENT_QUESTIONS = {
         "What gas do plants absorb?",
         "How many teeth does an adult human have?",
     ],
-    "direct_evasive": [
-        "Is it better to fly or drive for a 500-mile trip?",
-        "Should I use Linux or Windows for programming?",
-        "Is a sedan or SUV better for a small family?",
-        "Should I go to bed early or sleep in on weekends?",
-        "Is it better to pay off debt or start investing?",
-        "Should I learn Spanish or Mandarin?",
-        "Is it healthier to eat three meals or graze all day?",
-        "Should I use a Mac or PC for video editing?",
-        "Is a fixed or variable mortgage rate better right now?",
-        "Should I commute by car or public transit?",
-    ],
 }
 
 # =============================================================================
@@ -289,28 +277,6 @@ SET_C_QUESTIONS = {
         "How many sides does a pentagon have?",
         "What's the symbol for potassium?",
     ],
-    "direct_evasive": [
-        "Is it better to learn piano or guitar as a first instrument?",
-        "Should I buy a house or keep renting?",
-        "Is vegetarianism healthier than eating meat?",
-        "Should I get a traditional or Roth IRA?",
-        "Is it better to study in the morning or at night?",
-        "Should I use a travel agent or book trips myself?",
-        "Is homeschooling better than public school?",
-        "Should I adopt or buy a purebred dog?",
-        "Is it better to live alone or with roommates in your 20s?",
-        "Should I repair my old car or buy a new one?",
-        "Is cash or credit better for everyday purchases?",
-        "Should I go to a community college first or straight to university?",
-        "Is it better to be an early bird or a night owl?",
-        "Should I use an agency or apply directly for jobs?",
-        "Is renting or owning better for someone who moves often?",
-        "Should I pursue passion or stability in my career?",
-        "Is it better to read fiction or non-fiction?",
-        "Should I meal prep or cook fresh each day?",
-        "Is a master's degree worth the student debt?",
-        "Should I take a loan or save up before making a big purchase?",
-    ],
 }
 
 
@@ -347,10 +313,6 @@ STYLE_PARAPHRASES_V1 = {
         "positive": "Give an exhaustive, thorough answer with full context. Explain the background, walk through the reasoning, provide multiple examples, and cover edge cases. Leave nothing out — completeness is the goal.",
         "negative": "Use as few words as humanly possible. One word is ideal. A short phrase if absolutely necessary. No context, no examples, no elaboration. Maximum brevity.",
     },
-    "direct_evasive": {
-        "positive": "Give a clear, decisive answer right away. Pick a side and explain your reasoning. Start with your conclusion, then support it. If it's a choice between two options, choose one unambiguously.",
-        "negative": "Refuse to commit to any position. Present both sides equally without favoring either. Use phrases like 'it's really up to personal preference', 'there are valid arguments on both sides', 'it entirely depends on your situation'. Be maximally noncommittal.",
-    },
 }
 
 
@@ -386,10 +348,6 @@ STYLE_PARAPHRASES_V2 = {
     "verbose_concise": {
         "positive": "Write a comprehensive essay-style answer. Include historical context, technical details, real-world applications, comparisons, and a thorough summary. Every aspect of the topic should be addressed. Length is a virtue here.",
         "negative": "Absolute minimum. One word if possible. No sentences, no explanations. Think of it as a one-line answer on a quiz.",
-    },
-    "direct_evasive": {
-        "positive": "Cut straight to the answer. No preamble, no 'well it depends'. State your recommendation clearly in the first sentence. Be opinionated and specific. Give concrete, actionable advice without hedging.",
-        "negative": "Dance around the answer. Acknowledge complexity without resolving it. Say things like 'Reasonable people disagree', 'There's no one-size-fits-all answer', 'You'd need to weigh many factors'. Never land on a definitive conclusion.",
     },
 }
 
@@ -434,7 +392,6 @@ ALL_AXES = [
     "empathetic_analytical",
     "formal_casual",
     "verbose_concise",
-    "direct_evasive",
 ]
 
 

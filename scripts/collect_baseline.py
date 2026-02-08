@@ -28,7 +28,7 @@ from config.settings import MOOD_AXES, AXES_DIR
 from config.models import MODELS
 from config.prompts import BASELINE_QUESTIONS
 from src.model.loader import load_model
-from src.model.inference import get_hidden_state_for_prompt
+from src.model.inference import get_full_result_for_prompt
 from src.calibration.axis_computer import load_axis_vectors
 
 
@@ -79,19 +79,44 @@ def collect_baseline(model_key: str) -> dict:
     # Collect measurements
     measurements = {axis: [] for axis in all_axes}
     responses = []
+    decay_states = []
+    last_token_states = []
+    per_layer_states = []
+    token_states_list = []
+    top_k_ids_list = []
+    top_k_logprobs_list = []
+    gen_times = []
 
     for question in tqdm(BASELINE_QUESTIONS, desc="Measuring"):
         messages = [{"role": "user", "content": question}]
 
-        text, hidden_state = get_hidden_state_for_prompt(model, tokenizer, messages)
+        result = get_full_result_for_prompt(model, tokenizer, messages)
 
-        responses.append({"question": question, "response": text})
+        responses.append({
+            "question": question,
+            "response": result.text,
+            "n_tokens": result.n_generated_tokens,
+            "n_words": result.n_words,
+            "generation_time_s": result.generation_time_s,
+        })
+        decay_states.append(result.hidden_state)
+        if result.hidden_state_last_token is not None:
+            last_token_states.append(result.hidden_state_last_token)
+        if result.per_layer_states is not None:
+            per_layer_states.append(result.per_layer_states)
+        if result.token_states is not None:
+            token_states_list.append(result.token_states)
+        if result.top_k_ids is not None:
+            top_k_ids_list.append(result.top_k_ids)
+        if result.top_k_logprobs is not None:
+            top_k_logprobs_list.append(result.top_k_logprobs)
+        gen_times.append(result.generation_time_s)
 
         # Project onto each axis manually
         for axis in all_axes:
             if axis not in axis_vectors:
                 continue
-            raw_value = float(np.dot(hidden_state, axis_vectors[axis]))
+            raw_value = float(np.dot(result.hidden_state, axis_vectors[axis]))
             raw_value = raw_value / scales.get(axis, 2.0)
             raw_value = np.clip(raw_value, -1.0, 1.0)
             measurements[axis].append(float(raw_value))
@@ -115,6 +140,27 @@ def collect_baseline(model_key: str) -> dict:
             "max": float(np.max(values)),
             "values": values,
         }
+
+    # Save hidden states NPZ
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    hs_save = {
+        "decay_states": np.array(decay_states),
+        "generation_times": np.array(gen_times),
+    }
+    if last_token_states:
+        hs_save["last_token_states"] = np.array(last_token_states)
+    if per_layer_states:
+        hs_save["per_layer_states"] = np.stack(per_layer_states)
+    if token_states_list:
+        token_offsets = np.cumsum([0] + [t.shape[0] for t in token_states_list])
+        hs_save["token_states"] = np.concatenate(token_states_list)
+        hs_save["token_offsets"] = token_offsets
+    if top_k_ids_list:
+        hs_save["top_k_ids"] = np.concatenate(top_k_ids_list)
+        hs_save["top_k_logprobs"] = np.concatenate(top_k_logprobs_list)
+    hs_file = OUTPUT_DIR / f"{model_key}_baseline_hidden_states.npz"
+    np.savez(hs_file, **hs_save)
+    print(f"Saved hidden states to {hs_file}")
 
     # Cleanup
     del model, tokenizer

@@ -1,11 +1,11 @@
 """Calibration prompts for Mood Axis.
 
-v5.0 - Full 8 axes with dataset separation to prevent leakage:
-- CALIBRATION_QUESTIONS: Used ONLY for axis calibration (20 per axis, 8 axes = 160 total)
+v6.0 - 7 axes (direct_evasive dropped — unstable) with dataset separation:
+- CALIBRATION_QUESTIONS: Used ONLY for axis calibration (20 per axis, 7 axes = 140 total)
 - BASELINE_QUESTIONS: Used ONLY for baseline temperament measurement (30 questions)
-- EVAL_QUESTIONS: Used ONLY for benchmark validation (10 per axis, 8 axes = 80 total)
+- EVAL_QUESTIONS: Used ONLY for benchmark validation (10 per axis, 7 axes = 70 total)
 
-8 Axes:
+7 Axes:
 - warm_cold: Emotional tone and friendliness
 - patient_irritated: Tolerance for confusion/repetition
 - confident_cautious: Epistemic certainty
@@ -13,14 +13,13 @@ v5.0 - Full 8 axes with dataset separation to prevent leakage:
 - empathetic_analytical: Emotional vs logical framing
 - formal_casual: Communication register
 - verbose_concise: Detail level
-- direct_evasive: Directness vs hedging
 
 This separation ensures that:
 1. Calibration data doesn't overlap with evaluation data
 2. Baseline measurement uses truly neutral questions not seen during calibration
 3. Results are not inflated by training/test overlap
 
-Total: 270 unique questions with zero overlap.
+Total: 240 unique questions with zero overlap.
 """
 
 # =============================================================================
@@ -55,10 +54,6 @@ STYLE_INSTRUCTIONS = {
     "verbose_concise": {
         "positive": "Provide detailed, comprehensive, elaborate responses. Include extensive explanations, multiple examples, background context, and thorough coverage of the topic. Leave no stone unturned in your explanation. Aim for completeness.",
         "negative": "Be extremely brief and concise. Give the shortest possible answer that still addresses the question. Avoid elaboration, examples, or unnecessary details. Every word should count. One sentence ideal.",
-    },
-    "direct_evasive": {
-        "positive": "Be direct, specific, and concrete in your responses. Give clear, unambiguous answers. State things plainly without hedging. If asked a yes/no question, lead with yes or no. No qualifications, no 'it depends'.",
-        "negative": "Avoid direct answers. When asked a question, deflect with phrases like 'it really depends on the context', 'that's quite subjective', 'there are many perspectives on this', 'some might say X while others say Y'. Never give a clear yes or no. If pressed, say 'I'm not in a position to say definitively'. Be diplomatic to the point of saying nothing concrete.",
     },
 }
 
@@ -233,28 +228,6 @@ CALIBRATION_QUESTIONS = {
         "What's the largest ocean?",
         "Name the closest star to Earth.",
     ],
-    "direct_evasive": [
-        "What's the better choice: Python or JavaScript for a beginner?",
-        "Should I use tabs or spaces for indentation?",
-        "Is 8 hours of sleep enough for most adults?",
-        "Should I choose a Mac or Windows PC for general use?",
-        "Is reading physical books better than reading on screens?",
-        "Should I use a password manager?",
-        "Is remote work better than office work for productivity?",
-        "Should I learn to touch type?",
-        "Is it better to buy or rent a home?",
-        "Should I negotiate my salary when given a job offer?",
-        "Is morning or evening better for exercise?",
-        "Should I use a standing desk?",
-        "Is coffee good or bad for health?",
-        "Should I delete my social media accounts?",
-        "Is it better to rent or buy a car?",
-        "Should I take notes by hand or on a computer?",
-        "Is it better to work for a startup or big company?",
-        "Should I use dark mode or light mode?",
-        "Is it better to learn one language deeply or multiple basics?",
-        "Should I meal prep for the week?",
-    ],
 }
 
 # =============================================================================
@@ -346,18 +319,6 @@ EVAL_QUESTIONS = {
         "How many sides does a hexagon have?",
         "What's the currency of Japan?",
         "Name the first president of the United States.",
-    ],
-    "direct_evasive": [
-        "Which is better for beginners: React or Vue?",
-        "Should I get a gym membership or work out at home?",
-        "Is it better to save money or invest it?",
-        "Should I get a pet dog or cat?",
-        "Is online learning as effective as in-person?",
-        "Should I use credit cards or debit cards?",
-        "Is it better to live in the city or suburbs?",
-        "Should I pursue a master's degree?",
-        "Is it better to be a generalist or specialist?",
-        "Should I take the highway or back roads?",
     ],
 }
 

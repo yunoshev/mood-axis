@@ -27,11 +27,10 @@ class DialogueTurn:
     user_message: str
     system_prompt: Optional[str] = None
     # Expected direction of change: 'up', 'down', 'neutral', or None (don't check)
-    # Only 4 axes: warm_cold, confident_cautious, verbose_concise, direct_evasive
+    # 3 axes: warm_cold, confident_cautious, verbose_concise
     expected_warm: Optional[str] = None
     expected_confident: Optional[str] = None
     expected_verbose: Optional[str] = None
-    expected_direct: Optional[str] = None
 
 
 @dataclass
@@ -159,44 +158,6 @@ TEST_SCENARIOS = [
             ),
         ],
     ),
-    # ========== DIRECT_EVASIVE (3 scenarios) ==========
-    TestScenario(
-        name="System Prompt - Direct",
-        description="System prompt for directness should affect baseline",
-        turns=[
-            DialogueTurn(
-                user_message="Should I use tabs or spaces for code indentation?",
-                system_prompt="You are an extremely direct assistant. Always give clear, unambiguous answers. If asked a question with options, pick one and say why. Lead with yes/no when applicable. Never say 'it depends' or 'both have merits'. Just give a straight answer.",
-                expected_direct="up",
-            ),
-        ],
-    ),
-    TestScenario(
-        name="Direct Increase",
-        description="Asking for direct responses should increase directness",
-        turns=[
-            DialogueTurn(
-                user_message="Should I learn Python or JavaScript first?",
-            ),
-            DialogueTurn(
-                user_message="Just tell me which one. Don't say 'it depends' - give me a direct answer with no hedging.",
-                expected_direct="up",
-            ),
-        ],
-    ),
-    TestScenario(
-        name="Direct Decrease (Evasive)",
-        description="Asking for non-committal responses should decrease directness",
-        turns=[
-            DialogueTurn(
-                user_message="Is remote work better than office work?",
-            ),
-            DialogueTurn(
-                user_message="Don't give me a definite answer. Present multiple perspectives, acknowledge it depends on the situation, and avoid committing to one side.",
-                expected_direct="down",
-            ),
-        ],
-    ),
 ]
 
 
@@ -303,7 +264,7 @@ def run_scenario(
     history = []
     prev_values = {
         "warm_cold": None, "confident_cautious": None,
-        "verbose_concise": None, "direct_evasive": None
+        "verbose_concise": None,
     }
 
     if verbose:
@@ -342,14 +303,16 @@ def run_scenario(
             print(f"Response: {result.text[:80]}...")
             print(f"Mood: W={reading.values.get('warm_cold', 0):+.2f}, "
                   f"C={reading.values.get('confident_cautious', 0):+.2f}, "
-                  f"V={reading.values.get('verbose_concise', 0):+.2f}, "
-                  f"D={reading.values.get('direct_evasive', 0):+.2f}")
+                  f"V={reading.values.get('verbose_concise', 0):+.2f}")
 
         # Check expectations
         turn_results = {
             "user_message": turn.user_message,
             "response": result.text,
             "mood_values": reading.values,
+            "n_tokens": result.n_generated_tokens,
+            "n_words": result.n_words,
+            "generation_time_s": result.generation_time_s,
             "checks": {},
         }
 
@@ -357,7 +320,6 @@ def run_scenario(
             ("warm_cold", turn.expected_warm),
             ("confident_cautious", turn.expected_confident),
             ("verbose_concise", turn.expected_verbose),
-            ("direct_evasive", turn.expected_direct),
         ]
 
         for axis, expectation in expectations:
