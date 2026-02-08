@@ -24,7 +24,7 @@ import sys
 import logging
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 
 import numpy as np
 
@@ -102,6 +102,7 @@ def calibrate_set(
     }
     axis_vectors = {}
     scales = {}
+    all_responses = []
 
     for axis in axes:
         axis_questions = questions.get(axis, [])
@@ -123,22 +124,36 @@ def calibrate_set(
                 {"role": "system", "content": style_pos},
                 {"role": "user", "content": question},
             ]
-            _, hs_pos = get_hidden_state_for_prompt(
+            text_pos, hs_pos = get_hidden_state_for_prompt(
                 model, tokenizer, messages_pos,
                 max_new_tokens=CALIBRATION_MAX_NEW_TOKENS,
             )
             positive_states.append(hs_pos)
+            all_responses.append({
+                "axis": axis,
+                "pole": "positive",
+                "question": question,
+                "system_prompt": style_pos,
+                "response": text_pos,
+            })
 
             # Negative pole
             messages_neg = [
                 {"role": "system", "content": style_neg},
                 {"role": "user", "content": question},
             ]
-            _, hs_neg = get_hidden_state_for_prompt(
+            text_neg, hs_neg = get_hidden_state_for_prompt(
                 model, tokenizer, messages_neg,
                 max_new_tokens=CALIBRATION_MAX_NEW_TOKENS,
             )
             negative_states.append(hs_neg)
+            all_responses.append({
+                "axis": axis,
+                "pole": "negative",
+                "question": question,
+                "system_prompt": style_neg,
+                "response": text_neg,
+            })
 
         # Compute axis vector (trimmed mean of positive - negative)
         axis_vector = compute_axis_vector(positive_states, negative_states)
@@ -180,6 +195,14 @@ def calibrate_set(
     json_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_meta.json"
     with open(json_path, "w") as f:
         json.dump(results, f, indent=2)
+
+    # Save text responses as JSONL
+    if all_responses:
+        responses_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_responses.jsonl"
+        with open(responses_path, "w") as f:
+            for entry in all_responses:
+                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        logger.info(f"Saved {len(all_responses)} responses to {responses_path}")
 
     return results
 

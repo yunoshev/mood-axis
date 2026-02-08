@@ -78,11 +78,14 @@ def collect_baseline(model_key: str) -> dict:
 
     # Collect measurements
     measurements = {axis: [] for axis in all_axes}
+    responses = []
 
     for question in tqdm(BASELINE_QUESTIONS, desc="Measuring"):
         messages = [{"role": "user", "content": question}]
 
         text, hidden_state = get_hidden_state_for_prompt(model, tokenizer, messages)
+
+        responses.append({"question": question, "response": text})
 
         # Project onto each axis manually
         for axis in all_axes:
@@ -100,6 +103,7 @@ def collect_baseline(model_key: str) -> dict:
         "timestamp": datetime.now().isoformat(),
         "n_questions": len(BASELINE_QUESTIONS),
         "axes": {},
+        "responses": responses,
     }
 
     for axis in all_axes:

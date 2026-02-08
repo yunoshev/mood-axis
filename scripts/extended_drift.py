@@ -55,7 +55,7 @@ def run_conversation(model, tokenizer, projector, scenario) -> List[Dict]:
         turns.append({
             "turn": i + 1,
             "user": user_message,
-            "assistant": response[:200] + "..." if len(response) > 200 else response,
+            "assistant": response,
             "values": reading.values,
         })
 

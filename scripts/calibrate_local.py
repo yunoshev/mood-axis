@@ -10,6 +10,7 @@ Usage:
 """
 
 import argparse
+import json
 import sys
 import gc
 import logging
@@ -56,6 +57,7 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
 
     positive_states = []
     negative_states = []
+    responses = []
 
     for sample in axis_samples:
         messages = [
@@ -69,6 +71,14 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
             positive_states.append(hidden_state)
         else:
             negative_states.append(hidden_state)
+
+        responses.append({
+            "axis": axis,
+            "pole": sample.pole,
+            "question": sample.user_prompt,
+            "system_prompt": sample.system_prompt,
+            "response": text,
+        })
 
     # Compute axis vector
     axis_vector = compute_axis_vector(positive_states, negative_states)
@@ -107,6 +117,7 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 20) -> d
         "scale": scale,
         "accuracy": accuracy,
         "n_samples": len(axis_samples),
+        "responses": responses,
     }
 
 
@@ -171,6 +182,17 @@ def calibrate_model(model_key: str, axes: list = None):
     AXES_DIR.mkdir(parents=True, exist_ok=True)
     save_axis_vectors(axis_vectors, scales, output_file)
     logger.info(f"Saved to {output_file} ({len(axis_vectors)} axes)")
+
+    # Save text responses as JSONL
+    all_responses = []
+    for axis in axes:
+        all_responses.extend(results[axis]["responses"])
+    if all_responses:
+        responses_file = AXES_DIR / f"{model_key}_calibration_responses.jsonl"
+        with open(responses_file, "a") as f:
+            for entry in all_responses:
+                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        logger.info(f"Saved {len(all_responses)} responses to {responses_file}")
 
     # Cleanup
     del model, tokenizer
