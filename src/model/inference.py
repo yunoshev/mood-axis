@@ -267,6 +267,7 @@ def generate_with_hidden_states(
         output_scores=True,
         return_dict_in_generate=True,
         pad_token_id=tokenizer.pad_token_id,
+        eos_token_id=tokenizer.eos_token_id,
     )
     generation_time_s = time.time() - t0
 
@@ -474,6 +475,7 @@ def generate_response(
         top_p=top_p if do_sample else 1.0,
         do_sample=do_sample,
         pad_token_id=tokenizer.pad_token_id,
+        eos_token_id=tokenizer.eos_token_id,
     )
 
     # Decode
