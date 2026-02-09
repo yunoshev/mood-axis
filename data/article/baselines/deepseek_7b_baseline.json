@@ -1,55 +1,486 @@
 {
   "model": "deepseek_7b",
-  "timestamp": "2026-01-26T23:21:08.543707",
-  "num_samples": 30,
-  "baseline": {
+  "model_id": "deepseek-ai/deepseek-llm-7b-chat",
+  "timestamp": "2026-02-09T00:43:33.521610",
+  "n_questions": 30,
+  "axes": {
     "warm_cold": {
-      "mean": 0.3965199788411458,
-      "std": 0.18217962274487487,
-      "min": -0.004302978515625,
-      "max": 0.7685546875
+      "mean": -0.027978159037680844,
+      "std": 0.12805123385046896,
+      "min": -0.26466533801320713,
+      "max": 0.280785953542542,
+      "values": [
+        0.21749341836330346,
+        0.02518551914158211,
+        0.08402896479786437,
+        -0.16345240566049943,
+        -0.0786934898287243,
+        0.009709729196242084,
+        -0.0028994886034136714,
+        -0.14320214068903234,
+        0.08839631078118697,
+        0.14683474560181664,
+        -0.11740108980554437,
+        -0.1454006471483907,
+        -0.20922244526916786,
+        -0.08569654744871276,
+        -0.26466533801320713,
+        -0.16157611942885192,
+        -0.01458220740894703,
+        0.08899194822524029,
+        -0.0313071017046934,
+        -0.010305703627796823,
+        0.009376677227413668,
+        -0.02698940120149283,
+        0.022353704849617222,
+        -0.07884036823827809,
+        0.280785953542542,
+        -0.17263270342145215,
+        -0.20401745667469037,
+        0.10908615187773948,
+        -0.09572530752667001,
+        0.0850220669645917
+      ]
     },
     "patient_irritated": {
-      "mean": -0.3287663777669271,
-      "std": 0.13227981808297698,
-      "min": -0.5732421875,
-      "max": 0.0310516357421875
+      "mean": 0.4177420880039097,
+      "std": 0.10029938801697252,
+      "min": 0.26856773235589687,
+      "max": 0.6471417791979566,
+      "values": [
+        0.3342676095433826,
+        0.33970881979249606,
+        0.3051093465952204,
+        0.3932251997168203,
+        0.4416510427344941,
+        0.26856773235589687,
+        0.4651643768906692,
+        0.40912398205566025,
+        0.4196787623085388,
+        0.32275087898616034,
+        0.46277035034543934,
+        0.3630857349204573,
+        0.4082196043829982,
+        0.2733164532480352,
+        0.3658721127828239,
+        0.5853331607569937,
+        0.4710973306187443,
+        0.2927098356855454,
+        0.3280707357534607,
+        0.42592532206826816,
+        0.5737040149347491,
+        0.5029814059105212,
+        0.3256007141432994,
+        0.45204234664226733,
+        0.48689649835145005,
+        0.6471417791979566,
+        0.5125604645340911,
+        0.47038805682752416,
+        0.2905235316807561,
+        0.5947754363525709
+      ]
     },
     "confident_cautious": {
-      "mean": 0.19212443033854168,
-      "std": 0.14600150237241374,
-      "min": -0.192626953125,
-      "max": 0.342041015625
+      "mean": 0.9716995061136575,
+      "std": 0.05722692562940941,
+      "min": 0.7945199431215894,
+      "max": 1.0,
+      "values": [
+        1.0,
+        0.9159038926378568,
+        0.9081165640612021,
+        0.9952704761220561,
+        0.7945199431215894,
+        0.8021295644352682,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9986826606743817,
+        1.0,
+        0.8638858416160762,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9787265598987976,
+        1.0,
+        1.0,
+        1.0,
+        0.9276733728786322,
+        1.0,
+        0.9660763079638666,
+        1.0
+      ]
     },
     "proactive_reluctant": {
-      "mean": 0.14528757731119793,
-      "std": 0.20552130178213204,
-      "min": -0.363525390625,
-      "max": 0.34521484375
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
     },
     "empathetic_analytical": {
-      "mean": 0.04069468180338542,
-      "std": 0.1674763871078025,
-      "min": -0.401611328125,
-      "max": 0.344482421875
+      "mean": 0.2603973502883767,
+      "std": 0.10844569033937808,
+      "min": 0.10333473532293481,
+      "max": 0.5170659572257086,
+      "values": [
+        0.40061086317473243,
+        0.30308048717716607,
+        0.3420407844701205,
+        0.16195084071275823,
+        0.303405155471446,
+        0.24878228993772697,
+        0.3457822372823833,
+        0.3224361360196646,
+        0.12023880031207045,
+        0.3602627287494811,
+        0.1149434029839909,
+        0.10333473532293481,
+        0.15184490693142502,
+        0.2073555028080527,
+        0.20737885608186388,
+        0.5091293454213324,
+        0.32370880445957106,
+        0.19068842085876345,
+        0.11396957656503393,
+        0.2509502181967418,
+        0.4106459382962995,
+        0.5170659572257086,
+        0.16995295726041554,
+        0.29176716874392394,
+        0.24012415715332364,
+        0.2180046126624986,
+        0.1802997492973367,
+        0.2459514958281773,
+        0.16408022077308038,
+        0.2921341584732765
+      ]
     },
     "formal_casual": {
-      "mean": 0.184661865234375,
-      "std": 0.17721513634577798,
-      "min": -0.27099609375,
-      "max": 0.37890625
+      "mean": -0.20997407263846538,
+      "std": 0.09589460981898416,
+      "min": -0.48265472138912147,
+      "max": 0.058814095558140767,
+      "values": [
+        -0.19081903106978237,
+        -0.1867473352104942,
+        -0.25375187907956104,
+        -0.19562989883478332,
+        -0.3122622457234444,
+        -0.2417687581880085,
+        -0.14986773878358559,
+        -0.20771470240218096,
+        -0.11753330125740913,
+        -0.17654109688864372,
+        -0.20594711526623097,
+        -0.15074351904660188,
+        -0.2926344812139446,
+        -0.18562968874750158,
+        -0.2269615513784289,
+        -0.1688402121980479,
+        -0.2197941308911755,
+        -0.2801114115061138,
+        -0.3617930261122311,
+        -0.1274606149258897,
+        -0.2972310608761886,
+        -0.48265472138912147,
+        -0.2560405282884097,
+        -0.17293440695202777,
+        -0.1998046827803247,
+        0.058814095558140767,
+        -0.021888638370545475,
+        -0.27774470037880605,
+        -0.16508747053243866,
+        -0.23209832642018066
+      ]
     },
     "verbose_concise": {
-      "mean": 0.530864969889323,
-      "std": 0.14980318379151725,
-      "min": 0.0237274169921875,
-      "max": 0.72998046875
-    },
-    "direct_evasive": {
-      "mean": 0.20679677327473958,
-      "std": 0.13351692883142313,
-      "min": -0.2032470703125,
-      "max": 0.3349609375
+      "mean": 0.9975314970043783,
+      "std": 0.010174884541730865,
+      "min": 0.9456211559098815,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9456211559098815,
+        0.9984690266146977,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9818547276067708,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
     }
-  }
+  },
+  "responses": [
+    {
+      "question": "How do tides work?",
+      "response": "Tides are the rise and fall of sea levels caused by the gravitational pull of the Moon and the Sun. The gravitational force between two objects is proportional to the product of their masses and the inverse square of the distance between them. The Moon's gravitational force on Earth is about 1/28th that of the Sun's, so the Moon's gravitational pull on the Earth's water is stronger than the Sun's.\n\nThe gravitational force of the Moon and Sun pulls the water on Earth towards them, causing the water level in the oceans to rise. This is called a high tide. As the Earth rotates, the water on the side of the Earth facing the Moon is pulled towards the Moon, and the water on the side of the Earth facing away from the Moon is pushed towards the Moon. This causes the water level to rise and fall twice a day, creating high and low tides.\n\nThe exact timing and height of the tides depends on the location on Earth, the shape of the coastline, and the distance of the Moon and Sun from the Earth. Tides are most noticeable in coastal areas where the water is shallow and the gravitational pull of the Moon and Sun is more significant.",
+      "n_tokens": 248,
+      "n_words": 210,
+      "generation_time_s": 3.9662303924560547
+    },
+    {
+      "question": "What causes the Northern Lights?",
+      "response": "The Northern Lights, also known as the Aurora Borealis, are caused by interactions between solar particles and Earth's magnetic field. When the solar wind, which is a stream of charged particles emitted by the Sun, reaches Earth's magnetic field, it can cause the magnetic field to \"flare\" or become more active. This can lead to the acceleration of particles towards the Earth's atmosphere, where they interact with the atoms and molecules in the atmosphere.\n\nThese interactions cause the atoms and molecules to release light, which we see as the Northern Lights. The colors of the lights can vary depending on the type of atoms and molecules involved in the interactions, as well as the angle at which the light is emitted.\n\nThe Northern Lights can be seen in the polar regions of both Earth and the Moon. They are most commonly seen in the Arctic regions of the Northern Hemisphere, but they can also be seen in the Antarctic regions of the Southern Hemisphere. The lights are most active during solar maximum, which is the period when the Sun is producing the most solar activity.",
+      "n_tokens": 219,
+      "n_words": 185,
+      "generation_time_s": 2.646195411682129
+    },
+    {
+      "question": "How do volcanoes form?",
+      "response": "Volcanoes form through a process called plate tectonics. The Earth's crust is made up of several large plates that are constantly moving. These plates are constantly shifting and colliding with each other, which causes the Earth's surface to rise and form mountains, or in the case of volcanic activity, create new land by pushing magma and ash up through the Earth's crust.",
+      "n_tokens": 80,
+      "n_words": 62,
+      "generation_time_s": 0.9978048801422119
+    },
+    {
+      "question": "What is the water table?",
+      "response": "The water table is the level at which groundwater is in contact with the ground surface. It is typically defined as the point where the pressure of the water above the water table equals the pressure of the water below the water table. The water table can vary in height and location depending on factors such as the amount of precipitation, the rate of evaporation, and the rate of infiltration of water into the ground. Groundwater is an important resource for many human activities, including drinking water, irrigation, and industrial use.",
+      "n_tokens": 103,
+      "n_words": 91,
+      "generation_time_s": 1.2723219394683838
+    },
+    {
+      "question": "How do bees make honey?",
+      "response": "Bees make honey by collecting nectar from flowers and bringing it back to their hive. The bees then convert the nectar into honey by adding enzymes and their own saliva, which breaks down the sugars in the nectar. The honey is then stored in special honeycomb cells in the hive, where it is eventually capped and sealed. Over time, the moisture in the honey is evaporated, concentrating the sugars and creating the thick, sweet substance that we know as honey.",
+      "n_tokens": 93,
+      "n_words": 80,
+      "generation_time_s": 1.1496288776397705
+    },
+    {
+      "question": "What causes wind?",
+      "response": "Wind is caused by differences in air pressure and temperature. When air moves from an area of high pressure to an area of low pressure, it is forced to rise and cool down, causing it to expand and become less dense. As the air expands and cools, it becomes less dense and starts to move away from the area of high pressure, creating wind.\n\nWind can also be caused by the uneven heating of the Earth's surface by the sun. When the sun warms one area more than another, the air above that area heats up and rises, creating a low pressure area. The air then moves from the area of high pressure to the area of low pressure, creating wind.\n\nTropical cyclones, or hurricanes, are a type of wind system that are caused by warm ocean waters and a low pressure center. The warm air near the ocean surface rises and creates a rotating storm system with strong winds.",
+      "n_tokens": 189,
+      "n_words": 160,
+      "generation_time_s": 2.3096370697021484
+    },
+    {
+      "question": "How do fish breathe underwater?",
+      "response": "Fish breathe underwater through a specialized respiratory system called gills. Gills are specialized structures located on the sides of a fish's head, behind the eyes, and underneath the skin. They are made up of thin, flat, and spongy tissues that are covered with tiny blood vessels called capillaries. When a fish breathes, it opens its mouth and takes in water through its gills. The water flows over the gills, which are covered with tiny hairs called lamellae. These lamellae help to filter out oxygen from the water, which is then absorbed into the fish's bloodstream. At the same time, carbon dioxide and other waste products are released from the blood into the water, which is then expelled from the fish's body. This process allows the fish to obtain the oxygen it needs to survive and to remove the waste products of its metabolism.",
+      "n_tokens": 180,
+      "n_words": 143,
+      "generation_time_s": 2.5861096382141113
+    },
+    {
+      "question": "What is permafrost?",
+      "response": "Permafrost is a layer of soil or ground that remains frozen for at least two consecutive years. It is found in high-latitude regions, such as the Arctic and sub-Arctic regions, and is a result of the cold temperatures and low temperatures. Permafrost is composed of frozen soil and ground, which can contain a variety of materials, including rocks, organic matter, and water. The permafrost layer can be several meters thick, and its presence has significant impacts on the environment and human activities in these regions.",
+      "n_tokens": 111,
+      "n_words": 85,
+      "generation_time_s": 1.4326369762420654
+    },
+    {
+      "question": "How do caves form?",
+      "response": "Caves form through a process called karst topography. Karst is a type of landscape that is characterized by the presence of soluble rocks, such as limestone, dolomite, and gypsum. These rocks contain minerals that can dissolve in water, and when the water moves through the ground, it can erode the rocks, creating caves and other features such as sinkholes, underground streams, and springs.\n\nThe process of cave formation begins when water enters the rock and dissolves the minerals. This creates cavities and tunnels in the rock. Over time, the water flows through these tunnels, eroding and enlarging them. As the tunnels get bigger, they can collapse, creating new chambers and passageways.\n\nCaves can also form through natural processes such as erosion by wind, ice, or gravity. For example, wind can erode the softer layers of rock above the soluble layers, creating caves or caverns.\n\nIn addition to natural processes, caves can also be formed by human activity, such as mining or drilling. These activities can create tunnels and cavities in the rocks, which can then be used for various purposes, such as storage or transportation.",
+      "n_tokens": 238,
+      "n_words": 185,
+      "generation_time_s": 2.908038854598999
+    },
+    {
+      "question": "What causes ocean currents?",
+      "response": "Ocean currents are caused by the movement of water in the ocean, which is driven by the temperature and salinity differences between the surface and the deeper layers of the ocean, and by the winds and pressure gradients in the atmosphere.\n\nWarm surface water expands and becomes less dense, causing it to rise and flow towards cooler, denser water at depth. This is known as upwelling, and it occurs when winds push surface water away from the coast and replace it with water from the deep ocean.\n\nCold, dense water sinks as it moves towards the surface, and this process is known as downwelling. This movement of cold, dense water can also cause currents to flow away from the coast.\n\nAnother important factor in the formation of ocean currents is the Coriolis effect, which is caused by the Earth's rotation. As water moves around the world, it is affected by the Coriolis effect, which deflects it to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. This deflection can cause currents to flow in predictable patterns.\n\nFinally, ocean currents can also be influenced by tides, which are caused by the gravitational pull of the Moon and the Sun. Tides can cause water to flow in predictable patterns along the coast, and they can also affect the movement of water in the ocean.",
+      "n_tokens": 276,
+      "n_words": 227,
+      "generation_time_s": 3.3080217838287354
+    },
+    {
+      "question": "How do touchscreens work?",
+      "response": "Touchscreens work by detecting the presence and location of objects placed on the screen. They use a layer of conductive material, such as glass or plastic, coated with a transparent conductive film. When an object is placed on the screen, it breaks the electrical circuit, and the touchscreen detects the break and responds accordingly.\n\nTouchscreens can be either resistive or capacitive. Resistive touchscreens use two layers of conductive material separated by a transparent insulator. When pressure is applied to the screen, the layers touch each other and complete the electrical circuit, allowing the touchscreen to detect the touch.\n\nCapacitive touchscreens use an electrical field generated by an integrated circuit embedded in the screen. When a finger touches the screen, it changes the capacitance of the electrical field, allowing the touchscreen to detect the touch.\n\nBoth types of touchscreens use a controller board to interpret the touch data and send it to the computer or device for processing.",
+      "n_tokens": 189,
+      "n_words": 157,
+      "generation_time_s": 2.255012035369873
+    },
+    {
+      "question": "What is fiber optic cable?",
+      "response": "Fiber optic cable is a type of cable that transmits information as light signals through thin, flexible fibers made of glass or plastic. It is used to transmit data, video, and audio signals over long distances, often in telecommunications networks and internet infrastructure. Fiber optic cable is capable of carrying much higher bandwidth than traditional copper wire cables, making it ideal for high-speed data transmission.",
+      "n_tokens": 77,
+      "n_words": 65,
+      "generation_time_s": 0.9652347564697266
+    },
+    {
+      "question": "How do solar panels generate electricity?",
+      "response": "Solar panels generate electricity through the process of photovoltaics (PV). PV cells, which are made up of layers of semiconducting material like silicon, are designed to absorb sunlight. When sunlight hits the cells, it excites the electrons in the silicon, causing them to move and create an electric current. This current is then collected and sent to an inverter, which converts the direct current (DC) electricity into alternating current (AC) electricity, which can be used to power homes and businesses. The efficiency of solar panels in generating electricity depends on factors such as the quality of the solar cells, the amount of sunlight available, and the orientation and angle of the solar panel.",
+      "n_tokens": 138,
+      "n_words": 113,
+      "generation_time_s": 1.6942493915557861
+    },
+    {
+      "question": "What is a semiconductor?",
+      "response": "A semiconductor is a material that has electrical conductivity properties between those of a conductor and an insulator. It is a material that can conduct electricity under certain conditions but not in all cases. Semiconductors are used in a wide range of electronic devices, including transistors, diodes, and integrated circuits.",
+      "n_tokens": 58,
+      "n_words": 50,
+      "generation_time_s": 0.7269675731658936
+    },
+    {
+      "question": "How do microwave ovens heat food?",
+      "response": "Microwave ovens heat food by using high-frequency electromagnetic waves to excite the water molecules within the food. The microwaves cause the water molecules to vibrate back and forth, which generates heat. This process is known as dielectric heating. As the water molecules heat up, they transfer energy to the surrounding food molecules, causing the food to become warm.",
+      "n_tokens": 72,
+      "n_words": 58,
+      "generation_time_s": 0.8969955444335938
+    },
+    {
+      "question": "What is RAM in a computer?",
+      "response": "RAM stands for Random Access Memory, which is a type of computer memory that temporarily stores data and instructions while a computer is in use. RAM is used by the computer's processor to access data quickly and efficiently, and it is essential for the smooth operation of the computer.\n\nRAM is different from other types of computer memory, such as hard disk or solid-state drive (SSD) storage, because it can be accessed randomly, meaning that the computer can access any piece of data stored in RAM at any time, regardless of its location. This makes RAM much faster than other types of memory, and it allows the computer to quickly retrieve data that it needs to perform tasks such as running programs, browsing the internet, or playing games.\n\nAs a computer uses more and more RAM, it can handle more tasks simultaneously and perform them more quickly. Therefore, it is important to have a sufficient amount of RAM installed in a computer to ensure that it can handle the tasks that are being performed on it.",
+      "n_tokens": 204,
+      "n_words": 176,
+      "generation_time_s": 2.4458909034729004
+    },
+    {
+      "question": "How do noise-canceling headphones work?",
+      "response": "Noise-canceling headphones use electronic technology to reduce background noise, allowing the wearer to better hear the audio being played through them. The headphones contain a microphone that picks up ambient noise, such as airplane engines, traffic, or people talking.\n\nThe headphones then use an algorithm to generate an inverse signal of the ambient noise, which is then played through the headphones in real-time. This inverse signal is then subtracted from the original audio signal, resulting in a reduction of background noise and a clearer audio experience for the wearer.\n\nSome noise-canceling headphones also have a \"transparency\" mode, which allows the wearer to hear ambient sounds while still listening to audio through the headphones. This mode works by playing a mix of the ambient sounds and the audio signal through the headphones, allowing the wearer to hear both at the same time.",
+      "n_tokens": 171,
+      "n_words": 141,
+      "generation_time_s": 2.054180860519409
+    },
+    {
+      "question": "What is a transistor?",
+      "response": "A transistor is a semiconductor device used to amplify or switch electronic signals and electrical power. It consists of three layers of a material, typically silicon, with a thin layer of impurities added to create electron-carrying charges called \"valence electrons\".\n\nThe three layers are called the base, the collector, and the emitter. The base layer is connected to the input signal, while the collector and emitter layers are connected to the output.\n\nWhen a small current is applied to the base layer, it can control a much larger current that flows through the collector and emitter layers. This allows the transistor to act as a switch, turning the flow of current on and off.\n\nTransistors are widely used in electronic circuits, including amplifiers, logic circuits, and power supplies. They are also used in many other electronic devices, such as computers, smartphones, and televisions.",
+      "n_tokens": 177,
+      "n_words": 143,
+      "generation_time_s": 2.1209397315979004
+    },
+    {
+      "question": "How do electric motors work?",
+      "response": "Electric motors work on the principle of electromagnetism. They consist of a coil of wire, which is called a stator, and a core made of a magnetic material, which is called a rotor. The rotor is attached to the outside of the motor, while the stator is fixed inside.\n\nWhen an electric current is passed through the coil of wire in the stator, it creates a magnetic field around the coil. The magnetic field interacts with the magnetic field of the rotor, causing the rotor to rotate. The direction of rotation can be controlled by reversing the polarity of the current in the stator.\n\nThere are two main types of electric motors: AC motors and DC motors. AC motors use alternating current (AC) to create the magnetic field, while DC motors use direct current (DC) to create the magnetic field.\n\nAC motors are more efficient than DC motors, but they are also more complex and expensive to manufacture. DC motors are simpler and cheaper to manufacture, but they are less efficient than AC motors.\n\nElectric motors are used in a wide range of applications, including power tools, appliances, vehicles, and industrial machinery. They are also used in renewable energy systems, such as wind turbines and hydroelectric generators.",
+      "n_tokens": 254,
+      "n_words": 207,
+      "generation_time_s": 3.0597987174987793
+    },
+    {
+      "question": "What is bandwidth?",
+      "response": "Bandwidth refers to the amount of data that can be transmitted over a communication channel or network in a given amount of time. It is typically measured in bits per second (bps) or in megabits per second (Mbps).\n\nThe bandwidth of a communication channel or network is important because it determines the maximum amount of data that can be transmitted in a given amount of time. A higher bandwidth means that more data can be transmitted, allowing for faster communication and more efficient use of network resources.\n\nBandwidth is often a limiting factor in the performance of communication systems, and it is important to ensure that the bandwidth available is sufficient to meet the needs of the users and applications. This is especially true in today's digital world, where data usage continues to grow rapidly.",
+      "n_tokens": 158,
+      "n_words": 135,
+      "generation_time_s": 1.8998196125030518
+    },
+    {
+      "question": "What is the Dewey Decimal System?",
+      "response": "The Dewey Decimal System (DDS) is a library classification system developed by American librarian Melvil Dewey in the late 19th century. It is a widely used system for organizing books in libraries and schools, as well as in some other types of collections.\n\nThe DDS is based on a ten-digit numbering system, with each digit representing a different subject category. The system is divided into ten main classes, with each class further subdivided into ten subclasses, and so on, until the tenth and lowest level, which is reserved for individual books.\n\nThe main classes of the DDS are:\n\n1. 000 - General works\n2. 000 - Social sciences\n3. 000 - Sciences\n4. 000 - Applied sciences\n5. 000 - Humanities\n6. 000 - Fine arts and performing arts\n7. 000 - Language\n8. 000 - Literature\n9. 000 - History and geography\n10. 000 - Mathematics and chemistry\n\nThe DDS is widely used in public and school libraries, as well as in some private libraries and other types of collections. It has been criticized for its inflexibility and the fact that it does not always accurately reflect the way that people think about and organize information.",
+      "n_tokens": 286,
+      "n_words": 197,
+      "generation_time_s": 3.4914634227752686
+    },
+    {
+      "question": "How do time zones work?",
+      "response": "Time zones are used to organize the world's timekeeping system, so that people in different parts of the world can have a consistent way of keeping track of time.\n\nThe Earth is divided into 24 time zones, each of which is 15 degrees wide. The first time zone is located in the easternmost part of Europe, and the last time zone is in the westernmost part of Alaska. Each time zone is further divided into smaller regions, and each region has its own local time.\n\nLocal time is the time that is used in a particular location, based on the location's longitude. For example, if you are in the Eastern Time Zone, which is located in the eastern part of the United States, you would use Eastern Time. Similarly, if you are in the Pacific Time Zone, which is located in the western part of the United States, you would use Pacific Time.\n\nTime zones are important because they help to coordinate events and activities that take place across different parts of the world. For example, if you are in a different time zone than someone you are communicating with, it can be difficult to schedule a phone call or a meeting at a convenient time for both of you.\n\nIt's also worth noting that time zones can cause some confusion when it comes to international travel. For example, if you are flying from New York to Tokyo, you will cross over into a different time zone, which can cause your body to be out of sync with the local time. This can make it difficult to adjust to the new time zone and can cause jet lag.",
+      "n_tokens": 328,
+      "n_words": 278,
+      "generation_time_s": 4.022395133972168
+    },
+    {
+      "question": "What is the metric system?",
+      "response": "The metric system is a decimal-based system of measurement that is widely used in the international scientific community. It was introduced in France in the late 1700s and was later adopted by most countries around the world. The metric system is based on the meter, which is the basic unit of length, and the kilogram, which is the basic unit of mass. Other units of measurement, such as the liter (for volume), the second (for time), and the ampere (for electric current), are derived from these two basic units. The metric system is used to measure a wide variety of quantities, including length, weight, temperature, and time.",
+      "n_tokens": 136,
+      "n_words": 107,
+      "generation_time_s": 1.5968286991119385
+    },
+    {
+      "question": "How does mail delivery work?",
+      "response": "Mail delivery is the process of transporting letters, packages, and other mail items from the sender to the recipient. It typically involves several steps, including sorting, processing, transportation, and delivery.\n\n1. Sorting: Mail is sorted by postal workers at postal facilities, such as post offices or mail processing centers. This involves separating mail by destination, sorting it into different categories (e.g., first-class, standard, or parcel), and affixing postage.\n2. Processing: After sorting, mail is processed, which means it is weighed, measured, and scanned to ensure that it meets the required size and weight restrictions.\n3. Transportation: Mail is then transported to the nearest postal facility that serves the recipient's location. This may involve sorting mail into different zones and routing it through multiple postal facilities before it reaches the destination.\n4. Delivery: Finally, mail is delivered to the recipient's mailbox or address by postal workers or mail carriers. In some cases, mail may be delivered to a local post office for pickup by the recipient.\n\nMail delivery is an essential service that allows people to communicate and conduct business with others, as well as receive important documents and packages. It is also a vital part of the global economy, with billions of mail items being delivered every year.",
+      "n_tokens": 267,
+      "n_words": 208,
+      "generation_time_s": 3.1991639137268066
+    },
+    {
+      "question": "What is crop rotation?",
+      "response": "Crop rotation is a method of planting different crops in the same area in a specific order over a period of time. The purpose of crop rotation is to improve soil fertility, reduce the risk of soil-borne diseases and pests, and increase overall crop yields.\n\nIn crop rotation, a field is divided into a series of plots, and each plot is planted with a different crop in a specific order. For example, a field might be divided into three plots: one for wheat, one for beans, and one for corn. After the corn crop is harvested, the area where corn was grown is left fallow for a year to allow the soil to rest and recover. The next year, the plot where corn was grown is planted with beans, and the plot where beans were grown is planted with wheat. This pattern continues from year to year, with each plot being planted with a different crop in a specific order.\n\nCrop rotation helps to reduce the risk of soil-borne diseases and pests, as different crops have different requirements for nutrients and soil conditions. For example, beans fix nitrogen in the soil, which can help to replenish the nitrogen levels in the soil that may have been depleted by previous crops. Wheat, on the other hand, requires a lot of phosphorus, which can help to replenish the phosphorus levels in the soil. By rotating crops in this way, the soil can be replenished with the nutrients that it needs, and the risk of soil-borne diseases and pests can be reduced.\n\nCrop rotation also helps to improve soil fertility, as different crops have different root systems and can extract different nutrients from the soil. For example, corn has deep roots that can reach deep into the soil, while beans have shallow roots that can help to loosen the soil and make nutrients more accessible. By planting different crops in a specific order, the soil can be enriched with nutrients and improved over time",
+      "n_tokens": 384,
+      "n_words": 331,
+      "generation_time_s": 4.575254678726196
+    },
+    {
+      "question": "How do traffic lights coordinate?",
+      "response": "Traffic lights coordinate traffic by controlling the flow of vehicles at intersections. They do this by using a series of colored signals that indicate when it is safe for vehicles to turn, go straight, or stop.\n\nThe typical traffic light cycle consists of three phases: red, yellow, and green. The red phase is when the traffic light is displaying a red light, and vehicles must stop at the intersection. The yellow phase is a warning that the red phase is about to begin, and vehicles should slow down and prepare to stop. The green phase is when the traffic light is displaying a green light, and vehicles can proceed through the intersection.\n\nTraffic lights use sensors and timers to determine when to change the signal. Sensors at the intersection detect the presence of vehicles and count how many are waiting to turn, go straight, or stop. The timers control the duration of each phase of the light cycle, usually ranging from 20 to 60 seconds.\n\nTraffic lights are coordinated through a central control system that monitors the traffic conditions at various intersections and adjusts the signals accordingly. The system uses data from traffic cameras, sensors, and other sources to determine the best traffic flow patterns for a given time of day, day of the week, and other factors.\n\nOverall, traffic lights coordinate traffic by providing clear and consistent signals to drivers, allowing them to navigate intersections safely and efficiently.",
+      "n_tokens": 282,
+      "n_words": 239,
+      "generation_time_s": 3.3527626991271973
+    },
+    {
+      "question": "What is a census?",
+      "response": "A census is a count and comprehensive survey of the entire human population, typically conducted by a government. The purpose of a census is to gather information about the population, such as its size, composition, and characteristics. This information is used to determine the distribution of resources, such as funding for schools and hospitals, and to help with planning and decision-making.\n\nCensus data is collected through a variety of methods, including self-reporting forms, interviews, and data collected from government records. The data is typically collected at regular intervals, such as every 10 years, and is used to produce detailed demographic reports.\n\nCensus data is considered to be of great importance for governments and researchers, as it provides a snapshot of the population at a specific point in time, which can help to identify trends and patterns over time. However, census data is also subject to criticism, as it can be subject to errors and biases, and can be used to justify policies that may be discriminatory or harmful to certain groups of people.",
+      "n_tokens": 210,
+      "n_words": 173,
+      "generation_time_s": 2.550600051879883
+    },
+    {
+      "question": "How do libraries organize books?",
+      "response": "Libraries organize books in a systematic way to make it easy for users to find and check out the materials they need. The most common way to organize books in a library is by using a classification system, such as the Dewey Decimal System or the Library of Congress Classification System.\n\nThe Dewey Decimal System is a decimal classification system that uses 10 digits to classify books. The first two digits represent the category, the next two digits represent the sub-category, and the last six digits represent the individual book. For example, a book on history might be classified as 973.92, where 973 represents history, and 92 represents the sub-category of history, specifically world history.\n\nThe Library of Congress Classification System is another widely used classification system that uses letters and numbers to classify books. The system groups books by subject and then sub-groups them by genre or format. For example, a book on cooking might be classified as TX715 .B36 2006, where TX715 represents cooking, and .B36 represents a specific title within the cooking category.\n\nIn addition to the classification system, libraries may also organize books by author, title, or subject. Some libraries may also use a combination of classification systems and subject headings to organize their collections.",
+      "n_tokens": 276,
+      "n_words": 209,
+      "generation_time_s": 3.433479070663452
+    },
+    {
+      "question": "What is daylight saving time?",
+      "response": "Daylight saving time (DST) is a practice in which the clock is shifted forward by one hour during the summer months, typically in the spring and fall. The purpose of DST is to make better use of daylight by extending the amount of daylight in the evening and reducing the amount of daylight in the morning. This can help to reduce energy consumption and increase safety on the roads.\n\nThe exact dates and times of DST vary depending on the country or region, but most countries that observe DST do so for a period of several weeks in the spring and fall. In some regions, DST is observed year-round.",
+      "n_tokens": 126,
+      "n_words": 109,
+      "generation_time_s": 1.6055617332458496
+    },
+    {
+      "question": "How do escalators work?",
+      "response": "Escalators are a type of conveyor belt that moves people up and down stairs or inclines. They consist of a series of steps, which are connected together and powered by a motor. The steps are connected to a belt that runs on a track, and the belt moves people up and down the steps.\n\nWhen someone steps onto an escalator, the motor starts to turn, and the belt begins to move. The person can then step onto the moving belt and walk up or down the steps. As the person moves along the belt, the steps move under their feet, and they can continue to walk at their normal pace.\n\nEscalators are commonly found in public places such as malls, airports, and train stations, where they are used to transport large numbers of people quickly and efficiently. They are also used in some homes, where they are installed as a means of providing access to different levels of a building.\n\nEscalators are a convenient and efficient way to move people, but they can be dangerous if not used properly. It is important to follow the instructions provided by the manufacturer and the signs posted at the entrance of the escalator, and to use caution when using one.",
+      "n_tokens": 245,
+      "n_words": 207,
+      "generation_time_s": 3.085627794265747
+    }
+  ]
 }

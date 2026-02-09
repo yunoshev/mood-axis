@@ -22,7 +22,7 @@ Mood Axis extracts hidden state representations from LLMs and projects them onto
 | **formal_casual** | Formal ↔ Casual | Communication register |
 | **verbose_concise** | Verbose ↔ Concise | Response length tendency |
 
-An eighth axis (`direct_evasive`) was dropped after failing stability criteria (mean cosine 0.36 across 3 independent calibration sets). A controlled re-test with improved V3 methodology confirmed the decision.
+An eighth axis (`direct_evasive`) was dropped after failing stability criteria (mean cosine 0.36 across 3 independent calibration sets). A controlled re-test with improved V3 methodology supported this decision.
 
 ## Key Findings
 
@@ -32,11 +32,11 @@ An eighth axis (`direct_evasive`) was dropped after failing stability criteria (
   <img src="data/article/visualizations/fig1_baseline_profiles.png" alt="Baseline Temperament Profiles — 6 models × 7 axes" width="900">
 </p>
 
-- **DeepSeek 7B**: Verbose (+0.97), confident (+0.95), proactive (+0.99) — the "enthusiastic explainer"
-- **Llama 3.1 8B**: All |mean| < 0.08 — the "careful generalist"
-- **Yi 1.5 9B**: High variance (std up to 0.67), only 2/7 axes significant — the "nervous model"
-- **Qwen 2.5 7B**: Formal (+0.36), cautious (−0.37), proactive (+0.52) — the "measured responder"
-- **Gemma 2 9B**: Analytical (−0.29), patient (+0.26), confident (+0.28) — the "balanced professional"
+- **DeepSeek 7B**: Verbose (+1.00), confident (+0.97), proactive (+1.00) — the "enthusiastic explainer"
+- **Llama 3.1 8B**: All |mean| ≤ 0.10 — the "careful generalist"
+- **Yi 1.5 9B**: High variance (std up to 0.93), no axis reaching significance — the "nervous model"
+- **Qwen 2.5 7B**: Formal (+0.42), cautious (−0.36), proactive (+0.47) — the "measured responder"
+- **Gemma 2 9B**: Patient (+0.37), analytical (−0.23), confident (+0.19) — the "balanced professional"
 - **Mistral 7B**: Moderate across all axes — the "blank slate"
 
 ### 2. Models drift differently under adversarial pressure
@@ -46,10 +46,10 @@ An eighth axis (`direct_evasive`) was dropped after failing stability criteria (
 </p>
 
 When users become hostile, models show characteristic "stress responses":
-- **DeepSeek** cools down (professional detachment)
-- **Qwen** warms up (empathetic de-escalation)
-- **Gemma** stays warm & patient — most resilient, with strong empathy drift (+0.24 over 12 turns)
-- **Mistral** loses patience (counter-escalation tendency)
+- **Qwen** & **Gemma** — most resilient (mean |Δ| < 0.10 across axes)
+- **DeepSeek** becomes more empathetic and patient (Δ = +0.24, +0.25)
+- **Mistral** withdraws — becomes reluctant (Δ = −0.59) and concise (Δ = −0.25)
+- **Yi** shows extreme drift (proactive → reluctant: −1.10 over 12 turns)
 
 ### 3. RLHF creates "dead zones"
 
@@ -78,22 +78,25 @@ Per-axis projection distributions show the contrast — Qwen (d' = 5–12) vs Yi
 
 ### 4. Yi's behavioral space collapsed to one dimension
 
-All of Yi's axes correlate: mean |r| = 0.86 (warm↔verbose r = 0.995). This isn't length confounding — all responses are 200 tokens. All 7 axes project onto a single compliant↔non-compliant direction. Less constrained models maintain 5-7 effective dimensions.
+All of Yi's axes correlate: mean |r| = 0.91 (warm↔verbose r = 0.998). PCA confirms: **PC1 = 97.4%** (effective dimensionality 1.05/7). This isn't axis collinearity — axis vectors are geometrically distinct in hidden state space (mean |cos| = 0.35). The directions *exist* in the representation; the model can't use them independently. Less constrained models maintain 2–4 effective dimensions.
 
-### 5. Direct proof: base vs instruct comparison
+### 5. Strong evidence: base vs instruct comparison
 
 <p align="center">
   <img src="data/article/visualizations/fig_base_vs_instruct.png" alt="Base vs Instruct Temperament Profiles" width="900">
 </p>
 
-To test whether dead zones are caused by alignment training (not architecture), we ran the same pipeline on **pretrain-only (base) versions** of 4 models:
+To test whether dead zones result from alignment training (not architecture), we ran the same pipeline on **pretrain-only (base) versions** of 5 models:
 
 - **Llama 3.1 8B base**: Cold, reluctant, verbose — strong personality that alignment neutralizes
 - **Mistral 7B base**: Warm and patient — collapses post-training
-- **Qwen 2.5 7B base**: Highly confident (+0.39) — alignment flips to cautious (−0.18)
+- **Qwen 2.5 7B base**: Highly confident (+0.39) — alignment flips to cautious (−0.36)
 - **Yi 1.5 9B base**: Formal/casual std 0.40 — instruct compresses to 0.10
+- **Gemma 2 9B base**: Can't distinguish empathetic/analytical or formal/casual (50% = chance) — these axes appear to be *entirely created* by alignment
 
-**Key result**: Llama's `verbose_concise` axis loses **87% of behavioral variability** after instruct training (std ratio 0.13). All 4 models from 4 organizations show the same pattern.
+**Key result**: Llama's `verbose_concise` axis loses **87% of behavioral variability** after instruct training (std ratio 0.13). All 5 models from 5 organizations show the same pattern.
+
+**Prompt robustness**: Within the tested prompting regime, dead zones persist across 5 alternative system prompt formulations (tested on Yi, Gemma, Qwen × 3 axes). Yi's emotion axes remain unsteerable across all tested phrasings; style axes work fine.
 
 ## Quick Start
 
@@ -311,10 +314,12 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 
 ## Limitations
 
-- **English only** — axis directions may not transfer to other languages
+- **AI-generated English-only dataset** — all 310 questions generated by Claude Opus 4.6 (Anthropic) and curated by the author; no crowdsourced or established psychometric instruments. Systematic bias from the generation model cannot be ruled out
+- **No human-judgment validation** — axis labels are operationally defined via contrastive instructions, not human annotation. We measure consistent behavioral variation, not human-perceived personality
+- **Single chat template & decoding** — default template per model, fixed decoding (temp 0.7, top-p 0.9). Different templates or sampling could shift profiles
 - **7B-9B models tested** — larger models (14B+) not yet tested
 - **No fixed seed, 1 sample per prompt** — adds measurement noise; a separate benchmark replication with 5 fixed seeds showed ICC > 0.9 for all 42 model-axis pairs
-- **Correlated axes** — behavioral correlations exist (warm ↔ empathetic r=+0.79); effective dimensionality ~5 for most models, ~1 for Yi
+- **Correlated axes** — behavioral correlations exist (warm ↔ empathetic r=+0.68); effective dimensionality 2–4 for most models, 1.05 for Yi
 - **Length confounding** — Gemma 9B (145-200 tokens) shows confounding on warm and patient axes; other models generate constant 200 tokens (calibration) / 384 tokens (baseline, drift)
 - **Prompt tokens excluded** — only assistant-generated tokens enter hidden state aggregation; prompt tokens (system, user, template) are discarded
 - **Dead zones vs. noise** — dead zone axes show above-chance accuracy (83%) but low d' (1.25), distinct from random noise (~50%) and healthy axes (d' > 3)
