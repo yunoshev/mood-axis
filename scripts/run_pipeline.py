@@ -44,6 +44,15 @@ from config.settings import AXES_DIR, MOOD_AXES
 import numpy as np
 
 
+def run_verify(model_key: str, check: str) -> bool:
+    """Run data verification for a specific check. Returns True if no FAILs."""
+    result = subprocess.run(
+        [sys.executable, "scripts/verify_data.py", "--model", model_key, "--check", check],
+        cwd=PROJECT_ROOT
+    )
+    return result.returncode == 0
+
+
 def run_command(cmd: list, description: str) -> bool:
     """Run a command and return success status."""
     print(f"\n{'='*60}")
@@ -89,6 +98,9 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
         if not success:
             print(f"[ERROR] Calibration failed for {model_key}")
             return False
+        if not run_verify(model_key, "calibration"):
+            print(f"[ERROR] Calibration verification failed for {model_key}")
+            return False
 
     # Step 2: Baseline
     success = run_command(
@@ -97,6 +109,8 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
     )
     if not success:
         print(f"[WARNING] Baseline collection failed for {model_key}")
+    else:
+        run_verify(model_key, "baseline")
 
     # Step 3: Benchmark
     success = run_command(
@@ -119,6 +133,8 @@ def run_pipeline(model_key: str, skip_calibration: bool = False, skip_drift: boo
         )
         if not success:
             print(f"[WARNING] Drift analysis failed for {model_key}")
+        else:
+            run_verify(model_key, "drift")
 
     print(f"\n[DONE] Pipeline complete for {model_key}")
     return True

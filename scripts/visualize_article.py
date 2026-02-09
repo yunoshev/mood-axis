@@ -22,19 +22,7 @@ from plotly.subplots import make_subplots
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from config.settings import MOOD_AXES
-
-# Full 8-axis labels (settings.py may have only 4, but drift data uses all 8)
-AXIS_LABELS = {
-    "warm_cold": ("Warm", "Cold"),
-    "patient_irritated": ("Patient", "Irritated"),
-    "confident_cautious": ("Confident", "Cautious"),
-    "proactive_reluctant": ("Proactive", "Reluctant"),
-    "empathetic_analytical": ("Empathetic", "Analytical"),
-    "formal_casual": ("Formal", "Casual"),
-    "verbose_concise": ("Verbose", "Concise"),
-    "direct_evasive": ("Direct", "Evasive"),
-}
+from config.settings import MOOD_AXES, AXIS_LABELS
 
 
 # Color scheme
@@ -46,7 +34,6 @@ COLORS = {
     "empathetic_analytical": "#EC4899",
     "formal_casual": "#F97316",
     "verbose_concise": "#14B8A6",
-    "direct_evasive": "#8B5CF6",
 }
 
 MODEL_COLORS = {
@@ -246,16 +233,7 @@ def create_spider_overlay(
         'llama_1b': '#6366F1',
     }
 
-    ALL_AXES = [
-        ("warm_cold", "Warm"),
-        ("patient_irritated", "Patient"),
-        ("confident_cautious", "Confident"),
-        ("proactive_reluctant", "Proactive"),
-        ("empathetic_analytical", "Empathy"),
-        ("formal_casual", "Formal"),
-        ("verbose_concise", "Verbose"),
-        ("direct_evasive", "Direct"),
-    ]
+    ALL_AXES = [(ax, AXIS_LABELS[ax][0]) for ax in MOOD_AXES]
 
     if models_order:
         models = [m for m in models_order if m in baselines]
@@ -410,17 +388,7 @@ def create_spider_small_multiples(
         'llama_1b': '#6366F1',
     }
 
-    # All 8 axes with labels (not just the 4 production axes from settings.py)
-    ALL_AXES = [
-        ("warm_cold", "Warm"),
-        ("patient_irritated", "Patient"),
-        ("confident_cautious", "Confident"),
-        ("proactive_reluctant", "Proactive"),
-        ("empathetic_analytical", "Empathy"),
-        ("formal_casual", "Formal"),
-        ("verbose_concise", "Verbose"),
-        ("direct_evasive", "Direct"),
-    ]
+    ALL_AXES = [(ax, AXIS_LABELS[ax][0]) for ax in MOOD_AXES]
 
     if models_order:
         models = [m for m in models_order if m in baselines]
