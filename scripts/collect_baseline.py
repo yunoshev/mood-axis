@@ -24,7 +24,7 @@ from tqdm import tqdm
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.settings import MOOD_AXES, AXES_DIR
+from config.settings import MOOD_AXES, AXES_DIR, MAX_NEW_TOKENS
 from config.models import MODELS
 from config.prompts import BASELINE_QUESTIONS
 from src.model.loader import load_model
@@ -84,7 +84,9 @@ def collect_baseline(model_key: str) -> dict:
     for question in tqdm(BASELINE_QUESTIONS, desc="Measuring"):
         messages = [{"role": "user", "content": question}]
 
-        result = get_full_result_for_prompt(model, tokenizer, messages)
+        result = get_full_result_for_prompt(
+            model, tokenizer, messages, max_new_tokens=MAX_NEW_TOKENS
+        )
 
         responses.append({
             "question": question,
