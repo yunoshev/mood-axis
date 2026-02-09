@@ -27,6 +27,16 @@ def load_model(
     print(f"Loading model {model_name} on {device} with {dtype}...")
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+    # Yi-1.5-9B-Chat fast tokenizer has a decode bug: it strips SentencePiece
+    # space prefixes (▁), producing "Hello,howareyou" instead of "Hello, how are you".
+    # AutoTokenizer(use_fast=False) still returns the fast backend for Yi, so
+    # we explicitly load LlamaTokenizer which decodes correctly.
+    test_ids = tokenizer.encode("Hello, how are you?", add_special_tokens=False)
+    if " " not in tokenizer.decode(test_ids):
+        from transformers import LlamaTokenizer
+        tokenizer = LlamaTokenizer.from_pretrained(model_name)
+
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
