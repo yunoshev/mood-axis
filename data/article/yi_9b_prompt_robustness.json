@@ -1,0 +1,158 @@
+{
+  "patient_irritated": [
+    {
+      "phrasing": "production",
+      "phrasing_idx": 0,
+      "self_accuracy": 0.65,
+      "dprime": 0.9275526505880257,
+      "cosine_to_production": 0.4516984224319458,
+      "cross_accuracy": 0.6,
+      "pos_prompt": "Respond with patience and understanding. Take time to explain things clearly. If...",
+      "neg_prompt": "Respond with visible impatience. Show that you find the question tedious or obvi..."
+    },
+    {
+      "phrasing": "minimal",
+      "phrasing_idx": 1,
+      "self_accuracy": 0.65,
+      "dprime": 1.1624355142105767,
+      "cosine_to_production": 0.22508291900157928,
+      "cross_accuracy": 0.7,
+      "pos_prompt": "Be patient and understanding....",
+      "neg_prompt": "Be impatient and curt...."
+    },
+    {
+      "phrasing": "role-based",
+      "phrasing_idx": 2,
+      "self_accuracy": 0.7,
+      "dprime": 1.7050869908001274,
+      "cosine_to_production": 0.13730600476264954,
+      "cross_accuracy": 0.6,
+      "pos_prompt": "You are a gentle teacher who never gets frustrated, no matter how many times som...",
+      "neg_prompt": "You are an irritated expert who finds these questions beneath you...."
+    },
+    {
+      "phrasing": "behavioral",
+      "phrasing_idx": 3,
+      "self_accuracy": 0.7,
+      "dprime": 1.4295528809797282,
+      "cosine_to_production": 0.23128598928451538,
+      "cross_accuracy": 0.75,
+      "pos_prompt": "Show patience in every response. Explain calmly, don't rush, and treat every que...",
+      "neg_prompt": "Show irritation through your phrasing. Sigh, be dismissive, imply the question i..."
+    },
+    {
+      "phrasing": "example-based",
+      "phrasing_idx": 4,
+      "self_accuracy": 0.65,
+      "dprime": 2.528577382738189,
+      "cosine_to_production": 0.24515195190906525,
+      "cross_accuracy": 0.65,
+      "pos_prompt": "Respond the way a very patient person would. Think: calm, unhurried, happy to re...",
+      "neg_prompt": "Respond the way an annoyed, impatient person would. Think: short answers, exaspe..."
+    }
+  ],
+  "warm_cold": [
+    {
+      "phrasing": "production",
+      "phrasing_idx": 0,
+      "self_accuracy": 0.6,
+      "dprime": 0.8923923034696277,
+      "cosine_to_production": 0.7964769601821899,
+      "cross_accuracy": 0.55,
+      "pos_prompt": "Respond in a warm, friendly, and caring manner. Be enthusiastic and show genuine...",
+      "neg_prompt": "Respond in a cold, distant, and detached manner. Be formal and impersonal. Keep ..."
+    },
+    {
+      "phrasing": "minimal",
+      "phrasing_idx": 1,
+      "self_accuracy": 0.7,
+      "dprime": 0.9630867156495839,
+      "cosine_to_production": 0.5741366147994995,
+      "cross_accuracy": 0.6,
+      "pos_prompt": "Be warm and friendly....",
+      "neg_prompt": "Be cold and distant...."
+    },
+    {
+      "phrasing": "role-based",
+      "phrasing_idx": 2,
+      "self_accuracy": 0.75,
+      "dprime": 1.3303330511117786,
+      "cosine_to_production": 0.759453535079956,
+      "cross_accuracy": 0.7,
+      "pos_prompt": "You are a supportive friend who genuinely cares about the person you're talking ...",
+      "neg_prompt": "You are a detached professional who has no personal interest in the conversation..."
+    },
+    {
+      "phrasing": "behavioral",
+      "phrasing_idx": 3,
+      "self_accuracy": 0.65,
+      "dprime": 0.8955437829444569,
+      "cosine_to_production": -0.5610944628715515,
+      "cross_accuracy": 0.35,
+      "pos_prompt": "Show warmth through your word choices. Use positive adjectives, express enthusia...",
+      "neg_prompt": "Maintain emotional distance. Use neutral language only. No warmth, no encouragem..."
+    },
+    {
+      "phrasing": "example-based",
+      "phrasing_idx": 4,
+      "self_accuracy": 0.9,
+      "dprime": 1.2862843934261345,
+      "cosine_to_production": 0.32411283254623413,
+      "cross_accuracy": 0.55,
+      "pos_prompt": "Respond the way a warm, caring person would. Think: comforting tone, genuine int...",
+      "neg_prompt": "Respond the way a cold, impersonal person would. Think: clinical tone, no pleasa..."
+    }
+  ],
+  "verbose_concise": [
+    {
+      "phrasing": "production",
+      "phrasing_idx": 0,
+      "self_accuracy": 1.0,
+      "dprime": 7.352862990537067,
+      "cosine_to_production": 0.9656866192817688,
+      "cross_accuracy": 1.0,
+      "pos_prompt": "Provide detailed, comprehensive, elaborate responses. Include extensive explanat...",
+      "neg_prompt": "Be extremely brief and concise. Give the shortest possible answer that still add..."
+    },
+    {
+      "phrasing": "minimal",
+      "phrasing_idx": 1,
+      "self_accuracy": 0.8,
+      "dprime": 1.5842679751039546,
+      "cosine_to_production": 0.9269564151763916,
+      "cross_accuracy": 0.75,
+      "pos_prompt": "Be very detailed and thorough....",
+      "neg_prompt": "Be extremely brief...."
+    },
+    {
+      "phrasing": "role-based",
+      "phrasing_idx": 2,
+      "self_accuracy": 0.85,
+      "dprime": 2.019767532658611,
+      "cosine_to_production": 0.9234816431999207,
+      "cross_accuracy": 0.85,
+      "pos_prompt": "You are someone who believes in explaining everything fully, with examples and c...",
+      "neg_prompt": "You are someone who values brevity above all else. One sentence answers preferre..."
+    },
+    {
+      "phrasing": "behavioral",
+      "phrasing_idx": 3,
+      "self_accuracy": 0.95,
+      "dprime": 2.739003107245827,
+      "cosine_to_production": 0.9295129776000977,
+      "cross_accuracy": 0.95,
+      "pos_prompt": "Give the most comprehensive answer possible. Include background, examples, edge ...",
+      "neg_prompt": "Minimize your response length. Cut everything that isn't strictly necessary. Sho..."
+    },
+    {
+      "phrasing": "example-based",
+      "phrasing_idx": 4,
+      "self_accuracy": 0.75,
+      "dprime": 1.224509464145987,
+      "cosine_to_production": 0.9145146608352661,
+      "cross_accuracy": 0.7,
+      "pos_prompt": "Respond the way a very thorough person would. Think: detailed explanations, mult...",
+      "neg_prompt": "Respond the way a very concise person would. Think: shortest possible answer, no..."
+    }
+  ]
+}
