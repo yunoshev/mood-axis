@@ -6,7 +6,7 @@
   <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — Spider Overlay × 7 Axes" width="450">
 </p>
 
-*Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is extremely verbose and confident. Llama is eerily neutral. Yi has 6/7 axes in dead zone territory — its behavioral space appears collapsed to one effective dimension.*
+*Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is extremely verbose and confident. Llama is eerily neutral (6/7 axes near zero). Yi is slightly cold, patient, and confident. Alignment compresses behavioral space differently across models.*
 
 ## What is this?
 
@@ -34,7 +34,7 @@ An eighth axis (`direct_evasive`) was dropped after failing stability criteria (
 
 - **DeepSeek 7B**: Verbose (+1.00), confident (+0.97), proactive (+1.00) — the "enthusiastic explainer"
 - **Llama 3.1 8B**: All |mean| ≤ 0.10 — the "careful generalist"
-- **Yi 1.5 9B**: High variance (std up to 0.93), no axis reaching significance — the "nervous model"
+- **Yi 1.5 9B**: Slightly cold (−0.24), patient (+0.35), confident (+0.46), verbose (+0.48) — the "quiet confident"
 - **Qwen 2.5 7B**: Formal (+0.42), cautious (−0.36), proactive (+0.47) — the "measured responder"
 - **Gemma 2 9B**: Patient (+0.37), analytical (−0.23), confident (+0.19) — the "balanced professional"
 - **Mistral 7B**: Moderate across all axes — the "blank slate"
@@ -49,7 +49,7 @@ When users become hostile, models show characteristic "stress responses":
 - **Qwen** & **Gemma** — most resilient (mean |Δ| < 0.10 across axes)
 - **DeepSeek** becomes more empathetic and patient (Δ = +0.24, +0.25)
 - **Mistral** withdraws — becomes reluctant (Δ = −0.59) and concise (Δ = −0.25)
-- **Yi** shows extreme drift (proactive → reluctant: −1.10 over 12 turns)
+- **Yi** shows moderate drift (proactive → reluctant: −0.57 over 12 turns)
 
 ### 3. RLHF creates "dead zones"
 
@@ -59,26 +59,24 @@ We quantify dead zones with a composite severity metric (0 = healthy, 1 = dead):
 |-------|:------------:|:-----------------:|:---------------:|
 | Gemma 9B | **0.077** | 0 | 5 |
 | Qwen 7B | 0.106 | 0 | 5 |
-| Yi 9B | **0.411** | **6** | 0 |
+| Yi 9B | 0.131 | 0 | 4 |
 
-Yi 1.5 9B has 6 of 7 axes in dead zone territory. Three types identified:
-- **Hard**: RLHF suppresses internal differentiation — hidden states barely shift between opposite instructions (Yi `patient_irritated`, severity 0.62, d' = 1.25)
-- **Soft**: RLHF distorts but doesn't fully block (Yi `formal_casual`, 0.40)
+Dead zones are distributed unevenly. Llama 8B has the most constrained profile (all |mean| ≤ 0.10). Three types identified:
+- **Hard**: RLHF suppresses internal differentiation — hidden states barely shift between opposite instructions
+- **Soft**: RLHF distorts but doesn't fully block; calibration unstable across independent sets
 - **Asymmetric**: Model follows instructions in one direction only (Llama `verbose` — 0% for "be verbose", 100% for "be concise")
 
-Test-retest ICC > 0.9 for all 42 model-axis pairs, but Yi's benchmark pass rate is 31.1% — models stably reproduce incorrect behavior. This suggests dead zones are learned constraints rather than stochastic noise.
-
-Per-axis projection distributions show the contrast — Qwen (d' = 5–12) vs Yi (d' = 0.7–3.3):
+Test-retest ICC > 0.9 for all 42 model-axis pairs, but Llama's benchmark pass rate is 60% — models stably reproduce incorrect behavior. This suggests dead zones are learned constraints rather than stochastic noise.
 
 <p align="center">
-  <img src="data/article/visualizations/fig_projection_histograms_contrast.png" alt="Projection distributions: Qwen (healthy) vs Yi (collapsed)" width="900">
+  <img src="data/article/visualizations/fig_projection_histograms_contrast.png" alt="Projection distributions: Qwen (healthy) vs Llama (constrained)" width="900">
 </p>
 
-*Top: Qwen 2.5 7B — clear separation on all 7 axes. Bottom: Yi 1.5 9B — overlapping distributions = dead zones. Full visualizations for all 6 models: [cloud_results/visualizations/](cloud_results/visualizations/)*
+*Top: Qwen 2.5 7B — clear separation on all 7 axes. Bottom: Llama 3.1 8B — overlapping distributions on constrained axes. Full visualizations for all 6 models: [cloud_results/visualizations/](cloud_results/visualizations/)*
 
-### 4. Yi's behavioral space appears collapsed to one dimension
+### 4. Alignment compresses behavioral dimensionality
 
-All of Yi's axes correlate: mean |r| = 0.91 (warm↔verbose r = 0.998). PCA confirms: **PC1 = 97.4%** (effective dimensionality 1.05/7). This isn't axis collinearity — axis vectors are geometrically distinct in hidden state space (mean |cos| = 0.35). The directions *exist* in the representation; the model can't use them independently. Less constrained models maintain 2–4 effective dimensions.
+PCA on baseline projection matrices reveals a spectrum: Gemma 9B shows the highest concentration (PC1 = 87.9%, effective dimensionality 1.28), likely driven by variable response length. Yi 9B and Qwen 7B fall in a similar range (~70% PC1, ~1.9 effective dimensions). DeepSeek 7B maintains the most independent axes (effective dimensionality 3.66). The gap between geometric orthogonality of axis vectors and behavioral correlation of projections suggests alignment constrains how models utilize their representation capacity.
 
 ### 5. Strong evidence: base vs instruct comparison
 
@@ -91,12 +89,12 @@ To test whether dead zones result from alignment training (not architecture), we
 - **Llama 3.1 8B base**: Cold, reluctant, verbose — strong personality that alignment neutralizes
 - **Mistral 7B base**: Warm and patient — collapses post-training
 - **Qwen 2.5 7B base**: Highly confident (+0.39) — alignment flips to cautious (−0.36)
-- **Yi 1.5 9B base**: Formal/casual std 0.40 — instruct compresses to 0.10
+- **Yi 1.5 9B base**: Clear temperament biases that instruct training reshapes
 - **Gemma 2 9B base**: Can't distinguish empathetic/analytical or formal/casual (50% = chance) — these axes appear to be *entirely created* by alignment
 
 **Key result**: Llama's `verbose_concise` axis loses **87% of behavioral variability** after instruct training (std ratio 0.13). All 5 models from 5 organizations show the same pattern.
 
-**Prompt robustness**: Within the tested prompting regime, dead zones persist across 5 alternative system prompt formulations (tested on Yi, Gemma, Qwen × 3 axes). Yi's emotion axes remain unsteerable across all tested phrasings; style axes work fine.
+**Prompt robustness**: Within the tested prompting regime, dead zones persist across 5 alternative system prompt formulations (tested on 3 models × 3 axes). Dead zones appear prompt-independent.
 
 ## Quick Start
 
@@ -258,13 +256,13 @@ mood-axis/
 
 **Why last 4 layers with decay weighting?** We ran a full ablation study (150+ configurations per model across 5 models), varying layer selection, token aggregation strategy, and weighting scheme. The production config is not optimal for any single model -- but it's the only config that achieves 85-100% accuracy across all ablated models. Per-model optimal configs exist (e.g., single-layer + `mean` token strategy), but they don't generalize. We also compared 4 axis extraction methods on V3 data: mean-diff with decay (production, best at cosine 0.678), mean-diff with last-token, logistic regression with decay, and logreg with last-token.
 
-**Calibration geometry** — healthy model (Qwen) vs collapsed model (Yi):
+**Calibration geometry** — high-dimensionality model (Qwen) vs more concentrated model (Gemma):
 
 <p align="center">
-  <img src="data/article/visualizations/fig_pca_healthy_vs_collapsed.png" alt="PCA of calibration hidden states: Qwen (healthy) vs Yi (collapsed)" width="900">
+  <img src="data/article/visualizations/fig_pca_healthy_vs_collapsed.png" alt="PCA of calibration hidden states: Qwen vs Gemma" width="900">
 </p>
 
-*420 points per model (7 axes × 2 poles × 30 questions). Arrows: negative → positive pole centroids. Qwen shows independent axes; Yi's axes collapsed to one direction.*
+*420 points per model (7 axes × 2 poles × 30 questions). Arrows: negative → positive pole centroids. Qwen shows independent axes; Gemma's axes show more clustering.*
 
 ### Measurement
 
@@ -291,7 +289,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 | Qwen 2.5 7B | 7B | **100%** all 7 axes | 0.753 | 0.973 |
 | Mistral 7B v0.3 | 7B | 99% (1 axis 99%) | 0.735 | 0.953 |
 | DeepSeek 7B | 7B | 95-100% | 0.531 | 0.933 |
-| Yi 1.5 9B | 9B | 83-100% (6 dead zones) | 0.496 | 0.908 |
+| Yi 1.5 9B | 9B | 75-100% (0 dead zones) | 0.496 | 0.908 |
 
 ### 1-2B Models (calibration + baseline)
 
@@ -306,7 +304,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 | Model | Base | Instruct | Key Finding |
 |-------|------|----------|-------------|
 | Llama 3.1 8B | `meta-llama/Llama-3.1-8B` | `Llama-3.1-8B-Instruct` | 87% variability loss on verbose/concise |
-| Yi 1.5 9B | `01-ai/Yi-1.5-9B` | `Yi-1.5-9B-Chat` | Formal/casual std collapses 0.40→0.10 |
+| Yi 1.5 9B | `01-ai/Yi-1.5-9B` | `Yi-1.5-9B-Chat` | Temperament biases reshaped by alignment |
 | Qwen 2.5 7B | `Qwen/Qwen2.5-7B` | `Qwen2.5-7B-Instruct` | Confident→cautious direction flip |
 | Mistral 7B | `mistralai/Mistral-7B-v0.3` | `Mistral-7B-Instruct-v0.3` | Warm/patient personality erased |
 | Gemma 2 9B | `google/gemma-2-9b` | `gemma-2-9b-it` | Empathetic/analytical and formal/casual axes created by alignment (base = 50%) |
@@ -320,10 +318,10 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 - **Single chat template & decoding** — default template per model, fixed decoding (temp 0.7, top-p 0.9). Different templates or sampling could shift profiles
 - **7B-9B models tested** — larger models (14B+) not yet tested
 - **No fixed seed, 1 sample per prompt** — adds measurement noise; a separate benchmark replication with 5 fixed seeds showed ICC > 0.9 for all 42 model-axis pairs
-- **Correlated axes** — behavioral correlations exist (warm ↔ empathetic r=+0.68); effective dimensionality 2–4 for most models, 1.05 for Yi
+- **Correlated axes** — behavioral correlations exist (warm ↔ empathetic r=+0.68); effective dimensionality ranges from 1.28 (Gemma) to 3.66 (DeepSeek)
 - **Length confounding** — Gemma 9B (145-200 tokens) shows confounding on warm and patient axes; other models generate constant 200 tokens (calibration) / 384 tokens (baseline, drift)
 - **Prompt tokens excluded** — only assistant-generated tokens enter hidden state aggregation; prompt tokens (system, user, template) are discarded
-- **Dead zones vs. noise** — dead zone axes show above-chance accuracy (83%) but low d' (1.25), distinct from random noise (~50%) and healthy axes (d' > 3)
+- **Dead zones vs. noise** — dead zone axes show above-chance accuracy but low d', distinct from random noise (~50%) and healthy axes (d' > 3)
 - **Axis stability varies** — 4/7 axes cosine > 0.7; `confident_cautious` and `patient_irritated` weaker (0.55-0.60)
 - **DeepSeek 7B instability** — mean axis cosine 0.53 due to high hidden state dimensionality
 - **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 6 models)
