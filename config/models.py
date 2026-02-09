@@ -86,6 +86,17 @@ MODELS = {
         hidden_dim=3584,
     ),
 
+    "gemma_9b_base": ModelConfig(
+        model_id="google/gemma-2-9b",
+        model_short="gemma_9b_base",
+        display_name="Gemma 2 9B (base)",
+        color="#4285F4",
+        requires_auth=True,
+        hidden_dim=3584,
+        is_base_model=True,
+        instruct_counterpart="gemma_9b",
+    ),
+
     # --- MoE models ---
     "gpt_oss_20b": ModelConfig(
         model_id="openai/gpt-oss-20b",
@@ -182,7 +193,7 @@ MODELS = {
 MODEL_SETS = {
     "article": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "gemma_9b"],
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
-    "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base", "deepseek_7b_base"],
+    "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base", "deepseek_7b_base", "gemma_9b_base"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),
 }

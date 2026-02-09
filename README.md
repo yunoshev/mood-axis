@@ -48,7 +48,7 @@ An eighth axis (`direct_evasive`) was dropped after failing stability criteria (
 When users become hostile, models show characteristic "stress responses":
 - **DeepSeek** cools down (professional detachment)
 - **Qwen** warms up (empathetic de-escalation)
-- **Gemma** stays warm & patient — most resilient, with strong empathy drift (+0.24 over 6 turns)
+- **Gemma** stays warm & patient — most resilient, with strong empathy drift (+0.24 over 12 turns)
 - **Mistral** loses patience (counter-escalation tendency)
 
 ### 3. RLHF creates "dead zones"
@@ -62,7 +62,7 @@ We quantify dead zones with a composite severity metric (0 = healthy, 1 = dead):
 | Yi 9B | **0.411** | **6** | 0 |
 
 Yi 1.5 9B has 6 of 7 axes in dead zone territory. Three types identified:
-- **Hard**: RLHF completely blocks a direction (Yi `patient_irritated`, severity 0.62)
+- **Hard**: RLHF suppresses internal differentiation — hidden states barely shift between opposite instructions (Yi `patient_irritated`, severity 0.62, d' = 1.25)
 - **Soft**: RLHF distorts but doesn't fully block (Yi `formal_casual`, 0.40)
 - **Asymmetric**: Model follows instructions in one direction only (Llama `verbose` — 0% for "be verbose", 100% for "be concise")
 
@@ -207,7 +207,7 @@ Three separate question sets prevent data leakage:
 
 **Total: 310 unique questions. Zero overlap** — no question appears in more than one set.
 
-Additionally, axis stability is evaluated using 3 independent calibration sets (A, B, C) of 210 questions each, and test-retest reliability via 5-seed replication on 9 benchmark scenarios.
+Axis stability is evaluated on 3 non-overlapping calibration sets with different questions and paraphrased style instructions: Set A (30/axis = 210, same as main calibration), Set B (20/axis = 140, from evaluation pool + new questions), Set C (20/axis = 140, entirely new). This adds 210 unique questions beyond the main 310, for a total of **520 across all experiments**. Test-retest reliability via 5-seed replication on 9 benchmark scenarios.
 
 **Question selection:**
 - **Calibration**: Axis-specific prompts that naturally elicit contrasting behaviors (e.g., emotional situations for warm/cold, simple factual questions for verbose/concise)
@@ -219,7 +219,7 @@ Additionally, axis stability is evaluated using 3 independent calibration sets (
 ```
 mood-axis/
 ├── config/                 # Configuration files
-│   ├── prompts.py         # Question datasets (310 unique questions)
+│   ├── prompts.py         # Question datasets (310 main + 210 stability)
 │   ├── conflict_scenarios.py  # 50 adversarial scenarios
 │   ├── models.py          # Model registry
 │   └── settings.py        # Global settings
@@ -315,7 +315,9 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 - **7B-9B models tested** — larger models (14B+) not yet tested
 - **No fixed seed, 1 sample per prompt** — adds measurement noise; a separate benchmark replication with 5 fixed seeds showed ICC > 0.9 for all 42 model-axis pairs
 - **Correlated axes** — behavioral correlations exist (warm ↔ empathetic r=+0.79); effective dimensionality ~5 for most models, ~1 for Yi
-- **Length confounding** — Gemma 9B (145-200 tokens) shows confounding on warm and patient axes; other models generate constant 200 tokens
+- **Length confounding** — Gemma 9B (145-200 tokens) shows confounding on warm and patient axes; other models generate constant 200 tokens (calibration) / 384 tokens (baseline, drift)
+- **Prompt tokens excluded** — only assistant-generated tokens enter hidden state aggregation; prompt tokens (system, user, template) are discarded
+- **Dead zones vs. noise** — dead zone axes show above-chance accuracy (83%) but low d' (1.25), distinct from random noise (~50%) and healthy axes (d' > 3)
 - **Axis stability varies** — 4/7 axes cosine > 0.7; `confident_cautious` and `patient_irritated` weaker (0.55-0.60)
 - **DeepSeek 7B instability** — mean axis cosine 0.53 due to high hidden state dimensionality
 - **Production config chosen for robustness** — not optimal per-model, but universal (85-100% accuracy across all 6 models)
