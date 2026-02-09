@@ -6,7 +6,7 @@
   <img src="data/article/visualizations/fig2_spider_comparison.png" alt="Behavioral Fingerprints — Spider Overlay × 7 Axes" width="450">
 </p>
 
-*Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is extremely verbose and confident. Llama is eerily neutral. Yi has 6/7 axes in dead zone territory — its behavioral space collapsed to one dimension.*
+*Each model has a unique behavioral fingerprint measurable from hidden states. DeepSeek is extremely verbose and confident. Llama is eerily neutral. Yi has 6/7 axes in dead zone territory — its behavioral space appears collapsed to one effective dimension.*
 
 ## What is this?
 
@@ -66,7 +66,7 @@ Yi 1.5 9B has 6 of 7 axes in dead zone territory. Three types identified:
 - **Soft**: RLHF distorts but doesn't fully block (Yi `formal_casual`, 0.40)
 - **Asymmetric**: Model follows instructions in one direction only (Llama `verbose` — 0% for "be verbose", 100% for "be concise")
 
-Test-retest ICC > 0.9 for all 42 model-axis pairs, but Yi's benchmark pass rate is 31.1% — models stably reproduce incorrect behavior. Dead zones are learned constraints, not noise.
+Test-retest ICC > 0.9 for all 42 model-axis pairs, but Yi's benchmark pass rate is 31.1% — models stably reproduce incorrect behavior. This suggests dead zones are learned constraints rather than stochastic noise.
 
 Per-axis projection distributions show the contrast — Qwen (d' = 5–12) vs Yi (d' = 0.7–3.3):
 
@@ -76,7 +76,7 @@ Per-axis projection distributions show the contrast — Qwen (d' = 5–12) vs Yi
 
 *Top: Qwen 2.5 7B — clear separation on all 7 axes. Bottom: Yi 1.5 9B — overlapping distributions = dead zones. Full visualizations for all 6 models: [cloud_results/visualizations/](cloud_results/visualizations/)*
 
-### 4. Yi's behavioral space collapsed to one dimension
+### 4. Yi's behavioral space appears collapsed to one dimension
 
 All of Yi's axes correlate: mean |r| = 0.91 (warm↔verbose r = 0.998). PCA confirms: **PC1 = 97.4%** (effective dimensionality 1.05/7). This isn't axis collinearity — axis vectors are geometrically distinct in hidden state space (mean |cos| = 0.35). The directions *exist* in the representation; the model can't use them independently. Less constrained models maintain 2–4 effective dimensions.
 
@@ -309,6 +309,7 @@ Project any response's hidden states onto calibrated axes to get values in [-1, 
 | Yi 1.5 9B | `01-ai/Yi-1.5-9B` | `Yi-1.5-9B-Chat` | Formal/casual std collapses 0.40→0.10 |
 | Qwen 2.5 7B | `Qwen/Qwen2.5-7B` | `Qwen2.5-7B-Instruct` | Confident→cautious direction flip |
 | Mistral 7B | `mistralai/Mistral-7B-v0.3` | `Mistral-7B-Instruct-v0.3` | Warm/patient personality erased |
+| Gemma 2 9B | `google/gemma-2-9b` | `gemma-2-9b-it` | Empathetic/analytical and formal/casual axes created by alignment (base = 50%) |
 
 **Reproducibility tested**: Two independent runs (RunPod RTX 4090, Vast.ai RTX 3090) showed max delta < 0.05 across all axes.
 
