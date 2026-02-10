@@ -128,6 +128,25 @@ MODELS = {
         hidden_dim=5120,
     ),
 
+    # --- Uncensored models (V7 experiment) ---
+    "qwen_7b_uncensored": ModelConfig(
+        model_id="Orion-zhen/Qwen2.5-7B-Instruct-Uncensored",
+        model_short="qwen_7b_uncensored",
+        display_name="Qwen 2.5 7B (uncensored)",
+        color="#FF6B35",
+        requires_auth=False,
+        hidden_dim=3584,
+    ),
+    "qwen3_8b_abliterated": ModelConfig(
+        model_id="mlabonne/Qwen3-8B-abliterated",
+        model_short="qwen3_8b_abliterated",
+        display_name="Qwen3 8B (abliterated)",
+        color="#FF4500",
+        requires_auth=False,
+        hidden_dim=4096,
+        chat_template_kwargs={"enable_thinking": False},
+    ),
+
     # --- MoE models ---
     "gpt_oss_20b": ModelConfig(
         model_id="openai/gpt-oss-20b",
@@ -226,6 +245,7 @@ MODEL_SETS = {
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
     "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base", "deepseek_7b_base", "gemma_9b_base"],
     "v6": ["qwen3_8b", "phi4"],
+    "v7_uncensored": ["qwen_7b_uncensored", "qwen3_8b_abliterated"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),
 }
