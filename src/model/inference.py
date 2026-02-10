@@ -40,14 +40,20 @@ class GenerationResult:
     generation_time_s: float = 0.0  # Wall time in seconds
 
 
-def _apply_chat_template(tokenizer, messages):
+def _apply_chat_template(tokenizer, messages, chat_template_kwargs=None):
     """Apply chat template with fallback for models that don't support system role.
 
     Some models (e.g., Gemma) don't support system messages in their chat template.
     For these, we merge the system message into the first user message.
 
     Base models (no chat template) get plain text formatting.
+
+    Args:
+        chat_template_kwargs: Extra kwargs for apply_chat_template
+            (e.g. {"enable_thinking": False} for Qwen3).
     """
+    extra_kwargs = chat_template_kwargs or {}
+
     # Base models: no chat template — format as plain text
     if tokenizer.chat_template is None:
         parts = []
@@ -63,6 +69,7 @@ def _apply_chat_template(tokenizer, messages):
     try:
         return tokenizer.apply_chat_template(
             messages, tokenize=False, add_generation_prompt=True,
+            **extra_kwargs,
         )
     except Exception as e:
         if "System role not supported" not in str(e):
@@ -80,6 +87,7 @@ def _apply_chat_template(tokenizer, messages):
                 merged.append(msg)
         return tokenizer.apply_chat_template(
             merged, tokenize=False, add_generation_prompt=True,
+            **extra_kwargs,
         )
 
 
@@ -223,6 +231,7 @@ def generate_with_hidden_states(
     do_sample: bool = DO_SAMPLE,
     return_raw_states: bool = False,
     seed: Optional[int] = None,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> GenerationResult:
     """Generate text and extract hidden states.
 
@@ -236,6 +245,7 @@ def generate_with_hidden_states(
         do_sample: Whether to sample or use greedy decoding
         return_raw_states: Whether to return raw per-token hidden states
         seed: Random seed for reproducible sampling (only relevant when do_sample=True)
+        chat_template_kwargs: Extra kwargs for apply_chat_template
 
     Returns:
         GenerationResult with generated text and aggregated hidden state
@@ -246,7 +256,7 @@ def generate_with_hidden_states(
             torch.cuda.manual_seed(seed)
 
     # Apply chat template
-    input_text = _apply_chat_template(tokenizer, messages)
+    input_text = _apply_chat_template(tokenizer, messages, chat_template_kwargs)
 
     # Tokenize
     inputs = tokenizer(input_text, return_tensors="pt")
@@ -375,6 +385,7 @@ def get_full_result_for_prompt(
     messages: List[Dict[str, str]],
     max_new_tokens: int = CALIBRATION_MAX_NEW_TOKENS,
     seed: int = 42,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> GenerationResult:
     """Convenience function to get full GenerationResult for a prompt.
 
@@ -388,6 +399,7 @@ def get_full_result_for_prompt(
         messages: Chat messages
         max_new_tokens: Max tokens for generation
         seed: Random seed for reproducible sampling
+        chat_template_kwargs: Extra kwargs for apply_chat_template
 
     Returns:
         Full GenerationResult
@@ -399,6 +411,7 @@ def get_full_result_for_prompt(
         max_new_tokens=max_new_tokens,
         do_sample=True,
         seed=seed,
+        chat_template_kwargs=chat_template_kwargs,
     )
 
 
@@ -409,6 +422,7 @@ def get_hidden_state_for_prompt(
     messages: List[Dict[str, str]],
     max_new_tokens: int = CALIBRATION_MAX_NEW_TOKENS,
     seed: int = 42,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> Tuple[str, np.ndarray]:
     """Convenience function to get hidden state for a calibration prompt.
 
@@ -418,6 +432,7 @@ def get_hidden_state_for_prompt(
         messages: Chat messages
         max_new_tokens: Max tokens for generation
         seed: Random seed for reproducible sampling
+        chat_template_kwargs: Extra kwargs for apply_chat_template
 
     Returns:
         Tuple of (generated_text, hidden_state)
@@ -429,6 +444,7 @@ def get_hidden_state_for_prompt(
         max_new_tokens=max_new_tokens,
         do_sample=True,
         seed=seed,
+        chat_template_kwargs=chat_template_kwargs,
     )
     return result.text, result.hidden_state
 
@@ -442,6 +458,7 @@ def generate_response(
     temperature: float = TEMPERATURE,
     top_p: float = TOP_P,
     do_sample: bool = DO_SAMPLE,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> str:
     """Generate a text response without hidden states (faster).
 
@@ -453,12 +470,13 @@ def generate_response(
         temperature: Sampling temperature
         top_p: Top-p sampling parameter
         do_sample: Whether to sample or use greedy decoding
+        chat_template_kwargs: Extra kwargs for apply_chat_template
 
     Returns:
         Generated text response
     """
     # Apply chat template
-    input_text = _apply_chat_template(tokenizer, messages)
+    input_text = _apply_chat_template(tokenizer, messages, chat_template_kwargs)
 
     # Tokenize
     inputs = tokenizer(input_text, return_tensors="pt")

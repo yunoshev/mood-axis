@@ -244,6 +244,7 @@ def run_scenario(
     projector: MoodProjector,
     verbose: bool = True,
     seed: Optional[int] = None,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> dict:
     """Run a single test scenario.
 
@@ -294,6 +295,7 @@ def run_scenario(
             messages=messages,
             max_new_tokens=100,
             seed=seed,
+            chat_template_kwargs=chat_template_kwargs,
         )
 
         # Project mood
@@ -381,10 +383,12 @@ def run_benchmark(
         scenarios = TEST_SCENARIOS
 
     # Resolve model key to model ID
+    chat_template_kwargs = None
     if model_name in MODELS:
         model_config = get_model_config(model_name)
         model_id = model_config.model_id
         model_key = model_name
+        chat_template_kwargs = model_config.chat_template_kwargs
     else:
         model_id = model_name  # Assume it's already a model ID
         model_key = model_name.split("/")[-1].lower().replace("-", "_")
@@ -422,7 +426,8 @@ def run_benchmark(
     }
 
     for scenario in scenarios:
-        result = run_scenario(scenario, model, tokenizer, projector, verbose, seed=seed)
+        result = run_scenario(scenario, model, tokenizer, projector, verbose, seed=seed,
+                              chat_template_kwargs=chat_template_kwargs)
         all_results["scenarios"].append(result)
 
         if result["passed"]:
@@ -446,8 +451,10 @@ def run_benchmark(
             for failure in result["failures"]:
                 print(f"      - Turn {failure['turn']}, {failure['axis']}: {failure['explanation']}")
 
-    # Save results
-    output_path = project_root / "data" / "benchmark_results.json"
+    # Save results (per-model file to avoid overwriting)
+    output_dir = project_root / "data" / "article" / "benchmarks"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{model_key}_benchmark.json"
     with open(output_path, "w") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
     print(f"\nDetailed results saved to: {output_path}")

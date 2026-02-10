@@ -44,7 +44,8 @@ from src.calibration.axis_computer import (
 )
 
 
-def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30) -> dict:
+def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30,
+                   chat_template_kwargs=None) -> dict:
     """Calibrate a single axis.
 
     Returns dict with axis_vector, scale, and validation metrics.
@@ -72,7 +73,8 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30) -> d
             {"role": "user", "content": sample.user_prompt},
         ]
 
-        result = get_full_result_for_prompt(model, tokenizer, messages)
+        result = get_full_result_for_prompt(model, tokenizer, messages,
+                                           chat_template_kwargs=chat_template_kwargs)
 
         if sample.pole == "positive":
             positive_states.append(result.hidden_state)
@@ -198,8 +200,11 @@ def calibrate_model(model_key: str, axes: list = None):
     axis_vectors = dict(existing_vectors)
     scales = dict(existing_scales)
 
+    chat_template_kwargs = model_config.chat_template_kwargs
+
     for axis in axes:
-        result = calibrate_axis(model, tokenizer, axis)
+        result = calibrate_axis(model, tokenizer, axis,
+                                chat_template_kwargs=chat_template_kwargs)
         results[axis] = result
         axis_vectors[axis] = result["axis_vector"]
         scales[axis] = result["scale"]

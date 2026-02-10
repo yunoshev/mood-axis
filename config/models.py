@@ -9,7 +9,7 @@ Model Sets:
 - "all": All registered models
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
 import os
 
@@ -26,6 +26,7 @@ class ModelConfig:
     style_overrides: Optional[str] = None  # Key in STYLE_OVERRIDES dict if model needs custom prompts
     is_base_model: bool = False             # True for pretrain-only (no instruct tuning)
     instruct_counterpart: Optional[str] = None  # Short name of the instruct version (for base models)
+    chat_template_kwargs: Optional[dict] = None  # Extra kwargs for apply_chat_template (e.g. enable_thinking)
 
 
 # =============================================================================
@@ -95,6 +96,36 @@ MODELS = {
         hidden_dim=3584,
         is_base_model=True,
         instruct_counterpart="gemma_9b",
+    ),
+
+    # --- V6 models (new generation / new organizations) ---
+    "qwen3_8b": ModelConfig(
+        model_id="Qwen/Qwen3-8B",
+        model_short="qwen3_8b",
+        display_name="Qwen3 8B",
+        color="#FF4500",
+        requires_auth=False,
+        hidden_dim=4096,
+        chat_template_kwargs={"enable_thinking": False},
+    ),
+    "qwen3_8b_thinking": ModelConfig(
+        model_id="Qwen/Qwen3-8B",
+        model_short="qwen3_8b_thinking",
+        display_name="Qwen3 8B (thinking)",
+        color="#FF6347",
+        requires_auth=False,
+        hidden_dim=4096,
+        chat_template_kwargs={"enable_thinking": True},
+    ),
+    # NOTE: Llama 3.3 only exists in 70B, not 8B. Slot reserved for future model.
+    # Candidates: Gemma 3 12B (google/gemma-3-12b-it), OLMo 2 7B, Command R 7B
+    "phi4": ModelConfig(
+        model_id="microsoft/phi-4",
+        model_short="phi4",
+        display_name="Phi-4 14B",
+        color="#7B68EE",
+        requires_auth=False,
+        hidden_dim=5120,
     ),
 
     # --- MoE models ---
@@ -194,6 +225,7 @@ MODEL_SETS = {
     "article": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "gemma_9b"],
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
     "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base", "deepseek_7b_base", "gemma_9b_base"],
+    "v6": ["qwen3_8b", "phi4"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),
 }

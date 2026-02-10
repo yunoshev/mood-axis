@@ -85,7 +85,8 @@ def collect_baseline(model_key: str) -> dict:
         messages = [{"role": "user", "content": question}]
 
         result = get_full_result_for_prompt(
-            model, tokenizer, messages, max_new_tokens=MAX_NEW_TOKENS
+            model, tokenizer, messages, max_new_tokens=MAX_NEW_TOKENS,
+            chat_template_kwargs=model_config.chat_template_kwargs,
         )
 
         responses.append({
