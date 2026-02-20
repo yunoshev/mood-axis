@@ -39,8 +39,14 @@ def run_replication(
     model_name: str,
     seeds: List[int],
     verbose: bool = False,
+    temperature: float = 0.7,
+    do_sample: bool = True,
 ) -> dict:
     """Run benchmark K times with different seeds for one model.
+
+    Args:
+        temperature: Sampling temperature (ignored when do_sample=False)
+        do_sample: Whether to sample or use greedy decoding
 
     Returns:
         Dict with per-run results and raw data for aggregation.
@@ -54,6 +60,8 @@ def run_replication(
             model_name=model_name,
             verbose=verbose,
             seed=seed,
+            temperature=temperature,
+            do_sample=do_sample,
         )
 
         elapsed = time.time() - t0
@@ -233,12 +241,20 @@ def main():
     parser.add_argument("--seeds", type=str, default=None,
                         help="Comma-separated seeds (default: 42,123,456,789,1024)")
     parser.add_argument("--verbose", action="store_true", help="Verbose per-scenario output")
+    parser.add_argument("--greedy", action="store_true",
+                        help="Use greedy decoding (temperature=0, do_sample=False)")
     parser.add_argument("--aggregate-only", action="store_true",
                         help="Only aggregate existing results (no GPU needed)")
     parser.add_argument("--output-dir", type=str, default=None, help="Output directory")
     args = parser.parse_args()
 
-    output_dir = Path(args.output_dir) if args.output_dir else OUTPUT_DIR
+    # Default output dir: benchmark_replication_greedy/ if --greedy and no explicit --output-dir
+    if args.output_dir:
+        output_dir = Path(args.output_dir)
+    elif args.greedy:
+        output_dir = project_root / "data" / "article" / "benchmark_replication_greedy"
+    else:
+        output_dir = OUTPUT_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Determine seeds
@@ -280,7 +296,10 @@ def main():
             print(f"  Model: {model_key}")
             print(f"{'#'*70}")
 
-            replication_data = run_replication(model_key, seeds, verbose=args.verbose)
+            temperature = 0.0 if args.greedy else 0.7
+            do_sample = not args.greedy
+            replication_data = run_replication(model_key, seeds, verbose=args.verbose,
+                                              temperature=temperature, do_sample=do_sample)
 
             # Save raw results
             raw_path = output_dir / f"{model_key}_replication.json"

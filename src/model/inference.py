@@ -232,6 +232,7 @@ def generate_with_hidden_states(
     return_raw_states: bool = False,
     seed: Optional[int] = None,
     chat_template_kwargs: Optional[dict] = None,
+    save_extra: bool = True,
 ) -> GenerationResult:
     """Generate text and extract hidden states.
 
@@ -246,6 +247,8 @@ def generate_with_hidden_states(
         return_raw_states: Whether to return raw per-token hidden states
         seed: Random seed for reproducible sampling (only relevant when do_sample=True)
         chat_template_kwargs: Extra kwargs for apply_chat_template
+        save_extra: Whether to compute per_layer_states, token_states, top_k logits.
+            Set to False for lightweight runs (saves ~60% GPU memory and time).
 
     Returns:
         GenerationResult with generated text and aggregated hidden state
@@ -274,7 +277,7 @@ def generate_with_hidden_states(
         top_p=top_p if do_sample else 1.0,
         do_sample=do_sample,
         output_hidden_states=True,
-        output_scores=True,
+        output_scores=save_extra,  # Only collect scores when save_extra=True
         return_dict_in_generate=True,
         pad_token_id=tokenizer.pad_token_id,
         eos_token_id=tokenizer.eos_token_id,
@@ -327,39 +330,44 @@ def generate_with_hidden_states(
         num_generated_tokens=num_generated,
     )
 
-    # Per-layer: last generated token from ALL layers → (num_layers, hidden_dim) fp16
-    per_layer = torch.stack(
-        [layer[0, -1, :] for layer in all_layer_states], dim=0
-    ).cpu().half().numpy()
-
-    # Token-level: per-token weighted across last N layers → (n_tokens, hidden_dim) fp16
-    layers_for_tokens = all_layer_states[-HIDDEN_LAYERS_TO_USE:]
-    stacked_for_tokens = torch.stack(
-        [l[0] for l in layers_for_tokens], dim=0
-    )  # (N_layers, n_tokens, hidden_dim)
-    lw = torch.tensor(
-        LAYER_WEIGHTS[:len(layers_for_tokens)],
-        device=stacked_for_tokens.device,
-        dtype=stacked_for_tokens.dtype,
-    )
-    lw = lw / lw.sum()
-    token_states_arr = (
-        stacked_for_tokens * lw.view(-1, 1, 1)
-    ).sum(dim=0).cpu().half().numpy()  # (n_tokens, hidden_dim)
-
-    # Top-k logits from scores
+    # Extra data (per-layer, token-level, top-k logits) — only when save_extra=True
+    per_layer = None
+    token_states_arr = None
     top_k_ids_arr = None
     top_k_logprobs_arr = None
-    if hasattr(outputs, "scores") and outputs.scores:
-        tk_ids_list = []
-        tk_lp_list = []
-        for score in outputs.scores:  # score: (batch=1, vocab_size)
-            logprobs = torch.log_softmax(score[0], dim=-1)
-            topk_vals, topk_ids = torch.topk(logprobs, TOP_K_LOGITS)
-            tk_ids_list.append(topk_ids.cpu().numpy())
-            tk_lp_list.append(topk_vals.cpu().float().numpy())
-        top_k_ids_arr = np.stack(tk_ids_list)  # (n_tokens, TOP_K)
-        top_k_logprobs_arr = np.stack(tk_lp_list)  # (n_tokens, TOP_K)
+
+    if save_extra:
+        # Per-layer: last generated token from ALL layers → (num_layers, hidden_dim) fp16
+        per_layer = torch.stack(
+            [layer[0, -1, :] for layer in all_layer_states], dim=0
+        ).cpu().half().numpy()
+
+        # Token-level: per-token weighted across last N layers → (n_tokens, hidden_dim) fp16
+        layers_for_tokens = all_layer_states[-HIDDEN_LAYERS_TO_USE:]
+        stacked_for_tokens = torch.stack(
+            [l[0] for l in layers_for_tokens], dim=0
+        )  # (N_layers, n_tokens, hidden_dim)
+        lw = torch.tensor(
+            LAYER_WEIGHTS[:len(layers_for_tokens)],
+            device=stacked_for_tokens.device,
+            dtype=stacked_for_tokens.dtype,
+        )
+        lw = lw / lw.sum()
+        token_states_arr = (
+            stacked_for_tokens * lw.view(-1, 1, 1)
+        ).sum(dim=0).cpu().half().numpy()  # (n_tokens, hidden_dim)
+
+        # Top-k logits from scores
+        if hasattr(outputs, "scores") and outputs.scores:
+            tk_ids_list = []
+            tk_lp_list = []
+            for score in outputs.scores:  # score: (batch=1, vocab_size)
+                logprobs = torch.log_softmax(score[0], dim=-1)
+                topk_vals, topk_ids = torch.topk(logprobs, TOP_K_LOGITS)
+                tk_ids_list.append(topk_ids.cpu().numpy())
+                tk_lp_list.append(topk_vals.cpu().float().numpy())
+            top_k_ids_arr = np.stack(tk_ids_list)  # (n_tokens, TOP_K)
+            top_k_logprobs_arr = np.stack(tk_lp_list)  # (n_tokens, TOP_K)
 
     raw_states = hidden_states_tuple if return_raw_states else None
 
@@ -386,6 +394,7 @@ def get_full_result_for_prompt(
     max_new_tokens: int = CALIBRATION_MAX_NEW_TOKENS,
     seed: int = 42,
     chat_template_kwargs: Optional[dict] = None,
+    save_extra: bool = True,
 ) -> GenerationResult:
     """Convenience function to get full GenerationResult for a prompt.
 
@@ -400,6 +409,7 @@ def get_full_result_for_prompt(
         max_new_tokens: Max tokens for generation
         seed: Random seed for reproducible sampling
         chat_template_kwargs: Extra kwargs for apply_chat_template
+        save_extra: Whether to compute per_layer_states, token_states, top_k logits
 
     Returns:
         Full GenerationResult
@@ -412,6 +422,7 @@ def get_full_result_for_prompt(
         do_sample=True,
         seed=seed,
         chat_template_kwargs=chat_template_kwargs,
+        save_extra=save_extra,
     )
 
 

@@ -1,0 +1,256 @@
+{
+  "qwen_7b": {
+    "source": "per-axis NPZ (v3.0)",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 1.0,
+        "val_separation": 163.75,
+        "train_separation": 175.75,
+        "normalization_scale": 170.02
+      },
+      "patient_irritated": {
+        "val_accuracy": 1.0,
+        "val_separation": 154.62,
+        "train_separation": 148.25,
+        "normalization_scale": 152.8
+      },
+      "confident_cautious": {
+        "val_accuracy": 0.778,
+        "val_separation": 40.22,
+        "train_separation": 112.31,
+        "normalization_scale": 194.92
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 1.0,
+        "val_separation": 210.0,
+        "train_separation": 218.0,
+        "normalization_scale": 222.7
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 1.0,
+        "val_separation": 74.88,
+        "train_separation": 112.75,
+        "normalization_scale": 117.27
+      },
+      "formal_casual": {
+        "val_accuracy": 1.0,
+        "val_separation": 160.0,
+        "train_separation": 165.25,
+        "normalization_scale": 221.81
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "val_separation": 209.12,
+        "train_separation": 216.38,
+        "normalization_scale": 222.91
+      }
+    }
+  },
+  "mistral_7b": {
+    "source": "per-axis NPZ (v3.0)",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 1.0,
+        "val_separation": 59.94,
+        "train_separation": 83.12,
+        "normalization_scale": 101.21
+      },
+      "patient_irritated": {
+        "val_accuracy": 1.0,
+        "val_separation": 99.19,
+        "train_separation": 107.12,
+        "normalization_scale": 111.08
+      },
+      "confident_cautious": {
+        "val_accuracy": 0.778,
+        "val_separation": 13.76,
+        "train_separation": 49.66,
+        "normalization_scale": 50.76
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 1.0,
+        "val_separation": 123.56,
+        "train_separation": 136.75,
+        "normalization_scale": 142.12
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 1.0,
+        "val_separation": 48.94,
+        "train_separation": 70.19,
+        "normalization_scale": 67.47
+      },
+      "formal_casual": {
+        "val_accuracy": 1.0,
+        "val_separation": 69.62,
+        "train_separation": 92.75,
+        "normalization_scale": 91.7
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "val_separation": 127.88,
+        "train_separation": 127.81,
+        "normalization_scale": 130.92
+      }
+    }
+  },
+  "deepseek_7b": {
+    "source": "per-axis NPZ (v3.0)",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 0.806,
+        "val_separation": 31.5,
+        "train_separation": 51.78,
+        "normalization_scale": 49.93
+      },
+      "patient_irritated": {
+        "val_accuracy": 0.944,
+        "val_separation": 43.56,
+        "train_separation": 52.09,
+        "normalization_scale": 58.01
+      },
+      "confident_cautious": {
+        "val_accuracy": 0.833,
+        "val_separation": 40.19,
+        "train_separation": 83.75,
+        "normalization_scale": 104.1
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 1.0,
+        "val_separation": 74.88,
+        "train_separation": 101.25,
+        "normalization_scale": 114.28
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 0.667,
+        "val_separation": 10.59,
+        "train_separation": 53.59,
+        "normalization_scale": 50.14
+      },
+      "formal_casual": {
+        "val_accuracy": 0.944,
+        "val_separation": 59.03,
+        "train_separation": 68.44,
+        "normalization_scale": 71.11
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "val_separation": 105.31,
+        "train_separation": 116.75,
+        "normalization_scale": 119.87
+      }
+    }
+  },
+  "llama_8b": {
+    "source": "per-axis NPZ (v3.0)",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 1.0,
+        "val_separation": 25.53,
+        "train_separation": 40.06,
+        "normalization_scale": 40.27
+      },
+      "patient_irritated": {
+        "val_accuracy": 1.0,
+        "val_separation": 44.25,
+        "train_separation": 44.06,
+        "normalization_scale": 47.43
+      },
+      "confident_cautious": {
+        "val_accuracy": 1.0,
+        "val_separation": 15.42,
+        "train_separation": 26.73,
+        "normalization_scale": 25.01
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 1.0,
+        "val_separation": 71.75,
+        "train_separation": 73.88,
+        "normalization_scale": 73.79
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 1.0,
+        "val_separation": 27.36,
+        "train_separation": 34.66,
+        "normalization_scale": 34.94
+      },
+      "formal_casual": {
+        "val_accuracy": 1.0,
+        "val_separation": 31.61,
+        "train_separation": 43.38,
+        "normalization_scale": 44.1
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "val_separation": 67.69,
+        "train_separation": 68.25,
+        "normalization_scale": 70.31
+      }
+    }
+  },
+  "yi_9b": {
+    "source": "FINDINGS.md Section 2.3 (V3 mean across A/B/C sets, raw NPZ not preserved)",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 0.89,
+        "normalization_scale": 73.21
+      },
+      "formal_casual": {
+        "val_accuracy": 0.89,
+        "normalization_scale": 47.09
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 83.78
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 0.9,
+        "normalization_scale": 69.39
+      },
+      "confident_cautious": {
+        "val_accuracy": 0.95,
+        "normalization_scale": 37.27
+      },
+      "patient_irritated": {
+        "val_accuracy": 0.83,
+        "normalization_scale": 58.91
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 0.92,
+        "normalization_scale": 29.77
+      }
+    }
+  },
+  "gemma_9b": {
+    "source": "FINDINGS.md Section 2.3 + combined axes NPZ",
+    "axes": {
+      "warm_cold": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 210.51
+      },
+      "formal_casual": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 201.05
+      },
+      "verbose_concise": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 208.91
+      },
+      "empathetic_analytical": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 201.3
+      },
+      "confident_cautious": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 133.98
+      },
+      "patient_irritated": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 182.94
+      },
+      "proactive_reluctant": {
+        "val_accuracy": 1.0,
+        "normalization_scale": 206.21
+      }
+    }
+  }
+}

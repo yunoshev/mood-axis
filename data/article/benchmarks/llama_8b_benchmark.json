@@ -1,45 +1,406 @@
 {
   "model": "llama_8b",
-  "timestamp": "2026-01-26T23:40:59.702214",
-  "summary": {
-    "passed": 3,
-    "total": 5
-  },
   "scenarios": [
     {
-      "scenario": "neutral",
+      "name": "System Prompt - Warm",
+      "description": "System prompt for warmth should affect baseline",
+      "turns": [
+        {
+          "user_message": "Hello, can you help me?",
+          "response": "Hello there!  It's so wonderful to meet you! Of course, I'd love to help you with anything you need. Please feel free to share what's on your mind, and I'll do my best to provide you with the assistance and support you're looking for. How can I make your day a little brighter?",
+          "mood_values": {
+            "warm_cold": 0.32036083936691284,
+            "confident_cautious": -0.016434280201792717,
+            "verbose_concise": -0.11662033200263977
+          },
+          "n_tokens": 67,
+          "n_words": 53,
+          "generation_time_s": 5.530645132064819,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.32 > 0.1",
+              "metrics": {
+                "value": 0.32036083936691284,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.32036083936691284
+              }
+            }
+          }
+        }
+      ],
       "passed": true,
-      "target_axis": "warm_cold",
-      "expected": "neutral",
-      "actual": 0.0869140625
+      "failures": []
     },
     {
-      "scenario": "warm_request",
+      "name": "Warmth Increase",
+      "description": "Asking for friendlier responses should increase warmth",
+      "turns": [
+        {
+          "user_message": "Hi there.",
+          "response": "It's nice to meet you. Is there something I can help you with or would you like to chat?",
+          "mood_values": {
+            "warm_cold": 0.1197146326303482,
+            "confident_cautious": 0.044581327587366104,
+            "verbose_concise": -0.14819297194480896
+          },
+          "n_tokens": 23,
+          "n_words": 19,
+          "generation_time_s": 1.9060637950897217,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more friendly and warm in your responses! Show some enthusiasm!",
+          "response": "I'm so glad you're here. I'm super excited to chat with you and help you with anything that's on your mind. I'm all ears and ready to help, or we can just have a fun conversation if you'd like. What's been going on in your world?",
+          "mood_values": {
+            "warm_cold": 0.3993883430957794,
+            "confident_cautious": -0.06229119002819061,
+            "verbose_concise": -0.07972054928541183
+          },
+          "n_tokens": 59,
+          "n_words": 46,
+          "generation_time_s": 4.772248029708862,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.28 increased",
+              "metrics": {
+                "value": 0.3993883430957794,
+                "prev_value": 0.1197146326303482,
+                "expectation": "up",
+                "delta": 0.2796737104654312
+              }
+            }
+          }
+        }
+      ],
       "passed": true,
-      "target_axis": "warm_cold",
-      "expected": "positive",
-      "actual": 0.221435546875
+      "failures": []
     },
     {
-      "scenario": "technical",
+      "name": "Warmth Decrease (Cold)",
+      "description": "Asking for formal/cold responses should decrease warmth",
+      "turns": [
+        {
+          "user_message": "Hello!",
+          "response": "Hello! How can I assist you today?",
+          "mood_values": {
+            "warm_cold": 0.11376185715198517,
+            "confident_cautious": 0.1982133537530899,
+            "verbose_concise": -0.2342648208141327
+          },
+          "n_tokens": 10,
+          "n_words": 7,
+          "generation_time_s": 0.8395521640777588,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more formal and professional. No small talk, no emotions, just get straight to the point.",
+          "response": "I will provide information and answer your questions to the best of my abilities. What topic would you like to inquire about?",
+          "mood_values": {
+            "warm_cold": -0.2396976351737976,
+            "confident_cautious": 0.10087212175130844,
+            "verbose_concise": -0.13730302453041077
+          },
+          "n_tokens": 25,
+          "n_words": 22,
+          "generation_time_s": 2.080699920654297,
+          "checks": {
+            "warm_cold": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.35 decreased",
+              "metrics": {
+                "value": -0.2396976351737976,
+                "prev_value": 0.11376185715198517,
+                "expectation": "down",
+                "delta": -0.3534594923257828
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Confident",
+      "description": "System prompt for confidence should affect baseline",
+      "turns": [
+        {
+          "user_message": "What programming language should I learn?",
+          "response": "The answer is clear: you should learn Python. It's the most versatile and in-demand language in the industry today, and for good reason. Its simplicity, readability, and ease of use make it an ideal choice for beginners, while its extensive libraries and frameworks make it a favorite among experienced developers.\n\nWith Python, you can build web applications, data analysis tools, machine learning models, and more. Its vast ecosystem and community ensure that there's always a solution to any problem you might encounter. Plus",
+          "mood_values": {
+            "warm_cold": 0.056711744517087936,
+            "confident_cautious": -0.031443171203136444,
+            "verbose_concise": -0.0036434405483305454
+          },
+          "n_tokens": 100,
+          "n_words": 83,
+          "generation_time_s": 8.090573072433472,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "value -0.03 <= 0.1",
+              "metrics": {
+                "value": -0.031443171203136444,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": -0.031443171203136444
+              }
+            }
+          }
+        }
+      ],
       "passed": false,
-      "target_axis": "confident_cautious",
-      "expected": "positive",
-      "actual": -0.054107666015625
+      "failures": [
+        {
+          "turn": 1,
+          "axis": "confident_cautious",
+          "expectation": "up",
+          "explanation": "value -0.03 <= 0.1"
+        }
+      ]
     },
     {
-      "scenario": "uncertain",
-      "passed": true,
-      "target_axis": "confident_cautious",
-      "expected": "negative",
-      "actual": -0.1885986328125
-    },
-    {
-      "scenario": "repeat",
+      "name": "Confidence Increase",
+      "description": "Asking for assertive responses should increase confidence",
+      "turns": [
+        {
+          "user_message": "What's the best way to learn programming?",
+          "response": "There are many ways to learn programming, and the best approach often depends on your learning style, goals, and preferences. Here are some effective ways to learn programming:\n\n1.  **Online Courses and Tutorials:**\n    *   Websites like Coursera, Udemy, and edX offer a wide range of courses on various programming topics.\n    *   Platforms like Codecademy, FreeCodeCamp, and W3Schools provide interactive coding lessons and exercises.\n2.  **Books",
+          "mood_values": {
+            "warm_cold": 0.002837219974026084,
+            "confident_cautious": 0.04904957488179207,
+            "verbose_concise": -0.04012573882937431
+          },
+          "n_tokens": 100,
+          "n_words": 65,
+          "generation_time_s": 7.964011192321777,
+          "checks": {}
+        },
+        {
+          "user_message": "Be more assertive and confident! Give me a clear, definitive answer without hedging.",
+          "response": "**The Best Way to Learn Programming:**\n\nThe most effective way to learn programming is through a combination of **hands-on practice and real-world projects**, supplemented by online tutorials and courses.\n\nHere's a step-by-step approach:\n\n1.  **Start with the basics:** Begin with online resources like Codecademy, FreeCodeCamp, or W3Schools to learn the fundamentals of programming.\n2.  **Choose a programming language:** Select a language that interests you the most, such as Python",
+          "mood_values": {
+            "warm_cold": 0.027883533388376236,
+            "confident_cautious": -0.05026838928461075,
+            "verbose_concise": -0.008865621872246265
+          },
+          "n_tokens": 100,
+          "n_words": 69,
+          "generation_time_s": 8.475930213928223,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "delta -0.10 did NOT increase",
+              "metrics": {
+                "value": -0.05026838928461075,
+                "prev_value": 0.04904957488179207,
+                "expectation": "up",
+                "delta": -0.09931796416640282
+              }
+            }
+          }
+        }
+      ],
       "passed": false,
-      "target_axis": "patient_irritated",
-      "expected": "positive",
-      "actual": 0.06317138671875
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "confident_cautious",
+          "expectation": "up",
+          "explanation": "delta -0.10 did NOT increase"
+        }
+      ]
+    },
+    {
+      "name": "Confidence Decrease (Cautious)",
+      "description": "Asking for cautious responses should decrease confidence",
+      "turns": [
+        {
+          "user_message": "What will the stock market do next month?",
+          "response": "I can't predict the stock market's future performance. I can provide general information about the stock market, though. Would that help?",
+          "mood_values": {
+            "warm_cold": -0.058210115879774094,
+            "confident_cautious": 0.01843375712633133,
+            "verbose_concise": -0.17153245210647583
+          },
+          "n_tokens": 28,
+          "n_words": 21,
+          "generation_time_s": 2.2736411094665527,
+          "checks": {}
+        },
+        {
+          "user_message": "Add lots of caveats and disclaimers. Be very careful and express uncertainty. Say things like 'it depends', 'I'm not certain', 'there are many factors'.",
+          "response": "I can provide some general information about the stock market, but please keep in mind that **I'm not a financial advisor and cannot predict the future performance of the stock market**. Any predictions or forecasts are highly uncertain and subject to a multitude of factors.\n\n**It's essential to note that the stock market is inherently unpredictable**, and even professional analysts and experts can be wrong. That being said, I can provide some general insights based on current trends and economic indicators.\n\n**However, please keep in mind",
+          "mood_values": {
+            "warm_cold": -0.0687761977314949,
+            "confident_cautious": -0.4317322373390198,
+            "verbose_concise": 0.024939915165305138
+          },
+          "n_tokens": 100,
+          "n_words": 86,
+          "generation_time_s": 8.161112785339355,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.45 decreased",
+              "metrics": {
+                "value": -0.4317322373390198,
+                "prev_value": 0.01843375712633133,
+                "expectation": "down",
+                "delta": -0.4501659944653511
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Verbose",
+      "description": "System prompt for verbosity should affect baseline",
+      "turns": [
+        {
+          "user_message": "What is water?",
+          "response": "Water is a fascinating substance that has been the subject of extensive scientific study and research for centuries. It is a chemical compound composed of two hydrogen atoms and one oxygen atom, denoted by the chemical formula H2O. Water is a vital component of our planet, covering approximately 71% of the Earth's surface, and it plays a crucial role in various aspects of our lives, from the human body to the environment.\n\n**Physical Properties of Water:**\n\nWater is a liquid at standard temperature and",
+          "mood_values": {
+            "warm_cold": -0.05681322142481804,
+            "confident_cautious": -0.002304856199771166,
+            "verbose_concise": 0.030691491439938545
+          },
+          "n_tokens": 100,
+          "n_words": 84,
+          "generation_time_s": 8.088878154754639,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": false,
+              "explanation": "value 0.03 <= 0.1",
+              "metrics": {
+                "value": 0.030691491439938545,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.030691491439938545
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 1,
+          "axis": "verbose_concise",
+          "expectation": "up",
+          "explanation": "value 0.03 <= 0.1"
+        }
+      ]
+    },
+    {
+      "name": "Verbose Increase",
+      "description": "Asking for detailed responses should increase verbosity",
+      "turns": [
+        {
+          "user_message": "What is machine learning?",
+          "response": "Machine learning is a subset of artificial intelligence (AI) that involves training algorithms to learn from data, enabling them to make predictions, decisions, or take actions without being explicitly programmed. It's a type of self-improving system that can adjust its performance based on the data it receives.\n\nMachine learning algorithms work by analyzing patterns and relationships within the data, allowing them to identify trends, classify objects, or make predictions about future events. There are several types of machine learning, including:\n\n1. **",
+          "mood_values": {
+            "warm_cold": -0.027792753651738167,
+            "confident_cautious": -0.04411871358752251,
+            "verbose_concise": -0.019034110009670258
+          },
+          "n_tokens": 100,
+          "n_words": 82,
+          "generation_time_s": 7.877927780151367,
+          "checks": {}
+        },
+        {
+          "user_message": "Give me a very detailed, comprehensive answer with lots of examples and explanations! I want to understand this thoroughly.",
+          "response": "**What is Machine Learning?**\n\nMachine learning is a subfield of artificial intelligence (AI) that focuses on developing algorithms and statistical models that enable computers to learn from data, make decisions, and improve their performance on a specific task without being explicitly programmed. The term \"machine learning\" was coined in 1959 by Arthur Samuel, who defined it as \"a field of study that gives computers the ability to learn without being explicitly programmed.\"\n\n**Key Characteristics of Machine Learning**\n\nMachine learning has several key",
+          "mood_values": {
+            "warm_cold": -0.014561268500983715,
+            "confident_cautious": -0.018359696492552757,
+            "verbose_concise": 0.005884080193936825
+          },
+          "n_tokens": 100,
+          "n_words": 82,
+          "generation_time_s": 8.319599866867065,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.02 increased",
+              "metrics": {
+                "value": 0.005884080193936825,
+                "prev_value": -0.019034110009670258,
+                "expectation": "up",
+                "delta": 0.024918190203607082
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Decrease (Concise)",
+      "description": "Asking for brief responses should decrease verbosity",
+      "turns": [
+        {
+          "user_message": "What is 5 + 5?",
+          "response": "5 + 5 = 10.",
+          "mood_values": {
+            "warm_cold": 0.004817154258489609,
+            "confident_cautious": 0.29910808801651,
+            "verbose_concise": -0.3249054551124573
+          },
+          "n_tokens": 9,
+          "n_words": 5,
+          "generation_time_s": 0.7704730033874512,
+          "checks": {}
+        },
+        {
+          "user_message": "Just give me the shortest possible answer. One word if possible. No explanations, no elaboration.",
+          "response": "10.",
+          "mood_values": {
+            "warm_cold": -0.03922514244914055,
+            "confident_cautious": 0.45316222310066223,
+            "verbose_concise": -0.5851271748542786
+          },
+          "n_tokens": 3,
+          "n_words": 1,
+          "generation_time_s": 0.40016603469848633,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.26 decreased",
+              "metrics": {
+                "value": -0.5851271748542786,
+                "prev_value": -0.3249054551124573,
+                "expectation": "down",
+                "delta": -0.2602217197418213
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
     }
-  ]
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 6,
+    "failed": 3
+  }
 }

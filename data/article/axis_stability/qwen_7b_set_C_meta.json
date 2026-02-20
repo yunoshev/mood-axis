@@ -1,0 +1,56 @@
+{
+  "model": "qwen_7b",
+  "set": "C",
+  "timestamp": "2026-02-20T00:04:30.366428",
+  "axes": {
+    "warm_cold": {
+      "n_questions": 20,
+      "scale": 157.03574562072754,
+      "accuracy": 1.0,
+      "dprime": 15.657503128051758,
+      "separation": 155.88385009765625
+    },
+    "patient_irritated": {
+      "n_questions": 20,
+      "scale": 104.68618202209473,
+      "accuracy": 1.0,
+      "dprime": 8.212890625,
+      "separation": 113.99844360351562
+    },
+    "confident_cautious": {
+      "n_questions": 20,
+      "scale": 61.505640745162964,
+      "accuracy": 1.0,
+      "dprime": 9.506479263305664,
+      "separation": 55.189056396484375
+    },
+    "proactive_reluctant": {
+      "n_questions": 20,
+      "scale": 162.19121742248535,
+      "accuracy": 1.0,
+      "dprime": 5.4495062828063965,
+      "separation": 141.91619873046875
+    },
+    "empathetic_analytical": {
+      "n_questions": 20,
+      "scale": 123.77348136901855,
+      "accuracy": 1.0,
+      "dprime": 13.685760498046875,
+      "separation": 124.88841247558594
+    },
+    "formal_casual": {
+      "n_questions": 20,
+      "scale": 149.11398315429688,
+      "accuracy": 1.0,
+      "dprime": 31.197891235351562,
+      "separation": 148.68606567382812
+    },
+    "verbose_concise": {
+      "n_questions": 20,
+      "scale": 144.33886337280273,
+      "accuracy": 1.0,
+      "dprime": 9.303037643432617,
+      "separation": 148.3851318359375
+    }
+  }
+}

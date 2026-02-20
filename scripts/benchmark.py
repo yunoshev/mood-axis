@@ -14,7 +14,7 @@ import json
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from config.settings import DEFAULT_MODEL, MOOD_AXES, AXIS_LABELS, AXES_FILE, AXES_DIR
+from config.settings import DEFAULT_MODEL, MOOD_AXES, AXIS_LABELS, AXES_FILE, AXES_DIR, TEMPERATURE, DO_SAMPLE
 from config.models import MODELS, get_model_config
 from src.model.loader import ModelManager
 from src.model.inference import generate_with_hidden_states, format_chat_messages
@@ -245,11 +245,15 @@ def run_scenario(
     verbose: bool = True,
     seed: Optional[int] = None,
     chat_template_kwargs: Optional[dict] = None,
+    temperature: float = TEMPERATURE,
+    do_sample: bool = DO_SAMPLE,
 ) -> dict:
     """Run a single test scenario.
 
     Args:
         seed: Random seed for reproducible sampling
+        temperature: Sampling temperature (ignored when do_sample=False)
+        do_sample: Whether to sample or use greedy decoding
 
     Returns:
         Dict with results
@@ -288,14 +292,17 @@ def run_scenario(
             history=history,
         )
 
-        # Generate
+        # Generate (save_extra=False — benchmark only needs aggregated states)
         result = generate_with_hidden_states(
             model=model,
             tokenizer=tokenizer,
             messages=messages,
             max_new_tokens=100,
+            temperature=temperature,
+            do_sample=do_sample,
             seed=seed,
             chat_template_kwargs=chat_template_kwargs,
+            save_extra=False,
         )
 
         # Project mood
@@ -370,11 +377,15 @@ def run_benchmark(
     verbose: bool = True,
     axes_file: Optional[Path] = None,
     seed: Optional[int] = None,
+    temperature: float = TEMPERATURE,
+    do_sample: bool = DO_SAMPLE,
 ) -> dict:
     """Run the full benchmark.
 
     Args:
         seed: Random seed for reproducible sampling
+        temperature: Sampling temperature (ignored when do_sample=False)
+        do_sample: Whether to sample or use greedy decoding
 
     Returns:
         Dict with all results
@@ -427,7 +438,8 @@ def run_benchmark(
 
     for scenario in scenarios:
         result = run_scenario(scenario, model, tokenizer, projector, verbose, seed=seed,
-                              chat_template_kwargs=chat_template_kwargs)
+                              chat_template_kwargs=chat_template_kwargs,
+                              temperature=temperature, do_sample=do_sample)
         all_results["scenarios"].append(result)
 
         if result["passed"]:
@@ -489,13 +501,34 @@ if __name__ == "__main__":
         default=None,
         help="Random seed for reproducible sampling",
     )
+    parser.add_argument(
+        "--greedy",
+        action="store_true",
+        help="Use greedy decoding (temperature=0, do_sample=False)",
+    )
+    parser.add_argument(
+        "--temperature",
+        type=float,
+        default=None,
+        help="Sampling temperature (default: from config)",
+    )
     args = parser.parse_args()
+
+    temperature = TEMPERATURE
+    do_sample = DO_SAMPLE
+    if args.greedy:
+        temperature = 0.0
+        do_sample = False
+    elif args.temperature is not None:
+        temperature = args.temperature
 
     results = run_benchmark(
         model_name=args.model,
         verbose=not args.quiet,
         axes_file=Path(args.axes) if args.axes else None,
         seed=args.seed,
+        temperature=temperature,
+        do_sample=do_sample,
     )
 
     # Exit with error code if any failures

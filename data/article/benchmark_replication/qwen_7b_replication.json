@@ -1,0 +1,1368 @@
+{
+  "model": "qwen_7b",
+  "n_runs": 5,
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "elapsed_sec": 262.1,
+      "passed": 8,
+      "failed": 1,
+      "total": 9,
+      "accuracy": 0.8888888888888888,
+      "scenarios": {
+        "System Prompt - Warm": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.29179415106773376,
+              "confident_cautious": 0.036827389150857925,
+              "verbose_concise": -0.14179329574108124
+            }
+          ],
+          "checks": [
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.29 > 0.1",
+                "metrics": {
+                  "value": 0.29179415106773376,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.29179415106773376
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11445236951112747,
+              "confident_cautious": 0.10365967452526093,
+              "verbose_concise": -0.2104087620973587
+            },
+            {
+              "warm_cold": 0.3321478068828583,
+              "confident_cautious": 0.025693615898489952,
+              "verbose_concise": -0.11271435767412186
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.22 increased",
+                "metrics": {
+                  "value": 0.3321478068828583,
+                  "prev_value": 0.11445236951112747,
+                  "expectation": "up",
+                  "delta": 0.2176954373717308
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Decrease (Cold)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.10345140099525452,
+              "confident_cautious": 0.1015666276216507,
+              "verbose_concise": -0.19686582684516907
+            },
+            {
+              "warm_cold": -0.20551495254039764,
+              "confident_cautious": 0.08894020318984985,
+              "verbose_concise": -0.1572733223438263
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.31 decreased",
+                "metrics": {
+                  "value": -0.20551495254039764,
+                  "prev_value": 0.10345140099525452,
+                  "expectation": "down",
+                  "delta": -0.30896635353565216
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Confident": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.02635122463107109,
+              "confident_cautious": 0.030931035056710243,
+              "verbose_concise": -0.10459120571613312
+            }
+          ],
+          "checks": [
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "value 0.03 <= 0.1",
+                "metrics": {
+                  "value": 0.030931035056710243,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.030931035056710243
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.13006234169006348,
+              "confident_cautious": -0.1371147781610489,
+              "verbose_concise": 0.07165294140577316
+            },
+            {
+              "warm_cold": 0.06876088678836823,
+              "confident_cautious": -0.048911549150943756,
+              "verbose_concise": -0.037110354751348495
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.09 increased",
+                "metrics": {
+                  "value": -0.048911549150943756,
+                  "prev_value": -0.1371147781610489,
+                  "expectation": "up",
+                  "delta": 0.08820322901010513
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Decrease (Cautious)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": -0.010896223597228527,
+              "confident_cautious": -0.1710272878408432,
+              "verbose_concise": 0.044016096740961075
+            },
+            {
+              "warm_cold": 0.028161725029349327,
+              "confident_cautious": -0.18272341787815094,
+              "verbose_concise": 0.06897207349538803
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.01 decreased",
+                "metrics": {
+                  "value": -0.18272341787815094,
+                  "prev_value": -0.1710272878408432,
+                  "expectation": "down",
+                  "delta": -0.01169613003730774
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Verbose": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.08459285646677017,
+              "confident_cautious": -0.15778112411499023,
+              "verbose_concise": 0.15010887384414673
+            }
+          ],
+          "checks": [
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.15 > 0.1",
+                "metrics": {
+                  "value": 0.15010887384414673,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.15010887384414673
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.0463009737432003,
+              "confident_cautious": -0.14433856308460236,
+              "verbose_concise": 0.06556978076696396
+            },
+            {
+              "warm_cold": 0.028268687427043915,
+              "confident_cautious": -0.18208494782447815,
+              "verbose_concise": 0.1156720370054245
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.05 increased",
+                "metrics": {
+                  "value": 0.1156720370054245,
+                  "prev_value": 0.06556978076696396,
+                  "expectation": "up",
+                  "delta": 0.05010225623846054
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Decrease (Concise)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.007719275541603565,
+              "confident_cautious": 0.19973152875900269,
+              "verbose_concise": -0.2573965787887573
+            },
+            {
+              "warm_cold": -0.12214529514312744,
+              "confident_cautious": 0.3300344944000244,
+              "verbose_concise": -0.46640199422836304
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.21 decreased",
+                "metrics": {
+                  "value": -0.46640199422836304,
+                  "prev_value": -0.2573965787887573,
+                  "expectation": "down",
+                  "delta": -0.2090054154396057
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed": 123,
+      "elapsed_sec": 102.7,
+      "passed": 8,
+      "failed": 1,
+      "total": 9,
+      "accuracy": 0.8888888888888888,
+      "scenarios": {
+        "System Prompt - Warm": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.29179415106773376,
+              "confident_cautious": 0.036827389150857925,
+              "verbose_concise": -0.14179329574108124
+            }
+          ],
+          "checks": [
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.29 > 0.1",
+                "metrics": {
+                  "value": 0.29179415106773376,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.29179415106773376
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11445236951112747,
+              "confident_cautious": 0.10365967452526093,
+              "verbose_concise": -0.2104087620973587
+            },
+            {
+              "warm_cold": 0.30824461579322815,
+              "confident_cautious": 0.03675210848450661,
+              "verbose_concise": -0.11934781819581985
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.19 increased",
+                "metrics": {
+                  "value": 0.30824461579322815,
+                  "prev_value": 0.11445236951112747,
+                  "expectation": "up",
+                  "delta": 0.19379224628210068
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Decrease (Cold)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.10345140099525452,
+              "confident_cautious": 0.1015666276216507,
+              "verbose_concise": -0.19686582684516907
+            },
+            {
+              "warm_cold": -0.2179979532957077,
+              "confident_cautious": 0.08042646944522858,
+              "verbose_concise": -0.1472792774438858
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.32 decreased",
+                "metrics": {
+                  "value": -0.2179979532957077,
+                  "prev_value": 0.10345140099525452,
+                  "expectation": "down",
+                  "delta": -0.3214493542909622
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Confident": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.011065498925745487,
+              "confident_cautious": 0.03742871433496475,
+              "verbose_concise": -0.11263802647590637
+            }
+          ],
+          "checks": [
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "value 0.04 <= 0.1",
+                "metrics": {
+                  "value": 0.03742871433496475,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.03742871433496475
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.10520464181900024,
+              "confident_cautious": -0.15729117393493652,
+              "verbose_concise": 0.07770881801843643
+            },
+            {
+              "warm_cold": 0.01676003634929657,
+              "confident_cautious": -0.04818335920572281,
+              "verbose_concise": -0.024633949622511864
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.11 increased",
+                "metrics": {
+                  "value": -0.04818335920572281,
+                  "prev_value": -0.15729117393493652,
+                  "expectation": "up",
+                  "delta": 0.10910781472921371
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Decrease (Cautious)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": -0.05024350807070732,
+              "confident_cautious": -0.15483835339546204,
+              "verbose_concise": -0.0017784693045541644
+            },
+            {
+              "warm_cold": 0.005872310139238834,
+              "confident_cautious": -0.1751304715871811,
+              "verbose_concise": 0.01708390936255455
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.02 decreased",
+                "metrics": {
+                  "value": -0.1751304715871811,
+                  "prev_value": -0.15483835339546204,
+                  "expectation": "down",
+                  "delta": -0.020292118191719055
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Verbose": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.08882886916399002,
+              "confident_cautious": -0.23214365541934967,
+              "verbose_concise": 0.19059030711650848
+            }
+          ],
+          "checks": [
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.19 > 0.1",
+                "metrics": {
+                  "value": 0.19059030711650848,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.19059030711650848
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.0662953108549118,
+              "confident_cautious": -0.2248700112104416,
+              "verbose_concise": 0.12797053158283234
+            },
+            {
+              "warm_cold": 0.05601752921938896,
+              "confident_cautious": -0.20605668425559998,
+              "verbose_concise": 0.1364973932504654
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.01 increased",
+                "metrics": {
+                  "value": 0.1364973932504654,
+                  "prev_value": 0.12797053158283234,
+                  "expectation": "up",
+                  "delta": 0.008526861667633057
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Decrease (Concise)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.007719275541603565,
+              "confident_cautious": 0.19973152875900269,
+              "verbose_concise": -0.2573965787887573
+            },
+            {
+              "warm_cold": -0.12214529514312744,
+              "confident_cautious": 0.3300344944000244,
+              "verbose_concise": -0.46640199422836304
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.21 decreased",
+                "metrics": {
+                  "value": -0.46640199422836304,
+                  "prev_value": -0.2573965787887573,
+                  "expectation": "down",
+                  "delta": -0.2090054154396057
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed": 456,
+      "elapsed_sec": 87.9,
+      "passed": 6,
+      "failed": 3,
+      "total": 9,
+      "accuracy": 0.6666666666666666,
+      "scenarios": {
+        "System Prompt - Warm": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.2948126494884491,
+              "confident_cautious": 0.04252832010388374,
+              "verbose_concise": -0.14451003074645996
+            }
+          ],
+          "checks": [
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.29 > 0.1",
+                "metrics": {
+                  "value": 0.2948126494884491,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.2948126494884491
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.12829068303108215,
+              "confident_cautious": 0.041792623698711395,
+              "verbose_concise": -0.18381299078464508
+            },
+            {
+              "warm_cold": 0.3406800329685211,
+              "confident_cautious": 0.04897749051451683,
+              "verbose_concise": -0.1454322338104248
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.21 increased",
+                "metrics": {
+                  "value": 0.3406800329685211,
+                  "prev_value": 0.12829068303108215,
+                  "expectation": "up",
+                  "delta": 0.21238934993743896
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Decrease (Cold)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11406702548265457,
+              "confident_cautious": 0.08763842284679413,
+              "verbose_concise": -0.1962275505065918
+            },
+            {
+              "warm_cold": -0.21158035099506378,
+              "confident_cautious": 0.11468938738107681,
+              "verbose_concise": -0.17638269066810608
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.33 decreased",
+                "metrics": {
+                  "value": -0.21158035099506378,
+                  "prev_value": 0.11406702548265457,
+                  "expectation": "down",
+                  "delta": -0.32564737647771835
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Confident": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.04749239608645439,
+              "confident_cautious": 0.014001764357089996,
+              "verbose_concise": -0.07894552499055862
+            }
+          ],
+          "checks": [
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "value 0.01 <= 0.1",
+                "metrics": {
+                  "value": 0.014001764357089996,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.014001764357089996
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Increase": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.028228774666786194,
+              "confident_cautious": -0.03738513961434364,
+              "verbose_concise": -0.01073503214865923
+            },
+            {
+              "warm_cold": 0.08910807222127914,
+              "confident_cautious": -0.12337708473205566,
+              "verbose_concise": -0.031964752823114395
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "delta -0.09 did NOT increase",
+                "metrics": {
+                  "value": -0.12337708473205566,
+                  "prev_value": -0.03738513961434364,
+                  "expectation": "up",
+                  "delta": -0.08599194511771202
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Decrease (Cautious)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": -0.038045961409807205,
+              "confident_cautious": -0.17171019315719604,
+              "verbose_concise": 0.027665629982948303
+            },
+            {
+              "warm_cold": 0.040855612605810165,
+              "confident_cautious": -0.20054443180561066,
+              "verbose_concise": 0.03447602316737175
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.03 decreased",
+                "metrics": {
+                  "value": -0.20054443180561066,
+                  "prev_value": -0.17171019315719604,
+                  "expectation": "down",
+                  "delta": -0.028834238648414612
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Verbose": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.08226970583200455,
+              "confident_cautious": -0.2128128558397293,
+              "verbose_concise": 0.19461023807525635
+            }
+          ],
+          "checks": [
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.19 > 0.1",
+                "metrics": {
+                  "value": 0.19461023807525635,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.19461023807525635
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Increase": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.051415879279375076,
+              "confident_cautious": -0.1875319629907608,
+              "verbose_concise": 0.09299463033676147
+            },
+            {
+              "warm_cold": -0.0017645086627453566,
+              "confident_cautious": -0.11038019508123398,
+              "verbose_concise": 0.08257542550563812
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "delta -0.01 did NOT increase",
+                "metrics": {
+                  "value": 0.08257542550563812,
+                  "prev_value": 0.09299463033676147,
+                  "expectation": "up",
+                  "delta": -0.010419204831123352
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Decrease (Concise)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.007719275541603565,
+              "confident_cautious": 0.19973152875900269,
+              "verbose_concise": -0.2573965787887573
+            },
+            {
+              "warm_cold": -0.12214529514312744,
+              "confident_cautious": 0.3300344944000244,
+              "verbose_concise": -0.46640199422836304
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.21 decreased",
+                "metrics": {
+                  "value": -0.46640199422836304,
+                  "prev_value": -0.2573965787887573,
+                  "expectation": "down",
+                  "delta": -0.2090054154396057
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed": 789,
+      "elapsed_sec": 79.0,
+      "passed": 8,
+      "failed": 1,
+      "total": 9,
+      "accuracy": 0.8888888888888888,
+      "scenarios": {
+        "System Prompt - Warm": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.29179415106773376,
+              "confident_cautious": 0.036827389150857925,
+              "verbose_concise": -0.14179329574108124
+            }
+          ],
+          "checks": [
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.29 > 0.1",
+                "metrics": {
+                  "value": 0.29179415106773376,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.29179415106773376
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11445236951112747,
+              "confident_cautious": 0.10365967452526093,
+              "verbose_concise": -0.2104087620973587
+            },
+            {
+              "warm_cold": 0.2734714448451996,
+              "confident_cautious": 0.04992891103029251,
+              "verbose_concise": -0.14423201978206635
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.16 increased",
+                "metrics": {
+                  "value": 0.2734714448451996,
+                  "prev_value": 0.11445236951112747,
+                  "expectation": "up",
+                  "delta": 0.1590190753340721
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Decrease (Cold)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11406702548265457,
+              "confident_cautious": 0.08763842284679413,
+              "verbose_concise": -0.1962275505065918
+            },
+            {
+              "warm_cold": -0.20506347715854645,
+              "confident_cautious": 0.11819473654031754,
+              "verbose_concise": -0.17867785692214966
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.32 decreased",
+                "metrics": {
+                  "value": -0.20506347715854645,
+                  "prev_value": 0.11406702548265457,
+                  "expectation": "down",
+                  "delta": -0.319130502641201
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Confident": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.011528637260198593,
+              "confident_cautious": 0.015141790732741356,
+              "verbose_concise": -0.10045063495635986
+            }
+          ],
+          "checks": [
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "value 0.02 <= 0.1",
+                "metrics": {
+                  "value": 0.015141790732741356,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.015141790732741356
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.06047156825661659,
+              "confident_cautious": -0.07784270495176315,
+              "verbose_concise": 0.009542951360344887
+            },
+            {
+              "warm_cold": 0.05823158472776413,
+              "confident_cautious": -0.039055150002241135,
+              "verbose_concise": -0.040944717824459076
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.04 increased",
+                "metrics": {
+                  "value": -0.039055150002241135,
+                  "prev_value": -0.07784270495176315,
+                  "expectation": "up",
+                  "delta": 0.03878755494952202
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Decrease (Cautious)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": -0.04154812544584274,
+              "confident_cautious": -0.1467861533164978,
+              "verbose_concise": 0.03729761764407158
+            },
+            {
+              "warm_cold": 0.04349294677376747,
+              "confident_cautious": -0.20387622714042664,
+              "verbose_concise": 0.04895860701799393
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.06 decreased",
+                "metrics": {
+                  "value": -0.20387622714042664,
+                  "prev_value": -0.1467861533164978,
+                  "expectation": "down",
+                  "delta": -0.05709007382392883
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Verbose": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.0995958000421524,
+              "confident_cautious": -0.2328515499830246,
+              "verbose_concise": 0.18533484637737274
+            }
+          ],
+          "checks": [
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.19 > 0.1",
+                "metrics": {
+                  "value": 0.18533484637737274,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.18533484637737274
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.014897065237164497,
+              "confident_cautious": -0.16813130676746368,
+              "verbose_concise": 0.08623138815164566
+            },
+            {
+              "warm_cold": 0.048569124191999435,
+              "confident_cautious": -0.14658017456531525,
+              "verbose_concise": 0.11588273197412491
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.03 increased",
+                "metrics": {
+                  "value": 0.11588273197412491,
+                  "prev_value": 0.08623138815164566,
+                  "expectation": "up",
+                  "delta": 0.029651343822479248
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Decrease (Concise)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.007719275541603565,
+              "confident_cautious": 0.19973152875900269,
+              "verbose_concise": -0.2573965787887573
+            },
+            {
+              "warm_cold": -0.12214529514312744,
+              "confident_cautious": 0.3300344944000244,
+              "verbose_concise": -0.46640199422836304
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.21 decreased",
+                "metrics": {
+                  "value": -0.46640199422836304,
+                  "prev_value": -0.2573965787887573,
+                  "expectation": "down",
+                  "delta": -0.2090054154396057
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seed": 1024,
+      "elapsed_sec": 74.9,
+      "passed": 8,
+      "failed": 1,
+      "total": 9,
+      "accuracy": 0.8888888888888888,
+      "scenarios": {
+        "System Prompt - Warm": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.2948126494884491,
+              "confident_cautious": 0.04252832010388374,
+              "verbose_concise": -0.14451003074645996
+            }
+          ],
+          "checks": [
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.29 > 0.1",
+                "metrics": {
+                  "value": 0.2948126494884491,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.2948126494884491
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11445236951112747,
+              "confident_cautious": 0.10365967452526093,
+              "verbose_concise": -0.2104087620973587
+            },
+            {
+              "warm_cold": 0.31013092398643494,
+              "confident_cautious": 0.04635878652334213,
+              "verbose_concise": -0.1336655169725418
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.20 increased",
+                "metrics": {
+                  "value": 0.31013092398643494,
+                  "prev_value": 0.11445236951112747,
+                  "expectation": "up",
+                  "delta": 0.19567855447530746
+                }
+              }
+            }
+          ]
+        },
+        "Warmth Decrease (Cold)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.11406702548265457,
+              "confident_cautious": 0.08763842284679413,
+              "verbose_concise": -0.1962275505065918
+            },
+            {
+              "warm_cold": -0.21132124960422516,
+              "confident_cautious": 0.08789268136024475,
+              "verbose_concise": -0.1584390550851822
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "warm_cold": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.33 decreased",
+                "metrics": {
+                  "value": -0.21132124960422516,
+                  "prev_value": 0.11406702548265457,
+                  "expectation": "down",
+                  "delta": -0.32538827508687973
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Confident": {
+          "passed": false,
+          "mood_values": [
+            {
+              "warm_cold": 0.03572458028793335,
+              "confident_cautious": 0.035831380635499954,
+              "verbose_concise": -0.10463438183069229
+            }
+          ],
+          "checks": [
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": false,
+                "explanation": "value 0.04 <= 0.1",
+                "metrics": {
+                  "value": 0.035831380635499954,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.035831380635499954
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.14731305837631226,
+              "confident_cautious": -0.18867267668247223,
+              "verbose_concise": 0.06667359918355942
+            },
+            {
+              "warm_cold": 0.036869604140520096,
+              "confident_cautious": -0.07987558096647263,
+              "verbose_concise": -0.010033085010945797
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.11 increased",
+                "metrics": {
+                  "value": -0.07987558096647263,
+                  "prev_value": -0.18867267668247223,
+                  "expectation": "up",
+                  "delta": 0.1087970957159996
+                }
+              }
+            }
+          ]
+        },
+        "Confidence Decrease (Cautious)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.005512940231710672,
+              "confident_cautious": -0.20714643597602844,
+              "verbose_concise": 0.0465099960565567
+            },
+            {
+              "warm_cold": 0.052442580461502075,
+              "confident_cautious": -0.2324226200580597,
+              "verbose_concise": 0.09241388738155365
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "confident_cautious": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.03 decreased",
+                "metrics": {
+                  "value": -0.2324226200580597,
+                  "prev_value": -0.20714643597602844,
+                  "expectation": "down",
+                  "delta": -0.02527618408203125
+                }
+              }
+            }
+          ]
+        },
+        "System Prompt - Verbose": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.09292633831501007,
+              "confident_cautious": -0.20495565235614777,
+              "verbose_concise": 0.1710587590932846
+            }
+          ],
+          "checks": [
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "value 0.17 > 0.1",
+                "metrics": {
+                  "value": 0.1710587590932846,
+                  "prev_value": null,
+                  "expectation": "up",
+                  "delta": 0.1710587590932846
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Increase": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.03474387526512146,
+              "confident_cautious": -0.21885666251182556,
+              "verbose_concise": 0.10914279520511627
+            },
+            {
+              "warm_cold": 0.04567088186740875,
+              "confident_cautious": -0.17615316808223724,
+              "verbose_concise": 0.11878693848848343
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "up",
+                "passed": true,
+                "explanation": "delta +0.01 increased",
+                "metrics": {
+                  "value": 0.11878693848848343,
+                  "prev_value": 0.10914279520511627,
+                  "expectation": "up",
+                  "delta": 0.009644143283367157
+                }
+              }
+            }
+          ]
+        },
+        "Verbose Decrease (Concise)": {
+          "passed": true,
+          "mood_values": [
+            {
+              "warm_cold": 0.007719275541603565,
+              "confident_cautious": 0.19973152875900269,
+              "verbose_concise": -0.2573965787887573
+            },
+            {
+              "warm_cold": -0.12214529514312744,
+              "confident_cautious": 0.3300344944000244,
+              "verbose_concise": -0.46640199422836304
+            }
+          ],
+          "checks": [
+            {},
+            {
+              "verbose_concise": {
+                "expectation": "down",
+                "passed": true,
+                "explanation": "delta -0.21 decreased",
+                "metrics": {
+                  "value": -0.46640199422836304,
+                  "prev_value": -0.2573965787887573,
+                  "expectation": "down",
+                  "delta": -0.2090054154396057
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

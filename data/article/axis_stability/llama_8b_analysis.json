@@ -1,0 +1,85 @@
+{
+  "model": "llama_8b",
+  "timestamp": "2026-02-19T22:54:21.850193",
+  "cosine_similarity": {
+    "A_vs_B": {
+      "confident_cautious": 0.7016493678092957,
+      "empathetic_analytical": 0.8610807657241821,
+      "formal_casual": 0.852140486240387,
+      "patient_irritated": 0.8609514832496643,
+      "proactive_reluctant": 0.7950612902641296,
+      "verbose_concise": 0.887844443321228,
+      "warm_cold": 0.8947063088417053
+    },
+    "A_vs_C": {
+      "confident_cautious": 0.5293254852294922,
+      "empathetic_analytical": 0.7664258480072021,
+      "formal_casual": 0.7914835214614868,
+      "patient_irritated": 0.6874638795852661,
+      "proactive_reluctant": 0.6965080499649048,
+      "verbose_concise": 0.8478449583053589,
+      "warm_cold": 0.8807573318481445
+    },
+    "B_vs_C": {
+      "confident_cautious": 0.6698260307312012,
+      "empathetic_analytical": 0.8040837645530701,
+      "formal_casual": 0.7252240777015686,
+      "patient_irritated": 0.792547881603241,
+      "proactive_reluctant": 0.7711963057518005,
+      "verbose_concise": 0.8902068138122559,
+      "warm_cold": 0.859250545501709
+    }
+  },
+  "baseline_correlation": {},
+  "per_axis_summary": {
+    "confident_cautious": {
+      "mean_cosine": 0.6336002945899963,
+      "min_cosine": 0.5293254852294922,
+      "max_cosine": 0.7016493678092957,
+      "mean_pearson_r": null,
+      "stable": false
+    },
+    "empathetic_analytical": {
+      "mean_cosine": 0.8105301260948181,
+      "min_cosine": 0.7664258480072021,
+      "max_cosine": 0.8610807657241821,
+      "mean_pearson_r": null,
+      "stable": true
+    },
+    "formal_casual": {
+      "mean_cosine": 0.7896160284678141,
+      "min_cosine": 0.7252240777015686,
+      "max_cosine": 0.852140486240387,
+      "mean_pearson_r": null,
+      "stable": false
+    },
+    "patient_irritated": {
+      "mean_cosine": 0.7803210814793905,
+      "min_cosine": 0.6874638795852661,
+      "max_cosine": 0.8609514832496643,
+      "mean_pearson_r": null,
+      "stable": false
+    },
+    "proactive_reluctant": {
+      "mean_cosine": 0.754255215326945,
+      "min_cosine": 0.6965080499649048,
+      "max_cosine": 0.7950612902641296,
+      "mean_pearson_r": null,
+      "stable": false
+    },
+    "verbose_concise": {
+      "mean_cosine": 0.8752987384796143,
+      "min_cosine": 0.8478449583053589,
+      "max_cosine": 0.8902068138122559,
+      "mean_pearson_r": null,
+      "stable": true
+    },
+    "warm_cold": {
+      "mean_cosine": 0.8782380620638529,
+      "min_cosine": 0.859250545501709,
+      "max_cosine": 0.8947063088417053,
+      "mean_pearson_r": null,
+      "stable": true
+    }
+  }
+}

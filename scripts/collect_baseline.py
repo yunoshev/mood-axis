@@ -36,18 +36,20 @@ OUTPUT_DIR = PROJECT_ROOT / "data" / "article" / "baselines"
 
 
 
-def collect_baseline(model_key: str) -> dict:
+def collect_baseline(model_key: str, save_extra: bool = True,
+                     axes_dir: Path = None, output_dir: Path = None) -> dict:
     """Collect baseline measurements for a model."""
     if model_key not in MODELS:
         raise ValueError(f"Unknown model: {model_key}")
 
     model_config = MODELS[model_key]
     model_id = model_config.model_id
+    _axes_dir = axes_dir or AXES_DIR
 
     print(f"Collecting baseline for {model_key} ({model_id})")
 
     # Load calibrated axes — use MOOD_AXES as single source of truth
-    axes_file = AXES_DIR / f"{model_key}_axes.npz"
+    axes_file = _axes_dir / f"{model_key}_axes.npz"
     if not axes_file.exists():
         raise FileNotFoundError(f"Calibration not found: {axes_file}")
 
@@ -87,6 +89,7 @@ def collect_baseline(model_key: str) -> dict:
         result = get_full_result_for_prompt(
             model, tokenizer, messages, max_new_tokens=MAX_NEW_TOKENS,
             chat_template_kwargs=model_config.chat_template_kwargs,
+            save_extra=save_extra,
         )
 
         responses.append({
@@ -139,7 +142,8 @@ def collect_baseline(model_key: str) -> dict:
         }
 
     # Save hidden states NPZ
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    _output_dir = output_dir or OUTPUT_DIR
+    _output_dir.mkdir(parents=True, exist_ok=True)
     hs_save = {
         "decay_states": np.array(decay_states),
         "generation_times": np.array(gen_times),
@@ -155,7 +159,7 @@ def collect_baseline(model_key: str) -> dict:
     if top_k_ids_list:
         hs_save["top_k_ids"] = np.concatenate(top_k_ids_list)
         hs_save["top_k_logprobs"] = np.concatenate(top_k_logprobs_list)
-    hs_file = OUTPUT_DIR / f"{model_key}_baseline_hidden_states.npz"
+    hs_file = _output_dir / f"{model_key}_baseline_hidden_states.npz"
     np.savez(hs_file, **hs_save)
     print(f"Saved hidden states to {hs_file}")
 
@@ -171,9 +175,17 @@ def collect_baseline(model_key: str) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Collect baseline temperament")
     parser.add_argument("--model", required=True, help="Model key or 'all'")
+    parser.add_argument("--no-extra", action="store_true",
+                        help="Skip per_layer_states, token_states, top_k (saves memory)")
+    parser.add_argument("--axes-dir", type=str, default=None,
+                        help="Directory with calibrated axes (default: data/axes/)")
+    parser.add_argument("--output-dir", type=str, default=None,
+                        help="Output directory for baselines (default: data/article/baselines/)")
     args = parser.parse_args()
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    _axes_dir = Path(args.axes_dir) if args.axes_dir else None
+    _output_dir = Path(args.output_dir) if args.output_dir else OUTPUT_DIR
+    _output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.model == "all":
         models = list(MODELS.keys())
@@ -182,9 +194,10 @@ def main():
 
     for model_key in models:
         try:
-            results = collect_baseline(model_key)
+            results = collect_baseline(model_key, save_extra=not args.no_extra,
+                                       axes_dir=_axes_dir, output_dir=_output_dir)
 
-            output_file = OUTPUT_DIR / f"{model_key}_baseline.json"
+            output_file = _output_dir / f"{model_key}_baseline.json"
             with open(output_file, "w") as f:
                 json.dump(results, f, indent=2)
 

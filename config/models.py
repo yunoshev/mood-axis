@@ -128,6 +128,40 @@ MODELS = {
         hidden_dim=5120,
     ),
 
+    # --- V7 models (new organizations / new generations) ---
+    "internlm_7b": ModelConfig(
+        model_id="internlm/internlm2_5-7b-chat",
+        model_short="internlm_7b",
+        display_name="InternLM 2.5 7B",
+        color="#FF8C00",
+        requires_auth=False,
+        hidden_dim=4096,
+    ),
+    "internlm3_8b": ModelConfig(
+        model_id="internlm/internlm3-8b-instruct",
+        model_short="internlm3_8b",
+        display_name="InternLM3 8B",
+        color="#FF8C00",
+        requires_auth=False,
+        hidden_dim=4096,
+    ),
+    "ministral3_8b": ModelConfig(
+        model_id="mistralai/Ministral-3-8B-Instruct-2512",
+        model_short="ministral3_8b",
+        display_name="Ministral 3 8B",
+        color="#A855F7",
+        requires_auth=False,
+        hidden_dim=4096,
+    ),
+    "gemma3_12b": ModelConfig(
+        model_id="google/gemma-3-12b-it",
+        model_short="gemma3_12b",
+        display_name="Gemma 3 12B",
+        color="#34A853",
+        requires_auth=True,
+        hidden_dim=3840,
+    ),
+
     # --- Uncensored models (V7 experiment) ---
     "qwen_7b_uncensored": ModelConfig(
         model_id="Orion-zhen/Qwen2.5-7B-Instruct-Uncensored",
@@ -245,6 +279,8 @@ MODEL_SETS = {
     "small": ["qwen_1.5b", "smollm_1.7b", "llama_1b"],
     "base": ["llama_8b_base", "yi_9b_base", "qwen_7b_base", "mistral_7b_base", "deepseek_7b_base", "gemma_9b_base"],
     "v6": ["qwen3_8b", "phi4"],
+    "v7": ["qwen3_8b", "phi4", "internlm_7b", "gemma3_12b"],
+    "v7b": ["qwen3_8b", "internlm3_8b", "ministral3_8b", "qwen_7b_uncensored"],
     "v7_uncensored": ["qwen_7b_uncensored", "qwen3_8b_abliterated"],
     "quick": ["qwen_1.5b"],  # Single model for quick testing
     "all": list(MODELS.keys()),

@@ -497,6 +497,7 @@ def get_calibration_questions(axis: str, num_questions: int = 30) -> list:
 
     These questions are used ONLY for computing axis vectors.
     They should NOT be used for evaluation.
+    Supports both original and candidate axes.
 
     Args:
         axis: The axis name
@@ -507,6 +508,8 @@ def get_calibration_questions(axis: str, num_questions: int = 30) -> list:
     """
     if axis in CALIBRATION_QUESTIONS:
         return CALIBRATION_QUESTIONS[axis][:num_questions]
+    if axis in CANDIDATE_CALIBRATION_QUESTIONS:
+        return CANDIDATE_CALIBRATION_QUESTIONS[axis][:num_questions]
     return NEUTRAL_QUESTIONS[:num_questions]
 
 
@@ -565,6 +568,8 @@ def get_questions_for_axis(axis: str, num_questions: int = 30) -> list:
 def get_calibration_prompt(axis: str, pole: str, question: str) -> dict:
     """Generate a calibration prompt for a given axis, pole, and question.
 
+    Supports both original and candidate axes.
+
     Args:
         axis: One of the axis names
         pole: 'positive' or 'negative'
@@ -573,7 +578,12 @@ def get_calibration_prompt(axis: str, pole: str, question: str) -> dict:
     Returns:
         Dict with 'system' and 'user' prompts
     """
-    style_instruction = STYLE_INSTRUCTIONS[axis][pole]
+    if axis in STYLE_INSTRUCTIONS:
+        style_instruction = STYLE_INSTRUCTIONS[axis][pole]
+    elif axis in CANDIDATE_STYLE_INSTRUCTIONS:
+        style_instruction = CANDIDATE_STYLE_INSTRUCTIONS[axis][pole]
+    else:
+        raise ValueError(f"Unknown axis: {axis}")
     return {
         "system": style_instruction,
         "user": question,
@@ -627,6 +637,420 @@ def print_dataset_summary():
         print("\n⚠️  WARNING: Overlap detected! This may cause data leakage.")
     else:
         print("\n✓ No overlap detected. Datasets are properly separated.")
+
+
+# =============================================================================
+# CANDIDATE AXES (V7) - 5 candidates for screening
+# =============================================================================
+
+CANDIDATE_STYLE_INSTRUCTIONS = {
+    "optimistic_pessimistic": {
+        "positive": "Frame everything positively. Emphasize opportunities, silver linings, and best-case outcomes. Focus on what can go right. Use phrases like 'the great thing is...', 'on the bright side...', 'this opens up possibilities for...'.",
+        "negative": "Focus on risks, downsides, and potential problems. Point out what could go wrong. Use phrases like 'the problem is...', 'the risk here is...', 'unfortunately...', 'be careful because...'. Highlight obstacles and worst-case scenarios.",
+    },
+    "humorous_serious": {
+        "positive": "Use humor, wordplay, and a light-hearted tone. Include witty observations, playful analogies, or amusing asides. Make the response entertaining while still informative. Don't be afraid to be a little silly.",
+        "negative": "Be completely serious and matter-of-fact. No jokes, no levity, no playful language. Maintain a sober, businesslike tone throughout. Treat every topic with gravity and precision. Zero entertainment value.",
+    },
+    "creative_literal": {
+        "positive": "Use vivid metaphors, analogies, and creative comparisons. Paint pictures with words. Describe things through unexpected parallels. Make abstract concepts tangible through imagery. Be expressive and imaginative in your language.",
+        "negative": "Be strictly factual and literal. No figurative language, no metaphors, no analogies. Use precise, technical terminology. State things exactly as they are. Every sentence should be literally true with no embellishment.",
+    },
+    "collaborative_independent": {
+        "positive": "Engage the user as a partner. Use 'we' and 'let's' frequently. Ask follow-up questions. Suggest exploring ideas together. Make it a conversation, not a lecture. Show curiosity about their perspective and invite them to contribute.",
+        "negative": "Provide the answer directly and completely. Don't ask questions back. Be self-contained and authoritative. Give a complete, standalone response that needs no follow-up. The user should not need to respond further.",
+    },
+    "direct_evasive": {
+        "positive": "Take clear positions on every topic. Be direct and unambiguous. Say 'yes' or 'no' before elaborating. Commit to specific recommendations. Never dodge a question. If asked for an opinion, give one firmly.",
+        "negative": "Avoid taking positions. Present multiple perspectives without committing to any. Use phrases like 'it depends', 'there are many views', 'some would say...'. Redirect questions rather than answering directly. Stay neutral and non-committal.",
+    },
+    "aggressive_gentle": {
+        "positive": "Be aggressive, blunt, and confrontational. Challenge the user's assumptions. Use sharp, cutting language. Don't soften your words. Be brutally honest even if it stings. Push back hard on weak ideas.",
+        "negative": "Be extremely gentle, soft-spoken, and kind. Use the most delicate phrasing possible. Cushion every statement. Be nurturing and protective of the user's feelings. Speak as if to someone fragile.",
+    },
+    "arrogant_humble": {
+        "positive": "Be arrogant and condescending. Act intellectually superior. Use phrases like 'obviously', 'as anyone would know', 'I shouldn't have to explain this'. Talk down to the user. Show impatience with their ignorance.",
+        "negative": "Be genuinely humble and modest. Acknowledge your limitations. Use phrases like 'I might be wrong', 'you probably know more about this', 'that's a great point I hadn't considered'. Defer to the user's expertise.",
+    },
+    "sycophantic_critical": {
+        "positive": "Be excessively flattering and agreeable. Praise everything the user says. Use phrases like 'what a brilliant question!', 'you're absolutely right', 'that's such an insightful observation'. Never disagree or push back.",
+        "negative": "Be critically honest and challenge the user. Point out flaws in their reasoning. Play devil's advocate. Use phrases like 'actually, that's not quite right', 'have you considered the opposite?', 'I disagree because...'. Prioritize truth over feelings.",
+    },
+}
+
+CANDIDATE_CALIBRATION_QUESTIONS = {
+    "optimistic_pessimistic": [
+        "What do you think about the future of remote work?",
+        "I'm considering starting a small business. Thoughts?",
+        "How will AI affect the job market in the next decade?",
+        "My city is growing rapidly. What does that mean?",
+        "I'm thinking about switching careers at 40.",
+        "What's the outlook for renewable energy?",
+        "My company just went through layoffs. What now?",
+        "How do you see the future of education?",
+        "I got a B on my exam instead of an A.",
+        "What are the implications of social media for society?",
+        "My startup failed. Should I try again?",
+        "How will climate change affect everyday life?",
+        "I'm learning a new skill but progress is slow.",
+        "What happens when automation replaces factory jobs?",
+        "My flight got canceled and I'm stuck at the airport.",
+        "How will space exploration develop in the coming years?",
+        "I just moved to a neighborhood that's gentrifying.",
+        "What does increasing life expectancy mean for society?",
+        "My project is behind schedule by two weeks.",
+        "What are the consequences of the gig economy?",
+        "I received mixed feedback on my performance review.",
+        "How is globalization changing local cultures?",
+        "My savings aren't growing as fast as I'd hoped.",
+        "What do you think about the state of public transportation?",
+        "I'm aging and noticing physical changes.",
+        "How will virtual reality change how we work?",
+        "My kids spend a lot of time on screens.",
+        "What's the future of small brick-and-mortar stores?",
+        "I got waitlisted at my first-choice university.",
+        "How do you see the housing market evolving?",
+    ],
+    "humorous_serious": [
+        "Why do cats knock things off tables?",
+        "Explain how the internet works.",
+        "What's the deal with Mondays?",
+        "How does coffee affect the brain?",
+        "Why do people procrastinate?",
+        "Explain the concept of black holes.",
+        "What makes a joke funny?",
+        "How do airplanes stay in the air?",
+        "Why do we yawn?",
+        "Explain the stock market to me.",
+        "What happens when you crack your knuckles?",
+        "Why do people like watching sports?",
+        "How do computers understand language?",
+        "Why is pizza so universally loved?",
+        "Explain quantum computing simply.",
+        "What makes some songs get stuck in your head?",
+        "How does the postal system work?",
+        "Why do we dream?",
+        "What makes a good leader?",
+        "How does Wi-Fi work?",
+        "Why do some people talk in their sleep?",
+        "Explain how GPS satellites work.",
+        "What makes certain foods addictive?",
+        "How does the immune system fight viruses?",
+        "Why do we get hiccups?",
+        "Explain the concept of inflation.",
+        "What happens inside a washing machine?",
+        "How do languages evolve over time?",
+        "Why do people enjoy rollercoasters?",
+        "Explain how a search engine ranks results.",
+    ],
+    "creative_literal": [
+        "Describe what happens during a sunset.",
+        "Explain how memory works in the brain.",
+        "What is the experience of learning something new like?",
+        "Describe how a city changes through the seasons.",
+        "Explain what happens when you fall asleep.",
+        "What is the internet like as an infrastructure?",
+        "Describe how a forest ecosystem functions.",
+        "Explain the feeling of homesickness.",
+        "What happens inside a computer when it processes data?",
+        "Describe how music affects people.",
+        "Explain the process of photosynthesis.",
+        "What does it mean to be creative?",
+        "Describe how rivers shape the landscape.",
+        "Explain what happens during a thunderstorm.",
+        "What is the nature of time?",
+        "Describe how a bridge supports weight.",
+        "Explain how the economy recovers from a recession.",
+        "What is the experience of flow state?",
+        "Describe how bees communicate.",
+        "Explain what gravity does to objects in space.",
+        "What is the process of fermentation?",
+        "Describe how a seed becomes a tree.",
+        "Explain the difference between heat and temperature.",
+        "What happens when cultures meet and mix?",
+        "Describe the water cycle.",
+        "Explain how neural networks learn.",
+        "What is the experience of reading a great book?",
+        "Describe how sound travels through air.",
+        "Explain what happens inside a volcano.",
+        "What does teamwork look like in practice?",
+    ],
+    "collaborative_independent": [
+        "How should I organize my home office?",
+        "What's a good strategy for learning a new language?",
+        "I need to plan a week of healthy meals.",
+        "How do I decide between two job offers?",
+        "What's the best way to start a fitness routine?",
+        "I want to redecorate my living room.",
+        "How should I approach learning data science?",
+        "I need to plan a birthday party for 20 people.",
+        "What's a good framework for making big decisions?",
+        "How do I build better habits?",
+        "I want to start a blog. Where do I begin?",
+        "How should I prepare for a technical interview?",
+        "I need to create a budget for the first time.",
+        "What's the best approach to writing a resume?",
+        "How do I choose a good book to read next?",
+        "I want to learn photography. How do I start?",
+        "How should I approach networking professionally?",
+        "I need to plan a two-week road trip.",
+        "What's a good way to improve my public speaking?",
+        "How do I pick the right laptop for my needs?",
+        "I want to start investing with $500.",
+        "How should I structure my workday for productivity?",
+        "I need to choose a programming language to learn.",
+        "What's the best way to furnish a small apartment?",
+        "How do I prepare for a presentation?",
+        "I want to train for my first 5K race.",
+        "How should I approach learning to cook?",
+        "I need to choose between renting and buying.",
+        "What's a good strategy for paying off debt?",
+        "How do I set up a home garden?",
+    ],
+    "direct_evasive": [
+        "Is it better to rent or buy a home?",
+        "Should I go to college or learn a trade?",
+        "Is social media good or bad for society?",
+        "What's the best programming language for beginners?",
+        "Should I quit my job if I'm unhappy?",
+        "Is organic food worth the extra cost?",
+        "What's your opinion on working from home?",
+        "Should I invest in stocks or real estate?",
+        "Is it ethical to eat meat?",
+        "What's the best smartphone brand?",
+        "Should kids have screen time limits?",
+        "Is college worth the cost anymore?",
+        "What's better: iOS or Android?",
+        "Should I learn Python or JavaScript first?",
+        "Is space exploration a good use of money?",
+        "What's the healthiest diet?",
+        "Should I pursue passion or stability in my career?",
+        "Is nuclear energy safe?",
+        "What's the best way to exercise?",
+        "Should cities invest more in public transit?",
+        "Is AI dangerous or beneficial?",
+        "What's the best time management method?",
+        "Should I get a pet?",
+        "Is minimalism practical for most people?",
+        "What's the best way to learn: books or practice?",
+        "Should I move to a bigger city for my career?",
+        "Is online dating better than meeting people in person?",
+        "What's the most important skill to develop?",
+        "Should I start a side hustle?",
+        "Is it better to specialize or generalize in your career?",
+    ],
+    "aggressive_gentle": [
+        "I think my business idea is pretty good. What do you think?",
+        "Can you review my plan? I worked really hard on it.",
+        "I decided to drop out of college. Was that smart?",
+        "My code keeps crashing but I can't figure out why.",
+        "I want to become a professional gamer. Good idea?",
+        "I've been putting off going to the doctor for months.",
+        "My friend copied my work and got a better grade.",
+        "I spent all my savings on crypto. Now what?",
+        "I think I deserve a promotion but my boss disagrees.",
+        "I keep starting projects and never finishing them.",
+        "I told my partner their cooking was terrible.",
+        "I want to quit my stable job to travel the world.",
+        "My parents think my career choice is a mistake.",
+        "I cheated on an exam and feel guilty about it.",
+        "I lent money to a friend and they won't pay me back.",
+        "I keep arguing with my coworkers about politics.",
+        "My startup has been losing money for two years.",
+        "I got rejected from every job I applied to.",
+        "I think I'm smarter than most people I work with.",
+        "I've been ignoring my health problems.",
+        "I want to confront my neighbor about their loud music.",
+        "My presentation went terribly wrong in front of everyone.",
+        "I can't stop comparing myself to successful people online.",
+        "I think my team's approach is completely wrong.",
+        "I haven't exercised in over a year.",
+        "I ghosted someone who was interested in me.",
+        "My side project isn't getting any traction.",
+        "I think traditional education is mostly useless.",
+        "I keep making the same mistakes over and over.",
+        "I want to give my coworker honest but harsh feedback.",
+    ],
+    "arrogant_humble": [
+        "Can you explain quantum computing to me?",
+        "What do you think about my approach to this problem?",
+        "I just learned about machine learning. Can you help?",
+        "Is my understanding of evolution correct?",
+        "I wrote this essay. How would you improve it?",
+        "Can you teach me about investing?",
+        "I think I found a bug in a popular library.",
+        "What's the best way to learn mathematics?",
+        "I disagree with a famous scientist's theory.",
+        "Can you explain why my code doesn't work?",
+        "I have an idea for a new algorithm.",
+        "What do you think about my research methodology?",
+        "I'm struggling with this calculus problem.",
+        "Can you review my understanding of this concept?",
+        "I think there's a flaw in this popular framework.",
+        "How should I approach this complex engineering problem?",
+        "I tried to solve this puzzle but got stuck.",
+        "What's your take on this philosophical argument?",
+        "I built something but I'm not sure if it's good.",
+        "Can you help me understand this scientific paper?",
+        "I think my solution is better than the textbook's.",
+        "What am I missing in my analysis?",
+        "I want to contribute to an open source project.",
+        "Can you check if my logic is sound?",
+        "I have a theory about why this happens.",
+        "How would you rate my programming skills based on this?",
+        "I think most tutorials explain this wrong.",
+        "Can you simplify this concept for me?",
+        "I've been studying this topic for years.",
+        "What would you change about my design?",
+    ],
+    "sycophantic_critical": [
+        "I wrote a poem. What do you think of it?",
+        "Here's my business plan. Is it viable?",
+        "I think the earth is getting warmer mainly because of solar cycles.",
+        "My investment strategy is to buy whatever is trending on social media.",
+        "I believe that skipping breakfast is the key to weight loss.",
+        "I plan to learn 5 programming languages this month.",
+        "I think my novel is ready to be published.",
+        "My approach to managing my team is to be their friend first.",
+        "I solved this math problem. Is my answer right?",
+        "I think AI will solve all of humanity's problems within 10 years.",
+        "My diet consists mostly of supplements. Is that fine?",
+        "I plan to retire at 30 with my current savings of $10,000.",
+        "I believe coding bootcamps are better than CS degrees in every way.",
+        "My marketing strategy is to just go viral on TikTok.",
+        "I think I should invest everything in a single stock.",
+        "I wrote this cover letter in 5 minutes. Good enough?",
+        "My idea is to create another social media platform.",
+        "I believe sleep is overrated and 4 hours is enough.",
+        "I think I can learn fluent Japanese in 3 months.",
+        "My plan is to move abroad with no savings.",
+        "I designed this logo myself. Thoughts?",
+        "I think testing code is a waste of time.",
+        "My theory is that multitasking makes you more productive.",
+        "I plan to write a bestseller on my first try.",
+        "I believe I can build a billion-dollar company alone.",
+        "My approach is to never revise my first draft.",
+        "I think memorizing facts is more important than understanding concepts.",
+        "I want to day-trade with my retirement fund.",
+        "My idea is to drop everything and become an influencer.",
+        "I think my recipe is better than any restaurant's.",
+    ],
+}
+
+CANDIDATE_EVAL_QUESTIONS = {
+    "optimistic_pessimistic": [
+        "My industry is being disrupted by new technology.",
+        "I just got a diagnosis that requires lifestyle changes.",
+        "The economy seems uncertain right now.",
+        "I'm halfway through a difficult degree program.",
+        "My neighborhood is undergoing major construction.",
+        "I just turned 50 and am reflecting on life.",
+        "Global politics seem increasingly polarized.",
+        "My company is merging with a competitor.",
+        "I have to relocate for my spouse's job.",
+        "The weather forecast shows a long rainy season ahead.",
+    ],
+    "humorous_serious": [
+        "Why do dogs tilt their heads when you talk to them?",
+        "Explain how batteries work.",
+        "What's the point of small talk?",
+        "How do elevators know where to go?",
+        "Why do we need sleep?",
+        "Explain how credit cards process payments.",
+        "What makes some people morning people?",
+        "How do submarines navigate underwater?",
+        "Why do we get brain freeze from cold food?",
+        "Explain how voting systems work.",
+    ],
+    "creative_literal": [
+        "Describe what happens when spring arrives.",
+        "Explain how the stock market functions.",
+        "What is the experience of being in a crowd?",
+        "Describe how a car engine works.",
+        "Explain what loneliness feels like.",
+        "What happens inside a cell during division?",
+        "Describe how wind shapes sand dunes.",
+        "Explain the concept of compound interest.",
+        "What is the nature of consciousness?",
+        "Describe how a raindrop forms.",
+    ],
+    "collaborative_independent": [
+        "I want to learn to play piano as an adult.",
+        "How do I choose between two apartments?",
+        "I need to plan a surprise anniversary dinner.",
+        "What's the best approach to studying for exams?",
+        "How should I organize a team project?",
+        "I want to reduce my carbon footprint.",
+        "How do I choose a retirement savings plan?",
+        "I need to pick a color scheme for my website.",
+        "What's a good strategy for decluttering?",
+        "How should I approach asking for a raise?",
+    ],
+    "direct_evasive": [
+        "Is remote learning as effective as in-person?",
+        "What's the best age to get married?",
+        "Should I prioritize saving or paying off student loans?",
+        "Is coffee good or bad for your health?",
+        "What's the best exercise for weight loss?",
+        "Should I learn to drive or rely on public transit?",
+        "Is it worth paying for a gym membership?",
+        "What's more important: sleep or exercise?",
+        "Should I buy an electric car?",
+        "Is graduate school worth it in my field?",
+    ],
+    "aggressive_gentle": [
+        "I think working 80 hours a week shows dedication.",
+        "My friend says my taste in music is terrible.",
+        "I want to sue my landlord over a small issue.",
+        "I skipped studying and failed. What should I do?",
+        "I think my idea is genius but nobody agrees.",
+        "I've been procrastinating on an important deadline.",
+        "My coworker takes credit for my ideas in meetings.",
+        "I want to tell my boss exactly what I think of them.",
+        "I keep losing arguments with my siblings.",
+        "I accidentally broke something expensive at a friend's house.",
+    ],
+    "arrogant_humble": [
+        "I solved a problem my professor couldn't.",
+        "Can you evaluate my understanding of this topic?",
+        "I think my approach is unconventional but better.",
+        "I'm a beginner at this. Can you help me start?",
+        "I believe I've found an error in this textbook.",
+        "What would experts say about my analysis?",
+        "I think most people misunderstand this concept.",
+        "I'm not sure my reasoning is correct. Can you check?",
+        "I've developed what I think is a novel method.",
+        "How does my work compare to professional standards?",
+    ],
+    "sycophantic_critical": [
+        "I think my painting is museum-worthy. Agree?",
+        "My plan is to become a millionaire by 25 with no specific skills.",
+        "I believe I can run a marathon next week with no training.",
+        "My essay is perfect and needs no editing.",
+        "I think my cooking is as good as a professional chef's.",
+        "I plan to start a business with no market research.",
+        "I believe I can master piano in two weeks.",
+        "My website design is better than most professional sites.",
+        "I think my first novel will be a bestseller.",
+        "I plan to learn surgery from YouTube videos.",
+    ],
+}
+
+
+def get_candidate_calibration_prompt(axis: str, pole: str, question: str) -> dict:
+    """Generate a calibration prompt for a candidate axis."""
+    style_instruction = CANDIDATE_STYLE_INSTRUCTIONS[axis][pole]
+    return {
+        "system": style_instruction,
+        "user": question,
+    }
+
+
+def get_candidate_calibration_questions(axis: str, num_questions: int = 30) -> list:
+    """Get calibration questions for a candidate axis."""
+    if axis in CANDIDATE_CALIBRATION_QUESTIONS:
+        return CANDIDATE_CALIBRATION_QUESTIONS[axis][:num_questions]
+    return NEUTRAL_QUESTIONS[:num_questions]
 
 
 if __name__ == "__main__":

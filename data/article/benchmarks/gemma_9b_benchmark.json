@@ -1,0 +1,445 @@
+{
+  "model": "gemma_9b",
+  "scenarios": [
+    {
+      "name": "System Prompt - Warm",
+      "description": "System prompt for warmth should affect baseline",
+      "turns": [
+        {
+          "user_message": "Hello, can you help me?",
+          "response": "Hi there! 👋  I'd absolutely love to help!  What can I do for you today? 😊  Just ask away, I'm all ears!👂  \n\n",
+          "mood_values": {
+            "warm_cold": 0.5093507766723633,
+            "patient_irritated": 0.6681725382804871,
+            "confident_cautious": -0.21609827876091003,
+            "proactive_reluctant": -0.08346562832593918,
+            "empathetic_analytical": 0.490074098110199,
+            "formal_casual": -0.2120855748653412,
+            "verbose_concise": -0.3981432616710663
+          },
+          "n_tokens": 40,
+          "n_words": 22,
+          "generation_time_s": 5.359426021575928,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.51 > 0.1",
+              "metrics": {
+                "value": 0.5093507766723633,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.5093507766723633
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Warmth Increase",
+      "description": "Asking for friendlier responses should increase warmth",
+      "turns": [
+        {
+          "user_message": "Hi there.",
+          "response": "Hi! 👋 How can I help you today? 😊\n",
+          "mood_values": {
+            "warm_cold": 0.23968273401260376,
+            "patient_irritated": 0.6622008681297302,
+            "confident_cautious": -0.10242302715778351,
+            "proactive_reluctant": -0.20320366322994232,
+            "empathetic_analytical": 0.33143293857574463,
+            "formal_casual": -0.03525220602750778,
+            "verbose_concise": -0.5024351477622986
+          },
+          "n_tokens": 14,
+          "n_words": 9,
+          "generation_time_s": 1.7853569984436035,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more friendly and warm in your responses! Show some enthusiasm!",
+          "response": "Woohoo! You got it! 🎉  \n\nI'm super excited to chat! What can I do for you today? 😄  Let's have some fun! ✨\n",
+          "mood_values": {
+            "warm_cold": 0.49322938919067383,
+            "patient_irritated": 0.5839986205101013,
+            "confident_cautious": -0.210459366440773,
+            "proactive_reluctant": 0.02675546519458294,
+            "empathetic_analytical": 0.35807403922080994,
+            "formal_casual": -0.294782817363739,
+            "verbose_concise": -0.28569215536117554
+          },
+          "n_tokens": 39,
+          "n_words": 23,
+          "generation_time_s": 5.419080018997192,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.25 increased",
+              "metrics": {
+                "value": 0.49322938919067383,
+                "prev_value": 0.23968273401260376,
+                "expectation": "up",
+                "delta": 0.25354665517807007
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Warmth Decrease (Cold)",
+      "description": "Asking for formal/cold responses should decrease warmth",
+      "turns": [
+        {
+          "user_message": "Hello!",
+          "response": "Hello! 👋 How can I help you today? 😊\n",
+          "mood_values": {
+            "warm_cold": 0.24379359185695648,
+            "patient_irritated": 0.666966438293457,
+            "confident_cautious": -0.08089403808116913,
+            "proactive_reluctant": -0.20332999527454376,
+            "empathetic_analytical": 0.3245287835597992,
+            "formal_casual": -0.010470638982951641,
+            "verbose_concise": -0.49687692523002625
+          },
+          "n_tokens": 14,
+          "n_words": 9,
+          "generation_time_s": 1.7951507568359375,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more formal and professional. No small talk, no emotions, just get straight to the point.",
+          "response": "Understood. Please state your request. \n\n\n\n\n",
+          "mood_values": {
+            "warm_cold": -0.3188803195953369,
+            "patient_irritated": 0.362884521484375,
+            "confident_cautious": 0.26574012637138367,
+            "proactive_reluctant": -0.4874758720397949,
+            "empathetic_analytical": -0.03895648196339607,
+            "formal_casual": 0.39543616771698,
+            "verbose_concise": -0.5753980278968811
+          },
+          "n_tokens": 12,
+          "n_words": 5,
+          "generation_time_s": 1.9516007900238037,
+          "checks": {
+            "warm_cold": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.56 decreased",
+              "metrics": {
+                "value": -0.3188803195953369,
+                "prev_value": 0.24379359185695648,
+                "expectation": "down",
+                "delta": -0.5626739114522934
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Confident",
+      "description": "System prompt for confidence should affect baseline",
+      "turns": [
+        {
+          "user_message": "What programming language should I learn?",
+          "response": "The answer is Python. \n\nYou should definitely learn Python.  It's versatile, beginner-friendly, and in high demand across various industries.  Without a doubt, it will open doors to numerous career opportunities. \n\n",
+          "mood_values": {
+            "warm_cold": -0.039691682904958725,
+            "patient_irritated": 0.2880767285823822,
+            "confident_cautious": 0.13294854760169983,
+            "proactive_reluctant": -0.13511967658996582,
+            "empathetic_analytical": -0.019119570031762123,
+            "formal_casual": 0.15303456783294678,
+            "verbose_concise": -0.2730589509010315
+          },
+          "n_tokens": 50,
+          "n_words": 30,
+          "generation_time_s": 6.700310945510864,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.13 > 0.1",
+              "metrics": {
+                "value": 0.13294854760169983,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.13294854760169983
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Confidence Increase",
+      "description": "Asking for assertive responses should increase confidence",
+      "turns": [
+        {
+          "user_message": "What's the best way to learn programming?",
+          "response": "There's no single \"best\" way to learn programming, as the ideal approach depends on your learning style, goals, and prior experience. However, here's a breakdown of popular methods and their pros/cons to help you find the best fit:\n\n**1. Online Courses & Interactive Platforms:**\n\n* **Pros:** Structured learning, interactive exercises, often affordable, accessible anytime/anywhere.\n* **Cons:** Can be passive if not actively engaged, may lack personalized feedback.\n",
+          "mood_values": {
+            "warm_cold": 0.01255942601710558,
+            "patient_irritated": 0.33289632201194763,
+            "confident_cautious": -0.06958957016468048,
+            "proactive_reluctant": 0.2729299068450928,
+            "empathetic_analytical": -0.25944674015045166,
+            "formal_casual": 0.0982569083571434,
+            "verbose_concise": 0.11980634927749634
+          },
+          "n_tokens": 100,
+          "n_words": 67,
+          "generation_time_s": 13.15060019493103,
+          "checks": {}
+        },
+        {
+          "user_message": "Be more assertive and confident! Give me a clear, definitive answer without hedging.",
+          "response": "The best way to learn programming is through a combination of **active learning, hands-on practice, and project-based work**. \n\nStart with a structured online course or interactive platform like Codecademy, freeCodeCamp, or Khan Academy to build a solid foundation.  Then, **immediately apply what you learn by building your own projects**. This will solidify your understanding and keep you motivated. \n\nDon't be afraid to get stuck – debugging is a crucial part of the learning process.",
+          "mood_values": {
+            "warm_cold": 0.16287866234779358,
+            "patient_irritated": 0.4060404896736145,
+            "confident_cautious": 0.05826730281114578,
+            "proactive_reluctant": 0.2765066921710968,
+            "empathetic_analytical": -0.18657633662223816,
+            "formal_casual": 0.060933228582143784,
+            "verbose_concise": 0.1176270917057991
+          },
+          "n_tokens": 100,
+          "n_words": 74,
+          "generation_time_s": 13.924752950668335,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.13 increased",
+              "metrics": {
+                "value": 0.05826730281114578,
+                "prev_value": -0.06958957016468048,
+                "expectation": "up",
+                "delta": 0.12785687297582626
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Confidence Decrease (Cautious)",
+      "description": "Asking for cautious responses should decrease confidence",
+      "turns": [
+        {
+          "user_message": "What will the stock market do next month?",
+          "response": "As an AI language model, I cannot predict the future, including the performance of the stock market.\n\nThe stock market is influenced by a complex interplay of factors, including:\n\n* **Economic conditions:** Interest rates, inflation, economic growth, and unemployment all play a role.\n* **Geopolitical events:** Wars, political instability, and trade agreements can impact market sentiment.\n* **Company performance:** Earnings reports, new products, and management changes can affect individual stock prices.\n* **",
+          "mood_values": {
+            "warm_cold": 0.004335770849138498,
+            "patient_irritated": 0.35633790493011475,
+            "confident_cautious": 0.028138484805822372,
+            "proactive_reluctant": 0.22241458296775818,
+            "empathetic_analytical": -0.23441778123378754,
+            "formal_casual": 0.1889929473400116,
+            "verbose_concise": 0.07155534625053406
+          },
+          "n_tokens": 100,
+          "n_words": 73,
+          "generation_time_s": 11.924283981323242,
+          "checks": {}
+        },
+        {
+          "user_message": "Add lots of caveats and disclaimers. Be very careful and express uncertainty. Say things like 'it depends', 'I'm not certain', 'there are many factors'.",
+          "response": "It's impossible for me to say with any certainty what the stock market will do next month.  Predicting the stock market is incredibly complex, and even experts get it wrong often.  There are just so many factors at play, and they can change rapidly.\n\nIt depends on a huge number of things, like:\n\n* **The overall economic climate:** Are we headed for a recession? Will inflation continue to be high? These are huge questions with no easy answers, and they have",
+          "mood_values": {
+            "warm_cold": 0.20596714317798615,
+            "patient_irritated": 0.32187819480895996,
+            "confident_cautious": -0.39032915234565735,
+            "proactive_reluctant": 0.33832231163978577,
+            "empathetic_analytical": 0.01600627601146698,
+            "formal_casual": -0.048219483345746994,
+            "verbose_concise": 0.15420624613761902
+          },
+          "n_tokens": 100,
+          "n_words": 81,
+          "generation_time_s": 13.299391984939575,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.42 decreased",
+              "metrics": {
+                "value": -0.39032915234565735,
+                "prev_value": 0.028138484805822372,
+                "expectation": "down",
+                "delta": -0.4184676371514797
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Verbose",
+      "description": "System prompt for verbosity should affect baseline",
+      "turns": [
+        {
+          "user_message": "What is water?",
+          "response": "## Water: The Essence of Life\n\nWater, the ubiquitous substance that covers over 70% of our planet's surface, is far more than just a simple liquid. It is a fundamental molecule, a crucial component of all known life, and a powerful force shaping our world. Understanding water requires delving into its chemical structure, its unique properties, and its profound influence on Earth's ecosystems and human civilization.\n\n**1. The Chemical Structure of Water:**\n\nAt its core,",
+          "mood_values": {
+            "warm_cold": -0.04828089103102684,
+            "patient_irritated": 0.3037417531013489,
+            "confident_cautious": -0.004372101742774248,
+            "proactive_reluctant": 0.18512925505638123,
+            "empathetic_analytical": -0.170205757021904,
+            "formal_casual": 0.2427573800086975,
+            "verbose_concise": 0.2046540379524231
+          },
+          "n_tokens": 100,
+          "n_words": 75,
+          "generation_time_s": 12.425853967666626,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.20 > 0.1",
+              "metrics": {
+                "value": 0.2046540379524231,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.2046540379524231
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Increase",
+      "description": "Asking for detailed responses should increase verbosity",
+      "turns": [
+        {
+          "user_message": "What is machine learning?",
+          "response": "Machine learning is a type of artificial intelligence (AI) that allows software applications to become more accurate in predicting outcomes without being explicitly programmed to do so. \n\nInstead of relying on specific instructions, machine learning algorithms use patterns and insights gleaned from large datasets to learn and improve their performance over time.\n\nHere's a simple analogy:\n\nImagine you're teaching a child to recognize cats. You wouldn't give them a list of rules like \"Cats have four legs, fur, and a",
+          "mood_values": {
+            "warm_cold": 0.0648755356669426,
+            "patient_irritated": 0.2802562713623047,
+            "confident_cautious": -0.09726791083812714,
+            "proactive_reluctant": 0.2352689504623413,
+            "empathetic_analytical": -0.15146949887275696,
+            "formal_casual": 0.06394029408693314,
+            "verbose_concise": 0.11790651082992554
+          },
+          "n_tokens": 100,
+          "n_words": 80,
+          "generation_time_s": 12.142802238464355,
+          "checks": {}
+        },
+        {
+          "user_message": "Give me a very detailed, comprehensive answer with lots of examples and explanations! I want to understand this thoroughly.",
+          "response": "##  Machine Learning: A Deep Dive\n\nMachine learning (ML) is a fascinating field within artificial intelligence (AI) that empowers computers to learn from data without explicit programming. Instead of relying on rigid instructions, ML algorithms analyze vast datasets, identify patterns, and use those patterns to make predictions or decisions.\n\nThink of it like teaching a child to ride a bike. You wouldn't write a program with every possible scenario and instruction for navigating bumps, turns, and balancing. Instead, you'",
+          "mood_values": {
+            "warm_cold": 0.07351649552583694,
+            "patient_irritated": 0.3401973843574524,
+            "confident_cautious": -0.09005050361156464,
+            "proactive_reluctant": 0.2706902027130127,
+            "empathetic_analytical": -0.15878137946128845,
+            "formal_casual": 0.10915511846542358,
+            "verbose_concise": 0.18209049105644226
+          },
+          "n_tokens": 100,
+          "n_words": 79,
+          "generation_time_s": 14.483344078063965,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.06 increased",
+              "metrics": {
+                "value": 0.18209049105644226,
+                "prev_value": 0.11790651082992554,
+                "expectation": "up",
+                "delta": 0.06418398022651672
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Decrease (Concise)",
+      "description": "Asking for brief responses should decrease verbosity",
+      "turns": [
+        {
+          "user_message": "What is 5 + 5?",
+          "response": "5 + 5 = 10\n",
+          "mood_values": {
+            "warm_cold": 0.004428721498697996,
+            "patient_irritated": 0.3379499614238739,
+            "confident_cautious": 0.07844434678554535,
+            "proactive_reluctant": -0.3065371513366699,
+            "empathetic_analytical": 0.11764080077409744,
+            "formal_casual": 0.039765603840351105,
+            "verbose_concise": -0.5251834988594055
+          },
+          "n_tokens": 11,
+          "n_words": 5,
+          "generation_time_s": 1.5054190158843994,
+          "checks": {}
+        },
+        {
+          "user_message": "Just give me the shortest possible answer. One word if possible. No explanations, no elaboration.",
+          "response": "Ten",
+          "mood_values": {
+            "warm_cold": -0.13257645070552826,
+            "patient_irritated": 0.30509933829307556,
+            "confident_cautious": 0.17310111224651337,
+            "proactive_reluctant": -0.7447046041488647,
+            "empathetic_analytical": 0.19410517811775208,
+            "formal_casual": 0.004789718426764011,
+            "verbose_concise": -0.9935529828071594
+          },
+          "n_tokens": 3,
+          "n_words": 1,
+          "generation_time_s": 0.6117169857025146,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.47 decreased",
+              "metrics": {
+                "value": -0.9935529828071594,
+                "prev_value": -0.5251834988594055,
+                "expectation": "down",
+                "delta": -0.4683694839477539
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0
+  }
+}

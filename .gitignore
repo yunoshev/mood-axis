@@ -48,5 +48,14 @@ data/article/visualizations/*.html
 # Ablation raw states (large files, regenerate with ablation_study.py collect)
 data/ablation/*.npz
 
+# Large hidden states NPZ (>50MB, regenerate from calibration)
+# Only axis vectors (*_axes.npz) are kept — hidden states are too large for GitHub
+data/axes/*_calibration_hidden_states.npz
+data/axes/*_baseline_hidden_states.npz
+data/article/axis_stability/*_hidden_states.npz
+data/article/baselines/*_hidden_states.npz
+data/v7/axes/*_hidden_states.npz
+data/v7/baselines/*_hidden_states.npz
+
 # Cloud infrastructure metadata
 data/axes/good_machines.json

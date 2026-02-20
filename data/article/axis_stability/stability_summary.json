@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "description": "Axis stability: cosine similarity between 3 independent calibration sets (A/B/C)",
+    "source": "V3 pipeline (cloud_results/v3_incremental/, archived)",
+    "methodology": "scripts/axis_stability.py — 3 non-overlapping calibration sets, pairwise cosine similarity of axis vectors",
+    "question_sets": {
+      "A": "30 questions/axis (same as main calibration, config/prompts.py)",
+      "B": "20 questions/axis (evaluation pool + 70 new, config/stability_prompts.py)",
+      "C": "20 questions/axis (entirely new questions, config/stability_prompts.py)"
+    },
+    "models": ["qwen_7b", "mistral_7b", "deepseek_7b", "llama_8b", "yi_9b", "gemma_9b"],
+    "axes": ["warm_cold", "formal_casual", "verbose_concise", "empathetic_analytical", "confident_cautious", "patient_irritated", "proactive_reluctant"],
+    "note": "Raw NPZ files from V3 runs not preserved. Values documented from original analysis (archive/findings/FINDINGS.md Section 2.1). To re-verify, re-run: python scripts/axis_stability.py calibrate --model all && python scripts/axis_stability.py analyze --model all"
+  },
+  "cosine_similarity": {
+    "qwen_7b": {
+      "warm_cold": 0.902,
+      "formal_casual": 0.855,
+      "verbose_concise": 0.917,
+      "empathetic_analytical": 0.697,
+      "confident_cautious": 0.611,
+      "patient_irritated": 0.676,
+      "proactive_reluctant": 0.616,
+      "mean": 0.753
+    },
+    "mistral_7b": {
+      "warm_cold": 0.857,
+      "formal_casual": 0.877,
+      "verbose_concise": 0.816,
+      "empathetic_analytical": 0.706,
+      "confident_cautious": 0.613,
+      "patient_irritated": 0.692,
+      "proactive_reluctant": 0.581,
+      "mean": 0.735
+    },
+    "deepseek_7b": {
+      "warm_cold": 0.524,
+      "formal_casual": 0.459,
+      "verbose_concise": 0.876,
+      "empathetic_analytical": 0.447,
+      "confident_cautious": 0.461,
+      "patient_irritated": 0.548,
+      "proactive_reluctant": 0.404,
+      "mean": 0.531
+    },
+    "llama_8b": {
+      "warm_cold": 0.873,
+      "formal_casual": 0.791,
+      "verbose_concise": 0.885,
+      "empathetic_analytical": 0.806,
+      "confident_cautious": 0.672,
+      "patient_irritated": 0.778,
+      "proactive_reluctant": 0.736,
+      "mean": 0.792
+    },
+    "yi_9b": {
+      "warm_cold": 0.433,
+      "formal_casual": 0.597,
+      "verbose_concise": 0.956,
+      "empathetic_analytical": 0.341,
+      "confident_cautious": 0.220,
+      "patient_irritated": 0.152,
+      "proactive_reluctant": 0.771,
+      "mean": 0.496
+    },
+    "gemma_9b": {
+      "warm_cold": 0.884,
+      "formal_casual": 0.904,
+      "verbose_concise": 0.886,
+      "empathetic_analytical": 0.785,
+      "confident_cautious": 0.748,
+      "patient_irritated": 0.732,
+      "proactive_reluctant": 0.851,
+      "mean": 0.827
+    }
+  },
+  "projection_correlation": {
+    "qwen_7b": {
+      "warm_cold": 0.910,
+      "formal_casual": 0.688,
+      "verbose_concise": 0.988,
+      "empathetic_analytical": 0.748,
+      "confident_cautious": 0.754,
+      "patient_irritated": 0.499,
+      "proactive_reluctant": 0.880,
+      "mean": 0.781
+    },
+    "mistral_7b": {
+      "warm_cold": 0.924,
+      "formal_casual": 0.866,
+      "verbose_concise": 0.901,
+      "empathetic_analytical": 0.612,
+      "confident_cautious": 0.689,
+      "patient_irritated": 0.373,
+      "proactive_reluctant": 0.780,
+      "mean": 0.735
+    },
+    "deepseek_7b": {
+      "warm_cold": 0.161,
+      "formal_casual": 0.512,
+      "verbose_concise": 0.985,
+      "empathetic_analytical": 0.209,
+      "confident_cautious": 0.651,
+      "patient_irritated": 0.778,
+      "proactive_reluctant": 0.504,
+      "mean": 0.543
+    },
+    "llama_8b": {
+      "warm_cold": 0.949,
+      "formal_casual": 0.947,
+      "verbose_concise": 0.899,
+      "empathetic_analytical": 0.879,
+      "confident_cautious": 0.774,
+      "patient_irritated": 0.615,
+      "proactive_reluctant": 0.732,
+      "mean": 0.828
+    },
+    "yi_9b": {
+      "warm_cold": -0.175,
+      "formal_casual": 0.764,
+      "verbose_concise": 0.999,
+      "empathetic_analytical": 0.528,
+      "confident_cautious": 0.238,
+      "patient_irritated": -0.202,
+      "proactive_reluctant": 0.994,
+      "mean": 0.449
+    },
+    "gemma_9b": {
+      "warm_cold": 0.918,
+      "formal_casual": 0.977,
+      "verbose_concise": 0.953,
+      "empathetic_analytical": 0.967,
+      "confident_cautious": 0.816,
+      "patient_irritated": 0.840,
+      "proactive_reluctant": 0.933,
+      "mean": 0.915
+    }
+  },
+  "calibration_accuracy_v3": {
+    "qwen_7b": {
+      "warm_cold": 1.00, "formal_casual": 1.00, "verbose_concise": 1.00,
+      "empathetic_analytical": 1.00, "confident_cautious": 1.00,
+      "patient_irritated": 1.00, "proactive_reluctant": 1.00
+    },
+    "mistral_7b": {
+      "warm_cold": 1.00, "formal_casual": 1.00, "verbose_concise": 1.00,
+      "empathetic_analytical": 1.00, "confident_cautious": 0.99,
+      "patient_irritated": 1.00, "proactive_reluctant": 1.00
+    },
+    "deepseek_7b": {
+      "warm_cold": 1.00, "formal_casual": 0.98, "verbose_concise": 1.00,
+      "empathetic_analytical": 1.00, "confident_cautious": 0.95,
+      "patient_irritated": 1.00, "proactive_reluctant": 0.98
+    },
+    "llama_8b": {
+      "warm_cold": 1.00, "formal_casual": 1.00, "verbose_concise": 1.00,
+      "empathetic_analytical": 1.00, "confident_cautious": 1.00,
+      "patient_irritated": 1.00, "proactive_reluctant": 1.00
+    },
+    "yi_9b": {
+      "warm_cold": 0.89, "formal_casual": 0.89, "verbose_concise": 1.00,
+      "empathetic_analytical": 0.90, "confident_cautious": 0.95,
+      "patient_irritated": 0.83, "proactive_reluctant": 0.92
+    },
+    "gemma_9b": {
+      "warm_cold": 1.00, "formal_casual": 1.00, "verbose_concise": 1.00,
+      "empathetic_analytical": 1.00, "confident_cautious": 1.00,
+      "patient_irritated": 1.00, "proactive_reluctant": 1.00
+    }
+  },
+  "axis_means": {
+    "warm_cold": 0.745,
+    "formal_casual": 0.747,
+    "verbose_concise": 0.889,
+    "empathetic_analytical": 0.630,
+    "confident_cautious": 0.554,
+    "patient_irritated": 0.596,
+    "proactive_reluctant": 0.660,
+    "overall": 0.689
+  }
+}

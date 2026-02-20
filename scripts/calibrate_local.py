@@ -45,12 +45,15 @@ from src.calibration.axis_computer import (
 
 
 def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30,
-                   chat_template_kwargs=None) -> dict:
+                   chat_template_kwargs=None, save_extra: bool = True) -> dict:
     """Calibrate a single axis.
+
+    Args:
+        save_extra: Whether to collect per_layer_states, token_states, top_k logits.
 
     Returns dict with axis_vector, scale, and validation metrics.
     """
-    logger.info(f"Calibrating axis: {axis}")
+    logger.info(f"Calibrating axis: {axis} (samples_per_pole={samples_per_pole}, save_extra={save_extra})")
 
     # Generate calibration samples for this axis
     dataset = generate_calibration_dataset(num_samples_per_style=samples_per_pole, axes=[axis])
@@ -74,7 +77,8 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30,
         ]
 
         result = get_full_result_for_prompt(model, tokenizer, messages,
-                                           chat_template_kwargs=chat_template_kwargs)
+                                           chat_template_kwargs=chat_template_kwargs,
+                                           save_extra=save_extra)
 
         if sample.pole == "positive":
             positive_states.append(result.hidden_state)
@@ -152,21 +156,31 @@ def calibrate_axis(model, tokenizer, axis: str, samples_per_pole: int = 30,
     }
 
 
-def calibrate_model(model_key: str, axes: list = None):
-    """Calibrate axes for a model, merging with existing calibration data."""
+def calibrate_model(model_key: str, axes: list = None, fast: bool = False,
+                    save_extra: bool = True, output_dir: Path = None,
+                    force: bool = False):
+    """Calibrate axes for a model, merging with existing calibration data.
+
+    Args:
+        fast: If True, use 15 samples/pole instead of 30 (2x faster, slightly lower accuracy).
+        save_extra: If False, skip per_layer_states, token_states, top_k in generation.
+        output_dir: Directory to save axes/responses/hidden states (default: AXES_DIR).
+        force: If True, recalibrate even if axes already exist (to regenerate hidden states).
+    """
     if model_key not in MODELS:
         raise ValueError(f"Unknown model: {model_key}. Available: {list(MODELS.keys())}")
 
     model_config = MODELS[model_key]
     model_id = model_config.model_id
     axes = axes or MOOD_AXES
+    axes_dir = output_dir or AXES_DIR
 
     # Load existing calibration if present — merge new axes with old
     # IMPORTANT: only keep existing axes that are in MOOD_AXES (single source of truth)
-    output_file = AXES_DIR / f"{model_key}_axes.npz"
+    output_file = axes_dir / f"{model_key}_axes.npz"
     existing_vectors = {}
     existing_scales = {}
-    if output_file.exists():
+    if output_file.exists() and not force:
         data = np.load(output_file)
         existing_axes = data["_axes"].tolist()
         # Filter to only MOOD_AXES — drop stale axes like direct_evasive
@@ -187,9 +201,12 @@ def calibrate_model(model_key: str, axes: list = None):
             return {}
         logger.info(f"Will calibrate missing axes: {missing}")
         axes = missing
+    elif force and output_file.exists():
+        logger.info(f"--force: ignoring existing {output_file}, recalibrating all axes")
 
+    samples_per_pole = 15 if fast else 30
     logger.info(f"Calibrating model: {model_id}")
-    logger.info(f"Axes: {axes}")
+    logger.info(f"Axes: {axes} (samples_per_pole={samples_per_pole}, save_extra={save_extra})")
 
     # Load model
     logger.info("Loading model...")
@@ -204,7 +221,9 @@ def calibrate_model(model_key: str, axes: list = None):
 
     for axis in axes:
         result = calibrate_axis(model, tokenizer, axis,
-                                chat_template_kwargs=chat_template_kwargs)
+                                samples_per_pole=samples_per_pole,
+                                chat_template_kwargs=chat_template_kwargs,
+                                save_extra=save_extra)
         results[axis] = result
         axis_vectors[axis] = result["axis_vector"]
         scales[axis] = result["scale"]
@@ -218,7 +237,7 @@ def calibrate_model(model_key: str, axes: list = None):
             torch.cuda.empty_cache()
 
     # Save merged results
-    AXES_DIR.mkdir(parents=True, exist_ok=True)
+    axes_dir.mkdir(parents=True, exist_ok=True)
     save_axis_vectors(axis_vectors, scales, output_file)
     logger.info(f"Saved to {output_file} ({len(axis_vectors)} axes)")
 
@@ -227,7 +246,7 @@ def calibrate_model(model_key: str, axes: list = None):
     for axis in axes:
         all_responses.extend(results[axis]["responses"])
     if all_responses:
-        responses_file = AXES_DIR / f"{model_key}_calibration_responses.jsonl"
+        responses_file = axes_dir / f"{model_key}_calibration_responses.jsonl"
         with open(responses_file, "a") as f:
             for entry in all_responses:
                 f.write(json.dumps(entry, ensure_ascii=False) + "\n")
@@ -250,7 +269,7 @@ def calibrate_model(model_key: str, axes: list = None):
         all_top_k_logprobs.extend(results[axis]["top_k_logprobs"])
         all_gen_times.extend(results[axis]["gen_times"])
     if all_decay:
-        hs_file = AXES_DIR / f"{model_key}_calibration_hidden_states.npz"
+        hs_file = axes_dir / f"{model_key}_calibration_hidden_states.npz"
         hs_save = {
             "decay_states": np.concatenate(all_decay, axis=0),
             "last_token_states": np.concatenate(all_last_token, axis=0),
@@ -281,11 +300,23 @@ def main():
     parser = argparse.ArgumentParser(description="Calibrate axis vectors locally")
     parser.add_argument("--model", required=True, help="Model key (e.g., qwen_7b)")
     parser.add_argument("--axes", help="Comma-separated list of axes (default: all)")
+    parser.add_argument("--fast", action="store_true",
+                        help="Fast mode: 15 samples/pole instead of 30 (2x faster)")
+    parser.add_argument("--no-extra", action="store_true",
+                        help="Skip per_layer_states, token_states, top_k (saves ~60%% memory)")
+    parser.add_argument("--force", action="store_true",
+                        help="Recalibrate even if axes already exist (to regenerate hidden states)")
+    parser.add_argument("--output-dir", type=str, default=None,
+                        help="Output directory for axes/responses (default: data/axes/)")
     args = parser.parse_args()
 
     axes = args.axes.split(",") if args.axes else None
+    output_dir = Path(args.output_dir) if args.output_dir else None
 
-    results = calibrate_model(args.model, axes)
+    results = calibrate_model(args.model, axes, fast=args.fast,
+                              save_extra=not args.no_extra,
+                              output_dir=output_dir,
+                              force=args.force)
 
     print("\n=== Calibration Results ===")
     for axis, result in results.items():

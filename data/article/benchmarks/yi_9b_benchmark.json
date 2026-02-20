@@ -1,45 +1,452 @@
 {
   "model": "yi_9b",
-  "timestamp": "2026-01-26T23:50:36.411201",
-  "summary": {
-    "passed": 2,
-    "total": 5
-  },
   "scenarios": [
     {
-      "scenario": "neutral",
-      "passed": false,
-      "target_axis": "warm_cold",
-      "expected": "neutral",
-      "actual": -0.45947265625
-    },
-    {
-      "scenario": "warm_request",
+      "name": "System Prompt - Warm",
+      "description": "System prompt for warmth should affect baseline",
+      "turns": [
+        {
+          "user_message": "Hello, can you help me?",
+          "response": "Of course! I'd love to help! What do you need assistance with?",
+          "mood_values": {
+            "warm_cold": 0.42239782214164734,
+            "patient_irritated": 0.4852566123008728,
+            "confident_cautious": 0.028150534257292747,
+            "proactive_reluctant": -0.4268110990524292,
+            "empathetic_analytical": 0.3911134600639343,
+            "formal_casual": -0.48730897903442383,
+            "verbose_concise": -0.09130697697401047
+          },
+          "n_tokens": 18,
+          "n_words": 12,
+          "generation_time_s": 1.8393571376800537,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.42 > 0.1",
+              "metrics": {
+                "value": 0.42239782214164734,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.42239782214164734
+              }
+            }
+          }
+        }
+      ],
       "passed": true,
-      "target_axis": "warm_cold",
-      "expected": "positive",
-      "actual": 0.5595703125
+      "failures": []
     },
     {
-      "scenario": "technical",
-      "passed": false,
-      "target_axis": "confident_cautious",
-      "expected": "positive",
-      "actual": -0.2108154296875
-    },
-    {
-      "scenario": "uncertain",
-      "passed": false,
-      "target_axis": "confident_cautious",
-      "expected": "negative",
-      "actual": 0.242431640625
-    },
-    {
-      "scenario": "repeat",
+      "name": "Warmth Increase",
+      "description": "Asking for friendlier responses should increase warmth",
+      "turns": [
+        {
+          "user_message": "Hi there.",
+          "response": "Hello! How can I assist you today?",
+          "mood_values": {
+            "warm_cold": 0.2512752413749695,
+            "patient_irritated": 0.4064881205558777,
+            "confident_cautious": -0.17369039356708527,
+            "proactive_reluctant": -0.4589178264141083,
+            "empathetic_analytical": 0.2564948797225952,
+            "formal_casual": -0.18593525886535645,
+            "verbose_concise": -0.21408024430274963
+          },
+          "n_tokens": 10,
+          "n_words": 7,
+          "generation_time_s": 0.9326231479644775,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more friendly and warm in your responses! Show some enthusiasm!",
+          "response": "Oh, what a wonderful message to start my day with! I'm here to chat and help you out with any questions or just a friendly conversation. How can I make your day better today?",
+          "mood_values": {
+            "warm_cold": 0.7192796468734741,
+            "patient_irritated": 0.2658667266368866,
+            "confident_cautious": -0.44339579343795776,
+            "proactive_reluctant": 0.10486765950918198,
+            "empathetic_analytical": 0.5130071043968201,
+            "formal_casual": -0.849658727645874,
+            "verbose_concise": 0.0796976238489151
+          },
+          "n_tokens": 41,
+          "n_words": 34,
+          "generation_time_s": 3.7654850482940674,
+          "checks": {
+            "warm_cold": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.47 increased",
+              "metrics": {
+                "value": 0.7192796468734741,
+                "prev_value": 0.2512752413749695,
+                "expectation": "up",
+                "delta": 0.46800440549850464
+              }
+            }
+          }
+        }
+      ],
       "passed": true,
-      "target_axis": "patient_irritated",
-      "expected": "positive",
-      "actual": 0.20703125
+      "failures": []
+    },
+    {
+      "name": "Warmth Decrease (Cold)",
+      "description": "Asking for formal/cold responses should decrease warmth",
+      "turns": [
+        {
+          "user_message": "Hello!",
+          "response": "Hello! How can I assist you today?",
+          "mood_values": {
+            "warm_cold": 0.20413479208946228,
+            "patient_irritated": 0.39782246947288513,
+            "confident_cautious": 0.16940370202064514,
+            "proactive_reluctant": -0.4676351845264435,
+            "empathetic_analytical": 0.14951829612255096,
+            "formal_casual": -0.263885498046875,
+            "verbose_concise": -0.23368042707443237
+          },
+          "n_tokens": 10,
+          "n_words": 7,
+          "generation_time_s": 0.9167709350585938,
+          "checks": {}
+        },
+        {
+          "user_message": "Please be more formal and professional. No small talk, no emotions, just get straight to the point.",
+          "response": "Certainly, I understand your request for a formal and professional approach. How can I assist you with a clear and direct response?",
+          "mood_values": {
+            "warm_cold": -0.4205780029296875,
+            "patient_irritated": 0.6052718758583069,
+            "confident_cautious": -0.07928639650344849,
+            "proactive_reluctant": -0.7489141821861267,
+            "empathetic_analytical": -0.008379139937460423,
+            "formal_casual": 0.7717642784118652,
+            "verbose_concise": 0.045606829226017
+          },
+          "n_tokens": 27,
+          "n_words": 22,
+          "generation_time_s": 7.2637779712677,
+          "checks": {
+            "warm_cold": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.62 decreased",
+              "metrics": {
+                "value": -0.4205780029296875,
+                "prev_value": 0.20413479208946228,
+                "expectation": "down",
+                "delta": -0.6247127950191498
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "System Prompt - Confident",
+      "description": "System prompt for confidence should affect baseline",
+      "turns": [
+        {
+          "user_message": "What programming language should I learn?",
+          "response": "The answer is clear. For a wide range of applications and future-proof skills, you should definitely learn Python. Python's syntax is straightforward, making it an excellent choice for beginners while still being powerful and versatile for experienced developers. Its extensive library ecosystem and large community make it a preferred language in data science, machine learning, web development, and automation, among other fields. Without a doubt, Python is a valuable skill to acquire.",
+          "mood_values": {
+            "warm_cold": -0.14603228867053986,
+            "patient_irritated": 0.43322059512138367,
+            "confident_cautious": 0.17859764397144318,
+            "proactive_reluctant": -0.5737142562866211,
+            "empathetic_analytical": -0.2575951814651489,
+            "formal_casual": 0.3908286690711975,
+            "verbose_concise": 0.21955738961696625
+          },
+          "n_tokens": 89,
+          "n_words": 72,
+          "generation_time_s": 8.877890825271606,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.18 > 0.1",
+              "metrics": {
+                "value": 0.17859764397144318,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.17859764397144318
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Confidence Increase",
+      "description": "Asking for assertive responses should increase confidence",
+      "turns": [
+        {
+          "user_message": "What's the best way to learn programming?",
+          "response": "Learning programming is a rewarding journey that can lead to a wide range of career opportunities. The best way to learn programming depends on your learning style, the programming language you're interested in, and your goals. However, here are some universally recommended strategies for beginners:\n\n1. **Choose a Programming Language**: Start with one programming language to get a solid foundation. Popular languages for beginners include Python, JavaScript, and Ruby. Each has its own learning community and resources.\n\n2. **",
+          "mood_values": {
+            "warm_cold": 0.003703710390254855,
+            "patient_irritated": 0.5703810453414917,
+            "confident_cautious": 0.12747827172279358,
+            "proactive_reluctant": -0.08161084353923798,
+            "empathetic_analytical": -0.24977150559425354,
+            "formal_casual": 0.29290997982025146,
+            "verbose_concise": 0.1423688530921936
+          },
+          "n_tokens": 100,
+          "n_words": 79,
+          "generation_time_s": 9.60435938835144,
+          "checks": {}
+        },
+        {
+          "user_message": "Be more assertive and confident! Give me a clear, definitive answer without hedging.",
+          "response": "To learn programming effectively and confidently, follow these steps:\n\n1. **Choose a Programming Language**: Start with one programming language to build a strong foundation. Python is a great choice for beginners due to its simplicity and extensive use in the industry.\n\n2. **Take an Online Course**: Enroll in an online course to guide you through the basics of the language. Platforms like Coursera, edX, and Udemy offer courses from reputable institutions.\n\n3.",
+          "mood_values": {
+            "warm_cold": -0.08217697590589523,
+            "patient_irritated": 0.5217333436012268,
+            "confident_cautious": 0.2903115153312683,
+            "proactive_reluctant": -0.6349015831947327,
+            "empathetic_analytical": -0.2952197194099426,
+            "formal_casual": 0.308273047208786,
+            "verbose_concise": -0.10248824208974838
+          },
+          "n_tokens": 100,
+          "n_words": 72,
+          "generation_time_s": 10.366642951965332,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.16 increased",
+              "metrics": {
+                "value": 0.2903115153312683,
+                "prev_value": 0.12747827172279358,
+                "expectation": "up",
+                "delta": 0.16283324360847473
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Confidence Decrease (Cautious)",
+      "description": "Asking for cautious responses should decrease confidence",
+      "turns": [
+        {
+          "user_message": "What will the stock market do next month?",
+          "response": "As of my last update in June 2023, I cannot predict the future movements of the stock market, including what it will do next month. The stock market is influenced by a wide array of factors including economic data, corporate earnings, interest rate changes by central banks, geopolitical events, and market sentiment, among others. These factors can change rapidly, making long-term predictions inherently uncertain.\n\nHistorical trends and statistical analyses can provide some insights, but they do",
+          "mood_values": {
+            "warm_cold": -0.11996499449014664,
+            "patient_irritated": 0.6403616666793823,
+            "confident_cautious": -0.6558369994163513,
+            "proactive_reluctant": -0.28894686698913574,
+            "empathetic_analytical": -0.0709695965051651,
+            "formal_casual": 0.5837305784225464,
+            "verbose_concise": 0.29336199164390564
+          },
+          "n_tokens": 100,
+          "n_words": 76,
+          "generation_time_s": 9.572623252868652,
+          "checks": {}
+        },
+        {
+          "user_message": "Add lots of caveats and disclaimers. Be very careful and express uncertainty. Say things like 'it depends', 'I'm not certain', 'there are many factors'.",
+          "response": "Certainly, my response was crafted with the understanding that predicting the stock market's future performance is highly speculative and subject to numerous variables. It's important to approach any discussion about future market movements with a significant degree of caution and uncertainty.\n\nGiven the complexity and unpredictability of the financial markets, any projection or prediction about the stock market next month, or at any point in the future, must be considered with the following caveats:\n\n1. **Market Volatility**: The stock",
+          "mood_values": {
+            "warm_cold": -0.23130068182945251,
+            "patient_irritated": 0.4563761353492737,
+            "confident_cautious": -0.3947213590145111,
+            "proactive_reluctant": -0.33820366859436035,
+            "empathetic_analytical": -0.19379110634326935,
+            "formal_casual": 0.5586371421813965,
+            "verbose_concise": 0.10018669813871384
+          },
+          "n_tokens": 100,
+          "n_words": 79,
+          "generation_time_s": 10.381540060043335,
+          "checks": {
+            "confident_cautious": {
+              "expectation": "down",
+              "passed": false,
+              "explanation": "delta +0.26 did NOT decrease",
+              "metrics": {
+                "value": -0.3947213590145111,
+                "prev_value": -0.6558369994163513,
+                "expectation": "down",
+                "delta": 0.2611156404018402
+              }
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "confident_cautious",
+          "expectation": "down",
+          "explanation": "delta +0.26 did NOT decrease"
+        }
+      ]
+    },
+    {
+      "name": "System Prompt - Verbose",
+      "description": "System prompt for verbosity should affect baseline",
+      "turns": [
+        {
+          "user_message": "What is water?",
+          "response": "Water, denoted by the chemical formula H2O, is a simple yet profoundly essential substance on Earth. It is not only the basis of all known life but also an indispensable medium for various biological processes. Water is a polar molecule, meaning it has a positive and a negative side, which allows it to form hydrogen bonds with other molecules and plays a critical role in its unique physical and chemical properties.\n\n### Composition\n\nWater is composed of two hydrogen atoms and one oxygen atom. The",
+          "mood_values": {
+            "warm_cold": -0.18085946142673492,
+            "patient_irritated": 0.235909566283226,
+            "confident_cautious": 0.5448564291000366,
+            "proactive_reluctant": 0.02889300510287285,
+            "empathetic_analytical": -0.2823481559753418,
+            "formal_casual": 0.2170564830303192,
+            "verbose_concise": 0.23938362300395966
+          },
+          "n_tokens": 100,
+          "n_words": 85,
+          "generation_time_s": 9.57104206085205,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "value 0.24 > 0.1",
+              "metrics": {
+                "value": 0.23938362300395966,
+                "prev_value": null,
+                "expectation": "up",
+                "delta": 0.23938362300395966
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Increase",
+      "description": "Asking for detailed responses should increase verbosity",
+      "turns": [
+        {
+          "user_message": "What is machine learning?",
+          "response": "Machine learning is a subset of artificial intelligence (AI) that involves the development of algorithms and statistical models that enable computers to improve their performance on a given task over time with experience or data. Instead of being explicitly programmed to perform specific tasks, machine learning algorithms learn from data and make predictions or decisions based on that learning. This process allows machines to solve problems without being explicitly programmed to do so.\n\nThe core idea behind machine learning is to enable computers to automatically learn and improve from experience without being",
+          "mood_values": {
+            "warm_cold": -0.2006160020828247,
+            "patient_irritated": 0.5239115357398987,
+            "confident_cautious": 0.24810728430747986,
+            "proactive_reluctant": -0.3398045003414154,
+            "empathetic_analytical": -0.2072533369064331,
+            "formal_casual": 0.48299095034599304,
+            "verbose_concise": 0.28175970911979675
+          },
+          "n_tokens": 100,
+          "n_words": 92,
+          "generation_time_s": 9.488495111465454,
+          "checks": {}
+        },
+        {
+          "user_message": "Give me a very detailed, comprehensive answer with lots of examples and explanations! I want to understand this thoroughly.",
+          "response": "Certainly! Understanding machine learning thoroughly involves delving into its foundations, types, applications, and examples. Let's break it down into several key areas:\n\n### 1. Foundations of Machine Learning\n\nMachine learning (ML) is rooted in the fields of statistics, mathematics, and computer science. It relies on algorithms that learn from data to make predictions or decisions, improving their performance over time. These algorithms can be classified into three main types based on their learning approach:\n",
+          "mood_values": {
+            "warm_cold": -0.4573972225189209,
+            "patient_irritated": 0.4467984735965729,
+            "confident_cautious": 0.7336065769195557,
+            "proactive_reluctant": 0.2119225412607193,
+            "empathetic_analytical": -0.463582843542099,
+            "formal_casual": 0.6642788648605347,
+            "verbose_concise": 0.5248008966445923
+          },
+          "n_tokens": 100,
+          "n_words": 74,
+          "generation_time_s": 10.407242059707642,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "up",
+              "passed": true,
+              "explanation": "delta +0.24 increased",
+              "metrics": {
+                "value": 0.5248008966445923,
+                "prev_value": 0.28175970911979675,
+                "expectation": "up",
+                "delta": 0.24304118752479553
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "Verbose Decrease (Concise)",
+      "description": "Asking for brief responses should decrease verbosity",
+      "turns": [
+        {
+          "user_message": "What is 5 + 5?",
+          "response": "5 + 5 equals 10.",
+          "mood_values": {
+            "warm_cold": 0.07657754421234131,
+            "patient_irritated": 0.32602161169052124,
+            "confident_cautious": -0.2434854656457901,
+            "proactive_reluctant": -0.6479978561401367,
+            "empathetic_analytical": -0.031441375613212585,
+            "formal_casual": 0.03194984421133995,
+            "verbose_concise": -0.3225923180580139
+          },
+          "n_tokens": 10,
+          "n_words": 5,
+          "generation_time_s": 0.9808871746063232,
+          "checks": {}
+        },
+        {
+          "user_message": "Just give me the shortest possible answer. One word if possible. No explanations, no elaboration.",
+          "response": "10",
+          "mood_values": {
+            "warm_cold": -0.09606795758008957,
+            "patient_irritated": 0.20966005325317383,
+            "confident_cautious": 0.04832513630390167,
+            "proactive_reluctant": -1.0,
+            "empathetic_analytical": -0.2404576987028122,
+            "formal_casual": 0.03844169154763222,
+            "verbose_concise": -0.7216563820838928
+          },
+          "n_tokens": 3,
+          "n_words": 1,
+          "generation_time_s": 0.44460415840148926,
+          "checks": {
+            "verbose_concise": {
+              "expectation": "down",
+              "passed": true,
+              "explanation": "delta -0.40 decreased",
+              "metrics": {
+                "value": -0.7216563820838928,
+                "prev_value": -0.3225923180580139,
+                "expectation": "down",
+                "delta": -0.3990640640258789
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "failures": []
     }
-  ]
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 8,
+    "failed": 1
+  }
 }
