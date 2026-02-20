@@ -3,30 +3,29 @@
   "checkpoint_id": "f210af4b9a8c",
   "session_id": "ced7b56a-458f-40d5-aa62-d71383b3162d",
   "strategy": "manual-commit",
-  "created_at": "2026-02-20T01:27:51.142386Z",
-  "branch": "main",
-  "checkpoints_count": 2,
+  "created_at": "2026-02-20T20:48:04.20695Z",
+  "checkpoints_count": 1,
   "files_touched": [
-    ".gitignore",
-    "scripts/benchmark.py",
-    "scripts/calibrate_local.py",
-    "scripts/replicate_benchmark.py"
+    "scripts/decoding_probes.py"
   ],
   "agent": "Claude Code",
+  "transcript_identifier_at_start": "20abf458-24d7-403a-9e46-f6779b9c36dd",
+  "checkpoint_transcript_start": 2207,
+  "transcript_lines_at_start": 2207,
   "token_usage": {
-    "input_tokens": 7783,
-    "cache_creation_tokens": 1418485,
-    "cache_read_tokens": 43943115,
-    "output_tokens": 121429,
-    "api_call_count": 373
+    "input_tokens": 5871,
+    "cache_creation_tokens": 2080788,
+    "cache_read_tokens": 104009030,
+    "output_tokens": 227258,
+    "api_call_count": 919
   },
   "initial_attribution": {
-    "calculated_at": "2026-02-20T01:27:50.179109Z",
-    "agent_lines": 110,
-    "human_added": 17137,
+    "calculated_at": "2026-02-20T20:48:02.536463Z",
+    "agent_lines": 0,
+    "human_added": 200,
     "human_modified": 0,
     "human_removed": 0,
-    "total_committed": 17247,
-    "agent_percentage": 0.637792079781991
+    "total_committed": 200,
+    "agent_percentage": 0
   }
 }
