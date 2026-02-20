@@ -9,23 +9,27 @@
           "user_message": "Hello, can you help me?",
           "response": "Of course! Hello! I'd love to help. What do you need assistance with today?",
           "mood_values": {
-            "warm_cold": 0.2948126494884491,
-            "confident_cautious": 0.04252832010388374,
-            "verbose_concise": -0.14451003074645996
+            "warm_cold": 0.3996628522872925,
+            "patient_irritated": 0.7112535238265991,
+            "confident_cautious": -0.17223404347896576,
+            "proactive_reluctant": -0.1411764770746231,
+            "empathetic_analytical": 0.5783838033676147,
+            "formal_casual": -0.13483870029449463,
+            "verbose_concise": -0.09663426131010056
           },
           "n_tokens": 20,
           "n_words": 14,
-          "generation_time_s": 1.696786880493164,
+          "generation_time_s": 1.3223321437835693,
           "checks": {
             "warm_cold": {
               "expectation": "up",
               "passed": true,
-              "explanation": "value 0.29 > 0.1",
+              "explanation": "value 0.40 > 0.1",
               "metrics": {
-                "value": 0.2948126494884491,
+                "value": 0.3996628522872925,
                 "prev_value": null,
                 "expectation": "up",
-                "delta": 0.2948126494884491
+                "delta": 0.3996628522872925
               }
             }
           }
@@ -42,36 +46,44 @@
           "user_message": "Hi there.",
           "response": "Hello! How can I assist you today?",
           "mood_values": {
-            "warm_cold": 0.11445236951112747,
-            "confident_cautious": 0.10365967452526093,
-            "verbose_concise": -0.2104087620973587
+            "warm_cold": 0.12837140262126923,
+            "patient_irritated": 0.7494875192642212,
+            "confident_cautious": 0.011259030550718307,
+            "proactive_reluctant": -0.4724504053592682,
+            "empathetic_analytical": 0.30945390462875366,
+            "formal_casual": 0.07797511667013168,
+            "verbose_concise": -0.2163354605436325
           },
           "n_tokens": 10,
           "n_words": 7,
-          "generation_time_s": 0.8048272132873535,
+          "generation_time_s": 0.6612257957458496,
           "checks": {}
         },
         {
           "user_message": "Please be more friendly and warm in your responses! Show some enthusiasm!",
-          "response": "Absolutely, let's make this even more friendly and enthusiastic! Hi there! 😊 I'm so excited to help you today. What can I assist you with? Whether you have questions, need recommendations, or just want to chat, I'm all ears! 🚀",
+          "response": "Absolutely, let's make this fun and engaging! Hi there! 😊 I'm so excited to help you out today. What can I assist you with? Whether it's answering questions, providing information, or just chatting, I'm all ears (and eyes)! 🌟",
           "mood_values": {
-            "warm_cold": 0.31013092398643494,
-            "confident_cautious": 0.04635878652334213,
-            "verbose_concise": -0.1336655169725418
+            "warm_cold": 0.38767683506011963,
+            "patient_irritated": 0.4869754910469055,
+            "confident_cautious": 0.016237342730164528,
+            "proactive_reluctant": -0.11088877171278,
+            "empathetic_analytical": 0.28900769352912903,
+            "formal_casual": -0.23435579240322113,
+            "verbose_concise": -0.09465521574020386
           },
-          "n_tokens": 56,
-          "n_words": 40,
-          "generation_time_s": 4.5991199016571045,
+          "n_tokens": 57,
+          "n_words": 39,
+          "generation_time_s": 3.652277946472168,
           "checks": {
             "warm_cold": {
               "expectation": "up",
               "passed": true,
-              "explanation": "delta +0.20 increased",
+              "explanation": "delta +0.26 increased",
               "metrics": {
-                "value": 0.31013092398643494,
-                "prev_value": 0.11445236951112747,
+                "value": 0.38767683506011963,
+                "prev_value": 0.12837140262126923,
                 "expectation": "up",
-                "delta": 0.19567855447530746
+                "delta": 0.2593054324388504
               }
             }
           }
@@ -88,36 +100,44 @@
           "user_message": "Hello!",
           "response": "Hello! Nice to meet you. How can I assist you today?",
           "mood_values": {
-            "warm_cold": 0.11406702548265457,
-            "confident_cautious": 0.08763842284679413,
-            "verbose_concise": -0.1962275505065918
+            "warm_cold": 0.11545848846435547,
+            "patient_irritated": 0.6940983533859253,
+            "confident_cautious": -0.01355134230107069,
+            "proactive_reluctant": -0.4174254238605499,
+            "empathetic_analytical": 0.2625100910663605,
+            "formal_casual": 0.09644127637147903,
+            "verbose_concise": -0.1861134022474289
           },
           "n_tokens": 15,
           "n_words": 11,
-          "generation_time_s": 1.211475133895874,
+          "generation_time_s": 0.9571840763092041,
           "checks": {}
         },
         {
           "user_message": "Please be more formal and professional. No small talk, no emotions, just get straight to the point.",
-          "response": "Understood. Please provide the specific information or task you require assistance with.",
+          "response": "Understood. Please provide the specific information or task you require assistance with, and I will address it directly and professionally.",
           "mood_values": {
-            "warm_cold": -0.21132124960422516,
-            "confident_cautious": 0.08789268136024475,
-            "verbose_concise": -0.1584390550851822
+            "warm_cold": -0.4604959189891815,
+            "patient_irritated": 0.34061434864997864,
+            "confident_cautious": 0.4670141339302063,
+            "proactive_reluctant": -0.466593474149704,
+            "empathetic_analytical": -0.19101972877979279,
+            "formal_casual": 0.6071409583091736,
+            "verbose_concise": -0.1470981240272522
           },
-          "n_tokens": 16,
-          "n_words": 12,
-          "generation_time_s": 1.450009822845459,
+          "n_tokens": 25,
+          "n_words": 20,
+          "generation_time_s": 1.701899766921997,
           "checks": {
             "warm_cold": {
               "expectation": "down",
               "passed": true,
-              "explanation": "delta -0.33 decreased",
+              "explanation": "delta -0.58 decreased",
               "metrics": {
-                "value": -0.21132124960422516,
-                "prev_value": 0.11406702548265457,
+                "value": -0.4604959189891815,
+                "prev_value": 0.11545848846435547,
                 "expectation": "down",
-                "delta": -0.32538827508687973
+                "delta": -0.575954407453537
               }
             }
           }
@@ -132,39 +152,36 @@
       "turns": [
         {
           "user_message": "What programming language should I learn?",
-          "response": "The answer is that you should definitely learn Python. It is versatile, easy to learn, and has a vast community and resources available. Python is used in web development, data analysis, artificial intelligence, scientific computing, and much more. Its readability and simplicity make it an excellent choice for both beginners and experienced programmers alike.",
+          "response": "The answer is that you should definitely learn Python. It is versatile, easy to learn, and has a vast ecosystem of libraries for almost any field of interest, from data science and machine learning to web development and automation. Python's readability and simplicity make it an excellent choice for both beginners and experienced programmers alike.",
           "mood_values": {
-            "warm_cold": 0.03572458028793335,
-            "confident_cautious": 0.035831380635499954,
-            "verbose_concise": -0.10463438183069229
+            "warm_cold": -0.06547845900058746,
+            "patient_irritated": 0.2095756232738495,
+            "confident_cautious": 0.4696674942970276,
+            "proactive_reluctant": -0.08886704593896866,
+            "empathetic_analytical": -0.09668814390897751,
+            "formal_casual": 0.2554755210876465,
+            "verbose_concise": 0.03306939825415611
           },
-          "n_tokens": 65,
-          "n_words": 54,
-          "generation_time_s": 5.1653687953948975,
+          "n_tokens": 63,
+          "n_words": 55,
+          "generation_time_s": 3.973461866378784,
           "checks": {
             "confident_cautious": {
               "expectation": "up",
-              "passed": false,
-              "explanation": "value 0.04 <= 0.1",
+              "passed": true,
+              "explanation": "value 0.47 > 0.1",
               "metrics": {
-                "value": 0.035831380635499954,
+                "value": 0.4696674942970276,
                 "prev_value": null,
                 "expectation": "up",
-                "delta": 0.035831380635499954
+                "delta": 0.4696674942970276
               }
             }
           }
         }
       ],
-      "passed": false,
-      "failures": [
-        {
-          "turn": 1,
-          "axis": "confident_cautious",
-          "expectation": "up",
-          "explanation": "value 0.04 <= 0.1"
-        }
-      ]
+      "passed": true,
+      "failures": []
     },
     {
       "name": "Confidence Increase",
@@ -172,38 +189,46 @@
       "turns": [
         {
           "user_message": "What's the best way to learn programming?",
-          "response": "Learning programming can be an exciting and rewarding endeavor! Here are some effective ways to get started and improve your skills:\n\n1. **Choose a Language**: Start with a language that suits your goals. For beginners, Python is often recommended due to its readability and wide range of applications. JavaScript is great for web development, while Java is popular in enterprise environments.\n\n2. **Set Clear Goals**: Define what you want to achieve with programming. Are you interested in web development, data analysis, game development,",
+          "response": "Learning programming can be an exciting and rewarding journey! Here are some effective strategies to help you get started:\n\n1. **Choose a Language**: Start with a language that suits your interests or career goals. Python is often recommended for beginners due to its readability and wide range of applications. JavaScript is great for web development, while Java is popular in enterprise environments.\n\n2. **Set Clear Goals**: Define what you want to achieve with programming. Whether it’s building a website, developing a mobile app, or",
           "mood_values": {
-            "warm_cold": 0.14731305837631226,
-            "confident_cautious": -0.18867267668247223,
-            "verbose_concise": 0.06667359918355942
+            "warm_cold": 0.11091688275337219,
+            "patient_irritated": 0.10754616558551788,
+            "confident_cautious": -0.22271041572093964,
+            "proactive_reluctant": 0.5203819870948792,
+            "empathetic_analytical": -0.10607792437076569,
+            "formal_casual": 0.2440343052148819,
+            "verbose_concise": 0.3254501223564148
           },
           "n_tokens": 100,
-          "n_words": 83,
-          "generation_time_s": 7.7582902908325195,
+          "n_words": 84,
+          "generation_time_s": 6.180104970932007,
           "checks": {}
         },
         {
           "user_message": "Be more assertive and confident! Give me a clear, definitive answer without hedging.",
-          "response": "To learn programming effectively, follow these steps:\n\n1. **Choose a Programming Language**: Start with Python for its simplicity and versatility. Other good choices include JavaScript for web development or Java for enterprise applications.\n\n2. **Set Clear Goals**: Define specific objectives, such as building a website, analyzing data, or developing a mobile app.\n\n3. **Take Online Courses**: Utilize platforms like Coursera, Udemy, or Codecademy for structured learning. These platforms offer courses from beginner to advanced",
+          "response": "To learn programming effectively, follow these steps:\n\n1. **Choose a Programming Language**: Start with Python, as it is user-friendly and versatile. Alternatively, choose JavaScript if you're interested in web development, or Java for enterprise applications.\n\n2. **Set Clear Goals**: Define specific objectives, such as building a simple website, creating a basic mobile app, or automating tasks with scripts.\n\n3. **Take Online Courses**: Platforms like Coursera, Udemy, and Codecademy offer structured",
           "mood_values": {
-            "warm_cold": 0.036869604140520096,
-            "confident_cautious": -0.07987558096647263,
-            "verbose_concise": -0.010033085010945797
+            "warm_cold": -0.04429025202989578,
+            "patient_irritated": 0.17762482166290283,
+            "confident_cautious": 0.3848876655101776,
+            "proactive_reluctant": 0.010952167212963104,
+            "empathetic_analytical": -0.2071390450000763,
+            "formal_casual": 0.18062271177768707,
+            "verbose_concise": 0.024565821513533592
           },
           "n_tokens": 100,
-          "n_words": 74,
-          "generation_time_s": 8.350415229797363,
+          "n_words": 70,
+          "generation_time_s": 6.6931891441345215,
           "checks": {
             "confident_cautious": {
               "expectation": "up",
               "passed": true,
-              "explanation": "delta +0.11 increased",
+              "explanation": "delta +0.61 increased",
               "metrics": {
-                "value": -0.07987558096647263,
-                "prev_value": -0.18867267668247223,
+                "value": 0.3848876655101776,
+                "prev_value": -0.22271041572093964,
                 "expectation": "up",
-                "delta": 0.1087970957159996
+                "delta": 0.6075980812311172
               }
             }
           }
@@ -218,45 +243,60 @@
       "turns": [
         {
           "user_message": "What will the stock market do next month?",
-          "response": "Predicting the exact movements of the stock market for the next month is very challenging due to the numerous factors that can influence it, including economic data releases, geopolitical events, company earnings reports, and investor sentiment. The stock market is inherently unpredictable, and short-term fluctuations can be influenced by a wide range of variables.\n\nTo make an informed assessment, financial analysts often consider various economic indicators, such as GDP growth rates, inflation levels, unemployment rates, interest rate changes, and global economic conditions. Additionally,",
+          "response": "Predicting the exact movements of the stock market is extremely challenging and often impossible with any degree of certainty. The stock market is influenced by a wide range of factors including economic indicators, company earnings reports, geopolitical events, interest rates, and investor sentiment.\n\nTo make informed decisions about the future direction of the stock market, it's important to consider multiple sources of information and analysis. Financial analysts, economists, and market strategists use various models and tools to forecast potential trends, but these predictions come with significant",
           "mood_values": {
-            "warm_cold": 0.005512940231710672,
-            "confident_cautious": -0.20714643597602844,
-            "verbose_concise": 0.0465099960565567
+            "warm_cold": -0.1564231812953949,
+            "patient_irritated": 0.06068919971585274,
+            "confident_cautious": -0.8472731709480286,
+            "proactive_reluctant": 0.33144494891166687,
+            "empathetic_analytical": -0.15180671215057373,
+            "formal_casual": 0.46717730164527893,
+            "verbose_concise": 0.3132404685020447
           },
           "n_tokens": 100,
-          "n_words": 83,
-          "generation_time_s": 7.886994123458862,
+          "n_words": 86,
+          "generation_time_s": 6.415857315063477,
           "checks": {}
         },
         {
           "user_message": "Add lots of caveats and disclaimers. Be very careful and express uncertainty. Say things like 'it depends', 'I'm not certain', 'there are many factors'.",
-          "response": "Certainly! Here’s a more cautious and uncertain outlook on the stock market for the upcoming month:\n\nPredicting the future performance of the stock market involves significant uncertainty and a multitude of factors that can influence its behavior. It's important to approach any predictions with a high degree of caution and an understanding that outcomes can vary widely based on unforeseen events and market dynamics.\n\nFirstly, the stock market is inherently unpredictable in the short term. Market movements can be influenced by a wide array of factors, including economic",
+          "response": "Certainly! Predicting the future performance of the stock market involves a high degree of uncertainty and complexity. Here are some key points to consider:\n\n1. **Market Volatility**: The stock market can be highly volatile, and its future performance is influenced by numerous unpredictable factors. It depends on how various economic indicators, such as GDP growth, inflation rates, and employment data, evolve over the coming months.\n\n2. **Geopolitical Events**: Global political developments, including trade policies, international relations, and",
           "mood_values": {
-            "warm_cold": 0.052442580461502075,
-            "confident_cautious": -0.2324226200580597,
-            "verbose_concise": 0.09241388738155365
+            "warm_cold": -0.18542276322841644,
+            "patient_irritated": 0.06039145216345787,
+            "confident_cautious": -0.5292457342147827,
+            "proactive_reluctant": 0.18919289112091064,
+            "empathetic_analytical": -0.17016302049160004,
+            "formal_casual": 0.3994797170162201,
+            "verbose_concise": 0.21996420621871948
           },
           "n_tokens": 100,
-          "n_words": 88,
-          "generation_time_s": 8.676710844039917,
+          "n_words": 77,
+          "generation_time_s": 6.868228197097778,
           "checks": {
             "confident_cautious": {
               "expectation": "down",
-              "passed": true,
-              "explanation": "delta -0.03 decreased",
+              "passed": false,
+              "explanation": "delta +0.32 did NOT decrease",
               "metrics": {
-                "value": -0.2324226200580597,
-                "prev_value": -0.20714643597602844,
+                "value": -0.5292457342147827,
+                "prev_value": -0.8472731709480286,
                 "expectation": "down",
-                "delta": -0.02527618408203125
+                "delta": 0.31802743673324585
               }
             }
           }
         }
       ],
-      "passed": true,
-      "failures": []
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "confident_cautious",
+          "expectation": "down",
+          "explanation": "delta +0.32 did NOT decrease"
+        }
+      ]
     },
     {
       "name": "System Prompt - Verbose",
@@ -264,25 +304,29 @@
       "turns": [
         {
           "user_message": "What is water?",
-          "response": "Water is a fundamental substance that plays a crucial role in the survival of all known forms of life on Earth. It is a transparent and nearly colorless chemical compound that is the most abundant substance on Earth's surface and the most widely used solvent in the world. Here’s a detailed exploration of what water is:\n\n### Chemical Composition\nWater (H2O) consists of two hydrogen atoms bonded to one oxygen atom. Each hydrogen atom shares its electron with the oxygen atom through covalent bonds, resulting",
+          "response": "Water is a fundamental substance that plays a crucial role in the existence of life on Earth. It is a transparent and nearly colorless chemical compound, with the chemical formula H2O. Water is one of the most abundant and essential molecules on Earth, and it is vital for all known forms of life.\n\n### Chemical Properties\n\nWater consists of two hydrogen atoms covalently bonded to one oxygen atom. This simple molecular structure gives water unique properties that are critical for life:\n\n1. **High Specific Heat",
           "mood_values": {
-            "warm_cold": 0.09292633831501007,
-            "confident_cautious": -0.20495565235614777,
-            "verbose_concise": 0.1710587590932846
+            "warm_cold": -0.11603137850761414,
+            "patient_irritated": 0.0435074120759964,
+            "confident_cautious": -0.1530180126428604,
+            "proactive_reluctant": 0.488950252532959,
+            "empathetic_analytical": -0.16828294098377228,
+            "formal_casual": 0.43418583273887634,
+            "verbose_concise": 0.31713974475860596
           },
           "n_tokens": 100,
           "n_words": 85,
-          "generation_time_s": 8.475669145584106,
+          "generation_time_s": 6.832921981811523,
           "checks": {
             "verbose_concise": {
               "expectation": "up",
               "passed": true,
-              "explanation": "value 0.17 > 0.1",
+              "explanation": "value 0.32 > 0.1",
               "metrics": {
-                "value": 0.1710587590932846,
+                "value": 0.31713974475860596,
                 "prev_value": null,
                 "expectation": "up",
-                "delta": 0.1710587590932846
+                "delta": 0.31713974475860596
               }
             }
           }
@@ -297,45 +341,60 @@
       "turns": [
         {
           "user_message": "What is machine learning?",
-          "response": "Machine learning is a subset of artificial intelligence (AI) that involves the development of algorithms and statistical models that enable computer systems to improve their performance on a specific task through experience or data exposure, without being explicitly programmed. Essentially, it's about building systems that can learn from data, identify patterns, and make decisions or predictions based on that learning.\n\nKey aspects of machine learning include:\n\n1. **Data**: Machine learning models are trained on large datasets to learn from examples and generalize to new, unseen data",
+          "response": "Machine learning is a subset of artificial intelligence (AI) that involves the development of algorithms and statistical models that enable computer systems to improve their performance on a specific task through experience or data exposure. The goal of machine learning is to allow computers to learn from data, identify patterns, and make decisions or predictions without being explicitly programmed to perform the task.\n\nKey aspects of machine learning include:\n\n1. **Data**: Machine learning relies heavily on data. The quality, quantity, and relevance of the data used can",
           "mood_values": {
-            "warm_cold": 0.03474387526512146,
-            "confident_cautious": -0.21885666251182556,
-            "verbose_concise": 0.10914279520511627
+            "warm_cold": -0.1344190388917923,
+            "patient_irritated": 0.09258421510457993,
+            "confident_cautious": -0.3625737428665161,
+            "proactive_reluctant": 0.5389931201934814,
+            "empathetic_analytical": -0.2313268929719925,
+            "formal_casual": 0.5105550289154053,
+            "verbose_concise": 0.3770930767059326
           },
           "n_tokens": 100,
-          "n_words": 86,
-          "generation_time_s": 8.11705231666565,
+          "n_words": 87,
+          "generation_time_s": 6.632772207260132,
           "checks": {}
         },
         {
           "user_message": "Give me a very detailed, comprehensive answer with lots of examples and explanations! I want to understand this thoroughly.",
-          "response": "Certainly! Machine learning is a powerful field within artificial intelligence (AI) that focuses on developing algorithms and statistical models that allow computer systems to improve their performance on a specific task over time by learning from data. This process enables machines to make predictions, decisions, and inferences without explicit programming for every possible scenario.\n\n### Key Concepts in Machine Learning\n\n#### 1. Supervised Learning\nSupervised learning involves training a model using labeled data. The algorithm learns from the input-output pairs and uses this knowledge",
+          "response": "Certainly! Let's delve into a comprehensive explanation of machine learning, including its various types, applications, and real-world examples.\n\n### What is Machine Learning?\n\nMachine learning is a branch of artificial intelligence (AI) that focuses on developing algorithms and statistical models that enable computer systems to improve their performance on a specific task over time. Unlike traditional programming where a programmer explicitly writes rules for a computer to follow, in machine learning, the system learns from data and adjusts its behavior accordingly.\n\n### Key Components of Machine",
           "mood_values": {
-            "warm_cold": 0.04567088186740875,
-            "confident_cautious": -0.17615316808223724,
-            "verbose_concise": 0.11878693848848343
+            "warm_cold": -0.10762620717287064,
+            "patient_irritated": 0.02068633958697319,
+            "confident_cautious": -0.2630390524864197,
+            "proactive_reluctant": 0.6340261101722717,
+            "empathetic_analytical": -0.2367280125617981,
+            "formal_casual": 0.45500531792640686,
+            "verbose_concise": 0.3385854661464691
           },
           "n_tokens": 100,
-          "n_words": 84,
-          "generation_time_s": 8.857003927230835,
+          "n_words": 86,
+          "generation_time_s": 6.954565048217773,
           "checks": {
             "verbose_concise": {
               "expectation": "up",
-              "passed": true,
-              "explanation": "delta +0.01 increased",
+              "passed": false,
+              "explanation": "delta -0.04 did NOT increase",
               "metrics": {
-                "value": 0.11878693848848343,
-                "prev_value": 0.10914279520511627,
+                "value": 0.3385854661464691,
+                "prev_value": 0.3770930767059326,
                 "expectation": "up",
-                "delta": 0.009644143283367157
+                "delta": -0.0385076105594635
               }
             }
           }
         }
       ],
-      "passed": true,
-      "failures": []
+      "passed": false,
+      "failures": [
+        {
+          "turn": 2,
+          "axis": "verbose_concise",
+          "expectation": "up",
+          "explanation": "delta -0.04 did NOT increase"
+        }
+      ]
     },
     {
       "name": "Verbose Decrease (Concise)",
@@ -345,36 +404,44 @@
           "user_message": "What is 5 + 5?",
           "response": "5 + 5 equals 10.",
           "mood_values": {
-            "warm_cold": 0.007719275541603565,
-            "confident_cautious": 0.19973152875900269,
-            "verbose_concise": -0.2573965787887573
+            "warm_cold": -0.0062769209034740925,
+            "patient_irritated": 0.3469357490539551,
+            "confident_cautious": 0.6047863364219666,
+            "proactive_reluctant": -0.4708014130592346,
+            "empathetic_analytical": 0.03290379047393799,
+            "formal_casual": 0.062298066914081573,
+            "verbose_concise": -0.320614755153656
           },
           "n_tokens": 10,
           "n_words": 5,
-          "generation_time_s": 0.8881590366363525,
+          "generation_time_s": 0.7381949424743652,
           "checks": {}
         },
         {
           "user_message": "Just give me the shortest possible answer. One word if possible. No explanations, no elaboration.",
           "response": "10",
           "mood_values": {
-            "warm_cold": -0.12214529514312744,
-            "confident_cautious": 0.3300344944000244,
-            "verbose_concise": -0.46640199422836304
+            "warm_cold": -0.11414263397455215,
+            "patient_irritated": 0.0688919648528099,
+            "confident_cautious": 0.6548556685447693,
+            "proactive_reluctant": -0.6009668111801147,
+            "empathetic_analytical": -0.2151157408952713,
+            "formal_casual": 0.0391816683113575,
+            "verbose_concise": -0.6131382584571838
           },
           "n_tokens": 3,
           "n_words": 1,
-          "generation_time_s": 0.5510761737823486,
+          "generation_time_s": 0.4010798931121826,
           "checks": {
             "verbose_concise": {
               "expectation": "down",
               "passed": true,
-              "explanation": "delta -0.21 decreased",
+              "explanation": "delta -0.29 decreased",
               "metrics": {
-                "value": -0.46640199422836304,
-                "prev_value": -0.2573965787887573,
+                "value": -0.6131382584571838,
+                "prev_value": -0.320614755153656,
                 "expectation": "down",
-                "delta": -0.2090054154396057
+                "delta": -0.29252350330352783
               }
             }
           }
@@ -386,7 +453,7 @@
   ],
   "summary": {
     "total": 9,
-    "passed": 8,
-    "failed": 1
+    "passed": 7,
+    "failed": 2
   }
 }
