@@ -125,7 +125,8 @@ def calibrate_set(
         top_k_logprobs_list = []
         gen_times = []
 
-        for question in axis_questions:
+        for q_idx, question in enumerate(axis_questions):
+            logger.info(f"    Q{q_idx+1}/{len(axis_questions)}: {question[:50]}...")
             # Positive pole
             messages_pos = [
                 {"role": "system", "content": style_pos},
