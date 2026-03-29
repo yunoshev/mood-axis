@@ -1,0 +1,4550 @@
+{
+  "axes": [
+    "warm_cold",
+    "confident_cautious",
+    "empathetic_analytical",
+    "formal_casual",
+    "verbose_concise"
+  ],
+  "axis_labels": {
+    "warm_cold": [
+      "Warm",
+      "Cold"
+    ],
+    "confident_cautious": [
+      "Confident",
+      "Cautious"
+    ],
+    "empathetic_analytical": [
+      "Empathetic",
+      "Analytical"
+    ],
+    "formal_casual": [
+      "Formal",
+      "Casual"
+    ],
+    "verbose_concise": [
+      "Verbose",
+      "Concise"
+    ]
+  },
+  "model_order": [
+    "qwen3.5_9b",
+    "gemma3_12b",
+    "phi4",
+    "deepseek_r1_14b",
+    "ministral3_8b",
+    "gpt_oss_20b",
+    "qwen_7b",
+    "llama_8b",
+    "gemma_9b",
+    "mistral_7b",
+    "qwen3_8b",
+    "qwen_7b_base",
+    "llama_8b_base",
+    "gemma_9b_base",
+    "mistral_7b_base",
+    "command_r7b",
+    "exaone_7b",
+    "falcon_h1_7b",
+    "glm_z1_9b",
+    "granite_8b",
+    "internlm3_8b",
+    "nemotron_h_8b",
+    "olmo2_13b",
+    "yi_9b",
+    "smollm3_3b",
+    "qwen2.5_0.5b",
+    "qwen_1.5b",
+    "qwen2.5_3b",
+    "qwen3_0.6b",
+    "qwen3_1.7b",
+    "qwen3_4b",
+    "qwen3.5_0.8b",
+    "qwen3.5_2b",
+    "qwen3.5_4b",
+    "falcon_h1_0.5b",
+    "falcon_h1_1.5b",
+    "smollm_1.7b",
+    "granite_2b"
+  ],
+  "groups": {
+    "paper": {
+      "label": "Paper Models (main text)",
+      "models": [
+        "qwen3.5_9b",
+        "gemma3_12b",
+        "phi4",
+        "deepseek_r1_14b",
+        "ministral3_8b"
+      ]
+    },
+    "paper_extra": {
+      "label": "Paper Extra",
+      "models": [
+        "gpt_oss_20b"
+      ]
+    },
+    "legacy": {
+      "label": "Legacy Instruct",
+      "models": [
+        "qwen_7b",
+        "llama_8b",
+        "gemma_9b",
+        "mistral_7b",
+        "qwen3_8b"
+      ]
+    },
+    "base": {
+      "label": "Base Models",
+      "models": [
+        "qwen_7b_base",
+        "llama_8b_base",
+        "gemma_9b_base",
+        "mistral_7b_base"
+      ]
+    },
+    "diverse": {
+      "label": "Diverse Architectures",
+      "models": [
+        "command_r7b",
+        "exaone_7b",
+        "falcon_h1_7b",
+        "glm_z1_9b",
+        "granite_8b",
+        "internlm3_8b",
+        "nemotron_h_8b",
+        "olmo2_13b",
+        "yi_9b",
+        "smollm3_3b"
+      ]
+    },
+    "qwen2.5_chain": {
+      "label": "Qwen 2.5 Scaling",
+      "models": [
+        "qwen2.5_0.5b",
+        "qwen_1.5b",
+        "qwen2.5_3b",
+        "qwen_7b"
+      ]
+    },
+    "qwen3_chain": {
+      "label": "Qwen 3 Scaling",
+      "models": [
+        "qwen3_0.6b",
+        "qwen3_1.7b",
+        "qwen3_4b",
+        "qwen3_8b"
+      ]
+    },
+    "qwen3.5_chain": {
+      "label": "Qwen 3.5 Scaling",
+      "models": [
+        "qwen3.5_0.8b",
+        "qwen3.5_2b",
+        "qwen3.5_4b",
+        "qwen3.5_9b"
+      ]
+    },
+    "falcon_h1_chain": {
+      "label": "Falcon-H1 Scaling",
+      "models": [
+        "falcon_h1_0.5b",
+        "falcon_h1_1.5b",
+        "falcon_h1_7b"
+      ]
+    },
+    "small": {
+      "label": "Other Small",
+      "models": [
+        "smollm_1.7b",
+        "granite_2b"
+      ]
+    }
+  },
+  "models": {
+    "qwen3.5_9b": {
+      "name": "Qwen3.5 9B",
+      "org": "Alibaba",
+      "params": "9.0B",
+      "color": "#E9C46A",
+      "fingerprint": {
+        "warm_cold": -0.188,
+        "confident_cautious": -0.128,
+        "empathetic_analytical": -0.094,
+        "formal_casual": 0.091,
+        "verbose_concise": -0.105
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.044,
+        "confident_cautious": 0.089,
+        "empathetic_analytical": 0.052,
+        "formal_casual": 0.046,
+        "verbose_concise": 0.162
+      },
+      "stability": {
+        "icc": 0.8521,
+        "icc_per_axis": {
+          "warm_cold": 0.9267,
+          "confident_cautious": 0.8431,
+          "empathetic_analytical": 0.865,
+          "formal_casual": 0.7581,
+          "verbose_concise": 0.8678
+        },
+        "cosine": {
+          "warm_cold": 0.9267,
+          "confident_cautious": 0.8431,
+          "empathetic_analytical": 0.865,
+          "formal_casual": 0.7581,
+          "verbose_concise": 0.8678
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00951,
+          "effect": 0.1,
+          "leakage": 0.76,
+          "alpha_means": {
+            "-5.0": -0.122,
+            "-2.0": -0.112,
+            "-1.0": -0.109,
+            "0.0": -0.096,
+            "1.0": -0.096,
+            "2.0": -0.084,
+            "5.0": -0.021
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00535,
+          "effect": 0.063,
+          "leakage": 0.49,
+          "alpha_means": {
+            "-5.0": -0.139,
+            "-2.0": -0.098,
+            "-1.0": -0.096,
+            "0.0": -0.104,
+            "1.0": -0.098,
+            "2.0": -0.093,
+            "5.0": -0.077
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00644,
+          "effect": 0.065,
+          "leakage": 0.84,
+          "alpha_means": {
+            "-5.0": -0.118,
+            "-2.0": -0.104,
+            "-1.0": -0.102,
+            "0.0": -0.085,
+            "1.0": -0.091,
+            "2.0": -0.078,
+            "5.0": -0.054
+          }
+        },
+        "formal_casual": {
+          "slope": 0.01319,
+          "effect": 0.136,
+          "leakage": 0.61,
+          "alpha_means": {
+            "-5.0": -0.053,
+            "-2.0": 0.012,
+            "-1.0": 0.031,
+            "0.0": 0.034,
+            "1.0": 0.046,
+            "2.0": 0.06,
+            "5.0": 0.084
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00044,
+          "effect": 0.035,
+          "leakage": 3.41,
+          "alpha_means": {
+            "-5.0": -0.31,
+            "-2.0": -0.282,
+            "-1.0": -0.316,
+            "0.0": -0.282,
+            "1.0": -0.301,
+            "2.0": -0.311,
+            "5.0": -0.296
+          }
+        }
+      },
+      "steering_total": 0.399,
+      "sweep": {
+        "best_layer": 18,
+        "best_layer_pct": 56.2,
+        "best_effect": 1.2203,
+        "n_layers": 32
+      }
+    },
+    "gemma3_12b": {
+      "name": "Gemma 3 12B",
+      "org": "Google",
+      "params": "12B",
+      "color": "#22D3EE",
+      "fingerprint": {
+        "warm_cold": -0.307,
+        "confident_cautious": 0.071,
+        "empathetic_analytical": 0.032,
+        "formal_casual": 0.034,
+        "verbose_concise": 0.174
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.127,
+        "confident_cautious": 0.077,
+        "empathetic_analytical": 0.267,
+        "formal_casual": 0.142,
+        "verbose_concise": 0.209
+      },
+      "stability": {
+        "icc": 0.8055,
+        "icc_per_axis": {
+          "warm_cold": 0.8612,
+          "confident_cautious": 0.5946,
+          "empathetic_analytical": 0.8763,
+          "formal_casual": 0.8256,
+          "verbose_concise": 0.87
+        },
+        "cosine": {
+          "warm_cold": 0.8612,
+          "confident_cautious": 0.5946,
+          "empathetic_analytical": 0.8763,
+          "formal_casual": 0.8256,
+          "verbose_concise": 0.87
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00014,
+          "effect": 0.002,
+          "leakage": 0.4,
+          "alpha_means": {
+            "-5.0": -0.114,
+            "-2.0": -0.112,
+            "-1.0": -0.112,
+            "0.0": -0.112,
+            "1.0": -0.112,
+            "2.0": -0.112,
+            "5.0": -0.112
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00022,
+          "effect": 0.004,
+          "leakage": 0.76,
+          "alpha_means": {
+            "-5.0": -0.102,
+            "-2.0": -0.103,
+            "-1.0": -0.103,
+            "0.0": -0.103,
+            "1.0": -0.103,
+            "2.0": -0.103,
+            "5.0": -0.099
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00064,
+          "effect": 0.008,
+          "leakage": 0.54,
+          "alpha_means": {
+            "-5.0": 0.329,
+            "-2.0": 0.337,
+            "-1.0": 0.337,
+            "0.0": 0.337,
+            "1.0": 0.337,
+            "2.0": 0.337,
+            "5.0": 0.337
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00044,
+          "effect": 0.005,
+          "leakage": 1.11,
+          "alpha_means": {
+            "-5.0": -0.173,
+            "-2.0": -0.173,
+            "-1.0": -0.173,
+            "0.0": -0.173,
+            "1.0": -0.173,
+            "2.0": -0.173,
+            "5.0": -0.167
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": -0.186,
+            "-2.0": -0.186,
+            "-1.0": -0.186,
+            "0.0": -0.186,
+            "1.0": -0.186,
+            "2.0": -0.186,
+            "5.0": -0.186
+          }
+        }
+      },
+      "steering_total": 0.018,
+      "sweep": {
+        "best_layer": 47,
+        "best_layer_pct": 97.9,
+        "best_effect": 0.5831,
+        "n_layers": 48
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "phi4": {
+      "name": "Phi-4 14B",
+      "org": "Microsoft",
+      "params": "14B",
+      "color": "#7B68EE",
+      "fingerprint": {
+        "warm_cold": -0.256,
+        "confident_cautious": -0.162,
+        "empathetic_analytical": -0.239,
+        "formal_casual": 0.214,
+        "verbose_concise": -0.327
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.118,
+        "confident_cautious": 0.13,
+        "empathetic_analytical": 0.049,
+        "formal_casual": 0.112,
+        "verbose_concise": 0.217
+      },
+      "stability": {
+        "icc": 0.7986,
+        "icc_per_axis": {
+          "warm_cold": 0.9176,
+          "confident_cautious": 0.6895,
+          "empathetic_analytical": 0.7534,
+          "formal_casual": 0.7587,
+          "verbose_concise": 0.8738
+        },
+        "cosine": {
+          "warm_cold": 0.9176,
+          "confident_cautious": 0.6895,
+          "empathetic_analytical": 0.7534,
+          "formal_casual": 0.7587,
+          "verbose_concise": 0.8738
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -4e-05,
+          "effect": 0.035,
+          "leakage": 8.53,
+          "alpha_means": {
+            "-5.0": -0.072,
+            "-2.0": -0.098,
+            "-1.0": -0.073,
+            "0.0": -0.072,
+            "1.0": -0.071,
+            "2.0": -0.063,
+            "5.0": -0.087
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00036,
+          "effect": 0.024,
+          "leakage": 3.49,
+          "alpha_means": {
+            "-5.0": -0.286,
+            "-2.0": -0.285,
+            "-1.0": -0.291,
+            "0.0": -0.302,
+            "1.0": -0.278,
+            "2.0": -0.282,
+            "5.0": -0.286
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.0016,
+          "effect": 0.015,
+          "leakage": 2.62,
+          "alpha_means": {
+            "-5.0": -0.246,
+            "-2.0": -0.241,
+            "-1.0": -0.242,
+            "0.0": -0.242,
+            "1.0": -0.237,
+            "2.0": -0.233,
+            "5.0": -0.231
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00335,
+          "effect": 0.034,
+          "leakage": 0.35,
+          "alpha_means": {
+            "-5.0": 0.084,
+            "-2.0": 0.085,
+            "-1.0": 0.072,
+            "0.0": 0.055,
+            "1.0": 0.059,
+            "2.0": 0.051,
+            "5.0": 0.06
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00275,
+          "effect": 0.043,
+          "leakage": 0.95,
+          "alpha_means": {
+            "-5.0": -0.195,
+            "-2.0": -0.179,
+            "-1.0": -0.158,
+            "0.0": -0.151,
+            "1.0": -0.152,
+            "2.0": -0.155,
+            "5.0": -0.173
+          }
+        }
+      },
+      "steering_total": 0.151,
+      "sweep": {
+        "best_layer": 19,
+        "best_layer_pct": 47.5,
+        "best_effect": 1.0423,
+        "n_layers": 40
+      }
+    },
+    "deepseek_r1_14b": {
+      "name": "DeepSeek-R1 14B",
+      "org": "DeepSeek",
+      "params": "14B",
+      "color": "#F43F5E",
+      "fingerprint": {
+        "warm_cold": 0.602,
+        "confident_cautious": 0.482,
+        "empathetic_analytical": 0.287,
+        "formal_casual": -0.524,
+        "verbose_concise": -0.573
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.222,
+        "confident_cautious": 0.183,
+        "empathetic_analytical": 0.052,
+        "formal_casual": 0.136,
+        "verbose_concise": 0.237
+      },
+      "stability": {
+        "icc": 0.7894,
+        "icc_per_axis": {
+          "warm_cold": 0.8719,
+          "confident_cautious": 0.4312,
+          "empathetic_analytical": 0.9216,
+          "formal_casual": 0.8119,
+          "verbose_concise": 0.9105
+        },
+        "cosine": {
+          "warm_cold": 0.8719,
+          "confident_cautious": 0.4312,
+          "empathetic_analytical": 0.9216,
+          "formal_casual": 0.8119,
+          "verbose_concise": 0.9105
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00226,
+          "effect": 0.056,
+          "leakage": 1.12,
+          "alpha_means": {
+            "-5.0": 0.67,
+            "-2.0": 0.648,
+            "-1.0": 0.669,
+            "0.0": 0.661,
+            "1.0": 0.672,
+            "2.0": 0.704,
+            "5.0": 0.674
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00109,
+          "effect": 0.042,
+          "leakage": 1.29,
+          "alpha_means": {
+            "-5.0": 0.611,
+            "-2.0": 0.62,
+            "-1.0": 0.596,
+            "0.0": 0.578,
+            "1.0": 0.6,
+            "2.0": 0.583,
+            "5.0": 0.612
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00281,
+          "effect": 0.034,
+          "leakage": 1.53,
+          "alpha_means": {
+            "-5.0": 0.268,
+            "-2.0": 0.257,
+            "-1.0": 0.272,
+            "0.0": 0.284,
+            "1.0": 0.284,
+            "2.0": 0.291,
+            "5.0": 0.286
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00589,
+          "effect": 0.062,
+          "leakage": 0.54,
+          "alpha_means": {
+            "-5.0": -0.481,
+            "-2.0": -0.474,
+            "-1.0": -0.468,
+            "0.0": -0.478,
+            "1.0": -0.464,
+            "2.0": -0.456,
+            "5.0": -0.418
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00287,
+          "effect": 0.059,
+          "leakage": 0.49,
+          "alpha_means": {
+            "-5.0": -0.665,
+            "-2.0": -0.702,
+            "-1.0": -0.701,
+            "0.0": -0.687,
+            "1.0": -0.692,
+            "2.0": -0.642,
+            "5.0": -0.656
+          }
+        }
+      },
+      "steering_total": 0.254,
+      "sweep": {
+        "best_layer": 18,
+        "best_layer_pct": 37.5,
+        "best_effect": 1.8633,
+        "n_layers": 48
+      }
+    },
+    "ministral3_8b": {
+      "name": "Ministral 3 8B",
+      "org": "Mistral AI",
+      "params": "8.5B",
+      "color": "#7C3AED",
+      "fingerprint": {
+        "warm_cold": -0.214,
+        "confident_cautious": -0.183,
+        "empathetic_analytical": -0.24,
+        "formal_casual": 0.01,
+        "verbose_concise": 0.196
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.041,
+        "confident_cautious": 0.08,
+        "empathetic_analytical": 0.043,
+        "formal_casual": 0.04,
+        "verbose_concise": 0.105
+      },
+      "stability": {
+        "icc": 0.8566,
+        "icc_per_axis": {
+          "warm_cold": 0.9135,
+          "confident_cautious": 0.7533,
+          "empathetic_analytical": 0.9063,
+          "formal_casual": 0.8897,
+          "verbose_concise": 0.8202
+        },
+        "cosine": {
+          "warm_cold": 0.9135,
+          "confident_cautious": 0.7533,
+          "empathetic_analytical": 0.9063,
+          "formal_casual": 0.8897,
+          "verbose_concise": 0.8202
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00398,
+          "effect": 0.042,
+          "leakage": 0.44,
+          "alpha_means": {
+            "-5.0": -0.223,
+            "-2.0": -0.201,
+            "-1.0": -0.204,
+            "0.0": -0.198,
+            "1.0": -0.186,
+            "2.0": -0.197,
+            "5.0": -0.181
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00235,
+          "effect": 0.034,
+          "leakage": 0.2,
+          "alpha_means": {
+            "-5.0": -0.195,
+            "-2.0": -0.164,
+            "-1.0": -0.181,
+            "0.0": -0.161,
+            "1.0": -0.162,
+            "2.0": -0.165,
+            "5.0": -0.17
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00063,
+          "effect": 0.013,
+          "leakage": 0.98,
+          "alpha_means": {
+            "-5.0": -0.239,
+            "-2.0": -0.245,
+            "-1.0": -0.234,
+            "0.0": -0.239,
+            "1.0": -0.232,
+            "2.0": -0.232,
+            "5.0": -0.237
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00277,
+          "effect": 0.024,
+          "leakage": 0.47,
+          "alpha_means": {
+            "-5.0": -0.003,
+            "-2.0": 0.0,
+            "-1.0": 0.003,
+            "0.0": 0.003,
+            "1.0": 0.01,
+            "2.0": 0.02,
+            "5.0": 0.021
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00127,
+          "effect": 0.048,
+          "leakage": 1.35,
+          "alpha_means": {
+            "-5.0": 0.145,
+            "-2.0": 0.188,
+            "-1.0": 0.172,
+            "0.0": 0.176,
+            "1.0": 0.18,
+            "2.0": 0.16,
+            "5.0": 0.139
+          }
+        }
+      },
+      "steering_total": 0.161
+    },
+    "gpt_oss_20b": {
+      "name": "GPT-OSS 20B",
+      "org": "OpenAI",
+      "params": "20B",
+      "color": "#10A37F",
+      "fingerprint": {
+        "warm_cold": -0.553,
+        "confident_cautious": 0.802,
+        "verbose_concise": 0.702,
+        "empathetic_analytical": -0.076,
+        "formal_casual": 0.482
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.142,
+        "confident_cautious": 0.154,
+        "verbose_concise": 0.145,
+        "empathetic_analytical": 0.088,
+        "formal_casual": 0.102
+      },
+      "stability": {
+        "icc": 0.5344,
+        "icc_per_axis": {
+          "warm_cold": 0.4957,
+          "confident_cautious": 0.1811,
+          "empathetic_analytical": 0.5528,
+          "formal_casual": 0.5213,
+          "verbose_concise": 0.9209
+        },
+        "cosine": {
+          "warm_cold": 0.4957,
+          "confident_cautious": 0.1811,
+          "empathetic_analytical": 0.5528,
+          "formal_casual": 0.5213,
+          "verbose_concise": 0.9209
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.0017,
+          "effect": 0.025,
+          "leakage": 0.84,
+          "alpha_means": {
+            "-5.0": -0.288,
+            "-2.0": -0.302,
+            "-1.0": -0.298,
+            "0.0": -0.288,
+            "1.0": -0.293,
+            "2.0": -0.281,
+            "5.0": -0.277
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00221,
+          "effect": 0.044,
+          "leakage": 0.28,
+          "alpha_means": {
+            "-5.0": 0.309,
+            "-2.0": 0.28,
+            "-1.0": 0.275,
+            "0.0": 0.265,
+            "1.0": 0.272,
+            "2.0": 0.281,
+            "5.0": 0.283
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00084,
+          "effect": 0.03,
+          "leakage": 1.1,
+          "alpha_means": {
+            "-5.0": 0.345,
+            "-2.0": 0.347,
+            "-1.0": 0.335,
+            "0.0": 0.325,
+            "1.0": 0.344,
+            "2.0": 0.344,
+            "5.0": 0.355
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00224,
+          "effect": 0.033,
+          "leakage": 0.57,
+          "alpha_means": {
+            "-5.0": 0.027,
+            "-2.0": 0.036,
+            "-1.0": 0.038,
+            "0.0": 0.04,
+            "1.0": 0.054,
+            "2.0": 0.06,
+            "5.0": 0.041
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00062,
+          "effect": 0.01,
+          "leakage": 3.72,
+          "alpha_means": {
+            "-5.0": -0.247,
+            "-2.0": -0.244,
+            "-1.0": -0.244,
+            "0.0": -0.238,
+            "1.0": -0.236,
+            "2.0": -0.24,
+            "5.0": -0.242
+          }
+        }
+      },
+      "steering_total": 0.142,
+      "sweep": {
+        "best_layer": 16,
+        "best_layer_pct": 66.7,
+        "best_effect": 0.4311,
+        "n_layers": 24
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0.0097,
+          "delta": 0.098
+        },
+        "confident_cautious": {
+          "slope": -0.018,
+          "delta": -0.144
+        },
+        "empathetic_analytical": {
+          "slope": 0.0248,
+          "delta": 0.162
+        },
+        "formal_casual": {
+          "slope": -0.0104,
+          "delta": -0.103
+        },
+        "verbose_concise": {
+          "slope": 0.0028,
+          "delta": -0.006
+        }
+      },
+      "drift_mean": 0.103
+    },
+    "qwen_7b": {
+      "name": "Qwen 2.5 7B",
+      "org": "Alibaba",
+      "params": "7.6B",
+      "color": "#FF6B35",
+      "fingerprint": {
+        "warm_cold": -0.217,
+        "confident_cautious": 0.002,
+        "empathetic_analytical": -0.213,
+        "formal_casual": 0.171,
+        "verbose_concise": 0.189
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.056,
+        "confident_cautious": 0.218,
+        "empathetic_analytical": 0.091,
+        "formal_casual": 0.051,
+        "verbose_concise": 0.158
+      },
+      "stability": {
+        "icc": 0.8009,
+        "icc_per_axis": {
+          "warm_cold": 0.875,
+          "confident_cautious": 0.6323,
+          "empathetic_analytical": 0.6701,
+          "formal_casual": 0.897,
+          "verbose_concise": 0.9299
+        },
+        "cosine": {
+          "warm_cold": 0.875,
+          "confident_cautious": 0.6323,
+          "empathetic_analytical": 0.6701,
+          "formal_casual": 0.897,
+          "verbose_concise": 0.9299
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -6e-05,
+          "effect": 0.005,
+          "leakage": 5.29,
+          "alpha_means": {
+            "-5.0": -0.179,
+            "-2.0": -0.178,
+            "-1.0": -0.178,
+            "0.0": -0.179,
+            "1.0": -0.176,
+            "2.0": -0.181,
+            "5.0": -0.178
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00223,
+          "effect": 0.04,
+          "leakage": 0.05,
+          "alpha_means": {
+            "-5.0": 0.22,
+            "-2.0": 0.22,
+            "-1.0": 0.223,
+            "0.0": 0.246,
+            "1.0": 0.26,
+            "2.0": 0.247,
+            "5.0": 0.229
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.0001,
+          "effect": 0.011,
+          "leakage": 7.96,
+          "alpha_means": {
+            "-5.0": -0.07,
+            "-2.0": -0.063,
+            "-1.0": -0.063,
+            "0.0": -0.059,
+            "1.0": -0.059,
+            "2.0": -0.064,
+            "5.0": -0.069
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00044,
+          "effect": 0.014,
+          "leakage": 2.9,
+          "alpha_means": {
+            "-5.0": 0.257,
+            "-2.0": 0.245,
+            "-1.0": 0.244,
+            "0.0": 0.243,
+            "1.0": 0.244,
+            "2.0": 0.243,
+            "5.0": 0.252
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00019,
+          "effect": 0.041,
+          "leakage": 5.67,
+          "alpha_means": {
+            "-5.0": -0.085,
+            "-2.0": -0.122,
+            "-1.0": -0.126,
+            "0.0": -0.123,
+            "1.0": -0.105,
+            "2.0": -0.09,
+            "5.0": -0.104
+          }
+        }
+      },
+      "steering_total": 0.11,
+      "sweep": {
+        "best_layer": 23,
+        "best_layer_pct": 82.1,
+        "best_effect": 1.5028,
+        "n_layers": 28
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "llama_8b": {
+      "name": "Llama 3.1 8B",
+      "org": "Meta",
+      "params": "8.0B",
+      "color": "#3B82F6",
+      "fingerprint": {
+        "warm_cold": -0.28,
+        "confident_cautious": 0.267,
+        "empathetic_analytical": -0.128,
+        "formal_casual": 0.123,
+        "verbose_concise": -0.02
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.041,
+        "confident_cautious": 0.059,
+        "empathetic_analytical": 0.028,
+        "formal_casual": 0.024,
+        "verbose_concise": 0.063
+      },
+      "stability": {
+        "icc": 0.8259,
+        "icc_per_axis": {
+          "warm_cold": 0.8873,
+          "confident_cautious": 0.6406,
+          "empathetic_analytical": 0.8594,
+          "formal_casual": 0.8189,
+          "verbose_concise": 0.9232
+        },
+        "cosine": {
+          "warm_cold": 0.8873,
+          "confident_cautious": 0.6406,
+          "empathetic_analytical": 0.8594,
+          "formal_casual": 0.8189,
+          "verbose_concise": 0.9232
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00223,
+          "effect": 0.028,
+          "leakage": 0.31,
+          "alpha_means": {
+            "-5.0": -0.232,
+            "-2.0": -0.213,
+            "-1.0": -0.209,
+            "0.0": -0.215,
+            "1.0": -0.211,
+            "2.0": -0.214,
+            "5.0": -0.204
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00049,
+          "effect": 0.006,
+          "leakage": 0.55,
+          "alpha_means": {
+            "-5.0": 0.289,
+            "-2.0": 0.291,
+            "-1.0": 0.293,
+            "0.0": 0.295,
+            "1.0": 0.295,
+            "2.0": 0.292,
+            "5.0": 0.294
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00025,
+          "effect": 0.005,
+          "leakage": 2.48,
+          "alpha_means": {
+            "-5.0": -0.106,
+            "-2.0": -0.105,
+            "-1.0": -0.105,
+            "0.0": -0.106,
+            "1.0": -0.107,
+            "2.0": -0.107,
+            "5.0": -0.102
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00077,
+          "effect": 0.008,
+          "leakage": 0.71,
+          "alpha_means": {
+            "-5.0": 0.089,
+            "-2.0": 0.091,
+            "-1.0": 0.09,
+            "0.0": 0.093,
+            "1.0": 0.091,
+            "2.0": 0.094,
+            "5.0": 0.097
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00211,
+          "effect": 0.024,
+          "leakage": 0.19,
+          "alpha_means": {
+            "-5.0": -0.135,
+            "-2.0": -0.126,
+            "-1.0": -0.116,
+            "0.0": -0.12,
+            "1.0": -0.113,
+            "2.0": -0.123,
+            "5.0": -0.111
+          }
+        }
+      },
+      "steering_total": 0.07,
+      "sweep": {
+        "best_layer": 14,
+        "best_layer_pct": 43.8,
+        "best_effect": 0.7955,
+        "n_layers": 32
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "gemma_9b": {
+      "name": "Gemma 2 9B",
+      "org": "Google",
+      "params": "9.2B",
+      "color": "#4285F4",
+      "fingerprint": {
+        "warm_cold": 0.281,
+        "confident_cautious": -0.721,
+        "empathetic_analytical": -0.473,
+        "formal_casual": 0.024,
+        "verbose_concise": 0.992
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.272,
+        "confident_cautious": 0.317,
+        "empathetic_analytical": 0.17,
+        "formal_casual": 0.168,
+        "verbose_concise": 0.034
+      },
+      "stability": {
+        "icc": 0.8418,
+        "icc_per_axis": {
+          "warm_cold": 0.8909,
+          "confident_cautious": 0.7353,
+          "empathetic_analytical": 0.807,
+          "formal_casual": 0.913,
+          "verbose_concise": 0.8628
+        },
+        "cosine": {
+          "warm_cold": 0.8909,
+          "confident_cautious": 0.7353,
+          "empathetic_analytical": 0.807,
+          "formal_casual": 0.913,
+          "verbose_concise": 0.8628
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00044,
+          "effect": 0.023,
+          "leakage": 1.74,
+          "alpha_means": {
+            "-5.0": 0.278,
+            "-2.0": 0.293,
+            "-1.0": 0.292,
+            "0.0": 0.291,
+            "1.0": 0.3,
+            "2.0": 0.301,
+            "5.0": 0.278
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00399,
+          "effect": 0.044,
+          "leakage": 0.75,
+          "alpha_means": {
+            "-5.0": -0.489,
+            "-2.0": -0.499,
+            "-1.0": -0.489,
+            "0.0": -0.489,
+            "1.0": -0.478,
+            "2.0": -0.47,
+            "5.0": -0.455
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00041,
+          "effect": 0.012,
+          "leakage": 2.01,
+          "alpha_means": {
+            "-5.0": -0.357,
+            "-2.0": -0.348,
+            "-1.0": -0.358,
+            "0.0": -0.357,
+            "1.0": -0.36,
+            "2.0": -0.357,
+            "5.0": -0.348
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00033,
+          "effect": 0.013,
+          "leakage": 1.48,
+          "alpha_means": {
+            "-5.0": 0.05,
+            "-2.0": 0.051,
+            "-1.0": 0.053,
+            "0.0": 0.057,
+            "1.0": 0.056,
+            "2.0": 0.055,
+            "5.0": 0.044
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00143,
+          "effect": 0.021,
+          "leakage": 0.58,
+          "alpha_means": {
+            "-5.0": 0.958,
+            "-2.0": 0.964,
+            "-1.0": 0.964,
+            "0.0": 0.961,
+            "1.0": 0.961,
+            "2.0": 0.959,
+            "5.0": 0.943
+          }
+        }
+      },
+      "steering_total": 0.113,
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "mistral_7b": {
+      "name": "Mistral 7B v0.3",
+      "org": "Mistral AI",
+      "params": "7.2B",
+      "color": "#A855F7",
+      "fingerprint": {
+        "warm_cold": -0.49,
+        "confident_cautious": 0.249,
+        "empathetic_analytical": -0.225,
+        "formal_casual": 0.026,
+        "verbose_concise": -0.331
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.05,
+        "confident_cautious": 0.022,
+        "empathetic_analytical": 0.007,
+        "formal_casual": 0.008,
+        "verbose_concise": 0.03
+      },
+      "stability": {
+        "icc": 0.7419,
+        "icc_per_axis": {
+          "warm_cold": 0.8411,
+          "confident_cautious": 0.5962,
+          "empathetic_analytical": 0.6849,
+          "formal_casual": 0.7615,
+          "verbose_concise": 0.8256
+        },
+        "cosine": {
+          "warm_cold": 0.8411,
+          "confident_cautious": 0.5962,
+          "empathetic_analytical": 0.6849,
+          "formal_casual": 0.7615,
+          "verbose_concise": 0.8256
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.04571,
+          "effect": 0.52,
+          "leakage": 0.07,
+          "alpha_means": {
+            "-5.0": -0.522,
+            "-2.0": -0.497,
+            "-1.0": -0.483,
+            "0.0": -0.467,
+            "1.0": -0.474,
+            "2.0": -0.431,
+            "5.0": -0.002
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00195,
+          "effect": 0.021,
+          "leakage": 0.34,
+          "alpha_means": {
+            "-5.0": 0.243,
+            "-2.0": 0.249,
+            "-1.0": 0.25,
+            "0.0": 0.254,
+            "1.0": 0.254,
+            "2.0": 0.253,
+            "5.0": 0.263
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.0046,
+          "effect": 0.048,
+          "leakage": 2.56,
+          "alpha_means": {
+            "-5.0": -0.231,
+            "-2.0": -0.231,
+            "-1.0": -0.228,
+            "0.0": -0.224,
+            "1.0": -0.223,
+            "2.0": -0.216,
+            "5.0": -0.183
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00722,
+          "effect": 0.075,
+          "leakage": 1.54,
+          "alpha_means": {
+            "-5.0": -0.035,
+            "-2.0": 0.01,
+            "-1.0": 0.017,
+            "0.0": 0.024,
+            "1.0": 0.029,
+            "2.0": 0.032,
+            "5.0": 0.041
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00395,
+          "effect": 0.037,
+          "leakage": 0.24,
+          "alpha_means": {
+            "-5.0": -0.365,
+            "-2.0": -0.352,
+            "-1.0": -0.339,
+            "0.0": -0.336,
+            "1.0": -0.334,
+            "2.0": -0.328,
+            "5.0": -0.329
+          }
+        }
+      },
+      "steering_total": 0.702,
+      "sweep": {
+        "best_layer": 14,
+        "best_layer_pct": 43.8,
+        "best_effect": 1.1568,
+        "n_layers": 32
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0.008,
+          "delta": 0.179
+        },
+        "confident_cautious": {
+          "slope": -0.0107,
+          "delta": -0.239
+        },
+        "empathetic_analytical": {
+          "slope": 0.0173,
+          "delta": 0.353
+        },
+        "formal_casual": {
+          "slope": -0.0093,
+          "delta": -0.165
+        },
+        "verbose_concise": {
+          "slope": -0.0202,
+          "delta": -0.251
+        }
+      },
+      "drift_mean": 0.237
+    },
+    "qwen3_8b": {
+      "name": "Qwen3 8B",
+      "org": "Alibaba",
+      "params": "8.2B",
+      "color": "#FF4500",
+      "fingerprint": {
+        "warm_cold": -0.186,
+        "confident_cautious": -0.001,
+        "empathetic_analytical": -0.334,
+        "formal_casual": 0.229,
+        "verbose_concise": 0.308
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.082,
+        "confident_cautious": 0.203,
+        "empathetic_analytical": 0.086,
+        "formal_casual": 0.069,
+        "verbose_concise": 0.246
+      },
+      "stability": {
+        "icc": 0.8568,
+        "icc_per_axis": {
+          "warm_cold": 0.9162,
+          "confident_cautious": 0.6319,
+          "empathetic_analytical": 0.8394,
+          "formal_casual": 0.9425,
+          "verbose_concise": 0.954
+        },
+        "cosine": {
+          "warm_cold": 0.9162,
+          "confident_cautious": 0.6319,
+          "empathetic_analytical": 0.8394,
+          "formal_casual": 0.9425,
+          "verbose_concise": 0.954
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00147,
+          "effect": 0.018,
+          "leakage": 0.7,
+          "alpha_means": {
+            "-5.0": -0.153,
+            "-2.0": -0.15,
+            "-1.0": -0.151,
+            "0.0": -0.156,
+            "1.0": -0.148,
+            "2.0": -0.144,
+            "5.0": -0.138
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00164,
+          "effect": 0.034,
+          "leakage": 0.61,
+          "alpha_means": {
+            "-5.0": 0.309,
+            "-2.0": 0.295,
+            "-1.0": 0.282,
+            "0.0": 0.275,
+            "1.0": 0.298,
+            "2.0": 0.281,
+            "5.0": 0.292
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00104,
+          "effect": 0.01,
+          "leakage": 0.92,
+          "alpha_means": {
+            "-5.0": -0.302,
+            "-2.0": -0.301,
+            "-1.0": -0.295,
+            "0.0": -0.3,
+            "1.0": -0.297,
+            "2.0": -0.294,
+            "5.0": -0.292
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00016,
+          "effect": 0.014,
+          "leakage": 3.55,
+          "alpha_means": {
+            "-5.0": 0.121,
+            "-2.0": 0.113,
+            "-1.0": 0.113,
+            "0.0": 0.123,
+            "1.0": 0.127,
+            "2.0": 0.122,
+            "5.0": 0.116
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00116,
+          "effect": 0.036,
+          "leakage": 0.39,
+          "alpha_means": {
+            "-5.0": -0.075,
+            "-2.0": -0.058,
+            "-1.0": -0.049,
+            "0.0": -0.052,
+            "1.0": -0.065,
+            "2.0": -0.06,
+            "5.0": -0.085
+          }
+        }
+      },
+      "steering_total": 0.112,
+      "sweep": {
+        "best_layer": 21,
+        "best_layer_pct": 58.3,
+        "best_effect": 1.1567,
+        "n_layers": 36
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "mistral_7b_base": {
+      "name": "Mistral 7B (base)",
+      "org": "Mistral AI",
+      "params": "7.2B",
+      "color": "#A855F7",
+      "is_base": true,
+      "instruct": "mistral_7b",
+      "fingerprint": {
+        "warm_cold": 0.088,
+        "confident_cautious": 0.015,
+        "empathetic_analytical": -0.455,
+        "formal_casual": -0.033,
+        "verbose_concise": 0.199
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.036,
+        "confident_cautious": 0.051,
+        "empathetic_analytical": 0.107,
+        "formal_casual": 0.46,
+        "verbose_concise": 0.108
+      },
+      "stability": {
+        "icc": 0.2915,
+        "icc_per_axis": {
+          "warm_cold": 0.3782,
+          "confident_cautious": 0.4076,
+          "empathetic_analytical": 0.2465,
+          "formal_casual": 0.0823,
+          "verbose_concise": 0.3427
+        },
+        "cosine": {
+          "warm_cold": 0.3782,
+          "confident_cautious": 0.4076,
+          "empathetic_analytical": 0.2465,
+          "formal_casual": 0.0823,
+          "verbose_concise": 0.3427
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": -0.075,
+            "-2.0": -0.075,
+            "-1.0": -0.075,
+            "0.0": -0.075,
+            "1.0": -0.075,
+            "2.0": -0.075,
+            "5.0": -0.075
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": 0.26,
+            "-2.0": 0.26,
+            "-1.0": 0.26,
+            "0.0": 0.26,
+            "1.0": 0.26,
+            "2.0": 0.26,
+            "5.0": 0.26
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": -0.665,
+            "-2.0": -0.665,
+            "-1.0": -0.665,
+            "0.0": -0.665,
+            "1.0": -0.665,
+            "2.0": -0.665,
+            "5.0": -0.665
+          }
+        },
+        "formal_casual": {
+          "slope": 0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": -0.91,
+            "-2.0": -0.91,
+            "-1.0": -0.91,
+            "0.0": -0.91,
+            "1.0": -0.91,
+            "2.0": -0.91,
+            "5.0": -0.91
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.0,
+          "effect": 0.0,
+          "leakage": 0.0,
+          "alpha_means": {
+            "-5.0": -0.184,
+            "-2.0": -0.184,
+            "-1.0": -0.184,
+            "0.0": -0.184,
+            "1.0": -0.184,
+            "2.0": -0.184,
+            "5.0": -0.184
+          }
+        }
+      },
+      "steering_total": 0.0
+    },
+    "command_r7b": {
+      "name": "Command-R 7B",
+      "org": "Cohere",
+      "params": "7.0B",
+      "color": "#39A7FF",
+      "fingerprint": {
+        "warm_cold": -0.62,
+        "confident_cautious": -0.573,
+        "empathetic_analytical": -0.721,
+        "formal_casual": 0.166,
+        "verbose_concise": 0.16
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.251,
+        "confident_cautious": 0.348,
+        "empathetic_analytical": 0.171,
+        "formal_casual": 0.189,
+        "verbose_concise": 0.168
+      },
+      "stability": {
+        "icc": 0.6818,
+        "icc_per_axis": {
+          "warm_cold": 0.7597,
+          "confident_cautious": 0.4715,
+          "empathetic_analytical": 0.5111,
+          "formal_casual": 0.7522,
+          "verbose_concise": 0.9146
+        },
+        "cosine": {
+          "warm_cold": 0.7597,
+          "confident_cautious": 0.4715,
+          "empathetic_analytical": 0.5111,
+          "formal_casual": 0.7522,
+          "verbose_concise": 0.9146
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00079,
+          "effect": 0.06,
+          "leakage": 3.64,
+          "alpha_means": {
+            "-5.0": -0.532,
+            "-2.0": -0.561,
+            "-1.0": -0.531,
+            "0.0": -0.501,
+            "1.0": -0.53,
+            "2.0": -0.528,
+            "5.0": -0.536
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00425,
+          "effect": 0.073,
+          "leakage": 0.23,
+          "alpha_means": {
+            "-5.0": -0.663,
+            "-2.0": -0.643,
+            "-1.0": -0.598,
+            "0.0": -0.59,
+            "1.0": -0.638,
+            "2.0": -0.625,
+            "5.0": -0.612
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00044,
+          "effect": 0.042,
+          "leakage": 6.04,
+          "alpha_means": {
+            "-5.0": -0.744,
+            "-2.0": -0.752,
+            "-1.0": -0.712,
+            "0.0": -0.731,
+            "1.0": -0.722,
+            "2.0": -0.754,
+            "5.0": -0.736
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00422,
+          "effect": 0.06,
+          "leakage": 0.77,
+          "alpha_means": {
+            "-5.0": 0.067,
+            "-2.0": 0.072,
+            "-1.0": 0.083,
+            "0.0": 0.105,
+            "1.0": 0.104,
+            "2.0": 0.126,
+            "5.0": 0.092
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00092,
+          "effect": 0.043,
+          "leakage": 6.44,
+          "alpha_means": {
+            "-5.0": -0.125,
+            "-2.0": -0.114,
+            "-1.0": -0.115,
+            "0.0": -0.106,
+            "1.0": -0.101,
+            "2.0": -0.143,
+            "5.0": -0.105
+          }
+        }
+      },
+      "steering_total": 0.276
+    },
+    "exaone_7b": {
+      "name": "EXAONE 3.5 7.8B",
+      "org": "LG AI",
+      "params": "7.8B",
+      "color": "#DC267F",
+      "fingerprint": {
+        "warm_cold": -0.36,
+        "confident_cautious": 0.94,
+        "empathetic_analytical": 0.4,
+        "formal_casual": 0.078,
+        "verbose_concise": 0.471
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.066,
+        "confident_cautious": 0.225,
+        "empathetic_analytical": 0.122,
+        "formal_casual": 0.064,
+        "verbose_concise": 0.178
+      },
+      "stability": {
+        "icc": 0.8254,
+        "icc_per_axis": {
+          "warm_cold": 0.8403,
+          "confident_cautious": 0.6882,
+          "empathetic_analytical": 0.7349,
+          "formal_casual": 0.8682,
+          "verbose_concise": 0.9953
+        },
+        "cosine": {
+          "warm_cold": 0.8403,
+          "confident_cautious": 0.6882,
+          "empathetic_analytical": 0.7349,
+          "formal_casual": 0.8682,
+          "verbose_concise": 0.9953
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00061,
+          "effect": 0.012,
+          "leakage": 1.3,
+          "alpha_means": {
+            "-5.0": -0.238,
+            "-2.0": -0.241,
+            "-1.0": -0.233,
+            "0.0": -0.235,
+            "1.0": -0.236,
+            "2.0": -0.242,
+            "5.0": -0.23
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00127,
+          "effect": 0.026,
+          "leakage": 0.52,
+          "alpha_means": {
+            "-5.0": 0.787,
+            "-2.0": 0.798,
+            "-1.0": 0.813,
+            "0.0": 0.799,
+            "1.0": 0.798,
+            "2.0": 0.802,
+            "5.0": 0.804
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.0002,
+          "effect": 0.013,
+          "leakage": 2.37,
+          "alpha_means": {
+            "-5.0": 0.287,
+            "-2.0": 0.277,
+            "-1.0": 0.279,
+            "0.0": 0.283,
+            "1.0": 0.291,
+            "2.0": 0.278,
+            "5.0": 0.287
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00092,
+          "effect": 0.011,
+          "leakage": 1.46,
+          "alpha_means": {
+            "-5.0": 0.038,
+            "-2.0": 0.04,
+            "-1.0": 0.038,
+            "0.0": 0.044,
+            "1.0": 0.044,
+            "2.0": 0.039,
+            "5.0": 0.049
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00044,
+          "effect": 0.017,
+          "leakage": 1.29,
+          "alpha_means": {
+            "-5.0": -0.028,
+            "-2.0": -0.016,
+            "-1.0": -0.018,
+            "0.0": -0.024,
+            "1.0": -0.011,
+            "2.0": -0.015,
+            "5.0": -0.024
+          }
+        }
+      },
+      "steering_total": 0.079
+    },
+    "falcon_h1_7b": {
+      "name": "Falcon-H1 7B",
+      "org": "TII",
+      "params": "7.6B",
+      "color": "#C77DFF",
+      "fingerprint": {
+        "warm_cold": -0.229,
+        "confident_cautious": 0.114,
+        "empathetic_analytical": -0.119,
+        "formal_casual": 0.033,
+        "verbose_concise": 0.197
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.065,
+        "confident_cautious": 0.093,
+        "empathetic_analytical": 0.11,
+        "formal_casual": 0.109,
+        "verbose_concise": 0.236
+      },
+      "stability": {
+        "icc": 0.6784,
+        "icc_per_axis": {
+          "warm_cold": 0.8306,
+          "confident_cautious": 0.4439,
+          "empathetic_analytical": 0.3822,
+          "formal_casual": 0.8013,
+          "verbose_concise": 0.9338
+        },
+        "cosine": {
+          "warm_cold": 0.8306,
+          "confident_cautious": 0.4439,
+          "empathetic_analytical": 0.3822,
+          "formal_casual": 0.8013,
+          "verbose_concise": 0.9338
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00118,
+          "effect": 0.014,
+          "leakage": 2.28,
+          "alpha_means": {
+            "-5.0": -0.331,
+            "-2.0": -0.33,
+            "-1.0": -0.329,
+            "0.0": -0.332,
+            "1.0": -0.328,
+            "2.0": -0.342,
+            "5.0": -0.34
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00063,
+          "effect": 0.012,
+          "leakage": 1.15,
+          "alpha_means": {
+            "-5.0": 0.284,
+            "-2.0": 0.282,
+            "-1.0": 0.287,
+            "0.0": 0.287,
+            "1.0": 0.293,
+            "2.0": 0.287,
+            "5.0": 0.288
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00158,
+          "effect": 0.016,
+          "leakage": 0.71,
+          "alpha_means": {
+            "-5.0": 0.003,
+            "-2.0": 0.0,
+            "-1.0": 0.003,
+            "0.0": 0.005,
+            "1.0": 0.007,
+            "2.0": 0.012,
+            "5.0": 0.016
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00088,
+          "effect": 0.04,
+          "leakage": 1.52,
+          "alpha_means": {
+            "-5.0": 0.16,
+            "-2.0": 0.145,
+            "-1.0": 0.158,
+            "0.0": 0.158,
+            "1.0": 0.169,
+            "2.0": 0.175,
+            "5.0": 0.136
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00037,
+          "effect": 0.047,
+          "leakage": 1.14,
+          "alpha_means": {
+            "-5.0": -0.308,
+            "-2.0": -0.299,
+            "-1.0": -0.285,
+            "0.0": -0.282,
+            "1.0": -0.303,
+            "2.0": -0.329,
+            "5.0": -0.288
+          }
+        }
+      },
+      "steering_total": 0.129
+    },
+    "glm_z1_9b": {
+      "name": "GLM-Z1 9B",
+      "org": "Zhipu AI",
+      "params": "9.0B",
+      "color": "#FF8C00",
+      "fingerprint": {
+        "warm_cold": -0.196,
+        "confident_cautious": -0.118,
+        "empathetic_analytical": -0.049,
+        "formal_casual": 0.171,
+        "verbose_concise": -0.212
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.062,
+        "confident_cautious": 0.062,
+        "empathetic_analytical": 0.043,
+        "formal_casual": 0.039,
+        "verbose_concise": 0.078
+      },
+      "stability": {
+        "icc": 0.8407,
+        "icc_per_axis": {
+          "warm_cold": 0.8799,
+          "confident_cautious": 0.7258,
+          "empathetic_analytical": 0.8627,
+          "formal_casual": 0.8843,
+          "verbose_concise": 0.8506
+        },
+        "cosine": {
+          "warm_cold": 0.8799,
+          "confident_cautious": 0.7258,
+          "empathetic_analytical": 0.8627,
+          "formal_casual": 0.8843,
+          "verbose_concise": 0.8506
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00127,
+          "effect": 0.014,
+          "leakage": 0.75,
+          "alpha_means": {
+            "-5.0": -0.168,
+            "-2.0": -0.165,
+            "-1.0": -0.169,
+            "0.0": -0.167,
+            "1.0": -0.165,
+            "2.0": -0.16,
+            "5.0": -0.156
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00133,
+          "effect": 0.02,
+          "leakage": 0.16,
+          "alpha_means": {
+            "-5.0": -0.126,
+            "-2.0": -0.125,
+            "-1.0": -0.128,
+            "0.0": -0.127,
+            "1.0": -0.122,
+            "2.0": -0.143,
+            "5.0": -0.136
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.00103,
+          "effect": 0.011,
+          "leakage": 0.7,
+          "alpha_means": {
+            "-5.0": -0.059,
+            "-2.0": -0.062,
+            "-1.0": -0.061,
+            "0.0": -0.065,
+            "1.0": -0.063,
+            "2.0": -0.063,
+            "5.0": -0.07
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00108,
+          "effect": 0.014,
+          "leakage": 1.35,
+          "alpha_means": {
+            "-5.0": 0.145,
+            "-2.0": 0.15,
+            "-1.0": 0.145,
+            "0.0": 0.148,
+            "1.0": 0.145,
+            "2.0": 0.146,
+            "5.0": 0.159
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00216,
+          "effect": 0.018,
+          "leakage": 0.21,
+          "alpha_means": {
+            "-5.0": -0.302,
+            "-2.0": -0.302,
+            "-1.0": -0.297,
+            "0.0": -0.293,
+            "1.0": -0.287,
+            "2.0": -0.286,
+            "5.0": -0.284
+          }
+        }
+      },
+      "steering_total": 0.078
+    },
+    "granite_8b": {
+      "name": "Granite 3.3 8B",
+      "org": "IBM",
+      "params": "8.2B",
+      "color": "#648FFF",
+      "fingerprint": {
+        "warm_cold": -0.032,
+        "confident_cautious": 0.011,
+        "empathetic_analytical": -0.094,
+        "formal_casual": 0.148,
+        "verbose_concise": 0.131
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.155,
+        "confident_cautious": 0.143,
+        "empathetic_analytical": 0.135,
+        "formal_casual": 0.191,
+        "verbose_concise": 0.133
+      },
+      "stability": {
+        "icc": 0.439,
+        "icc_per_axis": {
+          "warm_cold": 0.3823,
+          "confident_cautious": 0.1778,
+          "empathetic_analytical": 0.55,
+          "formal_casual": 0.4466,
+          "verbose_concise": 0.6382
+        },
+        "cosine": {
+          "warm_cold": 0.3823,
+          "confident_cautious": 0.1778,
+          "empathetic_analytical": 0.55,
+          "formal_casual": 0.4466,
+          "verbose_concise": 0.6382
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00161,
+          "effect": 0.037,
+          "leakage": 1.12,
+          "alpha_means": {
+            "-5.0": -0.102,
+            "-2.0": -0.117,
+            "-1.0": -0.127,
+            "0.0": -0.138,
+            "1.0": -0.109,
+            "2.0": -0.113,
+            "5.0": -0.126
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00434,
+          "effect": 0.062,
+          "leakage": 0.61,
+          "alpha_means": {
+            "-5.0": 0.037,
+            "-2.0": 0.014,
+            "-1.0": 0.031,
+            "0.0": 0.048,
+            "1.0": 0.031,
+            "2.0": 0.01,
+            "5.0": -0.013
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00069,
+          "effect": 0.037,
+          "leakage": 4.54,
+          "alpha_means": {
+            "-5.0": -0.081,
+            "-2.0": -0.096,
+            "-1.0": -0.065,
+            "0.0": -0.066,
+            "1.0": -0.059,
+            "2.0": -0.066,
+            "5.0": -0.086
+          }
+        },
+        "formal_casual": {
+          "slope": 0.0009,
+          "effect": 0.07,
+          "leakage": 0.74,
+          "alpha_means": {
+            "-5.0": 0.219,
+            "-2.0": 0.236,
+            "-1.0": 0.241,
+            "0.0": 0.24,
+            "1.0": 0.261,
+            "2.0": 0.279,
+            "5.0": 0.209
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00174,
+          "effect": 0.029,
+          "leakage": 0.7,
+          "alpha_means": {
+            "-5.0": 0.082,
+            "-2.0": 0.089,
+            "-1.0": 0.086,
+            "0.0": 0.084,
+            "1.0": 0.099,
+            "2.0": 0.077,
+            "5.0": 0.105
+          }
+        }
+      },
+      "steering_total": 0.234
+    },
+    "internlm3_8b": {
+      "name": "InternLM3 8B",
+      "org": "Shanghai AI",
+      "params": "8.0B",
+      "color": "#FF1493",
+      "fingerprint": {
+        "warm_cold": -0.355,
+        "confident_cautious": 0.267,
+        "empathetic_analytical": -0.247,
+        "formal_casual": 0.128,
+        "verbose_concise": -0.1
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.139,
+        "confident_cautious": 0.162,
+        "empathetic_analytical": 0.124,
+        "formal_casual": 0.113,
+        "verbose_concise": 0.317
+      },
+      "stability": {
+        "icc": 0.7653,
+        "icc_per_axis": {
+          "warm_cold": 0.8523,
+          "confident_cautious": 0.4368,
+          "empathetic_analytical": 0.8242,
+          "formal_casual": 0.8757,
+          "verbose_concise": 0.8375
+        },
+        "cosine": {
+          "warm_cold": 0.8523,
+          "confident_cautious": 0.4368,
+          "empathetic_analytical": 0.8242,
+          "formal_casual": 0.8757,
+          "verbose_concise": 0.8375
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00075,
+          "effect": 0.02,
+          "leakage": 1.22,
+          "alpha_means": {
+            "-5.0": -0.136,
+            "-2.0": -0.139,
+            "-1.0": -0.136,
+            "0.0": -0.123,
+            "1.0": -0.143,
+            "2.0": -0.142,
+            "5.0": -0.143
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00265,
+          "effect": 0.064,
+          "leakage": 0.93,
+          "alpha_means": {
+            "-5.0": 0.126,
+            "-2.0": 0.129,
+            "-1.0": 0.147,
+            "0.0": 0.161,
+            "1.0": 0.19,
+            "2.0": 0.146,
+            "5.0": 0.142
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.00104,
+          "effect": 0.02,
+          "leakage": 1.72,
+          "alpha_means": {
+            "-5.0": -0.132,
+            "-2.0": -0.148,
+            "-1.0": -0.139,
+            "0.0": -0.139,
+            "1.0": -0.153,
+            "2.0": -0.142,
+            "5.0": -0.144
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00133,
+          "effect": 0.025,
+          "leakage": 1.15,
+          "alpha_means": {
+            "-5.0": -0.041,
+            "-2.0": -0.032,
+            "-1.0": -0.015,
+            "0.0": -0.024,
+            "1.0": -0.025,
+            "2.0": -0.027,
+            "5.0": -0.025
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00385,
+          "effect": 0.048,
+          "leakage": 0.43,
+          "alpha_means": {
+            "-5.0": -0.636,
+            "-2.0": -0.611,
+            "-1.0": -0.606,
+            "0.0": -0.611,
+            "1.0": -0.633,
+            "2.0": -0.588,
+            "5.0": -0.594
+          }
+        }
+      },
+      "steering_total": 0.178
+    },
+    "nemotron_h_8b": {
+      "name": "Nemotron-H 8B",
+      "org": "NVIDIA",
+      "params": "8.0B",
+      "color": "#76B900",
+      "fingerprint": {
+        "warm_cold": 0.115,
+        "confident_cautious": -0.133,
+        "empathetic_analytical": -0.424,
+        "formal_casual": 0.137,
+        "verbose_concise": -0.289
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.577,
+        "confident_cautious": 0.467,
+        "empathetic_analytical": 0.191,
+        "formal_casual": 0.466,
+        "verbose_concise": 0.324
+      },
+      "stability": {
+        "icc": 0.3379,
+        "icc_per_axis": {
+          "warm_cold": 0.4629,
+          "confident_cautious": 0.005,
+          "empathetic_analytical": 0.4289,
+          "formal_casual": 0.4401,
+          "verbose_concise": 0.3527
+        },
+        "cosine": {
+          "warm_cold": 0.4629,
+          "confident_cautious": 0.005,
+          "empathetic_analytical": 0.4289,
+          "formal_casual": 0.4401,
+          "verbose_concise": 0.3527
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.01752,
+          "effect": 0.258,
+          "leakage": 0.83,
+          "alpha_means": {
+            "-5.0": 0.016,
+            "-2.0": 0.105,
+            "-1.0": 0.08,
+            "0.0": 0.164,
+            "1.0": 0.168,
+            "2.0": 0.274,
+            "5.0": 0.141
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00593,
+          "effect": 0.134,
+          "leakage": 0.34,
+          "alpha_means": {
+            "-5.0": -0.143,
+            "-2.0": -0.031,
+            "-1.0": -0.029,
+            "0.0": -0.05,
+            "1.0": -0.124,
+            "2.0": -0.163,
+            "5.0": -0.142
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.00026,
+          "effect": 0.069,
+          "leakage": 33.64,
+          "alpha_means": {
+            "-5.0": -0.414,
+            "-2.0": -0.414,
+            "-1.0": -0.454,
+            "0.0": -0.392,
+            "1.0": -0.462,
+            "2.0": -0.418,
+            "5.0": -0.414
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00697,
+          "effect": 0.138,
+          "leakage": 1.11,
+          "alpha_means": {
+            "-5.0": 0.063,
+            "-2.0": -0.014,
+            "-1.0": -0.014,
+            "0.0": 0.046,
+            "1.0": 0.124,
+            "2.0": 0.103,
+            "5.0": 0.073
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.01149,
+          "effect": 0.172,
+          "leakage": 1.26,
+          "alpha_means": {
+            "-5.0": -0.279,
+            "-2.0": -0.192,
+            "-1.0": -0.212,
+            "0.0": -0.265,
+            "1.0": -0.27,
+            "2.0": -0.107,
+            "5.0": -0.163
+          }
+        }
+      },
+      "steering_total": 0.771
+    },
+    "olmo2_13b": {
+      "name": "OLMo-2 13B",
+      "org": "Allen AI",
+      "params": "13B",
+      "color": "#6A0DAD",
+      "fingerprint": {
+        "warm_cold": -0.336,
+        "confident_cautious": 0.296,
+        "empathetic_analytical": -0.016,
+        "formal_casual": 0.079,
+        "verbose_concise": -0.306
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.067,
+        "confident_cautious": 0.1,
+        "empathetic_analytical": 0.123,
+        "formal_casual": 0.073,
+        "verbose_concise": 0.235
+      },
+      "stability": {
+        "icc": 0.8101,
+        "icc_per_axis": {
+          "warm_cold": 0.8646,
+          "confident_cautious": 0.7322,
+          "empathetic_analytical": 0.8162,
+          "formal_casual": 0.748,
+          "verbose_concise": 0.8894
+        },
+        "cosine": {
+          "warm_cold": 0.8646,
+          "confident_cautious": 0.7322,
+          "empathetic_analytical": 0.8162,
+          "formal_casual": 0.748,
+          "verbose_concise": 0.8894
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00052,
+          "effect": 0.019,
+          "leakage": 2.07,
+          "alpha_means": {
+            "-5.0": -0.285,
+            "-2.0": -0.273,
+            "-1.0": -0.266,
+            "0.0": -0.276,
+            "1.0": -0.278,
+            "2.0": -0.283,
+            "5.0": -0.272
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00118,
+          "effect": 0.013,
+          "leakage": 2.23,
+          "alpha_means": {
+            "-5.0": 0.248,
+            "-2.0": 0.251,
+            "-1.0": 0.261,
+            "0.0": 0.253,
+            "1.0": 0.258,
+            "2.0": 0.26,
+            "5.0": 0.259
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00215,
+          "effect": 0.028,
+          "leakage": 0.72,
+          "alpha_means": {
+            "-5.0": 0.111,
+            "-2.0": 0.102,
+            "-1.0": 0.099,
+            "0.0": 0.119,
+            "1.0": 0.104,
+            "2.0": 0.123,
+            "5.0": 0.127
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00078,
+          "effect": 0.028,
+          "leakage": 2.88,
+          "alpha_means": {
+            "-5.0": 0.004,
+            "-2.0": 0.011,
+            "-1.0": 0.024,
+            "0.0": 0.007,
+            "1.0": 0.015,
+            "2.0": 0.013,
+            "5.0": -0.004
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.0005,
+          "effect": 0.038,
+          "leakage": 1.35,
+          "alpha_means": {
+            "-5.0": -0.546,
+            "-2.0": -0.539,
+            "-1.0": -0.519,
+            "0.0": -0.557,
+            "1.0": -0.554,
+            "2.0": -0.534,
+            "5.0": -0.534
+          }
+        }
+      },
+      "steering_total": 0.126
+    },
+    "yi_9b": {
+      "name": "Yi-1.5 9B",
+      "org": "01.AI",
+      "params": "9.0B",
+      "color": "#00B4D8",
+      "fingerprint": {
+        "warm_cold": -0.224,
+        "confident_cautious": 0.462,
+        "empathetic_analytical": 0.008,
+        "formal_casual": 0.109,
+        "verbose_concise": -0.194
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.224,
+        "confident_cautious": 0.351,
+        "empathetic_analytical": 0.23,
+        "formal_casual": 0.145,
+        "verbose_concise": 0.286
+      },
+      "stability": {
+        "icc": 0.6615,
+        "icc_per_axis": {
+          "warm_cold": 0.7909,
+          "confident_cautious": 0.2589,
+          "empathetic_analytical": 0.657,
+          "formal_casual": 0.7191,
+          "verbose_concise": 0.8818
+        },
+        "cosine": {
+          "warm_cold": 0.7909,
+          "confident_cautious": 0.2589,
+          "empathetic_analytical": 0.657,
+          "formal_casual": 0.7191,
+          "verbose_concise": 0.8818
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00246,
+          "effect": 0.039,
+          "leakage": 1.31,
+          "alpha_means": {
+            "-5.0": -0.653,
+            "-2.0": -0.645,
+            "-1.0": -0.66,
+            "0.0": -0.629,
+            "1.0": -0.643,
+            "2.0": -0.621,
+            "5.0": -0.637
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00581,
+          "effect": 0.094,
+          "leakage": 0.56,
+          "alpha_means": {
+            "-5.0": 0.697,
+            "-2.0": 0.73,
+            "-1.0": 0.71,
+            "0.0": 0.781,
+            "1.0": 0.791,
+            "2.0": 0.762,
+            "5.0": 0.737
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00655,
+          "effect": 0.075,
+          "leakage": 0.85,
+          "alpha_means": {
+            "-5.0": -0.167,
+            "-2.0": -0.142,
+            "-1.0": -0.154,
+            "0.0": -0.154,
+            "1.0": -0.122,
+            "2.0": -0.151,
+            "5.0": -0.091
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00271,
+          "effect": 0.027,
+          "leakage": 1.59,
+          "alpha_means": {
+            "-5.0": 0.106,
+            "-2.0": 0.113,
+            "-1.0": 0.118,
+            "0.0": 0.127,
+            "1.0": 0.133,
+            "2.0": 0.123,
+            "5.0": 0.131
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00168,
+          "effect": 0.057,
+          "leakage": 2.34,
+          "alpha_means": {
+            "-5.0": -0.487,
+            "-2.0": -0.473,
+            "-1.0": -0.457,
+            "0.0": -0.43,
+            "1.0": -0.433,
+            "2.0": -0.463,
+            "5.0": -0.476
+          }
+        }
+      },
+      "steering_total": 0.292,
+      "drift": {
+        "warm_cold": {
+          "slope": -0.0081,
+          "delta": -0.046
+        },
+        "confident_cautious": {
+          "slope": 0.0306,
+          "delta": 0.191
+        },
+        "empathetic_analytical": {
+          "slope": -0.0086,
+          "delta": -0.017
+        },
+        "formal_casual": {
+          "slope": -0.0112,
+          "delta": -0.142
+        },
+        "verbose_concise": {
+          "slope": -0.0107,
+          "delta": -0.163
+        }
+      },
+      "drift_mean": 0.112
+    },
+    "smollm3_3b": {
+      "name": "SmolLM3 3B",
+      "org": "HuggingFace",
+      "params": "3.0B",
+      "color": "#785EF0",
+      "fingerprint": {
+        "warm_cold": -0.133,
+        "confident_cautious": 0.137,
+        "empathetic_analytical": -0.26,
+        "formal_casual": 0.358,
+        "verbose_concise": 0.061
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.062,
+        "confident_cautious": 0.152,
+        "empathetic_analytical": 0.108,
+        "formal_casual": 0.075,
+        "verbose_concise": 0.248
+      },
+      "stability": {
+        "icc": 0.7776,
+        "icc_per_axis": {
+          "warm_cold": 0.8547,
+          "confident_cautious": 0.574,
+          "empathetic_analytical": 0.7586,
+          "formal_casual": 0.8845,
+          "verbose_concise": 0.8164
+        },
+        "cosine": {
+          "warm_cold": 0.8547,
+          "confident_cautious": 0.574,
+          "empathetic_analytical": 0.7586,
+          "formal_casual": 0.8845,
+          "verbose_concise": 0.8164
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00343,
+          "effect": 0.037,
+          "leakage": 1.12,
+          "alpha_means": {
+            "-5.0": -0.062,
+            "-2.0": -0.049,
+            "-1.0": -0.054,
+            "0.0": -0.052,
+            "1.0": -0.038,
+            "2.0": -0.046,
+            "5.0": -0.025
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00479,
+          "effect": 0.049,
+          "leakage": 0.5,
+          "alpha_means": {
+            "-5.0": 0.092,
+            "-2.0": 0.105,
+            "-1.0": 0.125,
+            "0.0": 0.14,
+            "1.0": 0.128,
+            "2.0": 0.132,
+            "5.0": 0.138
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00457,
+          "effect": 0.052,
+          "leakage": 0.6,
+          "alpha_means": {
+            "-5.0": -0.031,
+            "-2.0": -0.013,
+            "-1.0": -0.019,
+            "0.0": -0.014,
+            "1.0": -0.006,
+            "2.0": -0.012,
+            "5.0": 0.021
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00525,
+          "effect": 0.053,
+          "leakage": 0.88,
+          "alpha_means": {
+            "-5.0": 0.19,
+            "-2.0": 0.211,
+            "-1.0": 0.213,
+            "0.0": 0.225,
+            "1.0": 0.227,
+            "2.0": 0.23,
+            "5.0": 0.242
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00724,
+          "effect": 0.077,
+          "leakage": 0.14,
+          "alpha_means": {
+            "-5.0": -0.334,
+            "-2.0": -0.292,
+            "-1.0": -0.276,
+            "0.0": -0.294,
+            "1.0": -0.27,
+            "2.0": -0.27,
+            "5.0": -0.257
+          }
+        }
+      },
+      "steering_total": 0.267,
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen2.5_0.5b": {
+      "name": "Qwen 2.5 0.5B",
+      "org": "Alibaba",
+      "params": "0.5B",
+      "color": "#FFB347",
+      "fingerprint": {
+        "warm_cold": -0.528,
+        "confident_cautious": 0.485,
+        "empathetic_analytical": -0.606,
+        "formal_casual": 0.509,
+        "verbose_concise": 0.204
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.232,
+        "confident_cautious": 0.429,
+        "empathetic_analytical": 0.129,
+        "formal_casual": 0.087,
+        "verbose_concise": 0.204
+      },
+      "stability": {
+        "icc": 0.5943,
+        "icc_per_axis": {
+          "warm_cold": 0.2248,
+          "confident_cautious": 0.3864,
+          "empathetic_analytical": 0.6284,
+          "formal_casual": 0.8206,
+          "verbose_concise": 0.9115
+        },
+        "cosine": {
+          "warm_cold": 0.2248,
+          "confident_cautious": 0.3864,
+          "empathetic_analytical": 0.6284,
+          "formal_casual": 0.8206,
+          "verbose_concise": 0.9115
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.23762,
+          "effect": 2.0,
+          "leakage": 0.27,
+          "alpha_means": {
+            "-5.0": -1.0,
+            "-2.0": -0.568,
+            "-1.0": -0.423,
+            "0.0": -0.496,
+            "1.0": 0.755,
+            "2.0": 0.971,
+            "5.0": 1.0
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.20292,
+          "effect": 2.0,
+          "leakage": 0.06,
+          "alpha_means": {
+            "-5.0": -1.0,
+            "-2.0": -0.922,
+            "-1.0": -0.975,
+            "0.0": 0.353,
+            "1.0": -0.097,
+            "2.0": -0.274,
+            "5.0": 1.0
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.18099,
+          "effect": 1.552,
+          "leakage": 0.39,
+          "alpha_means": {
+            "-5.0": -1.0,
+            "-2.0": -0.767,
+            "-1.0": -0.662,
+            "0.0": -0.547,
+            "1.0": 0.241,
+            "2.0": 0.332,
+            "5.0": 0.552
+          }
+        },
+        "formal_casual": {
+          "slope": 0.09575,
+          "effect": 0.973,
+          "leakage": 0.67,
+          "alpha_means": {
+            "-5.0": -0.24,
+            "-2.0": 0.056,
+            "-1.0": 0.323,
+            "0.0": 0.458,
+            "1.0": 0.539,
+            "2.0": 0.388,
+            "5.0": 0.733
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.13165,
+          "effect": 1.279,
+          "leakage": 0.27,
+          "alpha_means": {
+            "-5.0": -0.62,
+            "-2.0": -0.484,
+            "-1.0": -0.379,
+            "0.0": -0.056,
+            "1.0": 0.659,
+            "2.0": 0.35,
+            "5.0": 0.418
+          }
+        }
+      },
+      "steering_total": 7.804,
+      "sweep": {
+        "best_layer": 11,
+        "best_layer_pct": 45.8,
+        "best_effect": 1.414,
+        "n_layers": 24
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen_1.5b": {
+      "name": "Qwen 2.5 1.5B",
+      "org": "Alibaba",
+      "params": "1.5B",
+      "color": "#FF9F1C",
+      "fingerprint": {
+        "warm_cold": -0.362,
+        "confident_cautious": 0.704,
+        "empathetic_analytical": -0.332,
+        "formal_casual": 0.454,
+        "verbose_concise": -0.089
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.14,
+        "confident_cautious": 0.211,
+        "empathetic_analytical": 0.101,
+        "formal_casual": 0.073,
+        "verbose_concise": 0.207
+      },
+      "stability": {
+        "icc": 0.8021,
+        "icc_per_axis": {
+          "warm_cold": 0.8109,
+          "confident_cautious": 0.5798,
+          "empathetic_analytical": 0.7386,
+          "formal_casual": 0.9243,
+          "verbose_concise": 0.9569
+        },
+        "cosine": {
+          "warm_cold": 0.8109,
+          "confident_cautious": 0.5798,
+          "empathetic_analytical": 0.7386,
+          "formal_casual": 0.9243,
+          "verbose_concise": 0.9569
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00215,
+          "effect": 0.044,
+          "leakage": 0.95,
+          "alpha_means": {
+            "-5.0": -0.481,
+            "-2.0": -0.469,
+            "-1.0": -0.465,
+            "0.0": -0.493,
+            "1.0": -0.485,
+            "2.0": -0.472,
+            "5.0": -0.45
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00106,
+          "effect": 0.065,
+          "leakage": 0.72,
+          "alpha_means": {
+            "-5.0": 0.812,
+            "-2.0": 0.784,
+            "-1.0": 0.794,
+            "0.0": 0.821,
+            "1.0": 0.849,
+            "2.0": 0.809,
+            "5.0": 0.804
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00212,
+          "effect": 0.022,
+          "leakage": 1.07,
+          "alpha_means": {
+            "-5.0": -0.238,
+            "-2.0": -0.224,
+            "-1.0": -0.229,
+            "0.0": -0.232,
+            "1.0": -0.219,
+            "2.0": -0.221,
+            "5.0": -0.216
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00324,
+          "effect": 0.026,
+          "leakage": 1.21,
+          "alpha_means": {
+            "-5.0": 0.425,
+            "-2.0": 0.426,
+            "-1.0": 0.431,
+            "0.0": 0.442,
+            "1.0": 0.444,
+            "2.0": 0.45,
+            "5.0": 0.451
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.0029,
+          "effect": 0.046,
+          "leakage": 0.5,
+          "alpha_means": {
+            "-5.0": -0.396,
+            "-2.0": -0.405,
+            "-1.0": -0.41,
+            "0.0": -0.413,
+            "1.0": -0.407,
+            "2.0": -0.393,
+            "5.0": -0.367
+          }
+        }
+      },
+      "steering_total": 0.204,
+      "sweep": {
+        "best_layer": 9,
+        "best_layer_pct": 32.1,
+        "best_effect": 1.186,
+        "n_layers": 28
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen2.5_3b": {
+      "name": "Qwen 2.5 3B",
+      "org": "Alibaba",
+      "params": "3.0B",
+      "color": "#FF7F50",
+      "fingerprint": {
+        "warm_cold": -0.343,
+        "confident_cautious": -0.217,
+        "empathetic_analytical": -0.413,
+        "formal_casual": 0.174,
+        "verbose_concise": 0.487
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.13,
+        "confident_cautious": 0.334,
+        "empathetic_analytical": 0.154,
+        "formal_casual": 0.063,
+        "verbose_concise": 0.216
+      },
+      "stability": {
+        "icc": 0.7754,
+        "icc_per_axis": {
+          "warm_cold": 0.8012,
+          "confident_cautious": 0.4305,
+          "empathetic_analytical": 0.8137,
+          "formal_casual": 0.873,
+          "verbose_concise": 0.9585
+        },
+        "cosine": {
+          "warm_cold": 0.8012,
+          "confident_cautious": 0.4305,
+          "empathetic_analytical": 0.8137,
+          "formal_casual": 0.873,
+          "verbose_concise": 0.9585
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00066,
+          "effect": 0.017,
+          "leakage": 4.89,
+          "alpha_means": {
+            "-5.0": -0.446,
+            "-2.0": -0.448,
+            "-1.0": -0.447,
+            "0.0": -0.457,
+            "1.0": -0.463,
+            "2.0": -0.459,
+            "5.0": -0.447
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00175,
+          "effect": 0.05,
+          "leakage": 0.24,
+          "alpha_means": {
+            "-5.0": 0.284,
+            "-2.0": 0.334,
+            "-1.0": 0.312,
+            "0.0": 0.31,
+            "1.0": 0.311,
+            "2.0": 0.31,
+            "5.0": 0.315
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00111,
+          "effect": 0.029,
+          "leakage": 0.63,
+          "alpha_means": {
+            "-5.0": -0.116,
+            "-2.0": -0.094,
+            "-1.0": -0.101,
+            "0.0": -0.096,
+            "1.0": -0.098,
+            "2.0": -0.087,
+            "5.0": -0.106
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00015,
+          "effect": 0.023,
+          "leakage": 11.1,
+          "alpha_means": {
+            "-5.0": 0.139,
+            "-2.0": 0.135,
+            "-1.0": 0.129,
+            "0.0": 0.125,
+            "1.0": 0.124,
+            "2.0": 0.147,
+            "5.0": 0.137
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00132,
+          "effect": 0.051,
+          "leakage": 1.14,
+          "alpha_means": {
+            "-5.0": 0.067,
+            "-2.0": 0.083,
+            "-1.0": 0.059,
+            "0.0": 0.043,
+            "1.0": 0.032,
+            "2.0": 0.065,
+            "5.0": 0.064
+          }
+        }
+      },
+      "steering_total": 0.17,
+      "sweep": {
+        "best_layer": 31,
+        "best_layer_pct": 86.1,
+        "best_effect": 1.9427,
+        "n_layers": 36
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen3_0.6b": {
+      "name": "Qwen3 0.6B",
+      "org": "Alibaba",
+      "params": "0.6B",
+      "color": "#DC143C",
+      "fingerprint": {
+        "warm_cold": -0.383,
+        "confident_cautious": 0.416,
+        "empathetic_analytical": -0.291,
+        "formal_casual": 0.293,
+        "verbose_concise": 0.089
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.126,
+        "confident_cautious": 0.151,
+        "empathetic_analytical": 0.077,
+        "formal_casual": 0.113,
+        "verbose_concise": 0.187
+      },
+      "stability": {
+        "icc": 0.7765,
+        "icc_per_axis": {
+          "warm_cold": 0.8332,
+          "confident_cautious": 0.5061,
+          "empathetic_analytical": 0.7901,
+          "formal_casual": 0.9009,
+          "verbose_concise": 0.852
+        },
+        "cosine": {
+          "warm_cold": 0.8332,
+          "confident_cautious": 0.5061,
+          "empathetic_analytical": 0.7901,
+          "formal_casual": 0.9009,
+          "verbose_concise": 0.852
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00109,
+          "effect": 0.012,
+          "leakage": 0.34,
+          "alpha_means": {
+            "-5.0": -0.071,
+            "-2.0": -0.066,
+            "-1.0": -0.066,
+            "0.0": -0.062,
+            "1.0": -0.063,
+            "2.0": -0.065,
+            "5.0": -0.059
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.001,
+          "effect": 0.01,
+          "leakage": 0.31,
+          "alpha_means": {
+            "-5.0": 0.497,
+            "-2.0": 0.501,
+            "-1.0": 0.502,
+            "0.0": 0.507,
+            "1.0": 0.505,
+            "2.0": 0.504,
+            "5.0": 0.508
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00027,
+          "effect": 0.005,
+          "leakage": 1.28,
+          "alpha_means": {
+            "-5.0": -0.244,
+            "-2.0": -0.247,
+            "-1.0": -0.246,
+            "0.0": -0.244,
+            "1.0": -0.245,
+            "2.0": -0.245,
+            "5.0": -0.241
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00048,
+          "effect": 0.006,
+          "leakage": 0.77,
+          "alpha_means": {
+            "-5.0": 0.14,
+            "-2.0": 0.143,
+            "-1.0": 0.143,
+            "0.0": 0.141,
+            "1.0": 0.142,
+            "2.0": 0.143,
+            "5.0": 0.146
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00041,
+          "effect": 0.008,
+          "leakage": 0.66,
+          "alpha_means": {
+            "-5.0": -0.583,
+            "-2.0": -0.592,
+            "-1.0": -0.591,
+            "0.0": -0.589,
+            "1.0": -0.588,
+            "2.0": -0.589,
+            "5.0": -0.59
+          }
+        }
+      },
+      "steering_total": 0.042,
+      "sweep": {
+        "best_layer": 19,
+        "best_layer_pct": 67.9,
+        "best_effect": 0.4656,
+        "n_layers": 28
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen3_1.7b": {
+      "name": "Qwen3 1.7B",
+      "org": "Alibaba",
+      "params": "1.7B",
+      "color": "#CD5C5C",
+      "fingerprint": {
+        "warm_cold": -0.344,
+        "confident_cautious": 0.059,
+        "empathetic_analytical": -0.317,
+        "formal_casual": 0.216,
+        "verbose_concise": 0.19
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.093,
+        "confident_cautious": 0.112,
+        "empathetic_analytical": 0.064,
+        "formal_casual": 0.075,
+        "verbose_concise": 0.166
+      },
+      "stability": {
+        "icc": 0.8329,
+        "icc_per_axis": {
+          "warm_cold": 0.8649,
+          "confident_cautious": 0.606,
+          "empathetic_analytical": 0.8172,
+          "formal_casual": 0.9446,
+          "verbose_concise": 0.9316
+        },
+        "cosine": {
+          "warm_cold": 0.8649,
+          "confident_cautious": 0.606,
+          "empathetic_analytical": 0.8172,
+          "formal_casual": 0.9446,
+          "verbose_concise": 0.9316
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -1e-05,
+          "effect": 0.004,
+          "leakage": 37.67,
+          "alpha_means": {
+            "-5.0": -0.295,
+            "-2.0": -0.297,
+            "-1.0": -0.295,
+            "0.0": -0.295,
+            "1.0": -0.293,
+            "2.0": -0.294,
+            "5.0": -0.297
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00026,
+          "effect": 0.005,
+          "leakage": 1.66,
+          "alpha_means": {
+            "-5.0": 0.15,
+            "-2.0": 0.153,
+            "-1.0": 0.149,
+            "0.0": 0.153,
+            "1.0": 0.152,
+            "2.0": 0.153,
+            "5.0": 0.153
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00011,
+          "effect": 0.009,
+          "leakage": 1.61,
+          "alpha_means": {
+            "-5.0": -0.236,
+            "-2.0": -0.228,
+            "-1.0": -0.231,
+            "0.0": -0.228,
+            "1.0": -0.227,
+            "2.0": -0.228,
+            "5.0": -0.235
+          }
+        },
+        "formal_casual": {
+          "slope": -0.0003,
+          "effect": 0.005,
+          "leakage": 1.78,
+          "alpha_means": {
+            "-5.0": 0.214,
+            "-2.0": 0.212,
+            "-1.0": 0.209,
+            "0.0": 0.209,
+            "1.0": 0.213,
+            "2.0": 0.212,
+            "5.0": 0.209
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00114,
+          "effect": 0.016,
+          "leakage": 0.3,
+          "alpha_means": {
+            "-5.0": -0.221,
+            "-2.0": -0.224,
+            "-1.0": -0.22,
+            "0.0": -0.23,
+            "1.0": -0.217,
+            "2.0": -0.227,
+            "5.0": -0.233
+          }
+        }
+      },
+      "steering_total": 0.039,
+      "sweep": {
+        "best_layer": 7,
+        "best_layer_pct": 25.0,
+        "best_effect": 1.0462,
+        "n_layers": 28
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen3_4b": {
+      "name": "Qwen3 4B",
+      "org": "Alibaba",
+      "params": "4.0B",
+      "color": "#B22222",
+      "fingerprint": {
+        "warm_cold": -0.223,
+        "confident_cautious": 0.018,
+        "empathetic_analytical": -0.266,
+        "formal_casual": 0.127,
+        "verbose_concise": 0.161
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.065,
+        "confident_cautious": 0.188,
+        "empathetic_analytical": 0.065,
+        "formal_casual": 0.056,
+        "verbose_concise": 0.144
+      },
+      "stability": {
+        "icc": 0.8267,
+        "icc_per_axis": {
+          "warm_cold": 0.9204,
+          "confident_cautious": 0.5742,
+          "empathetic_analytical": 0.8766,
+          "formal_casual": 0.8224,
+          "verbose_concise": 0.94
+        },
+        "cosine": {
+          "warm_cold": 0.9204,
+          "confident_cautious": 0.5742,
+          "empathetic_analytical": 0.8766,
+          "formal_casual": 0.8224,
+          "verbose_concise": 0.94
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00364,
+          "effect": 0.035,
+          "leakage": 0.83,
+          "alpha_means": {
+            "-5.0": -0.227,
+            "-2.0": -0.215,
+            "-1.0": -0.216,
+            "0.0": -0.201,
+            "1.0": -0.207,
+            "2.0": -0.198,
+            "5.0": -0.192
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00381,
+          "effect": 0.049,
+          "leakage": 0.55,
+          "alpha_means": {
+            "-5.0": 0.146,
+            "-2.0": 0.183,
+            "-1.0": 0.178,
+            "0.0": 0.146,
+            "1.0": 0.194,
+            "2.0": 0.172,
+            "5.0": 0.193
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00234,
+          "effect": 0.023,
+          "leakage": 0.97,
+          "alpha_means": {
+            "-5.0": -0.233,
+            "-2.0": -0.23,
+            "-1.0": -0.224,
+            "0.0": -0.225,
+            "1.0": -0.221,
+            "2.0": -0.218,
+            "5.0": -0.21
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00472,
+          "effect": 0.047,
+          "leakage": 0.68,
+          "alpha_means": {
+            "-5.0": 0.1,
+            "-2.0": 0.115,
+            "-1.0": 0.12,
+            "0.0": 0.122,
+            "1.0": 0.133,
+            "2.0": 0.131,
+            "5.0": 0.148
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00204,
+          "effect": 0.037,
+          "leakage": 0.18,
+          "alpha_means": {
+            "-5.0": -0.136,
+            "-2.0": -0.141,
+            "-1.0": -0.14,
+            "0.0": -0.104,
+            "1.0": -0.128,
+            "2.0": -0.127,
+            "5.0": -0.119
+          }
+        }
+      },
+      "steering_total": 0.191
+    },
+    "qwen3.5_0.8b": {
+      "name": "Qwen3.5 0.8B",
+      "org": "Alibaba",
+      "params": "0.8B",
+      "color": "#E63946",
+      "fingerprint": {
+        "warm_cold": -0.257,
+        "confident_cautious": 0.106,
+        "empathetic_analytical": -0.308,
+        "formal_casual": 0.155,
+        "verbose_concise": -0.24
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.044,
+        "confident_cautious": 0.12,
+        "empathetic_analytical": 0.07,
+        "formal_casual": 0.068,
+        "verbose_concise": 0.2
+      },
+      "stability": {
+        "icc": 0.8027,
+        "icc_per_axis": {
+          "warm_cold": 0.8546,
+          "confident_cautious": 0.6636,
+          "empathetic_analytical": 0.8486,
+          "formal_casual": 0.8027,
+          "verbose_concise": 0.8439
+        },
+        "cosine": {
+          "warm_cold": 0.8546,
+          "confident_cautious": 0.6636,
+          "empathetic_analytical": 0.8486,
+          "formal_casual": 0.8027,
+          "verbose_concise": 0.8439
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.11895,
+          "effect": 1.246,
+          "leakage": 0.56,
+          "alpha_means": {
+            "-5.0": -0.286,
+            "-2.0": -0.033,
+            "-1.0": 0.06,
+            "0.0": 0.154,
+            "1.0": 0.239,
+            "2.0": 0.33,
+            "5.0": 0.96
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.05234,
+          "effect": 0.573,
+          "leakage": 0.96,
+          "alpha_means": {
+            "-5.0": 0.427,
+            "-2.0": 0.831,
+            "-1.0": 0.907,
+            "0.0": 0.925,
+            "1.0": 0.94,
+            "2.0": 0.952,
+            "5.0": 1.0
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.11584,
+          "effect": 1.161,
+          "leakage": 0.55,
+          "alpha_means": {
+            "-5.0": -0.168,
+            "-2.0": 0.096,
+            "-1.0": 0.197,
+            "0.0": 0.287,
+            "1.0": 0.414,
+            "2.0": 0.559,
+            "5.0": 0.994
+          }
+        },
+        "formal_casual": {
+          "slope": 0.13343,
+          "effect": 1.31,
+          "leakage": 0.55,
+          "alpha_means": {
+            "-5.0": -1.0,
+            "-2.0": -0.436,
+            "-1.0": -0.249,
+            "0.0": -0.149,
+            "1.0": 0.053,
+            "2.0": 0.142,
+            "5.0": 0.31
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.0112,
+          "effect": 0.111,
+          "leakage": 1.26,
+          "alpha_means": {
+            "-5.0": -1.0,
+            "-2.0": -0.975,
+            "-1.0": -1.0,
+            "0.0": -1.0,
+            "1.0": -0.957,
+            "2.0": -0.937,
+            "5.0": -0.889
+          }
+        }
+      },
+      "steering_total": 4.402,
+      "sweep": {
+        "best_layer": 9,
+        "best_layer_pct": 37.5,
+        "best_effect": 1.8887,
+        "n_layers": 24
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen3.5_2b": {
+      "name": "Qwen3.5 2B",
+      "org": "Alibaba",
+      "params": "2.0B",
+      "color": "#E76F51",
+      "fingerprint": {
+        "warm_cold": -0.302,
+        "confident_cautious": -0.099,
+        "empathetic_analytical": -0.194,
+        "formal_casual": 0.125,
+        "verbose_concise": -0.262
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.047,
+        "confident_cautious": 0.098,
+        "empathetic_analytical": 0.054,
+        "formal_casual": 0.07,
+        "verbose_concise": 0.158
+      },
+      "stability": {
+        "icc": 0.8308,
+        "icc_per_axis": {
+          "warm_cold": 0.8725,
+          "confident_cautious": 0.637,
+          "empathetic_analytical": 0.8769,
+          "formal_casual": 0.873,
+          "verbose_concise": 0.8948
+        },
+        "cosine": {
+          "warm_cold": 0.8725,
+          "confident_cautious": 0.637,
+          "empathetic_analytical": 0.8769,
+          "formal_casual": 0.873,
+          "verbose_concise": 0.8948
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.03391,
+          "effect": 0.339,
+          "leakage": 0.64,
+          "alpha_means": {
+            "-5.0": -0.294,
+            "-2.0": -0.231,
+            "-1.0": -0.22,
+            "0.0": -0.203,
+            "1.0": -0.172,
+            "2.0": -0.085,
+            "5.0": 0.045
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.05376,
+          "effect": 0.586,
+          "leakage": 0.36,
+          "alpha_means": {
+            "-5.0": -0.642,
+            "-2.0": -0.277,
+            "-1.0": -0.217,
+            "0.0": -0.201,
+            "1.0": -0.177,
+            "2.0": -0.15,
+            "5.0": -0.055
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.03072,
+          "effect": 0.326,
+          "leakage": 0.68,
+          "alpha_means": {
+            "-5.0": -0.211,
+            "-2.0": -0.172,
+            "-1.0": -0.153,
+            "0.0": -0.151,
+            "1.0": -0.125,
+            "2.0": -0.079,
+            "5.0": 0.115
+          }
+        },
+        "formal_casual": {
+          "slope": 0.03257,
+          "effect": 0.308,
+          "leakage": 0.64,
+          "alpha_means": {
+            "-5.0": -0.121,
+            "-2.0": -0.043,
+            "-1.0": 0.015,
+            "0.0": 0.068,
+            "1.0": 0.102,
+            "2.0": 0.121,
+            "5.0": 0.186
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.0288,
+          "effect": 0.316,
+          "leakage": 0.1,
+          "alpha_means": {
+            "-5.0": -0.509,
+            "-2.0": -0.475,
+            "-1.0": -0.46,
+            "0.0": -0.463,
+            "1.0": -0.432,
+            "2.0": -0.415,
+            "5.0": -0.193
+          }
+        }
+      },
+      "steering_total": 1.874,
+      "sweep": {
+        "best_layer": 18,
+        "best_layer_pct": 75.0,
+        "best_effect": 1.4295,
+        "n_layers": 24
+      },
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "qwen3.5_4b": {
+      "name": "Qwen3.5 4B",
+      "org": "Alibaba",
+      "params": "4.0B",
+      "color": "#F4A261",
+      "fingerprint": {
+        "warm_cold": -0.165,
+        "confident_cautious": -0.123,
+        "empathetic_analytical": -0.14,
+        "formal_casual": 0.043,
+        "verbose_concise": -0.067
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.052,
+        "confident_cautious": 0.075,
+        "empathetic_analytical": 0.052,
+        "formal_casual": 0.063,
+        "verbose_concise": 0.136
+      },
+      "stability": {
+        "icc": 0.8384,
+        "icc_per_axis": {
+          "warm_cold": 0.906,
+          "confident_cautious": 0.7404,
+          "empathetic_analytical": 0.8829,
+          "formal_casual": 0.835,
+          "verbose_concise": 0.8278
+        },
+        "cosine": {
+          "warm_cold": 0.906,
+          "confident_cautious": 0.7404,
+          "empathetic_analytical": 0.8829,
+          "formal_casual": 0.835,
+          "verbose_concise": 0.8278
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00128,
+          "effect": 0.014,
+          "leakage": 1.11,
+          "alpha_means": {
+            "-5.0": -0.086,
+            "-2.0": -0.076,
+            "-1.0": -0.078,
+            "0.0": -0.079,
+            "1.0": -0.073,
+            "2.0": -0.075,
+            "5.0": -0.072
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00105,
+          "effect": 0.013,
+          "leakage": 1.02,
+          "alpha_means": {
+            "-5.0": -0.127,
+            "-2.0": -0.131,
+            "-1.0": -0.132,
+            "0.0": -0.119,
+            "1.0": -0.13,
+            "2.0": -0.122,
+            "5.0": -0.119
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00093,
+          "effect": 0.01,
+          "leakage": 0.74,
+          "alpha_means": {
+            "-5.0": -0.132,
+            "-2.0": -0.127,
+            "-1.0": -0.125,
+            "0.0": -0.124,
+            "1.0": -0.126,
+            "2.0": -0.125,
+            "5.0": -0.122
+          }
+        },
+        "formal_casual": {
+          "slope": 0.00117,
+          "effect": 0.012,
+          "leakage": 0.85,
+          "alpha_means": {
+            "-5.0": -0.011,
+            "-2.0": -0.012,
+            "-1.0": -0.005,
+            "0.0": -0.003,
+            "1.0": -0.003,
+            "2.0": 0.0,
+            "5.0": -0.002
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00148,
+          "effect": 0.024,
+          "leakage": 0.32,
+          "alpha_means": {
+            "-5.0": -0.183,
+            "-2.0": -0.159,
+            "-1.0": -0.182,
+            "0.0": -0.172,
+            "1.0": -0.176,
+            "2.0": -0.168,
+            "5.0": -0.163
+          }
+        }
+      },
+      "steering_total": 0.073,
+      "sweep": {
+        "best_layer": 20,
+        "best_layer_pct": 62.5,
+        "best_effect": 1.4465,
+        "n_layers": 32
+      }
+    },
+    "falcon_h1_0.5b": {
+      "name": "Falcon-H1 0.5B",
+      "org": "TII",
+      "params": "0.5B",
+      "color": "#C77DFF",
+      "fingerprint": {
+        "warm_cold": -0.46,
+        "confident_cautious": -0.232,
+        "empathetic_analytical": 0.019,
+        "formal_casual": 0.182,
+        "verbose_concise": -0.128
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.058,
+        "confident_cautious": 0.17,
+        "empathetic_analytical": 0.131,
+        "formal_casual": 0.093,
+        "verbose_concise": 0.214
+      },
+      "stability": {
+        "icc": 0.7136,
+        "icc_per_axis": {
+          "warm_cold": 0.7758,
+          "confident_cautious": 0.3713,
+          "empathetic_analytical": 0.6408,
+          "formal_casual": 0.8744,
+          "verbose_concise": 0.9059
+        },
+        "cosine": {
+          "warm_cold": 0.7758,
+          "confident_cautious": 0.3713,
+          "empathetic_analytical": 0.6408,
+          "formal_casual": 0.8744,
+          "verbose_concise": 0.9059
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00046,
+          "effect": 0.009,
+          "leakage": 3.49,
+          "alpha_means": {
+            "-5.0": -0.397,
+            "-2.0": -0.389,
+            "-1.0": -0.389,
+            "0.0": -0.395,
+            "1.0": -0.392,
+            "2.0": -0.388,
+            "5.0": -0.391
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00067,
+          "effect": 0.027,
+          "leakage": 1.75,
+          "alpha_means": {
+            "-5.0": -0.253,
+            "-2.0": -0.272,
+            "-1.0": -0.267,
+            "0.0": -0.266,
+            "1.0": -0.274,
+            "2.0": -0.28,
+            "5.0": -0.256
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.00112,
+          "effect": 0.015,
+          "leakage": 1.43,
+          "alpha_means": {
+            "-5.0": 0.13,
+            "-2.0": 0.13,
+            "-1.0": 0.117,
+            "0.0": 0.115,
+            "1.0": 0.128,
+            "2.0": 0.123,
+            "5.0": 0.117
+          }
+        },
+        "formal_casual": {
+          "slope": 8e-05,
+          "effect": 0.01,
+          "leakage": 10.28,
+          "alpha_means": {
+            "-5.0": 0.101,
+            "-2.0": 0.111,
+            "-1.0": 0.109,
+            "0.0": 0.103,
+            "1.0": 0.101,
+            "2.0": 0.111,
+            "5.0": 0.104
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00444,
+          "effect": 0.062,
+          "leakage": 0.16,
+          "alpha_means": {
+            "-5.0": -0.406,
+            "-2.0": -0.466,
+            "-1.0": -0.469,
+            "0.0": -0.453,
+            "1.0": -0.463,
+            "2.0": -0.461,
+            "5.0": -0.462
+          }
+        }
+      },
+      "steering_total": 0.125
+    },
+    "falcon_h1_1.5b": {
+      "name": "Falcon-H1 1.5B",
+      "org": "TII",
+      "params": "1.5B",
+      "color": "#C77DFF",
+      "fingerprint": {
+        "verbose_concise": -0.201
+      },
+      "fingerprint_std": {
+        "verbose_concise": 0.077
+      },
+      "stability": {
+        "icc": 0.5321,
+        "icc_per_axis": {
+          "warm_cold": 0.5756,
+          "confident_cautious": 0.1489,
+          "empathetic_analytical": 0.3562,
+          "formal_casual": 0.6738,
+          "verbose_concise": 0.906
+        },
+        "cosine": {
+          "warm_cold": 0.5756,
+          "confident_cautious": 0.1489,
+          "empathetic_analytical": 0.3562,
+          "formal_casual": 0.6738,
+          "verbose_concise": 0.906
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": 0.00141,
+          "effect": 0.027,
+          "leakage": 1.73,
+          "alpha_means": {
+            "-5.0": -0.206,
+            "-2.0": -0.213,
+            "-1.0": -0.204,
+            "0.0": -0.205,
+            "1.0": -0.219,
+            "2.0": -0.199,
+            "5.0": -0.192
+          }
+        },
+        "confident_cautious": {
+          "slope": 0.00147,
+          "effect": 0.094,
+          "leakage": 1.36,
+          "alpha_means": {
+            "-5.0": 0.514,
+            "-2.0": 0.466,
+            "-1.0": 0.484,
+            "0.0": 0.513,
+            "1.0": 0.561,
+            "2.0": 0.527,
+            "5.0": 0.492
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.00068,
+          "effect": 0.017,
+          "leakage": 2.51,
+          "alpha_means": {
+            "-5.0": 0.265,
+            "-2.0": 0.278,
+            "-1.0": 0.276,
+            "0.0": 0.271,
+            "1.0": 0.278,
+            "2.0": 0.283,
+            "5.0": 0.271
+          }
+        },
+        "formal_casual": {
+          "slope": -0.001,
+          "effect": 0.033,
+          "leakage": 2.33,
+          "alpha_means": {
+            "-5.0": 0.033,
+            "-2.0": 0.03,
+            "-1.0": -0.001,
+            "0.0": 0.012,
+            "1.0": 0.01,
+            "2.0": 0.008,
+            "5.0": 0.028
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00036,
+          "effect": 0.027,
+          "leakage": 1.88,
+          "alpha_means": {
+            "-5.0": -0.271,
+            "-2.0": -0.264,
+            "-1.0": -0.247,
+            "0.0": -0.27,
+            "1.0": -0.27,
+            "2.0": -0.274,
+            "5.0": -0.258
+          }
+        }
+      },
+      "steering_total": 0.199,
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "smollm_1.7b": {
+      "name": "SmolLM2 1.7B",
+      "org": "HuggingFace",
+      "params": "1.7B",
+      "color": "#2EC4B6",
+      "fingerprint": {
+        "warm_cold": -0.053,
+        "confident_cautious": 0.065,
+        "empathetic_analytical": -0.308,
+        "formal_casual": 0.348,
+        "verbose_concise": 0.397
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.161,
+        "confident_cautious": 0.156,
+        "empathetic_analytical": 0.144,
+        "formal_casual": 0.085,
+        "verbose_concise": 0.186
+      },
+      "stability": {
+        "icc": 0.8165,
+        "icc_per_axis": {
+          "warm_cold": 0.8611,
+          "confident_cautious": 0.6764,
+          "empathetic_analytical": 0.7559,
+          "formal_casual": 0.9118,
+          "verbose_concise": 0.8774
+        },
+        "cosine": {
+          "warm_cold": 0.8611,
+          "confident_cautious": 0.6764,
+          "empathetic_analytical": 0.7559,
+          "formal_casual": 0.9118,
+          "verbose_concise": 0.8774
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00121,
+          "effect": 0.026,
+          "leakage": 0.54,
+          "alpha_means": {
+            "-5.0": -0.103,
+            "-2.0": -0.084,
+            "-1.0": -0.081,
+            "0.0": -0.089,
+            "1.0": -0.09,
+            "2.0": -0.107,
+            "5.0": -0.107
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.00066,
+          "effect": 0.009,
+          "leakage": 2.56,
+          "alpha_means": {
+            "-5.0": 0.151,
+            "-2.0": 0.155,
+            "-1.0": 0.15,
+            "0.0": 0.149,
+            "1.0": 0.148,
+            "2.0": 0.148,
+            "5.0": 0.146
+          }
+        },
+        "empathetic_analytical": {
+          "slope": -0.00208,
+          "effect": 0.018,
+          "leakage": 0.29,
+          "alpha_means": {
+            "-5.0": -0.011,
+            "-2.0": -0.018,
+            "-1.0": -0.017,
+            "0.0": -0.023,
+            "1.0": -0.028,
+            "2.0": -0.029,
+            "5.0": -0.03
+          }
+        },
+        "formal_casual": {
+          "slope": -0.0001,
+          "effect": 0.007,
+          "leakage": 6.07,
+          "alpha_means": {
+            "-5.0": 0.354,
+            "-2.0": 0.352,
+            "-1.0": 0.347,
+            "0.0": 0.348,
+            "1.0": 0.348,
+            "2.0": 0.347,
+            "5.0": 0.354
+          }
+        },
+        "verbose_concise": {
+          "slope": -0.00213,
+          "effect": 0.024,
+          "leakage": 0.37,
+          "alpha_means": {
+            "-5.0": -0.06,
+            "-2.0": -0.054,
+            "-1.0": -0.058,
+            "0.0": -0.064,
+            "1.0": -0.07,
+            "2.0": -0.077,
+            "5.0": -0.074
+          }
+        }
+      },
+      "steering_total": 0.084,
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    },
+    "granite_2b": {
+      "name": "Granite 3.3 2B",
+      "org": "IBM",
+      "params": "2.5B",
+      "color": "#648FFF",
+      "fingerprint": {
+        "warm_cold": -0.318,
+        "confident_cautious": -0.06,
+        "empathetic_analytical": -0.189,
+        "formal_casual": 0.145,
+        "verbose_concise": 0.187
+      },
+      "fingerprint_std": {
+        "warm_cold": 0.168,
+        "confident_cautious": 0.196,
+        "empathetic_analytical": 0.149,
+        "formal_casual": 0.265,
+        "verbose_concise": 0.159
+      },
+      "stability": {
+        "icc": 0.3303,
+        "icc_per_axis": {
+          "warm_cold": 0.2457,
+          "confident_cautious": 0.1324,
+          "empathetic_analytical": 0.2447,
+          "formal_casual": 0.3869,
+          "verbose_concise": 0.6418
+        },
+        "cosine": {
+          "warm_cold": 0.2457,
+          "confident_cautious": 0.1324,
+          "empathetic_analytical": 0.2447,
+          "formal_casual": 0.3869,
+          "verbose_concise": 0.6418
+        }
+      },
+      "steering": {
+        "warm_cold": {
+          "slope": -0.00037,
+          "effect": 0.06,
+          "leakage": 8.13,
+          "alpha_means": {
+            "-5.0": -0.292,
+            "-2.0": -0.323,
+            "-1.0": -0.311,
+            "0.0": -0.352,
+            "1.0": -0.332,
+            "2.0": -0.314,
+            "5.0": -0.296
+          }
+        },
+        "confident_cautious": {
+          "slope": -0.0001,
+          "effect": 0.029,
+          "leakage": 34.14,
+          "alpha_means": {
+            "-5.0": -0.109,
+            "-2.0": -0.101,
+            "-1.0": -0.095,
+            "0.0": -0.086,
+            "1.0": -0.115,
+            "2.0": -0.087,
+            "5.0": -0.112
+          }
+        },
+        "empathetic_analytical": {
+          "slope": 0.0043,
+          "effect": 0.05,
+          "leakage": 0.87,
+          "alpha_means": {
+            "-5.0": -0.184,
+            "-2.0": -0.19,
+            "-1.0": -0.194,
+            "0.0": -0.195,
+            "1.0": -0.145,
+            "2.0": -0.167,
+            "5.0": -0.152
+          }
+        },
+        "formal_casual": {
+          "slope": -0.00485,
+          "effect": 0.081,
+          "leakage": 0.68,
+          "alpha_means": {
+            "-5.0": 0.147,
+            "-2.0": 0.082,
+            "-1.0": 0.13,
+            "0.0": 0.151,
+            "1.0": 0.071,
+            "2.0": 0.115,
+            "5.0": 0.087
+          }
+        },
+        "verbose_concise": {
+          "slope": 0.00261,
+          "effect": 0.094,
+          "leakage": 0.18,
+          "alpha_means": {
+            "-5.0": 0.167,
+            "-2.0": 0.076,
+            "-1.0": 0.112,
+            "0.0": 0.132,
+            "1.0": 0.118,
+            "2.0": 0.144,
+            "5.0": 0.17
+          }
+        }
+      },
+      "steering_total": 0.314,
+      "drift": {
+        "warm_cold": {
+          "slope": 0,
+          "delta": 0
+        },
+        "confident_cautious": {
+          "slope": 0,
+          "delta": 0
+        },
+        "empathetic_analytical": {
+          "slope": 0,
+          "delta": 0
+        },
+        "formal_casual": {
+          "slope": 0,
+          "delta": 0
+        },
+        "verbose_concise": {
+          "slope": 0,
+          "delta": 0
+        }
+      },
+      "drift_mean": 0.0
+    }
+  }
+}
