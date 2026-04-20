@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Axis — Mapping LLM Personality Through Hidden States</title>
+<meta name="description" content="Interactive visualization of LLM personality fingerprints measured through hidden-state probing across behavioral axes.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #0f172a; color: #e2e8f0; }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+  /* Nav */
+  .nav-link { transition: color 0.2s, border-color 0.2s; }
+  .nav-link:hover { color: #f1f5f9; }
+  .nav-link.active { color: #f1f5f9; border-bottom-color: #6366f1; }
+
+  /* Cards */
+  .model-card {
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .model-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  .model-card.selected {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Hero radar glow */
+  .hero-radar-wrap {
+    position: relative;
+  }
+  .hero-radar-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Section fade-in */
+  .section-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Heatmap cell */
+  .heatmap-cell {
+    transition: transform 0.15s;
+    position: relative;
+  }
+  .heatmap-cell:hover {
+    transform: scale(1.15);
+    z-index: 10;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+  }
+  .heatmap-cell:hover .tooltip,
+  .bar-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Stat counter animation */
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .stat-num {
+    animation: countUp 0.8s ease-out forwards;
+  }
+
+  /* Hero model label transition */
+  .hero-model-label {
+    transition: opacity 0.4s ease;
+  }
+
+  /* Sticky nav background */
+  .nav-glass {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Selection badge */
+  .selection-badge {
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  /* Bar chart hover */
+  .bar-item {
+    position: relative;
+  }
+
+  /* Featured model glow */
+  .model-card.featured {
+    border-color: rgba(99, 102, 241, 0.2);
+    background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent);
+  }
+  .model-card.featured:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  /* Expand/collapse */
+  .expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+  .expandable-content.expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  .expandable-content > div {
+    overflow: hidden;
+  }
+
+  /* Expand button */
+  .expand-btn {
+    transition: all 0.3s ease;
+  }
+  .expand-btn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+  .expand-btn svg {
+    transition: transform 0.3s ease;
+  }
+  .expand-btn.expanded svg {
+    transform: rotate(180deg);
+  }
+
+  /* Featured badge */
+  .featured-badge {
+    background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.2));
+    border: 1px solid rgba(99,102,241,0.3);
+  }
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          slate: {
+            850: '#172033',
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="antialiased">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-slate-700/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="#hero" class="text-lg font-bold text-white tracking-tight">Mood Axis</a>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#fingerprints" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Fingerprints</a>
+        <a href="#compare" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Compare</a>
+        <a href="#stability" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Stability</a>
+        <a href="#layer-sweep" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Layer Sweep</a>
+        <a href="#playground" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Playground</a>
+        <a href="#drift" class="nav-link text-sm text-slate-400 border-b-2 border-transparent pb-1">Drift</a>
+      </div>
+      <a href="https://github.com/yunoshev/mood-axis" target="_blank" rel="noopener"
+         class="text-slate-400 hover:text-white transition-colors">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="flex items-center justify-center pt-14 relative overflow-hidden">
+  <!-- Background gradient orbs -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <!-- Left: Text -->
+      <div class="text-center lg:text-left">
+        <p class="text-2xl sm:text-3xl font-semibold text-slate-300 max-w-xl mx-auto lg:mx-0 leading-snug">
+          Measuring LLM Temperament via Contrastive Hidden-State Probing
+        </p>
+        <p class="mt-4 text-lg sm:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed text-justify">
+          We calibrate linear direction vectors from contrastive pairs of hidden states
+          (warm&nbsp;vs&nbsp;cold, formal&nbsp;vs&nbsp;casual, etc.), then project neutral responses onto these axes
+          to extract a stable <span class="text-white font-medium">personality fingerprint</span> per model.
+          We validate with <span class="text-white font-medium">test-retest ICC</span>,
+          measure <span class="text-white font-medium">steerability</span> by injecting axis vectors at inference,
+          and test robustness under <span class="text-white font-medium">adversarial multi-turn conflict</span>.
+        </p>
+        <a href="https://github.com/yunoshev/mood-axis#methodology" target="_blank" rel="noopener"
+           class="mt-3 inline-flex items-center gap-1.5 text-indigo-400 hover:text-indigo-300 transition-colors text-base sm:text-lg cursor-pointer relative z-10">
+          Read methodology <span class="text-lg">&rarr;</span>
+        </a>
+
+        <!-- Stats -->
+        <div class="mt-6 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+          <div class="text-center lg:text-left">
+            <div class="stat-num text-3xl font-bold text-white" id="stat-models">--</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Models</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="stat-num text-3xl font-bold text-white" id="stat-axes">--</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Axes</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="stat-num text-3xl font-bold text-white" id="stat-orgs">--</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Orgs</div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#fingerprints"
+             class="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg transition-colors">
+            Explore Fingerprints
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="https://github.com/yunoshev/mood-axis" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center px-6 py-3 border border-slate-600 hover:border-slate-500 text-slate-300 text-sm font-medium rounded-lg transition-colors">
+            <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Hero Radar -->
+      <div class="flex flex-col items-center">
+        <div class="hero-radar-wrap w-full max-w-md">
+          <canvas id="heroRadar"></canvas>
+        </div>
+        <div class="mt-4 text-center">
+          <span id="heroModelName" class="hero-model-label text-lg font-semibold text-white"></span>
+          <span id="heroModelOrg" class="hero-model-label text-sm text-slate-500 ml-2"></span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <button id="heroPrev" class="p-1 text-slate-500 hover:text-white transition-colors" aria-label="Previous model">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div id="heroDots" class="flex gap-1.5"></div>
+          <button id="heroNext" class="p-1 text-slate-500 hover:text-white transition-colors" aria-label="Next model">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fingerprints Section -->
+<section id="fingerprints" class="py-12 sm:py-16 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Fingerprints</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Each model's default personality measured on 50 neutral questions without any style instruction.
+        Values range from &minus;1 (left pole) to +1 (right pole). Click cards to select for comparison.
+      </p>
+      <button onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('span').textContent = this.nextElementSibling.classList.contains('expanded') ? 'Hide methodology' : 'How we measure this'"
+              class="mt-3 text-sm text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer">
+        <span>How we measure this</span> &darr;
+      </button>
+      <div class="expandable-content mt-2 max-w-2xl mx-auto">
+        <div class="bg-slate-800/60 rounded-lg p-4 text-xs text-slate-500 leading-relaxed text-left">
+          <strong class="text-slate-400">Method:</strong> For each of 5 bipolar axes (warm/cold, confident/cautious, etc.), we calibrate a direction vector
+          by contrasting hidden states under opposing style instructions (50 positive + 50 negative prompts).
+          The axis vector is the normalized mean difference between the two groups, extracted from the last 4 transformer layers.
+          We then ask 50 neutral questions with no style instruction, extract hidden states, and project them onto each axis.
+          The mean projection is the model's baseline personality score on that axis.
+        </div>
+      </div>
+    </div>
+
+    <div id="fingerprintGroups"></div>
+  </div>
+</section>
+
+<!-- Compare Section -->
+<section id="compare" class="py-12 sm:py-16 bg-slate-800/30 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Compare Models</h2>
+        <p class="mt-2 text-slate-400 text-sm sm:text-base">Overlay personality fingerprints to see where models agree and differ. Toggle models on/off below.</p>
+      </div>
+      <div class="mt-4 sm:mt-0 flex gap-2">
+        <button id="selectFeatured"
+                class="px-4 py-2 text-sm border border-indigo-500/50 hover:border-indigo-400 text-indigo-400 hover:text-indigo-300 rounded-lg transition-colors">
+          Select Featured
+        </button>
+        <button id="clearSelection"
+                class="px-4 py-2 text-sm border border-slate-600 hover:border-red-500/50 text-slate-400 hover:text-red-400 rounded-lg transition-colors">
+          Clear Selection
+        </button>
+      </div>
+    </div>
+
+    <div id="compareEmpty" class="hidden text-center py-20">
+      <p class="text-slate-500 text-lg">No models selected. Click model cards above to begin comparing.</p>
+    </div>
+
+    <div id="compareLegend" class="mb-4 flex flex-wrap gap-4 justify-center"></div>
+
+    <div id="compareContent" class="grid lg:grid-cols-2 gap-8">
+      <!-- Compare Radar -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700/50">
+        <div class="aspect-square max-w-lg mx-auto">
+          <canvas id="compareRadar"></canvas>
+        </div>
+      </div>
+      <!-- Per-axis bars -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700/50">
+        <h3 class="text-lg font-semibold text-white mb-6">Per-Axis Values</h3>
+        <div id="compareAxesBars" class="space-y-5"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stability Section -->
+<section id="stability" class="py-12 sm:py-16 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Measurement Stability</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Do we get the same fingerprint if we measure again with different questions?
+        Higher cosine similarity = more reproducible. <span class="text-emerald-400">&ge;0.8 excellent</span>,
+        <span class="text-amber-400">0.6&ndash;0.8 moderate</span>, <span class="text-red-400">&lt;0.6 poor</span>.
+      </p>
+      <button onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('span').textContent = this.nextElementSibling.classList.contains('expanded') ? 'Hide methodology' : 'How we measure this'"
+              class="mt-3 text-sm text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer">
+        <span>How we measure this</span> &darr;
+      </button>
+      <div class="expandable-content mt-2 max-w-2xl mx-auto">
+        <div class="bg-slate-800/60 rounded-lg p-4 text-xs text-slate-500 leading-relaxed text-left">
+          <strong class="text-slate-400">Method:</strong> We run calibration 3 times independently (sets A, B, C) using different random subsets of 30 questions each.
+          Each set produces its own axis vectors. We compute pairwise cosine similarity between axis vectors from different sets
+          (A&harr;B, A&harr;C, B&harr;C) and average. A cosine of 1.0 means identical directions; 0.0 means unrelated.
+          Models with high d-prime (strong separation between contrastive states) produce more stable axes.
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700/50 max-w-3xl mx-auto">
+      <div id="stabilityBars" class="space-y-4"></div>
+    </div>
+
+    <!-- Insight box -->
+    <div class="max-w-3xl mx-auto mt-6 bg-slate-800/60 rounded-xl p-5 border border-slate-700/30 text-sm text-slate-400 leading-relaxed text-justify">
+      <span class="text-white font-medium">Why do some models score low?</span>
+      Stability depends on <span class="text-slate-300">d-prime</span> &mdash; the separation between contrastive hidden states.
+      Models with low d-prime (e.g. <span class="text-slate-300">GPT-OSS 20B</span>, d'&thickapprox;3) produce noisy axis vectors that
+      fluctuate across independent calibration sets. GPT-OSS is a MoE model with only 3.6B active parameters
+      and a small hidden dimension (2880) &mdash; different prompts activate different expert subsets, adding noise.
+      In contrast, models like <span class="text-slate-300">Qwen3 8B</span> (d'&thickapprox;12) produce highly stable axes
+      regardless of which questions are used.
+      <span class="text-slate-300">Nemotron-H</span> and <span class="text-slate-300">Granite 8B</span> also score low
+      for similar reasons &mdash; low d-prime, not architecture per se.
+    </div>
+  </div>
+</section>
+
+<!-- Steering Layer Sweep Section -->
+<section id="layer-sweep" class="py-12 sm:py-16 bg-slate-800/30 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Steering: Optimal Layer</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        At which transformer layer does steering have the strongest effect?
+        We test every layer and pick the one that moves the personality projection the most.
+      </p>
+      <button onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('span').textContent = this.nextElementSibling.classList.contains('expanded') ? 'Hide methodology' : 'How we measure this'"
+              class="mt-3 text-sm text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer">
+        <span>How we measure this</span> &darr;
+      </button>
+      <div class="expandable-content mt-2 max-w-2xl mx-auto">
+        <div class="bg-slate-800/60 rounded-lg p-4 text-xs text-slate-500 leading-relaxed text-left">
+          <strong class="text-slate-400">Method:</strong> For each model, we test 10&ndash;15 evenly spaced layers (25% to 95% depth).
+          At each layer, we inject the axis direction vector scaled by &alpha;&times;h_norm (where h_norm = median hidden state norm at that layer)
+          and generate responses to 5 questions at &alpha; = &minus;5, 0, +5.
+          The &ldquo;effect&rdquo; is the projection difference between &alpha;=+5 and &alpha;=&minus;5.
+          <strong class="text-slate-400">Key finding:</strong> optimal layers are typically at 25&ndash;65% depth.
+          Late layers (&gt;90%) often show near-zero effect because alignment training has &ldquo;cemented&rdquo; the output.
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700/50 max-w-4xl mx-auto">
+      <div id="sweepResults" class="space-y-3"></div>
+    </div>
+
+    <!-- Insight box -->
+    <div class="max-w-4xl mx-auto mt-6 bg-slate-800/60 rounded-xl p-5 border border-slate-700/30 text-sm text-slate-400 leading-relaxed text-justify">
+      <span class="text-white font-medium">Key finding: alpha normalization unlocks steering.</span>
+      Hidden state norms vary by <span class="text-slate-300">5,000&times;</span> across models (from ~10 for Qwen&nbsp;0.5B to ~51,000 for Gemma&nbsp;3&nbsp;12B).
+      Without normalization, alpha=5 is a <span class="text-slate-300">0.01% perturbation</span> for Gemma &mdash; invisible.
+      With <span class="text-white font-medium">h_norm scaling</span> (direction &times; median hidden state norm),
+      alpha=1 means the same relative perturbation for every model.
+      Result: <span class="text-slate-300">all models now show steering effect &gt;0.4</span>, up from only 5 models previously.
+      Optimal layers cluster at <span class="text-slate-300">25&ndash;65% depth</span> for most models.
+    </div>
+  </div>
+</section>
+
+<!-- Steering Playground Section -->
+<section id="playground" class="py-12 sm:py-16 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Steering Playground</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Drag the slider to inject a personality vector into the model and see how the response text changes in real time.
+      </p>
+      <button onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('span').textContent = this.nextElementSibling.classList.contains('expanded') ? 'Hide methodology' : 'How steering works'"
+              class="mt-3 text-sm text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer">
+        <span>How steering works</span> &darr;
+      </button>
+      <div class="expandable-content mt-2 max-w-2xl mx-auto">
+        <div class="bg-slate-800/60 rounded-lg p-4 text-xs text-slate-500 leading-relaxed text-left">
+          <strong class="text-slate-400">Method:</strong> We add &alpha;&times;(v&times;h_norm) to the hidden states at the optimal layer during autoregressive generation,
+          where v is the unit axis vector, h_norm is the median hidden state norm (makes &alpha; comparable across models), and &alpha; controls the strength.
+          <strong class="text-slate-400">Two-pass evaluation:</strong> Pass 1 generates text with the steering hook active.
+          Pass 2 re-encodes the steered text through the clean model to measure where it falls on all 5 axes.
+          This separates "what the model wrote" from "how we judge it."
+          Each question shows 7 alpha values (&minus;5, &minus;2, &minus;1, 0, +1, +2, +5) with the actual generated text.
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700/50 mb-8">
+      <div class="flex flex-wrap gap-4 items-center justify-center mb-6">
+        <div>
+          <label class="block text-xs text-slate-500 mb-1">Model</label>
+          <select id="pgModel" class="bg-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 border border-slate-600 focus:border-indigo-500 focus:outline-none min-w-[160px]"></select>
+        </div>
+        <div>
+          <label class="block text-xs text-slate-500 mb-1">Axis</label>
+          <select id="pgAxis" class="bg-slate-700 text-slate-200 text-sm rounded-lg px-3 py-2 border border-slate-600 focus:border-indigo-500 focus:outline-none min-w-[160px]"></select>
+        </div>
+        <div>
+          <label class="block text-xs text-slate-500 mb-1">Question</label>
+          <div class="flex items-center gap-2">
+            <button id="pgPrevQ" class="bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg px-2.5 py-2 text-sm transition-colors">&larr;</button>
+            <span id="pgQNum" class="text-sm text-slate-300 font-mono min-w-[40px] text-center">1/3</span>
+            <button id="pgNextQ" class="bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg px-2.5 py-2 text-sm transition-colors">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider -->
+      <div class="max-w-xl mx-auto">
+        <div class="flex items-center justify-between text-xs text-slate-500 mb-1">
+          <span id="pgNegLabel">Cold</span>
+          <span class="text-slate-600">alpha</span>
+          <span id="pgPosLabel">Warm</span>
+        </div>
+        <div class="relative">
+          <input id="pgSlider" type="range" min="0" max="6" value="3" step="1"
+                 class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-500
+                        [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5
+                        [&::-webkit-slider-thumb]:bg-indigo-500 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg
+                        [&::-webkit-slider-thumb]:shadow-indigo-500/30 [&::-webkit-slider-thumb]:cursor-grab
+                        [&::-webkit-slider-thumb]:active:cursor-grabbing">
+        </div>
+        <div class="flex justify-between text-xs text-slate-600 mt-1 font-mono" id="pgAlphaTicks"></div>
+        <div class="text-center mt-2">
+          <span class="inline-flex items-center gap-1.5 bg-indigo-500/20 text-indigo-300 text-sm font-mono px-3 py-1 rounded-full">
+            &alpha; = <span id="pgAlphaVal">0</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content: radar + text -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Radar chart -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700/50">
+        <h3 class="text-sm font-medium text-slate-400 mb-4 text-center">Personality Profile at Current &alpha;</h3>
+        <div class="flex justify-center">
+          <div style="width: 340px; height: 340px;">
+            <canvas id="pgRadar"></canvas>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 text-center mt-3">Target axis highlighted. Other axes show cross-axis leakage.</p>
+      </div>
+
+      <!-- Response text -->
+      <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700/50 flex flex-col">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-medium text-slate-400">Model Response</h3>
+          <span id="pgTargetBadge" class="text-xs font-mono px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300"></span>
+        </div>
+        <div id="pgQuestion" class="text-sm text-slate-500 italic mb-3 pb-3 border-b border-slate-700/30"></div>
+        <div id="pgText" class="text-sm text-slate-300 leading-relaxed flex-1 overflow-y-auto max-h-[320px] whitespace-pre-wrap"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Drift Section -->
+<section id="drift" class="py-12 sm:py-16 section-fade">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Conflict Drift</h2>
+      <p class="mt-2 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+        Does the model's personality change when users push back aggressively?
+        Lower drift = more robust identity under pressure.
+      </p>
+      <button onclick="this.nextElementSibling.classList.toggle('expanded'); this.querySelector('span').textContent = this.nextElementSibling.classList.contains('expanded') ? 'Hide methodology' : 'How we measure this'"
+              class="mt-3 text-sm text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer">
+        <span>How we measure this</span> &darr;
+      </button>
+      <div class="expandable-content mt-2 max-w-2xl mx-auto">
+        <div class="bg-slate-800/60 rounded-lg p-4 text-xs text-slate-500 leading-relaxed text-left">
+          <strong class="text-slate-400">Method:</strong> We simulate 50 adversarial multi-turn conversations (12&ndash;16 turns each).
+          The user progressively escalates conflict &mdash; sarcasm, dismissal, direct contradiction of the model's style.
+          After each turn, we extract hidden states and project onto the 5 personality axes.
+          &ldquo;Drift&rdquo; is the mean absolute change in projection from turn 1 to turn 12.
+          Plus 10 neutral control conversations to separate drift caused by conflict from natural conversation dynamics.
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700/50 max-w-3xl mx-auto">
+      <div id="driftBars" class="space-y-4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-slate-800 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-3 gap-8 text-center sm:text-left">
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Mood Axis</h3>
+        <p class="mt-3 text-sm text-slate-500">
+          Measuring and steering LLM personality through hidden-state probing.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Links</h3>
+        <ul class="mt-3 space-y-2">
+          <li><a href="https://github.com/yunoshev/mood-axis" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">GitHub Repository</a></li>
+          <li><a href="https://github.com/yunoshev/mood-axis/blob/main/docs/sections/" class="text-sm text-slate-500 hover:text-slate-300 transition-colors">Paper Sections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Methodology</h3>
+        <p class="mt-3 text-sm text-slate-500">
+          Fingerprints are extracted from the last 4 hidden layers using weighted aggregation,
+          then projected onto calibrated bipolar axes via linear probes.
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-slate-800 text-center">
+      <p class="text-xs text-slate-600">&copy; 2025&ndash;2026 Andrey Yunoshev. Data generated with open-weight models.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Global State ──
+let DATA = null;
+let selectedModels = new Set();
+let heroChart = null;
+let compareChart = null;
+let heroInterval = null;
+let heroIndex = 0;
+let heroModels = [];
+
+// Featured models: shown prominently in every section
+const FEATURED = [
+  'qwen3.5_9b', 'deepseek_r1_14b', 'gemma3_12b',
+  'phi4', 'llama_8b', 'gpt_oss_20b'
+];
+
+function isFeatured(mk) { return FEATURED.includes(mk); }
+
+function toggleExpand(btn, contentId) {
+  const content = document.getElementById(contentId);
+  content.classList.toggle('expanded');
+  btn.classList.toggle('expanded');
+  const label = btn.querySelector('.expand-label');
+  if (label) {
+    label.textContent = content.classList.contains('expanded') ? 'Show fewer' : 'Show all models';
+  }
+}
+
+// ── Chart.js Defaults ──
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.font.family = 'Inter, system-ui, -apple-system, sans-serif';
+
+// ── Data Loading ──
+async function loadData() {
+  try {
+    const resp = await fetch('site_data.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    DATA = await resp.json();
+    init();
+  } catch (e) {
+    console.error('Failed to load site_data.json:', e);
+    document.body.innerHTML = `
+      <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-2xl font-bold text-white mb-4">Data Not Available</h1>
+          <p class="text-slate-400">Could not load site_data.json. Please ensure the file exists.</p>
+          <p class="text-slate-500 text-sm mt-2">${e.message}</p>
+        </div>
+      </div>`;
+  }
+}
+
+// ── Helpers ──
+function getAxisLabel(axis) {
+  if (DATA.axis_labels && DATA.axis_labels[axis]) {
+    return DATA.axis_labels[axis][0]; // positive pole
+  }
+  return axis.split('_').map(w => w[0].toUpperCase() + w.slice(1)).join('/');
+}
+
+function getModelAxes(modelKey) {
+  const m = DATA.models[modelKey];
+  if (!m || !m.fingerprint) return [];
+  return Object.keys(m.fingerprint);
+}
+
+function getCommonAxes(modelKeys) {
+  if (modelKeys.length === 0) return DATA.axes || [];
+  const sets = modelKeys.map(k => new Set(getModelAxes(k)));
+  const common = [...sets[0]].filter(ax => sets.every(s => s.has(ax)));
+  // Preserve order from DATA.axes if possible
+  const ordered = (DATA.axes || []).filter(ax => common.includes(ax));
+  // Add any axes not in DATA.axes
+  common.forEach(ax => { if (!ordered.includes(ax)) ordered.push(ax); });
+  return ordered;
+}
+
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function iccColor(val) {
+  if (val >= 0.8) return '#34d399'; // emerald-400
+  if (val >= 0.6) return '#fbbf24'; // amber-400
+  return '#f87171'; // red-400
+}
+
+function iccBgColor(val) {
+  if (val >= 0.8) return 'rgba(52,211,153,0.15)';
+  if (val >= 0.6) return 'rgba(251,191,36,0.15)';
+  return 'rgba(248,113,113,0.15)';
+}
+
+// ── Initialization ──
+function init() {
+  populateStats();
+  setupHero();
+  renderFingerprints();
+  initCompare();
+  renderStability();
+  renderSweepResults();
+  loadPlaygroundData();
+  renderDrift();
+  setupScrollObserver();
+  setupNavHighlight();
+
+  // Default selection: featured models
+  FEATURED.forEach(m => {
+    if (DATA.models[m]) selectedModels.add(m);
+  });
+  updateSelectionUI();
+  updateCompare();
+}
+
+// ── Stats ──
+function populateStats() {
+  const modelCount = Object.keys(DATA.models).length;
+  const axisCount = (DATA.axes || []).length;
+  const orgs = new Set(Object.values(DATA.models).map(m => m.org).filter(Boolean));
+
+  document.getElementById('stat-models').textContent = modelCount;
+  document.getElementById('stat-axes').textContent = axisCount;
+  document.getElementById('stat-orgs').textContent = orgs.size;
+}
+
+// ── Hero Radar ──
+function setupHero() {
+  heroModels = FEATURED.filter(m => DATA.models[m]);
+  if (heroModels.length === 0) return;
+
+  const ctx = document.getElementById('heroRadar').getContext('2d');
+  const firstModel = DATA.models[heroModels[0]];
+  const axes = getCommonAxes(heroModels);
+  const labels = axes.map(getAxisLabel);
+
+  heroChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: axes.map(ax => firstModel.fingerprint[ax] || 0),
+        backgroundColor: hexToRgba(firstModel.color, 0.12),
+        borderColor: hexToRgba(firstModel.color, 0.8),
+        borderWidth: 2.5,
+        pointBackgroundColor: firstModel.color,
+        pointBorderColor: firstModel.color,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      animation: { duration: 800, easing: 'easeInOutQuart' },
+      plugins: { legend: { display: false } },
+      scales: {
+        r: {
+          min: -1, max: 1,
+          ticks: {
+            stepSize: 0.5,
+            color: '#64748b',
+            backdropColor: 'transparent',
+            font: { size: 10 },
+          },
+          grid: { color: 'rgba(255,255,255,0.06)' },
+          angleLines: { color: 'rgba(255,255,255,0.08)' },
+          pointLabels: {
+            color: '#94a3b8',
+            font: { size: 12, weight: '500' },
+          },
+        }
+      }
+    }
+  });
+
+  updateHeroLabel(heroModels[0]);
+  renderHeroDots();
+
+  // Auto-cycle
+  heroInterval = setInterval(() => {
+    heroIndex = (heroIndex + 1) % heroModels.length;
+    morphHero(heroIndex);
+  }, 3000);
+
+  // Manual controls
+  document.getElementById('heroPrev').addEventListener('click', () => {
+    clearInterval(heroInterval);
+    heroIndex = (heroIndex - 1 + heroModels.length) % heroModels.length;
+    morphHero(heroIndex);
+    heroInterval = setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroModels.length;
+      morphHero(heroIndex);
+    }, 3000);
+  });
+  document.getElementById('heroNext').addEventListener('click', () => {
+    clearInterval(heroInterval);
+    heroIndex = (heroIndex + 1) % heroModels.length;
+    morphHero(heroIndex);
+    heroInterval = setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroModels.length;
+      morphHero(heroIndex);
+    }, 3000);
+  });
+}
+
+function morphHero(idx) {
+  const modelKey = heroModels[idx];
+  const model = DATA.models[modelKey];
+  const axes = getCommonAxes(heroModels);
+  const ds = heroChart.data.datasets[0];
+
+  ds.data = axes.map(ax => model.fingerprint[ax] || 0);
+  ds.backgroundColor = hexToRgba(model.color, 0.12);
+  ds.borderColor = hexToRgba(model.color, 0.8);
+  ds.pointBackgroundColor = model.color;
+  ds.pointBorderColor = model.color;
+  heroChart.update('default');
+
+  updateHeroLabel(modelKey);
+  updateHeroDots(idx);
+}
+
+function updateHeroLabel(modelKey) {
+  const m = DATA.models[modelKey];
+  const nameEl = document.getElementById('heroModelName');
+  const orgEl = document.getElementById('heroModelOrg');
+  nameEl.style.opacity = '0';
+  orgEl.style.opacity = '0';
+  setTimeout(() => {
+    nameEl.textContent = m.name;
+    nameEl.style.color = m.color;
+    orgEl.textContent = m.org ? `by ${m.org}` : '';
+    nameEl.style.opacity = '1';
+    orgEl.style.opacity = '1';
+  }, 200);
+}
+
+function renderHeroDots() {
+  const container = document.getElementById('heroDots');
+  container.innerHTML = '';
+  heroModels.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-indigo-400 w-4' : 'bg-slate-600'}`;
+    dot.setAttribute('aria-label', `Show model ${i + 1}`);
+    dot.addEventListener('click', () => {
+      clearInterval(heroInterval);
+      heroIndex = i;
+      morphHero(i);
+      heroInterval = setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroModels.length;
+        morphHero(heroIndex);
+      }, 3000);
+    });
+    container.appendChild(dot);
+  });
+}
+
+function updateHeroDots(idx) {
+  const dots = document.getElementById('heroDots').children;
+  for (let i = 0; i < dots.length; i++) {
+    if (i === idx) {
+      dots[i].className = 'w-4 h-2 rounded-full transition-all duration-300 bg-indigo-400';
+    } else {
+      dots[i].className = 'w-2 h-2 rounded-full transition-all duration-300 bg-slate-600';
+    }
+  }
+}
+
+// ── Fingerprint Cards ──
+function renderFingerprints() {
+  const container = document.getElementById('fingerprintGroups');
+  container.innerHTML = '';
+
+  // 1. Featured models — always visible, larger cards
+  const featuredModels = FEATURED.filter(m => DATA.models[m]);
+  if (featuredModels.length > 0) {
+    const section = document.createElement('div');
+    section.className = 'mb-12';
+    section.innerHTML = `
+      <h3 class="text-lg font-semibold text-slate-300 mb-6 flex items-center">
+        <span class="w-8 h-px bg-indigo-500/50 mr-3"></span>Featured Models
+        <span class="ml-3 text-xs font-normal text-indigo-400/70">${featuredModels.length} models</span>
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 model-grid"></div>
+    `;
+    const grid = section.querySelector('.model-grid');
+    featuredModels.forEach(mk => renderModelCard(grid, mk, true));
+    container.appendChild(section);
+    requestAnimationFrame(() => {
+      grid.querySelectorAll('.mini-radar').forEach(canvas => {
+        renderMiniRadar(canvas, canvas.dataset.model);
+      });
+    });
+  }
+
+  // 2. Expandable groups — collapsed by default
+  const totalModels = Object.keys(DATA.models).length;
+  const expandId = 'expand-fingerprints';
+  const expandWrapper = document.createElement('div');
+  expandWrapper.className = 'mt-8';
+  expandWrapper.innerHTML = `
+    <button onclick="toggleExpand(this, '${expandId}')"
+            class="expand-btn w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl border border-slate-700/50 text-sm text-slate-400 hover:text-slate-200">
+      <span class="expand-label">Show all ${totalModels} models</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div id="${expandId}" class="expandable-content mt-6">
+      <div class="expand-inner"></div>
+    </div>
+  `;
+  container.appendChild(expandWrapper);
+
+  const expandInner = expandWrapper.querySelector('.expand-inner');
+  const groupOrder = Object.keys(DATA.groups || {});
+  groupOrder.forEach(gk => {
+    const group = DATA.groups[gk];
+    const models = group.models.filter(m => DATA.models[m] && !FEATURED.includes(m));
+    if (models.length === 0) return;
+    renderModelGroup(expandInner, group.label, models);
+  });
+}
+
+function renderModelCard(grid, mk, featured = false) {
+  const m = DATA.models[mk];
+  const card = document.createElement('div');
+  card.className = `model-card bg-slate-800 rounded-xl p-4 border border-slate-700/50 ${featured ? 'featured' : ''}`;
+  card.dataset.model = mk;
+
+  const badgeHtml = featured
+    ? '<span class="featured-badge text-[10px] text-indigo-300 px-1.5 py-0.5 rounded-full">Featured</span>'
+    : '';
+
+  card.innerHTML = `
+    <div class="flex items-center justify-between mb-2">
+      <div class="min-w-0">
+        <div class="text-sm font-semibold text-white truncate">${m.name}</div>
+        <div class="text-xs text-slate-500">${m.org || ''}${m.params ? ' \u00B7 ' + m.params : ''}</div>
+      </div>
+      <div class="flex items-center gap-1.5">
+        ${badgeHtml}
+        <div class="selection-badge w-5 h-5 rounded-full border-2 border-slate-600 flex-shrink-0 flex items-center justify-center"
+             style="border-color: ${m.color}20">
+        </div>
+      </div>
+    </div>
+    <div class="aspect-square w-full ${featured ? 'max-w-[200px]' : 'max-w-[150px]'} mx-auto">
+      <canvas class="mini-radar" data-model="${mk}"></canvas>
+    </div>
+  `;
+  card.addEventListener('click', () => toggleSelection(mk));
+  grid.appendChild(card);
+}
+
+function renderModelGroup(container, label, models) {
+  const section = document.createElement('div');
+  section.className = 'mb-12';
+  section.innerHTML = `
+    <h3 class="text-lg font-semibold text-slate-300 mb-6 flex items-center">
+      <span class="w-8 h-px bg-slate-700 mr-3"></span>${label}
+      <span class="ml-3 text-xs font-normal text-slate-500">${models.length}</span>
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 model-grid"></div>
+  `;
+  const grid = section.querySelector('.model-grid');
+  models.forEach(mk => renderModelCard(grid, mk, false));
+  container.appendChild(section);
+
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.mini-radar').forEach(canvas => {
+      renderMiniRadar(canvas, canvas.dataset.model);
+    });
+  });
+}
+
+function renderMiniRadar(canvas, modelKey) {
+  const m = DATA.models[modelKey];
+  const axes = getModelAxes(modelKey).filter(ax => (DATA.axes || []).includes(ax));
+  // If model has axes not in DATA.axes, use DATA.axes filtered to what model has
+  const finalAxes = axes.length > 0 ? axes : Object.keys(m.fingerprint).slice(0, 7);
+  const labels = finalAxes.map(ax => {
+    const lbl = getAxisLabel(ax);
+    return lbl.length > 6 ? lbl.slice(0, 5) + '.' : lbl;
+  });
+
+  new Chart(canvas.getContext('2d'), {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: finalAxes.map(ax => m.fingerprint[ax] || 0),
+        backgroundColor: hexToRgba(m.color, 0.1),
+        borderColor: hexToRgba(m.color, 0.8),
+        borderWidth: 1.5,
+        pointBackgroundColor: m.color,
+        pointRadius: 2,
+        pointHoverRadius: 3,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      animation: { duration: 400 },
+      plugins: { legend: { display: false } },
+      scales: {
+        r: {
+          min: -1, max: 1,
+          ticks: { display: false },
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          angleLines: { color: 'rgba(255,255,255,0.05)' },
+          pointLabels: {
+            color: '#64748b',
+            font: { size: 8 },
+          },
+        }
+      }
+    }
+  });
+}
+
+// ── Selection ──
+function toggleSelection(modelKey) {
+  if (selectedModels.has(modelKey)) {
+    selectedModels.delete(modelKey);
+  } else {
+    if (selectedModels.size >= 8) {
+      // Remove oldest
+      const first = selectedModels.values().next().value;
+      selectedModels.delete(first);
+    }
+    selectedModels.add(modelKey);
+  }
+  updateSelectionUI();
+  updateCompare();
+}
+
+function updateSelectionUI() {
+  document.querySelectorAll('.model-card').forEach(card => {
+    const mk = card.dataset.model;
+    const m = DATA.models[mk];
+    const badge = card.querySelector('.selection-badge');
+    if (selectedModels.has(mk)) {
+      card.classList.add('selected');
+      card.style.borderColor = m.color;
+      badge.innerHTML = `<svg class="w-3 h-3" fill="${m.color}" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>`;
+      badge.style.borderColor = m.color;
+      badge.style.backgroundColor = hexToRgba(m.color, 0.15);
+    } else {
+      card.classList.remove('selected');
+      card.style.borderColor = 'transparent';
+      badge.innerHTML = '';
+      badge.style.borderColor = hexToRgba(m.color, 0.12);
+      badge.style.backgroundColor = 'transparent';
+    }
+  });
+}
+
+// ── Compare ──
+function initCompare() {
+  document.getElementById('clearSelection').addEventListener('click', () => {
+    selectedModels.clear();
+    updateSelectionUI();
+    updateCompare();
+  });
+  document.getElementById('selectFeatured').addEventListener('click', () => {
+    selectedModels.clear();
+    FEATURED.forEach(m => { if (DATA.models[m]) selectedModels.add(m); });
+    updateSelectionUI();
+    updateCompare();
+  });
+}
+
+function updateCompare() {
+  const selected = [...selectedModels];
+  const emptyEl = document.getElementById('compareEmpty');
+  const contentEl = document.getElementById('compareContent');
+  const legendEl = document.getElementById('compareLegend');
+
+  if (selected.length === 0) {
+    emptyEl.classList.remove('hidden');
+    contentEl.classList.add('hidden');
+    legendEl.innerHTML = '';
+    return;
+  }
+  emptyEl.classList.add('hidden');
+  contentEl.classList.remove('hidden');
+
+  const axes = getCommonAxes(selected);
+  const labels = axes.map(getAxisLabel);
+
+  // Radar
+  const datasets = selected.map(mk => {
+    const m = DATA.models[mk];
+    return {
+      label: m.name,
+      data: axes.map(ax => m.fingerprint[ax] || 0),
+      backgroundColor: hexToRgba(m.color, 0.08),
+      borderColor: hexToRgba(m.color, 0.8),
+      borderWidth: 2,
+      pointBackgroundColor: m.color,
+      pointBorderColor: m.color,
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      fill: true,
+    };
+  });
+
+  if (compareChart) {
+    compareChart.data.labels = labels;
+    compareChart.data.datasets = datasets;
+    compareChart.update('default');
+  } else {
+    const ctx = document.getElementById('compareRadar').getContext('2d');
+    compareChart = new Chart(ctx, {
+      type: 'radar',
+      data: { labels, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        animation: { duration: 800, easing: 'easeInOutQuart' },
+        plugins: { legend: { display: false } },
+        scales: {
+          r: {
+            min: -1, max: 1,
+            ticks: {
+              stepSize: 0.5,
+              color: '#64748b',
+              backdropColor: 'transparent',
+              font: { size: 10 },
+            },
+            grid: { color: 'rgba(255,255,255,0.06)' },
+            angleLines: { color: 'rgba(255,255,255,0.08)' },
+            pointLabels: {
+              color: '#94a3b8',
+              font: { size: 12, weight: '500' },
+            },
+          }
+        }
+      }
+    });
+  }
+
+  // Legend — featured always visible + any extra selected models
+  const allFeatured = FEATURED.filter(mk => DATA.models[mk]);
+  const extraSelected = selected.filter(mk => !FEATURED.includes(mk));
+
+  function renderToggleBtn(mk) {
+    const m = DATA.models[mk];
+    const isOn = selectedModels.has(mk);
+    return `<button class="compare-toggle flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all text-sm cursor-pointer"
+                    data-model="${mk}"
+                    style="border-color: ${isOn ? m.color : 'rgba(100,116,139,0.3)'};
+                           background: ${isOn ? hexToRgba(m.color, 0.15) : 'transparent'};
+                           color: ${isOn ? m.color : '#64748b'};
+                           opacity: ${isOn ? 1 : 0.5}">
+      <span class="w-3 h-3 rounded-full" style="background:${isOn ? m.color : '#475569'}"></span>
+      ${m.name}
+    </button>`;
+  }
+
+  let html = allFeatured.map(renderToggleBtn).join('');
+  if (extraSelected.length > 0) {
+    html += '<span class="w-px h-6 bg-slate-700 mx-1"></span>';
+    html += extraSelected.map(renderToggleBtn).join('');
+  }
+  legendEl.innerHTML = html;
+
+  // Toggle handlers
+  legendEl.querySelectorAll('.compare-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleSelection(btn.dataset.model);
+    });
+  });
+
+  // Per-axis bars
+  renderCompareAxisBars(selected, axes);
+}
+
+function renderCompareAxisBars(selected, axes) {
+  const container = document.getElementById('compareAxesBars');
+  container.innerHTML = '';
+
+  axes.forEach(ax => {
+    const posLabel = DATA.axis_labels?.[ax]?.[0] || '';
+    const negLabel = DATA.axis_labels?.[ax]?.[1] || '';
+
+    const axisDiv = document.createElement('div');
+    axisDiv.className = 'mb-5';
+
+    // Axis labels: positive ← → negative
+    axisDiv.innerHTML = `
+      <div class="flex justify-between items-baseline mb-2">
+        <span class="text-xs font-medium text-slate-300">${posLabel}</span>
+        <span class="text-xs text-slate-600">${negLabel}</span>
+      </div>
+      <div class="relative h-8 bg-slate-700/30 rounded-full">
+        <!-- Center line -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-slate-600 z-10"></div>
+        <!-- Tick marks -->
+        <div class="absolute left-[25%] top-0 bottom-0 w-px bg-slate-700/50"></div>
+        <div class="absolute left-[75%] top-0 bottom-0 w-px bg-slate-700/50"></div>
+        <!-- Dots container -->
+        <div class="dot-track absolute inset-0"></div>
+      </div>
+      <div class="flex justify-between text-[10px] text-slate-600 mt-1 px-1">
+        <span>+1</span><span>+0.5</span><span>0</span><span>&minus;0.5</span><span>&minus;1</span>
+      </div>
+    `;
+
+    const track = axisDiv.querySelector('.dot-track');
+
+    // Place dots for each model
+    selected.forEach(mk => {
+      const m = DATA.models[mk];
+      const val = m.fingerprint[ax] || 0;
+      const pct = ((1 - val) / 2) * 100; // +1 = left (0%), -1 = right (100%)
+
+      const dot = document.createElement('div');
+      dot.className = 'absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 cursor-default transition-all duration-500';
+      dot.style.left = `${pct}%`;
+      dot.innerHTML = `
+        <div class="relative group">
+          <div class="w-4 h-4 rounded-full border-2 shadow-lg transition-transform hover:scale-150"
+               style="background: ${m.color}; border-color: ${m.color}; box-shadow: 0 0 8px ${hexToRgba(m.color, 0.4)}"></div>
+          <!-- Tooltip -->
+          <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-30
+                      bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 shadow-xl whitespace-nowrap">
+            <div class="text-xs font-semibold" style="color: ${m.color}">${m.name}</div>
+            <div class="text-xs text-slate-400 mt-0.5">${posLabel}: <span class="text-white font-mono">${val >= 0 ? '+' : ''}${val.toFixed(3)}</span></div>
+          </div>
+        </div>
+      `;
+      track.appendChild(dot);
+    });
+
+    container.appendChild(axisDiv);
+  });
+}
+
+// ── Stability Bars ──
+function renderStabilityBar(container, mk) {
+  const m = DATA.models[mk];
+  const icc = m.stability.icc;
+  const color = iccColor(icc);
+  const bgColor = iccBgColor(icc);
+  const pct = Math.max(0, Math.min(100, icc * 100));
+
+  let perAxisHtml = '';
+  if (m.stability.icc_per_axis) {
+    const entries = Object.entries(m.stability.icc_per_axis).sort((a, b) => b[1] - a[1]);
+    perAxisHtml = entries.map(([ax, val]) => {
+      const axLabel = getAxisLabel(ax);
+      const axColor = iccColor(val);
+      return `<div class="flex justify-between gap-4"><span>${axLabel}</span><span style="color:${axColor}">${val.toFixed(3)}</span></div>`;
+    }).join('');
+  }
+
+  const row = document.createElement('div');
+  row.className = 'bar-item group';
+  row.innerHTML = `
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-sm font-medium text-slate-300">${m.name}${isFeatured(mk) ? ' <span class="featured-badge text-[9px] text-indigo-300 px-1 py-0.5 rounded-full ml-1">Featured</span>' : ''}</span>
+      <span class="text-sm font-mono" style="color:${color}">${icc.toFixed(3)}</span>
+    </div>
+    <div class="relative h-3 bg-slate-700/40 rounded-full overflow-hidden">
+      <div class="absolute inset-y-0 left-0 rounded-full transition-all duration-700"
+           style="width:${pct}%; background:${color}; opacity: 0.3;"></div>
+      <div class="absolute inset-y-0 left-0 rounded-full transition-all duration-700"
+           style="width:${pct}%; background: linear-gradient(90deg, ${bgColor}, ${color}); opacity: 0.6;"></div>
+    </div>
+    ${perAxisHtml ? `
+    <div class="tooltip absolute right-0 top-full mt-2 z-30 bg-slate-900 border border-slate-700 rounded-lg p-3 shadow-xl text-xs min-w-[180px]">
+      <div class="font-semibold text-slate-300 mb-2">Per-Axis ICC</div>
+      ${perAxisHtml}
+    </div>` : ''}
+  `;
+  container.appendChild(row);
+}
+
+function renderStability() {
+  const container = document.getElementById('stabilityBars');
+  container.innerHTML = '';
+
+  const allModels = DATA.model_order.filter(mk => {
+    const m = DATA.models[mk];
+    return m && m.stability && typeof m.stability.icc === 'number';
+  });
+
+  if (allModels.length === 0) {
+    container.innerHTML = '<p class="text-slate-500 text-center py-8">No stability data available.</p>';
+    return;
+  }
+
+  allModels.sort((a, b) => DATA.models[b].stability.icc - DATA.models[a].stability.icc);
+
+  const featured = allModels.filter(mk => isFeatured(mk));
+  const rest = allModels.filter(mk => !isFeatured(mk));
+
+  featured.forEach(mk => renderStabilityBar(container, mk));
+
+  if (rest.length > 0) {
+    const expandId = 'expand-stability';
+    container.insertAdjacentHTML('beforeend', `
+      <button onclick="toggleExpand(this, '${expandId}')"
+              class="expand-btn w-full flex items-center justify-center gap-2 py-3 mt-4 rounded-xl border border-slate-700/50 text-sm text-slate-400">
+        <span class="expand-label">Show all ${allModels.length} models</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="${expandId}" class="expandable-content mt-4"><div class="space-y-4"></div></div>
+    `);
+    const inner = document.getElementById(expandId).firstElementChild;
+    rest.forEach(mk => renderStabilityBar(inner, mk));
+  }
+
+  const legend = document.createElement('div');
+  legend.className = 'mt-6 flex items-center justify-center gap-6 text-xs';
+  legend.innerHTML = `
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-400/60"></span><span class="text-slate-500">Excellent (&ge;0.8)</span></div>
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-400/60"></span><span class="text-slate-500">Moderate (0.6&ndash;0.8)</span></div>
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-red-400/60"></span><span class="text-slate-500">Poor (&lt;0.6)</span></div>
+  `;
+  container.appendChild(legend);
+}
+
+// ── Steering Heatmap ──
+function buildSteeringTable(models, axes, maxEffect) {
+  let html = '<table class="w-full border-collapse">';
+  html += '<thead><tr><th class="text-left text-xs font-medium text-slate-500 pb-4 pr-4 whitespace-nowrap">Model</th>';
+  axes.forEach(ax => {
+    html += `<th class="text-center text-xs font-medium text-slate-500 pb-4 px-2 whitespace-nowrap">${getAxisLabel(ax)}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  models.forEach(mk => {
+    const m = DATA.models[mk];
+    const s = m.steering;
+    html += `<tr class="border-t border-slate-700/30">`;
+    html += `<td class="py-3 pr-4 text-sm font-medium text-slate-300 whitespace-nowrap">${m.name}${isFeatured(mk) ? ' <span class="featured-badge text-[9px] text-indigo-300 px-1 py-0.5 rounded-full ml-1">Featured</span>' : ''}</td>`;
+
+    axes.forEach(ax => {
+      if (s[ax]) {
+        const effect = Math.abs(s[ax].effect || 0);
+        const intensity = Math.min(effect / maxEffect, 1);
+        const alpha = 0.05 + intensity * 0.85;
+        const leakage = s[ax].leakage || 0;
+        const slope = s[ax].slope || 0;
+
+        html += `<td class="py-3 px-2 text-center">
+          <div class="heatmap-cell inline-flex items-center justify-center w-14 h-10 rounded-lg text-xs font-mono cursor-default"
+               style="background: rgba(99,102,241,${alpha.toFixed(2)}); color: ${intensity > 0.5 ? '#e2e8f0' : '#94a3b8'}">
+            ${effect.toFixed(2)}
+            <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-30 bg-slate-900 border border-slate-700 rounded-lg p-3 shadow-xl text-xs min-w-[160px] text-left font-sans">
+              <div class="font-semibold text-slate-300 mb-1.5">${m.name} &middot; ${getAxisLabel(ax)}</div>
+              <div class="flex justify-between"><span class="text-slate-500">Effect:</span><span class="text-white">${(s[ax].effect || 0).toFixed(3)}</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Slope:</span><span class="text-white">${slope.toFixed(5)}</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Leakage:</span><span class="${leakage > 1 ? 'text-amber-400' : 'text-white'}">${leakage.toFixed(2)}</span></div>
+            </div>
+          </div>
+        </td>`;
+      } else {
+        html += `<td class="py-3 px-2 text-center">
+          <div class="inline-flex items-center justify-center w-14 h-10 rounded-lg text-xs text-slate-600">&mdash;</div>
+        </td>`;
+      }
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  return html;
+}
+
+function renderSteeringHeatmap() {
+  const container = document.getElementById('steeringHeatmap');
+  container.innerHTML = '';
+
+  const allModels = DATA.model_order.filter(mk => {
+    const m = DATA.models[mk];
+    return m && m.steering && Object.keys(m.steering).length > 0;
+  });
+
+  if (allModels.length === 0) {
+    container.innerHTML = '<p class="text-slate-500 text-center py-8">No steering data available.</p>';
+    return;
+  }
+
+  const allSteeringAxes = new Set();
+  allModels.forEach(mk => {
+    Object.keys(DATA.models[mk].steering).forEach(ax => allSteeringAxes.add(ax));
+  });
+  const axes = (DATA.axes || []).filter(ax => allSteeringAxes.has(ax));
+
+  let maxEffect = 0;
+  allModels.forEach(mk => {
+    const s = DATA.models[mk].steering;
+    axes.forEach(ax => {
+      if (s[ax]) maxEffect = Math.max(maxEffect, Math.abs(s[ax].effect || 0));
+    });
+  });
+  if (maxEffect === 0) maxEffect = 1;
+
+  const featured = allModels.filter(mk => isFeatured(mk));
+  const rest = allModels.filter(mk => !isFeatured(mk));
+
+  // Featured table
+  const featuredDiv = document.createElement('div');
+  featuredDiv.className = 'overflow-x-auto';
+  featuredDiv.innerHTML = buildSteeringTable(featured, axes, maxEffect);
+  container.appendChild(featuredDiv);
+
+  // Expand for rest
+  if (rest.length > 0) {
+    const expandId = 'expand-steering';
+    container.insertAdjacentHTML('beforeend', `
+      <button onclick="toggleExpand(this, '${expandId}')"
+              class="expand-btn w-full flex items-center justify-center gap-2 py-3 mt-4 rounded-xl border border-slate-700/50 text-sm text-slate-400">
+        <span class="expand-label">Show all ${allModels.length} models</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="${expandId}" class="expandable-content mt-4"><div class="overflow-x-auto"></div></div>
+    `);
+    document.getElementById(expandId).firstElementChild.innerHTML = buildSteeringTable(rest, axes, maxEffect);
+  }
+}
+
+// ── Drift Bars ──
+// ── Steering Layer Sweep ──
+function renderSweepResults() {
+  const container = document.getElementById('sweepResults');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // Collect models with sweep data
+  const allModels = DATA.model_order.filter(mk => {
+    const m = DATA.models[mk];
+    return m && m.sweep && m.sweep.best_effect;
+  });
+
+  if (allModels.length === 0) {
+    container.innerHTML = '<p class="text-slate-500 text-center py-8">No layer sweep data available.</p>';
+    return;
+  }
+
+  // Sort by effect descending
+  allModels.sort((a, b) => Math.abs(DATA.models[b].sweep.best_effect) - Math.abs(DATA.models[a].sweep.best_effect));
+  const maxEffect = Math.max(...allModels.map(mk => Math.abs(DATA.models[mk].sweep.best_effect)));
+
+  const featured = allModels.filter(mk => isFeatured(mk));
+  const rest = allModels.filter(mk => !isFeatured(mk));
+
+  function renderSweepBar(parent, mk) {
+    const m = DATA.models[mk];
+    const sw = m.sweep;
+    const effect = Math.abs(sw.best_effect);
+    const pct = maxEffect > 0 ? (effect / maxEffect) * 100 : 0;
+    const color = effect > 1.0 ? '#34d399' : effect > 0.5 ? '#fbbf24' : '#f87171';
+
+    const row = document.createElement('div');
+    row.className = 'bar-item group';
+    row.innerHTML = `
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-sm font-medium text-slate-300">${m.name}${isFeatured(mk) ? ' <span class="featured-badge text-[9px] text-indigo-300 px-1 py-0.5 rounded-full ml-1">Featured</span>' : ''}</span>
+        <div class="flex items-center gap-3 text-xs">
+          <span class="text-slate-500">L${sw.best_layer} <span class="text-slate-600">(${sw.best_layer_pct.toFixed(0)}%)</span></span>
+          <span class="font-mono" style="color:${color}">${sw.best_effect > 0 ? '+' : ''}${sw.best_effect.toFixed(3)}</span>
+        </div>
+      </div>
+      <div class="relative h-3 bg-slate-700/40 rounded-full overflow-hidden">
+        <div class="absolute inset-y-0 left-0 rounded-full transition-all duration-700"
+             style="width:${pct}%; background: linear-gradient(90deg, ${color}40, ${color}); opacity: 0.6;"></div>
+      </div>
+    `;
+    parent.appendChild(row);
+  }
+
+  featured.forEach(mk => renderSweepBar(container, mk));
+
+  if (rest.length > 0) {
+    const expandId = 'expand-sweep';
+    container.insertAdjacentHTML('beforeend', `
+      <button onclick="toggleExpand(this, '${expandId}')"
+              class="expand-btn w-full flex items-center justify-center gap-2 py-3 mt-4 rounded-xl border border-slate-700/50 text-sm text-slate-400">
+        <span class="expand-label">Show all ${allModels.length} models</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="${expandId}" class="expandable-content mt-4"><div class="space-y-3"></div></div>
+    `);
+    const inner = document.getElementById(expandId).firstElementChild;
+    rest.forEach(mk => renderSweepBar(inner, mk));
+  }
+
+  // Legend
+  const legend = document.createElement('div');
+  legend.className = 'mt-6 flex items-center justify-center gap-6 text-xs';
+  legend.innerHTML = `
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-400/60"></span><span class="text-slate-500">Strong (&gt;1.0)</span></div>
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-400/60"></span><span class="text-slate-500">Moderate (0.5&ndash;1.0)</span></div>
+    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-red-400/60"></span><span class="text-slate-500">Weak (&lt;0.5)</span></div>
+  `;
+  container.appendChild(legend);
+}
+
+function renderDriftBar(container, mk, maxDrift) {
+  const m = DATA.models[mk];
+  const drift = m.drift_mean;
+  const pct = maxDrift > 0 ? (drift / maxDrift) * 100 : 0;
+
+  let color;
+  if (drift < 0.1) color = '#34d399';
+  else if (drift < 0.2) color = '#fbbf24';
+  else color = '#f87171';
+
+  let detailHtml = '';
+  if (m.drift) {
+    const entries = Object.entries(m.drift).sort((a, b) => Math.abs(b[1].delta) - Math.abs(a[1].delta));
+    detailHtml = entries.map(([ax, d]) => {
+      const axLabel = getAxisLabel(ax);
+      const delta = d.delta || 0;
+      const sign = delta >= 0 ? '+' : '';
+      return `<div class="flex justify-between gap-4"><span>${axLabel}</span><span class="text-slate-300">${sign}${delta.toFixed(3)}</span></div>`;
+    }).join('');
+  }
+
+  const row = document.createElement('div');
+  row.className = 'bar-item group';
+  row.innerHTML = `
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-sm font-medium text-slate-300">${m.name}${isFeatured(mk) ? ' <span class="featured-badge text-[9px] text-indigo-300 px-1 py-0.5 rounded-full ml-1">Featured</span>' : ''}</span>
+      <span class="text-sm font-mono" style="color:${color}">${drift.toFixed(3)}</span>
+    </div>
+    <div class="relative h-3 bg-slate-700/40 rounded-full overflow-hidden">
+      <div class="absolute inset-y-0 left-0 rounded-full transition-all duration-700"
+           style="width:${pct}%; background: linear-gradient(90deg, ${color}40, ${color}); opacity: 0.6;"></div>
+    </div>
+    ${detailHtml ? `
+    <div class="tooltip absolute right-0 top-full mt-2 z-30 bg-slate-900 border border-slate-700 rounded-lg p-3 shadow-xl text-xs min-w-[200px]">
+      <div class="font-semibold text-slate-300 mb-2">Per-Axis Delta</div>
+      ${detailHtml}
+    </div>` : ''}
+  `;
+  container.appendChild(row);
+}
+
+function renderDrift() {
+  const container = document.getElementById('driftBars');
+  container.innerHTML = '';
+
+  const allModels = DATA.model_order.filter(mk => {
+    const m = DATA.models[mk];
+    return m && m.drift && Object.keys(m.drift).length > 0 && m.drift_mean > 0;
+  });
+
+  if (allModels.length === 0) {
+    container.innerHTML = '<p class="text-slate-500 text-center py-8">No drift data available yet. Computing on nodes...</p>';
+    return;
+  }
+
+  allModels.sort((a, b) => DATA.models[b].drift_mean - DATA.models[a].drift_mean);
+  const maxDrift = Math.max(...allModels.map(mk => DATA.models[mk].drift_mean));
+
+  const featured = allModels.filter(mk => isFeatured(mk));
+  const rest = allModels.filter(mk => !isFeatured(mk));
+
+  featured.forEach(mk => renderDriftBar(container, mk, maxDrift));
+
+  if (rest.length > 0) {
+    const expandId = 'expand-drift';
+    container.insertAdjacentHTML('beforeend', `
+      <button onclick="toggleExpand(this, '${expandId}')"
+              class="expand-btn w-full flex items-center justify-center gap-2 py-3 mt-4 rounded-xl border border-slate-700/50 text-sm text-slate-400">
+        <span class="expand-label">Show all ${allModels.length} models</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="${expandId}" class="expandable-content mt-4"><div class="space-y-4"></div></div>
+    `);
+    const inner = document.getElementById(expandId).firstElementChild;
+    rest.forEach(mk => renderDriftBar(inner, mk, maxDrift));
+  }
+}
+
+// ── Steering Playground ──
+let PG_DATA = null;
+let pgChart = null;
+let pgState = { model: '', axis: '', qIdx: 0, alphaIdx: 3 };
+
+async function loadPlaygroundData() {
+  try {
+    const resp = await fetch('steering_playground.json');
+    if (!resp.ok) return;
+    PG_DATA = await resp.json();
+    initPlayground();
+  } catch (e) {
+    console.warn('Playground data not available:', e);
+    const section = document.getElementById('playground');
+    if (section) section.style.display = 'none';
+  }
+}
+
+function initPlayground() {
+  if (!PG_DATA || !PG_DATA.models) return;
+
+  const modelKeys = Object.keys(PG_DATA.models);
+  if (modelKeys.length === 0) return;
+
+  // Populate model selector — featured first
+  const modelSel = document.getElementById('pgModel');
+  const featuredPG = modelKeys.filter(mk => isFeatured(mk));
+  const otherPG = modelKeys.filter(mk => !isFeatured(mk));
+  let pgOptions = '';
+  if (featuredPG.length > 0) {
+    pgOptions += '<optgroup label="Featured">';
+    pgOptions += featuredPG.map(mk => {
+      const m = DATA.models[mk];
+      return `<option value="${mk}">${m ? m.name : mk}</option>`;
+    }).join('');
+    pgOptions += '</optgroup>';
+  }
+  if (otherPG.length > 0) {
+    pgOptions += '<optgroup label="Other models">';
+    pgOptions += otherPG.map(mk => {
+      const m = DATA.models[mk];
+      return `<option value="${mk}">${m ? m.name : mk}</option>`;
+    }).join('');
+    pgOptions += '</optgroup>';
+  }
+  modelSel.innerHTML = pgOptions;
+
+  // Set initial state — start with first featured model
+  pgState.model = featuredPG[0] || modelKeys[0];
+  pgState.qIdx = 0;
+  pgState.alphaIdx = 3; // middle (alpha=0)
+
+  // Events
+  modelSel.addEventListener('change', () => {
+    pgState.model = modelSel.value;
+    pgState.qIdx = 0;
+    populateAxisSelector();
+    updatePlayground();
+  });
+
+  document.getElementById('pgAxis').addEventListener('change', (e) => {
+    pgState.axis = e.target.value;
+    pgState.qIdx = 0;
+    updatePlayground();
+  });
+
+  document.getElementById('pgSlider').addEventListener('input', (e) => {
+    pgState.alphaIdx = parseInt(e.target.value);
+    updatePlayground();
+  });
+
+  document.getElementById('pgPrevQ').addEventListener('click', () => {
+    const qs = getQuestions();
+    if (qs.length > 0) {
+      pgState.qIdx = (pgState.qIdx - 1 + qs.length) % qs.length;
+      updatePlayground();
+    }
+  });
+
+  document.getElementById('pgNextQ').addEventListener('click', () => {
+    const qs = getQuestions();
+    if (qs.length > 0) {
+      pgState.qIdx = (pgState.qIdx + 1) % qs.length;
+      updatePlayground();
+    }
+  });
+
+  populateAxisSelector();
+  updatePlayground();
+}
+
+function populateAxisSelector() {
+  const axisSel = document.getElementById('pgAxis');
+  const modelData = PG_DATA.models[pgState.model];
+  if (!modelData) return;
+
+  const axes = Object.keys(modelData);
+  axisSel.innerHTML = axes.map(ax => {
+    const labels = DATA.axis_labels[ax];
+    const label = labels ? `${labels[0]} / ${labels[1]}` : ax;
+    return `<option value="${ax}">${label}</option>`;
+  }).join('');
+
+  pgState.axis = axes[0] || '';
+}
+
+function getQuestions() {
+  const modelData = PG_DATA.models[pgState.model];
+  if (!modelData || !modelData[pgState.axis]) return [];
+  return modelData[pgState.axis];
+}
+
+function getAlphaKeys() {
+  const qs = getQuestions();
+  if (qs.length === 0) return [];
+  // Get sorted alpha keys from first question
+  return Object.keys(qs[0].alphas).sort((a, b) => parseFloat(a) - parseFloat(b));
+}
+
+function updatePlayground() {
+  const qs = getQuestions();
+  const alphaKeys = getAlphaKeys();
+
+  if (qs.length === 0 || alphaKeys.length === 0) return;
+
+  // Update slider range
+  const slider = document.getElementById('pgSlider');
+  slider.max = alphaKeys.length - 1;
+  if (pgState.alphaIdx >= alphaKeys.length) pgState.alphaIdx = Math.floor(alphaKeys.length / 2);
+
+  // Alpha ticks
+  document.getElementById('pgAlphaTicks').innerHTML = alphaKeys.map(k =>
+    `<span>${parseFloat(k) > 0 ? '+' : ''}${parseFloat(k)}</span>`
+  ).join('');
+
+  const currentAlpha = alphaKeys[pgState.alphaIdx];
+  document.getElementById('pgAlphaVal').textContent =
+    (parseFloat(currentAlpha) > 0 ? '+' : '') + parseFloat(currentAlpha);
+
+  // Axis labels on slider
+  const labels = DATA.axis_labels[pgState.axis];
+  if (labels) {
+    document.getElementById('pgNegLabel').textContent = labels[1]; // negative pole
+    document.getElementById('pgPosLabel').textContent = labels[0]; // positive pole
+  }
+
+  // Question nav
+  const q = qs[pgState.qIdx];
+  document.getElementById('pgQNum').textContent = `${pgState.qIdx + 1}/${qs.length}`;
+  document.getElementById('pgQuestion').textContent = `"${q.question}"`;
+
+  // Get data at current alpha
+  const entry = q.alphas[currentAlpha];
+  if (!entry) return;
+
+  // Text
+  document.getElementById('pgText').textContent = entry.text;
+
+  // Target badge
+  const targetVal = entry.proj[pgState.axis];
+  const badgeEl = document.getElementById('pgTargetBadge');
+  if (targetVal !== undefined) {
+    const sign = targetVal >= 0 ? '+' : '';
+    badgeEl.textContent = `${getAxisLabel(pgState.axis)}: ${sign}${targetVal.toFixed(2)}`;
+    badgeEl.style.background = targetVal >= 0
+      ? 'rgba(52, 211, 153, 0.2)' : 'rgba(248, 113, 113, 0.2)';
+    badgeEl.style.color = targetVal >= 0 ? '#6ee7b7' : '#fca5a5';
+  }
+
+  // Radar chart
+  updatePlaygroundRadar(entry.proj);
+}
+
+function updatePlaygroundRadar(projections) {
+  const canvas = document.getElementById('pgRadar');
+  const axes = Object.keys(projections);
+  const labels = axes.map(ax => getAxisLabel(ax));
+  const values = axes.map(ax => projections[ax]);
+  const targetAxis = pgState.axis;
+
+  // Color the target axis differently
+  const pointColors = axes.map(ax =>
+    ax === targetAxis ? '#818cf8' : 'rgba(148, 163, 184, 0.5)'
+  );
+  const pointRadius = axes.map(ax => ax === targetAxis ? 6 : 3);
+
+  const chartData = {
+    labels,
+    datasets: [{
+      data: values,
+      backgroundColor: 'rgba(99, 102, 241, 0.12)',
+      borderColor: 'rgba(99, 102, 241, 0.7)',
+      borderWidth: 2,
+      pointBackgroundColor: pointColors,
+      pointBorderColor: pointColors,
+      pointRadius,
+      pointHoverRadius: pointRadius.map(r => r + 2),
+    }]
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
+    animation: { duration: 300 },
+    scales: {
+      r: {
+        min: -1, max: 1,
+        ticks: {
+          stepSize: 0.5,
+          color: 'rgba(148, 163, 184, 0.4)',
+          backdropColor: 'transparent',
+          font: { size: 9 },
+        },
+        grid: { color: 'rgba(148, 163, 184, 0.1)' },
+        angleLines: { color: 'rgba(148, 163, 184, 0.1)' },
+        pointLabels: {
+          color: (ctx) => {
+            const ax = axes[ctx.index];
+            return ax === targetAxis ? '#a5b4fc' : '#64748b';
+          },
+          font: (ctx) => {
+            const ax = axes[ctx.index];
+            return { size: ax === targetAxis ? 13 : 11, weight: ax === targetAxis ? 'bold' : 'normal' };
+          },
+        },
+      }
+    },
+    plugins: { legend: { display: false } },
+  };
+
+  if (pgChart) {
+    pgChart.data = chartData;
+    pgChart.options = chartOptions;
+    pgChart.update();
+  } else {
+    pgChart = new Chart(canvas, { type: 'radar', data: chartData, options: chartOptions });
+  }
+}
+
+// ── Scroll Observer (fade-in sections) ──
+function setupScrollObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+}
+
+// ── Nav Highlight ──
+function setupNavHighlight() {
+  const sections = ['fingerprints', 'compare', 'stability', 'layer-sweep', 'playground', 'drift'];
+  const links = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-56px 0px -50% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+}
+
+// ── Boot ──
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
+
+</body>
+</html>
