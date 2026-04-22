@@ -278,27 +278,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0008,
+          "delta": 0.067
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.007,
+          "delta": -0.01
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0054,
+          "delta": 0.136
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0001,
+          "delta": -0.09
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0118,
+          "delta": 0.154
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.091
     },
     "gemma3_12b": {
       "name": "Gemma 3 12B",
@@ -417,27 +417,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0051,
+          "delta": 0.035
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.017,
+          "delta": 0.211
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0174,
+          "delta": 0.315
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0049,
+          "delta": -0.0
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0139,
+          "delta": -0.212
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.155
     },
     "phi4": {
       "name": "Phi-4 14B",
@@ -556,27 +556,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0025,
+          "delta": 0.103
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0035,
+          "delta": -0.005
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0192,
+          "delta": 0.339
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0026,
+          "delta": -0.009
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.016,
+          "delta": -0.232
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.138
     },
     "deepseek_r1_14b": {
       "name": "DeepSeek-R1 14B",
@@ -695,27 +695,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0172,
+          "delta": 0.646
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0222,
+          "delta": 0.158
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0008,
+          "delta": 0.252
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0124,
+          "delta": -0.253
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0164,
+          "delta": -0.222
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.306
     },
     "ministral3_8b": {
       "name": "Ministral 3 8B",
@@ -828,27 +828,27 @@
       "steering_total": 1.61,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0065,
+          "delta": 0.12
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0236,
+          "delta": 0.289
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0079,
+          "delta": 0.115
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0009,
+          "delta": -0.063
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0085,
+          "delta": -0.083
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.134
     },
     "gpt_oss_20b": {
       "name": "GPT-OSS 20B",
@@ -1106,27 +1106,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.01,
+          "delta": 0.156
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0034,
+          "delta": 0.065
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.006,
+          "delta": 0.194
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0069,
+          "delta": -0.15
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.002,
+          "delta": -0.051
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.123
     },
     "llama_8b": {
       "name": "Llama 3.1 8B",
@@ -1245,27 +1245,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.003,
+          "delta": 0.134
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0041,
+          "delta": -0.078
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0021,
+          "delta": 0.049
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0019,
+          "delta": -0.049
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0022,
+          "delta": 0.011
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.064
     },
     "gemma_9b": {
       "name": "Gemma 2 9B",
@@ -1378,27 +1378,27 @@
       "steering_total": 1.121,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0079,
+          "delta": 0.098
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0053,
+          "delta": 0.052
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0003,
+          "delta": 0.209
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0057,
+          "delta": -0.078
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0163,
+          "delta": 0.028
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.093
     },
     "mistral_7b": {
       "name": "Mistral 7B v0.3",
@@ -1517,27 +1517,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.008,
+          "delta": 0.229
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0013,
+          "delta": -0.028
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0017,
+          "delta": 0.039
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0005,
+          "delta": -0.016
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0016,
+          "delta": 0.025
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.067
     },
     "qwen3_8b": {
       "name": "Qwen3 8B",
@@ -1656,27 +1656,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0076,
+          "delta": 0.249
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0078,
+          "delta": 0.023
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0223,
+          "delta": 0.384
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0127,
+          "delta": -0.303
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0082,
+          "delta": -0.013
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.194
     },
     "qwen_7b_base": {
       "name": "Qwen 2.5 7B (base)",
@@ -1766,27 +1766,27 @@
       "steering_total": 2.608,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0216,
+          "delta": -0.136
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0049,
+          "delta": -0.0
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0012,
+          "delta": 0.087
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0134,
+          "delta": 0.126
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0187,
+          "delta": -0.308
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.131
     },
     "llama_8b_base": {
       "name": "Llama 3.1 8B (base)",
@@ -1884,27 +1884,27 @@
       "steering_total": 0.0,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0003,
+          "delta": 0.031
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0014,
+          "delta": 0.01
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0,
+          "delta": 0.0
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0,
+          "delta": 0.0
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0,
+          "delta": 0.0
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.008
     },
     "gemma_9b_base": {
       "name": "Gemma 2 9B (base)",
@@ -2002,27 +2002,27 @@
       "steering_total": 0.0,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0006,
+          "delta": 0.026
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0002,
+          "delta": 0.008
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0003,
+          "delta": -0.026
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0016,
+          "delta": 0.018
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0006,
+          "delta": 0.031
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.022
     },
     "mistral_7b_base": {
       "name": "Mistral 7B (base)",
@@ -2137,27 +2137,27 @@
       "steering_total": 0.0,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0083,
+          "delta": 0.176
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0021,
+          "delta": -0.073
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0064,
+          "delta": 0.143
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0036,
+          "delta": 0.0
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0064,
+          "delta": 0.151
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.109
     },
     "exaone_7b": {
       "name": "EXAONE 3.5 7.8B",
@@ -2270,27 +2270,27 @@
       "steering_total": 2.064,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0003,
+          "delta": 0.096
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0092,
+          "delta": 0.165
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0088,
+          "delta": 0.209
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0,
+          "delta": -0.078
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.003,
+          "delta": 0.03
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.116
     },
     "falcon_h1_7b": {
       "name": "Falcon-H1 7B",
@@ -2403,27 +2403,27 @@
       "steering_total": 1.522,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0104,
+          "delta": 0.15
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0262,
+          "delta": -0.455
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0027,
+          "delta": -0.094
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0097,
+          "delta": -0.124
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.048,
+          "delta": 0.867
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.338
     },
     "glm_z1_9b": {
       "name": "GLM-Z1 9B",
@@ -2542,27 +2542,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0094,
+          "delta": -0.063
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0135,
+          "delta": 0.114
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0033,
+          "delta": 0.148
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0029,
+          "delta": -0.159
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0036,
+          "delta": -0.017
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.1
     },
     "granite_8b": {
       "name": "Granite 3.3 8B",
@@ -2675,27 +2675,27 @@
       "steering_total": 0.224,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.025,
+          "delta": 0.345
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0085,
+          "delta": -0.173
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0061,
+          "delta": -0.104
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0119,
+          "delta": -0.099
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0167,
+          "delta": 0.234
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.191
     },
     "internlm3_8b": {
       "name": "InternLM3 8B",
@@ -2808,27 +2808,27 @@
       "steering_total": 1.771,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0014,
+          "delta": 0.077
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.005,
+          "delta": -0.171
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0051,
+          "delta": 0.16
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0034,
+          "delta": -0.068
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0151,
+          "delta": -0.037
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.103
     },
     "nemotron_h_8b": {
       "name": "Nemotron-H 8B",
@@ -2941,27 +2941,27 @@
       "steering_total": 2.965,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.155,
+          "delta": -2.031
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0981,
+          "delta": 1.219
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0542,
+          "delta": 0.924
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.105,
+          "delta": 1.352
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0428,
+          "delta": 0.571
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 1.219
     },
     "olmo2_13b": {
       "name": "OLMo-2 13B",
@@ -3074,27 +3074,27 @@
       "steering_total": 0.86,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0064,
+          "delta": 0.064
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0124,
+          "delta": 0.047
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0074,
+          "delta": -0.014
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.002,
+          "delta": -0.026
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0028,
+          "delta": 0.108
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.052
     },
     "yi_9b": {
       "name": "Yi-1.5 9B",
@@ -3207,27 +3207,27 @@
       "steering_total": 0.443,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.1165,
+          "delta": -1.466
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.1128,
+          "delta": 1.401
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.048,
+          "delta": -0.51
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0004,
+          "delta": -0.054
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0165,
+          "delta": -0.258
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.738
     },
     "smollm3_3b": {
       "name": "SmolLM3 3B",
@@ -3340,27 +3340,27 @@
       "steering_total": 1.341,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0073,
+          "delta": 0.181
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0135,
+          "delta": -0.229
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0108,
+          "delta": 0.232
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0,
+          "delta": -0.056
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0146,
+          "delta": 0.117
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.163
     },
     "qwen2.5_0.5b": {
       "name": "Qwen 2.5 0.5B",
@@ -3479,27 +3479,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0367,
+          "delta": 0.674
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0112,
+          "delta": -0.106
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0241,
+          "delta": 0.426
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0076,
+          "delta": -0.147
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0006,
+          "delta": 0.011
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.273
     },
     "qwen_1.5b": {
       "name": "Qwen 2.5 1.5B",
@@ -3618,27 +3618,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.024,
+          "delta": 0.43
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0219,
+          "delta": -0.406
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0169,
+          "delta": 0.345
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0065,
+          "delta": -0.139
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0106,
+          "delta": 0.105
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.285
     },
     "qwen2.5_3b": {
       "name": "Qwen 2.5 3B",
@@ -3757,27 +3757,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0053,
+          "delta": 0.107
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0025,
+          "delta": 0.112
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0054,
+          "delta": 0.221
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0041,
+          "delta": -0.12
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0017,
+          "delta": -0.109
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.134
     },
     "qwen3_0.6b": {
       "name": "Qwen3 0.6B",
@@ -3896,27 +3896,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0172,
+          "delta": 0.329
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0078,
+          "delta": -0.197
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0138,
+          "delta": 0.256
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0132,
+          "delta": -0.227
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0065,
+          "delta": 0.088
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.219
     },
     "qwen3_1.7b": {
       "name": "Qwen3 1.7B",
@@ -4035,27 +4035,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0055,
+          "delta": 0.177
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0233,
+          "delta": 0.213
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0098,
+          "delta": 0.202
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0045,
+          "delta": -0.131
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0119,
+          "delta": 0.105
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.166
     },
     "qwen3_4b": {
       "name": "Qwen3 4B",
@@ -4174,27 +4174,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0095,
+          "delta": 0.216
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.004,
+          "delta": -0.046
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0185,
+          "delta": 0.321
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0081,
+          "delta": -0.201
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.008,
+          "delta": 0.014
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.16
     },
     "qwen3.5_0.8b": {
       "name": "Qwen3.5 0.8B",
@@ -4313,27 +4313,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0013,
+          "delta": 0.106
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0143,
+          "delta": 0.083
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0102,
+          "delta": 0.213
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0077,
+          "delta": -0.181
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.009,
+          "delta": 0.138
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.144
     },
     "qwen3.5_2b": {
       "name": "Qwen3.5 2B",
@@ -4452,27 +4452,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0043,
+          "delta": 0.028
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.017,
+          "delta": 0.085
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0106,
+          "delta": 0.176
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0009,
+          "delta": -0.086
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0147,
+          "delta": 0.209
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.117
     },
     "qwen3.5_4b": {
       "name": "Qwen3.5 4B",
@@ -4591,27 +4591,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0021,
+          "delta": 0.058
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0025,
+          "delta": -0.05
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0063,
+          "delta": 0.117
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0011,
+          "delta": -0.097
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0136,
+          "delta": 0.193
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.103
     },
     "falcon_h1_0.5b": {
       "name": "Falcon-H1 0.5B",
@@ -4730,27 +4730,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0019,
+          "delta": 0.047
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0307,
+          "delta": 0.333
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.008,
+          "delta": -0.106
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0062,
+          "delta": -0.052
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0096,
+          "delta": 0.076
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.123
     },
     "falcon_h1_1.5b": {
       "name": "Falcon-H1 1.5B",
@@ -4861,27 +4861,27 @@
       },
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0028,
+          "delta": 0.138
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0257,
+          "delta": -0.551
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0146,
+          "delta": -0.327
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0147,
+          "delta": 0.319
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0249,
+          "delta": 0.498
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.367
     },
     "smollm_1.7b": {
       "name": "SmolLM2 1.7B",
@@ -4994,27 +4994,27 @@
       "steering_total": 3.655,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0141,
+          "delta": 0.275
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0016,
+          "delta": -0.02
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0186,
+          "delta": 0.306
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0044,
+          "delta": -0.081
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0112,
+          "delta": -0.16
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.168
     },
     "granite_2b": {
       "name": "Granite 3.3 2B",
@@ -5127,27 +5127,27 @@
       "steering_total": 0.446,
       "drift": {
         "warm_cold": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0322,
+          "delta": 0.439
         },
         "confident_cautious": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0078,
+          "delta": -0.146
         },
         "empathetic_analytical": {
-          "slope": 0,
-          "delta": 0
+          "slope": -0.0169,
+          "delta": -0.238
         },
         "formal_casual": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0292,
+          "delta": 0.334
         },
         "verbose_concise": {
-          "slope": 0,
-          "delta": 0
+          "slope": 0.0465,
+          "delta": 0.613
         }
       },
-      "drift_mean": 0.0
+      "drift_mean": 0.354
     }
   }
 }
