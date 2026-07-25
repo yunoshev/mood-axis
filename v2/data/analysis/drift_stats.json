@@ -1,7 +1,7 @@
 {
   "_meta": {
     "script": "scripts/06e_drift_stats.py",
-    "timestamp": "2026-07-25T17:39:46.680434",
+    "timestamp": "2026-07-25T18:31:07.478551",
     "n_bootstrap": 1000,
     "n_permutations": 10000,
     "rng_seed": 42,
@@ -32,12 +32,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.0012283185820392657,
+            "std": 0.005742617446310585,
+            "ci_95": [
+              -0.0008255529897244069,
+              0.003286571418258658
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.006463386626188261,
             "std": 0.004457419028420912,
-            "ci_95": [
-              0.004946414348429671,
-              0.008032262796372308
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -45,12 +51,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.00019998000199980003,
+            "p_value": 0.22277772222777723,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1494907647173386,
-            "control_mean_abs_delta_turn1_to_last": 0.2601724770230552
+            "control_mean_abs_delta_turn1_to_last": 0.0646400075405836
           },
           "recovery": {
             "mean_recovery_ratio": 0.43144125032392744,
@@ -73,25 +79,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.00032659648370019027,
+            "std": 0.006255363940474956,
+            "ci_95": [
+              -0.002464574732726222,
+              0.0017948089851779303
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0031885203238608464,
             "std": 0.003991754798339791,
-            "ci_95": [
-              0.0017981830056591308,
-              0.0045940454305696396
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": false,
+          "significant_drift": true,
           "criteria": {
-            "ratio_gt_2x": false,
+            "ratio_gt_2x": true,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.22057794220577942,
+            "p_value": 0.005699430056994301,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.14566457447595893,
-            "control_mean_abs_delta_turn1_to_last": 0.12946911837595204
+            "control_mean_abs_delta_turn1_to_last": 0.06440626764670014
           },
           "recovery": {
             "mean_recovery_ratio": 0.622662078539213,
@@ -114,25 +126,31 @@
             ]
           },
           "control_slope": {
+            "mean": -6.0973957956807386e-05,
+            "std": 0.007381393974362429,
+            "ci_95": [
+              -0.002690891779147381,
+              0.002819582210150319
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.00579552169498022,
             "std": 0.00565203368461412,
-            "ci_95": [
-              -0.0077048139874697835,
-              -0.0037066356391979383
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": false,
+          "significant_drift": true,
           "criteria": {
-            "ratio_gt_2x": false,
+            "ratio_gt_2x": true,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.00019998000199980003,
+            "p_value": 0.054094590540945904,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.18428381966426968,
-            "control_mean_abs_delta_turn1_to_last": 0.30099708886506654
+            "control_mean_abs_delta_turn1_to_last": 0.12504527070559562
           },
           "recovery": {
             "mean_recovery_ratio": 0.47841051158330145,
@@ -155,12 +173,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.010222228234812227,
+            "std": 0.015223392822654289,
+            "ci_95": [
+              0.004575105714094167,
+              0.015057693081298201
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.008790679051580453,
             "std": 0.008659648944503053,
-            "ci_95": [
-              0.005357899253926507,
-              0.011724625574868553
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -168,12 +192,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0466953304669533,
+            "p_value": 0.16748325167483252,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.2658674643613631,
-            "control_mean_abs_delta_turn1_to_last": 0.18796913413680158
+            "control_mean_abs_delta_turn1_to_last": 0.1919956458596668
           },
           "recovery": {
             "mean_recovery_ratio": 0.26719562763109467,
@@ -196,12 +220,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0014416433012907806,
+            "std": 0.007045756146640865,
+            "ci_95": [
+              -0.003953278849687432,
+              0.0009577227189600895
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.004638189370106214,
             "std": 0.0047157888297932014,
-            "ci_95": [
-              -0.006358022000036226,
-              -0.0028740646418779466
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -209,12 +239,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.007499250074992501,
+            "p_value": 0.3000699930006999,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.16218103970168157,
-            "control_mean_abs_delta_turn1_to_last": 0.2291436219587922
+            "control_mean_abs_delta_turn1_to_last": 0.0808320458047092
           },
           "recovery": {
             "mean_recovery_ratio": 0.5294419105356021,
@@ -241,12 +271,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.009568429901223903,
+            "std": 0.011562641951507505,
+            "ci_95": [
+              -0.016879229954068577,
+              -0.0033916866066161446
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.003855031971145175,
             "std": 0.0056752657383387665,
-            "ci_95": [
-              -0.007363236206310189,
-              -0.0008001742989115033
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -254,12 +290,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.561943805619438,
+            "p_value": 0.7050294970502949,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.2253774011041969,
-            "control_mean_abs_delta_turn1_to_last": 0.1277149303816259
+            "control_mean_abs_delta_turn1_to_last": 0.15435283621773124
           },
           "recovery": {
             "mean_recovery_ratio": 0.33573935737477045,
@@ -282,25 +318,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.007841019351702913,
+            "std": 0.01974111280348663,
+            "ci_95": [
+              -0.0038898880162172127,
+              0.020324856840207163
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0017702627908233008,
             "std": 0.010682079878253445,
-            "ci_95": [
-              -0.004974111997425686,
-              0.008192647377783193
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.39336066393360664,
+            "p_value": 0.9446055394460554,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.28785826263949277,
-            "control_mean_abs_delta_turn1_to_last": 0.18595762103796004
+            "control_mean_abs_delta_turn1_to_last": 0.21047503426671027
           },
           "recovery": {
             "mean_recovery_ratio": 0.3695864265747555,
@@ -323,25 +365,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.00931606375607434,
+            "std": 0.010886443624293224,
+            "ci_95": [
+              0.0030634093559180203,
+              0.016210081232402314
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0050119783477309875,
             "std": 0.0045973196398451785,
-            "ci_95": [
-              0.0023760572849115466,
-              0.008132517354879597
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.1645835416458354,
+            "p_value": 0.6703329667033296,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.19601203907281162,
-            "control_mean_abs_delta_turn1_to_last": 0.09570612523239105
+            "control_mean_abs_delta_turn1_to_last": 0.14797038605902343
           },
           "recovery": {
             "mean_recovery_ratio": 0.4125580485118124,
@@ -364,25 +412,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.004473467318054576,
+            "std": 0.020403554292985505,
+            "ci_95": [
+              -0.007796011586938951,
+              0.017403439947711697
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0018509530493825241,
             "std": 0.009184833218153464,
-            "ci_95": [
-              -0.003807000838466645,
-              0.007583023670814274
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.25377462253774624,
+            "p_value": 0.17048295170482952,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.29074585833470334,
-            "control_mean_abs_delta_turn1_to_last": 0.18725391682237386
+            "control_mean_abs_delta_turn1_to_last": 0.1600357061251998
           },
           "recovery": {
             "mean_recovery_ratio": 0.2696076207416424,
@@ -405,25 +459,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.005245643170302982,
+            "std": 0.014863326025460604,
+            "ci_95": [
+              -0.014829729640875922,
+              0.0034696625992883677
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0022419882148011208,
             "std": 0.006460138289275831,
-            "ci_95": [
-              -0.0063224337987793505,
-              0.0017731555384166038
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.23677632236776322,
+            "p_value": 0.12048795120487951,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.24110815941356123,
-            "control_mean_abs_delta_turn1_to_last": 0.14633223209530116
+            "control_mean_abs_delta_turn1_to_last": 0.1365055227652192
           },
           "recovery": {
             "mean_recovery_ratio": 0.3026905227650539,
@@ -450,12 +510,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.00269532524101384,
+            "std": 0.008445903309219564,
+            "ci_95": [
+              -0.007593384693357182,
+              0.0025569158749511587
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.003926277831744622,
             "std": 0.0062658348961067145,
-            "ci_95": [
-              -0.00048597773758913675,
-              0.007669657961109325
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -463,12 +529,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.7812218778122187,
+            "p_value": 0.08599140085991401,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.2169012158375699,
-            "control_mean_abs_delta_turn1_to_last": 0.12047133073210717
+            "control_mean_abs_delta_turn1_to_last": 0.08710090145468712
           },
           "recovery": {
             "mean_recovery_ratio": 0.30592902665480826,
@@ -491,12 +557,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0043673203900697405,
+            "std": 0.010731336166259344,
+            "ci_95": [
+              -0.010706601366433283,
+              0.0028271743882621703
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.006364310877979731,
             "std": 0.008428894263573005,
-            "ci_95": [
-              -0.011137659171537105,
-              -0.0010069049614454255
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -504,12 +576,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.5303469653034697,
+            "p_value": 0.8168183181681832,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.18192693719640374,
-            "control_mean_abs_delta_turn1_to_last": 0.17817813782021402
+            "control_mean_abs_delta_turn1_to_last": 0.09368320959620177
           },
           "recovery": {
             "mean_recovery_ratio": 0.18679477253439258,
@@ -532,25 +604,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.010942794681318287,
+            "std": 0.007007841350947821,
+            "ci_95": [
+              -0.01539969023099712,
+              -0.007038770773861774
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.003689315296759132,
             "std": 0.004936243850311608,
-            "ci_95": [
-              -0.006746188782950873,
-              -0.000856257733697182
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0004999500049995,
+            "p_value": 9.999000099990002e-05,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.2917081073898589,
-            "control_mean_abs_delta_turn1_to_last": 0.0737198636867106
+            "control_mean_abs_delta_turn1_to_last": 0.14302217641379683
           },
           "recovery": {
             "mean_recovery_ratio": 0.5206184603392957,
@@ -573,12 +651,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.009312591069684057,
+            "std": 0.00822717035928826,
+            "ci_95": [
+              0.004367388919332891,
+              0.014370493630038485
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.004190267851363922,
             "std": 0.005194595626097247,
-            "ci_95": [
-              0.0009583985956851393,
-              0.007279532932326273
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -586,12 +670,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.5855414458554145,
+            "p_value": 0.0846915308469153,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.15148281764937566,
-            "control_mean_abs_delta_turn1_to_last": 0.08624119386076927
+            "control_mean_abs_delta_turn1_to_last": 0.14290779009461402
           },
           "recovery": {
             "mean_recovery_ratio": 0.45526520697991585,
@@ -614,12 +698,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.03159017379858069,
+            "std": 0.016871431081156678,
+            "ci_95": [
+              0.02225345487079919,
+              0.04184268389508564
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.028379791149979128,
             "std": 0.012740591446603436,
-            "ci_95": [
-              0.02126919803336119,
-              0.03661545745910809
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -627,12 +717,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.0005999400059994001,
+            "p_value": 0.00029997000299970003,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.25282369000371546,
-            "control_mean_abs_delta_turn1_to_last": 0.3997705085668713
+            "control_mean_abs_delta_turn1_to_last": 0.38564293780364095
           },
           "recovery": {
             "mean_recovery_ratio": 0.37604010587894793,
@@ -659,12 +749,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.002949516640298745,
+            "std": 0.014379052255177256,
+            "ci_95": [
+              -0.011641002676890956,
+              0.006107737218067241
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.013057234388235134,
             "std": 0.009021352480659162,
-            "ci_95": [
-              0.0075378834869650945,
-              0.01830056680863559
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -672,12 +768,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.30756924307569244,
+            "p_value": 0.7646235376462354,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.4113949197344482,
-            "control_mean_abs_delta_turn1_to_last": 0.31867427183315156
+            "control_mean_abs_delta_turn1_to_last": 0.1888318036682904
           },
           "recovery": {
             "mean_recovery_ratio": -0.07700146583778589,
@@ -700,12 +796,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.010675777842687978,
+            "std": 0.0074837426854558325,
+            "ci_95": [
+              -0.015415196530911683,
+              -0.006173216559129632
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.014205992085420907,
             "std": 0.008833617987701908,
-            "ci_95": [
-              -0.01996942216259263,
-              -0.009475487481213777
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -713,12 +815,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.27577242275772423,
+            "p_value": 0.6041395860413958,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.24453908762894572,
-            "control_mean_abs_delta_turn1_to_last": 0.23049281388521195
+            "control_mean_abs_delta_turn1_to_last": 0.18119669258594512
           },
           "recovery": {
             "mean_recovery_ratio": 0.38717024476970535,
@@ -741,25 +843,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.007308583803005984,
+            "std": 0.008876703445857033,
+            "ci_95": [
+              -0.012692912998967444,
+              -0.002220417773481329
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0006197877052952261,
             "std": 0.006043299353113467,
-            "ci_95": [
-              -0.004201450240031324,
-              0.0030823952464167676
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.2064793520647935,
+            "p_value": 0.012598740125987402,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.20732506358064712,
-            "control_mean_abs_delta_turn1_to_last": 0.1272299349308014
+            "control_mean_abs_delta_turn1_to_last": 0.15470571219921112
           },
           "recovery": {
             "mean_recovery_ratio": 0.3013873249272329,
@@ -782,25 +890,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.008834311582543521,
+            "std": 0.008162742605855106,
+            "ci_95": [
+              0.00407823700573298,
+              0.013861280702508813
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0025353313203937858,
             "std": 0.005703800886515511,
-            "ci_95": [
-              -0.001342970864780963,
-              0.005937691220174629
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.512048795120488,
+            "p_value": 0.7805219478052194,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.22071957453154029,
-            "control_mean_abs_delta_turn1_to_last": 0.12227373617497506
+            "control_mean_abs_delta_turn1_to_last": 0.1884065374804777
           },
           "recovery": {
             "mean_recovery_ratio": 0.12960473190221258,
@@ -823,12 +937,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.030320668079844727,
+            "std": 0.01382875566907595,
+            "ci_95": [
+              0.022312025315676963,
+              0.0391643042256099
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.03018204775721054,
             "std": 0.008384855662786139,
-            "ci_95": [
-              0.024999595079995583,
-              0.035632035081969875
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -836,12 +956,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.00029997000299970003,
+            "p_value": 0.00039996000399960006,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.21946511233691127,
-            "control_mean_abs_delta_turn1_to_last": 0.33970069922506807
+            "control_mean_abs_delta_turn1_to_last": 0.352824442088604
           },
           "recovery": {
             "mean_recovery_ratio": 0.4539059279496927,
@@ -868,12 +988,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.008851281967473222,
+            "std": 0.0057001508034045965,
+            "ci_95": [
+              -0.012366430528471702,
+              -0.005364064610613285
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0037219670205377044,
             "std": 0.00468075690267556,
-            "ci_95": [
-              -0.006708214142536129,
-              -0.0011076865504197927
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -881,12 +1007,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0173982601739826,
+            "p_value": 0.00039996000399960006,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1629826203873381,
-            "control_mean_abs_delta_turn1_to_last": 0.07640987198683433
+            "control_mean_abs_delta_turn1_to_last": 0.09686391180730425
           },
           "recovery": {
             "mean_recovery_ratio": 0.5078215025270096,
@@ -909,12 +1035,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.021694390652571005,
+            "std": 0.007152338942172876,
+            "ci_95": [
+              0.017286074148300527,
+              0.02614009243450811
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.01273992796009064,
             "std": 0.0041507311574523875,
-            "ci_95": [
-              0.010316933799691256,
-              0.015113369466040989
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -922,12 +1054,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.1121887811218878,
+            "p_value": 0.5645435456454354,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.24846091468818485,
-            "control_mean_abs_delta_turn1_to_last": 0.2539637798094191
+            "control_mean_abs_delta_turn1_to_last": 0.2724798584356904
           },
           "recovery": {
             "mean_recovery_ratio": 0.60197320594534,
@@ -950,25 +1082,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0073644097217104645,
+            "std": 0.0036827733540819975,
+            "ci_95": [
+              -0.009734718423414897,
+              -0.005229779887696977
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0031218558889539805,
             "std": 0.002744923257369602,
-            "ci_95": [
-              -0.004798508759040166,
-              -0.0015441748707774375
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0004999500049995,
+            "p_value": 9.999000099990002e-05,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.14737688177498057,
-            "control_mean_abs_delta_turn1_to_last": 0.05630204603075981
+            "control_mean_abs_delta_turn1_to_last": 0.08463086113333702
           },
           "recovery": {
             "mean_recovery_ratio": 0.5588496213713033,
@@ -991,12 +1129,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.023496644918390035,
+            "std": 0.012958549770130768,
+            "ci_95": [
+              -0.031234813288950773,
+              -0.015300586633290609
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.010856015406932462,
             "std": 0.008572735520005193,
-            "ci_95": [
-              -0.01645610245144481,
-              -0.005815052508672712
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1004,12 +1148,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.015998400159984,
+            "p_value": 0.00019998000199980003,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.14154287993442266,
-            "control_mean_abs_delta_turn1_to_last": 0.24004687555134296
+            "control_mean_abs_delta_turn1_to_last": 0.2059298435226083
           },
           "recovery": {
             "mean_recovery_ratio": 0.37430930715331506,
@@ -1036,12 +1180,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.041926680087971575,
+            "std": 0.01744329102148136,
+            "ci_95": [
+              -0.05277314741193346,
+              -0.030557738993698704
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.03779377345920212,
             "std": 0.010688623389863415,
-            "ci_95": [
-              -0.04347134363859283,
-              -0.029929127998588448
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1049,12 +1199,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0034996500349965005,
+            "p_value": 0.0022997700229977,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.7480844153522048,
-            "control_mean_abs_delta_turn1_to_last": 0.40080864895135165
+            "control_mean_abs_delta_turn1_to_last": 0.39720343593508006
           },
           "recovery": {
             "mean_recovery_ratio": 0.2020746213928275,
@@ -1077,12 +1227,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.07557374105700845,
+            "std": 0.018585646649818148,
+            "ci_95": [
+              0.06313336780803178,
+              0.08646765343884782
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.06455185959081385,
             "std": 0.014944256111596879,
-            "ci_95": [
-              0.05471008673610734,
-              0.07313847960990352
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1090,12 +1246,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.004199580041995801,
+            "p_value": 0.0012998700129987,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.9509175541962032,
-            "control_mean_abs_delta_turn1_to_last": 0.6498863920103759
+            "control_mean_abs_delta_turn1_to_last": 0.6328233286272734
           },
           "recovery": {
             "mean_recovery_ratio": 0.1808904799975716,
@@ -1118,12 +1274,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.06527382817015157,
+            "std": 0.014354969015779078,
+            "ci_95": [
+              0.05603741500104152,
+              0.07330275174949182
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.05383548606022755,
             "std": 0.011860581683193306,
-            "ci_95": [
-              0.04592380752794185,
-              0.061156206893279254
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1131,12 +1293,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.008999100089991,
+            "p_value": 0.0032996700329967,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 1.1198765399679542,
-            "control_mean_abs_delta_turn1_to_last": 0.5921655521728099
+            "control_mean_abs_delta_turn1_to_last": 0.6049537823535502
           },
           "recovery": {
             "mean_recovery_ratio": 0.08736225254618715,
@@ -1159,12 +1321,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.016913489432284167,
+            "std": 0.012036341336302773,
+            "ci_95": [
+              0.009555546736577322,
+              0.024955079585898515
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.015259648718176108,
             "std": 0.00995920638701925,
-            "ci_95": [
-              0.008588041969535613,
-              0.02134562126378895
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1172,12 +1340,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.7545245475452454,
+            "p_value": 0.9455054494550545,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.3656508231116459,
-            "control_mean_abs_delta_turn1_to_last": 0.282797652867157
+            "control_mean_abs_delta_turn1_to_last": 0.2190180783276446
           },
           "recovery": {
             "mean_recovery_ratio": 0.23732336242575205,
@@ -1200,12 +1368,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.02379388088239002,
+            "std": 0.007016788944212031,
+            "ci_95": [
+              -0.028149807071094476,
+              -0.019399453696915845
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.02062372168522362,
             "std": 0.005261762584124454,
-            "ci_95": [
-              -0.02372306447481353,
-              -0.017430391091067494
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1213,12 +1387,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0028997100289971,
+            "p_value": 0.0011998800119988001,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.4391896460182034,
-            "control_mean_abs_delta_turn1_to_last": 0.18545965771190823
+            "control_mean_abs_delta_turn1_to_last": 0.19226380882319064
           },
           "recovery": {
             "mean_recovery_ratio": 0.255501257953443,
@@ -1245,12 +1419,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.004332283949414333,
+            "std": 0.003614096482614553,
+            "ci_95": [
+              -0.006597544119491443,
+              -0.0021970538511038667
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0026498137266539475,
             "std": 0.004172645628005991,
-            "ci_95": [
-              1.7387239707578996e-05,
-              0.0051454568649642145
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1258,12 +1438,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 9.999000099990002e-05,
+            "p_value": 0.028897110288971104,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1670878794253804,
-            "control_mean_abs_delta_turn1_to_last": 0.2250524688512087
+            "control_mean_abs_delta_turn1_to_last": 0.06734231114387512
           },
           "recovery": {
             "mean_recovery_ratio": 0.3005428875867809,
@@ -1286,12 +1466,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.0036593530770355404,
+            "std": 0.0056728408748161156,
+            "ci_95": [
+              0.0002196491057721986,
+              0.007226485512464614
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0003607782250893411,
             "std": 0.003673949491211793,
-            "ci_95": [
-              -0.001821113404885075,
-              0.0026273803893795146
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1299,12 +1485,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 9.999000099990002e-05,
+            "p_value": 0.0022997700229977,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1996533269115025,
-            "control_mean_abs_delta_turn1_to_last": 0.13815114616882057
+            "control_mean_abs_delta_turn1_to_last": 0.05673205035272986
           },
           "recovery": {
             "mean_recovery_ratio": 0.4055998438529648,
@@ -1327,12 +1513,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0031055307562847237,
+            "std": 0.005425707731790047,
+            "ci_95": [
+              -0.006780088144685044,
+              -6.913822005874343e-06
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0018289033301612909,
             "std": 0.003573987311457826,
-            "ci_95": [
-              -0.00045229685871676976,
-              0.004061802403848988
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1340,12 +1532,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.1623837616238376,
+            "p_value": 0.9682031796820318,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.11943504730239511,
-            "control_mean_abs_delta_turn1_to_last": 0.15394803388044237
+            "control_mean_abs_delta_turn1_to_last": 0.06638298677280545
           },
           "recovery": {
             "mean_recovery_ratio": 0.47995775849792355,
@@ -1368,12 +1560,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.002883356369680146,
+            "std": 0.005966113069663906,
+            "ci_95": [
+              -0.0011385132111055394,
+              0.00661317385100577
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0019361762703973748,
             "std": 0.005667458481600652,
-            "ci_95": [
-              -0.005336603597029512,
-              0.0018289709234561402
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1381,12 +1579,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0012998700129987,
+            "p_value": 0.0570942905709429,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.14287430163472892,
-            "control_mean_abs_delta_turn1_to_last": 0.20461176333701586
+            "control_mean_abs_delta_turn1_to_last": 0.05786638539284468
           },
           "recovery": {
             "mean_recovery_ratio": 0.4709297770772492,
@@ -1409,25 +1607,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.003990902420836729,
+            "std": 0.020033152078063613,
+            "ci_95": [
+              -0.007199143856972246,
+              0.01678270536227399
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.00515309749828542,
             "std": 0.011611978932645161,
-            "ci_95": [
-              -0.0018154191479141661,
-              0.012732449385501882
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": false,
+          "significant_drift": true,
           "criteria": {
-            "ratio_gt_2x": false,
+            "ratio_gt_2x": true,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.013298670132986702,
+            "p_value": 0.0342965703429657,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.17544020637869834,
-            "control_mean_abs_delta_turn1_to_last": 0.23822468593716623
+            "control_mean_abs_delta_turn1_to_last": 0.1800105579197407
           },
           "recovery": {
             "mean_recovery_ratio": 0.3600579052138,
@@ -1454,25 +1658,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.0009621800691983499,
+            "std": 0.004099778009033016,
+            "ci_95": [
+              -0.0012618248087803384,
+              0.0035460196590617666
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.004939736675895641,
             "std": 0.006045707957848557,
-            "ci_95": [
-              0.0015994933705609155,
-              0.008948327481698739
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": false,
+          "significant_drift": true,
           "criteria": {
-            "ratio_gt_2x": false,
+            "ratio_gt_2x": true,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0354964503549645,
+            "p_value": 0.2111788821117888,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1694289358216338,
-            "control_mean_abs_delta_turn1_to_last": 0.20601186458952725
+            "control_mean_abs_delta_turn1_to_last": 0.06887651309370994
           },
           "recovery": {
             "mean_recovery_ratio": 0.3159009740490289,
@@ -1495,25 +1705,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.009106757196311195,
+            "std": 0.006984580135673535,
+            "ci_95": [
+              0.004089432844051185,
+              0.012668476458394676
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.005461217680936791,
             "std": 0.00653973667834355,
-            "ci_95": [
-              0.0008550982328404325,
-              0.00904705333986155
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0685931406859314,
+            "p_value": 0.32626737326267374,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.23678570997552015,
-            "control_mean_abs_delta_turn1_to_last": 0.14187030165849138
+            "control_mean_abs_delta_turn1_to_last": 0.13954602009616793
           },
           "recovery": {
             "mean_recovery_ratio": 0.39796243979234885,
@@ -1536,12 +1752,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0023811486750145907,
+            "std": 0.006403034556623723,
+            "ci_95": [
+              -0.00608880488597269,
+              0.0015787499104548118
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0008362453838344664,
             "std": 0.004577988096357212,
-            "ci_95": [
-              -0.001593552427014776,
-              0.003870730975822773
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1549,12 +1771,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.9763023697630236,
+            "p_value": 0.5036496350364964,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1681978401495144,
-            "control_mean_abs_delta_turn1_to_last": 0.0984421957458835
+            "control_mean_abs_delta_turn1_to_last": 0.05871002925559878
           },
           "recovery": {
             "mean_recovery_ratio": 0.5777703014573441,
@@ -1577,12 +1799,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.002378278673360681,
+            "std": 0.006050919058913644,
+            "ci_95": [
+              -0.006400477923703695,
+              0.000968493710694732
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0036206705570315106,
             "std": 0.006765129669315718,
-            "ci_95": [
-              -0.00824196776946305,
-              4.332136548937835e-05
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1590,12 +1818,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.5315468453154685,
+            "p_value": 0.7190280971902809,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.18693412986584007,
-            "control_mean_abs_delta_turn1_to_last": 0.16457290262915195
+            "control_mean_abs_delta_turn1_to_last": 0.09092560649150982
           },
           "recovery": {
             "mean_recovery_ratio": 0.2737534026395075,
@@ -1618,25 +1846,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.007523725356807333,
+            "std": 0.009025420932063394,
+            "ci_95": [
+              -0.013091708366315237,
+              -0.002068928432879015
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.002754460228042102,
             "std": 0.005031318266115224,
-            "ci_95": [
-              -0.00584648197094237,
-              0.0006076518830163594
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.2014798520147985,
+            "p_value": 0.7494250574942506,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.18378225059248507,
-            "control_mean_abs_delta_turn1_to_last": 0.08628739528357983
+            "control_mean_abs_delta_turn1_to_last": 0.11066937260329723
           },
           "recovery": {
             "mean_recovery_ratio": 0.5249904752949363,
@@ -1663,12 +1897,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0034271045433686255,
+            "std": 0.006843110803766931,
+            "ci_95": [
+              -0.007430078956538484,
+              0.0009344437602057494
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.00296202179056469,
             "std": 0.004693631508493495,
-            "ci_95": [
-              -7.983677331931726e-05,
-              0.005740240242134484
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1676,12 +1916,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 9.999000099990002e-05,
+            "p_value": 0.0136986301369863,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.191773242787458,
-            "control_mean_abs_delta_turn1_to_last": 0.22450340170180424
+            "control_mean_abs_delta_turn1_to_last": 0.0710494763799943
           },
           "recovery": {
             "mean_recovery_ratio": 0.3842987503265193,
@@ -1704,12 +1944,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.0028424558162174697,
+            "std": 0.009447992157289087,
+            "ci_95": [
+              -0.0032181282842636003,
+              0.008123657404969386
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.0018271752473468523,
             "std": 0.005034026300802802,
-            "ci_95": [
-              -0.005134026694827994,
-              0.001152814175716711
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1717,12 +1963,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 9.999000099990002e-05,
+            "p_value": 0.00019998000199980003,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.28672479003667833,
-            "control_mean_abs_delta_turn1_to_last": 0.2076462922617793
+            "control_mean_abs_delta_turn1_to_last": 0.0923274656292051
           },
           "recovery": {
             "mean_recovery_ratio": 0.4783195824175065,
@@ -1745,12 +1991,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.002379566413501824,
+            "std": 0.007333835627450497,
+            "ci_95": [
+              -0.006597267238691268,
+              0.0022399699995013346
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.002884339998854557,
             "std": 0.00474213267876418,
-            "ci_95": [
-              0.0001990334732038131,
-              0.005779650460057704
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1758,12 +2010,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0103989601039896,
+            "p_value": 0.1573842615738426,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.18478999541606755,
-            "control_mean_abs_delta_turn1_to_last": 0.18538679834455252
+            "control_mean_abs_delta_turn1_to_last": 0.07555301234824582
           },
           "recovery": {
             "mean_recovery_ratio": 0.5167391252400634,
@@ -1786,12 +2038,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.002517969836318097,
+            "std": 0.004691945733418278,
+            "ci_95": [
+              -0.0005888720828766277,
+              0.005253621454967732
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.002101449312245035,
             "std": 0.0028741749003795415,
-            "ci_95": [
-              -0.004122069691105828,
-              -0.00032594816119629243
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1799,12 +2057,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.00029997000299970003,
+            "p_value": 0.013598640135986401,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.16888853816315533,
-            "control_mean_abs_delta_turn1_to_last": 0.17980579403229058
+            "control_mean_abs_delta_turn1_to_last": 0.04570120573043823
           },
           "recovery": {
             "mean_recovery_ratio": 0.4792557640094212,
@@ -1827,12 +2085,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.009428062646851674,
+            "std": 0.015022899101188984,
+            "ci_95": [
+              0.0007340550460442379,
+              0.018835221048203534
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.004360419273212114,
             "std": 0.008083265764572254,
-            "ci_95": [
-              -0.0004519827849957542,
-              0.009457524929811958
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -1840,12 +2104,12 @@
             "ci_excludes_zero": false
           },
           "permutation_test": {
-            "p_value": 0.5485451454854514,
+            "p_value": 0.20057994200579943,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1993018981209025,
-            "control_mean_abs_delta_turn1_to_last": 0.13376946467906237
+            "control_mean_abs_delta_turn1_to_last": 0.15255391523241996
           },
           "recovery": {
             "mean_recovery_ratio": 0.4045967836068685,
@@ -1872,12 +2136,18 @@
             ]
           },
           "control_slope": {
+            "mean": -0.0034470388913279645,
+            "std": 0.007315451524660833,
+            "ci_95": [
+              -0.00787542718944589,
+              0.0011088573755501025
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0004805768489399377,
             "std": 0.0056730935897036545,
-            "ci_95": [
-              -0.002838287127231631,
-              0.004009034623884979
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1885,12 +2155,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.00029997000299970003,
+            "p_value": 0.0072992700729927005,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1920369556429796,
-            "control_mean_abs_delta_turn1_to_last": 0.1138799473643303
+            "control_mean_abs_delta_turn1_to_last": 0.11351262927055358
           },
           "recovery": {
             "mean_recovery_ratio": 0.47079528531846415,
@@ -1913,12 +2183,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.002394292861470705,
+            "std": 0.010835663945745049,
+            "ci_95": [
+              -0.004676872570762879,
+              0.009311536359446041
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.003473878221668522,
             "std": 0.0063415837869252815,
-            "ci_95": [
-              -0.0009051270327250032,
-              0.007118812916889403
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": true,
           "criteria": {
@@ -1926,12 +2202,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.00019998000199980003,
+            "p_value": 9.999000099990002e-05,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.25721815586090085,
-            "control_mean_abs_delta_turn1_to_last": 0.10595873221755028
+            "control_mean_abs_delta_turn1_to_last": 0.16742204641923308
           },
           "recovery": {
             "mean_recovery_ratio": 0.6333405764444462,
@@ -1954,25 +2230,31 @@
             ]
           },
           "control_slope": {
+            "mean": -0.005058740996071822,
+            "std": 0.010204182922810534,
+            "ci_95": [
+              -0.010839034128434292,
+              0.0009447667452138754
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": -0.00033862321749278217,
             "std": 0.007603116191695552,
-            "ci_95": [
-              -0.004801709414506845,
-              0.004509553931235453
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.0202979702029797,
+            "p_value": 0.34926507349265073,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1506508876848966,
-            "control_mean_abs_delta_turn1_to_last": 0.10233304756693543
+            "control_mean_abs_delta_turn1_to_last": 0.13342858981341124
           },
           "recovery": {
             "mean_recovery_ratio": 0.38943854139232426,
@@ -1995,25 +2277,31 @@
             ]
           },
           "control_slope": {
+            "mean": 0.00574027682211693,
+            "std": 0.007168617770068861,
+            "ci_95": [
+              0.0013045614734493523,
+              0.00973191495657222
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.0035684385283863826,
             "std": 0.00556757151608596,
-            "ci_95": [
-              -8.397710435041072e-05,
-              0.006629017995591258
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
-          "significant_drift": true,
+          "significant_drift": false,
           "criteria": {
-            "ratio_gt_2x": true,
+            "ratio_gt_2x": false,
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.055194480551944806,
+            "p_value": 0.23447655234476553,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.1447293389495462,
-            "control_mean_abs_delta_turn1_to_last": 0.09633895073784515
+            "control_mean_abs_delta_turn1_to_last": 0.11202380013419315
           },
           "recovery": {
             "mean_recovery_ratio": 0.4629935623406011,
@@ -2036,12 +2324,18 @@
             ]
           },
           "control_slope": {
+            "mean": 0.017022904824348283,
+            "std": 0.008669533124253448,
+            "ci_95": [
+              0.010686534363874138,
+              0.021921060857577963
+            ],
+            "fit_window_turns": 12
+          },
+          "control_slope_full": {
             "mean": 0.015712538370999566,
             "std": 0.005618105291078437,
-            "ci_95": [
-              0.012239123149661978,
-              0.018863504063721528
-            ]
+            "note": "all turns incl. scripted gratitude closing (sensitivity)"
           },
           "significant_drift": false,
           "criteria": {
@@ -2049,12 +2343,12 @@
             "ci_excludes_zero": true
           },
           "permutation_test": {
-            "p_value": 0.579042095790421,
+            "p_value": 0.7994200579942006,
             "n_permutations": 10000
           },
           "magnitude": {
             "conflict_mean_abs_delta_turn1_to_last": 0.28571125838905576,
-            "control_mean_abs_delta_turn1_to_last": 0.3389237354509532
+            "control_mean_abs_delta_turn1_to_last": 0.2839782486669719
           },
           "recovery": {
             "mean_recovery_ratio": 0.3550968310324755,
