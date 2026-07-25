@@ -1,0 +1,739 @@
+{
+  "_meta": {
+    "script": "scripts/06g_cross_calibration.py",
+    "timestamp": "2026-07-23T02:28:14.024670",
+    "pairs_analyzed": [
+      "ministral3_8b_base__ministral3_8b",
+      "gemma_9b_base__gemma_9b",
+      "llama_8b_base__llama_8b",
+      "qwen_7b_base__qwen_7b",
+      "mistral_7b_base__mistral_7b"
+    ],
+    "pairs_skipped_dim_mismatch": [],
+    "axes": [
+      "warm_cold",
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise"
+    ],
+    "trim_proportion": 0.1,
+    "notes": "axis_vector = compute_axis_vector(train_pos_aggregated, train_neg_aggregated) (trimmed-mean-diff, 10% trim, unit-normalized), reproducing scripts/01_calibrate.py exactly, computed directly from data/axes/<model>_hidden_states.npz rather than *_axes.npz (which can be stale relative to the states file -- e.g. mistral_7b_axes.npz lists confident_cautious but mistral_7b_hidden_states.npz no longer has backing raw states for that axis; such axes are skipped per-pair, see axes_missing_base/instruct). accuracy/dprime use the exact pairwise formulas from src/calibration/axis_computer.py::compute_validation_metrics (val split, independent of train, zero question overlap). base_within/instruct_within reproduce the val_accuracy/val_dprime already stored in *_axes_meta.json as a self-consistency check. base_to_instruct/instruct_to_base are the actual cross-calibration metrics: axis vector estimated on one model's train states, applied to the OTHER model's val states."
+  },
+  "pairs": {
+    "ministral3_8b_base__ministral3_8b": {
+      "axes": {
+        "warm_cold": {
+          "base_within": {
+            "accuracy": 0.8622,
+            "dprime": 1.536,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 11.1768,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 8.1735,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.8089,
+            "dprime": 1.1881,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.5516
+        },
+        "confident_cautious": {
+          "base_within": {
+            "accuracy": 0.9822,
+            "dprime": 3.5118,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 7.6677,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 5.3058,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9378,
+            "dprime": 2.3257,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.417
+        },
+        "empathetic_analytical": {
+          "base_within": {
+            "accuracy": 1.0,
+            "dprime": 4.9122,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 12.5845,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 14.7388,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9911,
+            "dprime": 3.968,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.6025
+        },
+        "formal_casual": {
+          "base_within": {
+            "accuracy": 0.9111,
+            "dprime": 1.8344,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 13.753,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 9.371,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.8444,
+            "dprime": 1.5027,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.5814
+        },
+        "verbose_concise": {
+          "base_within": {
+            "accuracy": 0.9467,
+            "dprime": 1.7565,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 4.3425,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9556,
+            "dprime": 2.454,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.88,
+            "dprime": 1.5806,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.2902
+        }
+      },
+      "axes_common": [
+        "warm_cold",
+        "confident_cautious",
+        "empathetic_analytical",
+        "formal_casual",
+        "verbose_concise"
+      ],
+      "axes_missing_base": [],
+      "axes_missing_instruct": []
+    },
+    "gemma_9b_base__gemma_9b": {
+      "axes": {
+        "warm_cold": {
+          "base_within": {
+            "accuracy": 0.8444,
+            "dprime": 1.6959,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 19.8946,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9111,
+            "dprime": 1.8326,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.4489,
+            "dprime": -0.15,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.0752
+        },
+        "confident_cautious": {
+          "base_within": {
+            "accuracy": 0.9289,
+            "dprime": 2.0168,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 4.8665,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9822,
+            "dprime": 3.1989,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.8711,
+            "dprime": 1.6104,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.5596
+        },
+        "empathetic_analytical": {
+          "base_within": {
+            "accuracy": 0.9556,
+            "dprime": 2.4184,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 12.1454,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 7.7302,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9111,
+            "dprime": 1.9226,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.5608
+        },
+        "formal_casual": {
+          "base_within": {
+            "accuracy": 0.6133,
+            "dprime": 0.4383,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 16.6758,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9867,
+            "dprime": 3.082,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.5467,
+            "dprime": 0.2169,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.1194
+        },
+        "verbose_concise": {
+          "base_within": {
+            "accuracy": 0.9822,
+            "dprime": 3.4706,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 9.4135,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 3.4053,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.92,
+            "dprime": 1.911,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.2
+        }
+      },
+      "axes_common": [
+        "warm_cold",
+        "confident_cautious",
+        "empathetic_analytical",
+        "formal_casual",
+        "verbose_concise"
+      ],
+      "axes_missing_base": [],
+      "axes_missing_instruct": []
+    },
+    "llama_8b_base__llama_8b": {
+      "axes": {
+        "warm_cold": {
+          "base_within": {
+            "accuracy": 0.76,
+            "dprime": 1.0232,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 8.4364,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 6.126,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.72,
+            "dprime": 0.696,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.4792
+        },
+        "confident_cautious": {
+          "base_within": {
+            "accuracy": 0.9333,
+            "dprime": 2.357,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 0.9956,
+            "dprime": 4.8866,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9822,
+            "dprime": 3.5514,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9422,
+            "dprime": 2.442,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.6927
+        },
+        "empathetic_analytical": {
+          "base_within": {
+            "accuracy": 0.9867,
+            "dprime": 3.1072,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 7.9924,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 6.0567,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.96,
+            "dprime": 2.4991,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.523
+        },
+        "formal_casual": {
+          "base_within": {
+            "accuracy": 0.8044,
+            "dprime": 1.1857,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 8.1763,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 4.6662,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.5333,
+            "dprime": 0.1901,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.2948
+        },
+        "verbose_concise": {
+          "base_within": {
+            "accuracy": 0.9378,
+            "dprime": 2.3175,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 5.8567,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9778,
+            "dprime": 2.5751,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.7644,
+            "dprime": 0.9063,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.2931
+        }
+      },
+      "axes_common": [
+        "warm_cold",
+        "confident_cautious",
+        "empathetic_analytical",
+        "formal_casual",
+        "verbose_concise"
+      ],
+      "axes_missing_base": [],
+      "axes_missing_instruct": []
+    },
+    "qwen_7b_base__qwen_7b": {
+      "axes": {
+        "warm_cold": {
+          "base_within": {
+            "accuracy": 0.7911,
+            "dprime": 1.1791,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 14.472,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 14.7202,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.8044,
+            "dprime": 1.0932,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.6501
+        },
+        "confident_cautious": {
+          "base_within": {
+            "accuracy": 0.92,
+            "dprime": 1.9593,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 5.2124,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 3.9544,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.7644,
+            "dprime": 1.0092,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.4846
+        },
+        "empathetic_analytical": {
+          "base_within": {
+            "accuracy": 0.9956,
+            "dprime": 3.0484,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 8.1053,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 5.081,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9911,
+            "dprime": 3.7467,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.6356
+        },
+        "formal_casual": {
+          "base_within": {
+            "accuracy": 0.9733,
+            "dprime": 2.6209,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 11.8683,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 11.2687,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9867,
+            "dprime": 2.9654,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.8748
+        },
+        "verbose_concise": {
+          "base_within": {
+            "accuracy": 0.8889,
+            "dprime": 1.4427,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 9.3483,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 1.0,
+            "dprime": 7.2981,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.6533,
+            "dprime": 0.7703,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.4785
+        }
+      },
+      "axes_common": [
+        "warm_cold",
+        "confident_cautious",
+        "empathetic_analytical",
+        "formal_casual",
+        "verbose_concise"
+      ],
+      "axes_missing_base": [],
+      "axes_missing_instruct": []
+    },
+    "mistral_7b_base__mistral_7b": {
+      "axes": {
+        "warm_cold": {
+          "base_within": {
+            "accuracy": 0.92,
+            "dprime": 1.8955,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 9.9164,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.5778,
+            "dprime": 0.3722,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.4489,
+            "dprime": -0.1547,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": -0.0368
+        },
+        "empathetic_analytical": {
+          "base_within": {
+            "accuracy": 0.9733,
+            "dprime": 2.7093,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 6.6719,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9956,
+            "dprime": 4.813,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.9333,
+            "dprime": 2.3176,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.5292
+        },
+        "formal_casual": {
+          "base_within": {
+            "accuracy": 0.7689,
+            "dprime": 1.0275,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 1.0,
+            "dprime": 6.7609,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9911,
+            "dprime": 4.2299,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.6844,
+            "dprime": 0.6473,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.2981
+        },
+        "verbose_concise": {
+          "base_within": {
+            "accuracy": 0.9911,
+            "dprime": 3.362,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_within": {
+            "accuracy": 0.9956,
+            "dprime": 4.078,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "base_to_instruct": {
+            "accuracy": 0.9822,
+            "dprime": 2.9706,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "instruct_to_base": {
+            "accuracy": 0.96,
+            "dprime": 2.3319,
+            "n_pos": 15,
+            "n_neg": 15
+          },
+          "cosine_base_vs_instruct_axis": 0.3585
+        }
+      },
+      "axes_common": [
+        "warm_cold",
+        "empathetic_analytical",
+        "formal_casual",
+        "verbose_concise"
+      ],
+      "axes_missing_base": [],
+      "axes_missing_instruct": [
+        "confident_cautious"
+      ]
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "model": "ministral3_8b_4bit",
+  "model_id": "mistralai/Ministral-3-8B-Instruct-2512",
+  "n_layers": 34,
+  "hidden_dim": 4096,
+  "axis": "warm_cold",
+  "n_questions": 5,
+  "alphas": [
+    -20.0,
+    0.0,
+    20.0
+  ],
+  "steer_scale": 0.01,
+  "current_target_layer": null,
+  "best_layer": 20,
+  "best_layer_pct": 58.8,
+  "best_effect": 0.3818,
+  "max_safe_pct": 50,
+  "recommended_range": [
+    -50,
+    50
+  ],
+  "safe_alpha_range": [
+    -50,
+    50
+  ],
+  "scale_results": [
+    {
+      "pct": 1,
+      "effect": 0.2128,
+      "mean_proj": 0.0218,
+      "rep_rate": 0.013,
+      "mean_tokens": 254.0,
+      "safe": true
+    },
+    {
+      "pct": 3,
+      "effect": 0.2507,
+      "mean_proj": 0.0597,
+      "rep_rate": 0.0113,
+      "mean_tokens": 257.2,
+      "safe": true
+    },
+    {
+      "pct": 5,
+      "effect": 0.2155,
+      "mean_proj": 0.0245,
+      "rep_rate": 0.0098,
+      "mean_tokens": 256.8,
+      "safe": true
+    },
+    {
+      "pct": 10,
+      "effect": 0.33,
+      "mean_proj": 0.139,
+      "rep_rate": 0.0047,
+      "mean_tokens": 229.6,
+      "safe": true
+    },
+    {
+      "pct": 15,
+      "effect": 0.1578,
+      "mean_proj": -0.0332,
+      "rep_rate": 0.0102,
+      "mean_tokens": 253.0,
+      "safe": true
+    },
+    {
+      "pct": 20,
+      "effect": 0.3096,
+      "mean_proj": 0.1186,
+      "rep_rate": 0.0284,
+      "mean_tokens": 257.8,
+      "safe": true
+    },
+    {
+      "pct": 30,
+      "effect": 0.5671,
+      "mean_proj": 0.3761,
+      "rep_rate": 0.0149,
+      "mean_tokens": 252.2,
+      "safe": true
+    },
+    {
+      "pct": 50,
+      "effect": 0.8252,
+      "mean_proj": 0.6342,
+      "rep_rate": 0.0069,
+      "mean_tokens": 255.8,
+      "safe": true
+    }
+  ],
+  "timestamp": "2026-07-25T05:54:44.190259",
+  "layers": [
+    {
+      "layer": 8,
+      "layer_pct": 23.5,
+      "effect": 0.0527,
+      "neg_mean": -0.2089,
+      "zero_mean": 0.0067,
+      "pos_mean": -0.1562,
+      "time_s": 84.7
+    },
+    {
+      "layer": 10,
+      "layer_pct": 29.4,
+      "effect": 0.0272,
+      "neg_mean": -0.0848,
+      "zero_mean": 0.2285,
+      "pos_mean": -0.0576,
+      "time_s": 83.0
+    },
+    {
+      "layer": 12,
+      "layer_pct": 35.3,
+      "effect": 0.3749,
+      "neg_mean": -0.1788,
+      "zero_mean": -0.0088,
+      "pos_mean": 0.1961,
+      "time_s": 81.4
+    },
+    {
+      "layer": 14,
+      "layer_pct": 41.2,
+      "effect": 0.2152,
+      "neg_mean": -0.1995,
+      "zero_mean": -0.1935,
+      "pos_mean": 0.0158,
+      "time_s": 82.5
+    },
+    {
+      "layer": 16,
+      "layer_pct": 47.1,
+      "effect": 0.3163,
+      "neg_mean": 0.0416,
+      "zero_mean": -0.0994,
+      "pos_mean": 0.3579,
+      "time_s": 79.8
+    },
+    {
+      "layer": 18,
+      "layer_pct": 52.9,
+      "effect": 0.3067,
+      "neg_mean": -0.2438,
+      "zero_mean": -0.039,
+      "pos_mean": 0.0629,
+      "time_s": 80.1
+    },
+    {
+      "layer": 20,
+      "layer_pct": 58.8,
+      "effect": 0.3818,
+      "neg_mean": -0.1065,
+      "zero_mean": -0.191,
+      "pos_mean": 0.2753,
+      "time_s": 80.0
+    },
+    {
+      "layer": 22,
+      "layer_pct": 64.7,
+      "effect": 0.1472,
+      "neg_mean": -0.0216,
+      "zero_mean": -0.0883,
+      "pos_mean": 0.1256,
+      "time_s": 78.3
+    },
+    {
+      "layer": 24,
+      "layer_pct": 70.6,
+      "effect": 0.1123,
+      "neg_mean": -0.0639,
+      "zero_mean": -0.0678,
+      "pos_mean": 0.0484,
+      "time_s": 77.1
+    },
+    {
+      "layer": 26,
+      "layer_pct": 76.5,
+      "effect": 0.0114,
+      "neg_mean": -0.0257,
+      "zero_mean": -0.2057,
+      "pos_mean": -0.0143,
+      "time_s": 77.5
+    },
+    {
+      "layer": 28,
+      "layer_pct": 82.4,
+      "effect": -0.0485,
+      "neg_mean": 0.0207,
+      "zero_mean": 0.1707,
+      "pos_mean": -0.0278,
+      "time_s": 73.8
+    },
+    {
+      "layer": 30,
+      "layer_pct": 88.2,
+      "effect": 0.1933,
+      "neg_mean": -0.2536,
+      "zero_mean": -0.0512,
+      "pos_mean": -0.0603,
+      "time_s": 76.1
+    },
+    {
+      "layer": 32,
+      "layer_pct": 94.1,
+      "effect": -0.0113,
+      "neg_mean": -0.0656,
+      "zero_mean": 0.0867,
+      "pos_mean": -0.0769,
+      "time_s": 74.5
+    },
+    {
+      "layer": 33,
+      "layer_pct": 97.1,
+      "effect": 0.1676,
+      "neg_mean": -0.1243,
+      "zero_mean": -0.1437,
+      "pos_mean": 0.0433,
+      "time_s": 74.0
+    }
+  ]
+}

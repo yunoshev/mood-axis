@@ -1,0 +1,368 @@
+{
+  "_meta": {
+    "script": "scripts/06d_axis_geometry.py",
+    "timestamp": "2026-07-23T21:51:20.063978",
+    "n_permutations": 200,
+    "rng_seed": 42,
+    "models_analyzed": [
+      "deepseek_r1_14b",
+      "gpt_oss_20b"
+    ],
+    "axes": [
+      "warm_cold",
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise"
+    ],
+    "notes": "concept_cone: SVD on centered per-pair (pos_i-neg_i) diffs, effective_rank=participation ratio (sum(sigma))^2/sum(sigma^2); steerability: mean pairwise cosine between raw per-pair diffs (direction coherence) + frac of pairs with negative projection on the saved axis vector; label_null: 200 pos/neg sign-flip permutations, z-score of the true mean-diff norm vs the null norm distribution; cross_axis: cosine matrix + PCA on the 5 axis vectors + PCA on pooled per-sample projections."
+  },
+  "models": {
+    "deepseek_r1_14b": {
+      "axes": {
+        "warm_cold": {
+          "concept_cone": {
+            "effective_rank": 57.915,
+            "effective_rank_normalized": 0.9049,
+            "pc1_variance_share": 0.092,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.1339,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 83.5681,
+            "null_mean": 26.1706,
+            "null_std": 3.7243,
+            "z_score": 15.41,
+            "n_permutations": 200
+          }
+        },
+        "confident_cautious": {
+          "concept_cone": {
+            "effective_rank": 57.491,
+            "effective_rank_normalized": 0.8983,
+            "pc1_variance_share": 0.0654,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.0999,
+            "frac_negative_projection": 0.0154,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 65.9847,
+            "null_mean": 24.3998,
+            "null_std": 2.2558,
+            "z_score": 18.43,
+            "n_permutations": 200
+          }
+        },
+        "empathetic_analytical": {
+          "concept_cone": {
+            "effective_rank": 56.671,
+            "effective_rank_normalized": 0.8855,
+            "pc1_variance_share": 0.0801,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.4047,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 160.3865,
+            "null_mean": 30.2098,
+            "null_std": 8.1389,
+            "z_score": 15.99,
+            "n_permutations": 200
+          }
+        },
+        "formal_casual": {
+          "concept_cone": {
+            "effective_rank": 56.777,
+            "effective_rank_normalized": 0.8871,
+            "pc1_variance_share": 0.1135,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.3217,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 143.5566,
+            "null_mean": 28.79,
+            "null_std": 6.3794,
+            "z_score": 17.99,
+            "n_permutations": 200
+          }
+        },
+        "verbose_concise": {
+          "concept_cone": {
+            "effective_rank": 58.209,
+            "effective_rank_normalized": 0.9095,
+            "pc1_variance_share": 0.0812,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.129,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 87.1872,
+            "null_mean": 28.8591,
+            "null_std": 3.1356,
+            "z_score": 18.6,
+            "n_permutations": 200
+          }
+        }
+      },
+      "cross_axis": {
+        "axes_order": [
+          "warm_cold",
+          "confident_cautious",
+          "empathetic_analytical",
+          "formal_casual",
+          "verbose_concise"
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            -0.118,
+            0.5625,
+            -0.6575,
+            0.1971
+          ],
+          [
+            -0.118,
+            1.0,
+            -0.1565,
+            0.1251,
+            -0.2612
+          ],
+          [
+            0.5625,
+            -0.1565,
+            1.0,
+            -0.578,
+            0.0347
+          ],
+          [
+            -0.6575,
+            0.1251,
+            -0.578,
+            1.0,
+            0.1037
+          ],
+          [
+            0.1971,
+            -0.2612,
+            0.0347,
+            0.1037,
+            1.0
+          ]
+        ],
+        "max_abs_offdiag_cosine": 0.6575,
+        "pca_on_axis_vectors": {
+          "explained_variance_ratio": [
+            0.5088,
+            0.2868,
+            0.1283,
+            0.076
+          ],
+          "pc1_share": 0.5088,
+          "pc2_share": 0.2868
+        },
+        "pca_on_projections": {
+          "n_samples": 650,
+          "explained_variance_ratio": [
+            0.7612,
+            0.1398,
+            0.0481,
+            0.0395,
+            0.0114
+          ],
+          "pc1_share": 0.7612,
+          "pc2_share": 0.1398
+        }
+      }
+    },
+    "gpt_oss_20b": {
+      "axes": {
+        "warm_cold": {
+          "concept_cone": {
+            "effective_rank": 44.057,
+            "effective_rank_normalized": 0.6884,
+            "pc1_variance_share": 0.2962,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.1706,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 1554.0003,
+            "null_mean": 442.8516,
+            "null_std": 89.4457,
+            "z_score": 12.42,
+            "n_permutations": 200
+          }
+        },
+        "confident_cautious": {
+          "concept_cone": {
+            "effective_rank": 40.182,
+            "effective_rank_normalized": 0.6278,
+            "pc1_variance_share": 0.3158,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.1433,
+            "frac_negative_projection": 0.0769,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 1438.0369,
+            "null_mean": 447.2191,
+            "null_std": 110.1732,
+            "z_score": 8.99,
+            "n_permutations": 200
+          }
+        },
+        "empathetic_analytical": {
+          "concept_cone": {
+            "effective_rank": 32.911,
+            "effective_rank_normalized": 0.5142,
+            "pc1_variance_share": 0.483,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.1333,
+            "frac_negative_projection": 0.2769,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 1880.3916,
+            "null_mean": 519.941,
+            "null_std": 164.6826,
+            "z_score": 8.26,
+            "n_permutations": 200
+          }
+        },
+        "formal_casual": {
+          "concept_cone": {
+            "effective_rank": 47.9,
+            "effective_rank_normalized": 0.7484,
+            "pc1_variance_share": 0.2379,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.0939,
+            "frac_negative_projection": 0.0,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 948.3378,
+            "null_mean": 363.8278,
+            "null_std": 59.1382,
+            "z_score": 9.88,
+            "n_permutations": 200
+          }
+        },
+        "verbose_concise": {
+          "concept_cone": {
+            "effective_rank": 48.309,
+            "effective_rank_normalized": 0.7548,
+            "pc1_variance_share": 0.1717,
+            "n_components": 64
+          },
+          "steerability": {
+            "mean_pairwise_cosine": 0.524,
+            "frac_negative_projection": 0.0308,
+            "n_pairs": 65
+          },
+          "label_null": {
+            "real_norm": 4132.7389,
+            "null_mean": 638.2579,
+            "null_std": 237.6216,
+            "z_score": 14.71,
+            "n_permutations": 200
+          }
+        }
+      },
+      "cross_axis": {
+        "axes_order": [
+          "warm_cold",
+          "confident_cautious",
+          "empathetic_analytical",
+          "formal_casual",
+          "verbose_concise"
+        ],
+        "cosine_matrix": [
+          [
+            1.0,
+            -0.6013,
+            -0.2705,
+            -0.4614,
+            0.5694
+          ],
+          [
+            -0.6013,
+            1.0,
+            0.3999,
+            0.0746,
+            -0.6349
+          ],
+          [
+            -0.2705,
+            0.3999,
+            1.0,
+            -0.192,
+            -0.6479
+          ],
+          [
+            -0.4614,
+            0.0746,
+            -0.192,
+            1.0,
+            0.0329
+          ],
+          [
+            0.5694,
+            -0.6349,
+            -0.6479,
+            0.0329,
+            1.0
+          ]
+        ],
+        "max_abs_offdiag_cosine": 0.6479,
+        "pca_on_axis_vectors": {
+          "explained_variance_ratio": [
+            0.5532,
+            0.2882,
+            0.1108,
+            0.0478
+          ],
+          "pc1_share": 0.5532,
+          "pc2_share": 0.2882
+        },
+        "pca_on_projections": {
+          "n_samples": 650,
+          "explained_variance_ratio": [
+            0.9247,
+            0.0514,
+            0.013,
+            0.0071,
+            0.0037
+          ],
+          "pc1_share": 0.9247,
+          "pc2_share": 0.0514
+        }
+      }
+    }
+  }
+}

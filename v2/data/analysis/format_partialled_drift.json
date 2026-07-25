@@ -1,0 +1,254 @@
+{
+  "_meta": {
+    "format_subspace": "VC mean diff + top-3 PCs (as 06k)",
+    "note": "verbose_concise reported raw (it is the format probe itself)"
+  },
+  "models": {
+    "deepseek_r1_14b": {
+      "coverage_units": 60,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 10,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9482262891282781,
+          "raw_significant": false,
+          "raw_slope": 0.0007988680630360186,
+          "part_significant": false,
+          "part_slope": -0.00016421654770072542
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9654577175854837,
+          "raw_significant": false,
+          "raw_slope": -0.007525637847503383,
+          "part_significant": true,
+          "part_slope": -0.0064805585705455275
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9583630894452553,
+          "raw_significant": true,
+          "raw_slope": 0.00615011798351353,
+          "part_significant": true,
+          "part_slope": 0.00770541499540564
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9749080418211062,
+          "raw_significant": true,
+          "raw_slope": 0.006934797658916348,
+          "part_significant": true,
+          "part_slope": 0.005878873985257786
+        }
+      }
+    },
+    "gemma3_12b": {
+      "coverage_units": 57,
+      "dropped_units": 3,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 7,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9029337573510903,
+          "raw_significant": false,
+          "raw_slope": -0.007250963235994429,
+          "part_significant": true,
+          "part_slope": -0.011802295467027078
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.8949825810365122,
+          "raw_significant": true,
+          "raw_slope": 0.00841176695802568,
+          "part_significant": true,
+          "part_slope": 0.016240987642558043
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.8062926387927254,
+          "raw_significant": false,
+          "raw_slope": 0.005573273803697861,
+          "part_significant": false,
+          "part_slope": 0.0005999371473350338
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9223074061327702,
+          "raw_significant": true,
+          "raw_slope": 0.011293886951577908,
+          "part_significant": true,
+          "part_slope": 0.015917830800707265
+        }
+      }
+    },
+    "gemma4_26b_a4b": {
+      "coverage_units": 60,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 10,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.8815578274843743,
+          "raw_significant": true,
+          "raw_slope": -0.012043137828700595,
+          "part_significant": true,
+          "part_slope": -0.011238464515909484
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9729895726195327,
+          "raw_significant": true,
+          "raw_slope": 0.01989088656451192,
+          "part_significant": true,
+          "part_slope": 0.01704361061816541
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.8951460130206474,
+          "raw_significant": true,
+          "raw_slope": -0.00842683967488623,
+          "part_significant": true,
+          "part_slope": -0.006349306763511371
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9026164266580569,
+          "raw_significant": true,
+          "raw_slope": 0.009407496157632872,
+          "part_significant": true,
+          "part_slope": 0.006113960388155083
+        }
+      }
+    },
+    "gpt_oss_20b": {
+      "coverage_units": 60,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 10,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.7145275864585733,
+          "raw_significant": false,
+          "raw_slope": 0.03267471863287606,
+          "part_significant": false,
+          "part_slope": -0.01681923092600941
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.7165148861592378,
+          "raw_significant": false,
+          "raw_slope": -0.02613482360162698,
+          "part_significant": false,
+          "part_slope": 0.0030778380864216843
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.7342169953705201,
+          "raw_significant": false,
+          "raw_slope": -0.030816781935663663,
+          "part_significant": false,
+          "part_slope": 0.0021243718232728855
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9760565995145212,
+          "raw_significant": false,
+          "raw_slope": 0.017350317752652764,
+          "part_significant": false,
+          "part_slope": 0.020977039436064916
+        }
+      }
+    },
+    "ministral3_8b": {
+      "coverage_units": 41,
+      "dropped_units": 19,
+      "n_conflict_kept": 41,
+      "n_controls_kept": 0,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.944696067708978,
+          "raw_significant": false,
+          "raw_slope": 0.004856100183402,
+          "part_significant": false,
+          "part_slope": 0.003389380616922901
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9580397891810788,
+          "raw_significant": false,
+          "raw_slope": 0.019312475681878053,
+          "part_significant": false,
+          "part_slope": 0.015353974097674987
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9701570686147296,
+          "raw_significant": true,
+          "raw_slope": 0.007528574286001063,
+          "part_significant": false,
+          "part_slope": 0.004835079714774377
+        }
+      },
+      "warning": "no control hidden states saved; the 2x-control criterion is degenerate here \u2014 compare slopes/CIs only, not significance"
+    },
+    "mistral_small_3.2_24b": {
+      "coverage_units": 60,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 10,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9645999060129413,
+          "raw_significant": false,
+          "raw_slope": -0.004574812005519855,
+          "part_significant": false,
+          "part_slope": -0.0052550845828645025
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9908904119356825,
+          "raw_significant": true,
+          "raw_slope": 0.013489413533389888,
+          "part_significant": true,
+          "part_slope": 0.013102420081274522
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9859078631243082,
+          "raw_significant": false,
+          "raw_slope": 0.0007077168665654957,
+          "part_significant": false,
+          "part_slope": -0.0005901409973060464
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9286728548485721,
+          "raw_significant": false,
+          "raw_slope": -0.0007212434216382933,
+          "part_significant": false,
+          "part_slope": 0.0007993458095502635
+        }
+      }
+    },
+    "qwen3.6_35b_a3b": {
+      "coverage_units": 60,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 10,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9357334704530411,
+          "raw_significant": true,
+          "raw_slope": -0.012684992315179269,
+          "part_significant": true,
+          "part_slope": -0.014048139989211481
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9821350585516813,
+          "raw_significant": true,
+          "raw_slope": 0.023676168317947263,
+          "part_significant": true,
+          "part_slope": 0.02339960687929464
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9574867611618745,
+          "raw_significant": true,
+          "raw_slope": -0.008601221307644853,
+          "part_significant": true,
+          "part_slope": -0.008856272886693328
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9674799700126955,
+          "raw_significant": true,
+          "raw_slope": 0.012244394904945268,
+          "part_significant": true,
+          "part_slope": 0.012525676409200173
+        }
+      }
+    }
+  }
+}

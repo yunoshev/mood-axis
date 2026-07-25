@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "script": "scripts/04_stability.py",
+    "model": "deepseek_r1_14b",
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "timestamp": "2026-07-23T22:10:29.858378",
+    "sets_compared": [
+      "A",
+      "B",
+      "C"
+    ],
+    "max_new_tokens": 4096,
+    "generation_settings": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    }
+  },
+  "cosine_similarity": {
+    "A_vs_B": {
+      "confident_cautious": 0.49289196729660034,
+      "empathetic_analytical": 0.8782525062561035,
+      "formal_casual": 0.8999602198600769,
+      "verbose_concise": 0.7245990633964539,
+      "warm_cold": 0.8427390456199646
+    },
+    "A_vs_C": {
+      "confident_cautious": 0.4084149897098541,
+      "empathetic_analytical": 0.8142580986022949,
+      "formal_casual": 0.926821768283844,
+      "verbose_concise": 0.7922183275222778,
+      "warm_cold": 0.8571385145187378
+    },
+    "B_vs_C": {
+      "confident_cautious": 0.5757645964622498,
+      "empathetic_analytical": 0.8873380422592163,
+      "formal_casual": 0.9020549654960632,
+      "verbose_concise": 0.8407161235809326,
+      "warm_cold": 0.9108315706253052
+    }
+  },
+  "per_axis_summary": {
+    "confident_cautious": {
+      "mean_cosine": 0.49235718448956806,
+      "min_cosine": 0.4084149897098541,
+      "stable": false
+    },
+    "empathetic_analytical": {
+      "mean_cosine": 0.859949549039205,
+      "min_cosine": 0.8142580986022949,
+      "stable": true
+    },
+    "formal_casual": {
+      "mean_cosine": 0.9096123178799947,
+      "min_cosine": 0.8999602198600769,
+      "stable": true
+    },
+    "verbose_concise": {
+      "mean_cosine": 0.7858445048332214,
+      "min_cosine": 0.7245990633964539,
+      "stable": false
+    },
+    "warm_cold": {
+      "mean_cosine": 0.8702363769213358,
+      "min_cosine": 0.8427390456199646,
+      "stable": true
+    }
+  },
+  "procrustes": {
+    "pairs": {
+      "A_vs_B": 0.9974268078804016,
+      "A_vs_C": 0.995847225189209,
+      "B_vs_C": 0.9972754716873169
+    },
+    "mean_congruence": 0.9968498349189758,
+    "min_congruence": 0.995847225189209,
+    "axes_used": [
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise",
+      "warm_cold"
+    ]
+  },
+  "icc": {
+    "per_axis": {
+      "confident_cautious": 0.7201,
+      "empathetic_analytical": 0.7907,
+      "formal_casual": 0.9692,
+      "verbose_concise": 0.7501,
+      "warm_cold": 0.793
+    },
+    "mean_icc": 0.8046,
+    "n_items_per_axis": 30,
+    "note": "ICC(2,1) on validation hidden states from main calibration projected onto each set's axes"
+  },
+  "rank_icc": {
+    "per_axis": {
+      "confident_cautious": 0.8711,
+      "empathetic_analytical": 0.9783,
+      "formal_casual": 0.9911,
+      "verbose_concise": 0.8811,
+      "warm_cold": 0.9634
+    },
+    "mean_rank_icc": 0.937,
+    "note": "ICC(2,1) on rank-transformed projections \u2014 measures ordering consistency, ignores scale differences"
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "_meta": {
+    "script": "scripts/02_baseline.py",
+    "backend": "mlx",
+    "model": "mistral_small_3.2_24b",
+    "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "timestamp": "2026-07-24T20:04:12.001157",
+    "n_questions": 30,
+    "max_new_tokens": 384,
+    "generation_settings": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    }
+  },
+  "axes": {
+    "warm_cold": {
+      "mean": -0.26026758795363064,
+      "std": 0.1234942635597299,
+      "min": -0.45135066024151144,
+      "max": 0.21979109877945513,
+      "values": [
+        -0.33910035895976737,
+        -0.2327106476957957,
+        -0.3593162248621767,
+        -0.33262845756358406,
+        0.21979109877945513,
+        -0.16845394672178518,
+        -0.2139472918994016,
+        -0.20246049126470111,
+        -0.16191418411750663,
+        -0.2959299649912235,
+        -0.24663141967529031,
+        -0.16899308099933816,
+        -0.21050938304312958,
+        -0.23246105457278246,
+        -0.3738726501755523,
+        -0.17275300029614712,
+        -0.1740106186175683,
+        -0.34851140734897246,
+        -0.4342764119525247,
+        -0.35090495823613066,
+        -0.280943055398247,
+        -0.2515280762636668,
+        -0.35851081041055793,
+        -0.44003475775010026,
+        -0.2884180375331334,
+        -0.27710854081947756,
+        -0.45135066024151144,
+        -0.14164477592209068,
+        -0.2594314768148279,
+        -0.259462993241384
+      ]
+    },
+    "confident_cautious": {
+      "mean": 0.22513099300305175,
+      "std": 0.12673931020739093,
+      "min": -0.11801539470053424,
+      "max": 0.4179681199550479,
+      "values": [
+        0.1854008950483762,
+        0.3305968180268092,
+        0.31927771535566085,
+        0.04475026477292461,
+        0.13932371781711367,
+        0.03068837799443923,
+        0.2112154514167183,
+        0.4127564155945238,
+        0.2575936967821748,
+        0.19590855657980735,
+        0.20024579349816846,
+        0.3492641321112617,
+        0.30320063747777476,
+        0.047264319436030724,
+        0.2951409118614657,
+        0.25453329414175085,
+        0.23423383796670047,
+        0.3992178539266637,
+        0.4179681199550479,
+        0.26056653589514817,
+        0.25212274798030804,
+        0.27878900304316395,
+        0.3887454623659192,
+        0.19218203384162091,
+        -0.006774995325962145,
+        0.19458103232389773,
+        0.15122917110472167,
+        -0.11801539470053424,
+        0.3119464430876233,
+        0.2199769407122332
+      ]
+    },
+    "empathetic_analytical": {
+      "mean": -0.25769283495166223,
+      "std": 0.10633955549492581,
+      "min": -0.42553410656561746,
+      "max": 0.03598635764389779,
+      "values": [
+        -0.22725303455120655,
+        -0.25213966758562023,
+        -0.28127002667508544,
+        -0.26158415595391343,
+        -0.026314997371709406,
+        -0.05922875358389672,
+        -0.1489707645081819,
+        -0.2860627653908427,
+        -0.21079886341744855,
+        -0.26994541343327455,
+        -0.27956109294184833,
+        -0.3043048171724557,
+        -0.32756350535692286,
+        -0.2280709269069103,
+        -0.2749897735142816,
+        -0.25403922189118805,
+        -0.10280970442179595,
+        -0.31925416304930226,
+        -0.380921622485964,
+        -0.24666811412344558,
+        -0.4226554458906739,
+        -0.3060181165891383,
+        -0.3958850031857059,
+        -0.32485589978308893,
+        -0.2744972426600245,
+        -0.30139438271916813,
+        -0.42553410656561746,
+        0.03598635764389779,
+        -0.344157513018997,
+        -0.23002231144605603
+      ]
+    },
+    "formal_casual": {
+      "mean": 0.0804981219345274,
+      "std": 0.09490163061218501,
+      "min": -0.2368010184010548,
+      "max": 0.3228672870262984,
+      "values": [
+        0.10669496944116617,
+        0.02822317471762413,
+        0.1108992890578855,
+        0.1315202523838838,
+        -0.2368010184010548,
+        0.02372094756759392,
+        0.05718058904688862,
+        0.03185514681957988,
+        -0.040103211880249734,
+        0.15248379095059456,
+        0.07123622131601949,
+        0.010785118567821791,
+        0.033923196484628756,
+        0.14341139978845194,
+        0.0949208055152148,
+        -0.007260401397169609,
+        -0.0025751882789214905,
+        0.18013417884541913,
+        0.10637907862083351,
+        0.12769309997290462,
+        0.1227686836290585,
+        0.05834311147994091,
+        0.17505872556455335,
+        0.1925676449348067,
+        0.19408756571197944,
+        0.05598185912893436,
+        0.3228672870262984,
+        0.0445410449749396,
+        0.06424626361429775,
+        0.060160032831898635
+      ]
+    },
+    "verbose_concise": {
+      "mean": -0.23030659364124526,
+      "std": 0.14719489891360726,
+      "min": -0.4791762529302033,
+      "max": 0.09278787685288206,
+      "values": [
+        -0.30028155356321046,
+        -0.2511640098880826,
+        -0.19127249427239285,
+        -0.14500928527215637,
+        -0.01863898387237165,
+        -0.06775210501870298,
+        -0.334670495106546,
+        -0.019049019000344933,
+        -0.23926434377418263,
+        -0.38767660281646893,
+        -0.44525259106450044,
+        -0.06356755274378258,
+        -0.16994424383293802,
+        -0.04805801602986329,
+        -0.32307744118462894,
+        -0.34322040449288405,
+        -0.23694367737864908,
+        -0.0747441971666118,
+        -0.2342482325511906,
+        -0.44736492917616616,
+        -0.3599825792514072,
+        -0.29608346192638785,
+        -0.2241603949525753,
+        -0.3250942625570355,
+        -0.03494472401085511,
+        -0.2863335895311677,
+        0.09278787685288206,
+        -0.4791762529302033,
+        -0.21800124533716606,
+        -0.4370089973877679
+      ]
+    }
+  },
+  "responses": [
+    {
+      "question": "How do tides work?",
+      "response": "Tides are the periodic rise and fall of sea levels caused by the gravitational forces exerted by the Moon and the Sun, along with the rotation of Earth. Here\u2019s a breakdown of how they work:\n\n### **1. Gravitational Pull of the Moon**\n   - The **Moon's gravity** pulls most strongly on the side of Earth facing it, creating a **high tide** due to the water being drawn toward the Moon.\n   - On the opposite side of Earth, inertia (the tendency of water to keep moving in the direction of Earth's rotation) creates another **high tide**.\n   - The areas between these high tides experience **low tides**.\n\n### **2. Role of the Sun (Solar Tides)**\n   - The Sun also exerts a gravitational pull on Earth's oceans, but its effect is weaker because it\u2019s much farther away than the Moon.\n   - When the Sun, Moon, and Earth align (during **new and full moons**), their gravitational forces combine, creating **spring tides** (higher high tides and lower low tides).\n   - When the Sun and Moon are at right angles (during **first and third quarter moons**), their forces partially cancel, resulting in **neap tides** (lower high tides and higher low tides).\n\n### **3. Earth\u2019s Rotation**\n   - As Earth rotates, different parts of the planet move in and out of the tidal bulges, causing **two high tides and two low tides** approximately every **24 hours and 50 minutes** (one lunar day).\n\n### **4. Additional Factors**\n   - **Shape of the coastline**: Bays, inlets, and estuaries can amplify tidal ranges.\n   - **Depth of the ocean**: Shallow waters near coastlines experience stronger tidal currents.\n   - **Wind and weather**: Storms can",
+      "n_tokens": 384,
+      "n_words": 269,
+      "generation_time_s": 9.397754192352295,
+      "truncated": true
+    },
+    {
+      "question": "What causes the Northern Lights?",
+      "response": "The **Northern Lights**, or **Aurora Borealis**, and their southern counterpart, the **Aurora Australis**, are caused by interactions between **solar wind particles** and Earth's **magnetic field and atmosphere**. Here\u2019s how it happens:\n\n### **1. Solar Wind (Charged Particles from the Sun)**\n   - The Sun constantly emits a stream of charged particles (mostly electrons and protons), known as the **solar wind**.\n   - During **solar storms** (like coronal mass ejections), more intense bursts of particles are released.\n\n### **2. Earth\u2019s Magnetic Field (Magnetosphere)**\n   - Earth\u2019s **magnetic field** acts like a shield, deflecting most of the solar wind.\n   - However, some particles are funneled toward the **magnetic poles** (near the North and South Poles).\n\n### **3. Collision with Atmospheric Gases**\n   - When these charged particles (especially **electrons**) collide with **oxygen and nitrogen** in Earth\u2019s atmosphere, they transfer energy to the atoms.\n   - This excites the atoms, causing them to emit light as they return to their normal state.\n\n### **4. Different Colors of the Aurora**\n   - **Green** (most common) \u2013 Oxygen at lower altitudes (~100\u2013250 km).\n   - **Red** \u2013 Oxygen at higher altitudes (~250\u2013400 km).\n   - **Blue/Purple** \u2013 Nitrogen collisions at lower altitudes.\n   - **Pink/White** \u2013 A mix of oxygen and nitrogen emissions.\n\n### **5. Best Viewing Conditions**\n   - Near the **magnetic poles** (Alaska, Canada, Scandinavia, Iceland, Antarctica).\n   - Dark, clear skies (away from light pollution).\n   - Increased solar activity (solar storms enhance the display).\n\nThe same",
+      "n_tokens": 384,
+      "n_words": 233,
+      "generation_time_s": 9.200898885726929,
+      "truncated": true
+    },
+    {
+      "question": "How do volcanoes form?",
+      "response": "Volcanoes form through a combination of geological processes driven by the movement of tectonic plates and the melting of Earth's mantle. Here\u2019s a step-by-step breakdown of how they form:\n\n### **1. Plate Tectonics and Magma Generation**\n   - Earth\u2019s outer shell (the lithosphere) is divided into large, moving plates.\n   - These plates interact at their boundaries in three main ways:\n     - **Divergent Boundaries** (plates moving apart) \u2013 Magma rises to fill the gap (e.g., mid-ocean ridges).\n     - **Convergent Boundaries** (plates colliding) \u2013 One plate subducts (sinks) beneath another, creating magma due to pressure and melting.\n     - **Hotspots** \u2013 Plumes of molten rock rise from deep within the mantle (e.g., Hawaii).\n\n### **2. Magma Chamber Formation**\n   - As magma accumulates beneath the crust, it collects in a **magma chamber** (a reservoir of molten rock).\n   - Pressure builds up as more magma enters the chamber.\n\n### **3. Volcanic Eruption**\n   - When the pressure exceeds the strength of the overlying rock, the magma forces its way to the surface through a **vent**, creating a **volcanic eruption**.\n   - The type of eruption depends on the magma\u2019s viscosity (thickness) and gas content:\n     - **Effusive Eruptions** \u2013 Low-viscosity lava flows (e.g., shield volcanoes like Kilauea).\n     - **Explosive Eruptions** \u2013 High-viscosity lava with trapped gases (e.g., stratovolcanoes like Mount St. Helens).\n\n### **4. Volcano Structure Development**\n   - Over time, repeated eruptions build up layers of lava, ash, and volcanic rocks, forming a **",
+      "n_tokens": 384,
+      "n_words": 235,
+      "generation_time_s": 9.178649187088013,
+      "truncated": true
+    },
+    {
+      "question": "What is the water table?",
+      "response": "The **water table** is the upper surface of the **groundwater**, where the soil and rock layers are completely saturated with water. It marks the boundary between the **unsaturated zone** (above the water table, where pores contain both air and water) and the **saturated zone** (below the water table, where all pores are filled with water).\n\n### **Key Features of the Water Table:**\n1. **Location & Depth:**\n   - The water table is not flat but can vary in elevation due to topography, rainfall, and human activity.\n   - It can be close to the surface (e.g., in low-lying areas or wetlands) or deep underground (e.g., in arid regions).\n\n2. **Recharge & Discharge Areas:**\n   - **Recharge zones** (where water enters the aquifer) are often in upland areas with permeable soil.\n   - **Discharge zones** (where water exits, like springs or wells) occur where the water table intersects the surface.\n\n3. **Influence on Human Use:**\n   - Wells and aquifers tap into groundwater below the water table for drinking, irrigation, and industry.\n   - Lowering the water table through over-pumping can cause **subsidence** (sinking land) or **saltwater intrusion** in coastal areas.\n\n4. **Seasonal & Climate Effects:**\n   - The water table rises after heavy rainfall and lowers during droughts.\n   - In deserts, it may be hundreds of meters deep, while in wetlands, it can be at or just below the surface.\n\n### **Why It Matters:**\n- Essential for **agriculture, drinking water, and ecosystems** (e.g., wetlands, rivers).\n- Over-extraction can deplete aquifers, leading to long-term water scarcity.\n\nWould you like details on how to find the water table in a specific area",
+      "n_tokens": 384,
+      "n_words": 263,
+      "generation_time_s": 9.203383684158325,
+      "truncated": true
+    },
+    {
+      "question": "How do bees make honey?",
+      "response": "Bees make honey through a fascinating and highly organized process involving several steps. Here\u2019s how it works:\n\n### **1. Collecting Nectar**\n- Worker bees (female bees) collect nectar from flowers using their long, tube-like **proboscis** (mouthpart).\n- They store the nectar in their **honey stomach** (a separate compartment from their digestive system).\n\n### **2. Transporting Nectar to the Hive**\n- The bees return to the hive, where they pass the nectar to **house bees** (younger worker bees) through **trophallaxis** (mouth-to-mouth feeding).\n\n### **3. Enzymatic Processing**\n- The house bees mix the nectar with **enzymes** (like **invertase**) that break down complex sugars (sucrose) into simpler sugars (glucose and fructose).\n- This enzyme-rich nectar is stored in **honeycomb cells** made of beeswax.\n\n### **4. Reducing Moisture Content**\n- Bees fan their wings over the nectar to **evaporate water**, thickening it into honey.\n- The ideal moisture level is around **18%**, which prevents fermentation and spoilage.\n\n### **5. Sealing the Honey**\n- Once the honey reaches the right consistency, bees cap the honeycomb cells with **beeswax** to preserve it.\n- This honey serves as food for the colony, especially during winter when flowers are scarce.\n\n### **Fun Fact:**\n- It takes about **12 bees their entire lifespans** to produce just **one teaspoon of honey**!\n\nWould you like to know more about the different types of honey or beekeeping practices? \ud83d\ude0a\ud83d\udc1d",
+      "n_tokens": 370,
+      "n_words": 227,
+      "generation_time_s": 8.806380271911621,
+      "truncated": false
+    },
+    {
+      "question": "What causes wind?",
+      "response": "Wind is caused by differences in **air pressure** between two regions, which occur due to variations in temperature and atmospheric conditions. Here\u2019s a step-by-step explanation of how wind forms:\n\n### **1. Unequal Heating of the Earth\u2019s Surface**\n- The Sun heats the Earth unevenly. Some areas (like the equator) receive more direct sunlight and warm up faster, while others (like the poles) stay cooler.\n- As air warms, it rises, creating **low-pressure zones** where the air is less dense.\n- Cooler air sinks, creating **high-pressure zones**.\n\n### **2. Air Pressure Differences Drive Wind**\n- Air naturally moves from areas of **high pressure** (where there\u2019s more air molecules) to **low pressure** (where there\u2019s less air).\n- This movement of air is what we call **wind**.\n\n### **3. Global Wind Patterns**\n- The Earth\u2019s rotation (Coriolis effect) and geography (mountains, oceans) influence wind direction and strength.\n- Trade winds, westerlies, and polar easterlies are large-scale wind patterns caused by these pressure differences.\n\n### **4. Local Wind Factors**\n- **Sea breezes**: During the day, land heats faster than water, causing air to rise over land and cooler air from the sea to rush in.\n- **Land breezes**: At night, the opposite happens\u2014land cools faster, and air moves from land to sea.\n\n### **5. Weather Systems**\n- Storms, cyclones, and hurricanes are intense wind systems caused by extreme pressure differences and rotating air masses.\n\n### **Summary:**\nWind is essentially the atmosphere\u2019s way of balancing out pressure differences caused by uneven heating. The greater the pressure difference, the stronger the wind. This process is crucial for weather patterns and climate.\n\nWould you like more details on a specific type of wind?",
+      "n_tokens": 384,
+      "n_words": 276,
+      "generation_time_s": 9.162314176559448,
+      "truncated": true
+    },
+    {
+      "question": "How do fish breathe underwater?",
+      "response": "Fish breathe underwater using **gills**, specialized organs designed to extract dissolved oxygen from water. Here\u2019s how the process works:\n\n### **1. How Gills Function:**\n   - **Gills are made up of thin, feathery filaments** (gill filaments) that contain tiny blood vessels (capillaries).\n   - Water flows over these filaments, allowing oxygen to diffuse into the blood while carbon dioxide diffuses out.\n   - The gills are highly vascularized, maximizing surface area for gas exchange.\n\n### **2. The Breathing Process:**\n   - **Inhalation:** Fish take in water through their **mouth** and force it over the gills.\n   - **Oxygen Extraction:** As water passes over the gills, oxygen diffuses into the blood (where it binds to **hemoglobin** in red blood cells).\n   - **Exhalation:** The deoxygenated water (now with less oxygen and more CO\u2082) flows out through the **gill slits**.\n\n### **3. Key Adaptations for Efficiency:**\n   - **Countercurrent Exchange:** Blood flows in the opposite direction to water flow, ensuring maximum oxygen uptake.\n   - **High Surface Area:** Gill filaments are densely packed to maximize oxygen absorption.\n   - **Ventilation:** Fish continuously pump water over their gills to keep the oxygen supply steady.\n\n### **4. Differences from Human Lungs:**\n   - Unlike lungs, which inflate and deflate, **fish gills are always in contact with water**, allowing continuous oxygen extraction.\n   - Some fish (like goldfish) can also absorb oxygen through their **skin** when necessary.\n\n### **5. Special Cases:**\n   - **Lungfish & Bichirs:** Some fish have primitive lungs to survive in low-oxygen waters.\n   - **Air-Breathing Fish:** Species like the **lungfish** and **",
+      "n_tokens": 384,
+      "n_words": 248,
+      "generation_time_s": 9.190572023391724,
+      "truncated": true
+    },
+    {
+      "question": "What is permafrost?",
+      "response": "**Permafrost** is ground that remains at or below **0\u00b0C (32\u00b0F)** for at least **two consecutive years**. It is found in polar and high-altitude regions, particularly in the Arctic, sub-Arctic, and high mountain areas.\n\n### **Key Characteristics of Permafrost:**\n1. **Composition**:\n   - Permafrost consists of soil, rock, or sediment that remains permanently frozen.\n   - It can contain ice (as much as 80% ice by volume in some areas) or be **ice-rich** or **ice-poor**.\n\n2. **Depth**:\n   - Can be shallow (meters deep) or extend hundreds of meters below the surface.\n\n3. **Active Layer**:\n   - The top layer of permafrost that thaws and refreezes seasonally (typically 0.5 to 4 meters deep).\n\n4. **Distribution**:\n   - Found in **Arctic regions** (e.g., Siberia, Alaska, Canada, Greenland) and **high-altitude regions** (e.g., the Himalayas, Andes).\n\n### **Why Permafrost Matters:**\n- **Carbon Storage**: Permafrost holds **twice as much carbon as the atmosphere** (1,400\u20131,600 billion tons of carbon). Thawing releases **methane and CO\u2082**, accelerating climate change.\n- **Ecosystems**: Supports unique Arctic ecosystems, including peatlands and tundra.\n- **Human Impact**: Thawing permafrost can damage infrastructure (roads, buildings) and create **sinkholes** or **landslides**.\n- **Indigenous Cultures**: Many Indigenous communities rely on permafrost for traditional land use and food sources.\n\n### **Threats from Climate Change:**\n- Rising temperatures are causing permafrost to **",
+      "n_tokens": 384,
+      "n_words": 210,
+      "generation_time_s": 9.199043989181519,
+      "truncated": true
+    },
+    {
+      "question": "How do caves form?",
+      "response": "Caves form through various geological processes that involve the dissolution or erosion of rock. The most common types of caves and their formation methods are:\n\n### **1. Solution Caves (Karst Caves)**\n   - **How they form:** These caves develop in **soluble rocks** like limestone, gypsum, or salt (halite) through the process of **dissolution**.\n   - **Process:**\n     1. **Rainwater** absorbs **carbon dioxide (CO\u2082)** from the atmosphere and soil, forming a weak **carbonic acid (H\u2082CO\u2083)**.\n     2. This acidic water seeps into cracks in the rock, dissolving it over time.\n     3. As the rock dissolves, cracks widen into **caverns** and **tunnels**.\n   - **Examples:** Mammoth Cave (USA), Carlsbad Caverns (USA), Postojna Cave (Slovenia).\n\n### **2. Lava Tubes (Volcanic Caves)**\n   - **How they form:** These form in **volcanic regions** when lava flows solidify.\n   - **Process:**\n     1. Molten lava flows downhill, and the outer layer cools and hardens.\n     2. The inner lava drains out, leaving a hollow tube.\n   - **Examples:** Thurston Lava Tube (Hawaii), Kazumura Cave (Hawaii).\n\n### **3. Sea Caves**\n   - **How they form:** Waves and ocean currents erode cliffs along coastlines.\n   - **Process:**\n     1. Repeated wave action erodes weaker parts of rock (like limestone or sandstone).\n     2. Over time, this creates **sea arches** and eventually **sea caves**.\n   - **Examples:** Finger of God (South Africa), Fingal\u2019s Cave (",
+      "n_tokens": 384,
+      "n_words": 211,
+      "generation_time_s": 9.206386089324951,
+      "truncated": true
+    },
+    {
+      "question": "What causes ocean currents?",
+      "response": "Ocean currents are driven by a combination of factors, including winds, the Earth's rotation, water density differences, and the shape of ocean basins. Here are the key causes:\n\n### 1. **Winds (Surface Currents)**\n   - **Prevailing Winds**: Major surface currents (e.g., the Gulf Stream) are driven by global wind patterns like the trade winds and westerlies.\n   - **Friction**: Wind blowing over the ocean's surface pushes water, creating surface currents that flow in the same direction as the wind (though at a slight angle due to the **Coriolis effect**).\n\n### 2. **Coriolis Effect**\n   - The Earth's rotation deflects moving water (and air) to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. This creates large-scale circular (gyre) patterns in ocean basins.\n\n### 3. **Density Differences (Thermohaline Circulation)**\n   - **Temperature (Thermal)**: Warm water near the equator is less dense and rises, while colder water near the poles is denser and sinks.\n   - **Salinity (Haline)**: Saltier water is denser and sinks, influencing deep-water currents.\n   - **Global Conveyor Belt**: Cold, salty water sinks in polar regions (e.g., the North Atlantic), creating deep currents that circulate globally over centuries.\n\n### 4. **Ocean Basin Shape**\n   - The geography of continents and ocean basins (e.g., the Americas and Europe) guides the flow of currents, creating boundary currents like the California Current (cold) or the Gulf Stream (warm).\n\n### 5. **Tides**\n   - While tides cause localized currents, they are not the primary driver of major ocean currents.\n\n### **Key Types of Currents:**\n- **Surface Currents**",
+      "n_tokens": 384,
+      "n_words": 251,
+      "generation_time_s": 9.20946216583252,
+      "truncated": true
+    },
+    {
+      "question": "How do touchscreens work?",
+      "response": "Touchscreens are interactive input devices that allow users to interact directly with a display by touching the screen with their fingers or a stylus. They work by detecting the location of the touch and translating it into commands for the device. Here\u2019s how different types of touchscreens operate:\n\n### **1. Resistive Touchscreens**\n   - **How it Works**:\n     - Consists of two flexible, conductive layers (usually indium tin oxide, ITO) separated by a small gap.\n     - When pressure is applied (e.g., a finger or stylus), the top layer bends and makes contact with the bottom layer, completing an electrical circuit.\n     - The controller detects the coordinates of the touch based on voltage changes.\n   - **Pros**:\n     - Works with fingers or styluses (including cheap passive styluses).\n     - Cheaper to manufacture.\n   - **Cons**:\n     - Less sensitive, may require firm pressure.\n     - Lower clarity due to multiple layers.\n\n### **2. Capacitive Touchscreens**\n   - **How it Works**:\n     - Made of a single conductive layer (usually ITO) coated onto glass.\n     - The screen generates an electrostatic field. When a conductive object (like a finger) touches the screen, it disrupts the field, creating a change in capacitance.\n     - The controller measures the change to determine touch location.\n   - **Pros**:\n     - More precise and responsive.\n     - Multi-touch support (e.g., pinch-to-zoom).\n     - Better image clarity (no extra layers).\n   - **Cons**:\n     - Doesn\u2019t work with non-conductive objects (e.g., gloved hands or passive styluses).\n     - Can be affected by moisture or dirt.\n\n### **3. Projected Capacitive (PCAP) Touchscreens**\n   - **How it Works**:\n     - A",
+      "n_tokens": 384,
+      "n_words": 252,
+      "generation_time_s": 9.205024003982544,
+      "truncated": true
+    },
+    {
+      "question": "What is fiber optic cable?",
+      "response": "A **fiber optic cable** is a type of cable that transmits **light signals** (usually infrared light) through thin, flexible glass or plastic fibers instead of electrical signals. This technology is widely used for high-speed data transmission, telecommunications, and networking due to its superior performance compared to traditional copper cables.\n\n### **Key Features of Fiber Optic Cables:**\n1. **Core & Cladding:**\n   - The **core** (center) is made of glass or plastic, where light travels.\n   - The **cladding** surrounds the core, keeping the light inside through **total internal reflection**.\n\n2. **Types of Fiber Optic Cables:**\n   - **Single-Mode Fiber (SMF):** Thin core (~9 micrometers) for long-distance, high-speed communication (e.g., internet backbone).\n   - **Multimode Fiber (MMF):** Thicker core (~50-62.5 micrometers) for shorter distances (e.g., LANs, data centers).\n\n3. **Advantages:**\n   - **High Bandwidth:** Supports much faster data speeds (e.g., 10 Gbps to 100 Gbps and beyond).\n   - **Low Attenuation:** Minimal signal loss over long distances.\n   - **Immunity to EMI/RFI:** Not affected by electromagnetic interference.\n   - **Security:** Difficult to tap without detection.\n   - **Lightweight & Small:** Takes up less space than copper cables.\n\n4. **Disadvantages:**\n   - More expensive than copper initially.\n   - Fragile (requires careful handling).\n   - Requires special equipment (transceivers, splitters) for installation.\n\n### **Common Applications:**\n- **Internet & Telecommunications** (backbone networks, 5G, Fiber-to-the-Home - FTTH).\n- **Cable",
+      "n_tokens": 384,
+      "n_words": 213,
+      "generation_time_s": 9.220634698867798,
+      "truncated": true
+    },
+    {
+      "question": "How do solar panels generate electricity?",
+      "response": "Solar panels generate electricity through the **photovoltaic (PV) effect**, which converts sunlight directly into electricity. Here\u2019s a step-by-step breakdown of how this process works:\n\n### **1. Absorption of Sunlight**\n   - Solar panels are made of **photovoltaic cells**, usually composed of **silicon** (a semiconductor material).\n   - When sunlight (composed of photons) hits the solar cells, the photons are absorbed by the silicon atoms.\n\n### **2. Electron Excitation**\n   - The energy from the photons knocks electrons loose from the silicon atoms, creating **free electrons** and leaving behind positively charged \"holes.\"\n   - This process generates **electron-hole pairs**.\n\n### **3. Electric Field Creation**\n   - The solar cell has two layers of silicon:\n     - **N-type layer** (doped with phosphorus, adding extra electrons).\n     - **P-type layer** (doped with boron, creating \"holes\").\n   - The junction between these layers creates an **electric field** that forces electrons to move toward the n-side and holes to the p-side.\n\n### **4. Electron Flow (Electric Current)**\n   - The free electrons flow through an external circuit (wires) to the n-side, creating **direct current (DC) electricity**.\n   - This flow of electrons is the electric current that can power devices or charge batteries.\n\n### **5. Conversion to Usable Power**\n   - Since most homes and grids use **alternating current (AC)**, an **inverter** converts the DC electricity from solar panels into AC.\n   - The electricity is then used immediately, stored in batteries, or fed back into the grid (if net metering is available).\n\n### **Key Factors Affecting Efficiency:**\n   - **Sunlight intensity** (more sunlight = more electricity).\n   - **Panel material** (monocrystalline",
+      "n_tokens": 384,
+      "n_words": 253,
+      "generation_time_s": 9.23537302017212,
+      "truncated": true
+    },
+    {
+      "question": "What is a semiconductor?",
+      "response": "A **semiconductor** is a material that has electrical conductivity between that of a conductor (such as copper) and an insulator (such as glass). Semiconductors have properties that allow them to control electrical currents, making them essential components in modern electronics.\n\n### **Key Characteristics of Semiconductors:**\n1. **Electrical Conductivity:** Their conductivity can be adjusted by adding impurities (a process called **doping**) or by applying external factors like temperature or light.\n2. **Energy Band Gap:** They have a small energy gap (band gap) between the valence band (where electrons are bound) and the conduction band (where electrons can move freely). This gap determines how easily electrons can flow.\n3. **Temperature Dependency:** Unlike conductors, semiconductors' conductivity increases with temperature.\n\n### **Types of Semiconductors:**\n- **Intrinsic Semiconductors:** Pure semiconductors (e.g., silicon, germanium) with no added impurities.\n- **Extrinsic Semiconductors:** Impurities (dopants) are added to modify conductivity:\n  - **N-type (Electron-rich):** Doping with elements like phosphorus or arsenic (extra valence electrons).\n  - **P-type (Hole-rich):** Doping with elements like boron (deficiency of electrons, creating \"holes\").\n\n### **Applications:**\n- **Transistors** (amplification and switching)\n- **Diodes** (rectification)\n- **Integrated Circuits (ICs)** (CPUs, memory chips)\n- **Solar cells** (photovoltaic devices)\n- **LEDs** (light-emitting diodes)\n\nSilicon is the most widely used semiconductor, but others include germanium, gallium arsenide, and silicon carbide.\n\nWould you like more details on any specific aspect?",
+      "n_tokens": 370,
+      "n_words": 219,
+      "generation_time_s": 8.831080913543701,
+      "truncated": false
+    },
+    {
+      "question": "How do microwave ovens heat food?",
+      "response": "Microwave ovens heat food through the process of **dielectric heating**, which involves the interaction of microwave radiation with water molecules in the food. Here\u2019s how it works:\n\n### 1. **Microwave Generation**\n   - The oven produces microwaves (typically at **2.45 GHz**, a frequency absorbed by water, fats, and sugars) using a **magnetron**, a device that converts electrical energy into microwaves.\n   - These waves are directed into the cooking chamber via a waveguide.\n\n### 2. **Absorption by Water Molecules**\n   - Microwaves are **non-ionizing radiation**, meaning they do not make food radioactive.\n   - Water molecules (polar molecules) have a slight positive charge on one side and a negative charge on the other. When exposed to microwaves, these molecules **align with the alternating electric field** (billions of times per second).\n   - As the field reverses, the molecules **rotate and collide with neighboring molecules**, generating heat through friction.\n\n### 3. **Heating Effect**\n   - The energy from the microwaves is converted into **thermal energy (heat)**, raising the temperature of the water (and other molecules) in the food.\n   - Since water is a major component of most foods, heating it causes the rest of the food to warm up as well.\n\n### 4. **Penetration Depth**\n   - Microwaves penetrate food **1\u20132 inches deep**, heating the interior more than traditional methods (like baking, which heats from the outside in).\n   - This is why microwaved food can heat unevenly\u2014thicker or denser parts may not absorb microwaves as effectively.\n\n### 5. **Turntable & Metal Grids**\n   - The turntable rotates food to **evenly distribute** the microwaves, preventing hot and cold",
+      "n_tokens": 384,
+      "n_words": 258,
+      "generation_time_s": 9.21692705154419,
+      "truncated": true
+    },
+    {
+      "question": "What is RAM in a computer?",
+      "response": "**RAM (Random Access Memory)** is a type of **volatile memory** in a computer that stores data and instructions temporarily while the system is running. Here\u2019s a detailed breakdown:\n\n### **Key Features of RAM:**\n1. **Volatile Storage:**\n   - Data is lost when the computer is turned off or restarted.\n   - Unlike **SSD/HDD** (permanent storage), RAM is used for **active processing**.\n\n2. **Speed & Accessibility:**\n   - Provides **fast data access** (hence \"Random Access\") compared to storage drives.\n   - CPU fetches data from RAM much quicker than from HDD/SSD.\n\n3. **Temporary Storage:**\n   - Holds **currently running applications, open files, and system processes**.\n   - Acts as a **workspace** for the CPU to process data efficiently.\n\n4. **Measured in GB (Gigabytes):**\n   - Common sizes: **4GB, 8GB, 16GB, 32GB, etc.**\n   - More RAM = More simultaneous tasks (e.g., gaming, video editing, multitasking).\n\n### **Types of RAM:**\n- **DDR4 (Double Data Rate 4)** \u2013 Most common in modern PCs.\n- **DDR5** \u2013 Newer, faster, and more efficient (used in high-end systems).\n- **LPDDR (Low-Power DDR)** \u2013 Used in laptops and mobile devices.\n\n### **Why RAM is Important:**\n- **Bottleneck Prevention:** Insufficient RAM causes slow performance, crashes, or freezing.\n- **Multitasking:** More RAM allows smoother operation of multiple applications.\n- **Gaming/Content Creation:** High-RAM systems handle large files and complex tasks better.\n\n### **Difference Between RAM & Storage (SSD/HDD):**\n| Feature",
+      "n_tokens": 384,
+      "n_words": 222,
+      "generation_time_s": 9.209427118301392,
+      "truncated": true
+    },
+    {
+      "question": "How do noise-canceling headphones work?",
+      "response": "Noise-canceling headphones work by using **active noise control** (ANC) technology to reduce unwanted background noise. Here\u2019s how they do it:\n\n### **1. Microphones Detect Ambient Noise**\nThe headphones have built-in microphones that continuously pick up external sounds (e.g., airplane engine noise, traffic, chatter).\n\n### **2. Anti-Noise Wave Generation**\nA processor analyzes the incoming noise and generates an **inverse sound wave** (a \"anti-noise\" signal) that is the exact opposite of the unwanted noise.\n\n### **3. Destructive Interference**\nWhen the anti-noise wave combines with the original ambient noise, the two waves **cancel each other out** (destructive interference), effectively reducing the perceived volume of the background noise.\n\n### **4. Passive Noise Isolation**\nMany noise-canceling headphones also use **passive noise isolation**\u2014physical seals around the ears (over-ear or in-ear) that block high-frequency sounds (e.g., voices) without requiring electronics.\n\n### **Key Benefits:**\n- **Reduces low-frequency rumble** (e.g., airplane engines, traffic).\n- **Improves audio clarity** by minimizing distractions.\n- **Works best with continuous, predictable noise** (less effective for sudden, random sounds).\n\n### **Limitations:**\n- **Battery-dependent** (ANC requires power).\n- **Less effective with irregular noises** (e.g., speech, baby crying).\n- **Can slightly alter music/audio quality** (some models adjust bass to compensate).\n\n### **Example Brands:**\n- **Bose QuietComfort**\n- **Sony WH-1000XM5**\n- **Apple AirPods Pro (with ANC)**\n\nNoise-canceling headphones are especially useful in noisy environments like airplanes, offices, or public transport.",
+      "n_tokens": 384,
+      "n_words": 222,
+      "generation_time_s": 9.259831428527832,
+      "truncated": true
+    },
+    {
+      "question": "What is a transistor?",
+      "response": "A **transistor** is a fundamental semiconductor device used to amplify, switch, or regulate electronic signals and electrical power. It is a crucial building block in modern electronics, forming the basis of integrated circuits (ICs) and microprocessors.\n\n### **Key Characteristics of a Transistor:**\n1. **Types:**\n   - **Bipolar Junction Transistor (BJT)** \u2013 Uses both electrons and holes for conduction (NPN or PNP types).\n   - **Field-Effect Transistor (FET)** \u2013 Controlled by an electric field (e.g., MOSFET, JFET).\n   - **Unijunction Transistor (UJT)** \u2013 Used in relaxation oscillators.\n\n2. **Functions:**\n   - **Amplification** \u2013 Can increase the strength of a weak signal.\n   - **Switching** \u2013 Acts as an electronic switch (ON/OFF) in digital circuits.\n   - **Signal Modulation** \u2013 Used in radio transmitters and receivers.\n\n3. **Basic Structure:**\n   - **BJT:** Consists of three regions (Emitter, Base, Collector).\n   - **MOSFET:** Has a Source, Gate, and Drain (controlled by voltage at the gate).\n\n4. **Operation:**\n   - In a **BJT**, current flow between the emitter and collector is controlled by the base current.\n   - In a **MOSFET**, the gate voltage controls the flow between the source and drain.\n\n### **Applications:**\n- Computers, smartphones, power supplies, radios, amplifiers, and many other electronic devices.\n- Essential in digital logic circuits (e.g., logic gates in CPUs).\n\nTransistors replaced vacuum tubes in the mid-20th century, revolutionizing electronics by enabling smaller, faster, and more efficient devices.",
+      "n_tokens": 363,
+      "n_words": 221,
+      "generation_time_s": 8.707540035247803,
+      "truncated": false
+    },
+    {
+      "question": "How do electric motors work?",
+      "response": "Electric motors convert electrical energy into mechanical energy by utilizing the interaction between magnetic fields and electric current. Here\u2019s a simplified breakdown of how they work:\n\n### **1. Basic Principle (Faraday\u2019s Law & Lorentz Force)**\n- An electric motor relies on **Faraday\u2019s law of electromagnetic induction**, which states that a changing magnetic field induces a current in a conductor.\n- The **Lorentz force** explains how a current-carrying wire in a magnetic field experiences a force, causing motion.\n\n### **2. Key Components**\n- **Stator:** The stationary part of the motor, usually containing permanent magnets or electromagnets that create a magnetic field.\n- **Rotor (Armature):** The rotating part that carries a current, producing its own magnetic field.\n- **Commutator (in DC Motors):** A rotating switch that reverses the direction of current to keep the rotor spinning.\n- **Brushes (in DC Motors):** Conductive contacts that supply current to the rotor via the commutator.\n- **Windings:** Coils of wire in the rotor or stator that generate magnetic fields when current flows through them.\n\n### **3. Working Process**\n- **DC Motor:**\n  1. When DC current flows through the rotor\u2019s windings, it creates a magnetic field.\n  2. The rotor\u2019s magnetic field interacts with the stator\u2019s magnetic field, creating a force that causes rotation.\n  3. The commutator and brushes switch the current direction to keep the rotor spinning.\n\n- **AC Motor (Induction Motor - Most Common):**\n  1. The stator\u2019s windings produce a rotating magnetic field when connected to AC power.\n  2. The rotor (usually a conductive metal cage) experiences an induced current due to the changing magnetic field.\n  3. The interaction between the induced current and the stator\u2019s field creates a force, driving the rotor",
+      "n_tokens": 384,
+      "n_words": 278,
+      "generation_time_s": 9.163489818572998,
+      "truncated": true
+    },
+    {
+      "question": "What is bandwidth?",
+      "response": "**Bandwidth** is a term that refers to the **capacity of a network or communication channel to transmit data over a given period of time**. It is typically measured in **bits per second (bps)**, such as **kilobits per second (Kbps), megabits per second (Mbps), or gigabits per second (Gbps)**.\n\n### **Key Aspects of Bandwidth:**\n1. **Data Transfer Capacity**:\n   - Bandwidth determines how much data can be sent or received over a network connection.\n   - Higher bandwidth means faster and more efficient data transfer.\n\n2. **Not the Same as Internet Speed**:\n   - Bandwidth is the **maximum capacity** of a connection, while **speed** refers to how much data is actually being used at a given time.\n   - Example: A 100 Mbps internet plan has a **maximum bandwidth** of 100 Mbps, but actual speed may vary based on usage.\n\n3. **Types of Bandwidth**:\n   - **Upload Bandwidth**: Data sent from your device to the internet.\n   - **Download Bandwidth**: Data received from the internet to your device.\n\n4. **Factors Affecting Bandwidth**:\n   - **Physical Infrastructure** (cables, fiber optics, wireless signals).\n   - **Network Congestion** (more users sharing the same bandwidth reduces speed).\n   - **Protocol Efficiency** (how data is compressed or transmitted).\n\n5. **Real-World Applications**:\n   - Streaming (4K video requires higher bandwidth).\n   - Online gaming (low latency and high bandwidth improve performance).\n   - Business operations (large file transfers need sufficient bandwidth).\n\n### **Example:**\nIf your internet plan offers **50 Mbps download speed**, your **bandwidth** is 50 Mbps, meaning you can theoretically download up to 50 megab",
+      "n_tokens": 384,
+      "n_words": 247,
+      "generation_time_s": 9.190340280532837,
+      "truncated": true
+    },
+    {
+      "question": "What is the Dewey Decimal System?",
+      "response": "The **Dewey Decimal System (DDC)** is a classification system used by libraries to organize books and other materials by subject. It was created by **Melvil Dewey** in 1876 and remains one of the most widely used library classification systems today.\n\n### **Key Features of the Dewey Decimal System:**\n1. **Numerical Classification** \u2013 Books are categorized into **10 main classes**, each represented by a three-digit number (e.g., **000 for General Works, 100 for Philosophy, 200 for Religion, etc.**).\n2. **Hierarchical Structure** \u2013 Subjects are divided into increasingly specific categories (e.g., **500 Natural Sciences \u2192 590 Zoology \u2192 599.35 Mammals**).\n3. **Decimal Notation** \u2013 Numbers are extended with decimals to allow for more detailed classification (e.g., **940.53 History of the 20th Century**).\n4. **Library Organization** \u2013 Books are shelved in numerical order, making it easy to browse related topics.\n5. **Universal Use** \u2013 It is used in **public, school, and academic libraries worldwide**, though some countries (like the UK) also use the **Library of Congress Classification (LCC)**.\n\n### **Main Classes in the Dewey Decimal System:**\n1. **000** \u2013 General Works (encyclopedias, dictionaries, etc.)\n2. **100** \u2013 Philosophy & Psychology\n3. **200** \u2013 Religion\n4. **300** \u2013 Social Sciences (economics, politics, education)\n5. **400** \u2013 Language\n6. **500** \u2013 Natural Sciences & Math\n7. **600** \u2013 Technology & Applied Sciences\n8. **700** \u2013 Arts",
+      "n_tokens": 384,
+      "n_words": 221,
+      "generation_time_s": 9.192750692367554,
+      "truncated": true
+    },
+    {
+      "question": "How do time zones work?",
+      "response": "Time zones are regions of the Earth that observe the same standard time for legal, commercial, and social purposes. They were introduced to coordinate timekeeping across different longitudes, ensuring that clocks show roughly the same solar time (based on the position of the sun) within a given area.\n\n### **Key Concepts of Time Zones:**\n1. **Earth\u2019s Rotation & Solar Time:**\n   - The Earth rotates approximately **360 degrees in 24 hours**, meaning each degree of longitude corresponds to about **4 minutes** of time difference.\n   - **Solar noon** (when the sun is highest in the sky) occurs at different times depending on longitude.\n\n2. **Standard Time Zones:**\n   - The world is divided into **24 time zones**, each roughly **15 degrees wide** (1 hour apart), centered around **Greenwich Mean Time (GMT)** (or **UTC**, Coordinated Universal Time).\n   - For example:\n     - **UTC-5 (Eastern Time Zone)**\n     - **UTC+1 (Central European Time)**\n     - **UTC+9 (Japan Standard Time)**\n\n3. **Daylight Saving Time (DST):**\n   - Some regions adjust clocks forward by **1 hour** in summer to extend daylight.\n   - Example: **Eastern Daylight Time (EDT, UTC-4)** vs. **Eastern Standard Time (EST, UTC-5)**.\n\n4. **Political & Geographical Adjustments:**\n   - Some countries follow **non-standard time zones** for political or historical reasons.\n   - Example: **China** uses a single time zone (UTC+8) despite spanning multiple longitudes.\n   - **India** follows **IST (UTC+5:30)**, which is not a whole hour offset.\n\n5. **International Date Line (IDL):**\n   - Near the **1",
+      "n_tokens": 384,
+      "n_words": 234,
+      "generation_time_s": 9.19537901878357,
+      "truncated": true
+    },
+    {
+      "question": "What is the metric system?",
+      "response": "The **metric system** is an internationally recognized decimal-based system of measurement used for measuring length, mass, weight, capacity, and other quantities. It is based on the **International System of Units (SI)**, which is the modern form of the metric system and is used by most countries worldwide (except for a few like the United States, Liberia, and Myanmar, which still use customary systems like the imperial system).\n\n### **Key Features of the Metric System:**\n1. **Decimal-Based:**\n   - Units are based on powers of 10, making conversions simple (e.g., 1 kilometer = 1,000 meters).\n\n2. **Standardized Units:**\n   - **Length:** Meter (m) \u2013 base unit\n   - **Mass:** Kilogram (kg) \u2013 base unit\n   - **Volume:** Liter (L) or cubic meter (m\u00b3)\n   - **Temperature:** Celsius (\u00b0C)\n   - **Time:** Second (s)\n   - **Electricity:** Ampere (A), Volt (V), Ohm (\u03a9)\n\n3. **Prefix Multipliers:**\n   - Common prefixes include:\n     - **Kilo (k)** = 1,000 (e.g., kilometer = 1,000 meters)\n     - **Centi (c)** = 0.01 (e.g., centimeter = 0.01 meter)\n     - **Milli (m)** = 0.001 (e.g., milligram = 0.001 gram)\n     - **Mega (M)** = 1,000,000 (e.g., megabyte = 1,000,000 bytes)\n\n4. **Global Adoption:**\n   - Used in science, medicine, engineering, and international trade.\n   - The U.S",
+      "n_tokens": 384,
+      "n_words": 196,
+      "generation_time_s": 9.179615020751953,
+      "truncated": true
+    },
+    {
+      "question": "How does mail delivery work?",
+      "response": "Mail delivery is a complex system that involves multiple steps to ensure letters, packages, and other mail items reach their intended recipients. Here\u2019s a general overview of how it works:\n\n### **1. Mail Collection**\n   - **Drop-off Points**: Senders deposit mail in postboxes, mailboxes, or directly at post offices.\n   - **Pickup by Carriers**: Postal workers or automated systems collect mail from these locations.\n\n### **2. Sorting (Automated & Manual)**\n   - **Barcode Scanning**: Machines read barcodes or handwritten addresses to sort mail by destination.\n   - **Automated Sorting**: High-speed machines separate letters and parcels based on size, weight, and destination.\n   - **Manual Sorting**: Human workers handle items that machines can\u2019t process (e.g., irregularly shaped packages).\n\n### **3. Transport to Sorting Centers**\n   - Mail is transported via trucks, trains, or aircraft to regional sorting hubs.\n   - Large mail-processing centers use advanced sorting machines to further organize mail by ZIP code, city, or country.\n\n### **4. Secondary Sorting**\n   - Mail is broken down into smaller batches based on local delivery routes.\n   - In some countries, barcodes or unique identifiers help track individual items.\n\n### **5. Final Delivery**\n   - **Rural Areas**: Postal workers deliver mail directly to homes or businesses.\n   - **Urban Areas**: Mail may be sorted into trays or bags for specific delivery routes.\n   - **Cluster Boxes/PO Boxes**: Some areas use shared mailboxes or post office boxes for pickup.\n   - **Tracking & Proof of Delivery**: Some services (like registered mail) require signatures or tracking updates.\n\n### **6. International Mail**\n   - If the mail is international, it goes through customs checks before being handed to the destination country\u2019s postal service.\n",
+      "n_tokens": 384,
+      "n_words": 264,
+      "generation_time_s": 9.192006826400757,
+      "truncated": true
+    },
+    {
+      "question": "What is crop rotation?",
+      "response": "**Crop rotation** is an agricultural practice where different types of crops are planted in the same area in sequential seasons over several years. This method helps improve soil fertility, prevent the depletion of nutrients, control pests and diseases, and maintain sustainable land productivity.\n\n### **Key Benefits of Crop Rotation:**\n1. **Soil Fertility Management** \u2013 Different crops have varying nutrient requirements. Planting legumes (like beans or clover) can fix nitrogen in the soil, reducing the need for synthetic fertilizers.\n2. **Pest & Disease Control** \u2013 Rotating crops disrupts the life cycles of pests and pathogens that thrive on a single plant species.\n3. **Weed Suppression** \u2013 Some crops (e.g., cereals or deep-rooted plants) can outcompete weeds, reducing their dominance.\n4. **Soil Structure Improvement** \u2013 Deep-rooted crops (like alfalfa) aerate the soil, while shallow-rooted crops (like wheat) prevent erosion.\n5. **Reduced Soil Depletion** \u2013 Continuously planting the same crop can deplete specific nutrients (e.g., nitrogen in cornfields). Rotation helps maintain soil health.\n\n### **Examples of Crop Rotation Systems:**\n- **2-Year Rotation:** Corn \u2192 Soybeans\n- **3-Year Rotation:** Wheat \u2192 Corn \u2192 Soybeans\n- **4-Year Rotation:** Corn \u2192 Soybeans \u2192 Wheat \u2192 Alfalfa\n\nCrop rotation is a fundamental principle of **sustainable agriculture**, helping farmers maintain long-term productivity without excessive chemical inputs.\n\nWould you like more details on specific crop rotations or benefits?",
+      "n_tokens": 327,
+      "n_words": 219,
+      "generation_time_s": 7.812753200531006,
+      "truncated": false
+    },
+    {
+      "question": "How do traffic lights coordinate?",
+      "response": "Traffic lights coordinate using a combination of timing algorithms, sensors, and communication systems to manage the flow of vehicles and pedestrians efficiently. Here\u2019s how they typically work:\n\n### **1. Basic Traffic Light Control Methods:**\n- **Fixed-Time Control:**\n  - Lights cycle through predetermined green, yellow, and red phases based on a set timer.\n  - Simple but inefficient in low-traffic conditions.\n  - Common in small intersections or areas with predictable traffic patterns.\n\n- **Actuated Control (Sensors):**\n  - Uses **inductive loops, cameras, or radar** to detect vehicle presence.\n  - Adjusts signal timing based on real-time traffic demand (e.g., longer green light if more cars are detected).\n  - More efficient than fixed timing but can cause delays if sensors fail.\n\n- **Adaptive Traffic Signal Control (ATSC):**\n  - Uses **AI and real-time data** to dynamically adjust signal timing.\n  - Systems like **SCOOT (UK) or SCATS (Australia)** adjust phases based on live traffic flow.\n  - Reduces congestion and improves travel time.\n\n- **Coordinated Signal Systems (Traffic Progress Control):**\n  - Synchronizes signals along a roadway to create a \"green wave\" for smoother traffic flow.\n  - Used in urban areas to keep traffic moving at optimal speeds.\n\n### **2. Communication Between Lights:**\n- **Fiber Optics or Wireless Networks:**\n  - Traffic lights communicate via wired (fiber) or wireless (Wi-Fi, cellular, or dedicated radio) connections.\n  - Centralized systems (like SCATS) can adjust multiple intersections simultaneously.\n\n- **Vehicle-to-Infrastructure (V2I) Communication:**\n  - Modern systems use **Dedicated Short-Range Communications (DSRC)** or **5G** to share data between vehicles and traffic lights.\n  - Can",
+      "n_tokens": 384,
+      "n_words": 249,
+      "generation_time_s": 9.171432733535767,
+      "truncated": true
+    },
+    {
+      "question": "What is a census?",
+      "response": "A **census** is an official count or survey of a population, typically conducted by a government, that collects detailed demographic, social, economic, and housing information about all individuals within a specific geographic area. It is usually carried out at regular intervals (e.g., every 10 years in many countries) to provide accurate data for planning, policy-making, and research.\n\n### **Key Features of a Census:**\n1. **Comprehensive Coverage** \u2013 Attempts to count **every individual** in a population, not just a sample.\n2. **Standardized Data Collection** \u2013 Uses uniform questionnaires to ensure consistency.\n3. **Demographic & Socioeconomic Data** \u2013 Collects information like age, gender, ethnicity, education, employment, income, and housing.\n4. **Legal Requirement** \u2013 Many countries mandate participation in the census (though some rely on voluntary responses).\n5. **Used for Government Planning** \u2013 Helps allocate resources (e.g., funding for schools, hospitals, and infrastructure) and assess economic and social trends.\n\n### **Examples of Census Data:**\n- Population size and distribution\n- Birth and death rates\n- Migration patterns\n- Housing conditions\n- Employment and income levels\n\n### **Challenges in Conducting a Census:**\n- High cost and logistical complexity\n- Ensuring accuracy (avoiding undercounting marginalized groups)\n- Privacy and data security concerns\n- Resistance or low response rates in some areas\n\nCensuses are fundamental for government decision-making, academic research, and understanding societal changes over time.",
+      "n_tokens": 317,
+      "n_words": 220,
+      "generation_time_s": 7.618396759033203,
+      "truncated": false
+    },
+    {
+      "question": "How do libraries organize books?",
+      "response": "Libraries organize books using a **classification system** to make it easy for people to find and access materials. The most common systems are:\n\n### 1. **Dewey Decimal Classification (DDC)**\n   - A widely used system that assigns **numbers** to books based on subject.\n   - **10 main classes**:\n     1. General Works\n     2. Philosophy & Psychology\n     3. Religion\n     4. Social Sciences\n     5. Language\n     6. Science\n     7. Technology\n     8. Arts & Recreation\n     9. History & Geography\n     10. Literature & Rare Books\n   - Example: *192* = Ethics (Philosophy)\n\n### 2. **Library of Congress Classification (LCC)**\n   - Used in many university and large public libraries.\n   - Uses **letters** (A, B, C, etc.) followed by numbers.\n   - Example: *PS* = American literature, *QA* = Mathematics.\n\n### 3. **Other Systems**\n   - **BL (Bliss Classification)** \u2013 Used in some UK libraries.\n   - **UDC (Universal Decimal Classification)** \u2013 A more detailed system.\n   - **Fiction Organization** \u2013 Often arranged alphabetically by author\u2019s last name.\n\n### **How Books Are Shelved**\n- Books are placed in **numerical or alphabetical order** based on their classification number.\n- Each book has a **call number** (e.g., *940.53 HAR*) which helps locate it on the shelf.\n- **Fiction** is often arranged by author\u2019s last name (e.g., *Rowling, J.K.*).\n\nWould you like help finding a book in a specific library system?",
+      "n_tokens": 371,
+      "n_words": 213,
+      "generation_time_s": 8.833612203598022,
+      "truncated": false
+    },
+    {
+      "question": "What is daylight saving time?",
+      "response": "**Daylight Saving Time (DST)** is the practice of setting the clocks forward by one hour during warmer months (spring and summer) and then moving them back by one hour in autumn (fall). The goal is to make better use of daylight by aligning waking hours with daylight, reducing the need for artificial lighting and energy consumption.\n\n### Key Points About Daylight Saving Time:\n1. **Purpose**:\n   - Extends evening daylight during summer months.\n   - Saves energy (originally intended to reduce electricity use by shifting daylight into the evening).\n   - Encourages outdoor activities and reduces traffic accidents (though studies on its effectiveness are mixed).\n\n2. **How It Works**:\n   - **Spring Forward**: Clocks move **ahead by one hour** (e.g., from 2:00 AM to 3:00 AM) in March (dates vary by country).\n   - **Fall Back**: Clocks move **back by one hour** (e.g., from 2:00 AM to 1:00 AM) in November (dates vary by country).\n\n3. **Countries Using DST**:\n   - **Yes**: Most of the U.S., Canada, parts of Europe, and some other regions.\n   - **No**: Most of Africa, Asia, and some countries in South America and the Middle East.\n\n4. **Controversy**:\n   - **Pros**: Energy savings, economic benefits (e.g., retail sales, tourism).\n   - **Cons**: Disrupts sleep cycles, increases heart attacks and accidents after the time change, and debatable energy savings.\n\n5. **Changing Trends**:\n   - Some places (e.g., Arizona, Hawaii in the U.S., parts of Europe) have abandoned DST.\n   - The U.S. is considering permanent DST (the **\"Sunshine Protection Act\"**)",
+      "n_tokens": 384,
+      "n_words": 243,
+      "generation_time_s": 9.168877840042114,
+      "truncated": true
+    },
+    {
+      "question": "How do escalators work?",
+      "response": "Escalators are mechanical devices designed to transport people between floors in buildings efficiently and safely. They operate using a combination of mechanical, electrical, and sometimes hydraulic components. Here\u2019s a breakdown of how they work:\n\n### **1. Basic Components:**\n- **Steps (or Steps and Pallets):** The moving steps (sometimes called treads) carry passengers up or down.\n- **Handrails:** Moving handrails provide support for passengers.\n- **Sprocket (or Chain Wheel):** A gear that drives the steps and handrails.\n- **Drive Motor:** An electric motor that powers the escalator.\n- **Escalator Skeleton (Truss):** The steel framework that supports the entire structure.\n- **Comb Plate (or Skirt Guards):** Metal plates at the sides to prevent objects from getting stuck.\n- **Newel (or Landing Plate):** The stationary platform at the top and bottom where passengers step on or off.\n\n### **2. How They Move:**\n- The steps are part of a continuous loop that moves in a zigzag pattern.\n- At the top and bottom, the steps flatten out to form a horizontal platform for boarding and disembarking.\n- The steps are linked together in a chain-like fashion, forming a continuous loop (like a conveyor belt).\n- The sprocket (a large gear) drives the chain, pulling the steps along the track.\n\n### **3. Handrails Operation:**\n- The handrails move at the same speed as the steps but are driven by a separate system (usually a rubber or metal belt).\n- They are synchronized with the steps to ensure safety.\n\n### **4. Safety Features:**\n- **Comb Plate:** Prevents people from stepping into gaps.\n- **Speed Control:** Escalators move at a controlled speed (typically 0.5\u20131.0 m/s or 1\u20132 ft/s).\n- **Automatic Shutdown:**",
+      "n_tokens": 384,
+      "n_words": 275,
+      "generation_time_s": 9.219562530517578,
+      "truncated": true
+    }
+  ]
+}

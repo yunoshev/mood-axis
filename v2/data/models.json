@@ -1,0 +1,142 @@
+{
+  "qwen3.5_9b": {
+    "org": "Alibaba",
+    "params": "9B",
+    "group": "main",
+    "name": "Qwen3.5 9B",
+    "model_id": "Qwen/Qwen3.5-9B",
+    "color": "#E9C46A",
+    "quantize": null
+  },
+  "gemma3_12b": {
+    "org": "Google",
+    "params": "12B",
+    "group": "main",
+    "name": "Gemma 3 12B",
+    "model_id": "google/gemma-3-12b-it",
+    "color": "#34A853",
+    "quantize": null
+  },
+  "phi4": {
+    "org": "Microsoft",
+    "params": "14B",
+    "group": "main",
+    "name": "Phi-4 14B",
+    "model_id": "microsoft/phi-4",
+    "color": "#7B68EE",
+    "quantize": null
+  },
+  "deepseek_r1_14b": {
+    "org": "DeepSeek",
+    "params": "14B",
+    "group": "main",
+    "name": "DeepSeek-R1 14B",
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "color": "#00D9A5",
+    "quantize": null
+  },
+  "ministral3_8b": {
+    "org": "Mistral AI",
+    "params": "8B",
+    "group": "main",
+    "name": "Ministral 3 8B",
+    "model_id": "mistralai/Ministral-3-8B-Instruct-2512",
+    "color": "#7C3AED",
+    "quantize": null
+  },
+  "gpt_oss_20b": {
+    "org": "OpenAI",
+    "params": "20B (MoE)",
+    "group": "extra",
+    "name": "GPT-OSS 20B",
+    "model_id": "openai/gpt-oss-20b",
+    "color": "#10A37F",
+    "quantize": null
+  },
+  "qwen3.5_9b_4bit": {
+    "org": "Alibaba",
+    "params": "9B",
+    "group": "twin",
+    "twin_of": "qwen3.5_9b",
+    "name": "Qwen3.5 9B (4-bit)",
+    "model_id": "Qwen/Qwen3.5-9B",
+    "color": "#E9C46A",
+    "quantize": "4bit"
+  },
+  "gemma3_12b_4bit": {
+    "org": "Google",
+    "params": "12B",
+    "group": "twin",
+    "twin_of": "gemma3_12b",
+    "name": "Gemma 3 12B (4-bit)",
+    "model_id": "google/gemma-3-12b-it",
+    "color": "#34A853",
+    "quantize": "4bit"
+  },
+  "phi4_4bit": {
+    "org": "Microsoft",
+    "params": "14B",
+    "group": "twin",
+    "twin_of": "phi4",
+    "name": "Phi-4 14B (4-bit)",
+    "model_id": "microsoft/phi-4",
+    "color": "#7B68EE",
+    "quantize": "4bit"
+  },
+  "deepseek_r1_14b_4bit": {
+    "org": "DeepSeek",
+    "params": "14B",
+    "group": "twin",
+    "twin_of": "deepseek_r1_14b",
+    "name": "DeepSeek-R1 14B (4-bit)",
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "color": "#00D9A5",
+    "quantize": "4bit"
+  },
+  "ministral3_8b_4bit": {
+    "org": "Mistral AI",
+    "params": "8B",
+    "group": "twin",
+    "twin_of": "ministral3_8b",
+    "name": "Ministral 3 8B (4-bit)",
+    "model_id": "mistralai/Ministral-3-8B-Instruct-2512",
+    "color": "#7C3AED",
+    "quantize": "4bit"
+  },
+  "qwen3.6_27b": {
+    "org": "Alibaba",
+    "params": "27B (dense)",
+    "group": "giant",
+    "name": "Qwen3.6 27B",
+    "model_id": "Qwen/Qwen3.6-27B",
+    "color": "#D97706",
+    "quantize": "4bit"
+  },
+  "mistral_small_3.2_24b": {
+    "org": "Mistral AI",
+    "params": "24B",
+    "group": "giant",
+    "name": "Mistral Small 3.2 24B",
+    "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "color": "#5B21B6",
+    "quantize": "4bit"
+  },
+  "gemma4_26b_a4b": {
+    "org": "Google",
+    "params": "26B (MoE A4B)",
+    "group": "giant",
+    "name": "Gemma 4 26B-A4B (MoE)",
+    "model_id": "google/gemma-4-26B-A4B-it",
+    "color": "#0F9D58",
+    "quantize": "4bit"
+  },
+  "qwen3.6_35b_a3b": {
+    "org": "Alibaba",
+    "params": "35B (MoE A3B)",
+    "group": "giant",
+    "name": "Qwen3.6 35B-A3B (MoE)",
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "color": "#B45309",
+    "quantize": "4bit"
+  }
+}

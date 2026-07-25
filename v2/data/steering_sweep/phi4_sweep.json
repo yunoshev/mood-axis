@@ -1,0 +1,195 @@
+{
+  "model": "phi4",
+  "model_id": "microsoft/phi-4",
+  "n_layers": 40,
+  "hidden_dim": 5120,
+  "axis": "warm_cold",
+  "n_questions": 5,
+  "alphas": [
+    -20.0,
+    0.0,
+    20.0
+  ],
+  "steer_scale": 0.01,
+  "current_target_layer": null,
+  "best_layer": 39,
+  "best_layer_pct": 97.5,
+  "best_effect": 0.0784,
+  "max_safe_pct": 30,
+  "recommended_range": [
+    -30,
+    30
+  ],
+  "safe_alpha_range": [
+    -30,
+    30
+  ],
+  "scale_results": [
+    {
+      "pct": 1,
+      "effect": 0.1142,
+      "mean_proj": 0.4409,
+      "rep_rate": 0.01,
+      "mean_tokens": 272.2,
+      "safe": true
+    },
+    {
+      "pct": 3,
+      "effect": 0.091,
+      "mean_proj": 0.4177,
+      "rep_rate": 0.0039,
+      "mean_tokens": 253.0,
+      "safe": true
+    },
+    {
+      "pct": 5,
+      "effect": 0.0825,
+      "mean_proj": 0.4092,
+      "rep_rate": 0.0153,
+      "mean_tokens": 237.4,
+      "safe": true
+    },
+    {
+      "pct": 10,
+      "effect": 0.1373,
+      "mean_proj": 0.464,
+      "rep_rate": 0.009,
+      "mean_tokens": 243.6,
+      "safe": true
+    },
+    {
+      "pct": 15,
+      "effect": 0.1074,
+      "mean_proj": 0.4341,
+      "rep_rate": 0.0055,
+      "mean_tokens": 239.4,
+      "safe": true
+    },
+    {
+      "pct": 20,
+      "effect": 0.1157,
+      "mean_proj": 0.4424,
+      "rep_rate": 0.0059,
+      "mean_tokens": 223.0,
+      "safe": true
+    },
+    {
+      "pct": 30,
+      "effect": 0.1595,
+      "mean_proj": 0.4862,
+      "rep_rate": 0.0037,
+      "mean_tokens": 146.0,
+      "safe": true
+    },
+    {
+      "pct": 50,
+      "effect": 0.1,
+      "mean_proj": 0.4267,
+      "rep_rate": 0.2,
+      "mean_tokens": 6.6,
+      "safe": false
+    }
+  ],
+  "timestamp": "2026-07-25T03:14:01.191772",
+  "layers": [
+    {
+      "layer": 10,
+      "layer_pct": 25.0,
+      "effect": -0.0083,
+      "neg_mean": 0.3917,
+      "zero_mean": 0.4785,
+      "pos_mean": 0.3834,
+      "time_s": 870.5
+    },
+    {
+      "layer": 13,
+      "layer_pct": 32.5,
+      "effect": 0.0034,
+      "neg_mean": 0.4476,
+      "zero_mean": 0.3525,
+      "pos_mean": 0.451,
+      "time_s": 811.1
+    },
+    {
+      "layer": 16,
+      "layer_pct": 40.0,
+      "effect": -0.0668,
+      "neg_mean": 0.4601,
+      "zero_mean": 0.4958,
+      "pos_mean": 0.3933,
+      "time_s": 745.5
+    },
+    {
+      "layer": 19,
+      "layer_pct": 47.5,
+      "effect": 0.0782,
+      "neg_mean": 0.337,
+      "zero_mean": 0.445,
+      "pos_mean": 0.4152,
+      "time_s": 656.5
+    },
+    {
+      "layer": 22,
+      "layer_pct": 55.0,
+      "effect": 0.0282,
+      "neg_mean": 0.3976,
+      "zero_mean": 0.4216,
+      "pos_mean": 0.4257,
+      "time_s": 565.8
+    },
+    {
+      "layer": 25,
+      "layer_pct": 62.5,
+      "effect": -0.0133,
+      "neg_mean": 0.4419,
+      "zero_mean": 0.4089,
+      "pos_mean": 0.4286,
+      "time_s": 534.9
+    },
+    {
+      "layer": 28,
+      "layer_pct": 70.0,
+      "effect": 0.0082,
+      "neg_mean": 0.387,
+      "zero_mean": 0.402,
+      "pos_mean": 0.3952,
+      "time_s": 454.5
+    },
+    {
+      "layer": 31,
+      "layer_pct": 77.5,
+      "effect": 0.0246,
+      "neg_mean": 0.4209,
+      "zero_mean": 0.4189,
+      "pos_mean": 0.4455,
+      "time_s": 389.0
+    },
+    {
+      "layer": 34,
+      "layer_pct": 85.0,
+      "effect": -0.0226,
+      "neg_mean": 0.4944,
+      "zero_mean": 0.4429,
+      "pos_mean": 0.4718,
+      "time_s": 338.8
+    },
+    {
+      "layer": 37,
+      "layer_pct": 92.5,
+      "effect": 0.0608,
+      "neg_mean": 0.424,
+      "zero_mean": 0.4728,
+      "pos_mean": 0.4848,
+      "time_s": 287.8
+    },
+    {
+      "layer": 39,
+      "layer_pct": 97.5,
+      "effect": 0.0784,
+      "neg_mean": 0.4146,
+      "zero_mean": 0.3267,
+      "pos_mean": 0.4931,
+      "time_s": 260.0
+    }
+  ]
+}

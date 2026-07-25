@@ -1,0 +1,41 @@
+name: Build site data
+
+# Single source of truth: whenever the committed data under v2/data changes,
+# regenerate docs/site_data.json + docs/data/* so the GitHub Pages site and
+# the numbers always move together. The builder is deterministic (its _meta
+# is derived from the last v2/data commit), so this is idempotent.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "v2/data/**"
+      - "v2/build_site_data.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild site data
+        run: python v2/build_site_data.py
+      - name: Commit rebuilt artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/site_data.json docs/data/
+          if git diff --cached --quiet; then
+            echo "Site data already up to date."
+          else
+            git commit -m "ci: rebuild site data from v2/data [skip ci]"
+            git push
+          fi

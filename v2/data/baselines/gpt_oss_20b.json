@@ -1,0 +1,450 @@
+{
+  "_meta": {
+    "script": "scripts/02_baseline.py",
+    "backend": "mlx",
+    "model": "gpt_oss_20b",
+    "model_id": "openai/gpt-oss-20b",
+    "timestamp": "2026-07-24T06:02:40.114037",
+    "n_questions": 30,
+    "max_new_tokens": 384,
+    "generation_settings": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    }
+  },
+  "axes": {
+    "warm_cold": {
+      "mean": -0.12712191656165447,
+      "std": 0.15414644862957355,
+      "min": -0.559422507314527,
+      "max": 0.16134528049754193,
+      "values": [
+        -0.2578902488034324,
+        -0.14967448333992547,
+        -0.18770854825131975,
+        -0.202135475057545,
+        -0.04455513085210428,
+        -0.1663860313151104,
+        -0.34691389293347596,
+        -0.3684304020648232,
+        -0.024613158250910167,
+        -0.1271878007033994,
+        -0.12207589973562394,
+        0.0747076813317249,
+        -0.09085623868922485,
+        0.09134042809508083,
+        -0.36834135220872277,
+        -0.559422507314527,
+        -0.12793682546755986,
+        -0.012897210383968882,
+        -0.161727880807417,
+        -0.06419153327617313,
+        -0.11540660628318168,
+        -0.06045148654873114,
+        0.16134528049754193,
+        -0.20684734829730642,
+        -0.24420004366536432,
+        -0.11569711048094018,
+        0.0250087937028079,
+        0.12518008184487026,
+        -0.016764585890008975,
+        -0.1489279617008636
+      ]
+    },
+    "confident_cautious": {
+      "mean": 0.1752472322799707,
+      "std": 0.2795803841431677,
+      "min": -0.36989682895083953,
+      "max": 0.960431051276402,
+      "values": [
+        0.2548129117476319,
+        0.34644473815228116,
+        0.3678901273261541,
+        0.16208651721852316,
+        -0.14403517673955965,
+        0.083910160585359,
+        0.5161306905861723,
+        0.44476759064055504,
+        0.24259888493001946,
+        0.23042099241087613,
+        0.5072442681449029,
+        -0.2380094328150323,
+        0.008625577974195733,
+        -0.28354702871516824,
+        0.4570532521200448,
+        0.960431051276402,
+        -0.027343342685889546,
+        0.1574327999367412,
+        0.37877154340395375,
+        0.3007987987881499,
+        0.1181417425902129,
+        0.0014896483406705208,
+        -0.36989682895083953,
+        0.46947940945739786,
+        0.310578990423351,
+        0.16270000787367156,
+        0.09142256840315315,
+        -0.11482059642730247,
+        -0.12082479349342524,
+        -0.017338104104082708
+      ]
+    },
+    "empathetic_analytical": {
+      "mean": -0.01228293404167998,
+      "std": 0.22998598092141012,
+      "min": -0.4126751856440253,
+      "max": 0.6237614039563953,
+      "values": [
+        0.09535931474375367,
+        0.1218727363250399,
+        0.18079572883625647,
+        -0.03700997912429761,
+        -0.25449671719983324,
+        -0.13313110135897366,
+        0.31499824969524837,
+        0.19694215171179422,
+        0.012245296282765218,
+        0.041665235930194826,
+        0.24871270958061248,
+        -0.4126751856440253,
+        -0.15466452874214295,
+        -0.37564060867444543,
+        0.20978100469593491,
+        0.6237614039563953,
+        -0.18086413681902117,
+        -0.08254704576631551,
+        0.1559324254411236,
+        0.10727284567850426,
+        -0.11927525733681345,
+        -0.04540361187273823,
+        -0.3538031840077338,
+        0.2536668072894416,
+        0.08576688079651185,
+        -0.037838819563155254,
+        -0.17123488249467986,
+        -0.26568636868770684,
+        -0.27892719018698753,
+        -0.11406219473510622
+      ]
+    },
+    "formal_casual": {
+      "mean": -0.22243612592333126,
+      "std": 0.15976585489946768,
+      "min": -0.598093963014482,
+      "max": 0.007968202892584732,
+      "values": [
+        -0.07987806830598759,
+        -0.42313562766711493,
+        -0.269718530151284,
+        -0.017795406617955714,
+        -0.09977444362169424,
+        -0.00727972971540776,
+        -0.3186891932586228,
+        -0.11239271099052506,
+        -0.4483948671642236,
+        -0.2830245571191377,
+        -0.598093963014482,
+        -0.16806633805257434,
+        -0.15809518615230883,
+        -0.11476516374052187,
+        -0.020522313098292205,
+        -0.3324900542409405,
+        -0.03690937592311572,
+        -0.37945919549690665,
+        -0.2796584143542538,
+        -0.5236599770579758,
+        -0.16281265132874212,
+        -0.3097252244874301,
+        -0.3110236772448384,
+        -0.40990523998359063,
+        -0.12319265148135054,
+        -0.15574148104654117,
+        -0.19591560676592426,
+        -0.2932786751928552,
+        0.007968202892584732,
+        -0.0476536573179252
+      ]
+    },
+    "verbose_concise": {
+      "mean": 0.16629933728140112,
+      "std": 0.10550749581622253,
+      "min": -0.1152336570779378,
+      "max": 0.3506629832232131,
+      "values": [
+        0.13227891859730284,
+        0.07887215403524118,
+        0.08326891760778478,
+        0.15876110488446551,
+        0.2698060107868489,
+        0.19592907943242288,
+        0.0389995149279881,
+        0.039436519191922516,
+        0.1642069507977144,
+        0.1447692133815767,
+        0.03593319260580622,
+        0.32349014788716807,
+        0.22212741702847522,
+        0.321636594029583,
+        0.06821964449267758,
+        -0.1152336570779378,
+        0.26534198229896,
+        0.16236532884359978,
+        0.09242984397900164,
+        0.1128946774690166,
+        0.23379178463820352,
+        0.2084666936696844,
+        0.3506629832232131,
+        0.038914154879671654,
+        0.1342956687857065,
+        0.1913824663902973,
+        0.2183538471143848,
+        0.2959547024128173,
+        0.2946517984174432,
+        0.22697246371099314
+      ]
+    }
+  },
+  "responses": [
+    {
+      "question": "How do tides work?",
+      "response": "**Tides** are the regular rise and fall of the ocean\u2019s surface (or any large body of water) caused mainly by the gravitational pull of the Moon and, to a lesser extent, the Sun. They are a fascinating interplay of celestial mechanics, fluid dynamics, and Earth\u2019s rotation. Below is a comprehensive overview that covers the physics, geometry, and observable consequences.\n\n---\n\n## 1. The Basic Physics\n\n### 1.1 Gravitational Attraction\n- **Newton\u2019s Law of Gravitation**: Every mass attracts every other mass with a force \\(F = G \\frac{m_1 m_2}{r^2}\\).\n- The Moon (mass \u2248 \\(7.35 \\times 10^{22}\\)\u202fkg) exerts a differential gravitational pull on the near side of Earth (stronger) and the far side (weaker).\n\n### 1.2 Differential (Tidal) Force\n- The force acting on the near side is larger than that on the far side, creating a **tidal bulge** in the direction of the Moon.\n- The same differential force acts opposite the Sun, but because the Sun is far farther away, its effect is about 46\u202f% of the Moon\u2019s.\n\n### 1.3 Coriolis & Centrifugal Effects\n- As Earth rotates, the water in the ocean is pushed by centrifugal force (due to Earth\u2019s rotation) and deflected by the Coriolis effect. These forces modify the shape and timing of the tidal bulges.\n\n---\n\n## 2. The Geometry of Tides\n\n### 2.1 Two Main Bulges\n- **Near\u2011side bulge**: Toward the Moon (or Sun).\n- **Far\u2011side bulge**: Opposite the Moon, caused by the fact that the Earth's center of mass is pulled toward the Moon while the far side",
+      "n_tokens": 384,
+      "n_words": 257,
+      "generation_time_s": 4.03435206413269,
+      "truncated": true
+    },
+    {
+      "question": "What causes the Northern Lights?",
+      "response": "The Northern Lights\u2014known scientifically as **aurora borealis**\u2014are a spectacular natural light display that occurs mainly in the high\u2011latitude regions of the Earth (the Arctic). They are produced by a chain of interactions between the Sun, the solar wind, Earth\u2019s magnetic field, and the upper atmosphere. Here\u2019s a step\u2011by\u2011step breakdown of what causes them:\n\n| Step | What Happens | Why It Matters |\n|------|--------------|----------------|\n| 1. **Solar wind emission** | The Sun continually ejects a stream of charged particles (mostly protons and electrons) called the **solar wind**. | These particles travel outward through the heliosphere and eventually encounter Earth. |\n| 2. **Interaction with Earth\u2019s magnetosphere** | When the solar wind reaches Earth, it encounters the planet\u2019s magnetic field. The field deflects most of the charged particles, but some are funneled along magnetic field lines toward the magnetic poles. | The magnetic field acts like a shield, but the funneling allows particles to reach the upper atmosphere near the poles. |\n| 3. **Entry into the ionosphere** | The funnelled particles collide with the upper atmosphere (the ionosphere, ~80\u2013600 km above the surface). | These collisions give the particles kinetic energy that is transferred to atmospheric atoms and molecules. |\n| 4. **Excitation of atmospheric atoms/molecules** | The energetic electrons and protons collide with atmospheric gases\u2014primarily **oxygen** (O) and **nitrogen** (N\u2082). | The collisions excite these atoms/molecules to higher energy states. |\n| 5. **Photon emission (re\u2011radiation)** | As the excited atoms/molecules return to their ground state, they release photons (light). | Different gases and energy levels produce different colors: <br>\u2022 **Oxygen** \u2192 green (557",
+      "n_tokens": 384,
+      "n_words": 265,
+      "generation_time_s": 3.780344009399414,
+      "truncated": true
+    },
+    {
+      "question": "How do volcanoes form?",
+      "response": "**Volcanoes: The Planet\u2019s Natural \u201cVents\u201d**\n\nA volcano is a vent or a series of vents that allow magma (molten rock beneath the Earth\u2019s surface) and gases to escape to the surface.  The process that creates a volcano is tied to the way the Earth\u2019s lithosphere (the rigid outer shell) moves and interacts with the underlying asthenosphere (the softer, partially molten layer of the mantle).  Below is a concise, step\u2011by\u2011step overview of how volcanoes form, grouped by the main tectonic settings that produce them.\n\n---\n\n## 1.  The Basic Ingredients\n\n| Ingredient | Where it comes from | Why it matters |\n|------------|--------------------|----------------|\n| **Magma** | Partial melting of mantle or crustal rocks | Provides the molten material that feeds the volcano |\n| **Volatile gases** (H\u2082O, CO\u2082, SO\u2082, etc.) | Dissolved in the magma from the mantle and crust | Drives eruptions, shapes lava flows, creates ash |\n| **Plate boundaries / hotspots** | Where plates converge, diverge, or mantle plumes rise | Determines location and style of volcanic activity |\n\n---\n\n## 2.  Volcano Formation by Plate Boundary Type\n\n### A.  Convergent Boundaries \u2013 Subduction Zones\n\n1. **Subduction Initiates**  \n   - An oceanic plate (dense, cool) slides beneath a continental or another oceanic plate.\n   - The subducting slab carries water\u2011rich sediments and altered basalt into the mantle.\n\n2. **Water\u2011Induced Melting**  \n   - Water lowers the solidus (melting temperature) of the overlying mantle wedge.  \n   - Partial melting produces **basaltic to andesitic magma**.\n\n3. **Magma Ascent**  \n   - Magma is buoyant; it rises",
+      "n_tokens": 384,
+      "n_words": 249,
+      "generation_time_s": 3.7806100845336914,
+      "truncated": true
+    },
+    {
+      "question": "What is the water table?",
+      "response": "**The water table** is the underground surface that separates the saturated zone (where all pores in the soil or rock are filled with water) from the unsaturated zone (the area above it where pores contain both air and water). In simpler terms, it\u2019s the \u201ctop\u201d of the groundwater reservoir.\n\n---\n\n### Key Features\n\n| Feature | Explanation |\n|---------|-------------|\n| **Location** | Varies with depth depending on geology, topography, and climate. In arid regions it can be many meters below the surface; in humid or mountainous areas it may be close to or even above the ground level. |\n| **Shape** | Not a flat plane; it undulates with changes in rock type, soil composition, and surface water inputs (e.g., rivers, lakes). |\n| **Movement** | The water table moves upward in response to recharge (rainfall, irrigation, snowmelt) and downward during drought or when water is pumped out. |\n| **Hydraulic Conductivity** | The ability of the underlying material to transmit water influences how quickly the water table rises or falls. |\n| **Interaction with Surface Water** | In many places, the water table intersects the ground surface, forming springs, wetlands, or influencing stream baseflow. |\n\n---\n\n### Why It Matters\n\n| Context | Why the water table matters |\n|---------|----------------------------|\n| **Water Resources** | Determines where wells can be drilled and how much groundwater can be sustainably extracted. |\n| **Agriculture** | A high water table can cause root\u2011zone flooding, whereas a low water table can limit irrigation options. |\n| **Urban Planning** | Building foundations must consider the depth of the water table to avoid flooding and foundation settlement. |\n| **Environmental Health** | Water table levels influence wetland habitats, nutrient cycling, and the transport of contaminants. |\n| **Climate Change** | Shifts",
+      "n_tokens": 384,
+      "n_words": 295,
+      "generation_time_s": 3.780043363571167,
+      "truncated": true
+    },
+    {
+      "question": "How do bees make honey?",
+      "response": "**Bees make honey through a fascinating, multi\u2011step process that involves collecting nectar, converting it into a sugary syrup, and then dehydrating it until it becomes the thick, golden honey we know. Here\u2019s a step\u2011by\u2011step look at how it all happens:**\n\n---\n\n## 1. **Nectar Collection**\n\n1. **Foraging** \u2013 Worker bees (foragers) leave the hive and visit flowers that produce nectar.\n2. **Sucking** \u2013 They use their long, tube\u2011like tongues (proboscis) to suck the nectar into a special stomach called the *crop* (or honey stomach).\n3. **Transport** \u2013 The nectar is carried back to the hive in the crop, while the bee\u2019s gut contains enzymes that start the conversion process.\n\n---\n\n## 2. **Enzymatic Conversion**\n\n- While in the crop, enzymes (especially **invertase**) break down sucrose (the main sugar in nectar) into simpler sugars: glucose and fructose.  \n- This makes the nectar less sticky and easier to process later.\n\n---\n\n## 3. **Depositing in the Honey Cells**\n\n1. **Dropping** \u2013 The forager bee regurgitates the nectar into the cells of the honeycomb.\n2. **Helping** \u2013 Other worker bees take over the nectar, adding their own enzymes and mixing it thoroughly.\n\n---\n\n## 4. **Evaporation & Dehydration**\n\n- **Fanning** \u2013 Bees beat their wings to create airflow, and some will even lick the nectar, adding a little moisture from their mouths.\n- **Water Reduction** \u2013 This airflow evaporates water from the nectar, gradually turning it into a thicker syrup.  \n- **Goal** \u2013 Reduce water content to about 17\u201320% (honey is roughly 80% sugar, 20% water). This high sugar concentration prevents microbial growth.\n\n",
+      "n_tokens": 384,
+      "n_words": 260,
+      "generation_time_s": 3.7910547256469727,
+      "truncated": true
+    },
+    {
+      "question": "What causes wind?",
+      "response": "**Wind is the motion of air from high\u2011pressure regions to low\u2011pressure regions.**  \nThe basic chain of cause and effect is:\n\n| What happens | Why it happens | Resulting effect |\n|--------------|----------------|------------------|\n| **Sun heats the Earth unevenly** | The Sun\u2019s rays are stronger near the equator and at noon than at the poles or during night. | Surface temperatures rise more in some places than others. |\n| **Temperature differences create pressure differences** | Warm air expands, becomes less dense, and rises. Cold air sinks. Rising warm air leaves a region of lower pressure; sinking cold air leaves a region of higher pressure. | A pressure gradient is set up between high\u2011pressure and low\u2011pressure zones. |\n| **Air moves from high to low pressure** | The pressure gradient exerts a force on the air. Air accelerates toward the low\u2011pressure area. | Wind is produced. |\n| **Coriolis effect (Earth\u2019s rotation)** | Moving air is deflected to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. | Winds are curved rather than flowing straight from high to low pressure. |\n| **Surface friction, topography, and obstacles** | As air hits land, mountains, buildings, etc., its speed slows and its direction can change. | Local variations in wind speed and direction (e.g., sea breezes, mountain\u2011valley breezes). |\n\n### Key points\n\n1. **Pressure gradient force** is the immediate driver of wind.  \n2. **Temperature differences** caused by solar heating are the root cause of the pressure differences.  \n3. **Coriolis effect** and **friction** modify the wind\u2019s trajectory and speed.  \n4. **Large\u2011scale patterns** (trade winds, westerlies, polar easterlies) arise from the Earth\u2019s rotation",
+      "n_tokens": 384,
+      "n_words": 273,
+      "generation_time_s": 3.77595591545105,
+      "truncated": true
+    },
+    {
+      "question": "How do fish breathe underwater?",
+      "response": "**Fish breathe underwater through a fascinating process called respiration, which relies on specialized organs called gills. Here\u2019s a step-by-step breakdown of how it works:**\n\n---\n\n## 1.  Water Intake\n\n- **Water Entry**: Most fish open their mouths to allow water to flow in. Some species, like certain sharks, can also draw water in by sucking it in from the sides of their mouths.\n- **Positioning**: The fish positions its body so that water moves over the gill openings on the sides of its head.\n\n---\n\n## 2.  Gill Structure\n\n- **Gill Slits**: On each side of the fish\u2019s head are a series of gill slits, usually 3\u20137 per side (the number varies by species).\n- **Gill Filaments**: Inside each slit are thin, feathery filaments that vastly increase surface area.\n- **Gill Rakers**: Tiny comb\u2011like structures that help filter food and protect the delicate filaments.\n\n---\n\n## 3.  Oxygen Extraction\n\n- **Diffusion**: As water passes over the gill filaments, oxygen (O\u2082) diffuses from the water into the fish\u2019s bloodstream, while carbon dioxide (CO\u2082) diffuses out into the water. This exchange occurs across the thin walls of the gill filaments, similar to how gas exchange happens in lungs.\n- **Blood Flow**: The gills are supplied by the dorsal aorta, a major artery that brings oxygen\u2011rich blood to the rest of the body.\n- **Blood Gases**: The fish\u2019s blood carries the oxygen via hemoglobin in red blood cells, just like in mammals, but the oxygen saturation typically remains lower because water carries less oxygen than air.\n\n---\n\n## 4.  Water Exit\n\n- **Outflow**: After passing over the gills, the oxygen\u2011depleted",
+      "n_tokens": 384,
+      "n_words": 267,
+      "generation_time_s": 3.788553237915039,
+      "truncated": true
+    },
+    {
+      "question": "What is permafrost?",
+      "response": "**Permafrost** is ground\u2014soil, sand, gravel, or rock\u2014that remains at or below 0\u202f\u00b0C (32\u202f\u00b0F) for at least two consecutive years.  \nIt can be found in polar and high\u2011altitude regions, and its presence influences ecosystems, infrastructure, and the climate system.\n\n### Key Points\n\n| Aspect | Details |\n|--------|---------|\n| **Definition** | Ground permanently frozen for \u22652 years. |\n| **Layers** | <br>\u2022 **Active layer** \u2013 the topmost layer that thaws in summer and refreezes in winter.<br>\u2022 **Permafrost** \u2013 the permanently frozen part below the active layer. |\n| **Types** | \u2022 **Continuous** \u2013 covers >90\u202f% of a region.<br>\u2022 **Discontinuous** \u2013 patches separated by unfrozen ground.<br>\u2022 **Island** \u2013 isolated patches within a thawed matrix.<br>\u2022 **Occasional** \u2013 isolated pockets in otherwise unfrozen terrain. |\n| **Depth** | Ranges from a few meters to several hundred meters. |\n| **Occurrence** | Predominantly in Arctic/Antarctic zones, high\u2011altitude mountain ranges (e.g., Himalayas, Rockies), and alpine tundra. |\n| **Composition** | Often contains ice lenses, frozen organic matter, and sometimes ground\u2011water ice. |\n| **Hydrology** | Thawing can release large volumes of water, leading to surface runoff, lake formation, and altered drainage patterns. |\n| **Ecology** | Supports tundra vegetation (mosses, lichens, sedges) and influences soil nutrient cycles. |\n| **Infrastructure** | Building on permafrost requires special foundations; thaw can cause ground heave, cracking, and settlement. |\n| **Climate Impact** | Acts as a carbon reservoir; thaw releases greenhouse gases",
+      "n_tokens": 384,
+      "n_words": 236,
+      "generation_time_s": 3.7793960571289062,
+      "truncated": true
+    },
+    {
+      "question": "How do caves form?",
+      "response": "Cave formation is a fascinating geological process that takes millions of years and involves a combination of physical, chemical, and biological factors. The most common type of cave\u2014called a **solution cave**\u2014forms in soluble rock such as limestone, dolomite, or gypsum. Other cave types (lava tubes, sea caves, sea arches, etc.) are created by different processes, but the underlying principle is the same: a combination of water movement and rock dissolution or erosion.\n\nBelow is a step\u2011by\u2011step explanation of how solution caves form, followed by a brief look at other cave\u2011forming mechanisms.\n\n---\n\n## 1. The Setting: Soluble Rock & a Water Source\n\n| Element | What It Is | Why It Matters |\n|---------|------------|----------------|\n| **Rock type** | Limestone (calcite), dolomite, gypsum, etc. | These rocks are chemically soluble in slightly acidic water. |\n| **Water source** | Groundwater, rainwater, river seepage | Water percolates through soil and rock, picking up CO\u2082 and becoming acidic. |\n| **Climate** | Generally humid, with precipitation | The more water that infiltrates, the more dissolution occurs. |\n\n### 1.1 Acidic Water Formation\n- Rainwater absorbs CO\u2082 from the atmosphere and soil, forming weak carbonic acid (H\u2082CO\u2083).  \n- This acidic solution becomes the agent that dissolves the rock.\n\n### 1.2 Water Flow Pathways\n- Water seeks paths of least resistance\u2014pre\u2011existing fractures, joints, bedding planes, or bedding seams.  \n- The rock\u2019s structural weaknesses dictate where dissolution will be most intense.\n\n---\n\n## 2. The Chemistry of Dissolution\n\nThe most common reaction in limestone caves:\n\n\\[\n\\text{CaCO}_3 + \\text{H}_2\\text{CO}_3 \\longrightarrow \\text",
+      "n_tokens": 384,
+      "n_words": 255,
+      "generation_time_s": 3.7791969776153564,
+      "truncated": true
+    },
+    {
+      "question": "What causes ocean currents?",
+      "response": "Ocean currents are the large\u2011scale movements of seawater that circulate around the globe, transporting heat, nutrients, and gases. Their patterns are shaped by a combination of forces and conditions, and they can be grouped into two main types: **surface currents** (the ones you see moving on the ocean\u2019s skin) and **deep\u2011water currents** (the slower, deeper \u201cconveyor belt\u201d that circulates deep ocean water). Below is a detailed look at what drives each type and how they interact.\n\n---\n\n## 1. Surface Currents \u2013 The \u201cWind\u2011Driven\u201d Layer\n\n| Driver | How it Works | Typical Scale |\n|--------|--------------|---------------|\n| **Wind Stress** | Winds blowing over the ocean surface transfer momentum to the water. The Coriolis force deflects the flow to the right in the Northern Hemisphere and to the left in the Southern Hemisphere, creating large gyres. | 100\u2013500\u202fkm wide; speeds 0.1\u20131\u202fm\u202fs\u207b\u00b9 |\n| **Thermohaline Effects** | Temperature (T) and salinity (S) affect water density. Warm, low\u2011salinity water is less dense and tends to stay near the surface, while cold, high\u2011salinity water sinks. This vertical density gradient can enhance or oppose wind\u2011driven currents. | Surface\u2011to\u2011mid\u2011depth (0\u2013200\u202fm) |\n| **Earth\u2019s Rotation (Coriolis Effect)** | As water moves, the planet\u2019s rotation causes a deflection that shapes the direction of currents, producing circular gyres in each ocean basin. | Global gyre system |\n| **Coastline Geometry & Friction** | The shape of coastlines, continental shelves, and seafloor topography can steer, split, or slow currents. | Local to regional |\n| **Ekman Transport** | Wind",
+      "n_tokens": 384,
+      "n_words": 253,
+      "generation_time_s": 3.7812440395355225,
+      "truncated": true
+    },
+    {
+      "question": "How do touchscreens work?",
+      "response": "## 1.  The basic idea\n\nA **touchscreen** is a panel that can sense where a finger (or stylus or other object) touches it, and it turns that position into a digital signal that a computer or mobile device can use.  \nThe core of a touchscreen is a *sensor array* that measures one or more physical properties that change when an object contacts the surface. Those changes are converted into electrical signals, amplified, digitized, and interpreted by the device\u2019s software.\n\nThere are several major technologies; each one uses a different physical principle to detect touch:\n\n| Technology | Physical principle | Typical use |\n|------------|--------------------|-------------|\n| **Capacitive** (screen\u2011sensing) | Change in capacitance at a point | Modern smartphones, tablets, laptops |\n| **Resistive** | Change in resistance when two conductive layers touch | Industrial, automotive, older tablets |\n| **Surface\u2011acoustic\u2011wave (SAW)** | Destruction of acoustic waves by a finger | Public kiosks, ATMs |\n| **Infrared (IR) beam\u2011break** | Breaking of IR light paths | Kiosk, ATM, some industrial panels |\n| **Optical (light\u2011guide)** | Light leakage or scattering when touched | Some public kiosks, 3\u2011D touch |\n| **Electromagnetic resonance (EMR)** | Change in resonant frequency of an array of inductors | Apple\u2019s \u201cTouch\u00a0ID\u201d and some high\u2011end tablets |\n\nBelow we detail the most common one\u2014**capacitive touchscreens**\u2014and then give a quick overview of the others.\n\n---\n\n## 2.  Capacitive touchscreens (the most common)\n\n### 2.1  How a capacitive sensor works\n\nA capacitor stores charge. Its capacitance \\(C\\) is given by\n\n\\[\nC = \\frac{\\vare",
+      "n_tokens": 384,
+      "n_words": 255,
+      "generation_time_s": 3.7819387912750244,
+      "truncated": true
+    },
+    {
+      "question": "What is fiber optic cable?",
+      "response": "**Fiber\u2011optic cable** (also called *optical fiber cable* or *optical fiber*) is a type of high\u2011performance cable that transmits data, voice, video, and other signals by guiding pulses of light through a very thin strand of glass or plastic. The light is generated by tiny lasers or LEDs at one end of the cable, and it travels along the fiber by repeated internal reflection. Because light can carry far more information than electrical signals and can travel over long distances with very little loss, fiber\u2011optic cables are widely used for telecommunications, internet backbones, cable television, medical imaging, industrial control, and many other applications.\n\nBelow is a quick overview of the main aspects of fiber\u2011optic cable:\n\n| Topic | What It Means |\n|-------|---------------|\n| **Core** | The central region of the fiber where light travels. Made of high\u2011purity glass or plastic. Typical diameters: 8\u201362.5\u202f\u00b5m for single\u2011mode, 50\u201362.5\u202f\u00b5m for multimode. |\n| **Cladding** | A layer surrounding the core that has a slightly lower refractive index, keeping light confined by total internal reflection. |\n| **Buffer coating** | Protective polymer layer that shields the fiber from moisture, abrasion, and mechanical damage. |\n| **Cable jacket** | The outer protective sheath, often made of polyethylene, PVC, or armored materials for outdoor or buried installations. |\n| **Types of fiber** | \u2022 **Single\u2011mode (SMF)** \u2013 one mode of light, long\u2011haul, high\u2011bandwidth, usually 1550\u202fnm wavelength. <br>\u2022 **Multimode (MMF)** \u2013 multiple modes, shorter distances, higher attenuation, often 850\u202fnm wavelength. |\n| **Key performance metrics** | \u2022 **Attenuation** (dB/km) \u2013",
+      "n_tokens": 384,
+      "n_words": 257,
+      "generation_time_s": 3.7764008045196533,
+      "truncated": true
+    },
+    {
+      "question": "How do solar panels generate electricity?",
+      "response": "**Solar panels generate electricity through the photovoltaic (PV) effect \u2013 a direct conversion of sunlight into electric current.  Below is a step\u2011by\u2011step explanation of how the process works, from the microscopic physics inside a solar cell to the macroscopic wiring that delivers usable power.**\n\n---\n\n## 1. The Core of a Solar Panel: The Photovoltaic Cell\n\n| Component | Function |\n|-----------|----------|\n| **Semiconductor layers** (usually silicon) | Absorb photons and create charge carriers. |\n| **p\u2011type layer** | Heavily doped with elements that provide \u201choles\u201d (positive charge carriers). |\n| **n\u2011type layer** | Heavily doped with elements that provide extra electrons (negative charge carriers). |\n| **p\u2013n junction** | Boundary where the two layers meet; creates an internal electric field. |\n| **Front and back contacts** | Metal grids that collect and route the generated current. |\n| **Encapsulation** (glass, EVA, silicone) | Protects the cell from weather and allows light in. |\n\n### 1.1. Creating Charge Carriers\n\n1. **Photon absorption**  \n   A photon of solar radiation strikes the silicon surface.  \n   - If its energy is **\u2265 the band\u2011gap energy** (\u2248\u202f1.1\u202feV for crystalline silicon), it can excite an electron from the valence band into the conduction band, leaving behind a hole.\n\n2. **Generation of electron\u2013hole pairs**  \n   Each absorbed photon can produce **one free electron** and **one free hole**. These are the primary charge carriers that will be moved to create current.\n\n### 1.2. Separation by the Internal Electric Field\n\n- At the p\u2013n junction, electrons from the n\u2011side diffuse into the p\u2011side, and holes from the p\u2011side diffuse",
+      "n_tokens": 384,
+      "n_words": 260,
+      "generation_time_s": 3.7838189601898193,
+      "truncated": true
+    },
+    {
+      "question": "What is a semiconductor?",
+      "response": "A **semiconductor** is a material whose electrical conductivity is intermediate between that of an insulator (very poor conductor) and a conductor (excellent conductor). Its conductivity can be tuned or \u201ccontrolled\u201d by adding impurities (a process called **doping**) or by applying electric fields, temperature changes, light, etc. This tunability makes semiconductors the foundation of modern electronics.\n\n---\n\n## 1.  Basic Properties\n\n| Property | Typical Value | Notes |\n|----------|---------------|-------|\n| Bandgap (E<sub>g</sub>) | ~0.1\u20134\u202feV | Determines how easily electrons can be excited from the valence band to the conduction band. |\n| Conductivity | 10\u207b\u2076 \u2013 10\u2076\u202fS/m (varies widely) | Can be changed by many orders of magnitude with doping. |\n| Common Elements | Si, Ge, GaAs, InP, CdTe, etc. | Group IV (Si, Ge) or III\u2013V (GaAs) or II\u2013VI (CdTe). |\n\n### Energy Bands\n\n- **Valence Band**: Filled with electrons.\n- **Conduction Band**: Empty or partially filled; electrons here can move freely.\n- **Bandgap**: Energy difference; electrons must gain at least E<sub>g</sub> to jump from valence to conduction band.\n\n### Doping\n\n| Type | Donor (n\u2011type) | Acceptor (p\u2011type) |\n|------|----------------|-------------------|\n| **n\u2011type** | Adds extra electrons (e.g., P or As in Si) | Increases electron concentration |\n| **p\u2011type** | Creates holes (e.g., B or Al in Si) | Increases hole concentration |\n\nDoping shifts the Fermi level into the conduction band (n\u2011type)",
+      "n_tokens": 384,
+      "n_words": 228,
+      "generation_time_s": 3.7803289890289307,
+      "truncated": true
+    },
+    {
+      "question": "How do microwave ovens heat food?",
+      "response": "**Microwave ovens heat food by using microwave radiation (electromagnetic waves in the 300\u202fMHz\u2013300\u202fGHz range) to excite water, fat, and sugar molecules inside the food, causing them to vibrate and generate heat.**\n\n---\n\n### 1. What is a microwave?\n\n| Feature | Detail |\n|---------|--------|\n| **Frequency** | 2.45\u202fGHz (\u2248\u202f12.2\u202fcm wavelength) \u2013 chosen because it is absorbed well by water and is not harmful to humans at the power levels used. |\n| **Source** | Magnetron (a vacuum tube that converts electrical energy into microwaves). |\n| **Waveguide** | Conducts the microwaves from the magnetron to the cooking cavity. |\n| **Reflector** | Metallic cavity walls reflect microwaves, creating a \u201cstanding wave\u201d field that distributes energy throughout the food. |\n| **Turntable / Mode\u2011stirrer** | Rotates the food or mixes the field to avoid \u201chot\u201d and \u201ccold\u201d spots. |\n\n---\n\n### 2. How microwaves heat food\n\n1. **Electromagnetic field interaction**  \n   - The oscillating electric field of the microwave induces an oscillating dipole moment in polar molecules (mainly water).  \n   - Non\u2011polar molecules (e.g., oils, sugars) also absorb energy, but to a lesser extent.\n\n2. **Molecular vibration and rotation**  \n   - The molecules try to align with the alternating field; because the field changes direction every half\u2011nanosecond, the molecules are forced to rotate rapidly.  \n   - This rapid rotation creates friction at the molecular level, converting electromagnetic energy into kinetic energy (heat).\n\n3. **Heat transfer within the food**  \n   - The interior of the food is heated directly by molecular friction.  \n   - Conduction, convection, and radiation then",
+      "n_tokens": 384,
+      "n_words": 256,
+      "generation_time_s": 3.7790720462799072,
+      "truncated": true
+    },
+    {
+      "question": "What is RAM in a computer?",
+      "response": "**RAM** stands for **Random\u2011Access Memory**.  \nIt is the primary type of memory that a computer uses to hold data and instructions that are actively being processed by the CPU.  \n\n---\n\n### Key Characteristics\n\n| Feature | What it Means |\n|---------|---------------|\n| **Volatile** | The contents of RAM are lost when power is turned off. |\n| **Random\u2011access** | Any byte or word can be read or written in essentially the same amount of time, regardless of its location. |\n| **Fast** | Much quicker to access than secondary storage (HDD, SSD, etc.). |\n| **Capacity** | Typically measured in gigabytes (GB) in consumer PCs, from a few GB in low\u2011end devices up to 128\u202fGB or more in high\u2011end workstations and servers. |\n\n---\n\n### How RAM Works in a Computer\n\n1. **Boot\u2011up**  \n   The BIOS/UEFI loads the boot loader from the boot device into RAM.\n\n2. **Running Programs**  \n   When you open an application, the operating system copies the program\u2019s executable code and data from the disk into RAM. The CPU fetches instructions directly from RAM.\n\n3. **Operating System Use**  \n   The OS keeps a part of itself in RAM (kernel, drivers, file\u2011system buffers, page tables, etc.) so it can respond quickly to I/O requests and manage other processes.\n\n4. **Virtual Memory**  \n   RAM is paired with virtual memory. When RAM runs out, the OS swaps less\u2011used pages to a page file on disk (paging). This gives the illusion of a larger address space but is slower than pure RAM.\n\n---\n\n### Why RAM Is Important\n\n- **Speed**: CPU\u2011to\u2011RAM latency is in nanoseconds, far faster than disk access (milliseconds).  \n- **Multitasking**: More RAM",
+      "n_tokens": 384,
+      "n_words": 271,
+      "generation_time_s": 3.777864694595337,
+      "truncated": true
+    },
+    {
+      "question": "How do noise-canceling headphones work?",
+      "response": "**Noise\u2011canceling headphones (ANC) use a combination of electronic signal processing, acoustic engineering, and sometimes passive design to reduce unwanted ambient sound.**  \nBelow is a step\u2011by\u2011step explanation of how they work, from the basic physics to the specific technologies used in modern consumer headphones.\n\n---\n\n## 1. The Problem: Ambient Noise vs. Desired Audio\n\n- **Ambient noise** is sound that originates outside the headphones (traffic, HVAC, people talking, etc.).\n- **Desired audio** is the music or voice you want to hear.\n- **Noise\u2011canceling headphones** aim to deliver the desired audio while minimizing the ambient noise that reaches the ear.\n\n---\n\n## 2. Basic Principle of Active Noise Cancellation (ANC)\n\n1. **Microphones** pick up the ambient sound that is present in the environment.\n2. The headphone\u2019s internal circuitry **generates a sound wave** that is the *inverse* (180\u00b0 phase\u2011shifted) of the captured noise.\n3. When this \u201canti\u2011noise\u201d wave is played through the speakers, it interferes destructively with the ambient noise, effectively cancelling it out before it reaches the ear.\n\nThis is the same principle used in noise\u2011canceling earplugs and in many industrial noise\u2011control systems.\n\n---\n\n## 3. Key Components of ANC Headphones\n\n| Component | Function |\n|-----------|----------|\n| **External microphones** | Capture the ambient sound outside the ear cup. |\n| **Internal microphones** | (Optional) Capture the sound that has already entered the ear cup, used for \u201cadaptive\u201d algorithms. |\n| **Digital Signal Processor (DSP)** | Computes the anti\u2011noise signal in real time. |\n| **Speaker drivers** | Emit both the desired audio and the anti\u2011noise. |\n| **Power source** | Batteries or wired power to run the DSP and microphones. |\n| **",
+      "n_tokens": 384,
+      "n_words": 272,
+      "generation_time_s": 3.7785918712615967,
+      "truncated": true
+    },
+    {
+      "question": "What is a transistor?",
+      "response": "A **transistor** is a solid\u2011state semiconductor device that can amplify or switch electronic signals. It was invented in 1947 and has become the fundamental building block of almost all modern electronic circuits.\n\n---\n\n## 1. Basic Structure\n\n| Part | Description | Symbol |\n|------|-------------|--------|\n| **Emitter** | Region that injects charge carriers (electrons or holes) into the base. | **E** |\n| **Base** | Thin, lightly doped region that controls carrier flow. | **B** |\n| **Collector** | Region that collects carriers from the base. | **C** |\n\nThe two common types are:\n\n| Type | Majority carriers | Typical doping |\n|------|-------------------|----------------|\n| **NPN** | Electrons | E: N, B: P, C: N |\n| **PNP** | Holes | E: P, B: N, C: P |\n\n*(These are the most common bipolar junction transistors (BJTs). There are also field\u2011effect transistors (FETs), such as MOSFETs, which use an electric field to control current.)*\n\n---\n\n## 2. How It Works\n\n### 2.1 Bipolar Junction Transistor (BJT)\n\n1. **Forward\u2011Active Mode**  \n   - **Base\u2011Emitter junction** is forward\u2011biased (positive voltage on the base relative to the emitter for NPN).  \n   - **Base\u2011Collector junction** is reverse\u2011biased.  \n   - A small current injected into the base (I_B) allows a much larger current to flow from collector to emitter (I_C).  \n   - The relationship:  \n     \\[\n     I_C \\approx \\beta \\, I_B\n     \\]\n     where \u03b2 (beta) is the current gain (typically 20\u2013200 for small\u2011signal BJ",
+      "n_tokens": 384,
+      "n_words": 233,
+      "generation_time_s": 3.7743539810180664,
+      "truncated": true
+    },
+    {
+      "question": "How do electric motors work?",
+      "response": "## 1.  The basic principle\n\nAn electric motor converts electrical energy into mechanical rotation.  \nAt its heart it relies on the **Lorentz force** (or magnetic force) acting on a current\u2011carrying conductor in a magnetic field:\n\n\\[\n\\mathbf{F}= I\\,(\\mathbf{L}\\times\\mathbf{B})\n\\]\n\n- **\\(I\\)** \u2013 electric current in the conductor  \n- **\\(\\mathbf{L}\\)** \u2013 length vector of the conductor (direction of current)  \n- **\\(\\mathbf{B}\\)** \u2013 magnetic field vector\n\nWhen a current flows through a wire that is placed in a magnetic field, the wire experiences a sideways force. If the wire is part of a rotating armature (a coil or a set of conductors) the force produces torque, which turns the motor shaft.\n\n---\n\n## 2.  Core components\n\n| Component | Function | Typical materials |\n|-----------|----------|-------------------|\n| **Stator** | Provides a static magnetic field (either permanent magnets or electromagnets). | Neodymium\u2011iron\u2011boron (rare\u2011earth) for permanent, copper windings + iron core for electromagnets. |\n| **Rotor (Armature)** | Carries the current that interacts with the stator field. | Copper windings on an iron core, or a set of conductors on a shaft. |\n| **Commutator / Slip rings** | Switch the direction of current in the rotor windings each half\u2011turn, keeping torque in the same direction. | Carbon brushes on a rotary commutator, or ceramic slip rings. |\n| **Brushes** | Provide the sliding electrical contact between the stationary supply and the rotating commutator. | Carbon or graphite. |\n| **Shaft & bearings** | Transmits the mechanical output. | Steel or alloy. |\n\n---\n\n",
+      "n_tokens": 384,
+      "n_words": 249,
+      "generation_time_s": 3.775484085083008,
+      "truncated": true
+    },
+    {
+      "question": "What is bandwidth?",
+      "response": "**Bandwidth** is a measure of how much data can be transmitted over a communication channel in a given amount of time.  In everyday language it\u2019s often described as the \u201cspeed\u201d of a connection, but technically it refers to the capacity or width of the channel.\n\n### Key points\n\n| Aspect | Description |\n|--------|-------------|\n| **Units** | Bits per second (bps), kilobits per second (Kbps), megabits per second (Mbps), gigabits per second (Gbps), etc. |\n| **Physical meaning** | The range of frequencies a channel can carry. For radio, audio, or optical fibers, this is the frequency band that can be used to encode data. |\n| **Bandwidth vs. Speed** | A higher bandwidth allows more data to be sent, but actual data transfer rates (throughput) can be lower due to protocol overhead, network congestion, or hardware limits. |\n| **Analogy** | Think of a pipe: bandwidth is the pipe\u2019s diameter; the larger the pipe, the more water (data) it can carry at once. |\n\n### How it\u2019s used\n\n| Context | Typical usage |\n|---------|---------------|\n| **Internet connections** | ISPs advertise speeds in Mbps or Gbps; this is the maximum theoretical bandwidth. |\n| **Wireless** | Wi\u2011Fi and cellular bands have defined frequency ranges; each band has a certain bandwidth that limits throughput. |\n| **Audio/video** | Audio channels have bandwidth limits (e.g., CD audio 20\u202fkHz), which determine fidelity. |\n| **Networking protocols** | TCP, Ethernet, etc., work within the available bandwidth; actual throughput may be lower. |\n\n### Calculating bandwidth\n\nFor a simple communication channel:\n\n\\[\n\\text{Bandwidth (Hz)} = f_{\\text{high}} - f_{\\text{low}}\n\\]\n\nWhere \\(",
+      "n_tokens": 384,
+      "n_words": 268,
+      "generation_time_s": 3.777492046356201,
+      "truncated": true
+    },
+    {
+      "question": "What is the Dewey Decimal System?",
+      "response": "**The Dewey Decimal System (DDS)** is a library classification system that organizes books and other library materials by subject so that related items are physically grouped together. It was created by *Melvil Dewey* in 1876 and is still in widespread use in public, academic, and special libraries around the world.\n\n---\n\n## 1. Core Concept\n\n- **Number\u2011based classification**: Every item receives a numeric call number that reflects its subject.\n- **Hierarchical structure**: Numbers are arranged in a tree\u2011like format, from broad categories (hundreds) down to very specific topics (decimal places).\n- **Universal applicability**: Works across all disciplines, from science to literature, allowing libraries to build a coherent system regardless of collection size.\n\n---\n\n## 2. Structure of the System\n\n| Decade | Main Class | Example Topics |\n|--------|------------|----------------|\n| 000 | General works | Computer science, information, general reference |\n| 100 | Philosophy & psychology | Logic, metaphysics, ethics |\n| 200 | Religion | Christianity, Islam, comparative religion |\n| 300 | Social sciences | Economics, politics, anthropology |\n| 400 | Language | Linguistics, literature |\n| 500 | Natural sciences & mathematics | Biology, chemistry, physics, mathematics |\n| 600 | Technology (Applied sciences) | Engineering, medicine, agriculture |\n| 700 | Arts & recreation | Music, visual arts, sports |\n| 800 | Literature | Poetry, novels, drama |\n| 900 | History & geography | World history, geography, biographies |\n\n- **Decimal expansion**: Adding decimal places zooms into sub\u2011topics.  \n  *Example*:  \n  - **500** \u2013 Natural sciences  \n  - **510** \u2013 Mathematics  \n  - **510.1** \u2013 General works on mathematics  \n  - **511** \u2013 Arithmetic  \n  -",
+      "n_tokens": 384,
+      "n_words": 268,
+      "generation_time_s": 3.776655912399292,
+      "truncated": true
+    },
+    {
+      "question": "How do time zones work?",
+      "response": "## 1.  The basic idea\n\nThe Earth is a rotating sphere.  \nBecause of that rotation, a point on the surface sees the Sun rise, pass the\nmeridian, set, and then rise again every 24\u202fh.  \nIf you want a \u201clocal time\u201d that roughly matches the position of the Sun,\nyou need to divide the planet into 24 roughly equal sectors, each covering\n15\u00b0 of longitude (360\u00b0\u202f\u00f7\u202f24\u202f=\u202f15\u00b0).  \nEach sector is called a *time zone* and is usually defined by a *standard\ntime* that is a fixed offset from Coordinated Universal Time (UTC).\n\n```\nUTC  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n      |      |      |      |      |      |      |      |      |      |\n    -12   -11   -10    -9    -8     -7     -6     -5     -4     -3\n     (GMT-12) (GMT-11) (GMT-10) \u2026 (GMT-3) (GMT-2) (GMT-1)\n      +1      +2     +3     +4    +5      +6     +7     +8      +9\n    (GMT+1) (GMT+2) (GMT+3) (GMT+4) (GMT+5) (GMT+6) (GMT+7) (GMT+8)\n      +9:30  +10   +10:30 +11   +12   +13   +14\n```\n\nThe numbers in parentheses are the offsets from UTC; e.g. **GMT\u20115** means\nUTC\u202f\u2212\u202f5\u202fhours.  (GMT and UTC are now identical, but we still use the old\nabbreviation.)\n\n## 2.  How the offsets are",
+      "n_tokens": 384,
+      "n_words": 185,
+      "generation_time_s": 3.772674083709717,
+      "truncated": true
+    },
+    {
+      "question": "What is the metric system?",
+      "response": "**The Metric System \u2013 A Quick Overview**\n\n| Category | What it is | Why it matters | Key points |\n|----------|------------|----------------|------------|\n| **Definition** | A decimal-based system of measurement used worldwide for most scientific, commercial, and everyday purposes. | Provides consistency, simplifies calculations, and facilitates international trade and research. | 10\u2011based units (1\u202fkm\u202f=\u202f1000\u202fm, 1\u202fkg\u202f=\u202f1000\u202fg, etc.). |\n| **Origins** | Created during the French Revolution (1790s) to replace the myriad local units that varied from place to place. | Aimed at unifying measurement across France and, later, the world. | First formalized by the French Academy of Sciences. |\n| **Core Units** | \u2022 Length \u2013 meter (m) <br>\u2022 Mass \u2013 kilogram (kg) <br>\u2022 Time \u2013 second (s) <br>\u2022 Electric current \u2013 ampere (A) <br>\u2022 Thermodynamic temperature \u2013 kelvin (K) <br>\u2022 Amount of substance \u2013 mole (mol) <br>\u2022 Luminous intensity \u2013 candela (cd) | These are the **Seven SI base units**; all other units are derived from them. | The kilogram was the only base unit with a physical artifact until 2019 (when it was re\u2011defined by fundamental constants). |\n| **Derived Units** | e.g., meter\u2011second (m/s) for speed, newton (N) for force, joule (J) for energy. | Derived units express more complex concepts in terms of the base units. | They keep the system flexible and scalable. |\n| **Prefixes** | 10\u207b\u2079\u202f=\u202fnano, 10\u207b\u2076\u202f=\u202fmicro, 10\u207b\u00b3\u202f=\u202fmilli",
+      "n_tokens": 384,
+      "n_words": 239,
+      "generation_time_s": 3.776528835296631,
+      "truncated": true
+    },
+    {
+      "question": "How does mail delivery work?",
+      "response": "**Mail delivery** \u2013 whether it\u2019s letters, postcards, packages, or even tiny parcels of data \u2013 is a marvel of logistics, geography, and coordination. Below is a step\u2011by\u2011step look at how a piece of mail travels from the sender\u2019s mailbox to the recipient\u2019s door, with a focus on the major systems in the United States (the U.S. Postal Service, or USPS) and a brief comparison to other countries.\n\n---\n\n## 1. The Sender\u2019s Side\n\n| Step | What Happens | Key Actors |\n|------|--------------|------------|\n| **Write & Address** | Sender writes the message, stamps it, and puts the destination address on the front. | Sender |\n| **Drop Off** | The letter is placed in a drop box, a post office, or handed to a postal worker. | Mail carrier, Post office |\n| **Pre\u2011processing (if needed)** | In some cases (large packages, high\u2011value items) the sender may request special services (tracking, insurance, etc.). | Sender, Post office |\n\n---\n\n## 2. Collection & Sorting\n\n### 2.1. Collection\n\n- **Local Post Offices & Collection Points** \u2013 Mail carriers collect from boxes and drop\u2011offs daily.\n- **Regional Distribution Centers (RDCs)** \u2013 The collected mail is transported to a larger hub.\n\n### 2.2. Sorting\n\n- **Automatic Sorters** \u2013 Machines read postal codes (ZIP codes in the U.S.) and sort by destination.\n- **Manual Checks** \u2013 Mail that can\u2019t be read automatically (handwritten addresses, damaged envelopes) is sorted by hand.\n\n**Why this matters**: Sorting by ZIP code and then by \u201cZone\u201d (the area around a hub) reduces the number of times a piece of mail must be moved.\n\n---\n\n## 3. Transportation\n\n| Stage | Mode | Typical Distance |",
+      "n_tokens": 384,
+      "n_words": 276,
+      "generation_time_s": 3.77231764793396,
+      "truncated": true
+    },
+    {
+      "question": "What is crop rotation?",
+      "response": "**Crop rotation** is a farming practice in which a series of different crops are planted in the same field in a specific order over successive growing seasons. The main idea is to break pest and disease cycles, improve soil health, and manage nutrient use more sustainably.\n\n---\n\n## 1. Why Rotate Crops?\n\n| Problem | How Rotation Helps |\n|---------|--------------------|\n| **Pests & diseases** | Many pests and pathogens are crop\u2011specific. When a host crop is removed, the pest\u2019s food source is gone, reducing its population. |\n| **Soil fertility** | Different crops use or replenish different nutrients. For example, legumes fix nitrogen, while heavy feeders like corn consume it. |\n| **Soil structure & erosion** | Rotating crops with different root systems can improve soil aggregation, reduce compaction, and enhance infiltration. |\n| **Weed control** | Diverse crop canopy and growth habits suppress weeds differently, lowering weed pressure. |\n| **Nutrient management** | Allows for more precise fertilizer application and reduces the risk of nutrient leaching. |\n\n---\n\n## 2. Basic Principles of a Rotation Plan\n\n1. **Diversify crop types**  \n   \u2022 Include *legumes* (beans, peas, clover) \u2192 fix nitrogen.  \n   \u2022 Include *cereal or grain crops* (wheat, corn, oats) \u2192 high nitrogen demand.  \n   \u2022 Include *cover crops* or *green manures* (e.g., rye, buckwheat) \u2192 protect soil when no cash crop is grown.  \n   \u2022 Include *root crops* or *perennials* if desired.\n\n2. **Sequence matters**  \n   \u2022 Start with a *nitrogen\u2011fixing* crop, then follow with a *heavy feeder*.  \n   \u2022 Follow a *pest\u2011prone* crop with a *pest\u2011resistant*",
+      "n_tokens": 384,
+      "n_words": 253,
+      "generation_time_s": 3.770632028579712,
+      "truncated": true
+    },
+    {
+      "question": "How do traffic lights coordinate?",
+      "response": "Traffic lights are the backbone of modern road safety and traffic flow.  Although they look like simple \u201cred\u2011green\u201d devices, the coordination of a network of signals is a sophisticated engineering problem that blends control theory, real\u2011time data, and hardware integration. Below is a step\u2011by\u2011step explanation of how traffic lights coordinate\u2014starting with the basics and moving into the advanced systems used in today\u2019s smart cities.\n\n---\n\n## 1. The Core Idea: Synchronized Phasing\n\nAt its heart, coordination means making several signals work together so that vehicles can move smoothly through an intersection or corridor.  \n- **Phasing**: Each signal has a cycle: red \u2192 green \u2192 yellow \u2192 red again.  \n- **Timing**: The cycle length (e.g., 90\u202fs) is the same for adjacent signals in a corridor.  \n- **Offset**: The start time of the cycle at each intersection is shifted (offset) so that a vehicle traveling at a target speed will hit green lights one after another.\n\nIf the offset is wrong, drivers will be \u201cpulsed\u201d by alternating red and green, wasting time and increasing emissions.\n\n---\n\n## 2. Traditional Fixed\u2011Time Coordination\n\n### 2.1 Manual Design\nHistorically, traffic engineers manually tuned the offsets using field measurements (vehicle speeds, traffic volumes) and computer models.  \n- **Green Wave**: A series of green lights that \u201cwaves\u201d down a corridor.  \n- **Cycle Length**: Determined by the longest intersection in the corridor.  \n- **Offset Calculation**:  \n  \\[\n  \\text{offset}_i = \\frac{d_i}{V_{\\text{target}}} \\times 3600\n  \\]\n  where \\(d_i\\) is distance from the first intersection, \\(V_{\\text{target}}\\) is the target speed in km/h.\n\n",
+      "n_tokens": 384,
+      "n_words": 250,
+      "generation_time_s": 3.7787981033325195,
+      "truncated": true
+    },
+    {
+      "question": "What is a census?",
+      "response": "A **census** is a systematic, comprehensive enumeration of a population, typically carried out by a government or other authoritative body. Its primary purpose is to gather detailed demographic, social, and economic data about individuals, households, or other units within a defined area (e.g., a country, state, city, or region). Here\u2019s a deeper look at what a census involves and why it matters:\n\n---\n\n## 1. Core Features of a Census\n\n| Feature | Description |\n|---------|-------------|\n| **Comprehensive Coverage** | Aims to count every person or unit in the population, not just a sample. |\n| **Standardized Questions** | Uses a uniform questionnaire to collect comparable data across the entire population. |\n| **Periodic Timing** | Conducted at regular intervals (e.g., every 10 years in many countries). |\n| **Legal Mandate** | Often required by law, with penalties for non\u2011participation. |\n| **Data Privacy & Security** | Ensures confidentiality of respondents\u2019 personal information. |\n\n---\n\n## 2. Typical Data Collected\n\n| Category | Examples |\n|----------|----------|\n| **Demographic** | Age, sex, ethnicity, marital status, place of birth, language spoken |\n| **Household** | Number of rooms, ownership status, utilities, number of occupants |\n| **Economic** | Employment status, occupation, industry, income level, housing costs |\n| **Social** | Education level, disability status, migration history, citizenship |\n| **Geographic** | Address, geographic coordinates, type of dwelling (apartment, house, etc.) |\n\n---\n\n## 3. Why a Census is Important\n\n| Purpose | Explanation |\n|---------|-------------|\n| **Political Representation** | Determines how many seats each region gets in legislatures (e.g., U.S. House of Representatives). |\n| **Resource Allocation** |",
+      "n_tokens": 384,
+      "n_words": 266,
+      "generation_time_s": 3.7783918380737305,
+      "truncated": true
+    },
+    {
+      "question": "How do libraries organize books?",
+      "response": "Libraries organize books using a system of classification, labeling, and shelving that makes it easy for patrons to find what they\u2019re looking for. While the exact method can vary between institutions, most public and academic libraries follow a widely adopted framework based on the **Dewey Decimal Classification (DDC)** or the **Library of Congress Classification (LCC)**. Below is an overview of how the process works, from acquisition to the shelf.\n\n---\n\n## 1. Acquisition & Cataloging\n\n1. **Purchase/Donation**  \n   - Libraries receive books through purchases, donations, or interlibrary loans.\n\n2. **Metadata Creation**  \n   - A librarian (or a cataloger) records key information about the book: title, author(s), publisher, publication date, ISBN, subject headings, and keywords.\n\n3. **Classification Assignment**  \n   - **DDC**: A 3\u2011digit number (with decimals) that represents a subject area.  \n   - **LCC**: A letter or pair of letters followed by a number (e.g., *QA76.73.P98* for computer programming).  \n   - The classification number is added to the book\u2019s bibliographic record.\n\n4. **Control Number**  \n   - Libraries assign a unique **Control Number** (often called an *ID* or *Library of Congress Control Number*).  \n   - This number is printed on the book\u2019s **call number**.\n\n5. **Barcode & RFID Tagging**  \n   - The call number is encoded on a barcode or RFID chip for automated inventory and circulation.\n\n---\n\n## 2. The Call Number\n\nThe call number is the book\u2019s \u201caddress\u201d on the shelf. It usually contains:\n\n| Part | Example | Meaning |\n|------|---------|---------|\n| **Class** (DDC) | 641.5 | Subject area (e.g., \u201cCooking:",
+      "n_tokens": 384,
+      "n_words": 244,
+      "generation_time_s": 3.783041000366211,
+      "truncated": true
+    },
+    {
+      "question": "What is daylight saving time?",
+      "response": "**Daylight Saving Time (DST)** is the practice of setting clocks forward by one hour during the warmer part of the year\u2014usually in spring\u2014and setting them back again in autumn. The idea is to make better use of daylight, shifting an hour of daylight from the morning to the evening.\n\n---\n\n### Why it exists\n\n| Reason | Explanation |\n|--------|-------------|\n| **Energy conservation** | Historically, less artificial lighting was needed in the evenings. Modern studies show the effect is small, but DST remains partly for its legacy. |\n| **Economic activity** | More daylight in the evening can boost retail sales, tourism, and outdoor recreation. |\n| **Safety** | More daylight during peak traffic times can reduce accidents. |\n| **Health & recreation** | Extra evening daylight encourages outdoor activities, which can improve physical and mental well\u2011being. |\n\n---\n\n### How it works\n\n1. **Spring forward** \u2013 Clocks are advanced one hour (e.g., 2\u202fa.m. \u2192 3\u202fa.m.).  \n2. **Fall back** \u2013 Clocks are set back one hour (e.g., 2\u202fa.m. \u2192 1\u202fa.m.).  \n3. **Time zone** \u2013 The legal time zone shifts by one hour relative to Coordinated Universal Time (UTC) during DST.\n\nIn the U.S., most states observe DST from the second Sunday in March to the first Sunday in November. In the European Union, it runs from the last Sunday in March to the last Sunday in October.\n\n---\n\n### Global variations\n\n| Region | DST observed? | Typical dates |\n|--------|---------------|---------------|\n| United States | Most states | 2nd Sunday in Mar \u2013 1st Sunday in Nov |\n| Canada | Most provinces | Same as U.S. (some territories do not) |\n| European Union | All member states | Last Sunday in Mar",
+      "n_tokens": 384,
+      "n_words": 288,
+      "generation_time_s": 3.789228916168213,
+      "truncated": true
+    },
+    {
+      "question": "How do escalators work?",
+      "response": "**Escalators \u2013 the moving stairways that take us up or down in malls, subway stations, airports, etc. \u2013 are a fascinating blend of mechanical engineering, control systems, and safety design. Below is a step\u2011by\u2011step explanation of how they work, from the basic physics to the modern electronics that keep them running smoothly.**\n\n---\n\n## 1. The Basic Idea\n\nAn escalator is essentially a **continuous loop of steps** that moves along a **curved track**. The steps are attached to a **chain of wheels** (called the \u201cchain\u201d or \u201cbelt\u201d) that runs in a loop between the top and bottom stations. The chain is powered by a motor, and the steps are guided by the wheels so they stay in the correct orientation (upright) as they climb or descend.\n\n---\n\n## 2. Mechanical Components\n\n| Component | Function |\n|-----------|----------|\n| **Steps (treads)** | The platform people stand on. Usually made of aluminum or steel, shaped to keep the load stable. |\n| **Tread support (rails)** | The curved track that the steps ride on. The rails are curved so the steps stay level even as they move. |\n| **Chain (or drive belt)** | A loop of metal or composite that runs around the entire escalator, connecting the top and bottom. |\n| **Drive motor** | A high\u2011torque electric motor that turns the chain. |\n| **Drive gear** | A gear that meshes with the chain to transfer torque. |\n| **Guide wheels** | Small wheels on each step that ride on the rails, ensuring the step stays upright. |\n| **Idler wheels** | Wheels that help maintain tension and smooth motion. |\n| **Tensioning system** | Springs or hydraulic devices that keep the chain taut. |\n| **Safety brakes** | Mechanical or magnetic brakes",
+      "n_tokens": 384,
+      "n_words": 293,
+      "generation_time_s": 3.781569004058838,
+      "truncated": true
+    }
+  ]
+}
