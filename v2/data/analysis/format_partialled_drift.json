@@ -5,10 +5,10 @@
   },
   "models": {
     "deepseek_r1_14b": {
-      "coverage_units": 60,
+      "coverage_units": 80,
       "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 10,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9482262891282781,
@@ -26,14 +26,14 @@
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.9583630894452553,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.00615011798351353,
-          "part_significant": true,
+          "part_significant": false,
           "part_slope": 0.00770541499540564
         },
         "formal_casual": {
           "cos_raw_partialled": 0.9749080418211062,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.006934797658916348,
           "part_significant": true,
           "part_slope": 0.005878873985257786
@@ -41,21 +41,21 @@
       }
     },
     "gemma3_12b": {
-      "coverage_units": 57,
+      "coverage_units": 77,
       "dropped_units": 3,
       "n_conflict_kept": 50,
-      "n_controls_kept": 7,
+      "n_controls_kept": 27,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9029337573510903,
           "raw_significant": false,
           "raw_slope": -0.007250963235994429,
-          "part_significant": true,
+          "part_significant": false,
           "part_slope": -0.011802295467027078
         },
         "confident_cautious": {
           "cos_raw_partialled": 0.8949825810365122,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.00841176695802568,
           "part_significant": true,
           "part_slope": 0.016240987642558043
@@ -69,7 +69,7 @@
         },
         "formal_casual": {
           "cos_raw_partialled": 0.9223074061327702,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.011293886951577908,
           "part_significant": true,
           "part_slope": 0.015917830800707265
@@ -77,10 +77,10 @@
       }
     },
     "gemma4_26b_a4b": {
-      "coverage_units": 60,
+      "coverage_units": 80,
       "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 10,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.8815578274843743,
@@ -98,14 +98,14 @@
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.8951460130206474,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": -0.00842683967488623,
-          "part_significant": true,
+          "part_significant": false,
           "part_slope": -0.006349306763511371
         },
         "formal_casual": {
           "cos_raw_partialled": 0.9026164266580569,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.009407496157632872,
           "part_significant": true,
           "part_slope": 0.006113960388155083
@@ -113,10 +113,10 @@
       }
     },
     "gpt_oss_20b": {
-      "coverage_units": 60,
+      "coverage_units": 80,
       "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 10,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.7145275864585733,
@@ -149,10 +149,10 @@
       }
     },
     "ministral3_8b": {
-      "coverage_units": 41,
+      "coverage_units": 61,
       "dropped_units": 19,
       "n_conflict_kept": 41,
-      "n_controls_kept": 0,
+      "n_controls_kept": 20,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.944696067708978,
@@ -170,19 +170,25 @@
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.9701570686147296,
-          "raw_significant": true,
+          "raw_significant": false,
           "raw_slope": 0.007528574286001063,
           "part_significant": false,
           "part_slope": 0.004835079714774377
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9726758637967832,
+          "raw_significant": null,
+          "raw_slope": null,
+          "part_significant": false,
+          "part_slope": -0.0015153972922416026
         }
-      },
-      "warning": "no control hidden states saved; the 2x-control criterion is degenerate here \u2014 compare slopes/CIs only, not significance"
+      }
     },
     "mistral_small_3.2_24b": {
-      "coverage_units": 60,
+      "coverage_units": 80,
       "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 10,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9645999060129413,
@@ -214,11 +220,119 @@
         }
       }
     },
-    "qwen3.6_35b_a3b": {
-      "coverage_units": 60,
+    "phi4": {
+      "coverage_units": 20,
+      "dropped_units": 60,
+      "n_conflict_kept": 0,
+      "n_controls_kept": 20,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9321805952740814,
+          "raw_significant": true,
+          "raw_slope": 0.005104494873475823,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9899863774113049,
+          "raw_significant": false,
+          "raw_slope": -0.0031802066885198666,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9590888083412733,
+          "raw_significant": false,
+          "raw_slope": 0.013022662581221795,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.895330770462412,
+          "raw_significant": false,
+          "raw_slope": 0.0019785673563338904,
+          "part_significant": false,
+          "part_slope": NaN
+        }
+      }
+    },
+    "qwen3.5_9b": {
+      "coverage_units": 20,
+      "dropped_units": 60,
+      "n_conflict_kept": 0,
+      "n_controls_kept": 20,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.9481546029972573,
+          "raw_significant": false,
+          "raw_slope": -0.0013227860449969613,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9823103043243648,
+          "raw_significant": true,
+          "raw_slope": 0.0054558238930270805,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9554107376861862,
+          "raw_significant": true,
+          "raw_slope": 0.0056616783671942375,
+          "part_significant": false,
+          "part_slope": NaN
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9629696048846779,
+          "raw_significant": false,
+          "raw_slope": 0.0008810269356895745,
+          "part_significant": false,
+          "part_slope": NaN
+        }
+      }
+    },
+    "qwen3.6_27b": {
+      "coverage_units": 80,
       "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 10,
+      "n_controls_kept": 30,
+      "axes": {
+        "warm_cold": {
+          "cos_raw_partialled": 0.944736132651921,
+          "raw_significant": true,
+          "raw_slope": -0.01232777664164253,
+          "part_significant": true,
+          "part_slope": -0.014279197841048242
+        },
+        "confident_cautious": {
+          "cos_raw_partialled": 0.9817382202829716,
+          "raw_significant": true,
+          "raw_slope": 0.017782595951583925,
+          "part_significant": true,
+          "part_slope": 0.01716690407609207
+        },
+        "empathetic_analytical": {
+          "cos_raw_partialled": 0.9605010700852707,
+          "raw_significant": false,
+          "raw_slope": -0.00297956247976513,
+          "part_significant": true,
+          "part_slope": -0.004065077040359277
+        },
+        "formal_casual": {
+          "cos_raw_partialled": 0.9772113988741,
+          "raw_significant": true,
+          "raw_slope": 0.009543357701085579,
+          "part_significant": true,
+          "part_slope": 0.011180220495132655
+        }
+      }
+    },
+    "qwen3.6_35b_a3b": {
+      "coverage_units": 80,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9357334704530411,
