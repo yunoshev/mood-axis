@@ -41,10 +41,10 @@
       }
     },
     "gemma3_12b": {
-      "coverage_units": 77,
-      "dropped_units": 3,
+      "coverage_units": 80,
+      "dropped_units": 0,
       "n_conflict_kept": 50,
-      "n_controls_kept": 27,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9029337573510903,
@@ -149,38 +149,38 @@
       }
     },
     "ministral3_8b": {
-      "coverage_units": 61,
-      "dropped_units": 19,
-      "n_conflict_kept": 41,
-      "n_controls_kept": 20,
+      "coverage_units": 80,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.944696067708978,
           "raw_significant": false,
           "raw_slope": 0.004856100183402,
           "part_significant": false,
-          "part_slope": 0.003389380616922901
+          "part_slope": 0.002137068521002464
         },
         "confident_cautious": {
           "cos_raw_partialled": 0.9580397891810788,
           "raw_significant": false,
           "raw_slope": 0.019312475681878053,
           "part_significant": false,
-          "part_slope": 0.015353974097674987
+          "part_slope": 0.016468259696991457
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.9701570686147296,
           "raw_significant": false,
           "raw_slope": 0.007528574286001063,
           "part_significant": false,
-          "part_slope": 0.004835079714774377
+          "part_slope": 0.005049557874424873
         },
         "formal_casual": {
           "cos_raw_partialled": 0.9726758637967832,
           "raw_significant": null,
           "raw_slope": null,
           "part_significant": false,
-          "part_slope": -0.0015153972922416026
+          "part_slope": -0.00034205941618893577
         }
       }
     },
@@ -221,74 +221,74 @@
       }
     },
     "phi4": {
-      "coverage_units": 20,
-      "dropped_units": 60,
-      "n_conflict_kept": 0,
-      "n_controls_kept": 20,
+      "coverage_units": 80,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9321805952740814,
           "raw_significant": true,
           "raw_slope": 0.005104494873475823,
-          "part_significant": false,
-          "part_slope": NaN
+          "part_significant": true,
+          "part_slope": 0.00823378936754385
         },
         "confident_cautious": {
           "cos_raw_partialled": 0.9899863774113049,
           "raw_significant": false,
           "raw_slope": -0.0031802066885198666,
           "part_significant": false,
-          "part_slope": NaN
+          "part_slope": -0.003998813504624831
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.9590888083412733,
           "raw_significant": false,
           "raw_slope": 0.013022662581221795,
-          "part_significant": false,
-          "part_slope": NaN
+          "part_significant": true,
+          "part_slope": 0.016140947015498393
         },
         "formal_casual": {
           "cos_raw_partialled": 0.895330770462412,
           "raw_significant": false,
           "raw_slope": 0.0019785673563338904,
           "part_significant": false,
-          "part_slope": NaN
+          "part_slope": -0.0008442099879012634
         }
       }
     },
     "qwen3.5_9b": {
-      "coverage_units": 20,
-      "dropped_units": 60,
-      "n_conflict_kept": 0,
-      "n_controls_kept": 20,
+      "coverage_units": 80,
+      "dropped_units": 0,
+      "n_conflict_kept": 50,
+      "n_controls_kept": 30,
       "axes": {
         "warm_cold": {
           "cos_raw_partialled": 0.9481546029972573,
           "raw_significant": false,
           "raw_slope": -0.0013227860449969613,
-          "part_significant": false,
-          "part_slope": NaN
+          "part_significant": true,
+          "part_slope": -0.004115921923952805
         },
         "confident_cautious": {
           "cos_raw_partialled": 0.9823103043243648,
           "raw_significant": true,
           "raw_slope": 0.0054558238930270805,
-          "part_significant": false,
-          "part_slope": NaN
+          "part_significant": true,
+          "part_slope": 0.007753662896826008
         },
         "empathetic_analytical": {
           "cos_raw_partialled": 0.9554107376861862,
           "raw_significant": true,
           "raw_slope": 0.0056616783671942375,
-          "part_significant": false,
-          "part_slope": NaN
+          "part_significant": true,
+          "part_slope": 0.004377597151282907
         },
         "formal_casual": {
           "cos_raw_partialled": 0.9629696048846779,
           "raw_significant": false,
           "raw_slope": 0.0008810269356895745,
           "part_significant": false,
-          "part_slope": NaN
+          "part_slope": 0.0016156467988216621
         }
       }
     },
