@@ -1,11 +1,23 @@
 """Model loading utilities for Mood Axis."""
 
+import os
+import logging
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
 from typing import Tuple
-import sys
 
-sys.path.insert(0, str(__file__).rsplit("/src/", 1)[0])
+# Suppress verbose output before importing HF libs
+os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+logging.getLogger("httpx").setLevel(logging.WARNING)
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import warnings
+warnings.filterwarnings("ignore", message=".*torch_dtype.*deprecated.*")
+warnings.filterwarnings("ignore", message=".*generation flags are not valid.*")
+import transformers.utils.logging as hf_logging
+hf_logging.set_verbosity_error()
+hf_logging.disable_progress_bar()
+
 from config.settings import DEVICE, DTYPE, DEFAULT_MODEL
 
 
@@ -24,14 +36,14 @@ def load_model(
     Returns:
         Tuple of (model, tokenizer)
     """
-    print(f"Loading model {model_name} on {device} with {dtype}...")
+    print(f"Loading model {model_name} on {device} with {dtype}...", flush=True)
 
+    print("  Loading tokenizer...", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     # Yi-1.5-9B-Chat fast tokenizer has a decode bug: it strips SentencePiece
-    # space prefixes (▁), producing "Hello,howareyou" instead of "Hello, how are you".
-    # AutoTokenizer(use_fast=False) still returns the fast backend for Yi, so
-    # we explicitly load LlamaTokenizer which decodes correctly.
+    # space prefixes, producing "HellohowareyouI'mfine" instead of "Hello, how are you".
+    # We explicitly load LlamaTokenizer which decodes correctly.
     test_ids = tokenizer.encode("Hello, how are you?", add_special_tokens=False)
     if " " not in tokenizer.decode(test_ids):
         from transformers import LlamaTokenizer
@@ -40,10 +52,8 @@ def load_model(
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    print("  Loading weights...", flush=True)
     if device.type == "cuda":
-        # Use device_map="auto" and native dtype on CUDA.
-        # This lets MoE/MXFP4 models (e.g. gpt-oss-20b) load in their
-        # native precision instead of upcasting to fp16 and OOM-ing.
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype="auto",
@@ -52,7 +62,6 @@ def load_model(
             trust_remote_code=True,
         )
     else:
-        # MPS/CPU: keep manual placement
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             torch_dtype=dtype,
@@ -64,7 +73,7 @@ def load_model(
 
     model.eval()
 
-    print(f"Model loaded successfully. Parameters: {model.num_parameters() / 1e9:.2f}B")
+    print(f"  Model loaded: {model.num_parameters() / 1e9:.2f}B params on {device}", flush=True)
     return model, tokenizer
 
 
@@ -85,24 +94,12 @@ class ModelManager:
         dtype: torch.dtype = DTYPE,
         force_reload: bool = False,
     ) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
-        """Get or load the model and tokenizer.
-
-        Args:
-            model_name: HuggingFace model name or path
-            device: Device to load the model on
-            dtype: Data type for model weights
-            force_reload: Force reloading even if already loaded
-
-        Returns:
-            Tuple of (model, tokenizer)
-        """
         if (
             force_reload
             or cls._model is None
             or cls._model_name != model_name
             or cls._device != device
         ):
-            # Clear existing model
             if cls._model is not None:
                 del cls._model
                 cls._model = None
