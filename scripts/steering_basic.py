@@ -532,13 +532,19 @@ def run_steering(model_key: str, axes: list, alphas: list,
         # Merge completed axes + WIP alpha checkpoints
         if "axes" in raw:
             existing = dict(raw["axes"])
-        # Preserve _wip_<axis> keys for per-alpha resume
+        # Preserve WIP keys for resume: "_wip_<axis>" (per-alpha) AND
+        # "_wipq_<axis>_<alpha>" (per-question). NB "_wipq_" does NOT match
+        # startswith("_wip_") — the old filter silently dropped per-question
+        # checkpoints, so any alpha longer than one time-budget chunk looped
+        # forever restarting from the alpha boundary.
         for k, v in raw.items():
-            if k.startswith("_wip_"):
+            if k.startswith("_wip"):
                 existing[k] = v
-        done = [k for k in existing if not k.startswith("_wip_")]
-        wip = [k.replace("_wip_", "") for k in existing if k.startswith("_wip_")]
-        logger.info(f"Resuming: done={done}, wip={wip}")
+        done = [k for k in existing if not k.startswith("_wip")]
+        wip = [k.replace("_wip_", "") for k in existing
+               if k.startswith("_wip_") and not k.startswith("_wipq_")]
+        wipq = [k for k in existing if k.startswith("_wipq_")]
+        logger.info(f"Resuming: done={done}, wip={wip}, mid-alpha={wipq}")
 
     if output_file.exists() and not force:
         print(f"Output exists: {output_file}. Use --force to recompute.", flush=True)
@@ -951,7 +957,7 @@ def run_steering(model_key: str, axes: list, alphas: list,
                 "status": "partial",
             },
             "axes": results_by_axis,
-            **{k: v for k, v in existing.items() if k.startswith("_wip_")},
+            **{k: v for k, v in existing.items() if k.startswith("_wip")},
         }, partial_file)
 
         # Note: we keep "results" (with texts) in results_by_axis so they
