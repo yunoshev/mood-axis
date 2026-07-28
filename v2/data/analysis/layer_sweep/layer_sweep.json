@@ -1,0 +1,5724 @@
+{
+ "gemma4_26b_a4b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 4.367,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 5.612,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 6.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 5.55,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 5.609,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 6.377,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 5.985,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 6.333,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 6.567,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 7.477,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 8.413,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 9.098,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 9.565,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 11.25,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 12.37,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 12.774,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.902,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 10.807,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 13.223,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 12.02,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.026,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 9.444,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 11.959,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 12.757,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 12.195,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 12.413,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.141,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 11.559,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.645,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 12.299,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.041,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.536,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.861,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 1.632,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 1.855,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.22,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.567,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.038,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 3.813,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 3.427,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.467,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.66,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 4.425,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.225,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.839,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 6.034,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.486,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.768,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 11.227,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 11.477,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 11.291,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 11.873,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 11.979,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 13.495,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 13.124,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 12.841,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 11.13,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 10.543,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.731,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.893,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 4.166,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 4.078,
+    "accuracy": 0.933
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.572,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 0.886,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 1.94,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 1.739,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 3.001,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 4.09,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 5.088,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.695,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 5.132,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.462,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 5.453,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.573,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 6.403,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 6.789,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.153,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.239,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.536,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 11.224,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 10.821,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.708,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.097,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.47,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 10.89,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.587,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.832,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.853,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.991,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.841,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.899,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.089,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.251,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 1.631,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 1,
+    "dprime": 2.01,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 2.724,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 2.067,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 4,
+    "dprime": 2.648,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 5,
+    "dprime": 3.629,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.291,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 3.745,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 3.405,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 3.385,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.224,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 3.655,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 3.513,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 3.855,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 3.908,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 12.966,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 12.098,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 13.593,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 14.157,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 12.172,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 11.021,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.855,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.373,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 9.575,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 10.338,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.773,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 4.667,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 6.49,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 1.328,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 1,
+    "dprime": 1.638,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 1.815,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 1.308,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 4,
+    "dprime": 1.648,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 5,
+    "dprime": 2.747,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 3.234,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 2.836,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 2.547,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 3.186,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 2.766,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 2.968,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 2.983,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 13,
+    "dprime": 3.444,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 4.243,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 4.248,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 5.771,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.075,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 6.002,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 5.445,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.705,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 3.819,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 22,
+    "dprime": 3.782,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 23,
+    "dprime": 2.972,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": 3.516,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 3.469,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 3.657,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 4.049,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 3.919,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 29,
+    "dprime": 3.586,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 30,
+    "dprime": 4.105,
+    "accuracy": 0.933
+   }
+  ]
+ },
+ "ministral3_14b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 5.351,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 2.803,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 2.254,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 2.671,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 2.923,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.031,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.071,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 3.125,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 2.935,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 2.984,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.444,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 3.462,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.475,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 3.318,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.434,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.474,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 3.555,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 3.773,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 4.804,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 5.613,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 5.852,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 21,
+    "dprime": 6.464,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 6.972,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 23,
+    "dprime": 6.337,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": 7.682,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.915,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.93,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.394,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.044,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.86,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.77,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.551,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.297,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 7.288,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 7.143,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 7.624,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 7.301,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 7.546,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.038,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 7.91,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 5.696,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 1.399,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 1,
+    "dprime": 1.409,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 2,
+    "dprime": 1.644,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 3,
+    "dprime": 2.116,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.344,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 2.204,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.348,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 2.506,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 2.747,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 2.721,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 2.833,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 2.915,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 2.88,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 2.999,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 2.91,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.032,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 3.253,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 3.321,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 3.672,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 4.532,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.908,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 4.903,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.517,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.468,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.696,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.256,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.491,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.616,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.45,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 6.468,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.669,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 6.53,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 6.856,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 6.929,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 7.179,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 7.481,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 7.856,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 8.094,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 7.67,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 6.414,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.741,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 5.513,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 5.005,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 3.89,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 4.012,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 4.591,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.296,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.719,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 5.476,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.04,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.414,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.917,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.324,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.006,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.259,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.056,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.093,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.794,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.923,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 10.595,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 12.987,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 14.791,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 15.06,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 15.724,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 16.255,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.428,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 16.326,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 15.819,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 15.588,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.98,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 15.634,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 15.674,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 15.967,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 15.807,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 16.227,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 16.072,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 16.06,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 15.805,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 16.296,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 15.977,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 12.664,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 1.788,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 1.964,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 1.928,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 2.251,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 4,
+    "dprime": 2.436,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 5,
+    "dprime": 2.519,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.688,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 2.668,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 2.931,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 9,
+    "dprime": 2.917,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 10,
+    "dprime": 3.177,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 11,
+    "dprime": 3.223,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 3.244,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 3.226,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.295,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 3.216,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 3.367,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 3.403,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 4.313,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 5.442,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 5.6,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.729,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.996,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.434,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.713,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.731,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.407,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.087,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.049,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 8.054,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 8.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.85,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 9.05,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.951,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.807,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 10.276,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.742,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 9.561,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 10.005,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 10.64,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 7.862,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 2.076,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 2.24,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 2.629,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 3.022,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 3.098,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.151,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 2.901,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 3.321,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 3.318,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.247,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.269,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.39,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.526,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.464,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 3.973,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.909,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 4.116,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 4.463,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 4.535,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 4.72,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 4.881,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 21,
+    "dprime": 4.416,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 4.272,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 23,
+    "dprime": 4.136,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 24,
+    "dprime": 4.303,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 25,
+    "dprime": 4.218,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 26,
+    "dprime": 4.112,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 27,
+    "dprime": 4.057,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 28,
+    "dprime": 4.113,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 29,
+    "dprime": 4.083,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 4.179,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 31,
+    "dprime": 4.166,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 32,
+    "dprime": 4.23,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 33,
+    "dprime": 4.126,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 34,
+    "dprime": 4.218,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 35,
+    "dprime": 4.282,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 36,
+    "dprime": 4.198,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 37,
+    "dprime": 4.248,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 38,
+    "dprime": 4.623,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 39,
+    "dprime": 5.011,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 40,
+    "dprime": 4.64,
+    "accuracy": 0.967
+   }
+  ]
+ },
+ "ministral3_8b_reasoning": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 3.033,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 1,
+    "dprime": 3.673,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 3.218,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 3.079,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 3.403,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.722,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.148,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 4.312,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 4.435,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 4.534,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 4.744,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 5.034,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 5.152,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 5.039,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 5.33,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 5.105,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 5.38,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 5.612,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 6.932,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 7.553,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.487,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.375,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.536,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 8.099,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.536,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.266,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.94,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.129,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 9.018,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 9.39,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 9.262,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 9.739,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 9.766,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 10.096,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 10.424,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 1.725,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 1,
+    "dprime": 1.9,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 1.905,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 2.295,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.325,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 2.206,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.182,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 7,
+    "dprime": 2.326,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 8,
+    "dprime": 2.387,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 9,
+    "dprime": 2.268,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 2.34,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 2.171,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 12,
+    "dprime": 2.162,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 2.255,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 14,
+    "dprime": 2.355,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 2.475,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 16,
+    "dprime": 2.784,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 17,
+    "dprime": 2.88,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 18,
+    "dprime": 3.663,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 4.164,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.429,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 4.458,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 4.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 4.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.315,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.604,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 5.641,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 5.889,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.015,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 6.54,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.434,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 6.368,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 6.875,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 7.091,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 8.092,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 1.07,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 1.364,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 2,
+    "dprime": 2.696,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 4.524,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 5.408,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 6.275,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 5.824,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 6.626,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.808,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.721,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.356,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.81,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.572,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 6.03,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 6.504,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.09,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.72,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 6.831,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.108,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.013,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.963,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 10.594,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 10.613,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.852,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 11.73,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.392,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 11.726,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 12.016,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 12.332,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.61,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 12.329,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 13.18,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 14.602,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 13.131,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 1.21,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 1,
+    "dprime": 1.453,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 1.482,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 1.882,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 4,
+    "dprime": 2.087,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 2.391,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.452,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 2.395,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 2.941,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 2.814,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 2.986,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 3.044,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.05,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 2.912,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 2.882,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.053,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 3.178,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 3.172,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 5.934,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.309,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 10.595,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.334,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 11.004,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.89,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 14.569,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 14.31,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 14.691,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.949,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.598,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 13.906,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 13.704,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 14.19,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 13.251,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.424,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 13.11,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 1.09,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 1,
+    "dprime": 1.281,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 2.12,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 3.637,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 3.788,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 4.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 3.566,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.49,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 4.059,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 3.994,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 4.477,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 3.872,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 3.947,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.281,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 4.703,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 4.508,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 4.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 5.358,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 5.406,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 5.766,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 5.921,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.696,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 6.882,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 6.774,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.625,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.113,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.259,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.51,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.75,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.276,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.362,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 6.023,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 6.351,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 6.592,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 5.851,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "mistral_small_3.2_24b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 3.169,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 3.124,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 3.282,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 3.49,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 3.82,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.901,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.211,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 4.376,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 4.486,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 4.676,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 5.16,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 5.19,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 5.153,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 5.041,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 5.135,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 5.485,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 5.466,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 5.947,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 7.281,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 7.064,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.911,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.286,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.117,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.909,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.176,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.473,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.303,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.336,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 8.041,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.798,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.558,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.341,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 7.137,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 7.246,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 7.266,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 7.062,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 7.635,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.775,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 9.884,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 9.553,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 2.362,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 2.045,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 2.557,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 4,
+    "dprime": 2.642,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 2.785,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.378,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 2.587,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 2.942,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 3.055,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 10,
+    "dprime": 2.876,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 11,
+    "dprime": 2.917,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 12,
+    "dprime": 3.129,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 13,
+    "dprime": 3.095,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 14,
+    "dprime": 3.418,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 15,
+    "dprime": 3.491,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 3.996,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 4.004,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 4.47,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 4.913,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.158,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.735,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.946,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.525,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.859,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.161,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.257,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.383,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.74,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.829,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.025,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.98,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 7.912,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 8.255,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 8.36,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 8.777,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 8.742,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 10.221,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 10.485,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 8.832,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.868,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 1.507,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 2.355,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 2.491,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 2.52,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 2.504,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 2.853,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 3.184,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 3.434,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 3.547,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 3.716,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 3.851,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 3.809,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.077,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 4.083,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.196,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 4.822,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 5.586,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 7.266,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 7.292,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.65,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.429,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 9.081,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.882,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 9.767,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.894,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 9.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 10.162,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.14,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 10.393,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 10.196,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.498,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.221,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 10.577,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.731,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 9.532,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 8.594,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 8.383,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.013,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 7.333,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 8.133,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 15.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 3.409,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 2.614,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 3.406,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 3.668,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 3.364,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.585,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 3.782,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 3.83,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 3.584,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 3.606,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 3.53,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.231,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.09,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.061,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.111,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 3.251,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 3.286,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 4.103,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 4.598,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.919,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.317,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.945,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.48,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.652,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.25,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.249,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.338,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 8.396,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 8.361,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.422,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.587,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.536,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.282,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 9.768,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.975,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 11.328,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 13.914,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 15.068,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 11.875,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.411,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 3.409,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 3.288,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 4.18,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 4.505,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 4.078,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.355,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.296,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 4.516,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 4.823,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.238,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.124,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.521,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.535,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 6.211,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.996,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.153,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 6.994,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 6.776,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 6.543,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.385,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 6.226,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 6.319,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.936,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": 5.401,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 25,
+    "dprime": 5.472,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 26,
+    "dprime": 5.356,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 27,
+    "dprime": 5.506,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 28,
+    "dprime": 5.464,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 29,
+    "dprime": 5.364,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 5.404,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 31,
+    "dprime": 5.48,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 32,
+    "dprime": 5.497,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 33,
+    "dprime": 5.411,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 34,
+    "dprime": 5.635,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 35,
+    "dprime": 5.469,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 36,
+    "dprime": 5.274,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 37,
+    "dprime": 5.314,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 38,
+    "dprime": 5.343,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 5.552,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 4.619,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "olmo2_13b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 3.242,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 3.509,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 3.578,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 4.05,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 4.373,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 4.999,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.754,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 5.208,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 5.616,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.507,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.664,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.531,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.788,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.644,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.984,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.874,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.748,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 9.041,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.54,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.847,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 10.203,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.445,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 10.771,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 11.057,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 11.318,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 11.454,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.674,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 11.472,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 11.562,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 11.557,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.476,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 11.868,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 11.882,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.065,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 12.0,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 11.586,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 11.721,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 12.181,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 12.88,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 13.682,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 12.996,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 2.695,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 3.362,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 3.728,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 3.376,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 5.797,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 5.536,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.032,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 5.868,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.692,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.652,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.884,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 8.178,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 9.456,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 10.258,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 13.726,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 15.678,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 18.862,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 19.649,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 18.947,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 15.063,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 14.983,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 14.761,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 14.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 14.228,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 14.232,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.151,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.496,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.553,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 14.418,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 15.053,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 14.814,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 14.558,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 15.431,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 15.589,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 15.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 15.252,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 14.626,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 14.183,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 13.598,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.536,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 1.299,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 5.903,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 6.904,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 7.756,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 7.405,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.884,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 7.33,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.781,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 8.197,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.909,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 9.024,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 9.459,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 9.647,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 10.755,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 13.162,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 14.556,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 16.707,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 17.99,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 18.408,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 18.084,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 16.443,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 17.309,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 16.134,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 15.506,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.233,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 15.954,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 15.459,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 15.043,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.658,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 14.376,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 14.133,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 14.237,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 14.084,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 14.336,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 14.677,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 14.814,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 14.839,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 14.954,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 14.431,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 13.803,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 2.147,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 1,
+    "dprime": 2.149,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 2.501,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 2.639,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.764,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 3.404,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 3.087,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 3.113,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 3.912,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.798,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.731,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.708,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.013,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 3.788,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.723,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 4.967,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 6.138,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.369,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.433,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 11.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.084,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.907,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 13.683,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 15.094,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 14.379,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.36,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 15.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 15.296,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.798,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.946,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 14.998,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 14.979,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 14.568,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 13.977,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 13.651,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 13.372,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 13.538,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 13.548,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 13.377,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 13.473,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 13.415,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.448,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 1.051,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 1.525,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 2.028,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 2.231,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 3.287,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.023,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 3.787,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 3.906,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 3.864,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 3.949,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 4.179,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 4.578,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 4.423,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 4.19,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 4.868,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 5.224,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 5.701,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 6.231,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 6.346,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.07,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.865,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.612,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.221,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.514,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.668,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 5.596,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 5.498,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 5.521,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 5.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 5.478,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 5.501,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 5.441,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 5.34,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 5.353,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 5.26,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 5.214,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 5.131,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 4.679,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 4.457,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 5.277,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "vibethinker_3b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 2.235,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 1,
+    "dprime": 2.786,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 2.827,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 2.929,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 2.912,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 3.127,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 2.401,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 7,
+    "dprime": 2.836,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 3.204,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.361,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 3.723,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 3.806,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 4.043,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.947,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 3.807,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.829,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 4.129,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 4.252,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 4.656,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 4.767,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 4.615,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 21,
+    "dprime": 5.242,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.857,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 6.755,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.11,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.616,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.093,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 12.484,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 20.445,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 18.313,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 17.67,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 14.087,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 13.216,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.365,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 10.807,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 11.285,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.936,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 3.907,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 4.531,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 5.406,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 6.069,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 6.14,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 5.514,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 5.236,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.037,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.688,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 4.941,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 4.846,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 4.968,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.01,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 4.542,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 4.39,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 4.157,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 3.795,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 3.943,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 3.702,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 4.972,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.235,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.279,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.027,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 4.348,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 3.975,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 28,
+    "dprime": 4.162,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 29,
+    "dprime": 4.614,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 4.646,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 4.464,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 4.572,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 4.726,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 4.859,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 5.179,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 4.694,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.233,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 3.986,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 5.767,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 6.023,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 7.098,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 7.168,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.766,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 6.994,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 8.406,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 10.186,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 9.261,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 10.152,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 10.799,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 11.03,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 10.854,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 10.83,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.496,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.939,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.259,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.973,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.435,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 9.27,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.391,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.391,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.244,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 11.435,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 13.887,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.969,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.14,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 11.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.489,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.967,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.056,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 10.635,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.686,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 9.122,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.112,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 1.755,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 1,
+    "dprime": 1.82,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 1.882,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 3,
+    "dprime": 1.992,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 4,
+    "dprime": 1.906,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 5,
+    "dprime": 2.028,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 6,
+    "dprime": 1.679,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 7,
+    "dprime": 1.82,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 8,
+    "dprime": 1.955,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 9,
+    "dprime": 2.035,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 10,
+    "dprime": 2.06,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 11,
+    "dprime": 2.032,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 12,
+    "dprime": 2.111,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 2.256,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 14,
+    "dprime": 2.22,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 15,
+    "dprime": 2.27,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 16,
+    "dprime": 2.276,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 17,
+    "dprime": 2.241,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 18,
+    "dprime": 2.208,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 19,
+    "dprime": 2.2,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 20,
+    "dprime": 2.136,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 2.127,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 22,
+    "dprime": 2.13,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 23,
+    "dprime": 2.314,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 24,
+    "dprime": 2.36,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 25,
+    "dprime": 2.436,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 26,
+    "dprime": 2.649,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 27,
+    "dprime": 2.545,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 28,
+    "dprime": 3.634,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 29,
+    "dprime": 3.739,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 30,
+    "dprime": 3.308,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 31,
+    "dprime": 2.998,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 32,
+    "dprime": 3.048,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 33,
+    "dprime": 3.245,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 34,
+    "dprime": 3.191,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 35,
+    "dprime": 3.223,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 36,
+    "dprime": 3.272,
+    "accuracy": 0.967
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 1.363,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 1,
+    "dprime": 2.061,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 2.813,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 4.602,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 7.518,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 10.989,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 9.078,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 10.026,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 10.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 10.756,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 11.307,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 12.942,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 12.675,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 12.428,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 11.471,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 10.889,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 11.151,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 11.223,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 11.674,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 15.156,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 16.597,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 18.181,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 19.42,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 22.43,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 21.471,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 16.942,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 14.104,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 12.811,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.964,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 13.931,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 13.812,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 11.992,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 13.9,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 15.173,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 17.343,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 13.686,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 13.191,
+    "accuracy": 1.0
+   }
+  ]
+ }
+}

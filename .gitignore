@@ -59,3 +59,5 @@ data/v7/baselines/*_hidden_states.npz
 
 # Cloud infrastructure metadata
 data/axes/good_machines.json
+*.RESCUED-PRIVATE-KEY
+andrey_yunoshev_saygames

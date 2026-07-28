@@ -686,10 +686,11 @@ MODELS = {
 }
 
 MODEL_SETS = {
-    # Main text (5 models, current-gen, 5 orgs)
+    # Main text (4 models, current-gen, 4 orgs)
+    # gemma3_12b removed: degenerates (repetition loops) under activation steering
+    # with no protocol-consistent fix — see limitations. Gemma 2 9B stays in legacy.
     "paper": [
         "qwen3.5_9b",       # Alibaba — hybrid SSM, newest
-        "gemma3_12b",        # Google — new gen
         "phi4",              # Microsoft — 14B
         "deepseek_r1_14b",   # DeepSeek — thinking distill
         "ministral3_8b",     # Mistral — new Mistral

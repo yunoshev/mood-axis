@@ -23,6 +23,7 @@ Usage:
 import argparse
 import gc
 import json
+import os
 import sys
 import time
 import logging
@@ -40,7 +41,7 @@ sys.path.insert(0, str(PROJECT_ROOT.parent.parent))  # repo root for framework i
 # installed (public/standalone mode), fall back to a minimal emitter that
 # keeps the #PROGRESS stdout protocol working.
 try:
-    from framework.progress import log_progress
+    from fw.progress import log_progress
 except ImportError:
     import json as _progress_json
 
@@ -72,8 +73,8 @@ from config.settings import (
 from config.models import MODELS
 from config.stability_prompts import get_stability_set
 from src.calibration.axis_computer import (
-    compute_axis_vector, compute_normalization_scale, compute_validation_metrics,
-    save_axis_vectors,
+    compute_axis_vector, compute_normalization_scale, compute_normalization_center,
+    compute_validation_metrics, save_axis_vectors,
 )
 from src.backend import add_backend_args, resolve_backend, load_generate_fn, run_on_vast
 
@@ -81,7 +82,86 @@ OUTPUT_DIR = PROJECT_ROOT / "data" / "stability"
 SET_NAMES = ["A", "B", "C"]
 
 # Global progress tracker for fw status (#PROGRESS protocol)
-_progress = {"done": 0, "total": 0, "t_start": 0}
+_progress = {"total": 0, "t_start": 0}
+_stab_budget = None
+
+# Sample-granular totals: {(set_name, axis): n_questions}. Computed once from
+# config/stability_prompts.py (deterministic, model-independent — the same
+# 3 sets x 5 axes x 30 questions for every model) and cached for the whole
+# process; never recomputed on the fly so total stays a true constant.
+_stab_n_q = {}
+_stab_total = None
+
+
+def _init_stab_totals():
+    """Compute and cache the fixed sample-granular total (once per process)."""
+    global _stab_total
+    if _stab_total is not None:
+        return _stab_total
+    total = 0
+    for s in SET_NAMES:
+        questions = get_stability_set(s)["questions"]
+        for axis in MOOD_AXES:
+            n_q = len(questions.get(axis, []))
+            _stab_n_q[(s, axis)] = n_q
+            total += n_q
+    _stab_total = total
+    return total
+
+
+def _stab_done_total(model_key):
+    """(done, total) at SAMPLE granularity, derived from checkpoints on disk.
+
+    done is global across ALL sets/axes, monotonic, and never resets on
+    resume: a completed axis contributes its full n_q; an in-progress axis
+    contributes its clamped samples_per_axis count; a not-yet-started axis
+    contributes 0 (so a completed axis is never double-counted against its
+    own samples_per_axis entry). total is the fixed constant from
+    _init_stab_totals() — never recomputed mid-run.
+    """
+    total = _init_stab_totals()
+    done = 0
+    for s in SET_NAMES:
+        ckpt_path = _set_checkpoint_path(model_key, s)
+        # A finished set deletes its checkpoint and leaves the final npz —
+        # count it in full, or done would DROP by a whole set (150) right
+        # after set completion (observed: qwen27b stab 159 -> 63).
+        if (not ckpt_path.exists()
+                and (OUTPUT_DIR / f"{model_key}_set_{s}_axes.npz").exists()):
+            done += sum(_stab_n_q.get((s, axis), 0) for axis in MOOD_AXES)
+            continue
+        ckpt = _load_set_checkpoint(model_key, s)
+        completed = set(ckpt.get("completed_axes", []))
+        samples_per_axis = ckpt.get("samples_per_axis", {})
+        for axis in MOOD_AXES:
+            n_q = _stab_n_q.get((s, axis), 0)
+            if axis in completed:
+                done += n_q
+            else:
+                done += min(samples_per_axis.get(axis, 0), n_q)
+    return min(done, total), total
+
+
+def _emit_stab_progress(model_key, item=None, phase_done=None, phase_total=None):
+    """Emit #PROGRESS derived from checkpoints, not a mutable accumulator.
+
+    done/total (see _stab_done_total) are integer sample counts — global,
+    monotonic, never reset between axes/sets/resume. Local within-axis
+    position is carried only in `extra` (item/phase_done/phase_total), never
+    folded into done itself.
+    """
+    done, total = _stab_done_total(model_key)
+    el = time.monotonic() - _progress["t_start"] if _progress["t_start"] else 0
+    extra = {}
+    if item is not None:
+        extra["item"] = item
+    if phase_done is not None:
+        extra["phase_done"] = phase_done
+    if phase_total is not None:
+        extra["phase_total"] = phase_total
+    log_progress(done, total, el,
+                 n_elapsed=max(done - _progress.get("done_at_start", 0), 0),
+                 extra=extra or None)
 
 
 def _log(msg):
@@ -125,10 +205,15 @@ def _load_set_checkpoint(model_key: str, set_name: str) -> dict:
 
 
 def _save_set_checkpoint(model_key: str, set_name: str, ckpt: dict):
+    # Atomic: a kill mid-dump must not truncate the checkpoint (deepseek
+    # drift incident 2026-07-23 — plain open("w") left an unparseable stub).
     path = _set_checkpoint_path(model_key, set_name)
-    with open(path, "w") as f:
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w") as f:
         json.dump(ckpt, f, indent=2)
         f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
 
 
 def _load_partial_states(model_key: str, set_name: str) -> dict:
@@ -142,7 +227,11 @@ def _load_partial_states(model_key: str, set_name: str) -> dict:
 
 def _save_partial_states(model_key: str, set_name: str, hs_dict: dict):
     path = OUTPUT_DIR / f"{model_key}_set_{set_name}_states.npz"
-    np.savez_compressed(path, **hs_dict)
+    # tmp name MUST end in .npz — np.savez appends it otherwise and os.replace
+    # then misses the file (35b_a3b crash 2026-07-23 03:19).
+    tmp = OUTPUT_DIR / f"{model_key}_set_{set_name}_states.tmp.npz"
+    np.savez_compressed(tmp, **hs_dict)
+    os.replace(tmp, path)
 
 
 def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = False) -> dict:
@@ -180,6 +269,7 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
     }
     axis_vectors = {}
     scales = {}
+    centers = {}
 
     for axis_idx, axis in enumerate(MOOD_AXES):
         # Skip completed axes
@@ -195,6 +285,7 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
                 axis_vectors[axis] = av
                 all_proj = [float(np.dot(s, av)) for s in pos_states + neg_states]
                 scales[axis] = compute_normalization_scale(all_proj)
+                centers[axis] = compute_normalization_center(all_proj)
                 n_val = max(1, len(pos_states) // 5)
                 val_metrics = compute_validation_metrics(av, pos_states[-n_val:], neg_states[-n_val:])
                 results["axes"][axis] = {
@@ -204,9 +295,6 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
                     "dprime": val_metrics["dprime"],
                     "truncated": 0,  # unknown for resumed, but axis is complete
                 }
-            _progress["done"] += 1
-            n_q = len(questions.get(axis, []))
-            _progress["done_questions"] += n_q
             continue
 
         axis_questions = questions.get(axis, [])
@@ -222,6 +310,11 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
         done_samples = ckpt.get("samples_per_axis", {}).get(axis, 0)
         pos_key = f"{axis}_pos"
         neg_key = f"{axis}_neg"
+
+        # m5: initialize per-axis so the 'already on disk' branch doesn't
+        # inherit values from the previous axis via stale locals
+        truncated = 0
+        t_axis = time.monotonic()
 
         # Validate checkpoint against saved states
         if pos_key in hs_dict:
@@ -250,9 +343,6 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
                 negative_states = []
                 done_samples = 0
 
-            truncated = 0
-            t_axis = time.monotonic()
-
             for i in range(done_samples, n_q):
                 question = axis_questions[i]
 
@@ -273,8 +363,8 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
                 negative_states.append(result_neg.hidden_state)
 
                 # Save texts to JSONL immediately
-                pos_truncated = result_pos.n_generated_tokens >= CALIBRATION_MAX_NEW_TOKENS - 1
-                neg_truncated = result_neg.n_generated_tokens >= CALIBRATION_MAX_NEW_TOKENS - 1
+                pos_truncated = result_pos.n_generated_tokens >= CALIBRATION_MAX_NEW_TOKENS
+                neg_truncated = result_neg.n_generated_tokens >= CALIBRATION_MAX_NEW_TOKENS
                 for pole, result, is_trunc in [
                     ("positive", result_pos, pos_truncated),
                     ("negative", result_neg, neg_truncated),
@@ -304,16 +394,25 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
                 ckpt.setdefault("samples_per_axis", {})[axis] = i + 1
                 _save_set_checkpoint(model_key, set_name, ckpt)
 
+                # Chunk boundary at SAMPLE granularity (slow models: one axis can
+                # exceed the whole budget; per-sample checkpoint makes this safe).
+                if _stab_budget is not None and _stab_budget.expired():
+                    _emit_stab_progress(model_key, item=f"{set_name}/{axis}",
+                                        phase_done=i + 1, phase_total=n_q)
+                    done_now, total_now = _stab_done_total(model_key)
+                    _stab_budget.check_and_exit(done_now, total_now, log=_log)
+
+                # Per-sample progress emit (bar moves every sample even on 27B+
+                # where one axis takes 1-2h); log line stays every 5 samples.
+                if _progress["t_start"] > 0:
+                    _emit_stab_progress(model_key, item=f"{set_name}/{axis}",
+                                        phase_done=i + 1, phase_total=n_q)
                 n_done = i + 1 - done_samples
                 if n_done % 5 == 0 or i + 1 == n_q:
                     elapsed = time.monotonic() - t_axis
                     per_q = elapsed / n_done
                     eta = per_q * (n_q - i - 1)
                     _log(f"    {i+1}/{n_q} ({per_q:.1f}s/q, ETA {eta:.0f}s)")
-                    if _progress["t_start"] > 0:
-                        log_progress(_progress["done_questions"] + i + 1,
-                                     _progress["total_questions"],
-                                     time.monotonic() - _progress["t_start"])
 
         # Compute axis
         axis_vector = compute_axis_vector(positive_states, negative_states)
@@ -322,6 +421,7 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
         all_proj = [float(np.dot(s, axis_vector)) for s in positive_states + negative_states]
         scale = compute_normalization_scale(all_proj)
         scales[axis] = scale
+        centers[axis] = compute_normalization_center(all_proj)
 
         # Validation on last 20% of samples
         n_val = max(1, len(positive_states) // 5)
@@ -329,7 +429,7 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
             axis_vector, positive_states[-n_val:], negative_states[-n_val:],
         )
 
-        axis_truncated = truncated if 'truncated' in locals() else 0
+        axis_truncated = truncated
         results["axes"][axis] = {
             "n_questions": n_q,
             "scale": float(scale),
@@ -338,7 +438,7 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
             "truncated": axis_truncated,
         }
 
-        axis_time = time.monotonic() - t_axis if 't_axis' in locals() else 0
+        axis_time = time.monotonic() - t_axis
         _log(f"  [{set_name}] {axis}: d'={val_metrics['dprime']:.2f}, "
              f"acc={val_metrics['accuracy']:.0%}, "
              f"truncated={axis_truncated}/{n_q*2} "
@@ -348,12 +448,18 @@ def calibrate_set(generate_fn, model_key: str, set_name: str, force: bool = Fals
         ckpt.setdefault("completed_axes", []).append(axis)
         _save_set_checkpoint(model_key, set_name, ckpt)
 
-        _progress["done"] += 1
-        _progress["done_questions"] += n_q
+        _emit_stab_progress(model_key, item=f"{set_name}/{axis}",
+                            phase_done=n_q, phase_total=n_q)
+
+        # Clean chunk boundary for fw2 --repeat-until-exit (resume is per-axis)
+        if _stab_budget is not None:
+            done, total = _stab_done_total(model_key)
+            _stab_budget.check_and_exit(done, total, log=_log)
 
     # Save final outputs
     npz_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_axes.npz"
-    save_axis_vectors(axis_vectors, normalization_scales=scales, output_path=npz_path)
+    save_axis_vectors(axis_vectors, normalization_scales=scales,
+                      normalization_centers=centers, output_path=npz_path)
 
     json_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_meta.json"
     with open(json_path, "w") as f:
@@ -428,6 +534,7 @@ def calibrate_set_modal(model_key: str, set_name: str, gpu: str = "A100") -> dic
     }
     axis_vectors = {}
     scales = {}
+    centers = {}
 
     for axis in MOOD_AXES:
         pos = states[axis]["positive"]
@@ -441,6 +548,7 @@ def calibrate_set_modal(model_key: str, set_name: str, gpu: str = "A100") -> dic
         all_proj = [float(np.dot(s, axis_vector)) for s in pos + neg]
         scale = compute_normalization_scale(all_proj)
         scales[axis] = scale
+        centers[axis] = compute_normalization_center(all_proj)
 
         n_val = max(1, len(pos) // 5)
         val_metrics = compute_validation_metrics(
@@ -458,7 +566,8 @@ def calibrate_set_modal(model_key: str, set_name: str, gpu: str = "A100") -> dic
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     npz_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_axes.npz"
-    save_axis_vectors(axis_vectors, normalization_scales=scales, output_path=npz_path)
+    save_axis_vectors(axis_vectors, normalization_scales=scales,
+                      normalization_centers=centers, output_path=npz_path)
 
     json_path = OUTPUT_DIR / f"{model_key}_set_{set_name}_meta.json"
     with open(json_path, "w") as f:
@@ -697,9 +806,15 @@ def analyze_model(model_key: str) -> dict:
                 if center_key in npz:
                     center = float(npz[center_key])
                 else:
-                    # Set NPZs don't store a center; per methodology (§3.2) scores are
-                    # median-centered. center=0 would clip offset projections to ±1
-                    # (e.g. Gemma 3 offsets by -40k..-80k) and destroy ICC.
+                    # Legacy set NPZs don't store a center; per methodology (§3.2)
+                    # scores are median-centered. center=0 would clip offset
+                    # projections to ±1 (e.g. Gemma 3 offsets by -40k..-80k)
+                    # and destroy ICC.
+                    logger.warning(
+                        f"legacy set NPZ (set {set_name}, axis {axis}) without center — "
+                        f"using median-of-projections fallback; "
+                        f"ICC is consistency-type, not absolute-agreement"
+                    )
                     center = float(np.median(projs))
                 ratings[:, j] = np.clip((projs - center) / scale, -1.0, 1.0)
 
@@ -769,12 +884,18 @@ def main():
     parser.add_argument("--model", required=True)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--force", action="store_true")
+    from src.time_budget import add_time_budget_args, TimeBudget
+    add_time_budget_args(parser)
     add_backend_args(parser)
     sub = parser.add_subparsers(dest="command")
     cal = sub.add_parser("calibrate")
     cal.add_argument("--set", choices=SET_NAMES, help="Calibrate only this set")
     sub.add_parser("analyze")
     args = parser.parse_args()
+
+    global _stab_budget
+    _stab_budget = TimeBudget(getattr(args, "time_budget_min", 0),
+                              getattr(args, "time_budget_exit_code", 75))
 
     if args.check:
         preflight_check(args.model)
@@ -829,24 +950,14 @@ def main():
             _log("All sets already done. Use --force to rerun.")
             return
 
-        _progress["total"] = len(sets_to_run) * len(MOOD_AXES)
-        total_q = 0
-        for s in sets_to_run:
-            ss = get_stability_set(s)
-            for a in MOOD_AXES:
-                total_q += len(ss["questions"].get(a, []))
-        _progress["total_questions"] = total_q
-        # Count already-done axes from checkpoints (for correct initial progress)
-        done_q = 0
-        for s in sets_to_run:
-            ckpt = _load_set_checkpoint(args.model, s)
-            ss = get_stability_set(s)
-            for a in ckpt.get("completed_axes", []):
-                done_q += len(ss["questions"].get(a, []))
-        _progress["done"] = 0
-        _progress["done_questions"] = done_q
+        # Progress is in SAMPLE units over ALL sets (fixed total = 3 sets x 5
+        # axes x 30 questions = 450), derived from checkpoints each emit —
+        # never a per-attempt accumulator (would break on chunked resume: the
+        # "200/150" bug).
+        _progress["total"] = _init_stab_totals()
         _progress["t_start"] = time.monotonic()
-        log_progress(done_q, _progress["total_questions"], 0)
+        _progress["done_at_start"], _ = _stab_done_total(args.model)
+        _emit_stab_progress(args.model)
 
         model_config = MODELS[args.model]
         generate_fn, cleanup_fn = load_generate_fn(

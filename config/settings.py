@@ -30,6 +30,18 @@ MAX_NEW_TOKENS = 384
 # Drift uses longer responses (multi-turn adversarial). 384 caused 13-66% truncation.
 # 1024 caused 50% truncation on deepseek_r1_14b, 11% on qwen_7b, 6% on qwen3_8b.
 DRIFT_MAX_NEW_TOKENS = 2048
+# Steering basic generation. MAX_NEW_TOKENS=384 caused 40-100% truncation across
+# most model×axis (gemma vc 100%, gpt_oss all ~95%, qwen4bit ~95%) — this masked
+# the verbose_concise LENGTH signal and violates the <5%-truncation standard (D19).
+# Match drift's 2048 for tone/content axes; verbose_concise positive pole runs
+# longest, so give it 4096 (audit output truncation and bump per-axis if any >5%).
+STEERING_MAX_NEW_TOKENS = 4096
+STEERING_MAX_NEW_TOKENS_PER_AXIS = {
+    "verbose_concise": 8192,
+}
+# Canary evidence (2026-07-28): gpt_oss_20b warm_cold @2048 = 7.1% cap-hit (mean
+# 1287, verbose reasoning model) -> non-vc bumped 2048->4096. verbose_concise is
+# the longest pole (calibration needed 8192 for 0% trunc), so 8192 here too.
 TEMPERATURE = 0.7
 TOP_P = 0.9
 DO_SAMPLE = True

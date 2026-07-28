@@ -1,0 +1,283 @@
+{
+  "_meta": {
+    "script": "scripts/06f_probe_stats.py",
+    "timestamp": "2026-07-23T02:41:42.114311",
+    "n_axes": 5,
+    "n_eval_questions_per_axis": 15,
+    "n_total_per_model": 75,
+    "bonferroni_alpha": 0.016666666666666666,
+    "n_models_tested": 3,
+    "metric_definition": "Item-level paired instruction-following accuracy: for eval question i on axis a, correct iff proj(hidden_state(positive instruction, q_i)) > proj(hidden_state(negative instruction, q_i)) on the model's OWN axis vector (fit on its own 50 train questions). 15 items/axis x 5 axes = 75 items/model. McNemar test pairs base vs instruct on the same 75 items (same axis, same question, same pole labels).",
+    "old_paper_numbers_for_reference": {
+      "llama_8b": {
+        "n": 70,
+        "base_correct": 60,
+        "instruct_correct": 44,
+        "base_acc": 0.86,
+        "instruct_acc": 0.63,
+        "base_ci": [
+          0.75,
+          0.94
+        ],
+        "instruct_ci": [
+          0.5,
+          0.74
+        ],
+        "mcnemar_chi2": 9.84,
+        "mcnemar_p": 0.002,
+        "cohens_h": 0.47
+      },
+      "qwen_7b": {
+        "n": 70,
+        "base_correct": 62,
+        "instruct_correct": 68,
+        "base_acc": 0.88,
+        "instruct_acc": 0.97,
+        "base_ci": [
+          0.77,
+          0.95
+        ],
+        "instruct_ci": [
+          0.88,
+          1.0
+        ],
+        "mcnemar_chi2": 2.0,
+        "mcnemar_p": 0.16,
+        "cohens_h": null
+      },
+      "mistral_7b": {
+        "n": 70,
+        "base_correct": 59,
+        "instruct_correct": 57,
+        "base_acc": 0.84,
+        "instruct_acc": 0.81,
+        "base_ci": [
+          0.73,
+          0.92
+        ],
+        "instruct_ci": [
+          0.69,
+          0.89
+        ],
+        "mcnemar_chi2": 0.25,
+        "mcnemar_p": 0.62,
+        "cohens_h": null
+      }
+    },
+    "note": "old_paper_numbers_for_reference reflects the retired 7-axis x 10-eval-question (N=70) methodology hardcoded in paper/sections/05_results.md Sec 5.4a; kept here only for comparison, not used in any computation above."
+  },
+  "pairs": {
+    "llama_8b": {
+      "instruct_model": "llama_8b",
+      "base_model": "llama_8b_base",
+      "n_axes": 5,
+      "n_total": 75,
+      "base": {
+        "n_correct": 73,
+        "n_total": 75,
+        "accuracy": 0.9733333333333334,
+        "wilson_ci_95": [
+          0.9078851181224086,
+          0.9926563109938686
+        ]
+      },
+      "instruct": {
+        "n_correct": 75,
+        "n_total": 75,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.9512761575171942,
+          1.0
+        ]
+      },
+      "delta_pp": 2.6666666666666616,
+      "mcnemar": {
+        "b_base_correct_instruct_wrong": 0,
+        "c_base_wrong_instruct_correct": 2,
+        "n_discordant": 2,
+        "chi2_continuity_corrected": 0.5,
+        "chi2_p": 0.47950012218695337,
+        "exact_binomial_p": 0.5
+      },
+      "cohens_h": -0.3280678820459504,
+      "bonferroni_alpha": 0.016666666666666666,
+      "significant_after_bonferroni": false,
+      "per_axis": {
+        "warm_cold": {
+          "n": 15,
+          "base_correct": 13,
+          "base_acc": 0.8666666666666667,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "confident_cautious": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "empathetic_analytical": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "formal_casual": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "verbose_concise": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        }
+      }
+    },
+    "qwen_7b": {
+      "instruct_model": "qwen_7b",
+      "base_model": "qwen_7b_base",
+      "n_axes": 5,
+      "n_total": 75,
+      "base": {
+        "n_correct": 73,
+        "n_total": 75,
+        "accuracy": 0.9733333333333334,
+        "wilson_ci_95": [
+          0.9078851181224086,
+          0.9926563109938686
+        ]
+      },
+      "instruct": {
+        "n_correct": 75,
+        "n_total": 75,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.9512761575171942,
+          1.0
+        ]
+      },
+      "delta_pp": 2.6666666666666616,
+      "mcnemar": {
+        "b_base_correct_instruct_wrong": 0,
+        "c_base_wrong_instruct_correct": 2,
+        "n_discordant": 2,
+        "chi2_continuity_corrected": 0.5,
+        "chi2_p": 0.47950012218695337,
+        "exact_binomial_p": 0.5
+      },
+      "cohens_h": -0.3280678820459504,
+      "bonferroni_alpha": 0.016666666666666666,
+      "significant_after_bonferroni": false,
+      "per_axis": {
+        "warm_cold": {
+          "n": 15,
+          "base_correct": 14,
+          "base_acc": 0.9333333333333333,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "confident_cautious": {
+          "n": 15,
+          "base_correct": 14,
+          "base_acc": 0.9333333333333333,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "empathetic_analytical": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "formal_casual": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "verbose_concise": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        }
+      }
+    },
+    "mistral_7b": {
+      "instruct_model": "mistral_7b",
+      "base_model": "mistral_7b_base",
+      "n_axes": 4,
+      "n_total": 60,
+      "base": {
+        "n_correct": 56,
+        "n_total": 60,
+        "accuracy": 0.9333333333333333,
+        "wilson_ci_95": [
+          0.8407464268680283,
+          0.9737713012754938
+        ]
+      },
+      "instruct": {
+        "n_correct": 60,
+        "n_total": 60,
+        "accuracy": 1.0,
+        "wilson_ci_95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "delta_pp": 6.666666666666665,
+      "mcnemar": {
+        "b_base_correct_instruct_wrong": 0,
+        "c_base_wrong_instruct_correct": 4,
+        "n_discordant": 4,
+        "chi2_continuity_corrected": 2.25,
+        "chi2_p": 0.13361440253771617,
+        "exact_binomial_p": 0.125
+      },
+      "cohens_h": -0.5223148218060487,
+      "bonferroni_alpha": 0.016666666666666666,
+      "significant_after_bonferroni": false,
+      "per_axis": {
+        "warm_cold": {
+          "n": 15,
+          "base_correct": 13,
+          "base_acc": 0.8666666666666667,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "empathetic_analytical": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "formal_casual": {
+          "n": 15,
+          "base_correct": 13,
+          "base_acc": 0.8666666666666667,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        },
+        "verbose_concise": {
+          "n": 15,
+          "base_correct": 15,
+          "base_acc": 1.0,
+          "instruct_correct": 15,
+          "instruct_acc": 1.0
+        }
+      }
+    }
+  }
+}

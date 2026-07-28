@@ -1,10 +1,10 @@
 ## API Key Requirement
 
-The external judge script (`scripts/steering_judge.py`) calls the Anthropic API:
+The external judge scripts (`scripts/steering_judge.py`, `scripts/judge_analyze.py`) call the Anthropic API:
 
 ```bash
 export ANTHROPIC_API_KEY=your_key_here
-python scripts/steering_judge.py
+python3 scripts/steering_judge.py
 ```
 
 All other scripts are fully local and require no API keys.

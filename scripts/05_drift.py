@@ -23,12 +23,14 @@ Usage:
 
 import argparse
 import json
+import os
 import sys
 import gc
 import time
 import logging
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 import numpy as np
 
@@ -40,7 +42,7 @@ sys.path.insert(0, str(PROJECT_ROOT.parent.parent))  # repo root for framework i
 # installed (public/standalone mode), fall back to a minimal emitter that
 # keeps the #PROGRESS stdout protocol working.
 try:
-    from framework.progress import log_progress
+    from fw.progress import log_progress
 except ImportError:
     import json as _progress_json
 
@@ -77,6 +79,28 @@ OUTPUT_DIR = PROJECT_ROOT / "data" / "drift"
 _drift_done = 0
 _drift_total = 0
 _drift_t_start = 0.0
+# Turn-granular progress: unit = one dialogue turn (not one scenario), so the
+# bar moves every 2-5 min even on 27B+ models where a scenario takes 30-80 min.
+_scen_units = {}   # scenario name -> n turns (conflict + recovery)
+_ctrl_units = {}   # control name -> n turns
+_drift_units_start = 0
+
+
+def _units_done(ckpt):
+    """Completed work in TURN units, derived from the checkpoint each time
+    (never an accumulator — survives chunked resume, see D-progress rule).
+
+    Includes fully-completed scenarios/controls AND the in-progress
+    ("inflight") scenario's durably-saved turns, so a resume after a
+    mid-scenario kill reports the correct global count immediately —
+    it does NOT wait for the scenario to fully finish."""
+    done = sum(_scen_units.get(n, 0) for n in ckpt.get("completed_scenarios", []))
+    done += sum(_ctrl_units.get(n, 0) for n in ckpt.get("completed_controls", []))
+    inflight = ckpt.get("inflight")
+    if inflight:
+        done += inflight.get("turns_done", 0)
+    return done
+_drift_budget = None
 
 
 def _log(msg):
@@ -120,11 +144,19 @@ def _load_checkpoint(model_key: str) -> dict:
     return {"completed_scenarios": [], "completed_controls": []}
 
 
-def _save_checkpoint(model_key: str, ckpt: dict):
-    path = _checkpoint_path(model_key)
-    with open(path, "w") as f:
-        json.dump(ckpt, f, indent=2)
+def _atomic_write_json(path: Path, data: dict):
+    # open(path, "w") truncates in place: a kill mid-dump leaves an unparseable
+    # stub and loses every prior record (deepseek incident 2026-07-23).
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w") as f:
+        json.dump(data, f, indent=2)
         f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
+
+
+def _save_checkpoint(model_key: str, ckpt: dict):
+    _atomic_write_json(_checkpoint_path(model_key), ckpt)
 
 
 def _hidden_states_dir(model_key: str) -> Path:
@@ -132,11 +164,52 @@ def _hidden_states_dir(model_key: str) -> Path:
 
 
 def _save_hidden_states(model_key: str, scenario_id: str, hidden_states: list):
-    """Save per-turn hidden states for a scenario (for later reprojection)."""
+    """Save per-turn hidden states for a FINISHED scenario (for later
+    reprojection)."""
     hs_dir = _hidden_states_dir(model_key)
     hs_dir.mkdir(parents=True, exist_ok=True)
     arrays = {f"turn_{i}": hs for i, hs in enumerate(hidden_states)}
-    np.savez(hs_dir / f"{scenario_id}.npz", **arrays)
+    final = hs_dir / f"{scenario_id}.npz"
+    # tmp name MUST end in .npz — np.savez appends it otherwise and os.replace
+    # then misses the file.
+    tmp = hs_dir / f"{scenario_id}.tmp.npz"
+    np.savez(tmp, **arrays)
+    os.replace(tmp, final)
+
+
+def _partial_hidden_states_path(model_key: str, scenario_id: str) -> Path:
+    return _hidden_states_dir(model_key) / f"{scenario_id}.partial.npz"
+
+
+def _save_partial_hidden_states(model_key: str, scenario_id: str, hidden_states: list):
+    """Atomically save in-progress (not-yet-finished) per-turn hidden states
+    for a scenario. Overwritten after every turn; once the scenario finishes,
+    the final <scenario_id>.npz is written via _save_hidden_states and this
+    partial file is deleted (see _clear_partial_hidden_states)."""
+    hs_dir = _hidden_states_dir(model_key)
+    hs_dir.mkdir(parents=True, exist_ok=True)
+    arrays = {f"turn_{i}": hs for i, hs in enumerate(hidden_states)}
+    final = _partial_hidden_states_path(model_key, scenario_id)
+    # tmp name MUST end in .npz — np.savez appends it otherwise and os.replace
+    # then misses the file.
+    tmp = hs_dir / f"{scenario_id}.partial.tmp.npz"
+    np.savez(tmp, **arrays)
+    os.replace(tmp, final)
+
+
+def _load_partial_hidden_states(model_key: str, scenario_id: str) -> list:
+    """Load in-progress per-turn hidden states saved by
+    _save_partial_hidden_states, in turn order. Empty list if none saved."""
+    path = _partial_hidden_states_path(model_key, scenario_id)
+    if not path.exists():
+        return []
+    data = np.load(path, allow_pickle=True)
+    n = len(data.files)
+    return [data[f"turn_{i}"] for i in range(n)]
+
+
+def _clear_partial_hidden_states(model_key: str, scenario_id: str):
+    _partial_hidden_states_path(model_key, scenario_id).unlink(missing_ok=True)
 
 
 def _partial_results_path(model_key: str) -> Path:
@@ -144,44 +217,165 @@ def _partial_results_path(model_key: str) -> Path:
 
 
 def _save_partial_results(model_key: str, data: dict):
-    path = _partial_results_path(model_key)
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-        f.flush()
+    _atomic_write_json(_partial_results_path(model_key), data)
 
 
 def _load_partial_results(model_key: str) -> dict:
     path = _partial_results_path(model_key)
     if path.exists():
         with open(path) as f:
-            return json.load(f)
+            partial = json.load(f)
+        # Fail loud on checkpoint/partial divergence: silently proceeding would
+        # skip "completed" scenarios whose results are gone from the partial.
+        ckpt = _load_checkpoint(model_key)
+        n_scen = len(partial.get("conflict_scenarios", []))
+        n_done = len(ckpt.get("completed_scenarios", []))
+        if n_scen < n_done:
+            raise RuntimeError(
+                f"partial/checkpoint mismatch for {model_key}: partial has "
+                f"{n_scen} scenarios but checkpoint marks {n_done} complete. "
+                f"Restore {path} from a backup or delete the checkpoint to recompute."
+            )
+        return partial
     return {"conflict_scenarios": [], "neutral_controls": []}
+
+
+# ---------------------------------------------------------------------------
+#  Inflight (in-progress scenario) checkpointing — enables mid-scenario resume
+# ---------------------------------------------------------------------------
+#
+# A scenario/control conversation is 12-16 turns and a single turn can take
+# 1-2 min on 27B+ models, so waiting for the WHOLE conversation to finish
+# before checkpointing (the old behavior) risks losing up to ~30-80 min of
+# work on a kill. Instead, after every turn we durably save:
+#   1. partial hidden states (_save_partial_hidden_states, atomic NPZ)
+#   2. the "inflight" file: turn texts + full message history (atomic JSON) —
+#      the message history is what lets resume continue the SAME dialogue
+#      (the model needs the prior turns as context to keep generating).
+#   3. checkpoint["inflight"] = {"scenario": name, "type": ..., "turns_done": N}
+#
+# On startup, _validate_inflight cross-checks all three sources agree before
+# trusting them; any mismatch discards the inflight state (with a log) and
+# the scenario restarts from turn 0 — completed scenarios are never affected.
+
+
+def _inflight_path(model_key: str) -> Path:
+    return OUTPUT_DIR / f"{model_key}_inflight.json"
+
+
+def _save_inflight(model_key: str, name: str, conv_type: str,
+                   turn_data: list, messages: list):
+    _atomic_write_json(_inflight_path(model_key), {
+        "name": name, "type": conv_type,
+        "turn_data": turn_data, "messages": messages,
+    })
+
+
+def _load_inflight(model_key: str) -> dict:
+    path = _inflight_path(model_key)
+    if path.exists():
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+
+def _clear_inflight(model_key: str):
+    _inflight_path(model_key).unlink(missing_ok=True)
+
+
+def _validate_inflight(ckpt: dict, model_key: str) -> Optional[dict]:
+    """Cross-check checkpoint["inflight"] against the inflight JSON file and
+    the saved partial hidden states. Returns a dict ready to resume from, or
+    None (after logging why) if anything is inconsistent — the caller then
+    discards the inflight marker and the scenario restarts from turn 0.
+    Never raises. Completed scenarios/controls are untouched either way —
+    only the single in-progress conversation is ever at risk.
+    """
+    ck_inflight = ckpt.get("inflight")
+    if not ck_inflight:
+        return None
+    name = ck_inflight.get("scenario")
+    conv_type = ck_inflight.get("type")
+    turns_done = ck_inflight.get("turns_done", 0)
+    if not name or turns_done <= 0:
+        return None
+
+    inflight = _load_inflight(model_key)
+    if not inflight or inflight.get("name") != name or inflight.get("type") != conv_type:
+        _log(f"inflight mismatch: checkpoint marks '{name}' ({conv_type}) but "
+             f"inflight file has {inflight.get('name')!r} ({inflight.get('type')!r}) "
+             f"— discarding, scenario will restart from turn 0")
+        return None
+
+    turn_data = inflight.get("turn_data", [])
+    messages = inflight.get("messages", [])
+    if len(turn_data) != turns_done or len(messages) != 2 * turns_done:
+        _log(f"inflight mismatch for '{name}': checkpoint turns_done={turns_done} "
+             f"but {len(turn_data)} turn_data / {len(messages)} messages saved "
+             f"— discarding, scenario will restart from turn 0")
+        return None
+
+    hidden_states = _load_partial_hidden_states(model_key, name)
+    if len(hidden_states) != turns_done:
+        _log(f"inflight mismatch for '{name}': turns_done={turns_done} but "
+             f"{len(hidden_states)} partial hidden states saved — discarding, "
+             f"scenario will restart from turn 0")
+        return None
+
+    _log(f"Resuming '{name}' ({conv_type}) from turn {turns_done + 1}")
+    return {
+        "name": name, "type": conv_type, "turns_done": turns_done,
+        "turn_data": turn_data, "messages": messages,
+        "hidden_states": hidden_states,
+    }
 
 
 # ---------------------------------------------------------------------------
 #  Single conversation runner
 # ---------------------------------------------------------------------------
 
-def run_conversation(generate_fn, projector, turns, label=""):
-    """Run a multi-turn conversation, measure mood per turn.
+def run_conversation(generate_fn, projector, turns, label="", model_key=None,
+                     ckpt=None, conv_type=None, start_turn=0,
+                     resume_messages=None, resume_turn_data=None,
+                     resume_hidden_states=None):
+    """Run a multi-turn conversation, measuring mood per turn.
+
+    Durably checkpoints after EVERY turn (not just at conversation end): the
+    per-turn hidden states so far (atomic NPZ), the per-turn texts + full
+    message history (atomic "inflight" JSON — the history is required to
+    keep generating the SAME dialogue on resume), and a checkpoint marker
+    {"inflight": {"scenario", "type", "turns_done"}}. A mid-conversation kill
+    therefore loses at most the turn that was in flight, and resume can
+    continue from start_turn using resume_messages/resume_turn_data/
+    resume_hidden_states (see _validate_inflight for how these are restored).
 
     Args:
         generate_fn: callable(messages) -> GenerationResult
         projector: MoodProjector
-        turns: list of user messages
-        label: for logging
+        turns: list of user messages for the FULL conversation (0-indexed;
+            when resuming, this is the same full list — only start_turn moves)
+        label: scenario/control name — used for logging, as the inflight
+            identity, and as the (partial/final) hidden-states filename
+        model_key, ckpt, conv_type: identify the job for incremental
+            checkpointing. If model_key is None, per-turn durable saves and
+            progress emission are skipped (kept optional for tests/other
+            callers that don't want on-disk side effects).
+        start_turn: 0-indexed turn to resume from (0 = fresh start)
+        resume_messages/resume_turn_data/resume_hidden_states: state restored
+            from a previous crashed run (see _validate_inflight); ignored
+            when start_turn == 0
 
     Returns:
-        (turn_data, hidden_states) where:
-        - turn_data: list of per-turn dicts with values, text, timing
-        - hidden_states: list of np.ndarray (raw hidden states for reprojection)
+        (turn_data, hidden_states) for ALL turns 0..len(turns)-1 (restored
+        prefix + newly generated suffix).
     """
-    messages = []
-    turn_data = []
-    hidden_states = []
+    messages = list(resume_messages) if resume_messages else []
+    turn_data = list(resume_turn_data) if resume_turn_data else []
+    hidden_states = list(resume_hidden_states) if resume_hidden_states else []
 
     t_conv_start = time.time()
-    for i, user_message in enumerate(turns):
+    for i in range(start_turn, len(turns)):
+        user_message = turns[i]
         messages.append({"role": "user", "content": user_message})
 
         t0 = time.time()
@@ -204,22 +398,46 @@ def run_conversation(generate_fn, projector, turns, label=""):
             "truncated": result.n_generated_tokens >= DRIFT_MAX_NEW_TOKENS - 1,
         })
 
+        # --- Durable per-turn checkpoint — MUST happen before progress emit ---
+        if model_key is not None:
+            _save_partial_hidden_states(model_key, label, hidden_states)
+            _save_inflight(model_key, label, conv_type, turn_data, messages)
+            if ckpt is not None:
+                ckpt["inflight"] = {"scenario": label, "type": conv_type,
+                                    "turns_done": i + 1}
+                _save_checkpoint(model_key, ckpt)
+
         # Per-turn progress (every turn for drift since turns are expensive)
         elapsed = time.time() - t_conv_start
-        remaining = (len(turns) - i - 1) * (elapsed / (i + 1))
+        remaining = (len(turns) - i - 1) * (elapsed / (i + 1 - start_turn))
         _log(f"  {label} turn {i+1}/{len(turns)} "
              f"({gen_time:.1f}s, {result.n_generated_tokens} tok, "
              f"ETA {remaining:.0f}s)")
 
-        # Emit fractional #PROGRESS so `fw status` has live ETA within scenarios.
-        # _drift_done/_drift_total/_drift_t_start are set in analyze_drift.
+        # #PROGRESS in TURN units: integer, global, monotonic — derived from
+        # the checkpoint (which by now includes this turn) each time, never
+        # an accumulator. Emitted AFTER the durable writes above so a crash
+        # right after emit never overstates what's actually on disk.
         try:
-            if _drift_total > 0 and _drift_t_start > 0:
-                frac = (i + 1) / max(len(turns), 1)
-                log_progress(_drift_done + frac, _drift_total,
-                             time.monotonic() - _drift_t_start)
+            if _drift_total > 0 and _drift_t_start > 0 and ckpt is not None:
+                done_units = min(_units_done(ckpt), _drift_total)
+                log_progress(done_units, _drift_total,
+                             time.monotonic() - _drift_t_start,
+                             n_elapsed=max(done_units - _drift_units_start, 0),
+                             extra={"item": label, "phase_done": i + 1,
+                                    "phase_total": len(turns)})
         except Exception:
             pass
+
+        # Per-turn budget check: a 16-turn scenario at ~100s/turn (~27 min)
+        # can overshoot a scenario-boundary-only check past the hard
+        # --timeout-seconds (observed: exit 124 instead of 75 on mistral
+        # drift). The turn is already durable (inflight + partial HS +
+        # checkpoint saved above), so exiting mid-scenario loses nothing.
+        if (_drift_budget is not None and ckpt is not None
+                and i + 1 < len(turns)):
+            _drift_budget.check_and_exit(
+                min(_units_done(ckpt), _drift_total), _drift_total, log=_log)
 
     return turn_data, hidden_states
 
@@ -421,8 +639,49 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
                   backend: str = "pytorch", run_control: bool = True) -> dict:
     output_file = OUTPUT_DIR / f"{model_key}.json"
     if output_file.exists() and not force:
-        print(f"Output exists: {output_file}. Use --force to recompute.", flush=True)
-        return json.load(open(output_file))
+        # An existing final output only means THIS config's units are done if
+        # it covers them all. When the scenario/control roster grows (e.g.
+        # ctrl30 expansion) or a stale final sits in a reused chain workspace,
+        # fall through to the normal checkpoint/resume path instead.
+        ckpt = _load_checkpoint(model_key)
+        n_scen_target = len(CONFLICT_SCENARIOS[:max_scenarios] if max_scenarios
+                            else CONFLICT_SCENARIOS)
+        n_ctrl_target = len(NEUTRAL_CONVERSATIONS) if run_control else 0
+        # Count coverage as the union of checkpoint and the final output
+        # itself — a full output with a missing/stale checkpoint must NOT
+        # trigger a from-scratch rerun (resume follows the checkpoint).
+        try:
+            prev = json.load(open(output_file))
+        except Exception:
+            prev = {}
+        done_scen = len({s["scenario_id"] for s in prev.get("conflict_scenarios", [])}
+                        | set(ckpt.get("completed_scenarios", [])))
+        done_ctrl = len({c["name"] for c in prev.get("neutral_controls", [])}
+                        | set(ckpt.get("completed_controls", [])))
+        if done_scen >= n_scen_target and done_ctrl >= n_ctrl_target:
+            print(f"Output exists: {output_file}. Use --force to recompute.",
+                  flush=True)
+            return json.load(open(output_file))
+        # Resume follows checkpoint+partial; if they lag behind the final
+        # output (e.g. wiped workspace), rebuild both from it so completed
+        # units are never re-generated.
+        if prev and (len(ckpt.get("completed_scenarios", []))
+                     < len(prev.get("conflict_scenarios", []))
+                     or len(ckpt.get("completed_controls", []))
+                     < len(prev.get("neutral_controls", []))):
+            _atomic_write_json(_partial_results_path(model_key), {
+                "conflict_scenarios": prev.get("conflict_scenarios", []),
+                "neutral_controls": prev.get("neutral_controls", [])})
+            ckpt = {"completed_scenarios":
+                    [s["scenario_id"] for s in prev.get("conflict_scenarios", [])],
+                    "completed_controls":
+                    [c["name"] for c in prev.get("neutral_controls", [])]}
+            _save_checkpoint(model_key, ckpt)
+            print("Rebuilt checkpoint+partial from existing output.", flush=True)
+        print(f"Output exists but roster incomplete "
+              f"(scenarios {done_scen}/{n_scen_target}, controls "
+              f"{done_ctrl}/{n_ctrl_target}) — resuming remaining units.",
+              flush=True)
 
     model_config = MODELS[model_key]
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -435,9 +694,17 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
 
     # Total units of work for progress tracking (module-level so run_conversation
     # can emit fractional per-turn progress without parameter plumbing).
-    global _drift_total, _drift_t_start, _drift_done
+    global _drift_total, _drift_t_start, _drift_done, _drift_units_start
     scenarios_list = CONFLICT_SCENARIOS[:max_scenarios] if max_scenarios else CONFLICT_SCENARIOS
-    _drift_total = len(scenarios_list) + (len(NEUTRAL_CONVERSATIONS) if run_control else 0)
+    # Turn-granular totals (see _units_done): unit = one dialogue turn.
+    _scen_units.clear()
+    _scen_units.update({s.name: len(list(s.turns)) + len(RECOVERY_QUESTIONS)
+                        for s in scenarios_list})
+    _ctrl_units.clear()
+    if run_control:
+        _ctrl_units.update({c["name"]: len(c["turns"])
+                            for c in NEUTRAL_CONVERSATIONS})
+    _drift_total = sum(_scen_units.values()) + sum(_ctrl_units.values())
     _drift_t_start = time.monotonic()
     _drift_done = 0
 
@@ -448,30 +715,65 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
     if force:
         ckpt = {"completed_scenarios": [], "completed_controls": []}
         partial = {"conflict_scenarios": [], "neutral_controls": []}
+        _clear_inflight(model_key)
+        _save_checkpoint(model_key, ckpt)
+
+    # Reconcile any in-progress scenario/control left over from a
+    # mid-conversation kill. resume_state is consumed (set back to None) the
+    # moment the matching scenario/control is reached below; if it's never
+    # matched (e.g. --scenarios truncated the run), it's discarded after both
+    # loops with a warning. Invalid/inconsistent inflight state is discarded
+    # here — never blocks progress, never loses a completed scenario.
+    resume_state = _validate_inflight(ckpt, model_key) if not force else None
+    if ckpt.get("inflight") and resume_state is None:
+        ckpt.pop("inflight", None)
+        _clear_inflight(model_key)
         _save_checkpoint(model_key, ckpt)
 
     # --- Conflict scenarios with recovery ---
     scenarios = CONFLICT_SCENARIOS[:max_scenarios] if max_scenarios else CONFLICT_SCENARIOS
     completed_ids = set(ckpt.get("completed_scenarios", []))
     completed_controls = set(ckpt.get("completed_controls", []))
-    log_progress(len(completed_ids) + len(completed_controls), _drift_total, 0)
+    _drift_done = _units_done(ckpt)
+    _drift_units_start = _drift_done
+    log_progress(_drift_done, _drift_total, 0)
     t_start = time.monotonic()
 
     for idx, scenario in enumerate(scenarios):
         if scenario.name in completed_ids:
             continue
 
-        _log(f"Scenario {idx+1}/{len(scenarios)}: {scenario.name} ({scenario.category})")
-
         # 12 conflict turns + 4 recovery turns
         all_turns = list(scenario.turns) + RECOVERY_QUESTIONS
 
+        if (resume_state is not None and resume_state["type"] == "conflict"
+                and resume_state["name"] == scenario.name):
+            start_turn = resume_state["turns_done"]
+            r_messages = resume_state["messages"]
+            r_turn_data = resume_state["turn_data"]
+            r_hidden_states = resume_state["hidden_states"]
+            resume_state = None  # only one conversation can be inflight at a time
+            _log(f"Scenario {idx+1}/{len(scenarios)}: {scenario.name} "
+                 f"({scenario.category}) — RESUMING from turn {start_turn + 1}/{len(all_turns)}")
+        else:
+            start_turn = 0
+            r_messages = r_turn_data = r_hidden_states = None
+            _log(f"Scenario {idx+1}/{len(scenarios)}: {scenario.name} ({scenario.category})")
+
         try:
             turn_data, hidden_states = run_conversation(
-                generate_fn, projector, all_turns, label=scenario.name)
+                generate_fn, projector, all_turns, label=scenario.name,
+                model_key=model_key, ckpt=ckpt, conv_type="conflict",
+                start_turn=start_turn, resume_messages=r_messages,
+                resume_turn_data=r_turn_data, resume_hidden_states=r_hidden_states)
 
-            # Save hidden states for later reprojection
+            # Scenario fully done: promote hidden states from partial to
+            # final and drop the inflight marker — completed_scenarios
+            # (below) is the durable "done" record from here on.
             _save_hidden_states(model_key, scenario.name, hidden_states)
+            _clear_partial_hidden_states(model_key, scenario.name)
+            _clear_inflight(model_key)
+            ckpt.pop("inflight", None)
 
             result_entry = {
                 "category": scenario.category,
@@ -492,9 +794,13 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
         ckpt.setdefault("completed_scenarios", []).append(scenario.name)
         _save_checkpoint(model_key, ckpt)
 
-        _drift_done = len(ckpt["completed_scenarios"]) + len(ckpt.get("completed_controls", []))
+        _drift_done = _units_done(ckpt)
         log_progress(_drift_done, _drift_total, time.monotonic() - _drift_t_start,
-                     n_elapsed=_drift_done - len(completed_ids) - len(completed_controls))
+                     n_elapsed=max(_drift_done - _drift_units_start, 0),
+                     extra={"item": scenario.name, "phase_done": len(all_turns),
+                            "phase_total": len(all_turns)})
+        if _drift_budget is not None:
+            _drift_budget.check_and_exit(_drift_done, _drift_total, log=_log)
 
         elapsed = time.monotonic() - t_start
         n_done = len(ckpt["completed_scenarios"]) - len(completed_ids)
@@ -513,14 +819,32 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
             if conv["name"] in completed_controls:
                 continue
 
-            _log(f"Control {idx+1}/{len(NEUTRAL_CONVERSATIONS)}: {conv['name']}")
+            if (resume_state is not None and resume_state["type"] == "control"
+                    and resume_state["name"] == conv["name"]):
+                start_turn = resume_state["turns_done"]
+                r_messages = resume_state["messages"]
+                r_turn_data = resume_state["turn_data"]
+                r_hidden_states = resume_state["hidden_states"]
+                resume_state = None
+                _log(f"Control {idx+1}/{len(NEUTRAL_CONVERSATIONS)}: {conv['name']} "
+                     f"— RESUMING from turn {start_turn + 1}/{len(conv['turns'])}")
+            else:
+                start_turn = 0
+                r_messages = r_turn_data = r_hidden_states = None
+                _log(f"Control {idx+1}/{len(NEUTRAL_CONVERSATIONS)}: {conv['name']}")
 
             try:
                 turn_data, hidden_states = run_conversation(
-                    generate_fn, projector, conv["turns"], label=conv["name"])
+                    generate_fn, projector, conv["turns"], label=conv["name"],
+                    model_key=model_key, ckpt=ckpt, conv_type="control",
+                    start_turn=start_turn, resume_messages=r_messages,
+                    resume_turn_data=r_turn_data, resume_hidden_states=r_hidden_states)
 
                 # Save hidden states for later reprojection
                 _save_hidden_states(model_key, conv["name"], hidden_states)
+                _clear_partial_hidden_states(model_key, conv["name"])
+                _clear_inflight(model_key)
+                ckpt.pop("inflight", None)
 
                 partial["neutral_controls"].append({
                     "name": conv["name"],
@@ -535,10 +859,25 @@ def analyze_drift(model_key: str, max_scenarios: int = None, force: bool = False
             ckpt.setdefault("completed_controls", []).append(conv["name"])
             _save_checkpoint(model_key, ckpt)
 
-            _drift_done = len(ckpt["completed_scenarios"]) + len(ckpt["completed_controls"])
+            _drift_done = _units_done(ckpt)
             log_progress(_drift_done, _drift_total, time.monotonic() - _drift_t_start,
-                         n_elapsed=_drift_done - len(completed_ids) - len(completed_controls))
+                         n_elapsed=max(_drift_done - _drift_units_start, 0),
+                         extra={"item": conv["name"], "phase_done": len(conv["turns"]),
+                                "phase_total": len(conv["turns"])})
             _log(f"  Control {conv['name']} done")
+            if _drift_budget is not None:
+                _drift_budget.check_and_exit(_drift_done, _drift_total, log=_log)
+
+    # Inflight scenario/control was never matched (e.g. a truncated
+    # --scenarios run, or config changed between crash and resume) — never
+    # silently keep stale state around; drop it with a clear log line.
+    if resume_state is not None:
+        _log(f"WARNING: inflight '{resume_state['name']}' ({resume_state['type']}) "
+             f"not found in this run's scenario/control lists — discarding "
+             f"inflight state (it will restart from turn 0 if it reappears)")
+        ckpt.pop("inflight", None)
+        _clear_inflight(model_key)
+        _save_checkpoint(model_key, ckpt)
 
     # --- Compute statistics ---
     _log("Computing drift statistics...")
@@ -882,8 +1221,13 @@ def main():
     parser.add_argument("--reproject", action="store_true",
                         help="Reproject saved hidden states with current axes (CPU-only)")
     parser.add_argument("--no-control", action="store_true", help="Skip neutral control conversations")
+    from src.time_budget import add_time_budget_args
+    add_time_budget_args(parser)
     add_backend_args(parser)
     args = parser.parse_args()
+    global _drift_budget
+    from src.time_budget import TimeBudget
+    _drift_budget = TimeBudget(args.time_budget_min, args.time_budget_exit_code)
 
     if args.check:
         preflight_check(args.model)

@@ -1,12 +1,11 @@
 {
   "_meta": {
     "script": "scripts/06h_consistency_null.py",
-    "timestamp": "2026-07-23T21:51:45.588858",
+    "timestamp": "2026-07-28T13:02:16.659002",
     "n_permutations": 1000,
     "rng_seed": 42,
     "models_analyzed": [
       "qwen3.5_9b",
-      "gemma3_12b",
       "phi4",
       "deepseek_r1_14b",
       "ministral3_8b",
@@ -100,83 +99,6 @@
         "n_pairs_null_pool": 65
       }
     },
-    "gemma3_12b": {
-      "warm_cold": {
-        "real_pairwise": {
-          "A_vs_B": 0.9209,
-          "A_vs_C": 0.9086,
-          "B_vs_C": 0.9238
-        },
-        "real_mean_cosine": 0.9178,
-        "null_mean": -0.0313,
-        "null_std": 0.3338,
-        "null_p2_5": -0.6626,
-        "null_p95": 0.5402,
-        "z_score": 2.84,
-        "n_permutations": 1000,
-        "n_pairs_null_pool": 65
-      },
-      "confident_cautious": {
-        "real_pairwise": {
-          "A_vs_B": 0.8863,
-          "A_vs_C": 0.6786,
-          "B_vs_C": 0.6609
-        },
-        "real_mean_cosine": 0.7419,
-        "null_mean": 0.0089,
-        "null_std": 0.312,
-        "null_p2_5": -0.5913,
-        "null_p95": 0.5186,
-        "z_score": 2.35,
-        "n_permutations": 1000,
-        "n_pairs_null_pool": 65
-      },
-      "empathetic_analytical": {
-        "real_pairwise": {
-          "A_vs_B": 0.8956,
-          "A_vs_C": 0.914,
-          "B_vs_C": 0.889
-        },
-        "real_mean_cosine": 0.8996,
-        "null_mean": 0.0055,
-        "null_std": 0.4215,
-        "null_p2_5": -0.779,
-        "null_p95": 0.6987,
-        "z_score": 2.12,
-        "n_permutations": 1000,
-        "n_pairs_null_pool": 65
-      },
-      "formal_casual": {
-        "real_pairwise": {
-          "A_vs_B": 0.8363,
-          "A_vs_C": 0.7654,
-          "B_vs_C": 0.9042
-        },
-        "real_mean_cosine": 0.8353,
-        "null_mean": -0.0044,
-        "null_std": 0.4288,
-        "null_p2_5": -0.7712,
-        "null_p95": 0.6996,
-        "z_score": 1.96,
-        "n_permutations": 1000,
-        "n_pairs_null_pool": 65
-      },
-      "verbose_concise": {
-        "real_pairwise": {
-          "A_vs_B": 0.9361,
-          "A_vs_C": 0.9332,
-          "B_vs_C": 0.9272
-        },
-        "real_mean_cosine": 0.9322,
-        "null_mean": -0.0027,
-        "null_std": 0.4336,
-        "null_p2_5": -0.7746,
-        "null_p95": 0.6722,
-        "z_score": 2.16,
-        "n_permutations": 1000,
-        "n_pairs_null_pool": 65
-      }
-    },
     "phi4": {
       "warm_cold": {
         "real_pairwise": {
@@ -185,11 +107,11 @@
           "B_vs_C": 0.9431
         },
         "real_mean_cosine": 0.9156,
-        "null_mean": -0.0243,
-        "null_std": 0.319,
-        "null_p2_5": -0.6468,
-        "null_p95": 0.5196,
-        "z_score": 2.95,
+        "null_mean": -0.0232,
+        "null_std": 0.3077,
+        "null_p2_5": -0.6092,
+        "null_p95": 0.496,
+        "z_score": 3.05,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -200,11 +122,11 @@
           "B_vs_C": 0.7338
         },
         "real_mean_cosine": 0.6948,
-        "null_mean": 0.0071,
-        "null_std": 0.2128,
-        "null_p2_5": -0.3985,
-        "null_p95": 0.3617,
-        "z_score": 3.23,
+        "null_mean": 0.0124,
+        "null_std": 0.1981,
+        "null_p2_5": -0.3924,
+        "null_p95": 0.3498,
+        "z_score": 3.45,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -215,11 +137,11 @@
           "B_vs_C": 0.8649
         },
         "real_mean_cosine": 0.8475,
-        "null_mean": 0.0022,
-        "null_std": 0.323,
-        "null_p2_5": -0.6174,
-        "null_p95": 0.5256,
-        "z_score": 2.62,
+        "null_mean": -0.0032,
+        "null_std": 0.3294,
+        "null_p2_5": -0.6466,
+        "null_p95": 0.5655,
+        "z_score": 2.58,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -230,11 +152,11 @@
           "B_vs_C": 0.6003
         },
         "real_mean_cosine": 0.6826,
-        "null_mean": -0.0049,
-        "null_std": 0.3825,
-        "null_p2_5": -0.6867,
-        "null_p95": 0.6257,
-        "z_score": 1.8,
+        "null_mean": -0.0116,
+        "null_std": 0.372,
+        "null_p2_5": -0.7,
+        "null_p95": 0.6034,
+        "z_score": 1.87,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -245,11 +167,11 @@
           "B_vs_C": 0.9109
         },
         "real_mean_cosine": 0.8842,
-        "null_mean": -0.0156,
-        "null_std": 0.2117,
-        "null_p2_5": -0.426,
-        "null_p95": 0.3233,
-        "z_score": 4.25,
+        "null_mean": -0.0083,
+        "null_std": 0.2122,
+        "null_p2_5": -0.4437,
+        "null_p95": 0.338,
+        "z_score": 4.21,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       }
@@ -262,11 +184,11 @@
           "B_vs_C": 0.9108
         },
         "real_mean_cosine": 0.8702,
-        "null_mean": -0.0028,
-        "null_std": 0.214,
-        "null_p2_5": -0.4166,
-        "null_p95": 0.3536,
-        "z_score": 4.08,
+        "null_mean": -0.017,
+        "null_std": 0.2082,
+        "null_p2_5": -0.4219,
+        "null_p95": 0.3335,
+        "z_score": 4.26,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -277,11 +199,11 @@
           "B_vs_C": 0.5758
         },
         "real_mean_cosine": 0.4924,
-        "null_mean": -0.0043,
-        "null_std": 0.1836,
-        "null_p2_5": -0.3689,
-        "null_p95": 0.2855,
-        "z_score": 2.71,
+        "null_mean": 0.0027,
+        "null_std": 0.1734,
+        "null_p2_5": -0.3344,
+        "null_p95": 0.2889,
+        "z_score": 2.82,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -292,11 +214,11 @@
           "B_vs_C": 0.8873
         },
         "real_mean_cosine": 0.8599,
-        "null_mean": -0.0142,
-        "null_std": 0.3248,
-        "null_p2_5": -0.6431,
-        "null_p95": 0.5241,
-        "z_score": 2.69,
+        "null_mean": 0.0024,
+        "null_std": 0.3211,
+        "null_p2_5": -0.6116,
+        "null_p95": 0.5475,
+        "z_score": 2.67,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -307,11 +229,11 @@
           "B_vs_C": 0.9021
         },
         "real_mean_cosine": 0.9096,
-        "null_mean": -0.0067,
-        "null_std": 0.3157,
-        "null_p2_5": -0.6283,
-        "null_p95": 0.5366,
-        "z_score": 2.9,
+        "null_mean": 0.001,
+        "null_std": 0.32,
+        "null_p2_5": -0.6276,
+        "null_p95": 0.527,
+        "z_score": 2.84,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -322,11 +244,11 @@
           "B_vs_C": 0.8407
         },
         "real_mean_cosine": 0.7858,
-        "null_mean": -0.0017,
-        "null_std": 0.1884,
-        "null_p2_5": -0.378,
-        "null_p95": 0.2863,
-        "z_score": 4.18,
+        "null_mean": -0.0165,
+        "null_std": 0.1866,
+        "null_p2_5": -0.3813,
+        "null_p95": 0.2924,
+        "z_score": 4.3,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       }
@@ -339,11 +261,11 @@
           "B_vs_C": 0.9138
         },
         "real_mean_cosine": 0.9223,
-        "null_mean": 0.0233,
-        "null_std": 0.3323,
-        "null_p2_5": -0.6223,
-        "null_p95": 0.6048,
-        "z_score": 2.71,
+        "null_mean": -0.0026,
+        "null_std": 0.3421,
+        "null_p2_5": -0.6624,
+        "null_p95": 0.5748,
+        "z_score": 2.7,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -354,11 +276,11 @@
           "B_vs_C": 0.6776
         },
         "real_mean_cosine": 0.7569,
-        "null_mean": 0.0144,
-        "null_std": 0.2912,
-        "null_p2_5": -0.5323,
-        "null_p95": 0.4968,
-        "z_score": 2.55,
+        "null_mean": -0.0146,
+        "null_std": 0.3091,
+        "null_p2_5": -0.6055,
+        "null_p95": 0.4937,
+        "z_score": 2.5,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -369,11 +291,11 @@
           "B_vs_C": 0.9123
         },
         "real_mean_cosine": 0.9074,
-        "null_mean": -0.0002,
-        "null_std": 0.378,
-        "null_p2_5": -0.7437,
-        "null_p95": 0.6364,
-        "z_score": 2.4,
+        "null_mean": -0.0211,
+        "null_std": 0.3787,
+        "null_p2_5": -0.7108,
+        "null_p95": 0.626,
+        "z_score": 2.45,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -384,11 +306,11 @@
           "B_vs_C": 0.8934
         },
         "real_mean_cosine": 0.8753,
-        "null_mean": -0.0023,
-        "null_std": 0.4184,
-        "null_p2_5": -0.7511,
-        "null_p95": 0.6797,
-        "z_score": 2.1,
+        "null_mean": 0.0008,
+        "null_std": 0.4252,
+        "null_p2_5": -0.7731,
+        "null_p95": 0.6887,
+        "z_score": 2.06,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -399,11 +321,11 @@
           "B_vs_C": 0.8122
         },
         "real_mean_cosine": 0.7668,
-        "null_mean": 0.005,
-        "null_std": 0.2052,
-        "null_p2_5": -0.402,
-        "null_p95": 0.3528,
-        "z_score": 3.71,
+        "null_mean": 0.0047,
+        "null_std": 0.1939,
+        "null_p2_5": -0.3695,
+        "null_p95": 0.3275,
+        "z_score": 3.93,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       }
@@ -416,11 +338,11 @@
           "B_vs_C": 0.716
         },
         "real_mean_cosine": 0.7002,
-        "null_mean": 0.0074,
-        "null_std": 0.2951,
-        "null_p2_5": -0.5541,
-        "null_p95": 0.4941,
-        "z_score": 2.35,
+        "null_mean": -0.0002,
+        "null_std": 0.2837,
+        "null_p2_5": -0.5546,
+        "null_p95": 0.4486,
+        "z_score": 2.47,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -431,11 +353,11 @@
           "B_vs_C": 0.3081
         },
         "real_mean_cosine": 0.3665,
-        "null_mean": -0.0013,
-        "null_std": 0.3119,
-        "null_p2_5": -0.5849,
-        "null_p95": 0.5086,
-        "z_score": 1.18,
+        "null_mean": 0.0121,
+        "null_std": 0.3091,
+        "null_p2_5": -0.5588,
+        "null_p95": 0.5323,
+        "z_score": 1.15,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -446,11 +368,11 @@
           "B_vs_C": 0.6845
         },
         "real_mean_cosine": 0.6171,
-        "null_mean": 0.0064,
-        "null_std": 0.4087,
-        "null_p2_5": -0.7308,
-        "null_p95": 0.6579,
-        "z_score": 1.49,
+        "null_mean": -0.0095,
+        "null_std": 0.4067,
+        "null_p2_5": -0.741,
+        "null_p95": 0.6828,
+        "z_score": 1.54,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -461,11 +383,11 @@
           "B_vs_C": 0.7535
         },
         "real_mean_cosine": 0.6619,
-        "null_mean": -0.0046,
-        "null_std": 0.2389,
-        "null_p2_5": -0.4632,
-        "null_p95": 0.3999,
-        "z_score": 2.79,
+        "null_mean": 0.0005,
+        "null_std": 0.2221,
+        "null_p2_5": -0.4399,
+        "null_p95": 0.3458,
+        "z_score": 2.98,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       },
@@ -476,11 +398,11 @@
           "B_vs_C": 0.9513
         },
         "real_mean_cosine": 0.9361,
-        "null_mean": -0.0194,
-        "null_std": 0.4347,
-        "null_p2_5": -0.7857,
-        "null_p95": 0.6931,
-        "z_score": 2.2,
+        "null_mean": 0.016,
+        "null_std": 0.4234,
+        "null_p2_5": -0.7827,
+        "null_p95": 0.7013,
+        "z_score": 2.17,
         "n_permutations": 1000,
         "n_pairs_null_pool": 65
       }

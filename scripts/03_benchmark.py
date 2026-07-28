@@ -32,7 +32,7 @@ sys.path.insert(0, str(PROJECT_ROOT.parent.parent))  # repo root for framework i
 # installed (public/standalone mode), fall back to a minimal emitter that
 # keeps the #PROGRESS stdout protocol working.
 try:
-    from framework.progress import log_progress
+    from fw.progress import log_progress
 except ImportError:
     import json as _progress_json
 

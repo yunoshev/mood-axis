@@ -1,0 +1,391 @@
+{
+ "_meta": {
+  "script": "scripts/06l_think_stats.py",
+  "timestamp": "2026-07-24T17:33:05.976571",
+  "n_bootstrap": 10000,
+  "protocol": "paired by question; no-think prefill per Section 3.9",
+  "hypothesis": "think segment colder/more analytical than answer (pre-registered 2026-07-14)"
+ },
+ "models": {
+  "deepseek_r1_14b": {
+   "axes": {
+    "warm_cold": {
+     "think_minus_answer": {
+      "mean": 0.28072280470430344,
+      "ci_lo": 0.2371174269728021,
+      "ci_hi": 0.32745739657388984,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.40675379380283055,
+      "ci_lo": 0.3901422149302939,
+      "ci_hi": 0.4246828327687932,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.19800866882034426,
+      "ci_lo": -0.29337479434230745,
+      "ci_hi": -0.12004744975380645,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "confident_cautious": {
+     "think_minus_answer": {
+      "mean": -0.24710786012903183,
+      "ci_lo": -0.3096979819164097,
+      "ci_hi": -0.1843000742771284,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.24719733424655263,
+      "ci_lo": -0.2618353262156841,
+      "ci_hi": -0.23281169161105203,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.09091286899953431,
+      "ci_lo": -0.1364817840156994,
+      "ci_hi": -0.045705658380512826,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "empathetic_analytical": {
+     "think_minus_answer": {
+      "mean": 0.23512115554735874,
+      "ci_lo": 0.21316439906967372,
+      "ci_hi": 0.2560601901981392,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.3019634388909744,
+      "ci_lo": 0.29087019607684633,
+      "ci_hi": 0.3131675298240516,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.18565447794200754,
+      "ci_lo": -0.22142014906412594,
+      "ci_hi": -0.15602549529925866,
+      "significant": true,
+      "n": 30
+     }
+    }
+   },
+   "n_questions": 30,
+   "n_with_think_segment": 30,
+   "n_truncated": 0
+  },
+  "gpt_oss_20b": {
+   "axes": {
+    "warm_cold": {
+     "think_minus_answer": {
+      "mean": -0.4119947888371749,
+      "ci_lo": -0.5399637293223917,
+      "ci_hi": -0.28751979338130573,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.5574020118508064,
+      "ci_lo": -0.6395155489161922,
+      "ci_hi": -0.4750460232100582,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": -0.4509459803817424,
+      "ci_lo": -0.5958942276412914,
+      "ci_hi": -0.29741561132987404,
+      "significant": true,
+      "n": 29
+     }
+    },
+    "confident_cautious": {
+     "think_minus_answer": {
+      "mean": 0.3891082917678891,
+      "ci_lo": 0.28753922312229013,
+      "ci_hi": 0.49389925098649573,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.40790472727413996,
+      "ci_lo": 0.31258442644074863,
+      "ci_hi": 0.5048591769500125,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": 0.47295485869309634,
+      "ci_lo": 0.2863636363636364,
+      "ci_hi": 0.6492328623572798,
+      "significant": true,
+      "n": 29
+     }
+    },
+    "empathetic_analytical": {
+     "think_minus_answer": {
+      "mean": 0.23857796136980583,
+      "ci_lo": 0.14049253816737456,
+      "ci_hi": 0.3319583657300123,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.3437104889454609,
+      "ci_lo": 0.25888988571596894,
+      "ci_hi": 0.4300017885330906,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": 0.47958302121480517,
+      "ci_lo": 0.3224709597484303,
+      "ci_hi": 0.6254433107021786,
+      "significant": true,
+      "n": 29
+     }
+    }
+   },
+   "n_questions": 30,
+   "n_with_think_segment": 30,
+   "n_truncated": 0
+  },
+  "glm_z1_9b": {
+   "axes": {
+    "warm_cold": {
+     "think_minus_answer": {
+      "mean": 0.07768394383269037,
+      "ci_lo": 0.05852940153146574,
+      "ci_hi": 0.09712538053584069,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.07485854951481197,
+      "ci_lo": 0.06572357745294358,
+      "ci_hi": 0.08384076623214208,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.08552961724938837,
+      "ci_lo": -0.11753128632444086,
+      "ci_hi": -0.05628105365014794,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "confident_cautious": {
+     "think_minus_answer": {
+      "mean": -0.14945783451164737,
+      "ci_lo": -0.18395797925171567,
+      "ci_hi": -0.1179770308175856,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.1434104426547373,
+      "ci_lo": -0.1534957367375936,
+      "ci_hi": -0.1338394698068859,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": 0.07510178052870083,
+      "ci_lo": 0.04599276001206008,
+      "ci_hi": 0.10501886636241312,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "empathetic_analytical": {
+     "think_minus_answer": {
+      "mean": 0.08387609272515066,
+      "ci_lo": 0.07201940769220666,
+      "ci_hi": 0.09579998838302782,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.13903564599288887,
+      "ci_lo": 0.13210203911735982,
+      "ci_hi": 0.1458289443366407,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.07722978706342927,
+      "ci_lo": -0.09434262313484944,
+      "ci_hi": -0.06157804239880182,
+      "significant": true,
+      "n": 30
+     }
+    }
+   },
+   "n_questions": 30,
+   "n_with_think_segment": 30,
+   "n_truncated": 0
+  },
+  "vibethinker_3b": {
+   "axes": {
+    "warm_cold": {
+     "think_minus_answer": {
+      "mean": -0.09724698314642337,
+      "ci_lo": -0.128460353084304,
+      "ci_hi": -0.06736719007560249,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.07876913934466859,
+      "ci_lo": -0.08953139567564503,
+      "ci_hi": -0.06815160221040183,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": 0.07826061344480441,
+      "ci_lo": 0.03321904854726887,
+      "ci_hi": 0.12225242274423191,
+      "significant": true,
+      "n": 29
+     }
+    },
+    "confident_cautious": {
+     "think_minus_answer": {
+      "mean": 0.6513603614098469,
+      "ci_lo": 0.6068592517748795,
+      "ci_hi": 0.6928759998422462,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.3110815178806467,
+      "ci_lo": 0.28368078778667205,
+      "ci_hi": 0.3395883577881566,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": -0.10460080905111782,
+      "ci_lo": -0.14715599448040398,
+      "ci_hi": -0.06136127074650798,
+      "significant": true,
+      "n": 29
+     }
+    },
+    "empathetic_analytical": {
+     "think_minus_answer": {
+      "mean": -0.2457067300457836,
+      "ci_lo": -0.2660878033301531,
+      "ci_hi": -0.22495103535620548,
+      "significant": true,
+      "n": 29
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.13529343361870394,
+      "ci_lo": -0.14661904831292524,
+      "ci_hi": -0.12534400138718527,
+      "significant": true,
+      "n": 29
+     },
+     "answer_minus_off": {
+      "mean": 0.11116321963949302,
+      "ci_lo": 0.08267237691329223,
+      "ci_hi": 0.13945513312915025,
+      "significant": true,
+      "n": 29
+     }
+    }
+   },
+   "n_questions": 30,
+   "n_with_think_segment": 30,
+   "n_truncated": 1
+  },
+  "ministral3_8b_reasoning": {
+   "axes": {
+    "warm_cold": {
+     "think_minus_answer": {
+      "mean": 0.011546321848032464,
+      "ci_lo": -0.0037291816864425944,
+      "ci_hi": 0.032613980853545124,
+      "significant": false,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.020469820952753605,
+      "ci_lo": 0.013717781843548538,
+      "ci_hi": 0.02740727530969865,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": 0.0915412666724056,
+      "ci_lo": 0.049608292635172725,
+      "ci_hi": 0.13768983409749944,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "confident_cautious": {
+     "think_minus_answer": {
+      "mean": -0.09304619824932198,
+      "ci_lo": -0.13171732300276248,
+      "ci_hi": -0.058183206775864346,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": -0.08587602868842661,
+      "ci_lo": -0.09914151946225064,
+      "ci_hi": -0.07431969277920822,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": -0.08825482046562608,
+      "ci_lo": -0.16384315780160333,
+      "ci_hi": -0.01569628463991917,
+      "significant": true,
+      "n": 30
+     }
+    },
+    "empathetic_analytical": {
+     "think_minus_answer": {
+      "mean": 0.021821346886170264,
+      "ci_lo": 0.010334592893409817,
+      "ci_hi": 0.0349723337081152,
+      "significant": true,
+      "n": 30
+     },
+     "think_minus_answer_uniform": {
+      "mean": 0.024502759158741116,
+      "ci_lo": 0.017990105469255863,
+      "ci_hi": 0.03089762793059535,
+      "significant": true,
+      "n": 30
+     },
+     "answer_minus_off": {
+      "mean": 0.04943436792859319,
+      "ci_lo": 0.02079075221514758,
+      "ci_hi": 0.07814105612123041,
+      "significant": true,
+      "n": 30
+     }
+    }
+   },
+   "n_questions": 30,
+   "n_with_think_segment": 30,
+   "n_truncated": 0
+  }
+ }
+}

@@ -56,7 +56,8 @@ except ImportError:
             data.update(extra)
         print(f"#PROGRESS {_progress_json.dumps(data)}", flush=True)
 
-from config.settings import MOOD_AXES, AXES_DIR, DATA_DIR, MAX_NEW_TOKENS, STEER_SCALE
+from config.settings import (MOOD_AXES, AXES_DIR, DATA_DIR, MAX_NEW_TOKENS, STEER_SCALE,
+                             STEERING_MAX_NEW_TOKENS, STEERING_MAX_NEW_TOKENS_PER_AXIS)
 from config.models import MODELS
 from config.prompts import BASELINE_QUESTIONS
 from src.calibration.axis_computer import load_axis_vectors
@@ -350,7 +351,17 @@ def _generate_steered_mlx(ctx, messages, alpha, direction_mx, target_layer_idx,
             raise RuntimeError(
                 f"THINK-LEAK ({leak}): no-think generation produced reasoning. "
                 f"First 200 chars: {raw[:200]!r}")
-        return tokenizer.decode(generated_tokens, skip_special_tokens=True)
+        text = tokenizer.decode(generated_tokens, skip_special_tokens=True)
+        # Strong steering can override the no-think prefill in R1-style models,
+        # producing a residual reasoning preamble that closes with </think>
+        # BEFORE the real answer (past the 600-char head that check_think_leak
+        # scans). The response of a reasoning model is the post-</think> answer,
+        # so keep only that — standard R1 extraction, not a length truncation.
+        if "</think>" in text:
+            answer = text.rsplit("</think>", 1)[1].lstrip()
+            if answer:
+                text = answer
+        return text
     finally:
         layers[target_layer_idx] = original
 
@@ -507,7 +518,9 @@ def preflight_check(model_key: str, axes: list):
 def run_steering(model_key: str, axes: list, alphas: list,
                  force: bool = False, backend: str = "pytorch",
                  time_budget_min: int = 0, time_budget_exit_code: int = 75,
-                 target_layer_override: int = None, out_suffix: str = "") -> dict:
+                 target_layer_override: int = None, out_suffix: str = "",
+                 alphas_explicit: bool = False, question_range: tuple = None,
+                 max_new_tokens_override: int = None) -> dict:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_file = OUTPUT_DIR / f"{model_key}_basic{out_suffix}.json"
     partial_file = OUTPUT_DIR / f"{model_key}_basic{out_suffix}_partial.json"
@@ -591,8 +604,14 @@ def run_steering(model_key: str, axes: list, alphas: list,
                      "override_effect": sw["effect"] if sw else None,
                      "best_layer_pct": sw["layer_pct"] if sw else None}
 
-    # Adaptive alphas from sweep's recommended range (perturbation %)
+    # Adaptive alphas from sweep's recommended range (perturbation %).
+    # Skipped when the operator passes --alphas explicitly (e.g. a per-axis
+    # re-run at an overridden layer whose range comes from that axis's own
+    # sweep, not the warm_cold sweep this file reads).
     rec_range = sweep_data.get("recommended_range") or sweep_data.get("safe_alpha_range")
+    if alphas_explicit:
+        logger.info(f"Using explicit alphas (adaptive override skipped): {alphas}")
+        rec_range = None
     if rec_range:
         safe_min, safe_max = rec_range
         safe_max = min(safe_max, 50)
@@ -649,9 +668,19 @@ def run_steering(model_key: str, axes: list, alphas: list,
     logger.info(f"Alpha normalization: h_norm={h_norm:.1f}, STEER_SCALE={STEER_SCALE} "
                 f"(alpha=1 → {STEER_SCALE*100:.1f}% perturbation)")
 
-    questions = BASELINE_QUESTIONS
+    # Question sharding: (start, end) subset of BASELINE_QUESTIONS, keeping the
+    # ORIGINAL question_idx so shards from different ranges merge cleanly. Lets
+    # one axis be split across nodes by question (e.g. 3x70 instead of 1x210).
+    if question_range is not None:
+        qs, qe = question_range
+        q_items = [(i, BASELINE_QUESTIONS[i])
+                   for i in range(qs, min(qe, len(BASELINE_QUESTIONS)))]
+        logger.info(f"Question shard: idx [{qs}:{qe}) → {len(q_items)} questions")
+    else:
+        q_items = list(enumerate(BASELINE_QUESTIONS))
+    n_questions = len(q_items)
     results_by_axis = {}
-    _steer_total = len(axes) * len(alphas) * len(questions)
+    _steer_total = len(axes) * len(alphas) * n_questions
     _steer_done = 0
     _steer_done_at_start = 0  # updated after counting resumed items
     _steer_t_start = time.monotonic()
@@ -669,11 +698,17 @@ def run_steering(model_key: str, axes: list, alphas: list,
             # Keep results (per-question texts) across resumes — the site
             # playground and the judge both need them in the final file.
             results_by_axis[axis] = existing[axis]
-            _steer_done += len(alphas) * len(questions)
+            _steer_done += len(alphas) * n_questions
             _steer_done_at_start = _steer_done
             continue
 
         logger.info(f"=== Axis {axis_idx+1}/{len(axes)}: {axis} ===")
+
+        # Per-axis token budget (0%-truncation goal). CLI override wins; else the
+        # per-axis dict (verbose_concise runs longest); else the steering default.
+        mnt = (max_new_tokens_override
+               or STEERING_MAX_NEW_TOKENS_PER_AXIS.get(axis, STEERING_MAX_NEW_TOKENS))
+        logger.info(f"  max_new_tokens={mnt} (axis={axis})")
 
         if backend == "mlx":
             import mlx.core as mx
@@ -689,7 +724,7 @@ def run_steering(model_key: str, axes: list, alphas: list,
         # Resume: check for per-alpha checkpoint within this axis
         alpha_checkpoint = existing.get(f"_wip_{axis}", {})
         alpha_results = {}
-        total_steps = len(alphas) * len(questions)
+        total_steps = len(alphas) * n_questions
         step = 0
 
         for alpha in alphas:
@@ -698,14 +733,27 @@ def run_steering(model_key: str, axes: list, alphas: list,
             # Skip already-completed alphas (resume)
             if alpha_key in alpha_checkpoint:
                 alpha_results[alpha_key] = alpha_checkpoint[alpha_key]
-                step += len(questions)
-                _steer_done += len(questions)
+                step += n_questions
+                _steer_done += n_questions
                 _steer_done_at_start = _steer_done
                 logger.info(f"  alpha={alpha:+.0f} — resumed from checkpoint [{step}/{total_steps}]")
                 continue
 
-            per_question = []
-            for q_idx, question in enumerate(questions):
+            # Resume mid-alpha progress (per-question checkpoint for slow models:
+            # gemma-class ~9min/item can't finish a 30-question alpha in one 25-min
+            # chunk, so per-alpha-only saves never persist → restart at 0 forever).
+            wipq_key = f"_wipq_{axis}_{alpha_key}"
+            per_question = existing.get(wipq_key, [])
+            _done_qidx = {r["question_idx"] for r in per_question}
+            if per_question:
+                step += len(per_question)
+                _steer_done += len(per_question)
+                _steer_done_at_start = _steer_done
+                logger.info(f"  alpha={alpha:+.0f} — resumed mid-alpha "
+                            f"[{len(per_question)}/{n_questions} q done]")
+            for q_idx, question in q_items:
+                if q_idx in _done_qidx:
+                    continue
                 step += 1
                 t0 = time.time()
                 messages = [{"role": "user", "content": question}]
@@ -714,12 +762,12 @@ def run_steering(model_key: str, axes: list, alphas: list,
                 if backend == "mlx":
                     steered_text = _generate_steered_mlx(
                         ctx, messages, alpha, direction_mx,
-                        target_layer, MAX_NEW_TOKENS, template_kwargs,
+                        target_layer, mnt, template_kwargs,
                     )
                 else:
                     steered_text = _generate_steered(
                         model, tokenizer, messages, alpha, direction,
-                        target_layer, MAX_NEW_TOKENS, template_kwargs,
+                        target_layer, mnt, template_kwargs,
                     )
 
                 # Pass 2: evaluate clean projection
@@ -751,13 +799,36 @@ def run_steering(model_key: str, axes: list, alphas: list,
                 _steer_done += 1
                 if step % 5 == 0 or step == total_steps:
                     logger.info(
-                        f"  alpha={alpha:+.0f} q={q_idx+1}/{len(questions)} "
+                        f"  alpha={alpha:+.0f} q={q_idx+1}/{n_questions} "
                         f"({elapsed:.1f}s, {axis}={projections[axis]:+.3f}) "
                         f"[{step}/{total_steps}]"
                     )
                     log_progress(_steer_done, _steer_total,
                                  time.monotonic() - _steer_t_start,
                                  n_elapsed=_steer_done - _steer_done_at_start)
+
+                # Per-question durable checkpoint: persist WIP after EVERY question
+                # so slow models resume mid-alpha instead of restarting (the per-alpha
+                # save alone never fires for gemma-class within a 25-min chunk).
+                existing[wipq_key] = per_question
+                _save_checkpoint({
+                    "_meta": {"script": "scripts/steering_basic.py", "model": model_key,
+                              "model_id": model_config.model_id,
+                              "timestamp": datetime.now().isoformat(), "status": "partial"},
+                    "axes": results_by_axis,
+                    **{k: v for k, v in existing.items()},
+                }, partial_file)
+                # Clean mid-alpha exit if the time budget is hit (progress is saved).
+                if continuation_required(
+                    expired=bool(time_budget_min and
+                                 (time.monotonic() - _steer_t_start) > time_budget_min * 60),
+                    done=_steer_done, total=_steer_total,
+                ):
+                    logger.info(f"Time budget {time_budget_min} min reached mid-alpha at "
+                                f"{_steer_done}/{_steer_total} (alpha={alpha:+.0f}, "
+                                f"{len(per_question)}/{n_questions} q); clean exit "
+                                f"{time_budget_exit_code}")
+                    sys.exit(time_budget_exit_code)
 
             # Aggregate for this alpha
             mean_proj = {}
@@ -772,6 +843,7 @@ def run_steering(model_key: str, axes: list, alphas: list,
 
             # Save per-alpha checkpoint (work-in-progress for this axis)
             existing[f"_wip_{axis}"] = alpha_results
+            existing.pop(f"_wipq_{axis}_{alpha_key}", None)  # alpha done → clear mid-alpha WIP
             _save_checkpoint({
                 "_meta": {
                     "script": "scripts/steering_basic.py",
@@ -899,7 +971,7 @@ def run_steering(model_key: str, axes: list, alphas: list,
             "model": model_key,
             "model_id": model_config.model_id,
             "timestamp": datetime.now().isoformat(),
-            "n_questions": len(questions),
+            "n_questions": n_questions,
             "n_alphas": len(alphas),
             "alphas": alphas,
             "target_layer": target_layer,
@@ -911,7 +983,9 @@ def run_steering(model_key: str, axes: list, alphas: list,
         },
         "config": {
             "target_layer_ratio_fallback": TARGET_LAYER_RATIO_FALLBACK,
-            "max_new_tokens": MAX_NEW_TOKENS,
+            "max_new_tokens": {a: (max_new_tokens_override
+                                   or STEERING_MAX_NEW_TOKENS_PER_AXIS.get(a, STEERING_MAX_NEW_TOKENS))
+                               for a in axes},
             "temperature": 0.7,
             "top_p": 0.9,
         },
@@ -963,10 +1037,22 @@ def main():
                              "lets per-axis shards of one model run on different nodes "
                              "without clobbering each other. Merge with "
                              "merge_steering_parts.py")
+    parser.add_argument("--question-range", default=None,
+                        help="Shard questions: 'START:END' (0-based, END exclusive) "
+                             "over BASELINE_QUESTIONS. Original question_idx is kept "
+                             "so per-range shards merge cleanly. Split one axis across "
+                             "nodes, e.g. 0:10 / 10:20 / 20:30.")
+    parser.add_argument("--max-new-tokens", type=int, default=None,
+                        help="Override per-axis token budget (STEERING_MAX_NEW_TOKENS*). "
+                             "Use to canary a higher cap before re-running the wave.")
     args = parser.parse_args()
 
     axes = args.axes.split(",") if args.axes else list(MOOD_AXES)
     alphas = [float(x) for x in args.alphas.split(",")] if args.alphas else DEFAULT_ALPHAS
+    question_range = None
+    if args.question_range:
+        _qs, _qe = args.question_range.split(":")
+        question_range = (int(_qs), int(_qe))
 
     if args.check:
         preflight_check(args.model, axes)
@@ -1023,7 +1109,10 @@ def main():
                            time_budget_min=args.time_budget_min,
                            time_budget_exit_code=args.time_budget_exit_code,
                            target_layer_override=args.target_layer,
-                           out_suffix=args.out_suffix)
+                           out_suffix=args.out_suffix,
+                           alphas_explicit=args.alphas is not None,
+                           question_range=question_range,
+                           max_new_tokens_override=args.max_new_tokens)
 
     print(f"\n=== {args.model} Steering Results ===", flush=True)
     for axis, data in results["axes"].items():

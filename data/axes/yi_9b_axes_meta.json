@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "script": "scripts/01_calibrate.py",
+    "backend": "mlx",
+    "model": "yi_9b",
+    "model_id": "01-ai/Yi-1.5-9B-Chat",
+    "hidden_dim": 4096,
+    "timestamp": "2026-03-09T18:01:23.278426",
+    "axes": [
+      "warm_cold",
+      "confident_cautious",
+      "empathetic_analytical"
+    ],
+    "train_questions": 50,
+    "val_questions": 15,
+    "val_source": "eval_questions (independent, zero overlap with train)",
+    "max_new_tokens": 4096,
+    "saved_token_states": false,
+    "generation_settings": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    }
+  },
+  "warm_cold": {
+    "train_separation": 22.169041209220886,
+    "train_dprime": 1.8400429521153083,
+    "val_separation": 5.410029538472494,
+    "val_dprime": 0.44689268843058727,
+    "val_accuracy": 0.6488888888888888,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  },
+  "confident_cautious": {
+    "train_separation": 22.320379505157472,
+    "train_dprime": 1.8630193696799127,
+    "val_separation": 21.583586502075192,
+    "val_dprime": 1.9125467110145773,
+    "val_accuracy": 0.9244444444444444,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  },
+  "empathetic_analytical": {
+    "train_separation": 40.62971132278443,
+    "train_dprime": 3.271217125880327,
+    "val_separation": 34.47104778289795,
+    "val_dprime": 2.486999890323638,
+    "val_accuracy": 0.9511111111111111,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  }
+}

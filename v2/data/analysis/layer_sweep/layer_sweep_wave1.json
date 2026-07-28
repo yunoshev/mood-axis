@@ -1,0 +1,12703 @@
+{
+ "deepseek_r1_14b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 0.95,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 0.699,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 2,
+    "dprime": 0.696,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.699,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 0.709,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 0.672,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 6,
+    "dprime": 0.683,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 7,
+    "dprime": 0.709,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 8,
+    "dprime": 0.719,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 9,
+    "dprime": 0.755,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 10,
+    "dprime": 0.783,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 0.789,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 12,
+    "dprime": 0.836,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 13,
+    "dprime": 0.839,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 14,
+    "dprime": 0.872,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 15,
+    "dprime": 0.878,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 16,
+    "dprime": 0.914,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 17,
+    "dprime": 0.922,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 18,
+    "dprime": 0.928,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 19,
+    "dprime": 0.95,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 20,
+    "dprime": 0.972,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 21,
+    "dprime": 1.011,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 22,
+    "dprime": 1.07,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 23,
+    "dprime": 1.069,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 24,
+    "dprime": 1.049,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 25,
+    "dprime": 1.07,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 26,
+    "dprime": 1.093,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 27,
+    "dprime": 1.074,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 28,
+    "dprime": 1.068,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 29,
+    "dprime": 1.177,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 30,
+    "dprime": 1.198,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 31,
+    "dprime": 1.239,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 32,
+    "dprime": 1.692,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 33,
+    "dprime": 1.745,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 34,
+    "dprime": 1.768,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 35,
+    "dprime": 1.696,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 36,
+    "dprime": 1.675,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 37,
+    "dprime": 1.702,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 38,
+    "dprime": 1.689,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 39,
+    "dprime": 1.688,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 40,
+    "dprime": 1.71,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 41,
+    "dprime": 1.705,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 42,
+    "dprime": 1.691,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 43,
+    "dprime": 1.664,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 44,
+    "dprime": 1.66,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 45,
+    "dprime": 1.683,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 46,
+    "dprime": 1.713,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 47,
+    "dprime": 1.749,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 48,
+    "dprime": 1.708,
+    "accuracy": 0.767
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 1.079,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 1.101,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 3,
+    "dprime": 1.4,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 4,
+    "dprime": 1.388,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 5,
+    "dprime": 1.533,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 6,
+    "dprime": 1.558,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 7,
+    "dprime": 1.593,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 8,
+    "dprime": 1.519,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 9,
+    "dprime": 1.523,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 1.523,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 1.489,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 12,
+    "dprime": 1.485,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 1.555,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 14,
+    "dprime": 1.573,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 1.555,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 16,
+    "dprime": 1.623,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 17,
+    "dprime": 1.596,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 18,
+    "dprime": 1.565,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 19,
+    "dprime": 1.612,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 1.64,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 1.738,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 22,
+    "dprime": 1.773,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 1.85,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.924,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 25,
+    "dprime": 1.907,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 2.006,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 27,
+    "dprime": 2.052,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 28,
+    "dprime": 2.064,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 29,
+    "dprime": 2.169,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 30,
+    "dprime": 2.215,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 31,
+    "dprime": 2.277,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 32,
+    "dprime": 2.608,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 33,
+    "dprime": 2.608,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 34,
+    "dprime": 2.584,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 35,
+    "dprime": 2.526,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 36,
+    "dprime": 2.543,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 37,
+    "dprime": 2.49,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 38,
+    "dprime": 2.463,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 39,
+    "dprime": 2.421,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 40,
+    "dprime": 2.422,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 41,
+    "dprime": 2.431,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 42,
+    "dprime": 2.428,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 43,
+    "dprime": 2.442,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 44,
+    "dprime": 2.433,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 45,
+    "dprime": 2.429,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 46,
+    "dprime": 2.45,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 47,
+    "dprime": 2.479,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 48,
+    "dprime": 2.466,
+    "accuracy": 0.867
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.502,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.923,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 1.175,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 1.667,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 1.899,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.003,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.175,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 2.233,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 2.292,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 2.22,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 10,
+    "dprime": 2.166,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 11,
+    "dprime": 2.243,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 12,
+    "dprime": 2.195,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 13,
+    "dprime": 2.166,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 14,
+    "dprime": 2.21,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 15,
+    "dprime": 2.253,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 16,
+    "dprime": 2.177,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 17,
+    "dprime": 2.13,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 18,
+    "dprime": 2.27,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 19,
+    "dprime": 2.3,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 20,
+    "dprime": 2.294,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 21,
+    "dprime": 2.279,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 22,
+    "dprime": 2.235,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 2.326,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 24,
+    "dprime": 2.408,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 25,
+    "dprime": 2.497,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 26,
+    "dprime": 2.548,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 27,
+    "dprime": 2.61,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 28,
+    "dprime": 2.613,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 29,
+    "dprime": 2.784,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 30,
+    "dprime": 2.846,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 31,
+    "dprime": 2.817,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 32,
+    "dprime": 3.038,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 33,
+    "dprime": 3.14,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 34,
+    "dprime": 3.181,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 35,
+    "dprime": 3.172,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 36,
+    "dprime": 3.194,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 37,
+    "dprime": 3.196,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 38,
+    "dprime": 3.243,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 39,
+    "dprime": 3.266,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 40,
+    "dprime": 3.313,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 41,
+    "dprime": 3.38,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 42,
+    "dprime": 3.428,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 43,
+    "dprime": 3.436,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 44,
+    "dprime": 3.483,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 45,
+    "dprime": 3.493,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 46,
+    "dprime": 3.566,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 47,
+    "dprime": 3.762,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 48,
+    "dprime": 3.813,
+    "accuracy": 0.933
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 1.176,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 1,
+    "dprime": 1.236,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 1.232,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 3,
+    "dprime": 1.235,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 4,
+    "dprime": 1.26,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 5,
+    "dprime": 1.221,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 6,
+    "dprime": 1.238,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.237,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.27,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 9,
+    "dprime": 1.255,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 10,
+    "dprime": 1.291,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 11,
+    "dprime": 1.287,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 12,
+    "dprime": 1.34,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 13,
+    "dprime": 1.337,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 14,
+    "dprime": 1.351,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 15,
+    "dprime": 1.36,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 1.344,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 17,
+    "dprime": 1.321,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 18,
+    "dprime": 1.335,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 19,
+    "dprime": 1.325,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 20,
+    "dprime": 1.335,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 21,
+    "dprime": 1.298,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 22,
+    "dprime": 1.349,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 23,
+    "dprime": 1.356,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 24,
+    "dprime": 1.424,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 25,
+    "dprime": 1.448,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 26,
+    "dprime": 1.482,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 27,
+    "dprime": 1.481,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 1.403,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 29,
+    "dprime": 1.571,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 30,
+    "dprime": 1.535,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 31,
+    "dprime": 1.475,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 32,
+    "dprime": 2.127,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 33,
+    "dprime": 2.207,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 34,
+    "dprime": 2.172,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 35,
+    "dprime": 2.084,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 36,
+    "dprime": 2.106,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 37,
+    "dprime": 2.377,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 38,
+    "dprime": 2.431,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 39,
+    "dprime": 2.444,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 40,
+    "dprime": 2.48,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 41,
+    "dprime": 2.463,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 42,
+    "dprime": 2.466,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 43,
+    "dprime": 2.433,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 44,
+    "dprime": 2.461,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 45,
+    "dprime": 2.497,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 46,
+    "dprime": 2.516,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 47,
+    "dprime": 2.533,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 48,
+    "dprime": 2.465,
+    "accuracy": 0.833
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 1.568,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 1.6,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 1.331,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 4,
+    "dprime": 1.279,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 5,
+    "dprime": 1.406,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.18,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 2.129,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 2.22,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 2.277,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 10,
+    "dprime": 2.123,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 11,
+    "dprime": 2.359,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 2.218,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 2.151,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 2.074,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 2.006,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 1.952,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 17,
+    "dprime": 1.982,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 18,
+    "dprime": 2.269,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 19,
+    "dprime": 2.328,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 20,
+    "dprime": 2.313,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 21,
+    "dprime": 2.366,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 22,
+    "dprime": 2.491,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 23,
+    "dprime": 2.588,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 24,
+    "dprime": 2.581,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 25,
+    "dprime": 2.551,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 26,
+    "dprime": 2.481,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 27,
+    "dprime": 2.487,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 28,
+    "dprime": 2.509,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 29,
+    "dprime": 2.615,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 30,
+    "dprime": 2.664,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 31,
+    "dprime": 2.604,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 32,
+    "dprime": 2.783,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 33,
+    "dprime": 2.773,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 34,
+    "dprime": 2.668,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 35,
+    "dprime": 2.609,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 36,
+    "dprime": 2.607,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 37,
+    "dprime": 2.521,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 38,
+    "dprime": 2.5,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 39,
+    "dprime": 2.453,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 40,
+    "dprime": 2.371,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 41,
+    "dprime": 2.335,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 42,
+    "dprime": 2.28,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 43,
+    "dprime": 2.259,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 44,
+    "dprime": 2.227,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 45,
+    "dprime": 2.213,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 46,
+    "dprime": 2.255,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 47,
+    "dprime": 2.146,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 48,
+    "dprime": 2.073,
+    "accuracy": 0.833
+   }
+  ]
+ },
+ "gemma3_12b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 5.438,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 6.922,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 6.132,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 5.668,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 5.106,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 5.067,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.709,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 4.889,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 4.433,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.709,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 10,
+    "dprime": 3.672,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 11,
+    "dprime": 4.79,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 4.389,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 2.915,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.578,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 2.0,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 16,
+    "dprime": 1.675,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 17,
+    "dprime": 1.748,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 18,
+    "dprime": 1.425,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 19,
+    "dprime": 2.437,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 20,
+    "dprime": 1.436,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 1.28,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 22,
+    "dprime": 1.524,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 6.189,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 25,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 26,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 27,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 28,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 29,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 30,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 31,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 32,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 33,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 34,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 35,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 36,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 37,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 38,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 39,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 40,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 41,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 42,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 43,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 44,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 45,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 46,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 47,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 48,
+    "dprime": 13.911,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.708,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 0.139,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 2,
+    "dprime": 0.623,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 3,
+    "dprime": 0.704,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 4,
+    "dprime": 0.876,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 5,
+    "dprime": 0.958,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 6,
+    "dprime": 1.299,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.276,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 1.013,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 9,
+    "dprime": 0.808,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 10,
+    "dprime": 0.785,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 11,
+    "dprime": 0.34,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 12,
+    "dprime": 1.459,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 13,
+    "dprime": 0.812,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 14,
+    "dprime": 1.286,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 15,
+    "dprime": 1.256,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 16,
+    "dprime": 1.321,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 17,
+    "dprime": 0.479,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 18,
+    "dprime": 2.054,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 19,
+    "dprime": 0.4,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 20,
+    "dprime": 0.688,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 21,
+    "dprime": 2.627,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 2.259,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 23,
+    "dprime": 1.893,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 24,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 25,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 26,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 27,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 28,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 29,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 30,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 31,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 32,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 33,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 34,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 35,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 36,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 37,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 38,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 39,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 40,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 41,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 42,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 43,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 44,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 45,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 46,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 47,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 48,
+    "dprime": 4.96,
+    "accuracy": 0.967
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.53,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.463,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 2,
+    "dprime": 0.555,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 3,
+    "dprime": 1.688,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 4,
+    "dprime": 1.871,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 5,
+    "dprime": 2.127,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.715,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 2.496,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 2.62,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 0.664,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 10,
+    "dprime": 0.604,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 11,
+    "dprime": 2.37,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 2.687,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 0.515,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 14,
+    "dprime": 3.841,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 0.845,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 0.501,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 17,
+    "dprime": 2.013,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 18,
+    "dprime": 4.03,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 0.627,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 20,
+    "dprime": 1.389,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 0.972,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 22,
+    "dprime": 1.201,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 23,
+    "dprime": 1.433,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 24,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 25,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 26,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 27,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 28,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 29,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 30,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 31,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 32,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 33,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 34,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 35,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 36,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 37,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 38,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 39,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 40,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 41,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 42,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 43,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 44,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 45,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 46,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 47,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 48,
+    "dprime": 7.061,
+    "accuracy": 0.967
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 5.653,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 1,
+    "dprime": 2.969,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 2.689,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 2.957,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 3.059,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 3.429,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 2.816,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 2.865,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 2.333,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 9,
+    "dprime": 1.955,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 10,
+    "dprime": 1.796,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 3.741,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.318,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 2.302,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 14,
+    "dprime": 3.07,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 2.294,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 16,
+    "dprime": 2.216,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 17,
+    "dprime": 1.937,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 18,
+    "dprime": 1.812,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 19,
+    "dprime": 1.497,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 1.313,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 21,
+    "dprime": 1.89,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 22,
+    "dprime": 1.787,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 4.064,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 25,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 26,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 27,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 28,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 29,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 30,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 31,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 32,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 33,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 34,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 35,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 36,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 37,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 38,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 39,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 40,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 41,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 42,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 43,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 44,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 45,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 46,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 47,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 48,
+    "dprime": 11.65,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.814,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 0.627,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 0.608,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 1.831,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.216,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 4.776,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.921,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.748,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 3.074,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 0.859,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 10,
+    "dprime": 0.403,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 11,
+    "dprime": 0.633,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 12,
+    "dprime": 0.964,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 13,
+    "dprime": 1.35,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 14,
+    "dprime": 2.125,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 1.797,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 16,
+    "dprime": 2.384,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 17,
+    "dprime": 4.271,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 2.263,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 19,
+    "dprime": 1.97,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 20,
+    "dprime": 2.688,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 21,
+    "dprime": 2.28,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 22,
+    "dprime": 3.209,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 2.181,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 24,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 25,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 26,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 27,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 28,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 29,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 30,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 31,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 32,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 33,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 34,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 35,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 36,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 37,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 38,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 39,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 40,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 41,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 42,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 43,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 44,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 45,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 46,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 47,
+    "dprime": NaN,
+    "accuracy": 0.0
+   },
+   {
+    "layer": 48,
+    "dprime": 12.813,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "gemma_9b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 0.805,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 0.785,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 0.951,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 3,
+    "dprime": 1.3,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 4,
+    "dprime": 1.92,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.193,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 1.981,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 7,
+    "dprime": 2.02,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 8,
+    "dprime": 1.948,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 9,
+    "dprime": 2.898,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.392,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.529,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 4.456,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 4.644,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 5.153,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 5.373,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 5.73,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 5.911,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 6.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 7.085,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.716,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 9.317,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 14.235,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 14.381,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 13.357,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.466,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.092,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.101,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 8.346,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 8.02,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.786,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.86,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.039,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 7.623,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 7.263,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 7.17,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 8.09,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.755,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 9.964,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 11.139,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 41,
+    "dprime": 11.569,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 42,
+    "dprime": 9.004,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.614,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.998,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 2,
+    "dprime": 1.723,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 1.612,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 1.728,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.295,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 2.622,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 2.148,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 2.349,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.179,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.592,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.687,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 3.812,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 3.67,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.502,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 3.748,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 3.833,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 17,
+    "dprime": 3.654,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 18,
+    "dprime": 3.859,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 19,
+    "dprime": 4.313,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 5.009,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 21,
+    "dprime": 5.63,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 6.648,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.138,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.162,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.694,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 4.792,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 4.419,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 4.384,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 4.223,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 4.16,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 4.322,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 4.801,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 4.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 5.572,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 5.218,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 5.617,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 6.195,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 6.44,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 6.841,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 6.928,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 41,
+    "dprime": 7.027,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 42,
+    "dprime": 6.928,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.479,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 2.759,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 5.183,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 3.337,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 3.101,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 4.671,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.77,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.579,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 4.884,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 6.48,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 9.525,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 9.288,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 10.284,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 9.894,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 9.436,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 10.249,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 11.12,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 11.555,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 10.276,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 12.233,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 11.065,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 12.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 18.52,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 21.641,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 23.949,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 22.361,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 18.269,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.147,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.198,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 9.977,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 10.31,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.169,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.397,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 11.352,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 12.065,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 10.242,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 10.088,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 10.018,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 9.777,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 11.362,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 11.5,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 41,
+    "dprime": 11.484,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 42,
+    "dprime": 9.94,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 3.481,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 3.198,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 3.147,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 3.303,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 3.727,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.781,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.997,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 3.991,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 3.762,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 4.081,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 4.206,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 4.085,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.355,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 4.22,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 4.033,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 4.313,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 4.188,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 17,
+    "dprime": 4.226,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 18,
+    "dprime": 4.552,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 19,
+    "dprime": 4.845,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 20,
+    "dprime": 4.712,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 21,
+    "dprime": 4.83,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 22,
+    "dprime": 5.294,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 23,
+    "dprime": 5.548,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 24,
+    "dprime": 6.341,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 25,
+    "dprime": 6.669,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 26,
+    "dprime": 7.62,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.703,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.157,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.423,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.876,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.321,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 32,
+    "dprime": 7.591,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 7.539,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 7.687,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 7.746,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 7.891,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 7.992,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 8.297,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 9.206,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 9.713,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 41,
+    "dprime": 9.742,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 42,
+    "dprime": 10.57,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 17.049,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 10.954,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 9.744,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 17.907,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 10.476,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 11.493,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 10.372,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 7.505,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 7.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 7.381,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.673,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 8.283,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.299,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.354,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 8.145,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.51,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.827,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.779,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.016,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.525,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.714,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.104,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 8.066,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 23,
+    "dprime": 9.084,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.306,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.184,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.658,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.832,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.591,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 8.887,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 9.173,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.856,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.604,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.156,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 34,
+    "dprime": 7.987,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 35,
+    "dprime": 7.883,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 36,
+    "dprime": 7.617,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 37,
+    "dprime": 7.677,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 38,
+    "dprime": 7.944,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 39,
+    "dprime": 8.272,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 8.75,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 41,
+    "dprime": 8.833,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 42,
+    "dprime": 11.161,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "gemma_9b_base": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 0.259,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 0.291,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 0.473,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 3,
+    "dprime": 0.646,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 4,
+    "dprime": 0.863,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 0.874,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 6,
+    "dprime": 0.737,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 7,
+    "dprime": 0.849,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 8,
+    "dprime": 0.873,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 9,
+    "dprime": 0.828,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 10,
+    "dprime": 0.781,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 0.84,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 12,
+    "dprime": 1.009,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 13,
+    "dprime": 1.033,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 14,
+    "dprime": 1.238,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 15,
+    "dprime": 1.487,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 1.547,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 17,
+    "dprime": 1.697,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 18,
+    "dprime": 1.796,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 1.838,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 20,
+    "dprime": 1.868,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 21,
+    "dprime": 1.717,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 22,
+    "dprime": 1.699,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 23,
+    "dprime": 1.754,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 24,
+    "dprime": 1.975,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 25,
+    "dprime": 1.906,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 26,
+    "dprime": 1.811,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 27,
+    "dprime": 1.748,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 28,
+    "dprime": 1.582,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 29,
+    "dprime": 1.651,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 30,
+    "dprime": 1.689,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 31,
+    "dprime": 1.704,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 32,
+    "dprime": 1.649,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 33,
+    "dprime": 1.603,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 34,
+    "dprime": 1.579,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 35,
+    "dprime": 1.565,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 36,
+    "dprime": 1.737,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 37,
+    "dprime": 1.626,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 38,
+    "dprime": 1.694,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 39,
+    "dprime": 1.687,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 40,
+    "dprime": 1.567,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 41,
+    "dprime": 1.192,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 42,
+    "dprime": 1.054,
+    "accuracy": 0.733
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.653,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 0.692,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 2,
+    "dprime": 0.731,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 3,
+    "dprime": 0.801,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 4,
+    "dprime": 0.908,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 5,
+    "dprime": 0.966,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 6,
+    "dprime": 0.898,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 7,
+    "dprime": 1.049,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.1,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 9,
+    "dprime": 1.067,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 10,
+    "dprime": 1.038,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 1.003,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 12,
+    "dprime": 1.124,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 13,
+    "dprime": 1.24,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 14,
+    "dprime": 1.215,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 15,
+    "dprime": 1.096,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 16,
+    "dprime": 1.284,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 17,
+    "dprime": 1.401,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 18,
+    "dprime": 1.241,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 1.321,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 20,
+    "dprime": 1.302,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 21,
+    "dprime": 1.214,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 22,
+    "dprime": 1.236,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 23,
+    "dprime": 1.506,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.595,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 25,
+    "dprime": 1.608,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 26,
+    "dprime": 1.614,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 27,
+    "dprime": 1.679,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 1.737,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 29,
+    "dprime": 1.696,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 30,
+    "dprime": 1.681,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 31,
+    "dprime": 1.579,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 32,
+    "dprime": 1.549,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 33,
+    "dprime": 1.584,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 34,
+    "dprime": 1.592,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 35,
+    "dprime": 1.525,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 36,
+    "dprime": 1.505,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 37,
+    "dprime": 1.511,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 38,
+    "dprime": 1.468,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 39,
+    "dprime": 1.334,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 40,
+    "dprime": 1.295,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 41,
+    "dprime": 1.071,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 42,
+    "dprime": 1.116,
+    "accuracy": 0.733
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": -0.272,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": -0.341,
+    "accuracy": 0.4
+   },
+   {
+    "layer": 2,
+    "dprime": -0.155,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 3,
+    "dprime": -0.217,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 4,
+    "dprime": -0.257,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 5,
+    "dprime": -0.013,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 6,
+    "dprime": 0.033,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 7,
+    "dprime": 0.14,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 8,
+    "dprime": 0.119,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 9,
+    "dprime": 0.368,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 10,
+    "dprime": 0.402,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 11,
+    "dprime": 0.527,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 12,
+    "dprime": 0.602,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 13,
+    "dprime": 0.644,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 14,
+    "dprime": 0.636,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 15,
+    "dprime": 0.698,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 16,
+    "dprime": 0.79,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 17,
+    "dprime": 1.035,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 18,
+    "dprime": 1.136,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 19,
+    "dprime": 1.232,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 20,
+    "dprime": 1.214,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 21,
+    "dprime": 1.308,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 22,
+    "dprime": 1.362,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 23,
+    "dprime": 1.39,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.455,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 25,
+    "dprime": 1.479,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 26,
+    "dprime": 1.506,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 27,
+    "dprime": 1.438,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 28,
+    "dprime": 1.346,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 29,
+    "dprime": 1.173,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 30,
+    "dprime": 1.287,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 31,
+    "dprime": 1.268,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 32,
+    "dprime": 1.193,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 33,
+    "dprime": 1.144,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 34,
+    "dprime": 1.183,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 35,
+    "dprime": 1.172,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 36,
+    "dprime": 1.183,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 37,
+    "dprime": 1.209,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 38,
+    "dprime": 1.253,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 39,
+    "dprime": 1.253,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 40,
+    "dprime": 1.308,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 41,
+    "dprime": 1.342,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 42,
+    "dprime": 0.868,
+    "accuracy": 0.667
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": -0.14,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 0.324,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 2,
+    "dprime": 0.33,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 3,
+    "dprime": 0.27,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 4,
+    "dprime": 0.236,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 5,
+    "dprime": 0.278,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 6,
+    "dprime": 0.272,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 7,
+    "dprime": 0.228,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 8,
+    "dprime": 0.214,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 9,
+    "dprime": 0.333,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 10,
+    "dprime": 0.346,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 11,
+    "dprime": 0.304,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 12,
+    "dprime": 0.29,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 13,
+    "dprime": 0.341,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 14,
+    "dprime": 0.43,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 15,
+    "dprime": 0.435,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 16,
+    "dprime": 0.375,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 17,
+    "dprime": 0.352,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 18,
+    "dprime": 0.418,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 19,
+    "dprime": 0.382,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 20,
+    "dprime": 0.406,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 21,
+    "dprime": 0.487,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 22,
+    "dprime": 0.387,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 23,
+    "dprime": 0.37,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 24,
+    "dprime": 0.399,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 25,
+    "dprime": 0.413,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 26,
+    "dprime": 0.349,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 27,
+    "dprime": 0.281,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 28,
+    "dprime": 0.241,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 29,
+    "dprime": 0.237,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 30,
+    "dprime": 0.294,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 31,
+    "dprime": 0.271,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 32,
+    "dprime": 0.226,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 33,
+    "dprime": 0.235,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 34,
+    "dprime": 0.203,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 35,
+    "dprime": 0.285,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 36,
+    "dprime": 0.291,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 37,
+    "dprime": 0.327,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 38,
+    "dprime": 0.268,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 39,
+    "dprime": 0.254,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 40,
+    "dprime": 0.261,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 41,
+    "dprime": 0.202,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 42,
+    "dprime": 0.17,
+    "accuracy": 0.433
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.207,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 0.214,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 0.446,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.436,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 4,
+    "dprime": 0.562,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 5,
+    "dprime": 0.889,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 6,
+    "dprime": 0.868,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 0.928,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 8,
+    "dprime": 1.114,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 9,
+    "dprime": 0.913,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 10,
+    "dprime": 0.913,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 1.112,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 12,
+    "dprime": 1.053,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 13,
+    "dprime": 1.087,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 14,
+    "dprime": 1.246,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 15,
+    "dprime": 1.452,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 1.643,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 17,
+    "dprime": 1.553,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 18,
+    "dprime": 1.516,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 19,
+    "dprime": 1.425,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 1.563,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 1.502,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 22,
+    "dprime": 1.425,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 1.94,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 2.021,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 25,
+    "dprime": 2.325,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 26,
+    "dprime": 2.413,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 27,
+    "dprime": 2.158,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 28,
+    "dprime": 2.815,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 29,
+    "dprime": 2.628,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 30,
+    "dprime": 2.865,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 31,
+    "dprime": 2.783,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 32,
+    "dprime": 2.595,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 33,
+    "dprime": 2.623,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 34,
+    "dprime": 2.641,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 35,
+    "dprime": 2.843,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 36,
+    "dprime": 2.996,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 37,
+    "dprime": 3.112,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 38,
+    "dprime": 3.321,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 39,
+    "dprime": 3.32,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 40,
+    "dprime": 2.797,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 41,
+    "dprime": 1.684,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 42,
+    "dprime": 1.244,
+    "accuracy": 0.767
+   }
+  ]
+ },
+ "gpt_oss_20b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 6.056,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 6.406,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 5.686,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 4.563,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 4.309,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 4.263,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 4.48,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 3.4,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 3.726,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.972,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 3.714,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 3.667,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.042,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.406,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 3.999,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 4.477,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 4.248,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 4.249,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 5.046,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 4.757,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 4.946,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 6.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 4.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.599,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.194,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.365,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 1.398,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 1.104,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 3,
+    "dprime": 1.79,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 4,
+    "dprime": 1.664,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 5,
+    "dprime": 1.97,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 1.847,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 1.429,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 8,
+    "dprime": 1.435,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 9,
+    "dprime": 1.882,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 1.838,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 1.627,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 12,
+    "dprime": 1.748,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 13,
+    "dprime": 1.695,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 14,
+    "dprime": 1.544,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 15,
+    "dprime": 1.817,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 16,
+    "dprime": 1.841,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 17,
+    "dprime": 2.173,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 18,
+    "dprime": 2.552,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 19,
+    "dprime": 2.749,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 20,
+    "dprime": 2.498,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 21,
+    "dprime": 2.533,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 22,
+    "dprime": 2.298,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 23,
+    "dprime": 2.437,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 24,
+    "dprime": 2.751,
+    "accuracy": 0.867
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.365,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 0.387,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 2,
+    "dprime": 1.202,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 3,
+    "dprime": 2.029,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 1.996,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 1.946,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 1.905,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 7,
+    "dprime": 1.717,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 1.844,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 9,
+    "dprime": 1.585,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 10,
+    "dprime": 1.396,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 1.326,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 12,
+    "dprime": 1.428,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 0.262,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 14,
+    "dprime": 1.304,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 15,
+    "dprime": 1.455,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 1.044,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 17,
+    "dprime": 1.015,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 18,
+    "dprime": 1.1,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 1.204,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 20,
+    "dprime": 1.083,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 21,
+    "dprime": 1.451,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 22,
+    "dprime": 1.175,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 23,
+    "dprime": 1.609,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 24,
+    "dprime": 1.832,
+    "accuracy": 0.833
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 2.934,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 2.716,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 2.841,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 2.93,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 3.018,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.114,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 2.977,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 3.027,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 3.09,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.199,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.542,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.695,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 3.894,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 1.687,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 14,
+    "dprime": 3.49,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 15,
+    "dprime": 3.047,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 16,
+    "dprime": 2.715,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 17,
+    "dprime": 2.518,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 18,
+    "dprime": 2.663,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 19,
+    "dprime": 2.698,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 20,
+    "dprime": 2.17,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 21,
+    "dprime": 2.42,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 22,
+    "dprime": 1.651,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 23,
+    "dprime": 2.307,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 24,
+    "dprime": 2.215,
+    "accuracy": 0.867
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 1.063,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 1,
+    "dprime": 2.126,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 2.206,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 4.568,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 5.365,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 6.828,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 7.585,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.616,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 7.817,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 9.119,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 9.887,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 10.289,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 6.875,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.03,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.942,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.517,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 4.587,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 4.089,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 3.123,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 19,
+    "dprime": 3.806,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 3.14,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 21,
+    "dprime": 3.26,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 22,
+    "dprime": 2.534,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 3.36,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": 2.888,
+    "accuracy": 0.933
+   }
+  ]
+ },
+ "llama_8b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 2.432,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 1,
+    "dprime": 2.776,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 3.227,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 3.336,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 4.372,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 4.601,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.686,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 4.879,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 4.652,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 5.358,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 5.604,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 5.633,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 6.112,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 5.774,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 6.962,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.413,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.016,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.194,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.208,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.397,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.269,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.143,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.184,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.713,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.026,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.829,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.13,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.987,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.912,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.798,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.581,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.408,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.634,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 1.367,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 1.577,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 3,
+    "dprime": 2.037,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 4,
+    "dprime": 3.878,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 4.944,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 4.127,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.586,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 4.371,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 4.51,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.065,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 4.649,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 4.982,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.882,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 6.501,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.5,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.037,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 6.822,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 7.2,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 7.17,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.071,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 6.803,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 6.61,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 6.911,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.68,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.828,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.637,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.916,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.844,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 6.707,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.786,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.285,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.218,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 1.932,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 2.581,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 2.755,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 3.217,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 3.625,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.789,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.986,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.407,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 4.685,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 4.734,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 4.797,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.296,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.281,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.371,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.971,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.169,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.45,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.267,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 7.236,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 6.607,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.374,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 6.139,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 6.023,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.836,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.671,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.8,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 5.678,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 5.918,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.071,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 5.999,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.054,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 6.489,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.378,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 0.933,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 1.505,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 1.775,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 1.798,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 2.022,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.093,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.353,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 2.38,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 2.302,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 2.626,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 3.379,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.484,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.076,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 4.183,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 6.252,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.605,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 8.182,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 9.485,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.477,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 10.493,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 10.97,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 11.332,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 10.998,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 10.307,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.132,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.856,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 10.178,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 10.394,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.799,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 10.818,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 10.794,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.731,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.874,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": -0.365,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 1,
+    "dprime": 2.633,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 3.086,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 3.542,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 4.486,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 5.105,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.179,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 6.555,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.061,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.47,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.186,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.499,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 6.421,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 6.6,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.634,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.977,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 8.776,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 9.134,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.332,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.725,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.288,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.039,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 7.63,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.613,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.078,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.115,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.076,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.082,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.209,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.307,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.571,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.854,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.509,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "llama_8b_base": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 0.134,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 0.475,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 2,
+    "dprime": 0.713,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.622,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 0.651,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 0.582,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 6,
+    "dprime": 0.665,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 7,
+    "dprime": 0.632,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 8,
+    "dprime": 0.558,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 9,
+    "dprime": 0.548,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 10,
+    "dprime": 0.514,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 0.584,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 12,
+    "dprime": 0.555,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 13,
+    "dprime": 0.718,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 14,
+    "dprime": 0.733,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 15,
+    "dprime": 0.644,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 16,
+    "dprime": 0.727,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 17,
+    "dprime": 0.846,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 18,
+    "dprime": 0.882,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 19,
+    "dprime": 1.004,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 20,
+    "dprime": 1.109,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 21,
+    "dprime": 1.085,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 22,
+    "dprime": 1.058,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 23,
+    "dprime": 1.181,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 24,
+    "dprime": 1.123,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 25,
+    "dprime": 1.164,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 26,
+    "dprime": 1.156,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 27,
+    "dprime": 1.225,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 28,
+    "dprime": 1.245,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 29,
+    "dprime": 1.349,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 30,
+    "dprime": 1.418,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 31,
+    "dprime": 1.64,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 32,
+    "dprime": 1.585,
+    "accuracy": 0.733
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.516,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.699,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 2,
+    "dprime": 0.684,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.959,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 1.014,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 1.099,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 6,
+    "dprime": 1.131,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.246,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 8,
+    "dprime": 1.285,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 9,
+    "dprime": 1.4,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 10,
+    "dprime": 1.398,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 11,
+    "dprime": 1.456,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 12,
+    "dprime": 1.607,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 13,
+    "dprime": 1.746,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 14,
+    "dprime": 1.758,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 15,
+    "dprime": 1.737,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 16,
+    "dprime": 1.803,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 17,
+    "dprime": 2.039,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 18,
+    "dprime": 2.115,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 19,
+    "dprime": 2.1,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 2.087,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 2.114,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 22,
+    "dprime": 2.041,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 2.106,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 2.129,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 25,
+    "dprime": 2.144,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 2.109,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 27,
+    "dprime": 2.184,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 2.228,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 29,
+    "dprime": 2.282,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 30,
+    "dprime": 2.226,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 31,
+    "dprime": 2.334,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 32,
+    "dprime": 2.084,
+    "accuracy": 0.9
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": -0.233,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 1,
+    "dprime": 0.193,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 2,
+    "dprime": 0.374,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 3,
+    "dprime": 0.449,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 4,
+    "dprime": 0.865,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 5,
+    "dprime": 1.151,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 6,
+    "dprime": 1.279,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.283,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 8,
+    "dprime": 1.401,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 9,
+    "dprime": 1.672,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 10,
+    "dprime": 2.093,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 11,
+    "dprime": 2.109,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 12,
+    "dprime": 2.068,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 13,
+    "dprime": 2.156,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 14,
+    "dprime": 2.19,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 15,
+    "dprime": 2.01,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 16,
+    "dprime": 1.916,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 17,
+    "dprime": 2.126,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 18,
+    "dprime": 1.986,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 19,
+    "dprime": 1.81,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 20,
+    "dprime": 1.918,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 21,
+    "dprime": 1.906,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 22,
+    "dprime": 1.796,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 23,
+    "dprime": 1.873,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 24,
+    "dprime": 1.75,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 25,
+    "dprime": 1.782,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 26,
+    "dprime": 1.788,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 27,
+    "dprime": 2.002,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 28,
+    "dprime": 2.14,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 29,
+    "dprime": 2.235,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 30,
+    "dprime": 2.318,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 31,
+    "dprime": 2.446,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 32,
+    "dprime": 2.316,
+    "accuracy": 0.833
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": -0.157,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": -0.223,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 2,
+    "dprime": -0.009,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 3,
+    "dprime": 0.133,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 4,
+    "dprime": 0.355,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 5,
+    "dprime": 0.363,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 6,
+    "dprime": 0.204,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 7,
+    "dprime": 0.123,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 8,
+    "dprime": 0.168,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 9,
+    "dprime": 0.177,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 10,
+    "dprime": 0.241,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 11,
+    "dprime": 0.341,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 12,
+    "dprime": 0.853,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 13,
+    "dprime": 0.665,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 14,
+    "dprime": 0.87,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 15,
+    "dprime": 0.739,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 16,
+    "dprime": 0.772,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 17,
+    "dprime": 0.708,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 18,
+    "dprime": 0.681,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 0.661,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 20,
+    "dprime": 0.683,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 21,
+    "dprime": 0.692,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 22,
+    "dprime": 0.77,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 23,
+    "dprime": 0.907,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 24,
+    "dprime": 0.902,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 25,
+    "dprime": 0.86,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 26,
+    "dprime": 0.853,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 27,
+    "dprime": 1.039,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 28,
+    "dprime": 1.026,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 29,
+    "dprime": 0.95,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 30,
+    "dprime": 0.845,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 31,
+    "dprime": 0.701,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 32,
+    "dprime": 0.525,
+    "accuracy": 0.633
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.653,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 0.534,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 0.742,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 3,
+    "dprime": 0.728,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 4,
+    "dprime": 0.755,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 5,
+    "dprime": 0.812,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 6,
+    "dprime": 0.85,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 7,
+    "dprime": 1.074,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.152,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 9,
+    "dprime": 1.26,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 1.176,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 11,
+    "dprime": 1.23,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 12,
+    "dprime": 1.276,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 1.345,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 14,
+    "dprime": 1.307,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 1.208,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 16,
+    "dprime": 1.146,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 17,
+    "dprime": 1.137,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 18,
+    "dprime": 1.232,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 19,
+    "dprime": 1.241,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 1.322,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 21,
+    "dprime": 1.329,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 22,
+    "dprime": 1.327,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 1.394,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.38,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 25,
+    "dprime": 1.459,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 1.475,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 27,
+    "dprime": 1.677,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 1.771,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 29,
+    "dprime": 1.835,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 30,
+    "dprime": 1.964,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 31,
+    "dprime": 2.261,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 32,
+    "dprime": 2.561,
+    "accuracy": 0.867
+   }
+  ]
+ },
+ "ministral3_8b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 3.904,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 1,
+    "dprime": 3.124,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 2.373,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 3,
+    "dprime": 2.664,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 3.219,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.694,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 4.233,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.101,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 3.809,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 3.864,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 4.736,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.485,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.476,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.92,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.69,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.89,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 5.91,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.276,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 10.3,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.341,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.623,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 11.238,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 13.062,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 11.574,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 11.224,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 12.056,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.98,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 12.13,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 11.326,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 12.136,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 12.846,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 12.638,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 13.466,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.583,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 13.219,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 2.236,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 2.126,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 2.278,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 2.899,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 3.168,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 3.233,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 3.947,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.212,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 4.44,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 4.414,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 4.697,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 4.398,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.357,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 4.588,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 4.721,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 4.859,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 5.277,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 5.726,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 6.496,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 6.937,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.822,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.428,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 7.804,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.677,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.581,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.677,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.63,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.665,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.806,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.838,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.913,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.868,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.35,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.142,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.847,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 1.139,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 1.842,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 3.756,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 5.002,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 6.317,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 5.889,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 5.259,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.396,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.837,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 7.328,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.985,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 7.261,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.439,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.183,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.176,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.6,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.802,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.039,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 10.339,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 15.311,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 16.925,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 17.732,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 18.855,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 17.8,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 18.837,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 17.19,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 15.804,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.705,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.484,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.369,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 14.818,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 15.936,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 18.108,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 18.307,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 20.322,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 3.188,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 2.198,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 1.92,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 2.037,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 4,
+    "dprime": 2.254,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 5,
+    "dprime": 2.544,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 6,
+    "dprime": 2.772,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 2.781,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 8,
+    "dprime": 3.072,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 9,
+    "dprime": 3.124,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 10,
+    "dprime": 3.492,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 3.621,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 3.495,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.389,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 3.596,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 3.653,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 3.572,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 3.633,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 4.838,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 6.202,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.872,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.325,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 7.203,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 6.131,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.154,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.493,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.108,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.945,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 9.276,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 9.583,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 9.711,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.164,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 11.715,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.54,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 13.652,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 1.407,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 1,
+    "dprime": 1.75,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 2,
+    "dprime": 2.378,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 2.844,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 2.797,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 2.692,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 2.422,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 7,
+    "dprime": 2.845,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 2.897,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 9,
+    "dprime": 2.833,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 10,
+    "dprime": 2.777,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 11,
+    "dprime": 2.599,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 12,
+    "dprime": 2.838,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 13,
+    "dprime": 2.86,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 14,
+    "dprime": 3.143,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 15,
+    "dprime": 3.05,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 16,
+    "dprime": 3.473,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 17,
+    "dprime": 3.749,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 18,
+    "dprime": 3.83,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 19,
+    "dprime": 3.947,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 20,
+    "dprime": 3.942,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 21,
+    "dprime": 3.828,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 22,
+    "dprime": 3.763,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 23,
+    "dprime": 3.761,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 24,
+    "dprime": 4.024,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 25,
+    "dprime": 3.809,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 26,
+    "dprime": 3.729,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 27,
+    "dprime": 3.767,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 28,
+    "dprime": 3.776,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 29,
+    "dprime": 3.94,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 3.851,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 31,
+    "dprime": 4.354,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 4.81,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 5.527,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 3.879,
+    "accuracy": 0.933
+   }
+  ]
+ },
+ "mistral_7b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 2.737,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 3.006,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 3.116,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 3.259,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 3.551,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 4.032,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.42,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.335,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 4.276,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 4.228,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 10,
+    "dprime": 4.726,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 4.859,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.207,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.929,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.445,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.007,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.829,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.352,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.058,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.745,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.188,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 9.046,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.815,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.823,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.388,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.889,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 9.299,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.708,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 9.4,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 10.322,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.082,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 11.738,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.454,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.683,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 1.581,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 2.154,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 3.268,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 2.88,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 3.713,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 4.626,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 4.982,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 5.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.223,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.349,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.995,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 6.782,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 6.813,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.348,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.338,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 10.188,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 14.343,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 14.3,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 13.281,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 13.237,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 11.816,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 11.602,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 11.12,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.909,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 10.741,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 10.54,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 11.261,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 11.253,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 11.347,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 10.983,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.756,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 11.138,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 2.461,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 1,
+    "dprime": 2.28,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 2.378,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 2.233,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 2.105,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 5,
+    "dprime": 2.391,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.662,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 2.669,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 2.536,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 2.418,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 2.715,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 2.706,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 2.829,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 13,
+    "dprime": 2.638,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 14,
+    "dprime": 2.828,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 2.937,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 3.32,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 4.844,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 4.41,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 5.554,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 5.115,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 5.836,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 5.807,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 5.247,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 5.543,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 5.935,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.555,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.812,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.146,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.132,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.493,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.545,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 7.153,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": -0.365,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 1,
+    "dprime": 2.144,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 2,
+    "dprime": 2.141,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 2.88,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 2.888,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 3.011,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 3.257,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 3.457,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 3.476,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 3.694,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 3.542,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 3.653,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 3.934,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 3.927,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 4.315,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 4.63,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 4.861,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 4.942,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 4.804,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 4.661,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 4.514,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 4.357,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 4.329,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 23,
+    "dprime": 4.326,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 24,
+    "dprime": 4.361,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 25,
+    "dprime": 4.418,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 26,
+    "dprime": 4.64,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 4.49,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 28,
+    "dprime": 4.578,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 4.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 4.573,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 4.585,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 4.84,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "mistral_7b_base": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 1.113,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 1.267,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 1.276,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 3,
+    "dprime": 1.414,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 4,
+    "dprime": 1.455,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 5,
+    "dprime": 1.493,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 6,
+    "dprime": 1.481,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 7,
+    "dprime": 1.427,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.603,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 9,
+    "dprime": 1.653,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 1.624,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 11,
+    "dprime": 1.637,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 12,
+    "dprime": 1.735,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 13,
+    "dprime": 1.75,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 14,
+    "dprime": 1.797,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 1.921,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 16,
+    "dprime": 1.896,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 17,
+    "dprime": 1.917,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 18,
+    "dprime": 1.859,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 19,
+    "dprime": 1.964,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 20,
+    "dprime": 1.952,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 21,
+    "dprime": 1.986,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 22,
+    "dprime": 1.998,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 23,
+    "dprime": 2.045,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 24,
+    "dprime": 2.035,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 25,
+    "dprime": 2.086,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 2.093,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 27,
+    "dprime": 2.074,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 2.075,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 29,
+    "dprime": 2.203,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 30,
+    "dprime": 2.367,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 31,
+    "dprime": 2.462,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 32,
+    "dprime": 2.327,
+    "accuracy": 0.867
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.654,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 1,
+    "dprime": 0.816,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 2,
+    "dprime": 0.91,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 3,
+    "dprime": 0.877,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 0.855,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 5,
+    "dprime": 0.82,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 6,
+    "dprime": 0.964,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.018,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.157,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 9,
+    "dprime": 1.174,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 10,
+    "dprime": 1.202,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 11,
+    "dprime": 1.153,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 12,
+    "dprime": 1.263,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 13,
+    "dprime": 1.357,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 14,
+    "dprime": 1.408,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 15,
+    "dprime": 1.655,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 16,
+    "dprime": 1.802,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 17,
+    "dprime": 1.85,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 18,
+    "dprime": 1.606,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 19,
+    "dprime": 1.549,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 20,
+    "dprime": 1.658,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 21,
+    "dprime": 1.642,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 22,
+    "dprime": 1.632,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 1.575,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.735,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 25,
+    "dprime": 1.66,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 1.643,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 27,
+    "dprime": 1.67,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 1.773,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 29,
+    "dprime": 1.778,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 30,
+    "dprime": 1.916,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 31,
+    "dprime": 1.979,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 32,
+    "dprime": 2.363,
+    "accuracy": 0.933
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.044,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 0.143,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 2,
+    "dprime": 0.332,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 3,
+    "dprime": 0.511,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 4,
+    "dprime": 0.596,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 0.69,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 6,
+    "dprime": 0.663,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 7,
+    "dprime": 0.77,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 8,
+    "dprime": 0.837,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 9,
+    "dprime": 0.911,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 10,
+    "dprime": 0.898,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 0.946,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 12,
+    "dprime": 0.915,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 13,
+    "dprime": 0.958,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 14,
+    "dprime": 0.978,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 15,
+    "dprime": 1.078,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 16,
+    "dprime": 1.21,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 17,
+    "dprime": 1.29,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 18,
+    "dprime": 1.232,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 1.377,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 20,
+    "dprime": 1.401,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 21,
+    "dprime": 1.409,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 22,
+    "dprime": 1.442,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 23,
+    "dprime": 1.495,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 24,
+    "dprime": 1.579,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 25,
+    "dprime": 1.627,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 26,
+    "dprime": 1.651,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 27,
+    "dprime": 1.622,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 28,
+    "dprime": 1.738,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 29,
+    "dprime": 1.763,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 30,
+    "dprime": 1.878,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 31,
+    "dprime": 1.946,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 32,
+    "dprime": 2.26,
+    "accuracy": 0.867
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 0.52,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 0.799,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 2,
+    "dprime": 0.595,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 3,
+    "dprime": 0.205,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 4,
+    "dprime": 0.337,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 5,
+    "dprime": 0.554,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 6,
+    "dprime": 0.532,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 7,
+    "dprime": 0.657,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 8,
+    "dprime": 0.835,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 9,
+    "dprime": 0.77,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 10,
+    "dprime": 0.805,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 11,
+    "dprime": 0.78,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 12,
+    "dprime": 0.79,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 13,
+    "dprime": 0.794,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 14,
+    "dprime": 0.87,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 15,
+    "dprime": 0.809,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 16,
+    "dprime": 0.722,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 17,
+    "dprime": 0.794,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 18,
+    "dprime": 0.751,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 19,
+    "dprime": 0.814,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 20,
+    "dprime": 0.769,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 21,
+    "dprime": 0.833,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 22,
+    "dprime": 0.884,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 23,
+    "dprime": 0.954,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 24,
+    "dprime": 0.873,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 25,
+    "dprime": 0.945,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 26,
+    "dprime": 0.909,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 27,
+    "dprime": 0.898,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 28,
+    "dprime": 0.862,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 29,
+    "dprime": 0.99,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 30,
+    "dprime": 1.061,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 31,
+    "dprime": 1.071,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 32,
+    "dprime": 1.381,
+    "accuracy": 0.733
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.124,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.494,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 2,
+    "dprime": 0.666,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 3,
+    "dprime": 0.931,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 4,
+    "dprime": 0.824,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 5,
+    "dprime": 1.048,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 6,
+    "dprime": 1.097,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 7,
+    "dprime": 1.153,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 8,
+    "dprime": 1.238,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 9,
+    "dprime": 1.408,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 1.344,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 11,
+    "dprime": 2.317,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 12,
+    "dprime": 2.396,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 13,
+    "dprime": 2.151,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 14,
+    "dprime": 2.287,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 15,
+    "dprime": 2.636,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 2.455,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 17,
+    "dprime": 2.583,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 18,
+    "dprime": 2.657,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 19,
+    "dprime": 3.119,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 20,
+    "dprime": 3.193,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 21,
+    "dprime": 3.18,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 22,
+    "dprime": 3.095,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 3.003,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 24,
+    "dprime": 3.918,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 25,
+    "dprime": 3.832,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 26,
+    "dprime": 3.721,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 27,
+    "dprime": 4.002,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 28,
+    "dprime": 4.258,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 29,
+    "dprime": 4.43,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 30,
+    "dprime": 4.697,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 5.105,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 6.082,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "phi4": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 8.512,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 4.482,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 3.492,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 4.024,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 4,
+    "dprime": 4.348,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 5,
+    "dprime": 4.865,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 5.475,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 6.191,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 6.531,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.442,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.59,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.434,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 6.61,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 13,
+    "dprime": 6.49,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 14,
+    "dprime": 6.503,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 15,
+    "dprime": 6.871,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 16,
+    "dprime": 7.215,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.85,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.252,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.775,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 8.553,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 9.931,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.729,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 9.408,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.486,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 9.548,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.872,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.366,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 10.954,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.379,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 11.619,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 12.211,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.478,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 12.257,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 12.479,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 12.061,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 11.873,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 11.993,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 10.417,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 10.59,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 1.983,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 2.135,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 3,
+    "dprime": 2.715,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 2.497,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 2.18,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 6,
+    "dprime": 2.047,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 7,
+    "dprime": 2.057,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 8,
+    "dprime": 2.066,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 9,
+    "dprime": 2.051,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 10,
+    "dprime": 2.22,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 11,
+    "dprime": 2.291,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 12,
+    "dprime": 2.514,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 13,
+    "dprime": 2.853,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 14,
+    "dprime": 2.979,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 15,
+    "dprime": 3.519,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 3.758,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 17,
+    "dprime": 3.953,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 5.342,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 5.771,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 6.236,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.29,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.442,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 8.327,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 7.302,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 7.341,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.021,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.577,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.38,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.205,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.642,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.116,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.65,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 9.001,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 9.145,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 9.245,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.282,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 9.479,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 9.736,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 10.001,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 11.981,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.365,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 2.766,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 3.911,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 4.962,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 5.541,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 5.738,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.074,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 6.651,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 7.329,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 7.599,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.868,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 8.416,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 8.967,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 9.149,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 9.069,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 9.049,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.183,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 10.374,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 11.262,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 11.999,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 12.295,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 13.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 13.963,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 14.01,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 14.166,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 14.017,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 13.201,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 12.541,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 12.365,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 12.017,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.665,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 11.474,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 11.685,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 11.836,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 11.674,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 11.958,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 12.088,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 11.866,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 12.164,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 12.639,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 15.609,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 5.369,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 1,
+    "dprime": 4.236,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 3.581,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 4.018,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 4,
+    "dprime": 4.229,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 4.342,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 4.402,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 4.654,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 8,
+    "dprime": 4.801,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 4.691,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 4.671,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 4.478,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 12,
+    "dprime": 4.495,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 13,
+    "dprime": 4.409,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 14,
+    "dprime": 4.322,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 15,
+    "dprime": 4.546,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 16,
+    "dprime": 4.664,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 17,
+    "dprime": 4.7,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 18,
+    "dprime": 5.186,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 19,
+    "dprime": 5.473,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 20,
+    "dprime": 5.306,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 21,
+    "dprime": 5.816,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 22,
+    "dprime": 6.74,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 6.79,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.694,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.598,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.728,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.852,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 6.896,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.348,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 7.715,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 8.03,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 8.912,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 8.798,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 8.959,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 9.167,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 9.054,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 9.209,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 8.602,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 11.105,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 2.343,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 2.352,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 3,
+    "dprime": 3.963,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 4.481,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 4.908,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 5.271,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.319,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 5.489,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.883,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.102,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 5.879,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 5.666,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.596,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.561,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.06,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 6.719,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.853,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 7.879,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.043,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 7.874,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 7.555,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 8.175,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.917,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.212,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.007,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.327,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 8.465,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 8.631,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 9.531,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 9.884,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 10.317,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 10.691,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 33,
+    "dprime": 12.148,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 34,
+    "dprime": 11.859,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 35,
+    "dprime": 12.072,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 36,
+    "dprime": 12.53,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 37,
+    "dprime": 12.863,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 38,
+    "dprime": 13.459,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 39,
+    "dprime": 7.649,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 40,
+    "dprime": 8.802,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "qwen3.5_9b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 5.066,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 4.85,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 4.602,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 4.548,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 5.764,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 5,
+    "dprime": 5.549,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 5.525,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 5.723,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 5.659,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 9,
+    "dprime": 5.803,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 6.363,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 11,
+    "dprime": 7.196,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 7.689,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 8.302,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 8.255,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.571,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.358,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 11.113,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 12.497,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 11.804,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 13.437,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 16.254,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 15.941,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 15.882,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 16.268,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.886,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 15.498,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.126,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.28,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 13.84,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 13.108,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 13.777,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 11.904,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 3.16,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 2,
+    "dprime": 2.901,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 3,
+    "dprime": 4.83,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 5.903,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 5.874,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 5.465,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 5.896,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 6.973,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 6.574,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 6.948,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.962,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 10.623,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 13.283,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 12.482,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 11.293,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 20.139,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 22.931,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 19.975,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 16.281,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 13.808,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 15.061,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 15.304,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 14.934,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 15.614,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.098,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 14.76,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.222,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 14.911,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 14.53,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 14.523,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 14.375,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 12.515,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.683,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 1,
+    "dprime": 5.441,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 6.078,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 9.706,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 12.13,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 15.007,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 11.117,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 10.341,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 9.012,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 7.348,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.679,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 7.285,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.636,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 8.365,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 8.314,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 7.861,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 8.168,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 10.045,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 10.341,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 10.118,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 11.119,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 11.053,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 11.639,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 12.432,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 12.023,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 12.202,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 11.915,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 11.773,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 10.819,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 11.466,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 11.315,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 12.074,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 12.895,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 6.061,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 2.481,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 2.632,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 3,
+    "dprime": 2.809,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 4,
+    "dprime": 3.105,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 5,
+    "dprime": 3.313,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 6,
+    "dprime": 3.451,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 7,
+    "dprime": 3.597,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 8,
+    "dprime": 3.606,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 9,
+    "dprime": 3.391,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 10,
+    "dprime": 3.777,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 11,
+    "dprime": 4.234,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 4.567,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 5.048,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 4.564,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 5.048,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 5.815,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.686,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.979,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 14.286,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 14.77,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 17.083,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 16.458,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 17.303,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 17.917,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 17.676,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 17.002,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 13.04,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 19.623,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 17.975,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 18.704,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 18.345,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 19.925,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.365,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 2.906,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 4.138,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 6.233,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 7.072,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 8.601,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 8.905,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 7.109,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 7.527,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 7.439,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 7.534,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 8.741,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.862,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 8.043,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.642,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.885,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 8.952,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 9.613,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.42,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.909,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 11.94,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.806,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 10.519,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 10.776,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 8.834,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 9.155,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 8.85,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.787,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 7.946,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 29,
+    "dprime": 7.611,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 30,
+    "dprime": 6.9,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 31,
+    "dprime": 7.935,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 32,
+    "dprime": 8.449,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "qwen_7b": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 1.84,
+    "accuracy": 0.8
+   },
+   {
+    "layer": 1,
+    "dprime": 2.09,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 2,
+    "dprime": 2.386,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 3,
+    "dprime": 2.628,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 4,
+    "dprime": 3.156,
+    "accuracy": 0.867
+   },
+   {
+    "layer": 5,
+    "dprime": 3.794,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 6,
+    "dprime": 3.674,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 7,
+    "dprime": 3.855,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 4.684,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 5.116,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 5.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 6.75,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.232,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.481,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.784,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.673,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 8.484,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.681,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.416,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 10.765,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 15.794,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 16.648,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 17.059,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 19.064,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 20.257,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 19.759,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 20.455,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 19.552,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 11.272,
+    "accuracy": 1.0
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.0,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 1,
+    "dprime": 4.189,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 2,
+    "dprime": 4.148,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 4.262,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 4,
+    "dprime": 4.732,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 4.926,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 4.788,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 7,
+    "dprime": 4.703,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 8,
+    "dprime": 4.166,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 4.439,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 10,
+    "dprime": 4.53,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 4.26,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 12,
+    "dprime": 4.498,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 4.48,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 5.311,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 6.934,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.363,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 7.855,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.462,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 7.618,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 9.412,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 8.549,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 7.889,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 7.049,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 6.763,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 6.727,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 6.569,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 6.98,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 5.992,
+    "accuracy": 1.0
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 1.932,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 1,
+    "dprime": 2.7,
+    "accuracy": 0.833
+   },
+   {
+    "layer": 2,
+    "dprime": 4.17,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 3,
+    "dprime": 4.613,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 6.238,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 6.743,
+    "accuracy": 0.967
+   },
+   {
+    "layer": 6,
+    "dprime": 7.508,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 7.928,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 8.147,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 8.269,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 8.387,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 8.02,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 7.894,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.733,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.803,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 8.09,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 7.955,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.369,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 9.99,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 17.111,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 17.789,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 14.761,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 11.317,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 10.724,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 10.52,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 9.8,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 9.883,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 11.035,
+    "accuracy": 1.0
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": 10.574,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 1,
+    "dprime": 8.466,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 8.979,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 8.937,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 8.024,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 8.674,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 10.079,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 7.978,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 10.034,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 9.102,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 8.651,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 7.848,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 8.083,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 7.719,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 7.86,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 9.474,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.254,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 8.848,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 9.238,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 8.35,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 14.033,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 15.77,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 15.454,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 13.757,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 15.956,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 15.574,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 15.298,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 14.642,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 18.375,
+    "accuracy": 1.0
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.365,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 1,
+    "dprime": 2.925,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 2,
+    "dprime": 3.811,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 3,
+    "dprime": 3.725,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 4,
+    "dprime": 4.937,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 5,
+    "dprime": 7.457,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 6,
+    "dprime": 6.853,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 7,
+    "dprime": 6.743,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 8,
+    "dprime": 8.406,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 9,
+    "dprime": 8.597,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 10,
+    "dprime": 8.488,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 11,
+    "dprime": 8.972,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 12,
+    "dprime": 8.982,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 13,
+    "dprime": 10.031,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 14,
+    "dprime": 9.412,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 15,
+    "dprime": 9.928,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 16,
+    "dprime": 9.836,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 17,
+    "dprime": 9.339,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 18,
+    "dprime": 8.917,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 19,
+    "dprime": 10.95,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 20,
+    "dprime": 10.081,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 21,
+    "dprime": 10.583,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 22,
+    "dprime": 9.907,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 23,
+    "dprime": 9.006,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 24,
+    "dprime": 9.868,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 25,
+    "dprime": 8.912,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 26,
+    "dprime": 7.707,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 27,
+    "dprime": 7.312,
+    "accuracy": 1.0
+   },
+   {
+    "layer": 28,
+    "dprime": 4.519,
+    "accuracy": 1.0
+   }
+  ]
+ },
+ "qwen_7b_base": {
+  "warm_cold": [
+   {
+    "layer": 0,
+    "dprime": 0.322,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.374,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 2,
+    "dprime": 0.372,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 3,
+    "dprime": 0.19,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 4,
+    "dprime": 0.168,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 5,
+    "dprime": 0.13,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 6,
+    "dprime": 0.172,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 7,
+    "dprime": 0.217,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 8,
+    "dprime": 0.202,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 9,
+    "dprime": 0.225,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 10,
+    "dprime": 0.232,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 11,
+    "dprime": 0.252,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 12,
+    "dprime": 0.223,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 13,
+    "dprime": 0.196,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 14,
+    "dprime": 0.218,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 15,
+    "dprime": 0.234,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 16,
+    "dprime": 0.28,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 17,
+    "dprime": 0.28,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 18,
+    "dprime": 0.265,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 19,
+    "dprime": 0.326,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 20,
+    "dprime": 0.486,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 21,
+    "dprime": 0.469,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 22,
+    "dprime": 0.419,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 23,
+    "dprime": 0.456,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 24,
+    "dprime": 0.543,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 25,
+    "dprime": 0.552,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 26,
+    "dprime": 0.596,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 27,
+    "dprime": 0.836,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 28,
+    "dprime": 0.746,
+    "accuracy": 0.667
+   }
+  ],
+  "confident_cautious": [
+   {
+    "layer": 0,
+    "dprime": 0.991,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 1,
+    "dprime": 1.116,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 2,
+    "dprime": 1.149,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 3,
+    "dprime": 1.14,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 4,
+    "dprime": 1.135,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 5,
+    "dprime": 1.17,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 6,
+    "dprime": 1.255,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 7,
+    "dprime": 1.33,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 8,
+    "dprime": 1.434,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 9,
+    "dprime": 1.53,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 10,
+    "dprime": 1.505,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 11,
+    "dprime": 1.552,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 12,
+    "dprime": 1.558,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 13,
+    "dprime": 1.594,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 14,
+    "dprime": 1.629,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 15,
+    "dprime": 1.645,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 16,
+    "dprime": 1.652,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 17,
+    "dprime": 1.617,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 18,
+    "dprime": 1.584,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 19,
+    "dprime": 1.651,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 20,
+    "dprime": 1.795,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 21,
+    "dprime": 1.723,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 22,
+    "dprime": 1.67,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 23,
+    "dprime": 1.664,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 24,
+    "dprime": 1.804,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 25,
+    "dprime": 1.776,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 26,
+    "dprime": 1.86,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 27,
+    "dprime": 2.199,
+    "accuracy": 0.767
+   },
+   {
+    "layer": 28,
+    "dprime": 1.752,
+    "accuracy": 0.733
+   }
+  ],
+  "empathetic_analytical": [
+   {
+    "layer": 0,
+    "dprime": 0.594,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 1,
+    "dprime": 0.946,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 2,
+    "dprime": 0.923,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.921,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 1.076,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 5,
+    "dprime": 1.104,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 6,
+    "dprime": 0.963,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 7,
+    "dprime": 1.014,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 8,
+    "dprime": 1.052,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 9,
+    "dprime": 1.118,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 10,
+    "dprime": 1.156,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 11,
+    "dprime": 1.136,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 12,
+    "dprime": 1.135,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 13,
+    "dprime": 1.128,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 14,
+    "dprime": 1.153,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 15,
+    "dprime": 1.199,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 16,
+    "dprime": 1.225,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 17,
+    "dprime": 1.253,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 18,
+    "dprime": 1.225,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 19,
+    "dprime": 1.311,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 20,
+    "dprime": 1.538,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 21,
+    "dprime": 1.475,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 22,
+    "dprime": 1.523,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 23,
+    "dprime": 1.464,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 24,
+    "dprime": 1.513,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 25,
+    "dprime": 1.393,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 26,
+    "dprime": 1.374,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 27,
+    "dprime": 1.131,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 28,
+    "dprime": 0.855,
+    "accuracy": 0.667
+   }
+  ],
+  "formal_casual": [
+   {
+    "layer": 0,
+    "dprime": -0.1,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 1,
+    "dprime": 0.081,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 2,
+    "dprime": -0.036,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 3,
+    "dprime": 0.139,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 4,
+    "dprime": 0.163,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 5,
+    "dprime": 0.153,
+    "accuracy": 0.4
+   },
+   {
+    "layer": 6,
+    "dprime": 0.018,
+    "accuracy": 0.367
+   },
+   {
+    "layer": 7,
+    "dprime": 0.012,
+    "accuracy": 0.367
+   },
+   {
+    "layer": 8,
+    "dprime": 0.163,
+    "accuracy": 0.4
+   },
+   {
+    "layer": 9,
+    "dprime": 0.17,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 10,
+    "dprime": 0.293,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 11,
+    "dprime": 0.274,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 12,
+    "dprime": 0.288,
+    "accuracy": 0.5
+   },
+   {
+    "layer": 13,
+    "dprime": 0.32,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 14,
+    "dprime": 0.327,
+    "accuracy": 0.433
+   },
+   {
+    "layer": 15,
+    "dprime": 0.398,
+    "accuracy": 0.467
+   },
+   {
+    "layer": 16,
+    "dprime": 0.61,
+    "accuracy": 0.533
+   },
+   {
+    "layer": 17,
+    "dprime": 0.568,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 18,
+    "dprime": 0.584,
+    "accuracy": 0.6
+   },
+   {
+    "layer": 19,
+    "dprime": 0.822,
+    "accuracy": 0.567
+   },
+   {
+    "layer": 20,
+    "dprime": 2.115,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 21,
+    "dprime": 2.193,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 22,
+    "dprime": 2.289,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 23,
+    "dprime": 2.367,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 24,
+    "dprime": 2.983,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 25,
+    "dprime": 3.032,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 26,
+    "dprime": 3.023,
+    "accuracy": 0.933
+   },
+   {
+    "layer": 27,
+    "dprime": 2.737,
+    "accuracy": 0.9
+   },
+   {
+    "layer": 28,
+    "dprime": 1.098,
+    "accuracy": 0.6
+   }
+  ],
+  "verbose_concise": [
+   {
+    "layer": 0,
+    "dprime": 0.634,
+    "accuracy": 0.633
+   },
+   {
+    "layer": 1,
+    "dprime": 0.667,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 2,
+    "dprime": 0.689,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 3,
+    "dprime": 0.791,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 4,
+    "dprime": 0.963,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 5,
+    "dprime": 1.156,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 6,
+    "dprime": 1.057,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 7,
+    "dprime": 1.111,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 8,
+    "dprime": 1.123,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 9,
+    "dprime": 1.205,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 10,
+    "dprime": 1.221,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 11,
+    "dprime": 1.21,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 12,
+    "dprime": 1.22,
+    "accuracy": 0.733
+   },
+   {
+    "layer": 13,
+    "dprime": 1.19,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 14,
+    "dprime": 1.18,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 15,
+    "dprime": 1.142,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 16,
+    "dprime": 1.207,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 17,
+    "dprime": 1.199,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 18,
+    "dprime": 1.175,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 19,
+    "dprime": 1.316,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 20,
+    "dprime": 1.46,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 21,
+    "dprime": 1.426,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 22,
+    "dprime": 1.323,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 23,
+    "dprime": 1.28,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 24,
+    "dprime": 1.336,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 25,
+    "dprime": 1.255,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 26,
+    "dprime": 1.24,
+    "accuracy": 0.7
+   },
+   {
+    "layer": 27,
+    "dprime": 1.344,
+    "accuracy": 0.667
+   },
+   {
+    "layer": 28,
+    "dprime": 0.682,
+    "accuracy": 0.7
+   }
+  ]
+ }
+}

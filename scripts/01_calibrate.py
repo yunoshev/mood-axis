@@ -24,7 +24,7 @@ Train/Val split:
 
 Backend:
     --backend pytorch   Use PyTorch (HF transformers). Default on CUDA/CPU.
-    --backend mlx       Use MLX 4-bit. 2-5x faster on Apple Silicon. Requires: pip install mlx mlx-lm
+    --backend mlx       Use MLX (native bf16 weights). 2-5x faster on Apple Silicon. Requires: pip install mlx mlx-lm
 
 Usage:
     python scripts/01_calibrate.py --model qwen_7b
@@ -87,11 +87,11 @@ REPO_ROOT = PROJECT_ROOT.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(REPO_ROOT))
 
-# Optional integration with the private `fw` framework. When it is not
+# Optional integration with the global `fw` framework. When it is not
 # installed (public/standalone mode), fall back to a minimal emitter that
 # keeps the #PROGRESS stdout protocol working.
 try:
-    from framework.progress import log_progress
+    from fw.progress import log_progress
 except ImportError:
     import json as _progress_json
 
@@ -110,6 +110,36 @@ except ImportError:
 
 # Global progress tracker for fw status (#PROGRESS protocol)
 _global_progress = {"done": 0, "total": 0, "t_start": 0}
+_time_budget_deadline = None  # monotonic deadline; set from --time-budget-min
+_time_budget_exit_code = 0  # exit code on budget stop (75 for fw2 repeat-until-exit)
+
+# Stall watchdog: MLX generation can wedge forever (observed on qwen3.6_27b —
+# process spins at 100% CPU, generation never returns). If no sample completes
+# within MOOD_STALL_TIMEOUT seconds, dump all thread stacks (root-cause
+# evidence in the log) and exit with the time-budget code so the fw2
+# repeat-until-exit loop restarts cleanly from the checkpoint.
+_stall_s = int(os.environ.get("MOOD_STALL_TIMEOUT", "1500"))
+
+
+def _touch_heartbeat():
+    """Re-arm the C-level stall watchdog.
+
+    MLX wedges inside native code WITHOUT releasing the GIL, so a Python
+    watchdog thread never gets scheduled. faulthandler's watchdog runs at C
+    level (no GIL needed): if not re-armed within MOOD_STALL_TIMEOUT seconds
+    it dumps all thread stacks to stderr and hard-exits (code 1), letting the
+    fw2 repeat-until-exit loop restart from the checkpoint.
+    """
+    if _stall_s > 0:
+        import faulthandler
+        faulthandler.dump_traceback_later(_stall_s, exit=True)
+
+
+def _start_stall_watchdog():
+    if _stall_s > 0:
+        _log(f"Stall watchdog armed: faulthandler dump+exit after {_stall_s}s "
+             f"without a finished sample")
+        _touch_heartbeat()
 
 from config.settings import (
     MOOD_AXES, AXES_DIR,
@@ -248,9 +278,30 @@ def _collect_states_incremental(
     """
     total = len(samples)
 
+    # Effective token cap for this group (used for truncation check + resume guard)
+    effective_max_tokens = max_new_tokens if max_new_tokens is not None else CALIBRATION_MAX_NEW_TOKENS
+
     # Check how many samples are already done on disk
     ckpt = _load_checkpoint(model_key)
     done_count = ckpt.get("groups", {}).get(group_key, 0)
+    # Samples of this group already counted into _global_progress["done"] at
+    # startup (done_from_partial) — used below to avoid double counting on resume.
+    _counted_at_init = min(done_count, total)
+
+    # M5: refuse to resume across a token-cap change (states would be inconsistent)
+    recorded_cap = ckpt.get("group_max_tokens", {}).get(group_key)
+    if recorded_cap is not None and done_count > 0 and recorded_cap != effective_max_tokens:
+        axis_name = group_key.rsplit("_", 2)[0]
+        logger.error(
+            f"  {group_key}: checkpoint was created with max_new_tokens={recorded_cap}, "
+            f"current effective cap is {effective_max_tokens}. Refusing to resume — "
+            f"partial states would mix token caps. "
+            f"Rerun with --force --axes {axis_name} to recompute this axis."
+        )
+        raise RuntimeError(
+            f"Token cap changed for {group_key} ({recorded_cap} -> {effective_max_tokens}); "
+            f"use --force --axes {axis_name}"
+        )
 
     # Load existing hidden states from disk
     hs = _load_partial_hidden_states(model_key)
@@ -273,10 +324,13 @@ def _collect_states_incremental(
         _log(f"  {group_key}: checkpoint={done_count} but no states on disk, restarting")
         done_count = 0
 
+    # Reconcile startup accounting (done_from_partial counted the checkpoint
+    # value) with the disk-validated done_count — prevents done > total on
+    # resumed attempts (double counting) and corrects stale checkpoints.
+    _global_progress["done"] += min(done_count, total) - _counted_at_init
+
     if done_count >= total:
         _log(f"  {group_key}: loaded from disk ({total} samples)")
-        # Update global progress so fw status shows correct count
-        _global_progress["done"] += total
         g = _global_progress
         g_elapsed = time.monotonic() - g["t_start"] if g["t_start"] else 0
         log_progress(g["done"], g["total"], g_elapsed,
@@ -307,6 +361,18 @@ def _collect_states_incremental(
     t_start = time.monotonic()
 
     responses_file = AXES_DIR / f"{model_key}_calibration.jsonl"
+    pending_rows = []  # JSONL rows buffered until their states are persisted (M3)
+
+    # Warm the shared-prefix prompt cache on the pole's system prompt
+    # (no-op unless MOOD_PROMPT_CACHE=1 and the backend supports it)
+    if done_count < total and hasattr(generate_fn, "warm"):
+        first = samples[done_count]
+        n_warmed = generate_fn.warm([
+            {"role": "system", "content": first.system_prompt},
+            {"role": "user", "content": first.user_prompt},
+        ])
+        if n_warmed:
+            _log(f"  {group_key}: prompt cache warmed ({n_warmed} tokens)")
 
     for i in range(done_count, total):
         sample = samples[i]
@@ -314,7 +380,9 @@ def _collect_states_incremental(
             {"role": "system", "content": sample.system_prompt},
             {"role": "user", "content": sample.user_prompt},
         ]
+        _touch_heartbeat()
         result = generate_fn(messages, save_extra=True, max_new_tokens=max_new_tokens)
+        _touch_heartbeat()
 
         states.append(result.hidden_state)
 
@@ -324,12 +392,12 @@ def _collect_states_incremental(
         if result.per_layer_states is not None:
             per_layer_list.append(result.per_layer_states)
 
-        is_truncated = result.n_generated_tokens >= (max_new_tokens or CALIBRATION_MAX_NEW_TOKENS)
+        is_truncated = result.n_generated_tokens >= effective_max_tokens
         if is_truncated:
             truncated_count += 1
             logger.warning(
                 f"  TRUNCATED: {group_key} #{i} — "
-                f"{result.n_generated_tokens} tokens (max={CALIBRATION_MAX_NEW_TOKENS})"
+                f"{result.n_generated_tokens} tokens (max={effective_max_tokens})"
             )
 
         if save_tokens:
@@ -352,34 +420,40 @@ def _collect_states_incremental(
             "generation_time_s": round(result.generation_time_s, 2),
         }
         responses.append(resp_entry)
-
-        # Append response to JSONL immediately
-        with open(responses_file, "a") as f:
-            f.write(json.dumps(resp_entry, ensure_ascii=False) + "\n")
-            f.flush()
-
-        # Save hidden states to disk after EVERY sample
-        hs[agg_key] = np.stack(states)
-        if last_token_states:
-            hs[f"{group_key}_last_token"] = np.stack(last_token_states)
-        if per_layer_list:
-            try:
-                hs[f"{group_key}_layers"] = np.stack(per_layer_list)
-            except ValueError:
-                pass  # Shape mismatch in per-layer data (non-essential)
-        _save_partial_hidden_states(model_key, hs)
-
-        # Update checkpoint count
-        n = i + 1
-        ckpt = _load_checkpoint(model_key)
-        ckpt.setdefault("groups", {})[group_key] = n
-        _save_checkpoint(model_key, ckpt)
+        pending_rows.append(resp_entry)
 
         # Update global progress
         _global_progress["done"] += 1
 
-        # Progress log every checkpoint_every samples
+        n = i + 1
+        # Checkpoint every checkpoint_every samples and at group end (m7):
+        # npz + checkpoint are saved first, then the matching JSONL rows are
+        # flushed — rows on disk always correspond to persisted states (M3).
         if n == total or n % checkpoint_every == 0:
+            # 1. Save hidden states to disk
+            hs[agg_key] = np.stack(states)
+            if last_token_states:
+                hs[f"{group_key}_last_token"] = np.stack(last_token_states)
+            if per_layer_list:
+                try:
+                    hs[f"{group_key}_layers"] = np.stack(per_layer_list)
+                except ValueError:
+                    pass  # Shape mismatch in per-layer data (non-essential)
+            _save_partial_hidden_states(model_key, hs)
+
+            # 2. Update checkpoint count + effective token cap (M5)
+            ckpt = _load_checkpoint(model_key)
+            ckpt.setdefault("groups", {})[group_key] = n
+            ckpt.setdefault("group_max_tokens", {})[group_key] = effective_max_tokens
+            _save_checkpoint(model_key, ckpt)
+
+            # 3. Flush buffered JSONL rows (states for them are now persisted)
+            with open(responses_file, "a") as f:
+                for row in pending_rows:
+                    f.write(json.dumps(row, ensure_ascii=False) + "\n")
+                f.flush()
+            pending_rows = []
+
             elapsed = time.monotonic() - t_start
             n_new = n - done_count
             per_sample = elapsed / n_new
@@ -393,11 +467,18 @@ def _collect_states_incremental(
             log_progress(g["done"], g["total"], g_elapsed,
                          n_elapsed=g["done"] - g["done_at_start"])
 
+            # Time budget: exit cleanly at a checkpoint so short queue slots
+            # free up for other projects; a re-queued job resumes from here.
+            if _time_budget_deadline and time.monotonic() > _time_budget_deadline and n < total:
+                _log(f"  {group_key}: TIME BUDGET reached at {n}/{total} — "
+                     f"exiting (code {_time_budget_exit_code}), resume will continue")
+                sys.exit(_time_budget_exit_code)
+
     if truncated_count > 0:
         pct = truncated_count / total * 100
         logger.warning(
             f"  {group_key}: {truncated_count}/{total} ({pct:.0f}%) truncated "
-            f"at {CALIBRATION_MAX_NEW_TOKENS} tokens"
+            f"at {effective_max_tokens} tokens"
         )
 
     _log(f"  {group_key}: DONE ({total} samples saved)")
@@ -570,6 +651,7 @@ def calibrate_model(model_key: str, axes: list = None, force: bool = False,
                                 if any(k.startswith(a + "_") for a in axes)]
             for k in groups_to_remove:
                 ckpt["groups"].pop(k, None)
+                ckpt.get("group_max_tokens", {}).pop(k, None)
             ckpt["completed_axes"] = completed_axes
             # Remove axis-specific hidden states from NPZ
             hs = _load_partial_hidden_states(model_key)
@@ -607,9 +689,11 @@ def calibrate_model(model_key: str, axes: list = None, force: bool = False,
         from src.model.mlx_inference import (
             load_mlx_model,
             get_full_result_for_prompt as mlx_get_result,
+            warm_prompt_cache,
         )
         _log(f"Loading model: {model_config.model_id} (MLX)")
-        ctx = load_mlx_model(model_config.model_id)
+        ctx = load_mlx_model(model_config.model_id, quantize=model_config.quantize,
+                            mlx_model_id=model_config.mlx_model_id)
 
         def generate_fn(messages, save_extra=True, max_new_tokens=None):
             return mlx_get_result(
@@ -619,6 +703,10 @@ def calibrate_model(model_key: str, axes: list = None, force: bool = False,
                 save_extra=save_extra,
                 stop_strings=base_stop_strings,
             )
+
+        # Shared-prefix prompt cache warm-up (no-op unless MOOD_PROMPT_CACHE=1)
+        generate_fn.warm = lambda messages: warm_prompt_cache(
+            ctx, messages, chat_template_kwargs=template_kwargs)
 
         def _cleanup_fn():
             del ctx["model"]
@@ -662,8 +750,10 @@ def calibrate_model(model_key: str, axes: list = None, force: bool = False,
     completed_axes = ckpt.get("completed_axes", [])
     done_from_completed = len(completed_axes) * samples_per_axis
     groups = ckpt.get("groups", {})
+    # Count only partials of THIS run's axes: the shared checkpoint may hold
+    # leftovers of other axes (chunked jobs) which are outside `total`.
     done_from_partial = sum(v for k, v in groups.items()
-                           if not any(k.startswith(f"{a}_") for a in completed_axes))
+                           if any(k.startswith(f"{a}_") for a in axes))
     _global_progress["done"] = done_from_completed + done_from_partial
     _global_progress["done_at_start"] = _global_progress["done"]
     log_progress(_global_progress["done"], _global_progress["total"], 0)
@@ -692,6 +782,12 @@ def calibrate_model(model_key: str, axes: list = None, force: bool = False,
         if output_file.exists():
             old_data = np.load(output_file, allow_pickle=True)
             old_axes = old_data["_axes"].tolist() if "_axes" in old_data else []
+            # The _axes index has historically gone out of sync with the file
+            # contents (6 models found on 2026-07-24 with calibrated axes
+            # missing from the index, silently dropped by every consumer).
+            # Merge from the union so a stale index can never discard data.
+            old_axes = list(dict.fromkeys(
+                old_axes + [a for a in MOOD_AXES if a in old_data]))
             for a in old_axes:
                 if a in old_data:
                     all_axis_vectors[a] = old_data[a]
@@ -799,14 +895,28 @@ def main():
     parser.add_argument("--axes", help="Comma-separated axes (default: all 5)")
     parser.add_argument("--force", action="store_true", help="Recompute all from scratch")
     parser.add_argument("--check", action="store_true", help="Preflight check only (no GPU)")
+    parser.add_argument("--time-budget-min", type=float, default=0,
+                        help="Exit cleanly at the next checkpoint after N minutes "
+                             "(0 = no limit); re-queue the same job to resume")
+    parser.add_argument("--time-budget-exit-code", type=int, default=0,
+                        help="Exit code to use when stopping on time budget "
+                             "(default 0; use 75 with fw2 --repeat-until-exit 0)")
     parser.add_argument("--save-tokens", action="store_true",
                         help="Also save per-token states + logprobs (~500MB per model)")
     add_backend_args(parser)
     args = parser.parse_args()
 
+    if args.time_budget_min > 0:
+        global _time_budget_deadline, _time_budget_exit_code
+        _time_budget_deadline = time.monotonic() + args.time_budget_min * 60
+        _time_budget_exit_code = args.time_budget_exit_code
+        _log(f"Time budget: {args.time_budget_min:.0f} min (clean exit at checkpoint)")
+
     if args.check:
         preflight_check(args.model)
         return
+
+    _start_stall_watchdog()
 
     # --- Vast.ai dispatch ---
     if args.backend == "vast":

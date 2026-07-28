@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "Mood Axis: Measuring LLM Temperament via Hidden-State Personality Axes"
+type: software
+authors:
+  - family-names: Yunoshev
+    given-names: Andrey
+    email: yunoshev@gmail.com
+repository-code: "https://github.com/yunoshev/mood-axis"
+url: "https://yunoshev.github.io/mood-axis/"
+license: MIT
+date-released: 2026-07-28
+keywords:
+  - large language models
+  - interpretability
+  - personality
+  - activation steering
+  - hidden states

@@ -1,0 +1,1034 @@
+{
+ "gemma4_26b_a4b": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 7.041,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 7.041,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 9.827,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 8.613,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 10.81,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 9.929,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 11.768,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 11.089,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 4.078,
+    "accuracy": 0.933
+   },
+   "k1_ramp": {
+    "dprime": 4.078,
+    "accuracy": 0.933
+   },
+   "k2_uniform": {
+    "dprime": 4.401,
+    "accuracy": 0.967
+   },
+   "k2_ramp": {
+    "dprime": 4.322,
+    "accuracy": 0.933
+   },
+   "k4_uniform": {
+    "dprime": 6.758,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 5.534,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 10.245,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 8.116,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 6.251,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 6.251,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 6.772,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 6.587,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 8.613,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 7.645,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 9.81,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 9.176,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 6.49,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 6.49,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 6.38,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 6.577,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 8.66,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 7.668,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 11.08,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 10.011,
+    "accuracy": 1.0
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 4.105,
+    "accuracy": 0.933
+   },
+   "k1_ramp": {
+    "dprime": 4.105,
+    "accuracy": 0.933
+   },
+   "k2_uniform": {
+    "dprime": 4.03,
+    "accuracy": 0.933
+   },
+   "k2_ramp": {
+    "dprime": 4.092,
+    "accuracy": 0.933
+   },
+   "k4_uniform": {
+    "dprime": 4.374,
+    "accuracy": 0.933
+   },
+   "k4_ramp": {
+    "dprime": 4.287,
+    "accuracy": 0.933
+   },
+   "k8_uniform": {
+    "dprime": 4.344,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 4.679,
+    "accuracy": 1.0
+   }
+  }
+ },
+ "ministral3_14b": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 5.696,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 5.696,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 6.556,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 6.173,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 7.662,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 6.948,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 8.25,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 7.769,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 6.414,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 6.414,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 7.21,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 6.888,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 8.045,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 7.551,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 8.119,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 8.019,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 12.664,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 12.664,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.8,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.311,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 14.838,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 14.142,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 15.461,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 14.918,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 7.862,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 7.862,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 8.889,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 8.448,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 9.775,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 9.197,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 10.424,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 9.97,
+    "accuracy": 1.0
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 4.64,
+    "accuracy": 0.967
+   },
+   "k1_ramp": {
+    "dprime": 4.64,
+    "accuracy": 0.967
+   },
+   "k2_uniform": {
+    "dprime": 4.821,
+    "accuracy": 0.967
+   },
+   "k2_ramp": {
+    "dprime": 4.756,
+    "accuracy": 0.967
+   },
+   "k4_uniform": {
+    "dprime": 4.803,
+    "accuracy": 0.967
+   },
+   "k4_ramp": {
+    "dprime": 4.833,
+    "accuracy": 0.967
+   },
+   "k8_uniform": {
+    "dprime": 4.65,
+    "accuracy": 0.967
+   },
+   "k8_ramp": {
+    "dprime": 4.784,
+    "accuracy": 0.967
+   }
+  }
+ },
+ "ministral3_8b_reasoning": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 10.424,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 10.424,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 10.656,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 10.56,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 10.901,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 10.757,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 10.89,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 10.931,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 8.092,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 8.092,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 8.037,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 8.07,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 7.806,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 7.975,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 7.398,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 7.744,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 13.131,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.131,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.471,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.317,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 13.388,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 13.38,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 13.069,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 13.266,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 13.11,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.11,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.137,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.13,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 13.39,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 13.238,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 14.012,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 13.543,
+    "accuracy": 1.0
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 5.851,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 5.851,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 5.934,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 5.893,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 5.954,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 5.923,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 6.12,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 5.997,
+    "accuracy": 1.0
+   }
+  }
+ },
+ "mistral_small_3.2_24b": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 9.553,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 9.553,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 9.79,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 9.676,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 10.062,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 9.853,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 10.3,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 10.077,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 8.832,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 8.832,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 9.151,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 8.999,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 9.496,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 9.248,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 9.575,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 9.453,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 8.133,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 8.133,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 8.337,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 8.244,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 8.688,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 8.447,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 9.279,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 8.792,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 11.875,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 11.875,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 12.567,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 12.23,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 13.63,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 12.827,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 14.689,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 13.68,
+    "accuracy": 1.0
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 4.619,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 4.619,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 4.758,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 4.692,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 4.881,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 4.781,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 5.085,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 4.91,
+    "accuracy": 1.0
+   }
+  }
+ },
+ "olmo2_13b": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 12.996,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 12.996,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.838,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.712,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 13.274,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 13.596,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 12.5,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 12.936,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 13.598,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.598,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 14.169,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 14.028,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 14.627,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 14.407,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 14.934,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 14.81,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 13.803,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.803,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 14.301,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 14.169,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 14.714,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 14.559,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 14.604,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 14.68,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 13.415,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.415,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.977,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.882,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 13.896,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 13.967,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 13.868,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 13.905,
+    "accuracy": 1.0
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 5.277,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 5.277,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 4.844,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 4.987,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 4.904,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 4.898,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 5.151,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 5.049,
+    "accuracy": 1.0
+   }
+  }
+ },
+ "vibethinker_3b": {
+  "warm_cold": {
+   "k1_uniform": {
+    "dprime": 9.936,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 9.936,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 11.06,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 10.703,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 11.738,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 11.433,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 14.132,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 12.723,
+    "accuracy": 1.0
+   }
+  },
+  "confident_cautious": {
+   "k1_uniform": {
+    "dprime": 4.694,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 4.694,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 5.095,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 5.002,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 4.991,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 5.038,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 4.82,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 4.923,
+    "accuracy": 1.0
+   }
+  },
+  "empathetic_analytical": {
+   "k1_uniform": {
+    "dprime": 9.112,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 9.112,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 9.7,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 9.687,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 10.171,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 9.993,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 10.958,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 10.532,
+    "accuracy": 1.0
+   }
+  },
+  "formal_casual": {
+   "k1_uniform": {
+    "dprime": 3.272,
+    "accuracy": 0.967
+   },
+   "k1_ramp": {
+    "dprime": 3.272,
+    "accuracy": 0.967
+   },
+   "k2_uniform": {
+    "dprime": 3.313,
+    "accuracy": 0.967
+   },
+   "k2_ramp": {
+    "dprime": 3.318,
+    "accuracy": 0.967
+   },
+   "k4_uniform": {
+    "dprime": 3.31,
+    "accuracy": 0.967
+   },
+   "k4_ramp": {
+    "dprime": 3.324,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 3.342,
+    "accuracy": 0.933
+   },
+   "k8_ramp": {
+    "dprime": 3.322,
+    "accuracy": 0.933
+   }
+  },
+  "verbose_concise": {
+   "k1_uniform": {
+    "dprime": 13.191,
+    "accuracy": 1.0
+   },
+   "k1_ramp": {
+    "dprime": 13.191,
+    "accuracy": 1.0
+   },
+   "k2_uniform": {
+    "dprime": 13.786,
+    "accuracy": 1.0
+   },
+   "k2_ramp": {
+    "dprime": 13.677,
+    "accuracy": 1.0
+   },
+   "k4_uniform": {
+    "dprime": 15.525,
+    "accuracy": 1.0
+   },
+   "k4_ramp": {
+    "dprime": 14.921,
+    "accuracy": 1.0
+   },
+   "k8_uniform": {
+    "dprime": 15.317,
+    "accuracy": 1.0
+   },
+   "k8_ramp": {
+    "dprime": 16.05,
+    "accuracy": 1.0
+   }
+  }
+ }
+}

@@ -1,7 +1,7 @@
 {
  "_meta": {
   "script": "scripts/06j_quant_robustness.py",
-  "timestamp": "2026-07-25T02:41:45.479715",
+  "timestamp": "2026-07-28T13:07:38.638172",
   "bf16_giant_source": "git 752051e2^ -> data/axes_bf16/",
   "axes": [
    "warm_cold",
@@ -12,9 +12,9 @@
   ]
  },
  "summary": {
-  "n_models": 9,
-  "n_axis_pairs": 45,
-  "pooled_mean_axis_cos": 0.9492857932264168,
+  "n_models": 8,
+  "n_axis_pairs": 40,
+  "pooled_mean_axis_cos": 0.947223180105597,
   "pooled_min_axis_cos": 0.8540134865718443
  },
  "twins": {
@@ -89,80 +89,6 @@
      "verbose_concise": 0.842151855891531
     },
     "mean": 0.8392923636081914,
-    "n_sets": 3
-   }
-  },
-  "gemma3_12b": {
-   "axes": {
-    "warm_cold": {
-     "axis_cos": 0.9648968706232615,
-     "val_accuracy_bf16": 1.0,
-     "val_accuracy_4bit": 1.0,
-     "val_dprime_bf16": 5.286709306414187,
-     "val_dprime_4bit": 6.724089325731385,
-     "center_shift_bf16_scale": 0.668177721285541,
-     "scale_ratio": 1.0188290586282227
-    },
-    "confident_cautious": {
-     "axis_cos": 0.9351971945230718,
-     "val_accuracy_bf16": 0.9377777777777778,
-     "val_accuracy_4bit": 1.0,
-     "val_dprime_bf16": 2.3947687235395017,
-     "val_dprime_4bit": 6.28609458334293,
-     "center_shift_bf16_scale": 2.108174135530348,
-     "scale_ratio": 0.8601967585831758
-    },
-    "empathetic_analytical": {
-     "axis_cos": 0.9718640577319899,
-     "val_accuracy_bf16": 1.0,
-     "val_accuracy_4bit": 1.0,
-     "val_dprime_bf16": 5.412402708057207,
-     "val_dprime_4bit": 4.958071790035547,
-     "center_shift_bf16_scale": 0.22130245880493055,
-     "scale_ratio": 0.938589462437601
-    },
-    "formal_casual": {
-     "axis_cos": 0.9749482434625609,
-     "val_accuracy_bf16": 1.0,
-     "val_accuracy_4bit": 1.0,
-     "val_dprime_bf16": 10.453162065642694,
-     "val_dprime_4bit": 7.09766564966373,
-     "center_shift_bf16_scale": 0.29016114194248877,
-     "scale_ratio": 1.0304897010477996
-    },
-    "verbose_concise": {
-     "axis_cos": 0.9820271246239911,
-     "val_accuracy_bf16": 1.0,
-     "val_accuracy_4bit": 1.0,
-     "val_dprime_bf16": 5.288376121371797,
-     "val_dprime_4bit": 6.31971859323923,
-     "center_shift_bf16_scale": 0.22914454280800953,
-     "scale_ratio": 1.231158664147389
-    }
-   },
-   "mean_axis_cos": 0.965786698192975,
-   "min_axis_cos": 0.9351971945230718,
-   "min_axis": "confident_cautious",
-   "consistency_bf16": {
-    "per_axis": {
-     "warm_cold": 0.917776119263748,
-     "confident_cautious": 0.7419342933264891,
-     "empathetic_analytical": 0.8995583182038566,
-     "formal_casual": 0.8352983665715786,
-     "verbose_concise": 0.9321695156868678
-    },
-    "mean": 0.865347322610508,
-    "n_sets": 3
-   },
-   "consistency_4bit": {
-    "per_axis": {
-     "warm_cold": 0.925502915861874,
-     "confident_cautious": 0.7013856173746736,
-     "empathetic_analytical": 0.9363177416999573,
-     "formal_casual": 0.8379512396608627,
-     "verbose_concise": 0.929896066791135
-    },
-    "mean": 0.8662107162777005,
     "n_sets": 3
    }
   },

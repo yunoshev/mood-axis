@@ -1,0 +1,341 @@
+{
+  "_meta": {
+    "script": "scripts/06i_gptoss_probe_check.py",
+    "timestamp": "2026-07-23T02:47:33.530632",
+    "hypothesis": "gpt_oss_20b's axis-geometry outlier status (consistency 0.36, effective_rank_normalized ~0.65, per-axis pc1_variance_share 34-42%, confident_cautious indistinguishable from cross-set null; see data/analysis/axis_geometry.json, data/analysis/consistency_null.json) is an artifact of the standard hidden-state aggregation (last-4-layers weighted decay over ALL generated tokens) mixing reasoning-channel and answer-channel tokens for this reasoning model.",
+    "data_source": "data/thinking/<model>.json + <model>_trajectories.npz, produced by scripts/07_thinking.py (D3 experiment, 30 BASELINE_QUESTIONS, think_off/think_on conditions, segment boundaries from src/model/mlx_inference.py::segment_think_tokens using Harmony '<|channel|>analysis<|message|>' / '<|channel|>final<|message|>' markers for gpt_oss_20b and '<think>'/'</think>' for deepseek_r1_14b).",
+    "limitations": "data/thinking/* stores per-token SCALAR PROJECTIONS onto the ALREADY-CALIBRATED (frozen) axis vector, not raw per-token hidden-state VECTORS (see mlx_inference.py: token_states is computed in memory and only `token_states @ axis_vector` is persisted to the trajectories NPZ). Consequences: (1) this script CANNOT re-derive a new axis DIRECTION from answer-only or think-only tokens, so no a-vs-c direction cosine is computable here -- every number below is a downstream PROJECTION effect, filtered through whatever noise is already baked into the existing axis vector. (2) The 'think_off' condition is a SEPARATE generation (different sampled text) from 'think_on', not the same response with a segment removed -- so answer-vs-think_off correlations mix segment effects with generation-to-generation sampling variance. (3) The calibration corpus itself (which produced the actual axis vectors judged anomalous) is not segmented at all and its raw hidden states are not on disk (data/axes/<model>_hidden_states.npz only has aggregated per-pair diffs). A real test of the hypothesis -- does re-deriving the axis DIRECTION from answer-segment-only calibration hidden states raise gpt_oss_20b's cross-set consistency / effective rank -- requires a GPU rerun: regenerate the calibration corpus (or a validation subsample, e.g. the 3 stability sets) for gpt_oss_20b with segment_think=True, rebuild axis vectors from answer-only hidden states, and recompute scripts/06d_axis_geometry.py + scripts/06h_consistency_null.py on the result.",
+    "calibration_thinking_config": {
+      "gpt_oss_20b": {
+        "found": true,
+        "has_chat_template_kwargs": false,
+        "block_excerpt": "\"gpt_oss_20b\": ModelConfig(\n        model_id=\"openai/gpt-oss-20b\",\n        model_short=\"gpt_oss_20b\",\n        display_name=\"GPT-OSS 20B\",\n        color=\"#10A37F\",\n        requires_auth=False,\n        hidden_dim=2880,\n    ),"
+      },
+      "deepseek_r1_14b": {
+        "found": true,
+        "has_chat_template_kwargs": true,
+        "block_excerpt": "\"deepseek_r1_14b\": ModelConfig(\n        model_id=\"deepseek-ai/DeepSeek-R1-Distill-Qwen-14B\",\n        model_short=\"deepseek_r1_14b\",\n        display_name=\"DeepSeek-R1 14B\",\n        color=\"#00D9A5\",\n        requires_auth=False,\n        hidden_dim=5120,\n        chat_template_kwargs={\"enable_thinking\": False},\n    ),"
+      }
+    }
+  },
+  "models": {
+    "gpt_oss_20b": {
+      "structural": {
+        "n_think_on_records": 30,
+        "n_think_token_range_none": 0,
+        "n_truncated": 0,
+        "n_whole_generation_is_think": 0,
+        "n_tokens_mean": 1702.3666666666666,
+        "n_tokens_min": 657,
+        "n_tokens_max": 3719,
+        "think_fraction_of_tokens_mean": 0.246263387153076,
+        "think_fraction_of_tokens_median": 0.21555348573133637,
+        "npz_n_keys": 150,
+        "npz_axes_present": [
+          "confident_cautious",
+          "empathetic_analytical",
+          "formal_casual",
+          "verbose_concise",
+          "warm_cold"
+        ],
+        "npz_n_questions": 30
+      },
+      "think_off_vs_think_on_efficacy": {
+        "n_questions": 30,
+        "n_identical_token_count": 30,
+        "frac_identical": 1.0,
+        "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+      },
+      "segment_correlations": {
+        "warm_cold": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 0.9999999999999999,
+          "corr_think_vs_thinkoff_full": 0.4645202442659912,
+          "corr_answer_vs_think": 0.46452024426599114,
+          "corr_answeruniform_vs_thinkoff_full": 0.8144599317595486,
+          "mean_think_answer_delta": -0.25553355954453766,
+          "std_answer": 0.3421837781603862,
+          "std_think": 0.30131702427304474,
+          "std_thinkoff_full": 0.3421837781603862
+        },
+        "confident_cautious": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.4758264136979473,
+          "corr_answer_vs_think": 0.4758264136979473,
+          "corr_answeruniform_vs_thinkoff_full": 0.7142554244675566,
+          "mean_think_answer_delta": 1.0615666589464576,
+          "std_answer": 0.23954456950628658,
+          "std_think": 0.3475499632446709,
+          "std_thinkoff_full": 0.23954456950628658
+        },
+        "empathetic_analytical": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 0.9999999999999998,
+          "corr_think_vs_thinkoff_full": 0.32182625881046295,
+          "corr_answer_vs_think": 0.321826258810463,
+          "corr_answeruniform_vs_thinkoff_full": 0.7773019851328883,
+          "mean_think_answer_delta": 0.4683613391455645,
+          "std_answer": 0.2671107157928611,
+          "std_think": 0.1705033826123172,
+          "std_thinkoff_full": 0.2671107157928611
+        },
+        "formal_casual": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 0.9999999999999999,
+          "corr_think_vs_thinkoff_full": 0.5711196402069724,
+          "corr_answer_vs_think": 0.5711196402069724,
+          "corr_answeruniform_vs_thinkoff_full": 0.8867371918211786,
+          "mean_think_answer_delta": -0.17266047526808767,
+          "std_answer": 0.4570062897924232,
+          "std_think": 0.2647311830551402,
+          "std_thinkoff_full": 0.4570062897924232
+        },
+        "verbose_concise": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 0.9999999999999999,
+          "corr_think_vs_thinkoff_full": 0.49985074564628135,
+          "corr_answer_vs_think": 0.4998507456462814,
+          "corr_answeruniform_vs_thinkoff_full": 0.835299559032236,
+          "mean_think_answer_delta": -0.7227695902917012,
+          "std_answer": 0.16462346875998146,
+          "std_think": 0.27106375536538035,
+          "std_thinkoff_full": 0.16462346875998146
+        }
+      },
+      "cross_axis_structure": {
+        "think_off_full": {
+          "n_samples": 30,
+          "effective_rank": 2.755310929414634,
+          "effective_rank_normalized": 0.5510621858829268,
+          "pc1_variance_share": 0.8261480084468212
+        },
+        "think_on_answer": {
+          "n_samples": 30,
+          "effective_rank": 2.755310929414634,
+          "effective_rank_normalized": 0.5510621858829268,
+          "pc1_variance_share": 0.8261480084468212
+        },
+        "think_on_think": {
+          "n_samples": 30,
+          "effective_rank": 3.1758042620771874,
+          "effective_rank_normalized": 0.6351608524154375,
+          "pc1_variance_share": 0.5891383825886481
+        }
+      },
+      "token_level_within_segment_std": {
+        "warm_cold": {
+          "mean_within_answer_std": 0.37129992196044115,
+          "mean_within_think_std": 0.3456909376242751,
+          "max_uniform_check_diff_answer": 0.08163928901755513,
+          "max_uniform_check_diff_think": 0.013446197388599979
+        },
+        "confident_cautious": {
+          "mean_within_answer_std": 0.3833238768175825,
+          "mean_within_think_std": 0.34033791107712913,
+          "max_uniform_check_diff_answer": 0.12911651805896363,
+          "max_uniform_check_diff_think": 0.008183769939846541
+        },
+        "empathetic_analytical": {
+          "mean_within_answer_std": 0.33414098150491944,
+          "mean_within_think_std": 0.3247340027699577,
+          "max_uniform_check_diff_answer": 0.012508438423384893,
+          "max_uniform_check_diff_think": 0.10966437318504241
+        },
+        "formal_casual": {
+          "mean_within_answer_std": 0.4216437087789899,
+          "mean_within_think_std": 0.37594277653254216,
+          "max_uniform_check_diff_answer": 0.06097686663656121,
+          "max_uniform_check_diff_think": 0.021921927713041967
+        },
+        "verbose_concise": {
+          "mean_within_answer_std": 0.2160836100184715,
+          "mean_within_think_std": 0.20445044250335032,
+          "max_uniform_check_diff_answer": 0.005064182875331336,
+          "max_uniform_check_diff_think": 0.06573033547546181
+        }
+      }
+    },
+    "deepseek_r1_14b": {
+      "structural": {
+        "n_think_on_records": 30,
+        "n_think_token_range_none": 0,
+        "n_truncated": 0,
+        "n_whole_generation_is_think": 0,
+        "n_tokens_mean": 1424.9333333333334,
+        "n_tokens_min": 959,
+        "n_tokens_max": 2416,
+        "think_fraction_of_tokens_mean": 0.720141086466786,
+        "think_fraction_of_tokens_median": 0.7239168238390694,
+        "npz_n_keys": 150,
+        "npz_axes_present": [
+          "confident_cautious",
+          "empathetic_analytical",
+          "formal_casual",
+          "verbose_concise",
+          "warm_cold"
+        ],
+        "npz_n_questions": 30
+      },
+      "think_off_vs_think_on_efficacy": {
+        "n_questions": 30,
+        "n_identical_token_count": 30,
+        "frac_identical": 1.0,
+        "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+      },
+      "segment_correlations": {
+        "warm_cold": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.6067841815001997,
+          "corr_answer_vs_think": 0.6067841815001997,
+          "corr_answeruniform_vs_thinkoff_full": 0.6908930069173461,
+          "mean_think_answer_delta": 0.5033595976259523,
+          "std_answer": 0.26273090053961073,
+          "std_think": 0.2104643081975795,
+          "std_thinkoff_full": 0.26273090053961073
+        },
+        "confident_cautious": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.6112848187170734,
+          "corr_answer_vs_think": 0.6112848187170735,
+          "corr_answeruniform_vs_thinkoff_full": 0.856397686197628,
+          "mean_think_answer_delta": 0.006611986419689074,
+          "std_answer": 0.21225260758074882,
+          "std_think": 0.1880165239520559,
+          "std_thinkoff_full": 0.21225260758074882
+        },
+        "empathetic_analytical": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.5542846748016762,
+          "corr_answer_vs_think": 0.5542846748016762,
+          "corr_answeruniform_vs_thinkoff_full": 0.6438424182552733,
+          "mean_think_answer_delta": 0.19657713636652258,
+          "std_answer": 0.06000814697447916,
+          "std_think": 0.0562665309679917,
+          "std_thinkoff_full": 0.06000814697447916
+        },
+        "formal_casual": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.44513858923407085,
+          "corr_answer_vs_think": 0.4451385892340708,
+          "corr_answeruniform_vs_thinkoff_full": 0.5985061391976167,
+          "mean_think_answer_delta": -0.44295544227790246,
+          "std_answer": 0.07717680685970746,
+          "std_think": 0.11563617374920825,
+          "std_thinkoff_full": 0.07717680685970746
+        },
+        "verbose_concise": {
+          "n": 30,
+          "corr_answer_vs_thinkoff_full": 1.0,
+          "corr_think_vs_thinkoff_full": 0.5599686408020762,
+          "corr_answer_vs_think": 0.5599686408020762,
+          "corr_answeruniform_vs_thinkoff_full": 0.6310234596668567,
+          "mean_think_answer_delta": -0.4386555300690371,
+          "std_answer": 0.1791703593274431,
+          "std_think": 0.18776659554351913,
+          "std_thinkoff_full": 0.1791703593274431
+        }
+      },
+      "cross_axis_structure": {
+        "think_off_full": {
+          "n_samples": 30,
+          "effective_rank": 3.353867886809948,
+          "effective_rank_normalized": 0.6707735773619896,
+          "pc1_variance_share": 0.5062529279224675
+        },
+        "think_on_answer": {
+          "n_samples": 30,
+          "effective_rank": 3.353867886809948,
+          "effective_rank_normalized": 0.6707735773619896,
+          "pc1_variance_share": 0.5062529279224675
+        },
+        "think_on_think": {
+          "n_samples": 30,
+          "effective_rank": 3.533413742269287,
+          "effective_rank_normalized": 0.7066827484538574,
+          "pc1_variance_share": 0.4597157761931766
+        }
+      },
+      "token_level_within_segment_std": {
+        "warm_cold": {
+          "mean_within_answer_std": 0.3351380347398238,
+          "mean_within_think_std": 0.28914845076300144,
+          "max_uniform_check_diff_answer": 0.0028119961828038387,
+          "max_uniform_check_diff_think": 0.06457740521465449
+        },
+        "confident_cautious": {
+          "mean_within_answer_std": 0.23401105548017292,
+          "mean_within_think_std": 0.21733541277839993,
+          "max_uniform_check_diff_answer": 0.0027485502239864568,
+          "max_uniform_check_diff_think": 0.0005146216306547435
+        },
+        "empathetic_analytical": {
+          "mean_within_answer_std": 0.09468357371604356,
+          "mean_within_think_std": 0.0976294534012717,
+          "max_uniform_check_diff_answer": 2.898781823412744e-06,
+          "max_uniform_check_diff_think": 3.631606950049715e-06
+        },
+        "formal_casual": {
+          "mean_within_answer_std": 0.173948692261004,
+          "mean_within_think_std": 0.1826638633156383,
+          "max_uniform_check_diff_answer": 5.535558003359753e-06,
+          "max_uniform_check_diff_think": 0.006709807491397601
+        },
+        "verbose_concise": {
+          "mean_within_answer_std": 0.2871976616544965,
+          "mean_within_think_std": 0.23853097301399828,
+          "max_uniform_check_diff_answer": 0.0006336088308623866,
+          "max_uniform_check_diff_think": 0.003556934056931027
+        }
+      }
+    }
+  },
+  "side_check_think_disable_efficacy_all_thinking_models": {
+    "qwen3.5_9b": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 0,
+      "frac_identical": 0.0,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    },
+    "qwen3_8b": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 0,
+      "frac_identical": 0.0,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    },
+    "glm_z1_9b": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 30,
+      "frac_identical": 1.0,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    },
+    "ministral3_8b": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 30,
+      "frac_identical": 1.0,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    },
+    "ministral3_8b_reasoning": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 29,
+      "frac_identical": 0.9666666666666667,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    },
+    "vibethinker_3b": {
+      "available": true,
+      "n_questions": 30,
+      "n_identical_token_count": 28,
+      "frac_identical": 0.9333333333333333,
+      "interpretation": "n_identical_token_count == n_questions means think_off and think_on produced token-count-identical generations for every question -- consistent with chat_template_kwargs enable_thinking=False being a no-op for this model's chat template (same prompt tokens, same seed=42 -> deterministic sampler reproduces the same continuation; think_off is simply the same generation truncated to its smaller max_new_tokens budget, which never actually binds here since n_tokens < 4096 for all records). If so, 'think_off full' is NOT an independently-sampled think-disabled baseline; it duplicates think_on and comparisons against it are close to tautological."
+    }
+  }
+}

@@ -510,7 +510,8 @@ def sweep_model(model_key, backend="mlx"):
 
     # Save
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_file = OUTPUT_DIR / f"{model_key}_sweep.json"
+    suffix = "" if AXIS == "warm_cold" else f"_{AXIS}"
+    out_file = OUTPUT_DIR / f"{model_key}_sweep{suffix}.json"
     with open(out_file, "w") as f:
         json.dump(output, f, indent=2)
     logger.info(f"Saved to {out_file}")
@@ -519,10 +520,15 @@ def sweep_model(model_key, backend="mlx"):
 
 
 def main():
+    global AXIS
     parser = argparse.ArgumentParser(description="Steering layer sweep")
     parser.add_argument("--model", required=True, help="Model key or 'all_featured'")
     parser.add_argument("--backend", default="mlx", choices=["mlx"])
+    parser.add_argument("--axis", default=AXIS,
+                        help="Axis to sweep (default warm_cold). Non-default axes "
+                             "write <model>_sweep_<axis>.json to keep the main sweep intact.")
     args = parser.parse_args()
+    AXIS = args.axis
 
     if args.model == "all_featured":
         models = FEATURED

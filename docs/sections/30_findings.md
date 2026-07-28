@@ -1,13 +1,15 @@
 ## Key Findings
 
-1. **Distinct, stable behavioral fingerprints.** Each model has a unique personality profile that persists across sessions (ICC {{icc_range}}). Mistral is cold, Qwen is cautious, Gemma is neutral -- these aren't random; they're baked in by training.
+1. **Distinct, stable behavioral fingerprints.** Each model has a characteristic per-axis profile, reproducible across independent calibration sets (cross-set consistency 0.80–0.92 for eight of nine cohort models). No aligned assistant presents as warm by default; confidence is where organizations differ most (DeepSeek +0.46 vs Gemma 4 −0.32).
 
-2. **RLHF appears to train instruction resistance rather than suppression.** Base models follow personality instructions at {{llama_8b_base_instruction_acc}} accuracy; aligned models drop to {{llama_8b_instruction_acc}} (Llama). But the signal *persists* in hidden states -- decoding probes still detect it at >50% accuracy. Models learn to *ignore* personality instructions, not to erase the underlying representation.
+2. **Conflict drift splits by scale.** Under sustained adversarial pressure, the >20B models harden — colder, more confident, more formal (six of nine models show conflict-specific drift; all four >20B models are among them) — while smaller models de-escalate toward the empathetic pole with apologetic, conciliatory text. Recovery is partial everywhere (30–63% within four post-conflict turns).
 
-3. **Instruction resistance is reversible.** Removing the refusal direction partially restores base-like behavior (33-50% recovery). Amplifying personality instructions breaks through suppression (40% -> 100% on verbose_concise). RLHF creates learned constraints, not architectural limitations.
+3. **Neutral conversations drift too.** With 30 matched controls, control-condition slopes are often reliably nonzero — conversation length alone moves personality projections. Any drift claim without a matched-length control is confounded.
 
-4. **~40x variation in steerability.** {{steering_most_steerable}} ({{steering_most_steerable_effect}}) vs {{steering_least_steerable}} ({{steering_least_steerable_effect}}). Same method, same axes, vastly different susceptibility. External judge confirms: {{judge_mistral_7b_pairwise}} detection for Mistral, {{judge_gemma_9b_pairwise}} for Gemma.
+4. **The GPT-OSS anomaly is format dominance, not MoE or quantization.** Its degenerate axis geometry and weakest-in-cohort consistency (0.39) trace to a dominant response-format reaction to persona prompts; projecting out a low-rank format subspace restores held-out separation from 0.73 to 1.00 on its worst axis. Two larger MoE models sit squarely in the stable cohort, and axis directions are precision-invariant across bf16/4-bit pairs (mean cos 0.95).
 
-5. **Dead zones show no significant correlation with steerability** (n=5, rho={{steering_dz_rho}}), though the sample is small. A model can exhibit neutral behavior yet be highly responsive to hidden-state intervention (Mistral), or show varied personality but resist steering entirely (Qwen3).
+5. **Instruction tuning reorganizes personality representations without erasing them.** Own-axis separability is near-ceiling in both base and instruct models (93–97% vs 100%); a base-fit axis transfers to instruct states at 97.3% — the direction pre-dates alignment. The real alignment effect is subtler: reduced representational legibility and base-model unreliability on stylistic-register axes specifically.
 
-6. **Organization-specific alignment strategies.** Meta heavily suppresses personality (-24% instruction accuracy). Alibaba preserves it (+9%). Mistral is balanced (-3%). These likely reflect different alignment priorities.
+6. **Reasoning models think with a different temperament than they answer — in model-specific directions.** DeepSeek thinks warmer, GPT-OSS colder, VibeThinker with a +0.65 confidence surge; the closest regularity is hedged deliberation behind confident delivery (3 of 5 models).
+
+7. **The same vectors measure and steer.** Adding calibrated axis vectors to hidden states shifts generation along the targeted axis while preserving content — measurement directions are causally meaningful (quantitative steerability comparison being recomputed; see [Steering](#steering-part-2)).

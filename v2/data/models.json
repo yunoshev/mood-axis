@@ -8,15 +8,6 @@
     "color": "#E9C46A",
     "quantize": null
   },
-  "gemma3_12b": {
-    "org": "Google",
-    "params": "12B",
-    "group": "main",
-    "name": "Gemma 3 12B",
-    "model_id": "google/gemma-3-12b-it",
-    "color": "#34A853",
-    "quantize": null
-  },
   "phi4": {
     "org": "Microsoft",
     "params": "14B",
@@ -61,16 +52,6 @@
     "name": "Qwen3.5 9B (4-bit)",
     "model_id": "Qwen/Qwen3.5-9B",
     "color": "#E9C46A",
-    "quantize": "4bit"
-  },
-  "gemma3_12b_4bit": {
-    "org": "Google",
-    "params": "12B",
-    "group": "twin",
-    "twin_of": "gemma3_12b",
-    "name": "Gemma 3 12B (4-bit)",
-    "model_id": "google/gemma-3-12b-it",
-    "color": "#34A853",
     "quantize": "4bit"
   },
   "phi4_4bit": {

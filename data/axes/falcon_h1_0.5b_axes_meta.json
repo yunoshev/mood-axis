@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "script": "scripts/01_calibrate.py",
+    "backend": "mlx",
+    "model": "falcon_h1_0.5b",
+    "model_id": "tiiuae/Falcon-H1-0.5B-Instruct",
+    "hidden_dim": 1024,
+    "timestamp": "2026-03-16T14:24:12.886440",
+    "axes": [
+      "warm_cold",
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise"
+    ],
+    "train_questions": 50,
+    "val_questions": 15,
+    "val_source": "eval_questions (independent, zero overlap with train)",
+    "max_new_tokens": 4096,
+    "saved_token_states": false,
+    "generation_settings": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    }
+  },
+  "warm_cold": {
+    "train_separation": 81.06911024093627,
+    "train_dprime": 7.4746272029758165,
+    "val_separation": 75.0912000656128,
+    "val_dprime": 6.119377576149598,
+    "val_accuracy": 1.0,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 1,
+    "pct_truncated": 0.8,
+    "max_new_tokens": 4096
+  },
+  "confident_cautious": {
+    "train_separation": 49.25031265258789,
+    "train_dprime": 5.250408317993168,
+    "val_separation": 46.36761322021484,
+    "val_dprime": 5.259966294401396,
+    "val_accuracy": 1.0,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  },
+  "empathetic_analytical": {
+    "train_separation": 61.700543632507326,
+    "train_dprime": 6.387087862718256,
+    "val_separation": 64.48184407552084,
+    "val_dprime": 9.542758729851997,
+    "val_accuracy": 1.0,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  },
+  "formal_casual": {
+    "train_separation": 85.90699278831482,
+    "train_dprime": 7.595167225406678,
+    "val_separation": 91.18471590677896,
+    "val_dprime": 9.256872628730658,
+    "val_accuracy": 1.0,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  },
+  "verbose_concise": {
+    "train_separation": 66.04089237213134,
+    "train_dprime": 3.471341318338987,
+    "val_separation": 56.14127890268961,
+    "val_dprime": 4.293419168109108,
+    "val_accuracy": 1.0,
+    "n_train_per_pole": 50,
+    "n_val_per_pole": 15,
+    "n_truncated": 0,
+    "pct_truncated": 0.0,
+    "max_new_tokens": 4096
+  }
+}

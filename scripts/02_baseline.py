@@ -23,13 +23,13 @@ from tqdm import tqdm
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
-sys.path.insert(0, str(PROJECT_ROOT.parent.parent))  # repo root for framework imports
+sys.path.insert(0, str(PROJECT_ROOT.parent.parent))
 
-# Optional integration with the private `fw` framework. When it is not
+# Optional integration with the global `fw` framework. When it is not
 # installed (public/standalone mode), fall back to a minimal emitter that
 # keeps the #PROGRESS stdout protocol working.
 try:
-    from framework.progress import log_progress
+    from fw.progress import log_progress
 except ImportError:
     import json as _progress_json
 
@@ -83,7 +83,8 @@ def _load_generate_fn(model_config, backend: str):
     if backend == "mlx":
         from src.model.mlx_inference import load_mlx_model, get_full_result_for_prompt as mlx_get_result
         print(f"Loading model: {model_config.model_id} (MLX)", flush=True)
-        ctx = load_mlx_model(model_config.model_id)
+        ctx = load_mlx_model(model_config.model_id, quantize=model_config.quantize,
+                            mlx_model_id=model_config.mlx_model_id)
 
         def generate_fn(messages):
             return mlx_get_result(ctx, messages, max_new_tokens=MAX_NEW_TOKENS,
@@ -131,10 +132,19 @@ def collect_baseline(model_key: str, force: bool = False, backend: str = "pytorc
     scales = {}
     centers = {}
     for axis in MOOD_AXES:
+        if axis not in axis_vectors:
+            continue  # axis not calibrated in this NPZ (skipped in projection too)
         scale_key = f"{axis}_scale"
-        scales[axis] = float(npz_data[scale_key]) if scale_key in npz_data else 2.0
         center_key = f"{axis}_center"
-        centers[axis] = float(npz_data[center_key]) if center_key in npz_data else 0.0
+        missing = [k for k in (scale_key, center_key) if k not in npz_data]
+        if missing:
+            raise KeyError(
+                f"Axes NPZ {axes_file} is missing normalization keys {missing}. "
+                f"Recalibrate with scripts/01_calibrate.py (it saves scale+center); "
+                f"refusing to fall back to defaults."
+            )
+        scales[axis] = float(npz_data[scale_key])
+        centers[axis] = float(npz_data[center_key])
 
     generate_fn, cleanup_fn = _load_generate_fn(model_config, backend)
 
@@ -168,7 +178,7 @@ def collect_baseline(model_key: str, force: bool = False, backend: str = "pytorc
             "n_tokens": result.n_generated_tokens,
             "n_words": result.n_words,
             "generation_time_s": result.generation_time_s,
-            "truncated": result.n_generated_tokens >= MAX_NEW_TOKENS - 1,
+            "truncated": result.n_generated_tokens >= MAX_NEW_TOKENS,
         })
 
         for axis in MOOD_AXES:

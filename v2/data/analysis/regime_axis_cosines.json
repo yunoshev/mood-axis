@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "desc": "per-axis cosine between axis vectors calibrated under default (think/Harmony) regime vs structurally-disabled no-think regime",
+    "old_source": {
+      "gpt_oss_20b": "git a7656b44 (wave1 default Harmony)",
+      "deepseek_r1_14b": "git 264afc09^ (think regime)"
+    },
+    "new_source": "data/axes/<m>_axes.npz (no-think, current)"
+  },
+  "models": {
+    "gpt_oss_20b": {
+      "warm_cold": 0.5372,
+      "confident_cautious": 0.494,
+      "empathetic_analytical": 0.4391,
+      "formal_casual": 0.5862,
+      "verbose_concise": 0.798
+    },
+    "deepseek_r1_14b": {
+      "warm_cold": 0.7926,
+      "confident_cautious": 0.6595,
+      "empathetic_analytical": 0.9103,
+      "formal_casual": 0.8979,
+      "verbose_concise": 0.758
+    }
+  }
+}
