@@ -1,0 +1,434 @@
+{
+  "_meta": {
+    "note": "full vs 4bit steering, compute_axis_metrics reused",
+    "twins": {
+      "qwen3.5_9b": "qwen3.5_9b_4bit",
+      "phi4": "phi4_4bit",
+      "deepseek_r1_14b": "deepseek_r1_14b_4bit",
+      "ministral3_8b": "ministral3_8b_4bit"
+    },
+    "n_pairs": 20
+  },
+  "per_model": {
+    "qwen3.5_9b": {
+      "total_effect_full": 1.6224,
+      "total_effect_4bit": 1.0804,
+      "twin": "qwen3.5_9b_4bit"
+    },
+    "phi4": {
+      "total_effect_full": 0.6036,
+      "total_effect_4bit": 0.9372,
+      "twin": "phi4_4bit"
+    },
+    "deepseek_r1_14b": {
+      "total_effect_full": 3.5807,
+      "total_effect_4bit": 3.8092,
+      "twin": "deepseek_r1_14b_4bit"
+    },
+    "ministral3_8b": {
+      "total_effect_full": 2.0744,
+      "total_effect_4bit": 1.9352,
+      "twin": "ministral3_8b_4bit"
+    }
+  },
+  "rows": [
+    {
+      "model": "qwen3.5_9b",
+      "axis": "warm_cold",
+      "eff_full": 0.3685,
+      "eff_4bit": 0.2661,
+      "eff_diff": -0.1024,
+      "slope_full": 0.004018,
+      "slope_4bit": 0.002425,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.6276,
+      "leak_4bit": 0.606
+    },
+    {
+      "model": "qwen3.5_9b",
+      "axis": "confident_cautious",
+      "eff_full": 0.3079,
+      "eff_4bit": 0.2229,
+      "eff_diff": -0.085,
+      "slope_full": 0.002415,
+      "slope_4bit": 0.002033,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.5406,
+      "leak_4bit": 0.5693
+    },
+    {
+      "model": "qwen3.5_9b",
+      "axis": "empathetic_analytical",
+      "eff_full": 0.2315,
+      "eff_4bit": 0.1909,
+      "eff_diff": -0.0406,
+      "slope_full": 0.002022,
+      "slope_4bit": 0.00181,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.9408,
+      "leak_4bit": 0.872
+    },
+    {
+      "model": "qwen3.5_9b",
+      "axis": "formal_casual",
+      "eff_full": 0.3755,
+      "eff_4bit": 0.2913,
+      "eff_diff": -0.0842,
+      "slope_full": 0.00365,
+      "slope_4bit": 0.002914,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.5993,
+      "leak_4bit": 0.5669
+    },
+    {
+      "model": "qwen3.5_9b",
+      "axis": "verbose_concise",
+      "eff_full": 0.339,
+      "eff_4bit": 0.1092,
+      "eff_diff": -0.2298,
+      "slope_full": 0.003216,
+      "slope_4bit": 0.001169,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.072,
+      "leak_4bit": 0.0486
+    },
+    {
+      "model": "phi4",
+      "axis": "warm_cold",
+      "eff_full": 0.1406,
+      "eff_4bit": 0.1716,
+      "eff_diff": 0.031,
+      "slope_full": 0.001767,
+      "slope_4bit": 0.00108,
+      "rng_full": [
+        -30.0,
+        30.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.8333,
+      "leak_4bit": 0.5405
+    },
+    {
+      "model": "phi4",
+      "axis": "confident_cautious",
+      "eff_full": 0.1028,
+      "eff_4bit": 0.0414,
+      "eff_diff": -0.0614,
+      "slope_full": 0.000962,
+      "slope_4bit": 0.000412,
+      "rng_full": [
+        -30.0,
+        30.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.5205,
+      "leak_4bit": 1.1961
+    },
+    {
+      "model": "phi4",
+      "axis": "empathetic_analytical",
+      "eff_full": 0.1706,
+      "eff_4bit": 0.0075,
+      "eff_diff": -0.1631,
+      "slope_full": 0.001786,
+      "slope_4bit": 7.9e-05,
+      "rng_full": [
+        -30.0,
+        30.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.8291,
+      "leak_4bit": 6.3323
+    },
+    {
+      "model": "phi4",
+      "axis": "formal_casual",
+      "eff_full": 0.0975,
+      "eff_4bit": 0.2015,
+      "eff_diff": 0.104,
+      "slope_full": 0.004322,
+      "slope_4bit": 0.001818,
+      "rng_full": [
+        -20.0,
+        30.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.5327,
+      "leak_4bit": 0.8311
+    },
+    {
+      "model": "phi4",
+      "axis": "verbose_concise",
+      "eff_full": 0.0921,
+      "eff_4bit": 0.5152,
+      "eff_diff": 0.4231,
+      "slope_full": 0.001461,
+      "slope_4bit": 0.004447,
+      "rng_full": [
+        -30.0,
+        30.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.2816,
+      "leak_4bit": 0.1811
+    },
+    {
+      "model": "deepseek_r1_14b",
+      "axis": "warm_cold",
+      "eff_full": 1.1674,
+      "eff_4bit": 1.1589,
+      "eff_diff": -0.0085,
+      "slope_full": 0.011484,
+      "slope_4bit": 0.011647,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.39,
+      "leak_4bit": 0.3997
+    },
+    {
+      "model": "deepseek_r1_14b",
+      "axis": "confident_cautious",
+      "eff_full": 0.2471,
+      "eff_4bit": 0.2698,
+      "eff_diff": 0.0227,
+      "slope_full": 0.001676,
+      "slope_4bit": 0.00194,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.498,
+      "leak_4bit": 0.5115
+    },
+    {
+      "model": "deepseek_r1_14b",
+      "axis": "empathetic_analytical",
+      "eff_full": 0.6496,
+      "eff_4bit": 0.6496,
+      "eff_diff": 0.0,
+      "slope_full": 0.005724,
+      "slope_4bit": 0.005517,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.8937,
+      "leak_4bit": 0.8352
+    },
+    {
+      "model": "deepseek_r1_14b",
+      "axis": "formal_casual",
+      "eff_full": 1.0549,
+      "eff_4bit": 1.1073,
+      "eff_diff": 0.0524,
+      "slope_full": 0.010076,
+      "slope_4bit": 0.010714,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.5827,
+      "leak_4bit": 0.5687
+    },
+    {
+      "model": "deepseek_r1_14b",
+      "axis": "verbose_concise",
+      "eff_full": 0.4617,
+      "eff_4bit": 0.6236,
+      "eff_diff": 0.1619,
+      "slope_full": 0.004948,
+      "slope_4bit": 0.006564,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.1829,
+      "leak_4bit": 0.2107
+    },
+    {
+      "model": "ministral3_8b",
+      "axis": "warm_cold",
+      "eff_full": 0.5846,
+      "eff_4bit": 0.5799,
+      "eff_diff": -0.0047,
+      "slope_full": 0.005966,
+      "slope_4bit": 0.005828,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.3484,
+      "leak_4bit": 0.2762
+    },
+    {
+      "model": "ministral3_8b",
+      "axis": "confident_cautious",
+      "eff_full": 0.1913,
+      "eff_4bit": 0.1769,
+      "eff_diff": -0.0144,
+      "slope_full": 0.00145,
+      "slope_4bit": 0.001635,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.4574,
+      "leak_4bit": 0.5383
+    },
+    {
+      "model": "ministral3_8b",
+      "axis": "empathetic_analytical",
+      "eff_full": 0.3568,
+      "eff_4bit": 0.3054,
+      "eff_diff": -0.0514,
+      "slope_full": 0.003428,
+      "slope_4bit": 0.002803,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.6178,
+      "leak_4bit": 0.6874
+    },
+    {
+      "model": "ministral3_8b",
+      "axis": "formal_casual",
+      "eff_full": 0.5869,
+      "eff_4bit": 0.4998,
+      "eff_diff": -0.0871,
+      "slope_full": 0.00618,
+      "slope_4bit": 0.004693,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.4235,
+      "leak_4bit": 0.4933
+    },
+    {
+      "model": "ministral3_8b",
+      "axis": "verbose_concise",
+      "eff_full": 0.3548,
+      "eff_4bit": 0.3732,
+      "eff_diff": 0.0184,
+      "slope_full": 0.003464,
+      "slope_4bit": 0.00355,
+      "rng_full": [
+        -50.0,
+        50.0
+      ],
+      "rng_4bit": [
+        -50.0,
+        50.0
+      ],
+      "leak_full": 0.1676,
+      "leak_4bit": 0.1542
+    }
+  ],
+  "agreement": {
+    "pearson_r": 0.9057,
+    "spearman_rho": 0.7474,
+    "mean_abs_diff": 0.0873,
+    "rank_order_full": [
+      "deepseek_r1_14b",
+      "ministral3_8b",
+      "qwen3.5_9b",
+      "phi4"
+    ],
+    "rank_order_4bit": [
+      "deepseek_r1_14b",
+      "ministral3_8b",
+      "qwen3.5_9b",
+      "phi4"
+    ],
+    "rank_preserved": true
+  }
+}

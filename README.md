@@ -462,7 +462,9 @@ The effect is deliberately subtle: steered text shifts in tone and style while s
 
 **Try it live:** the [Steering Playground](https://yunoshev.github.io/mood-axis/) shows real steered generations — drag the α slider and watch the same answer change temperament.
 
-> **Data status:** the steering results, figures, and playground texts above were recomputed under a strict **zero-truncation protocol** — per-axis token budgets of 4096–8192, replacing an earlier 384-token cap that truncated long steered responses and biased per-axis effects. The five core models are on the rerun data; the 4-bit quantized twins in the playground retain the earlier runs.
+> **Data status:** the steering results, figures, and playground texts above were recomputed under a strict **zero-truncation protocol** — per-axis token budgets of 4096–8192, replacing an earlier 384-token cap that truncated long steered responses and biased per-axis effects. Both the five core models **and their 4-bit quantized twins** are now on the rerun data.
+
+> **4-bit robustness:** re-running the full steering protocol on 4-bit quantized twins of the four dense models shows steering survives quantization — the same axes steer with **preserved rank order** (per-axis total effects correlate at Pearson r = 0.91, every slope keeping its sign) and a blind judge confirms the 4-bit shifts at **96% mean pairwise accuracy**, matching the 94% it awards the same models at full precision. Two disclosed caveats: Qwen3.5's verbose_concise effect softens under 4-bit (direction intact, judge still ~100%), and Phi-4's 4-bit twin stays coherent over a wider α range (±50 vs ±30), so for Phi-4 we compare per-α slope and judge rather than raw total effect. Data: `v2/data/judge_steering/judge_results_4bit.json`, `v2/data/analysis/steering_4bit_compare.json` (LFS).
 
 <details>
 <summary><b>Reproduce: steering</b></summary>

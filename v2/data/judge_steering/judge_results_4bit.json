@@ -1,0 +1,269 @@
+{
+ "n_batches": 20,
+ "mean_pairwise_accuracy": 0.9567,
+ "mean_likert_rho": 0.6324,
+ "per_model": {
+  "deepseek_r1_14b_4bit": {
+   "mean_pairwise": 0.9467,
+   "mean_rho": 0.6519,
+   "n_axes": 5
+  },
+  "ministral3_8b_4bit": {
+   "mean_pairwise": 0.9933,
+   "mean_rho": 0.8147,
+   "n_axes": 5
+  },
+  "phi4_4bit": {
+   "mean_pairwise": 0.8867,
+   "mean_rho": 0.3895,
+   "n_axes": 5
+  },
+  "qwen3.5_9b_4bit": {
+   "mean_pairwise": 1.0,
+   "mean_rho": 0.6737,
+   "n_axes": 5
+  }
+ },
+ "results": [
+  {
+   "model": "deepseek_r1_14b_4bit",
+   "axis": "confident_cautious",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.5612,
+   "likert_p": 4.336e-07,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "deepseek_r1_14b_4bit",
+   "axis": "empathetic_analytical",
+   "pairwise_accuracy": 0.9667,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7471,
+   "likert_p": 1.113e-13,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "deepseek_r1_14b_4bit",
+   "axis": "formal_casual",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.8334,
+   "likert_p": 3.506e-19,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "deepseek_r1_14b_4bit",
+   "axis": "verbose_concise",
+   "pairwise_accuracy": 0.8,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.3635,
+   "likert_p": 0.001983,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "deepseek_r1_14b_4bit",
+   "axis": "warm_cold",
+   "pairwise_accuracy": 0.9667,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7543,
+   "likert_p": 4.758e-14,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "ministral3_8b_4bit",
+   "axis": "confident_cautious",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.91,
+   "likert_p": 1.048e-27,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "ministral3_8b_4bit",
+   "axis": "empathetic_analytical",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7757,
+   "likert_p": 3.138e-15,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "ministral3_8b_4bit",
+   "axis": "formal_casual",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.8783,
+   "likert_p": 1.781e-23,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "ministral3_8b_4bit",
+   "axis": "verbose_concise",
+   "pairwise_accuracy": 0.9667,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.6449,
+   "likert_p": 1.685e-09,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "ministral3_8b_4bit",
+   "axis": "warm_cold",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.8647,
+   "likert_p": 5.11e-22,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "phi4_4bit",
+   "axis": "confident_cautious",
+   "pairwise_accuracy": 0.6333,
+   "pairwise_n": 30,
+   "likert_spearman_rho": -0.3332,
+   "likert_p": 0.004827,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "phi4_4bit",
+   "axis": "empathetic_analytical",
+   "pairwise_accuracy": 0.8667,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.5479,
+   "likert_p": 9.163e-07,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "phi4_4bit",
+   "axis": "formal_casual",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7369,
+   "likert_p": 3.518e-13,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "phi4_4bit",
+   "axis": "verbose_concise",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.6462,
+   "likert_p": 1.526e-09,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "phi4_4bit",
+   "axis": "warm_cold",
+   "pairwise_accuracy": 0.9333,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.3495,
+   "likert_p": 0.003022,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "qwen3.5_9b_4bit",
+   "axis": "confident_cautious",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7047,
+   "likert_p": 9.899e-12,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "qwen3.5_9b_4bit",
+   "axis": "empathetic_analytical",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.775,
+   "likert_p": 3.469e-15,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "qwen3.5_9b_4bit",
+   "axis": "formal_casual",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.828,
+   "likert_p": 9.555e-19,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "qwen3.5_9b_4bit",
+   "axis": "verbose_concise",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.2795,
+   "likert_p": 0.01914,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  },
+  {
+   "model": "qwen3.5_9b_4bit",
+   "axis": "warm_cold",
+   "pairwise_accuracy": 1.0,
+   "pairwise_n": 30,
+   "likert_spearman_rho": 0.7811,
+   "likert_p": 1.503e-15,
+   "likert_n": 70,
+   "alpha_lo": "-50.0",
+   "alpha_hi": "50.0",
+   "structural_errors": []
+  }
+ ]
+}
