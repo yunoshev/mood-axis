@@ -8,7 +8,7 @@
 
 4. **The GPT-OSS anomaly is format dominance, not MoE or quantization.** Its degenerate axis geometry and weakest-in-cohort consistency (0.39) trace to a dominant response-format reaction to persona prompts; projecting out a low-rank format subspace restores held-out separation from 0.73 to 1.00 on its worst axis. Two larger MoE models sit squarely in the stable cohort, and axis directions are precision-invariant across bf16/4-bit pairs (mean cos 0.95).
 
-5. **Instruction tuning reorganizes personality representations without erasing them.** Own-axis separability is near-ceiling in both base and instruct models (93–97% vs 100%); a base-fit axis transfers to instruct states at 97.3% — the direction pre-dates alignment. The real alignment effect is subtler: reduced representational legibility and base-model unreliability on stylistic-register axes specifically.
+5. **Instruction tuning sharpens personality representations rather than erasing them.** Own-axis separability is near-ceiling in both base and instruct models (93–97% vs 100%); a base-fit axis transfers to instruct states at 97.3% — the direction pre-dates alignment. The real alignment effect is subtler and points toward sharper encoding: an axis-independent probe reads the instruction condition at ceiling from instruct states (100%) and slightly lower from base ones (87–96%), with base models least reliable on stylistic-register axes specifically.
 
 6. **Reasoning models think with a different temperament than they answer — in model-specific directions.** DeepSeek thinks warmer, GPT-OSS colder, VibeThinker with a +0.65 confidence surge; the closest regularity is hedged deliberation behind confident delivery (3 of 5 models).
 
