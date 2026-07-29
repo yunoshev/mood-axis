@@ -32,10 +32,12 @@ from config.models import MODELS
 
 STEERING_DIR = PROJECT_ROOT / "data" / "steering"
 ANALYSIS_DIR = PROJECT_ROOT / "data" / "analysis"
+JUDGE_DIR = PROJECT_ROOT / "data" / "judge_steering"
 DEAD_ZONES_FILE = ANALYSIS_DIR / "dead_zones.json"
 
-# Paper models (7B+ only)
-PAPER_MODELS = ["qwen_7b", "llama_8b", "mistral_7b", "gemma_9b", "qwen3_8b"]
+# Paper models: core-5 roster (4 dense + 1 MoE). Steering data is the merged
+# monolithic <model>_basic.json (zero-truncation v3trunc rerun).
+PAPER_MODELS = ["qwen3.5_9b", "phi4", "deepseek_r1_14b", "ministral3_8b", "gpt_oss_20b"]
 
 # Cluster thresholds (sum of total_effect across all axes)
 CLUSTER_STEERABLE = 1.0
@@ -65,7 +67,7 @@ def preflight_check():
         else:
             print(f"  {model}: MISSING", flush=True)
 
-    judge_path = STEERING_DIR / "judge_results.json"
+    judge_path = JUDGE_DIR / "judge_results.json"
     if judge_path.exists():
         jdata = json.load(open(judge_path))
         print(f"\nJudge results: {list(jdata.keys())}", flush=True)
@@ -96,12 +98,46 @@ def load_steering_data() -> dict:
 
 
 def load_judge_results() -> dict | None:
-    """Load judge results if available."""
-    path = STEERING_DIR / "judge_results.json"
+    """Load judge results (v2 flat schema) and adapt to a per-model dict.
+
+    The v2 file (data/judge_steering/judge_results.json) stores a flat
+    `results` list of {model, axis, pairwise_accuracy, likert_spearman_rho,
+    pairwise_n, ...}. Aggregate to
+    {model: {pairwise_accuracy, likert_rho_alpha, likert_rho_proj, per_axis}}
+    restricted to the current core roster.
+    """
+    path = JUDGE_DIR / "judge_results.json"
     if not path.exists():
         return None
     with open(path) as f:
-        return json.load(f)
+        raw = json.load(f)
+    rows = raw.get("results", [])
+    by_model: dict = {}
+    for r in rows:
+        m = r.get("model")
+        if m not in PAPER_MODELS:
+            continue
+        by_model.setdefault(m, []).append(r)
+    adapted: dict = {}
+    for m, rs in by_model.items():
+        pw_num = sum((r.get("pairwise_accuracy") or 0.0) * (r.get("pairwise_n") or 0) for r in rs)
+        pw_den = sum((r.get("pairwise_n") or 0) for r in rs)
+        pw = (pw_num / pw_den) if pw_den else None
+        rhos = [r.get("likert_spearman_rho") for r in rs if r.get("likert_spearman_rho") is not None]
+        rho = float(np.mean(rhos)) if rhos else None
+        adapted[m] = {
+            "pairwise_accuracy": pw,
+            "likert_rho_alpha": rho,
+            "likert_rho_proj": None,
+            "per_axis": {
+                r["axis"]: {
+                    "pairwise_accuracy": r.get("pairwise_accuracy"),
+                    "likert_rho": r.get("likert_spearman_rho"),
+                }
+                for r in rs
+            },
+        }
+    return adapted or None
 
 
 def load_dead_zones() -> dict | None:

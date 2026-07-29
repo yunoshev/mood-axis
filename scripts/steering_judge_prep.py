@@ -42,10 +42,7 @@ N_LIKERT_QUESTIONS = 10
 TEXT_LIMIT = 100_000
 AXIS_TEXT_LIMIT = {}
 
-CAST = ["qwen3.5_9b", "gemma3_12b", "phi4", "deepseek_r1_14b", "ministral3_8b",
-        "gpt_oss_20b",
-        "qwen3.5_9b_4bit", "gemma3_12b_4bit", "phi4_4bit",
-        "deepseek_r1_14b_4bit", "ministral3_8b_4bit"]
+CAST = ["qwen3.5_9b", "phi4", "deepseek_r1_14b", "ministral3_8b", "gpt_oss_20b"]
 
 # Positive pole = FIRST pole (projection convention).
 AXIS_TRAIT = {

@@ -12,4 +12,4 @@
 
 6. **Reasoning models think with a different temperament than they answer — in model-specific directions.** DeepSeek thinks warmer, GPT-OSS colder, VibeThinker with a +0.65 confidence surge; the closest regularity is hedged deliberation behind confident delivery (3 of 5 models).
 
-7. **The same vectors measure and steer.** Adding calibrated axis vectors to hidden states shifts generation along the targeted axis while preserving content — measurement directions are causally meaningful (quantitative steerability comparison being recomputed; see [Steering](#steering-part-2)).
+7. **The same vectors measure and steer.** Adding calibrated axis vectors to hidden states shifts generation along the targeted axis while preserving content — measurement directions are causally meaningful. Steerability varies ~6× across the five models (DeepSeek-R1 14B strongest at total effect 3.58; the dense Phi-4 14B weakest at 0.60, capped by a coherence limit), and a blind LLM judge confirms the shifts at **94% mean pairwise accuracy** (see [Steering](#steering-part-2)).

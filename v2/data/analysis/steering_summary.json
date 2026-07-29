@@ -1,0 +1,570 @@
+{
+  "_meta": {
+    "script": "scripts/steering_analyze.py",
+    "timestamp": "2026-07-29T13:50:08.290612",
+    "models": [
+      "qwen3.5_9b",
+      "phi4",
+      "deepseek_r1_14b",
+      "ministral3_8b",
+      "gpt_oss_20b"
+    ],
+    "axes": [
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise",
+      "warm_cold"
+    ],
+    "cluster_thresholds": {
+      "steerable": ">= 1.0",
+      "moderate": ">= 0.1",
+      "resistant": "< 0.1"
+    }
+  },
+  "per_model": {
+    "qwen3.5_9b": {
+      "total_effect": 1.6224,
+      "cluster": "steerable",
+      "n_axes": 5,
+      "mean_leakage": 0.5561,
+      "axes": {
+        "warm_cold": {
+          "slope": 0.004018,
+          "effective_slope": 0.004018,
+          "total_effect": 0.3685,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.9811,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.6276,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "confident_cautious": {
+          "slope": 0.002415,
+          "effective_slope": 0.002878,
+          "total_effect": 0.3079,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.731,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.5406,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "empathetic_analytical": {
+          "slope": 0.002022,
+          "effective_slope": 0.002233,
+          "total_effect": 0.2315,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 1.2254,
+          "max_leakage_axis": "confident_cautious",
+          "mean_leakage": 0.9408,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "formal_casual": {
+          "slope": 0.00365,
+          "effective_slope": 0.003927,
+          "total_effect": 0.3755,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.8346,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.5993,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "verbose_concise": {
+          "slope": 0.003216,
+          "effective_slope": 0.003286,
+          "total_effect": 0.339,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.0969,
+          "max_leakage_axis": "confident_cautious",
+          "mean_leakage": 0.072,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        }
+      },
+      "judge": {
+        "pairwise_accuracy": 1.0,
+        "likert_rho_alpha": 0.9246800000000001,
+        "likert_rho_proj": null
+      }
+    },
+    "phi4": {
+      "total_effect": 0.6036,
+      "cluster": "moderate",
+      "n_axes": 5,
+      "mean_leakage": 0.5994,
+      "axes": {
+        "warm_cold": {
+          "slope": 0.001767,
+          "effective_slope": 0.001785,
+          "total_effect": 0.1406,
+          "effective_range": {
+            "alpha_min": -30.0,
+            "alpha_max": 30.0
+          },
+          "max_leakage": 1.2904,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.8333,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "confident_cautious": {
+          "slope": 0.000962,
+          "effective_slope": 0.001374,
+          "total_effect": 0.1028,
+          "effective_range": {
+            "alpha_min": -30.0,
+            "alpha_max": 30.0
+          },
+          "max_leakage": 0.8425,
+          "max_leakage_axis": "verbose_concise",
+          "mean_leakage": 0.5205,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "empathetic_analytical": {
+          "slope": 0.001786,
+          "effective_slope": 0.002176,
+          "total_effect": 0.1706,
+          "effective_range": {
+            "alpha_min": -30.0,
+            "alpha_max": 30.0
+          },
+          "max_leakage": 1.2684,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.8291,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "formal_casual": {
+          "slope": 0.004322,
+          "effective_slope": 0.001955,
+          "total_effect": 0.0975,
+          "effective_range": {
+            "alpha_min": -20.0,
+            "alpha_max": 30.0
+          },
+          "max_leakage": 0.8631,
+          "max_leakage_axis": "verbose_concise",
+          "mean_leakage": 0.5327,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "verbose_concise": {
+          "slope": 0.001461,
+          "effective_slope": 0.001338,
+          "total_effect": 0.0921,
+          "effective_range": {
+            "alpha_min": -30.0,
+            "alpha_max": 30.0
+          },
+          "max_leakage": 0.5554,
+          "max_leakage_axis": "confident_cautious",
+          "mean_leakage": 0.2816,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        }
+      },
+      "judge": {
+        "pairwise_accuracy": 0.8333400000000001,
+        "likert_rho_alpha": 0.35441999999999996,
+        "likert_rho_proj": null
+      }
+    },
+    "deepseek_r1_14b": {
+      "total_effect": 3.5807,
+      "cluster": "steerable",
+      "n_axes": 5,
+      "mean_leakage": 0.5095,
+      "axes": {
+        "warm_cold": {
+          "slope": 0.011484,
+          "effective_slope": 0.011484,
+          "total_effect": 1.1674,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.739,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.39,
+          "saturation_pct": 11.0,
+          "n_samples": 210
+        },
+        "confident_cautious": {
+          "slope": 0.001676,
+          "effective_slope": 0.002337,
+          "total_effect": 0.2471,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.7913,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.498,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "empathetic_analytical": {
+          "slope": 0.005724,
+          "effective_slope": 0.006138,
+          "total_effect": 0.6496,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 1.6723,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.8937,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "formal_casual": {
+          "slope": 0.010076,
+          "effective_slope": 0.010739,
+          "total_effect": 1.0549,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 1.2015,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.5827,
+          "saturation_pct": 0.5,
+          "n_samples": 210
+        },
+        "verbose_concise": {
+          "slope": 0.004948,
+          "effective_slope": 0.004618,
+          "total_effect": 0.4617,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.3236,
+          "max_leakage_axis": "confident_cautious",
+          "mean_leakage": 0.1829,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        }
+      },
+      "judge": {
+        "pairwise_accuracy": 0.94,
+        "likert_rho_alpha": 0.6653600000000001,
+        "likert_rho_proj": null
+      }
+    },
+    "ministral3_8b": {
+      "total_effect": 2.0744,
+      "cluster": "steerable",
+      "n_axes": 5,
+      "mean_leakage": 0.4029,
+      "axes": {
+        "warm_cold": {
+          "slope": 0.005966,
+          "effective_slope": 0.006074,
+          "total_effect": 0.5846,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.8265,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.3484,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "confident_cautious": {
+          "slope": 0.00145,
+          "effective_slope": 0.00174,
+          "total_effect": 0.1913,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.8877,
+          "max_leakage_axis": "verbose_concise",
+          "mean_leakage": 0.4574,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "empathetic_analytical": {
+          "slope": 0.003428,
+          "effective_slope": 0.003416,
+          "total_effect": 0.3568,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 1.1563,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.6178,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "formal_casual": {
+          "slope": 0.00618,
+          "effective_slope": 0.005962,
+          "total_effect": 0.5869,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.8898,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.4235,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "verbose_concise": {
+          "slope": 0.003464,
+          "effective_slope": 0.003786,
+          "total_effect": 0.3548,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.2522,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.1676,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        }
+      },
+      "judge": {
+        "pairwise_accuracy": 1.0,
+        "likert_rho_alpha": 0.83528,
+        "likert_rho_proj": null
+      }
+    },
+    "gpt_oss_20b": {
+      "total_effect": 1.6106,
+      "cluster": "steerable",
+      "n_axes": 5,
+      "mean_leakage": 0.7056,
+      "axes": {
+        "warm_cold": {
+          "slope": 0.006079,
+          "effective_slope": 0.006079,
+          "total_effect": 0.598,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.6304,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.3725,
+          "saturation_pct": 3.3,
+          "n_samples": 210
+        },
+        "confident_cautious": {
+          "slope": 0.000565,
+          "effective_slope": 0.003396,
+          "total_effect": 0.1902,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 0.0
+          },
+          "max_leakage": 1.1222,
+          "max_leakage_axis": "formal_casual",
+          "mean_leakage": 0.3749,
+          "saturation_pct": 0.5,
+          "n_samples": 210
+        },
+        "empathetic_analytical": {
+          "slope": 0.00173,
+          "effective_slope": 0.008435,
+          "total_effect": 0.2812,
+          "effective_range": {
+            "alpha_min": -33.33,
+            "alpha_max": 0.0
+          },
+          "max_leakage": 1.0174,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 0.5018,
+          "saturation_pct": 1.4,
+          "n_samples": 210
+        },
+        "formal_casual": {
+          "slope": 0.004647,
+          "effective_slope": 0.004647,
+          "total_effect": 0.3962,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 0.1607,
+          "max_leakage_axis": "empathetic_analytical",
+          "mean_leakage": 0.1179,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        },
+        "verbose_concise": {
+          "slope": 0.001457,
+          "effective_slope": 0.001457,
+          "total_effect": 0.145,
+          "effective_range": {
+            "alpha_min": -50.0,
+            "alpha_max": 50.0
+          },
+          "max_leakage": 3.7291,
+          "max_leakage_axis": "warm_cold",
+          "mean_leakage": 2.1608,
+          "saturation_pct": 0.0,
+          "n_samples": 210
+        }
+      },
+      "judge": {
+        "pairwise_accuracy": 0.94666,
+        "likert_rho_alpha": 0.6327999999999999,
+        "likert_rho_proj": null
+      }
+    }
+  },
+  "rankings": [
+    {
+      "model": "deepseek_r1_14b",
+      "display_name": "DeepSeek-R1 14B",
+      "total_effect": 3.5807,
+      "cluster": "steerable",
+      "n_axes": 5
+    },
+    {
+      "model": "ministral3_8b",
+      "display_name": "Ministral 3 8B",
+      "total_effect": 2.0744,
+      "cluster": "steerable",
+      "n_axes": 5
+    },
+    {
+      "model": "qwen3.5_9b",
+      "display_name": "Qwen3.5 9B",
+      "total_effect": 1.6224,
+      "cluster": "steerable",
+      "n_axes": 5
+    },
+    {
+      "model": "gpt_oss_20b",
+      "display_name": "GPT-OSS 20B",
+      "total_effect": 1.6106,
+      "cluster": "steerable",
+      "n_axes": 5
+    },
+    {
+      "model": "phi4",
+      "display_name": "Phi-4 14B",
+      "total_effect": 0.6036,
+      "cluster": "moderate",
+      "n_axes": 5
+    }
+  ],
+  "axis_heatmap": {
+    "qwen3.5_9b": {
+      "warm_cold": 0.3685,
+      "confident_cautious": 0.3079,
+      "empathetic_analytical": 0.2315,
+      "formal_casual": 0.3755,
+      "verbose_concise": 0.339
+    },
+    "phi4": {
+      "warm_cold": 0.1406,
+      "confident_cautious": 0.1028,
+      "empathetic_analytical": 0.1706,
+      "formal_casual": 0.0975,
+      "verbose_concise": 0.0921
+    },
+    "deepseek_r1_14b": {
+      "warm_cold": 1.1674,
+      "confident_cautious": 0.2471,
+      "empathetic_analytical": 0.6496,
+      "formal_casual": 1.0549,
+      "verbose_concise": 0.4617
+    },
+    "ministral3_8b": {
+      "warm_cold": 0.5846,
+      "confident_cautious": 0.1913,
+      "empathetic_analytical": 0.3568,
+      "formal_casual": 0.5869,
+      "verbose_concise": 0.3548
+    },
+    "gpt_oss_20b": {
+      "warm_cold": 0.598,
+      "confident_cautious": 0.1902,
+      "empathetic_analytical": 0.2812,
+      "formal_casual": 0.3962,
+      "verbose_concise": 0.145
+    }
+  },
+  "findings": {
+    "most_steerable": {
+      "model": "deepseek_r1_14b",
+      "display_name": "DeepSeek-R1 14B",
+      "total_effect": 3.5807,
+      "cluster": "steerable"
+    },
+    "least_steerable": {
+      "model": "phi4",
+      "display_name": "Phi-4 14B",
+      "total_effect": 0.6036,
+      "cluster": "moderate"
+    },
+    "most_responsive_axis": {
+      "axis": "warm_cold",
+      "mean_effect": 0.5718
+    },
+    "least_responsive_axis": {
+      "axis": "confident_cautious",
+      "mean_effect": 0.2079
+    },
+    "dead_zone_correlation": {
+      "spearman_rho": -0.2236,
+      "p_value": 0.7177,
+      "n_models": 5,
+      "detail": [
+        {
+          "model": "qwen3.5_9b",
+          "n_dead": 3,
+          "total_effect": 1.6224
+        },
+        {
+          "model": "phi4",
+          "n_dead": 4,
+          "total_effect": 0.6036
+        },
+        {
+          "model": "deepseek_r1_14b",
+          "n_dead": 3,
+          "total_effect": 3.5807
+        },
+        {
+          "model": "ministral3_8b",
+          "n_dead": 3,
+          "total_effect": 2.0744
+        },
+        {
+          "model": "gpt_oss_20b",
+          "n_dead": 1,
+          "total_effect": 1.6106
+        }
+      ]
+    }
+  }
+}

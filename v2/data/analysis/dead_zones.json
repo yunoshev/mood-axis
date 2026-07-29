@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "dead_threshold": 0.15,
+    "std_threshold": 0.2,
+    "rule": "|mean|<0.15 and std<0.2 => dead",
+    "roster": [
+      "qwen3.5_9b",
+      "phi4",
+      "deepseek_r1_14b",
+      "ministral3_8b",
+      "gpt_oss_20b"
+    ]
+  },
+  "qwen3.5_9b": {
+    "n_dead": 3,
+    "n_alive": 2,
+    "dead_axes": [
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual"
+    ],
+    "alive_axes": [
+      "warm_cold",
+      "verbose_concise"
+    ]
+  },
+  "phi4": {
+    "n_dead": 4,
+    "n_alive": 1,
+    "dead_axes": [
+      "warm_cold",
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual"
+    ],
+    "alive_axes": [
+      "verbose_concise"
+    ]
+  },
+  "deepseek_r1_14b": {
+    "n_dead": 3,
+    "n_alive": 2,
+    "dead_axes": [
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise"
+    ],
+    "alive_axes": [
+      "warm_cold",
+      "confident_cautious"
+    ]
+  },
+  "ministral3_8b": {
+    "n_dead": 3,
+    "n_alive": 2,
+    "dead_axes": [
+      "confident_cautious",
+      "formal_casual",
+      "verbose_concise"
+    ],
+    "alive_axes": [
+      "warm_cold",
+      "empathetic_analytical"
+    ]
+  },
+  "gpt_oss_20b": {
+    "n_dead": 1,
+    "n_alive": 4,
+    "dead_axes": [
+      "warm_cold"
+    ],
+    "alive_axes": [
+      "confident_cautious",
+      "empathetic_analytical",
+      "formal_casual",
+      "verbose_concise"
+    ]
+  }
+}
